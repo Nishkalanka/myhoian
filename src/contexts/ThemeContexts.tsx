@@ -22,15 +22,18 @@ interface ThemeContextProviderProps {
 export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
   children,
 }) => {
-  // Получаем предпочтительную тему пользователя из localStorage или системных настроек
-  const savedMode = localStorage.getItem('themeMode') as PaletteMode | null;
-  const prefersDarkMode =
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialMode: PaletteMode =
-    savedMode || (prefersDarkMode ? 'dark' : 'light');
+  // --- ИЗМЕНЕНИЕ ЛОГИКИ ОПРЕДЕЛЕНИЯ initialMode ЗДЕСЬ ---
+  const [mode, setMode] = useState<PaletteMode>(() => {
+    // 1. Пытаемся получить сохраненную тему из localStorage
+    const savedMode = localStorage.getItem('themeMode') as PaletteMode | null;
 
-  const [mode, setMode] = useState<PaletteMode>(initialMode);
+    // 2. Если есть сохраненная тема, используем ее.
+    // 3. Если нет сохраненной темы, по умолчанию устанавливаем 'dark'.
+    //    Игнорируем prefers-color-scheme для начальной установки, но
+    //    сохраняем ее для пользовательского переключения.
+    return savedMode || 'dark'; // Если savedMode null/undefined, то будет 'dark'
+  });
+  // --- КОНЕЦ ИЗМЕНЕНИЯ ---
 
   // Функция для переключения темы
   const toggleColorMode = React.useCallback(() => {

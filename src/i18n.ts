@@ -5,6 +5,9 @@ import { initReactI18next } from 'react-i18next';
 // Импортируем наши JSON-файлы с переводами
 import translationEN from './data/locales/en/resumeData';
 import translationRU from './data/locales/ru/resumeData';
+import translationES from './data/locales/es/resumeData';
+import translationFR from './data/locales/fr/resumeData';
+import translationVN from './data/locales/vn/resumeData';
 
 i18n
   .use(initReactI18next) // Передаем i18n экземпляр react-i18next
@@ -16,9 +19,18 @@ i18n
       ru: {
         translation: translationRU,
       },
+      es: {
+        translation: translationES,
+      },
+      fr: {
+        translation: translationFR,
+      },
+      vn: {
+        translation: translationVN,
+      },
     },
-    lng: 'ru', // Язык по умолчанию (например, русский)
-    fallbackLng: 'en', // Язык, который будет использоваться, если нет перевода на основной язык
+    lng: 'en', // Язык по умолчанию (например, русский)
+    fallbackLng: 'ru', // Язык, который будет использоваться, если нет перевода на основной язык
     interpolation: {
       escapeValue: false, // React уже экранирует от XSS, так что это не нужно
     },

@@ -1,36 +1,92 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <head class="DEV">
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WDGQQ8PB");
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MWT9M8X8TB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-MWT9M8X8TB");
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pavel Isaev – Web-разработка и Создание сайтов</title>
+    <title>MyHoiAn: Your Guide to Hoi An!</title>
+    <meta
+      name="title"
+      content="MyHoiAn: Your Guide to Hoi An – Attractions, Map, and Discoveries"
+    />
     <meta
       name="description"
-      content="Портфолио Павла Исаева: опытный веб-разработчик, специализирующийся на современных frontend-технологиях (React, TypeScript) и интеграции AI для создания инновационных и интеллектуальных веб-приложений. Находится в Дананге, Вьетнам."
+      content="Explore the rich history and culture of Hoi An with MyHoiAn, your complete guide to ancient attractions"
     />
     <meta
       name="keywords"
-      content="Павел Исаев, веб-разработчик, frontend-разработчик, React, TypeScript, JavaScript, UI/UX, AI, искусственный интеллект, машинное обучение, веб-решения, интеллектуальные приложения, портфолио"
+      content="Hoi An, MyHoiAn, Hoi An guide, ancient town, Vietnam, attractions, map, travel, tourism, UNESCO, what to see in Hoi An, Hoi An attractions, cultural heritage"
     />
-    <meta name="author" content="Pavel Isaev" />
+    <meta name="author" content="MyHoiAn" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nishkalanka.github.io/" />
+    <meta property="og:url" content="https://myhoian.netlify.app/" />
     <meta
       property="og:title"
-      content="Pavel Isaev – Эксперт в Web-разработке на основе AI и Frontend-решений"
+      content="MyHoiAn: Your Guide to Hoi An – Attractions, Map, and Discoveries"
     />
     <meta
       property="og:description"
-      content="Портфолио Павла Исаева: опытный веб-разработчик, специализирующийся на современных frontend-технологиях (React, TypeScript) и интеграции AI для создания инновационных и интеллектуальных веб-приложений. Находится в Дананге, Вьетнам."
+      content="Explore the rich history and culture of Hoi An with MyHoiAn, your complete guide to ancient attractions, detailed map, and local discoveries in this UNESCO World Heritage site."
     />
-    <meta property="og:image" content="" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image"
+      content="https://myhoian.netlify.app/og-image.png"
+    />
+    <meta property="og:url" content="https://myhoian.netlify.app/" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://myhoian.netlify.app/" />
+    <meta
+      property="twitter:title"
+      content="MyHoiAn: Your Guide to Ancient Hoi An – Attractions, Map, and Discoveries"
+    />
+    <meta
+      property="twitter:description"
+      content="Explore the rich history and culture of Hoi An with MyHoiAn, your complete guide to ancient attractions, detailed map, and local discoveries in this UNESCO World Heritage site."
+    />
+    <meta
+      property="twitter:image"
+      content="https://myhoian.netlify.app/og-image.png"
+    />
   </head>
-  <body>
+  <body style="background-color: rgb(46, 46, 57)">
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WDGQQ8PB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

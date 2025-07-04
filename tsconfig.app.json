@@ -1,3 +1,5 @@
+// /Users/nishkalanka/Documents/MyHoiAn/tsconfig.app.json
+
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
@@ -15,13 +17,18 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Type Roots Configuration */
+    // Добавьте эту строку
+    "typeRoots": ["./node_modules/@types", "./src/types"], // Убедитесь, что здесь есть путь к @types
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    "exactOptionalPropertyTypes": true, // Возможно, у вас это уже есть, или аналогичная опция
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"]
+  // Убедитесь, что здесь нет "exclude": ["node_modules"]
 }
