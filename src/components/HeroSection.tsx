@@ -484,25 +484,6 @@ function HeroSection() {
               >
                 <MyLocationIcon />
               </IconButton>
-              <IconButton
-                onClick={centerMapOnUserLocation}
-                sx={{
-                  position: 'absolute',
-                  opacity: 0.6,
-                  bottom: 200,
-                  right: 32,
-                  zIndex: 1000,
-                  backgroundColor: theme.palette.background.paper,
-                  '&:hover': {
-                    backgroundColor: alpha(theme.palette.background.paper, 0.8),
-                  },
-                  boxShadow: theme.shadows[3],
-                }}
-                aria-label={t('centerMap')}
-                disabled={!centerMapFn}
-              >
-                <MyLocationIcon />
-              </IconButton>
             </Box>
 
             <Box
