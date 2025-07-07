@@ -1,0 +1,11 @@
+# netlify.toml
+[build]
+  command = "npm run build" # Или ваша команда для сборки фронтенда
+  publish = "dist" # Или ваша папка для скомпилированного фронтенда (например, build)
+
+[functions]
+  directory = "netlify/functions"
+  # Указываем Netlify, что функции написаны на TypeScript
+  # Netlify автоматически найдет tsconfig.json в корне проекта
+  # и скомпилирует функции.
+  node_bundler = "esbuild" # Рекомендуется использовать esbuild для скорости

@@ -1,6 +1,4 @@
-import type { LandmarkContent } from '../landmarkTypes.js';
-
-export const frLandmarkData: LandmarkContent[] = [
+export const frLandmarkData = [
   //Японский мост !
   {
     id: 1, // Cet ID doit correspondre à l'ID de la même attraction dans les autres fichiers de langue

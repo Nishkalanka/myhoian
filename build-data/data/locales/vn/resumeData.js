@@ -1,7 +1,4 @@
-// src/locales/vi/translation.ts
-import type { TranslationContent } from '../types.js';
-
-const translationVN: TranslationContent = {
+const translationVN = {
   logoTitle: 'Hội An Của Tôi',
   moreDetails: 'Xem thêm chi tiết',
   details: 'Chi tiết',
@@ -19,7 +16,6 @@ const translationVN: TranslationContent = {
   thankYouMessage:
     'Cẩm nang này chỉ mới bắt đầu hành trình của mình, nhưng sẽ phát triển và tốt hơn nhờ những phản hồi và góp ý của bạn!',
   welcomeClose: 'Đóng',
-
   // Các dòng mới cho yêu cầu vị trí
   locationPermissionTitle: 'Quyền truy cập vị trí',
   locationPermissionExplanation:
@@ -35,10 +31,8 @@ const translationVN: TranslationContent = {
   locationUnavailable: 'Thông tin vị trí không khả dụng.',
   locationTimeout: 'Đã hết thời gian chờ khi lấy vị trí.',
   unknownLocationError: 'Đã xảy ra lỗi không xác định khi lấy vị trí.',
-
   footer: {
     copyright: 'Mọi quyền được bảo lưu.',
   },
 };
-
 export default translationVN;

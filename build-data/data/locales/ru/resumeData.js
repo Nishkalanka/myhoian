@@ -1,7 +1,4 @@
-// src/locales/ru/translation.ts
-import type { TranslationContent } from '../types.js';
-
-const translationRU: TranslationContent = {
+const translationRU = {
   logoTitle: 'Мой Хойан',
   moreDetails: 'Подробнее',
   details: 'Детали',
@@ -19,7 +16,6 @@ const translationRU: TranslationContent = {
   thankYouMessage:
     'Этот путеводитель ещё только начинает свой путь, но будет расти и становиться лучше благодаря твоим отзывам и предложениям!',
   welcomeClose: 'Закрыть',
-
   // Новые строки для запроса местоположения
   locationPermissionTitle: 'Разрешение на доступ к местоположению',
   locationPermissionExplanation:
@@ -36,10 +32,8 @@ const translationRU: TranslationContent = {
   locationTimeout: 'Истекло время ожидания при получении местоположения.',
   unknownLocationError:
     'Произошла неизвестная ошибка при получении местоположения.',
-
   footer: {
     copyright: 'Все права защищены.',
   },
 };
-
 export default translationRU;

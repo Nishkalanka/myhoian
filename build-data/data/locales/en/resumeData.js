@@ -1,7 +1,4 @@
-// src/locales/en/translation.ts
-import type { TranslationContent } from '../types.js';
-
-const translationEN: TranslationContent = {
+const translationEN = {
   logoTitle: 'My Hoi An',
   moreDetails: 'More details',
   details: 'Details',
@@ -19,7 +16,6 @@ const translationEN: TranslationContent = {
   thankYouMessage:
     'This guide is just starting its journey, but it will grow and get better thanks to your feedback and suggestions!',
   welcomeClose: 'Close',
-
   // New strings for location request
   locationPermissionTitle: 'Location Access Permission',
   locationPermissionExplanation:
@@ -35,10 +31,8 @@ const translationEN: TranslationContent = {
   locationUnavailable: 'Location information is unavailable.',
   locationTimeout: 'The request to get user location timed out.',
   unknownLocationError: 'An unknown error occurred while getting the location.',
-
   footer: {
     copyright: 'All rights reserved.',
   },
 };
-
 export default translationEN;

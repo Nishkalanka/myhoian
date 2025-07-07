@@ -1,7 +1,4 @@
-// src/locales/ru/translation.ts
-import type { TranslationContent } from '../types.js';
-
-const translationES: TranslationContent = {
+const translationES = {
   logoTitle: 'Mi Hoi An',
   moreDetails: 'Más detalles',
   details: 'Detalles',
@@ -19,7 +16,6 @@ const translationES: TranslationContent = {
   thankYouMessage:
     'Esta guía apenas comienza su camino, pero crecerá y mejorará gracias a tus comentarios y sugerencias.',
   welcomeClose: 'Cerrar',
-
   // Nuevas líneas para solicitud de ubicación
   locationPermissionTitle: 'Permiso de acceso a la ubicación',
   locationPermissionExplanation:
@@ -35,10 +31,8 @@ const translationES: TranslationContent = {
   locationUnavailable: 'Información de ubicación no disponible.',
   locationTimeout: 'Tiempo de espera agotado al obtener la ubicación.',
   unknownLocationError: 'Ocurrió un error desconocido al obtener la ubicación.',
-
   footer: {
     copyright: 'Todos los derechos reservados.',
   },
 };
-
 export default translationES;

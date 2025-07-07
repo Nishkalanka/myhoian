@@ -1,8 +1,5 @@
 // src/data/landmarks/ru/dataLandmarks.ts
-
-import type { LandmarkContent } from '../landmarkTypes.js';
-
-export const enLandmarkData: LandmarkContent[] = [
+export const enLandmarkData = [
   {
     id: 1, // This ID must match the ID of the same attraction in other language files
     title: 'Japanese Covered Bridge',

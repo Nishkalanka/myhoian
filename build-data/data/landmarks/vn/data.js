@@ -1,8 +1,5 @@
 // src/data/landmarks/ru/dataLandmarks.ts
-
-import type { LandmarkContent } from '../landmarkTypes.js';
-
-export const vnLandmarkData: LandmarkContent[] = [
+export const vnLandmarkData = [
   //Японский мост !
   {
     id: 1, // Cet ID doit correspondre à l'ID de la même attraction dans les autres fichiers de langue

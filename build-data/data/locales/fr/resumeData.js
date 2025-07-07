@@ -1,7 +1,4 @@
-// src/locales/fr/translation.ts
-import type { TranslationContent } from '../types.js';
-
-const translationFR: TranslationContent = {
+const translationFR = {
   logoTitle: 'Mon Hội An',
   moreDetails: 'Plus de détails',
   details: 'Détails',
@@ -19,7 +16,6 @@ const translationFR: TranslationContent = {
   thankYouMessage:
     "Ce guide ne fait que commencer son voyage, mais il grandira et s'améliorera grâce à tes retours et suggestions !", // Из нашей последней беседы
   welcomeClose: 'Fermer',
-
   // Nouvelles lignes pour la demande de localisation
   locationPermissionTitle: "Autorisation d'accès à la localisation",
   locationPermissionExplanation:
@@ -38,10 +34,8 @@ const translationFR: TranslationContent = {
   locationTimeout: "Le délai d'attente pour obtenir la localisation a expiré.",
   unknownLocationError:
     "Une erreur inconnue est survenue lors de l'obtention de la localisation.",
-
   footer: {
     copyright: 'Tous droits réservés.',
   },
 };
-
 export default translationFR;

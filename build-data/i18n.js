@@ -1,14 +1,12 @@
 // src/i18n.ts
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-
 // Импортируем наши JSON-файлы с переводами
 import translationEN from './data/locales/en/resumeData.js';
 import translationRU from './data/locales/ru/resumeData.js';
 import translationES from './data/locales/es/resumeData.js';
 import translationFR from './data/locales/fr/resumeData.js';
 import translationVN from './data/locales/vn/resumeData.js';
-
 i18n
   .use(initReactI18next) // Передаем i18n экземпляр react-i18next
   .init({
@@ -36,5 +34,4 @@ i18n
     },
     debug: false, // Установи в true, если нужна отладка
   });
-
 export default i18n;
