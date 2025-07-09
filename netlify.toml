@@ -1,11 +1,17 @@
 # netlify.toml
+
 [build]
-  command = "npm run build" # Или ваша команда для сборки фронтенда
-  publish = "dist" # Или ваша папка для скомпилированного фронтенда (например, build)
+  command = "npm run build"
+  publish = "dist"
 
 [functions]
   directory = "netlify/functions"
-  # Указываем Netlify, что функции написаны на TypeScript
-  # Netlify автоматически найдет tsconfig.json в корне проекта
-  # и скомпилирует функции.
-  node_bundler = "esbuild" # Рекомендуется использовать esbuild для скорости
+  node_bundler = "esbuild"
+
+[dev]
+  # Удаляем 'port' и 'target_port'
+  # Netlify Dev не будет пытаться проксировать фронтенд
+  functions_port = 8888 # Этот порт для функций остается
+  publish = "dist"
+  functions = "netlify/functions"
+  open_browser = false # Предотвратит открытие белого экрана

@@ -11,7 +11,7 @@ const translationFR: TranslationContent = {
   close: 'Fermer',
   noDetailsAvailable: 'Aucun détail disponible pour cet objet.',
   welcomeMessage: 'Bonjour ! Bienvenue à Hội An!',
-  noMarkers: 'Sélectionnez un marqueur existant sur la carte',
+  noMarkers: 'Sélectionnez un marqueur existant ',
   swiperWelcomeTitle: 'Bonjour!',
   swiperWelcomeSubtitle: 'Veuillez sélectionner un marqueur sur la carte.',
   welcomeDialogTitle: 'Voyageur !', // Из нашей последней беседы

@@ -22,15 +22,14 @@ import { useMapContext } from '../contexts/MapContext';
 import { IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-// Импортируем CSS-файл с анимацией
-import '/src/index.css';
+import '/src/index.css'; // Используем ваш CSS
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
 
 interface MapComponentProps {
   landmarks: Landmark[];
   activeIndex: number | null;
-  onMarkerClick: (index: number, event: React.MouseEvent) => void;
+  onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   onMapClick: () => void;
   setCenterMapFn: React.Dispatch<
     React.SetStateAction<
@@ -42,12 +41,11 @@ interface MapComponentProps {
 interface CustomMarkerProps {
   isActive: boolean;
   onClick: (event: React.MouseEvent) => void;
-  isBouncing: boolean; // Добавляем новый пропс для анимации
+  isBouncing: boolean;
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
   ({ isActive, onClick, isBouncing }) => {
-    // Принимаем новый пропс
     const handleClick = useCallback(
       (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -56,13 +54,12 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
       [onClick]
     );
 
-    // Добавляем класс анимации в зависимости от isBouncing
     const markerClassName = isBouncing ? 'marker-bounce' : '';
 
     return (
       <IconButton
         onClick={handleClick}
-        className={markerClassName} // Применяем класс анимации
+        className={markerClassName}
         sx={{
           p: 0,
           lineHeight: 1,
@@ -70,9 +67,8 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
           '&:hover': {
             color: isActive ? 'error.dark' : 'primary.dark',
           },
-          // Добавляем transition для плавного изменения масштаба при клике
           transition: 'transform 0.3s ease-in-out',
-          transform: isActive ? 'scale(1.5)' : 'scale(1)', // Увеличиваем активный маркер
+          transform: isActive ? 'scale(1.5)' : 'scale(1)',
           cursor: 'pointer',
         }}
         aria-label="landmark-marker"
@@ -86,7 +82,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
 export const MapComponent: React.FC<MapComponentProps> = ({
   landmarks,
   activeIndex,
-  onMarkerClick,
+  onMapMarkerClick,
   onMapClick,
   setCenterMapFn,
 }) => {
@@ -96,7 +92,6 @@ export const MapComponent: React.FC<MapComponentProps> = ({
   const map = useRef<mapboxgl.Map | null>(null);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-  // --- НОВОЕ СОСТОЯНИЕ для отслеживания взаимодействия
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
 
   const markerObjectsRef = useRef<mapboxgl.Marker[]>([]);
@@ -106,6 +101,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     (mapInstance: mapboxgl.Map | null) => {
       if (!mapInstance) return;
       setCenterMapFn(() => (coords: [number, number], zoom?: number) => {
+        // coords уже должны быть [долгота, широта]
         mapInstance.flyTo({
           center: coords,
           zoom: zoom || mapInstance.getZoom(),
@@ -116,7 +112,6 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     [setCenterMapFn]
   );
 
-  // useEffect для инициализации карты
   useEffect(() => {
     if (map.current) {
       memoizedSetCenterMapFn(map.current);
@@ -130,7 +125,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     const newMap = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [108.32607252520863, 15.877085241922142],
+      center: [108.32607252520863, 15.877085241922142], // [долгота, широта]
       zoom: 17,
       pitch: 0,
       bearing: 0,
@@ -144,44 +139,14 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
     newMap.on('load', () => {
       setIsMapLoaded(true);
-
-      hoiAnLandmarks.forEach((landmark: Landmark, index: number) => {
-        const markerContainer = document.createElement('div');
-        const root = ReactDOM.createRoot(markerContainer);
-        markerRootsRef.current.push(root);
-
-        root.render(
-          <CustomMarker
-            isActive={activeIndex === index}
-            onClick={(event) => {
-              // При клике на маркер, отключаем анимацию
-              setHasUserInteracted(true);
-              onMarkerClick(index, event);
-            }}
-            // Передаем состояние анимации в компонент маркера
-            isBouncing={!hasUserInteracted}
-          />
-        );
-
-        const marker = new mapboxgl.Marker({
-          element: markerContainer,
-          anchor: 'bottom',
-        })
-          .setLngLat([landmark.coordinates[1], landmark.coordinates[0]])
-          .addTo(newMap);
-
-        markerObjectsRef.current.push(marker);
-      });
     });
 
     const handleMapClickListener = () => {
-      // При клике на карту, отключаем анимацию
       setHasUserInteracted(true);
       onMapClick();
     };
     newMap.on('click', handleMapClickListener);
 
-    // --- НОВОЕ ИЗМЕНЕНИЕ: Отслеживаем движение карты для отключения анимации
     const handleMapMoveStart = () => {
       setHasUserInteracted(true);
     };
@@ -190,7 +155,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     return () => {
       if (newMap) {
         newMap.off('click', handleMapClickListener);
-        newMap.off('movestart', handleMapMoveStart); // Отключаем слушатель
+        newMap.off('movestart', handleMapMoveStart);
 
         markerRootsRef.current.forEach((root) => {
           queueMicrotask(() => {
@@ -210,27 +175,59 @@ export const MapComponent: React.FC<MapComponentProps> = ({
         setIsMapLoaded(false);
       }
     };
-  }, []); // Пустой массив зависимостей, чтобы карта не перезагружалась
+  }, []);
 
-  // useEffect для обновления маркеров при изменении activeIndex
   useEffect(() => {
-    if (!isMapLoaded) return;
+    if (!isMapLoaded || !map.current) return;
 
-    markerRootsRef.current.forEach((root, index) => {
+    const currentMapInstance = map.current;
+
+    markerRootsRef.current.forEach((root) => {
+      queueMicrotask(() => {
+        try {
+          root.unmount();
+        } catch (e) {
+          /* do nothing */
+        }
+      });
+    });
+    markerObjectsRef.current.forEach((marker) => marker.remove());
+    markerObjectsRef.current = [];
+    markerRootsRef.current = [];
+
+    landmarks.forEach((landmark: Landmark, index: number) => {
+      const markerContainer = document.createElement('div');
+      const root = ReactDOM.createRoot(markerContainer);
+      markerRootsRef.current.push(root);
+
       root.render(
         <CustomMarker
           isActive={activeIndex === index}
           onClick={(event) => {
-            // При клике на маркер, отключаем анимацию
             setHasUserInteracted(true);
-            onMarkerClick(index, event);
+            onMapMarkerClick(index, event);
           }}
-          // Обновляем состояние анимации при каждом рендере
           isBouncing={!hasUserInteracted}
         />
       );
+
+      const marker = new mapboxgl.Marker({
+        element: markerContainer,
+        anchor: 'bottom',
+      })
+        // ИСПРАВЛЕНО: Возвращаем обмен местами, так как данные [широта, долгота]
+        .setLngLat([landmark.coordinates[1], landmark.coordinates[0]])
+        .addTo(currentMapInstance);
+
+      markerObjectsRef.current.push(marker);
     });
-  }, [activeIndex, isMapLoaded, onMarkerClick, hasUserInteracted]); // Добавили hasUserInteracted в зависимости
+  }, [
+    landmarks,
+    activeIndex,
+    isMapLoaded,
+    onMapMarkerClick,
+    hasUserInteracted,
+  ]);
 
   return (
     <MapProvider mapRef={map}>
@@ -240,7 +237,6 @@ export const MapComponent: React.FC<MapComponentProps> = ({
   );
 };
 
-// LocationMarker остается без изменений
 function LocationMarker() {
   const { map } = useMapContext();
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
@@ -260,7 +256,7 @@ function LocationMarker() {
 
     const onLocationSuccess = (pos: GeolocationPosition) => {
       const { latitude, longitude, accuracy } = pos.coords;
-      const newPosition: [number, number] = [longitude, latitude];
+      const newPosition: [number, number] = [longitude, latitude]; // [долгота, широта]
 
       if (currentMap) {
         if (userMarkerRef.current) {
@@ -279,7 +275,7 @@ function LocationMarker() {
             element: el,
             anchor: 'center',
           })
-            .setLngLat(newPosition)
+            .setLngLat(newPosition) // [долгота, широта]
             .addTo(currentMap);
         }
 

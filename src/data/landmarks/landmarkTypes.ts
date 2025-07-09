@@ -1,31 +1,41 @@
 // src/data/landmarks/landmarkTypes.ts
 
-// Этот интерфейс описывает контент достопримечательности на ОДНОМ языке
+export type CategorySlug = 'museum' | 'food-drinks' | 'art-galleries';
+
 export interface LandmarkContent {
-  id: number; // ID должен быть общим для всех языков для одной и той же достопримечательности
   title: string;
   description: string;
-  fullDescription?: string; // Опциональное поле для полного описания
-  internalImageNames?: string[]; // Опциональное поле для имён файлов изображений, используемых во fullDescription
+  fullDescription?: string; // Необязательное поле
+  internalImageNames?: string[]; // Необязательное поле
 }
 
-// Этот интерфейс описывает ПОЛНУЮ достопримечательность со всеми языками и общими данными
-export interface Landmark {
-  id: number;
-  coordinates: [number, number];
-  imageUrl: string; // Основное изображение достопримечательности
-  category:
-    | 'historical'
-    | 'food'
-    | 'market'
-    | 'nature'
-    | 'craft'
-    | 'other'
-    | 'museum'; // Добавил "museum" в категории
-  // Ссылки на локализованный контент
-  ru: LandmarkContent;
+export type LangCode = 'en' | 'ru' | 'es' | 'fr' | 'vn';
+
+// Определяем базовые свойства, которые есть у всех Landmark
+interface BaseLandmark {
+  id: string;
+  coordinates: [number, number]; // [долгота, широта]
+  imageUrl: string;
+  category: CategorySlug[];
+  slug: {
+    en: string;
+    ru: string;
+    es: string;
+    fr: string;
+    vn: string;
+  };
+  // Явно указываем, что английский контент обязателен
   en: LandmarkContent;
-  es?: LandmarkContent | undefined; // <--- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: ДОБАВЬТЕ '| undefined'
-  fr?: LandmarkContent | undefined; // <--- ДОБАВЬТЕ '| undefined'
-  vn?: LandmarkContent | undefined; // <--- ДОБАВЬТЕ '| undefined'
 }
+
+// Определяем языковые свойства как Record, где ключами являются LangCode,
+// а значениями - LandmarkContent (или undefined, если поле необязательно)
+// ИЗМЕНЕНИЕ: Используем Exclude для исключения 'en' из LangCode,
+// и делаем остальные свойства необязательными с помощью Partial
+type LocalizedOptionalContent = Partial<
+  Record<Exclude<LangCode, 'en'>, LandmarkContent>
+>;
+
+// Объединяем BaseLandmark и LocalizedOptionalContent
+// Это позволит индексировать Landmark по LangCode, где en обязателен, остальные опциональны.
+export type Landmark = BaseLandmark & LocalizedOptionalContent;

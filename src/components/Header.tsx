@@ -5,7 +5,7 @@ import {
   Typography,
   Box,
   FormControl,
-  Stack, // <--- Stack остаётся
+  Stack,
   InputLabel,
   Select,
   MenuItem,
@@ -17,21 +17,31 @@ import {
   DialogActions,
   Button,
   Link,
+  Drawer,
+  List,
+  Divider,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useThemeContext } from '../contexts/ThemeContexts';
 import { useTranslation } from 'react-i18next';
 import ReactCountryFlag from 'react-country-flag';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-
-interface HeaderProps {
-  logo: string;
-}
+// import Brightness4Icon from "@mui/icons-material/Brightness4"; // Закомментировано
+// import Brightness7Icon from "@mui/icons-material/Brightness7"; // Закомментировано
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
+
+import { useLanguage } from '../contexts/LanguageContext';
+
+import CategoryFilter from './CategoryFilter';
+
+interface HeaderProps {
+  logo?: string;
+  onSelectCategories: (selectedSlugs: string[]) => void;
+  selectedCategorySlugs: string[]; // Этот пропс теперь будет использоваться
+}
 
 const images = import.meta.glob('../assets/img/pictures/*', {
   eager: true,
@@ -40,20 +50,26 @@ const images = import.meta.glob('../assets/img/pictures/*', {
 
 const getImageUrl = (name: string) => images[`../assets/img/pictures/${name}`];
 
-const dialogImage = getImageUrl('dragon.png'); // <--- НОВОЕ: Получаем URL для dragon.png
+const dialogImage = getImageUrl('dragon.png');
 
-import logo from '../assets/img/logo.svg';
+import logoSvg from '../assets/img/logo.svg';
 
-const Header: React.FC<HeaderProps> = () => {
-  const { toggleColorMode, mode } = useThemeContext();
+const Header: React.FC<HeaderProps> = ({
+  onSelectCategories,
+  selectedCategorySlugs, // Деструктурируем пропс, теперь он будет использоваться
+}) => {
+  //const { toggleColorMode, mode } = useThemeContext();
   const { t } = useTranslation();
   const { i18n } = useTranslation();
   const theme = useTheme();
+  const { setLang } = useLanguage();
 
   const [openWelcomeDialog, setOpenWelcomeDialog] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const changeLanguage = (event: any) => {
-    i18n.changeLanguage(event.target.value as string);
+    const selectedLang = event.target.value as string;
+    setLang(selectedLang);
   };
 
   const handleLogoClick = () => {
@@ -64,10 +80,21 @@ const Header: React.FC<HeaderProps> = () => {
     setOpenWelcomeDialog(false);
   };
 
-  // --- ВАШИ ССЫЛКИ ЗДЕСЬ ---
-  const TELEGRAM_LINK = 'https://t.me/pashanishka'; // ЗАМЕНИТЕ
-  const WHATSAPP_LINK = 'https://wa.me/84357923401'; // ЗАМЕНИТЕ
-  const EMAIL_LINK = 'mailto:hatifnatts@gmail.com'; // ЗАМЕНИТЕ
+  const toggleDrawer =
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
+      setOpenDrawer(open);
+    };
+
+  const TELEGRAM_LINK = 'https://t.me/pashanishka';
+  const WHATSAPP_LINK = 'https://wa.me/84357923401';
+  const EMAIL_LINK = 'mailto:hatifnatts@gmail.com';
 
   return (
     <Box
@@ -77,21 +104,26 @@ const Header: React.FC<HeaderProps> = () => {
         m: 1,
         borderRadius: 2,
         flexShrink: 0,
-        position: 'sticky',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
         zIndex: 1000,
         backgroundColor: (theme) =>
           theme.palette.mode === 'dark'
             ? theme.palette.background.default
             : theme.palette.background.paper,
         boxShadow: theme.shadows[3],
+        width: 'calc(100% - 16px)',
+        boxSizing: 'border-box',
       }}
     >
-      {/* --- ИЗМЕНЕНО ЗДЕСЬ: Stack с justifyContent="space-between" --- */}
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="space-between" // <--- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: Распределяет пространство между элементами
-        spacing={1} // spacing теперь будет применяться только между элементами внутри каждой группы
+        justifyContent="space-between"
+        spacing={1}
+        sx={{ flexShrink: 0 }}
       >
         {/* --- Группа 1: Логотип и Название --- */}
         <Box
@@ -102,13 +134,12 @@ const Header: React.FC<HeaderProps> = () => {
             '&:hover': {
               opacity: 0.8,
             },
-            // Удаляем flexGrow: 1 и maxWidth: 'fit-content' отсюда,
-            // т.к. justifyContent="space-between" на родительском Stack справится с позиционированием
+            flexShrink: 0,
           }}
           onClick={handleLogoClick}
         >
           <img
-            src={logo}
+            src={logoSvg}
             alt="LOGO"
             style={{
               width: 'auto',
@@ -123,19 +154,22 @@ const Header: React.FC<HeaderProps> = () => {
             component="span"
             sx={{
               fontWeight: 600,
-              whiteSpace: 'nowrap', // Предотвращает перенос текста
+              whiteSpace: 'nowrap',
             }}
           >
             {t('logoTitle')}
           </Typography>
         </Box>
 
-        {/* --- Группа 2: Выбор языка и Переключатель темы --- */}
-        <Stack direction="row" alignItems="center" spacing={1}>
-          {' '}
-          {/* <--- НОВЫЙ ВНУТРЕННИЙ Stack для группировки */}
+        {/* --- Группа 2: Выбор языка, Кнопка фильтра (вместо переключателя темы) --- */}
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={1}
+          sx={{ flexShrink: 0 }}
+        >
           <FormControl variant="outlined" sx={{ minWidth: 80 }}>
-            <InputLabel id="language-select-label"></InputLabel>{' '}
+            <InputLabel id="language-select-label"></InputLabel>
             <Select
               labelId="language-select-label"
               id="language-select"
@@ -162,7 +196,6 @@ const Header: React.FC<HeaderProps> = () => {
                   title="US"
                 />{' '}
               </MenuItem>
-
               <MenuItem value="fr">
                 <ReactCountryFlag
                   countryCode="FR"
@@ -213,17 +246,76 @@ const Header: React.FC<HeaderProps> = () => {
               </MenuItem>
             </Select>
           </FormControl>
+          {/* Кнопка фильтра, теперь открывает Drawer */}
           <IconButton
-            sx={{ ml: 1, color: '' }} // ml: 1 здесь может быть избыточным, т.к. spacing уже есть на Stack
+            onClick={toggleDrawer(true)}
+            color="inherit"
+            sx={{ ml: 1, position: 'relative' }}
+            aria-label={t('category')} // <-- ИСПРАВЛЕНО
+          >
+            <FilterListIcon />
+            {selectedCategorySlugs.length > 0 && (
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  backgroundColor: '#ffbf00',
+                  color: theme.palette.primary.contrastText,
+                  borderRadius: '50%',
+                  width: 18,
+                  height: 18,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '0.75rem',
+                  fontWeight: 'bold',
+                  zIndex: 1,
+                }}
+              >
+                {selectedCategorySlugs.length}
+              </Box>
+            )}
+          </IconButton>
+          {/* Закомментированная кнопка переключения темы */}
+          {/*
+          <IconButton
+            sx={{ ml: 1, color: "" }}
             onClick={toggleColorMode}
             color="inherit"
           >
-            {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
+          */}
         </Stack>
       </Stack>
 
-      {/* --- Компонент Dialog (остаётся без изменений) --- */}
+      {/* --- Drawer для CategoryFilter --- */}
+      <Drawer anchor="right" open={openDrawer} onClose={toggleDrawer(false)}>
+        <Box sx={{ width: 280 }} role="presentation">
+          <List>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                p: 2, // <-- Изменено с 1 на 2 для лучшего отступа
+              }}
+            >
+              <Typography variant="h6">{t('category')}</Typography>
+              <IconButton onClick={toggleDrawer(false)}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
+            <Divider />
+            <CategoryFilter
+              onSelectCategories={onSelectCategories}
+              selectedCategorySlugs={selectedCategorySlugs}
+            />
+          </List>
+        </Box>
+      </Drawer>
+
       <Dialog
         open={openWelcomeDialog}
         onClose={handleCloseWelcomeDialog}
@@ -237,7 +329,7 @@ const Header: React.FC<HeaderProps> = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Typography variant="h6">{t('welcomeDialogTitle')}</Typography>
+            <Typography variant="h6">{t('category')}</Typography>
 
             <IconButton
               edge="end"
@@ -252,12 +344,12 @@ const Header: React.FC<HeaderProps> = () => {
         <DialogContent sx={{ textAlign: 'center' }} dividers>
           <Box
             component="img"
-            src={dialogImage} // Используем URL дракона
+            src={dialogImage}
             alt="Welcome Dragon"
             sx={{
-              display: 'block', // Чтобы можно было центрировать margin: 'auto'
-              margin: '0 auto 16px auto', // Центрируем и добавляем отступ снизу
-              maxWidth: 'auto', // Ограничиваем размер
+              display: 'block',
+              margin: '0 auto 16px auto',
+              maxWidth: 'auto',
               height: '72px',
               objectFit: 'contain',
             }}

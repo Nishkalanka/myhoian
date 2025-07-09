@@ -27,7 +27,8 @@
     "vite.config.ts",
     "db-migration/**/*.ts",
     "db-migration/**/*.mjs",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "netlify/functions/**/*.ts" // <--- ДОБАВЬТЕ ЭТУ СТРОКУ!
   ],
   "exclude": ["node_modules", "dist"]
 }

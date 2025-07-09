@@ -2,13 +2,14 @@
 
 export const fullDescriptionImageMap: Record<string, string> = {};
 
+// Этот glob УЖЕ корректно смотрит в src/assets/img/pictures/
+// где, согласно твоему скриншоту, находятся все нужные изображения.
 const modules = import.meta.glob(
   '../assets/img/pictures/*.{png,jpeg,jpg,gif,webp,svg}',
   { eager: true }
 );
 
-// Этот лог показывает, что Vite успешно нашел файлы и генерирует для них хешированные пути в default:
-// console.log('Modules found by glob in imagePaths.ts:', modules);
+// console.log('Modules found by glob in imagePaths.ts:', modules); // Раскомментируй для отладки
 
 for (const path in modules) {
   const fileName = path.split('/').pop() as string;
@@ -19,9 +20,6 @@ for (const path in modules) {
     typeof moduleContent === 'object' &&
     'default' in moduleContent
   ) {
-    // Здесь moduleContent.default БУДЕТ:
-    // - Локально (dev): "/src/assets/img/pictures/1.jpg"
-    // - На Netlify (build): "/assets/1-Dm-bDWhg.jpg"
     fullDescriptionImageMap[fileName] = (moduleContent as any).default;
   } else {
     console.warn(
@@ -31,5 +29,4 @@ for (const path in modules) {
   }
 }
 
-// Этот лог (в режиме dev) покажет пути из src/, что нормально для dev.
-// console.log('Final fullDescriptionImageMap contents:', fullDescriptionImageMap);
+// console.log('Final fullDescriptionImageMap contents:', fullDescriptionImageMap); // Раскомментируй для отладки

@@ -15,15 +15,34 @@ import {
   DialogActions,
   Snackbar,
 } from '@mui/material';
+
 import CloseIcon from '@mui/icons-material/Close';
+
 import { useTranslation } from 'react-i18next';
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import Header from './Header';
+
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+} from 'react';
+
 import { alpha } from '@mui/material/styles';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
-
-// --- Импорт компонента Preloader
+import { useLanguage } from '../contexts/LanguageContext';
 import Preloader from './Preloader';
+import LandmarkSwiper from './LandmarkSwiper';
+import { fullDescriptionImageMap } from '../utils/imagePaths';
+import { useThemeContext } from '../contexts/ThemeContexts';
+import { MapComponent } from './MapComponent';
+
+import {
+  hoiAnLandmarks,
+  type Landmark,
+  type CategorySlug,
+  type LandmarkContent,
+} from '../data';
 
 const images = import.meta.glob('../assets/img/pictures/*', {
   eager: true,
@@ -37,26 +56,16 @@ const snackbarImages = {
   error: getImageUrl('dragon.png'),
 };
 
-import { fullDescriptionImageMap } from '../utils/imagePaths';
-
-import { useThemeContext } from '../contexts/ThemeContexts';
-import { MapComponent } from './MapComponent';
-
-import { hoiAnLandmarks, type Landmark, type LandmarkContent } from '../data';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// @ts-expect-error Swiper types missing
-import 'swiper/css';
-// @ts-expect-error Swiper types missing
-import 'swiper/css/pagination';
-
 type SnackbarType = 'welcome' | 'error' | 'info' | 'success' | 'warning' | null;
 
-function HeroSection() {
+interface HeroSectionProps {
+  selectedCategorySlugs: string[];
+}
+
+function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
-
+  const { currentLang } = useLanguage();
   const { toggleColorMode, mode } = useThemeContext();
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -73,31 +82,38 @@ function HeroSection() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState<string>('');
   const [snackbarType, setSnackbarType] = useState<SnackbarType>(null);
-
   const snackbarTimerIdRef = useRef<number | null>(null);
 
   const dialogContentRef = useRef<HTMLDivElement>(null);
 
-  const [hasInteractedWithMarkers, setHasInteractedWithMarkers] =
-    useState(false);
-
-  // --- Состояние для отслеживания загрузки контента
+  const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
   const [isContentLoaded, setIsContentLoaded] = useState(false);
-  // --- Состояние для управления видимостью прелоадера с задержкой
   const [showPreloader, setShowPreloader] = useState(true);
 
-  // --- НОВОЕ СОСТОЯНИЕ: для отслеживания загруженных изображений в модальном окне
-  // Используем Set для эффективного добавления/проверки URL'ов
   const [loadedModalImages, setLoadedModalImages] = useState<Set<string>>(
     new Set()
   );
 
-  // --- useEffect для отслеживания загрузки всех изображений
+  const filteredLandmarks = useMemo(() => {
+    const landmarksToFilter = hoiAnLandmarks;
+
+    if (selectedCategorySlugs.length === 0) {
+      return landmarksToFilter;
+    }
+
+    return landmarksToFilter.filter((landmark) =>
+      // Используем some, чтобы проверить, есть ли хотя бы одна общая категория
+      (landmark.category as CategorySlug[]).some((category) =>
+        selectedCategorySlugs.includes(category)
+      )
+    );
+  }, [selectedCategorySlugs, currentLang]);
+
   useEffect(() => {
     const imagesToLoad = [
       snackbarImages.welcome,
-      ...Object.values(fullDescriptionImageMap),
-      ...hoiAnLandmarks
+      ...Object.values(fullDescriptionImageMap).filter(Boolean),
+      ...filteredLandmarks
         .map((landmark) => getImageUrl(landmark.imageUrl))
         .filter(Boolean),
     ];
@@ -118,10 +134,16 @@ function HeroSection() {
     };
 
     imagesToLoad.forEach((url) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = handleImageLoad;
-      img.onerror = handleImageLoad;
+      // Проверяем, что URL существует, прежде чем пытаться загрузить изображение
+      if (url) {
+        const img = new Image();
+        img.src = url;
+        img.onload = handleImageLoad;
+        img.onerror = handleImageLoad;
+      } else {
+        // Если URL пустой, все равно считаем его загруженным, чтобы не блокировать прелоадер
+        handleImageLoad();
+      }
     });
 
     return () => {
@@ -129,23 +151,18 @@ function HeroSection() {
         clearTimeout(snackbarTimerIdRef.current);
       }
     };
-  }, []);
+  }, [filteredLandmarks]);
 
-  // --- useEffect для управления задержкой прелоадера
   useEffect(() => {
     if (isContentLoaded) {
       const timer = setTimeout(() => {
         setShowPreloader(false);
-      }, 500);
-
+      }, 500) as unknown as number;
       return () => clearTimeout(timer);
     }
   }, [isContentLoaded]);
 
   useEffect(() => {
-    if (activeIndex !== null && !hasInteractedWithMarkers) {
-      setHasInteractedWithMarkers(true);
-    }
     if (
       swiperRef.current &&
       activeIndex !== null &&
@@ -153,9 +170,8 @@ function HeroSection() {
     ) {
       swiperRef.current.slideTo(activeIndex);
     }
-  }, [activeIndex, hasInteractedWithMarkers]);
+  }, [activeIndex]);
 
-  // --- Новый useEffect для обработки изображений внутри DialogContent
   useEffect(() => {
     if (openModal && dialogContentRef.current) {
       dialogContentRef.current.scrollTop = 0;
@@ -165,20 +181,19 @@ function HeroSection() {
       );
 
       imgElements.forEach((img) => {
-        const imageElement = img as HTMLImageElement; // Приводим к HTMLImageElement
+        const imageElement = img as HTMLImageElement;
+
         if (imageElement.complete) {
-          // Если изображение уже загружено (из кеша), сразу добавляем класс 'loaded'
           imageElement.classList.add('loaded');
         } else {
-          // Иначе, добавляем слушатели для загрузки
           const handleLoad = () => {
             imageElement.classList.add('loaded');
             imageElement.removeEventListener('load', handleLoad);
             imageElement.removeEventListener('error', handleError);
           };
+
           const handleError = () => {
-            // Также добавляем loaded на случай ошибки, чтобы не застревать в opacity: 0
-            imageElement.classList.add('loaded');
+            imageElement.classList.add('loaded'); // Класс добавляется даже при ошибке, чтобы элемент не завис в невидимом состоянии
             imageElement.removeEventListener('load', handleLoad);
             imageElement.removeEventListener('error', handleError);
           };
@@ -188,9 +203,8 @@ function HeroSection() {
         }
       });
     }
-  }, [openModal, selectedLandmarkForModal]); // Срабатывает при открытии модалки или смене контента
+  }, [openModal, selectedLandmarkForModal]);
 
-  // Этот useEffect относится к верхнему Snackbar
   useEffect(() => {
     if (!showPreloader) {
       if (snackbarTimerIdRef.current) {
@@ -200,7 +214,7 @@ function HeroSection() {
         setSnackbarMessage(t('welcomeMessage'));
         setSnackbarType('welcome');
         setOpenSnackbar(true);
-      }, 500);
+      }, 500) as unknown as number;
 
       return () => {
         if (snackbarTimerIdRef.current) {
@@ -214,14 +228,12 @@ function HeroSection() {
     if (snackbarTimerIdRef.current) {
       clearTimeout(snackbarTimerIdRef.current);
     }
-
     setSnackbarMessage(t('noMarkers'));
     setSnackbarType('info');
     setOpenSnackbar(false);
-
     snackbarTimerIdRef.current = setTimeout(() => {
       setOpenSnackbar(true);
-    }, 200);
+    }, 200) as unknown as number;
   }, [t]);
 
   const handleCloseSnackbar = useCallback(
@@ -254,15 +266,13 @@ function HeroSection() {
   const handleOpenModal = useCallback((landmark: Landmark) => {
     setSelectedLandmarkForModal(landmark);
     setOpenModal(true);
-    // При открытии модалки сбрасываем состояние загруженных изображений
-    // Это важно, чтобы анимация срабатывала каждый раз
     setLoadedModalImages(new Set());
   }, []);
 
   const handleCloseModal = useCallback(() => {
     setOpenModal(false);
     setSelectedLandmarkForModal(null);
-    setLoadedModalImages(new Set()); // Сбрасываем состояние при закрытии
+    setLoadedModalImages(new Set());
   }, []);
 
   const footerBorderColor =
@@ -270,19 +280,16 @@ function HeroSection() {
 
   const getLocalizedContent = useCallback(
     (landmark: Landmark): LandmarkContent => {
-      switch (i18n.language) {
-        case 'ru':
-          return landmark.ru;
-        case 'es':
-          return landmark.es || landmark.en;
-        case 'fr':
-          return landmark.fr || landmark.en;
-        case 'vn':
-          return landmark.vn || landmark.en;
-        case 'en':
-        default:
-          return landmark.en;
-      }
+      const lang = i18n.language as keyof Pick<
+        Landmark,
+        'ru' | 'en' | 'es' | 'fr' | 'vn'
+      >;
+
+      if (lang === 'ru' && landmark.ru) return landmark.ru;
+      if (lang === 'es' && landmark.es) return landmark.es;
+      if (lang === 'fr' && landmark.fr) return landmark.fr;
+      if (lang === 'vn' && landmark.vn) return landmark.vn;
+      return landmark.en;
     },
     [i18n.language]
   );
@@ -290,7 +297,6 @@ function HeroSection() {
   const getProcessedFullDescription = useCallback(
     (landmark: Landmark) => {
       const content = getLocalizedContent(landmark);
-
       const descriptionHtml = content.fullDescription;
       const internalImageNames = content.internalImageNames;
 
@@ -301,26 +307,31 @@ function HeroSection() {
       let processedHtml = descriptionHtml;
 
       if (internalImageNames && internalImageNames.length > 0) {
-        internalImageNames.forEach((imageName) => {
-          const imageUrl = fullDescriptionImageMap[imageName];
-
-          if (imageUrl) {
-            const placeholderInHtml = `IMAGE_PLACEHOLDER_${imageName}`;
-            const regex = new RegExp(`src="${placeholderInHtml}"`, 'g');
-            processedHtml = processedHtml.replace(regex, `src="${imageUrl}"`);
+        internalImageNames.forEach((imageName: string) => {
+          const realImageUrl = fullDescriptionImageMap[imageName];
+          if (realImageUrl) {
+            // Теперь полагаемся на то, что src="" в HTML уже содержит имя файла (например, "26.jpg")
+            processedHtml = processedHtml.replace(
+              new RegExp(`src="${imageName}"`, 'g'),
+              `src="${realImageUrl}"`
+            );
           } else {
-            // console.warn(`Warning: Image ${imageName} not found in fullDescriptionImageMap.`);
+            console.warn(
+              `Warning: Image ${imageName} specified in internalImageNames but not found in fullDescriptionImageMap.`,
+              `Attempted to replace src="${imageName}"`
+            );
           }
         });
+      } else {
+        console.warn(
+          `Warning: internalImageNames is empty or missing for landmark ${landmark.id}. Images in fullDescription might not load correctly.`
+        );
       }
 
-      // Оборачиваем <img> теги в <div class="landmark__img-wrapper">
-      // и добавляем класс 'image-fade-in' для CSS-анимации
       processedHtml = processedHtml.replace(
         /<img([^>]+?)\/?>/g,
-        '<div class="landmark__img-wrapper"><img class="image-fade-in"$1/></div>' // <-- ИЗМЕНЕНО ЗДЕСЬ: добавили класс
+        '<div class="landmark__img-wrapper"><img class="image-fade-in"$1/></div>'
       );
-
       return processedHtml;
     },
     [getLocalizedContent]
@@ -338,8 +349,8 @@ function HeroSection() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
+          // Mapbox ожидает [долгота, широта]
           centerMapFn([longitude, latitude], 15);
-
           setOpenSnackbar(false);
           if (snackbarTimerIdRef.current) {
             clearTimeout(snackbarTimerIdRef.current);
@@ -374,7 +385,31 @@ function HeroSection() {
     }
   }, [centerMapFn, t]);
 
-  const handleMarkerClick = useCallback(
+  const handleMapMarkerClick = useCallback(
+    (index: number, event: React.MouseEvent) => {
+      setOpenSnackbar(false);
+      setSnackbarMessage('');
+      setSnackbarType(null);
+      if (snackbarTimerIdRef.current) {
+        clearTimeout(snackbarTimerIdRef.current);
+        snackbarTimerIdRef.current = null;
+      }
+      setHasUserInteracted(true);
+      const landmark = filteredLandmarks[index];
+      if (!landmark) {
+        console.warn('Clicked marker with invalid index:', index);
+        return;
+      }
+      setActiveIndex(index);
+      if (centerMapFn) {
+        // ИСПРАВЛЕНО: Меняем местами, так как данные [широта, долгота]
+        centerMapFn([landmark.coordinates[1], landmark.coordinates[0]], 18);
+      }
+    },
+    [centerMapFn, filteredLandmarks]
+  );
+
+  const handleSlideOrButtonDetailClick = useCallback(
     (index: number, event: React.MouseEvent) => {
       setActiveIndex(index);
       setOpenSnackbar(false);
@@ -384,19 +419,28 @@ function HeroSection() {
         clearTimeout(snackbarTimerIdRef.current);
         snackbarTimerIdRef.current = null;
       }
-      setHasInteractedWithMarkers(true);
+      setHasUserInteracted(true);
+      const landmark = filteredLandmarks[index];
+      if (!landmark) {
+        console.warn('Clicked slide/button with invalid index:', index);
+        return;
+      }
+      handleOpenModal(landmark);
     },
-    []
+    [handleOpenModal, filteredLandmarks]
   );
 
   useEffect(() => {
     if (activeIndex !== null && centerMapFn) {
-      const landmark = hoiAnLandmarks[activeIndex];
+      const landmark = filteredLandmarks[activeIndex];
       if (landmark) {
+        // ИСПРАВЛЕНО: Меняем местами, так как данные [широта, долгота]
         centerMapFn([landmark.coordinates[1], landmark.coordinates[0]], 18);
+      } else {
+        setActiveIndex(null);
       }
     }
-  }, [activeIndex, centerMapFn]);
+  }, [activeIndex, centerMapFn, filteredLandmarks]);
 
   return (
     <Box
@@ -448,7 +492,6 @@ function HeroSection() {
               overflow: 'hidden',
             }}
           >
-            <Header logo={t('logoTitle')} />
             <Box
               sx={{
                 flexGrow: 1,
@@ -459,12 +502,13 @@ function HeroSection() {
               }}
             >
               <MapComponent
-                landmarks={hoiAnLandmarks}
+                landmarks={filteredLandmarks}
                 activeIndex={activeIndex}
-                onMarkerClick={handleMarkerClick}
+                onMapMarkerClick={handleMapMarkerClick}
                 onMapClick={handleMapClick}
                 setCenterMapFn={setCenterMapFn}
               />
+
               <IconButton
                 onClick={centerMapOnUserLocation}
                 sx={{
@@ -486,219 +530,25 @@ function HeroSection() {
               </IconButton>
             </Box>
 
-            <Box
-              sx={{
-                width: '100%',
-                height: { xs: 'auto', md: 'auto' },
-                flexShrink: 0,
-                p: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'fixed',
-                bottom: 0,
-                zIndex: 1000,
+            <LandmarkSwiper
+              filteredLandmarks={filteredLandmarks}
+              activeIndex={activeIndex}
+              hasInteractedWithMarkers={hasInteractedWithMarkers}
+              isContentLoaded={isContentLoaded}
+              snackbarImages={snackbarImages}
+              getImageUrl={getImageUrl}
+              getLocalizedContent={getLocalizedContent}
+              onSlideChange={(swiper) => {
+                if (swiper.activeIndex !== activeIndex) {
+                  setActiveIndex(swiper.activeIndex);
+                }
+                if (!hasInteractedWithMarkers) {
+                  setHasUserInteracted(true);
+                }
               }}
-            >
-              <Swiper
-                spaceBetween={20}
-                breakpoints={{
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 18,
-                  },
-                  600: {
-                    slidesPerView: 2,
-                    spaceBetween: 18,
-                  },
-                  900: {
-                    slidesPerView: 3,
-                    spaceBetween: 18,
-                  },
-                  1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 18,
-                  },
-                }}
-                centeredSlides={true}
-                pagination={{ clickable: true }}
-                style={{ width: '100%', height: '100%' }}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
-                initialSlide={activeIndex !== null ? activeIndex : 0}
-                onSlideChange={(swiper) => {
-                  if (activeIndex !== swiper.activeIndex) {
-                    setActiveIndex(swiper.activeIndex);
-                  }
-                  if (!hasInteractedWithMarkers) {
-                    setHasInteractedWithMarkers(true);
-                  }
-                }}
-              >
-                {/* Приветственный слайд */}
-                {!hasInteractedWithMarkers && (
-                  <SwiperSlide
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      padding: '8px',
-                      boxSizing: 'border-box',
-                      cursor: 'pointer',
-                      backgroundColor: theme.palette.background.paper,
-                      borderRadius: '8px',
-                      textAlign: 'center',
-                      height: '184px',
-                      opacity: isContentLoaded ? 1 : 0,
-                      transform: isContentLoaded
-                        ? 'translateY(0)'
-                        : 'translateY(100px)',
-                      transition:
-                        'opacity 1s ease-out, transform 1s cubic-bezier(0.25, 1, 0.5, 1)',
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%',
-                        height: '100%',
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={snackbarImages.welcome}
-                        alt="Welcome"
-                        sx={{
-                          width: { xs: 72 },
-                          height: { xs: 'auto' },
-                          objectFit: 'contain',
-                          mb: 1,
-                          mt: 1,
-                        }}
-                      />
-                      <Typography variant="h6" component="h3" sx={{ mb: 0 }}>
-                        {t('swiperWelcomeTitle')}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{ mb: 1 }}
-                      >
-                        {t('swiperWelcomeSubtitle')}
-                      </Typography>
-                    </Box>
-                  </SwiperSlide>
-                )}
-
-                {/* Слайды достопримечательностей */}
-                {hoiAnLandmarks.map((landmark: Landmark, index: number) => {
-                  const content = getLocalizedContent(landmark);
-                  return (
-                    <SwiperSlide
-                      key={landmark.id}
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'flex-start',
-                        padding: '8px',
-                        boxSizing: 'border-box',
-                        cursor: 'pointer',
-                        backgroundColor:
-                          activeIndex === index
-                            ? theme.palette.background.paper
-                            : alpha(theme.palette.background.paper, 0.9),
-                        borderRadius: '8px',
-                      }}
-                      onClick={() => {
-                        setActiveIndex(index); // Устанавливаем активный слайд
-                        handleOpenModal(landmark); // Открываем модальное окно с деталями этой достопримечательности
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          gap: 1,
-                          flexDirection: { xs: 'row', md: 'row' },
-                        }}
-                      >
-                        {landmark.imageUrl && (
-                          <Box
-                            sx={{
-                              flexShrink: 0,
-                              width: { xs: '96px', md: '96px' },
-                              height: '100%',
-                              borderRadius: '8px',
-                              overflow: 'hidden',
-                              display: 'flex',
-                              alignItems: 'center',
-                              aspectRatio: '4/7',
-                              justifyContent: 'center',
-                            }}
-                          >
-                            <Box
-                              component="img"
-                              src={getImageUrl(landmark.imageUrl)}
-                              alt={content.title}
-                              sx={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                              }}
-                            />
-                          </Box>
-                        )}
-                        <Box
-                          sx={{
-                            flexGrow: 1,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'flex-start',
-                            minWidth: 0,
-                          }}
-                        >
-                          <Typography
-                            variant="body1"
-                            component="h3"
-                            sx={{
-                              mb: 1,
-                              mt: 0.5,
-                              textAlign: 'left',
-                              width: '100%',
-                            }}
-                          >
-                            {content.title}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            sx={{ mb: 2 }}
-                          >
-                            {content.description}
-                          </Typography>
-
-                          <Button
-                            variant="outlined"
-                            size="small"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleOpenModal(landmark);
-                            }}
-                            sx={{ mt: 'auto' }}
-                          >
-                            {t('moreDetails')}
-                          </Button>
-                        </Box>
-                      </Box>
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
-            </Box>
+              onSlideOrButtonDetailClick={handleSlideOrButtonDetailClick}
+              swiperRef={swiperRef}
+            />
           </Grid>
         </Grid>
       </Container>
@@ -727,6 +577,7 @@ function HeroSection() {
                 ? getLocalizedContent(selectedLandmarkForModal).title
                 : t('details')}
             </Typography>
+
             <IconButton
               edge="end"
               color="inherit"
@@ -746,7 +597,6 @@ function HeroSection() {
                   component="img"
                   src={getImageUrl(selectedLandmarkForModal.imageUrl)}
                   alt={getLocalizedContent(selectedLandmarkForModal).title}
-                  // --- ИЗМЕНЕНИЯ ЗДЕСЬ: Основная картинка модалки
                   className={`image-fade-in ${loadedModalImages.has(getImageUrl(selectedLandmarkForModal.imageUrl)) ? 'loaded' : ''}`}
                   onLoad={() =>
                     setLoadedModalImages((prev) =>
@@ -770,6 +620,7 @@ function HeroSection() {
                   }}
                 />
               )}
+
               {getLocalizedContent(selectedLandmarkForModal).fullDescription ? (
                 <Box
                   className="landmark-details-content"
@@ -788,6 +639,7 @@ function HeroSection() {
             <Typography>{t('noDetailsAvailable')}</Typography>
           )}
         </DialogContent>
+
         <DialogActions>
           <Button onClick={handleCloseModal}>{t('close')}</Button>
         </DialogActions>
