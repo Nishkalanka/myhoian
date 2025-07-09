@@ -299,7 +299,7 @@ const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                p: 2, // <-- Изменено с 1 на 2 для лучшего отступа
+                p: 1,
               }}
             >
               <Typography variant="h6">{t('category')}</Typography>

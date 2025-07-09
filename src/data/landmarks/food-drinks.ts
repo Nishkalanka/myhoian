@@ -1,367 +1,273 @@
 import type { Landmark } from './landmarkTypes';
 
 export const foodDrinksLandmarks: Landmark[] = [
-  //japanese-covered-bridge
+  //hill-station
   {
-    id: 'sua-vegan-restaurant', // <-- ID теперь строковый
-    coordinates: [15.883614685303895, 108.32004887950063], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    id: 'hill-station', // <-- ID теперь строковый
+    coordinates: [15.877801450043398, 108.33391777335922], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['food-drinks'],
-    imageUrl: '1.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '53.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
-      // <-- Весь английский контент теперь внутри объекта 'en'
-      title: 'Rainbow Coffee & Restaurant Hoi An',
+      title: 'The Hill Station Deli & Boutique',
       description:
-        "Hoi An's famous symbol, built in the 16th century by the Japanese community.",
+        'Specializing in local produce and fresh ingredients, offering a delicious menu with a focus on quality.',
       fullDescription: `
-<p>If you've been to Hoi An and haven't taken a picture on the Japanese Covered Bridge (Chùa Cầu), then you haven't really been to Hoi An. Seriously, this bridge is so delightful it even made it onto the city's emblem! And for good reason, it has a very unusual history...</p>
+<p>Located in the heart of Hoi An’s Ancient Town, The Hill Station Deli & Boutique has been a culinary landmark since 2011. Our journey began with a simple idea: to bring the freshness of local produce and the richness of global culinary traditions to our guests. We started small, with a cozy deli serving artisanal sandwiches, salads, and homemade pastries.</p>
 
-<img src="26.jpg" alt="Japanese Bridge Detail"/>
+<p>Over the years, we've grown, but our core philosophy remains unchanged: quality ingredients, exceptional flavors, and a welcoming atmosphere. We believe in sourcing the freshest local produce, supporting local farmers and suppliers whenever possible. This commitment to freshness is evident in every dish we serve, from our vibrant salads to our hearty mains.</p>
 
-<p>This bridge is a real superstar, staring back at you from the 20,000 Vietnamese Dong (VND) banknote! Don't be surprised if you see crowds of tourists seriously holding this banknote next to the bridge, trying to get "that shot." While it may not be the most original shot in the world, it's impossible to resist such a selfie! After all, it's not every day you hold money in your hands that depicts what's behind you, right?</p>
+<h6>Our Culinary Philosophy</h6>
+<p>At The Hill Station, we are passionate about food. Our menu is a reflection of our dedication to creating unique and memorable dining experiences. We blend traditional Vietnamese flavors with international culinary techniques, offering a diverse selection that caters to various tastes. Whether you're craving a light bite or a satisfying meal, our kitchen is always bustling with creativity.</p>
 
-<h6>The Japanese Left, But The Bridge Remained</h6>
-<p>Imagine the 17th century: Hoi An is an international trade hub in Southeast Asia, attracting merchants from all corners of the globe. Japanese and Chinese traders were so active here that they decided: "Let's build a bridge to make it easier to visit each other!" And so, in 1593, our hero came into being.</p>
+<p>Our deli counter is a highlight, featuring an array of freshly baked goods, charcuterie, and cheeses. It’s the perfect spot to grab a quick and delicious lunch, or to stock up on gourmet provisions for a picnic by the river. Our boutique section offers a curated selection of unique gifts, local handicrafts, and specialty food products, making it a great place to find a souvenir or a treat for yourself.</p>
 
-<img src="2.jpg" alt="Japanese Bridge Detail"/>
+<h6>A Community Hub</h6>
+<p>More than just a restaurant, The Hill Station is a place where locals and travelers connect. We’ve become a beloved gathering spot, known for our relaxed ambiance and friendly service. We often host special events, from wine tastings to cooking classes, inviting our guests to experience the rich culture of Hoi An through its food.</p>
 
-<p>Few people know this, but the Japanese actively lived in Hoi An until 1663, and then... Boom! The Japanese government suddenly declared: "That's it, stop trading! We're going into lockdown!" (Well, almost). So Japan went into isolation, and its magnificent legacy – this bridge – remained standing, like a greeting from the past.</p>
-
-<h6>Bridge, Temple, and a Little Mystery</h6>
-
-<img src="25.jpg" alt="Japanese Bridge Detail"/>
-<small>Statue of the Taoist God of Weather, Tran Bo Bac De</small>
-
-<p>You walk across the bridge, and there's a... temple? Yes, right in the middle of the bridge, a small altar is nestled. It's dedicated to the Taoist Jade Emperor Yu-di. It's funny because Taoism wasn't widely practiced in Japan, so it's likely the temple was added by the Vietnamese later. It's a kind of cultural bridge that connects not only shores but also beliefs!</p>
-
-<img src="24.jpg" alt="Japanese Bridge Detail"/>
-
-<p>And on both sides of the bridge, you're greeted by stone statues of dogs and monkeys. Don't ask why them specifically – it's one of those Hoi An mysteries that makes you scratch your head. Maybe it's because of the years of construction (started in the Year of the Dog, finished in the Year of the Monkey)? Or, as another version suggests, many Japanese emperors were born in these years? In any case, they're here for a reason, and locals still adorn them and make offerings. Who knows, maybe they really are the guardians of the bridge, and whether you'll be lucky today depends on them!</p>
-
-<h6>Fighting the Underwater Catfish</h6>
-<p>Here's where it gets wild (in a good way)! The bridge wasn't built just for fun; it had a very important mission – to pin down a gigantic mythical catfish named Onamazu (大鯰)!</p>
-
-<img src="3.jpg" alt="Onamazu"/>
-<small>Onamazu (Japanese: 大鯰 — "giant catfish")</small>
-
-<p>The essence of the legend: In Japanese folklore, there's this enormous catfish that causes earthquakes when it wiggles its tail. Its head, they say, is under India, its tail under Japan, but its BACK PASSES RIGHT UNDER VIETNAM! And the bridge builders, apparently, were very clever engineers, because they built the bridge specifically to "pin down" the back of this monster, preventing it from thrashing. Thus, the Japanese Bridge became a kind of anti-seismic press for all of Central Vietnam.</p>
-<img src="20.jpg" alt="Onamazu"/>
-
-<p>We don't know how much Onamazu appreciated this "massage" therapy, but the bridge, built on strong wooden supports, truly has stood for hundreds of years! Although, to be honest, not without humanity's help. The bridge has undergone eight (!) major renovations (even in 2022 it was literally disassembled for "surgery"!), which probably also helped a bit to keep it from falling apart. But the catfish myth still sounds cooler, don't you agree?</p>
-
-<h6>The Prince, the Carver, and Three Hieroglyphs</h6>
-
-<p>In 1719, Prince Nguyễn Phúc Chu visited Hoi An. He was an important figure who ruled Southern Vietnam, almost like a king, from 1691 to 1725. And so, they say, he didn't just admire the bridge, but personally carved three Chinese characters above the temple door! Can you imagine? Instead of sending servants, the prince decided to do the carving himself. He must have felt inspired!</p>
-
-<img src="23.jpg" alt="The Prince, the Carver, and Three Hieroglyphs"/>
-
-<p>These symbols translate very poetically: "bridge for welcoming guests from afar." Or, in Vietnamese style, "Lai Viet Kieu." It's as if the bridge itself is saying: "Hello, traveler! Come in, make yourself at home, you belong here!" Such an ancient "welcome sign," carved by the hand of the ruler himself.</p>
-
-<h6>The French Road and Why the Bridge is Pedestrian Only</h6>
-
-<img src="21.jpg" alt="Japanese Bridge Detail"/>
-
-<p>Times change, and even the Japanese Bridge had to endure its "fashion experiments." During colonial rule, the French decided: "Hey, why shouldn't motorcycles drive here?" and leveled the road across the bridge. Sounds like a great idea for traffic jams, right? Fortunately, this "innovation" was later canceled, and the bridge once again became pedestrian-only. And thank goodness, because what kind of "symbol" is it if bikes are speeding across it?</p>
-
-<h6>A Small Bridge with a Giant Heart</h6>
-<p>So, when you walk across the Japanese Bridge, know this: you're not just walking on planks, you're treading on living history, full of legends, cultural intricacies, and even mythical catfish. It doesn't just connect two shores – it connects eras, peoples, and perhaps even calms earthquakes. That's our Japanese Covered Bridge – small, but very proud and mysterious.</p>
-
-<img src="22.jpg" alt="Japanese Bridge Detail"/>
+<p>We are constantly innovating, exploring new recipes, and experimenting with flavors. Our team of talented chefs and passionate staff are dedicated to ensuring every visit is a delightful one. We invite you to join us at The Hill Station Deli & Boutique, where good food, good company, and good times are always on the menu.</p>
       `,
       internalImageNames: [
-        '2.jpg',
-        '3.jpg',
-        '22.jpg',
-        '20.jpg',
-        '21.jpg',
-        '23.jpg',
-        '24.jpg',
-        '25.jpg',
-        '26.jpg',
+        'hill_station_interior.jpg',
+        'hill_station_food.jpg',
+        'hill_station_exterior.jpg',
       ],
     },
     es: {
-      title: 'Puente Cubierto Japonés',
+      title: 'The Hill Station Deli & Boutique',
       description:
-        'Símbolo famoso de Hoi An, construido en el siglo XVI por la comunidad japonesa.',
+        'Especializado en productos locales e ingredientes frescos, ofreciendo un delicioso menú con énfasis en la calidad.',
       fullDescription: `
-<p>Si has estado en Hoi An y no te has tomado una foto en el Puente Cubierto Japonés (Chùa Cầu), entonces realmente no has estado en Hoi An. En serio, este puente es tan encantador que incluso llegó al emblema de la ciudad. Y con razón, ¡tiene una historia muy inusual!</p>
+<p>Ubicado en el corazón del Casco Antiguo de Hoi An, The Hill Station Deli & Boutique ha sido un punto de referencia culinario desde 2011. Nuestro viaje comenzó con una idea simple: llevar la frescura de los productos locales y la riqueza de las tradiciones culinarias globales a nuestros huéspedes. Comenzamos pequeños, con una acogedora charcutería que servía sándwiches artesanales, ensaladas y repostería casera.</p>
 
-<img src="26.jpg" alt="Detalle del Puente Japonés"/>
+<p>A lo largo de los años, hemos crecido, pero nuestra filosofía principal sigue siendo la misma: ingredientes de calidad, sabores excepcionales y un ambiente acogedor. Creemos en la obtención de los productos locales más frescos, apoyando a los agricultores y proveedores locales siempre que sea posible. Este compromiso con la frescura es evidente en cada plato que servimos, desde nuestras vibrantes ensaladas hasta nuestros abundantes platos principales.</p>
 
-<p>¡Este puente es una verdadera superestrella, mirándote fijamente desde el billete de 20.000 Dong vietnamitas (VND)! No te sorprendas si ves multitudes de turistas sosteniendo seriamente este billete junto al puente, tratando de conseguir "esa foto". Aunque no sea la foto más original del mundo, ¡es imposible resistirse a un selfie así! Después de todo, no todos los días tienes dinero en tus manos que representa lo que está detrás de ti, ¿verdad?</p>
+<h6>Nuestra Filosofía Culinaria</h6>
+<p>En The Hill Station, nos apasiona la comida. Nuestro menú es un reflejo de nuestra dedicación a crear experiencias gastronómicas únicas y memorables. Fusionamos sabores vietnamitas tradicionales con técnicas culinarias internacionales, ofreciendo una selección diversa que satisface una amplia gama de gustos. Ya sea que busques un bocado ligero o una comida sustanciosa, nuestra cocina siempre está llena de creatividad.</p>
 
-<h6>Los japoneses se fueron, pero el puente permaneció</h6>
-<p>Imagina el siglo XVII: Hoi An es un centro de comercio internacional en el sudeste asiático, atrayendo a mercaderes de todos los rincones del mundo. Los comerciantes japoneses y chinos eran tan activos aquí que decidieron: "¡Construyamos un puente para que sea más fácil visitarnos!" Y así, en 1593, nació nuestro héroe.</p>
+<p>Nuestro mostrador de charcutería es un punto destacado, con una variedad de productos horneados frescos, embutidos y quesos. Es el lugar perfecto para un almuerzo rápido y delicioso, o para abastecerse de provisiones gourmet para un picnic junto al río. Nuestra sección de boutique ofrece una cuidada selección de regalos únicos, artesanías locales y productos alimenticios especiales, lo que lo convierte en un excelente lugar para encontrar un recuerdo o un capricho para ti.</p>
 
-<img src="2.jpg" alt="Detalle del Puente Japonés"/>
+<h6>Un Centro Comunitario</h6>
+<p>Más que un simple restaurante, The Hill Station es un lugar donde se conectan lugareños y viajeros. Nos hemos convertido en un lugar de reunión muy querido, conocido por nuestro ambiente relajado y nuestro servicio amable. A menudo organizamos eventos especiales, desde catas de vino hasta clases de cocina, invitando a nuestros huéspedes a experimentar la rica cultura de Hoi An a través de su comida.</p>
 
-<p>Poca gente sabe esto, pero los japoneses vivieron activamente en Hoi An hasta 1663, y luego... ¡Boom! El gobierno japonés declaró de repente: "¡Ya está, parad de comerciar! ¡Nos vamos a un cierre!" (Bueno, casi). Así que Japón entró en aislamiento, y su magnífico legado –este puente– permaneció en pie, como un saludo del pasado.</p>
-
-<h6>Puente, Templo y un pequeño misterio</h6>
-
-<img src="25.jpg" alt="Detalle del Puente Japonés"/>
-<small>Estatua del Dios Taoísta del Clima, Tran Bo Bac De</small>
-
-<p>Caminas por el puente, ¿y hay un... templo? Sí, justo en el medio del puente, se encuentra un pequeño altar. Está dedicado al Emperador de Jade Taoísta Yu-di. Es curioso porque el taoísmo no era muy practicado en Japón, así que es probable que el templo fuera añadido por los vietnamitas más tarde. ¡Es una especie de puente cultural que conecta no solo orillas sino también creencias!</p>
-
-<img src="24.jpg" alt="Detalle del Puente Japonés"/>
-
-<p>Y a ambos lados del puente, te saludan estatuas de piedra de perros y monos. No preguntes por qué ellos específicamente – es uno de esos misterios de Hoi An que te hacen rascarte la cabeza. ¿Quizás sea por los años de construcción (empezó en el Año del Perro, terminó en el Año del Mono)? O, como sugiere otra versión, ¿muchos emperadores japoneses nacieron en estos años? En cualquier caso, están aquí por una razón, y los lugareños todavía los adornan y hacen ofrendas. Quién sabe, ¡quizás realmente sean los guardianes del puente, y tu suerte hoy dependa de ellos!</p>
-
-<h6>Luchando contra el bagre submarino</h6>
-<p>¡Aquí es donde la cosa se pone salvaje (en el buen sentido)! El puente no fue construido solo por diversión; tenía una misión muy importante: ¡sujetar a un gigantesco bagre mítico llamado Onamazu (大鯰)!</p>
-
-<img src="3.jpg" alt="Onamazu"/>
-<small>Onamazu (Japonés: 大鯰 — "bagre gigante")</small>
-
-<p>La esencia de la leyenda: En el folclore japonés, existe este enorme bagre que causa terremotos cuando menea su cola. Su cabeza, dicen, está bajo la India, su cola bajo Japón, ¡pero su ESPALDA PASA JUSTO BAJO VIETNAM! Y los constructores del puente, al parecer, eran ingenieros muy inteligentes, porque construyeron el puente específicamente para "sujetar" la espalda de este monstruo, impidiendo que se agitara. Así, el Puente Japonés se convirtió en una especie de prensa antisísmica para todo el centro de Vietnam.</p>
-<img src="20.jpg" alt="Onamazu"/>
-
-<p>No sabemos cuánto apreció Onamazu esta terapia de "masaje", pero el puente, construido sobre fuertes soportes de madera, ¡realmente ha resistido durante cientos de años! Aunque, para ser honesto, no sin la ayuda de la humanidad. El puente ha sufrido ocho (¡!) renovaciones importantes (¡incluso en 2022 fue literalmente desensamblado para una "cirugía"!), lo que probablemente también ayudó un poco a que no se desmoronara. Pero el mito del bagre sigue sonando más genial, ¿no crees?</p>
-
-<h6>El Príncipe, el Tallador y Tres Jeroglíficos</h6>
-
-<p>En 1719, el Príncipe Nguyễn Phúc Chu visitó Hoi An. Fue una figura importante que gobernó el sur de Vietnam, casi como un rey, de 1691 a 1725. Y así, dicen, no solo admiró el puente, ¡sino que personalmente talló tres caracteres chinos sobre la puerta del templo! ¿Te imaginas? En lugar de enviar sirvientes, el príncipe decidió hacer el tallado él mismo. ¡Debe haberse sentido inspirado!</p>
-
-<img src="23.jpg" alt="El Príncipe, el Tallador y Tres Jeroglíficos"/>
-
-<p>Estos símbolos se traducen muy poéticamente: "puente para dar la bienvenida a los huéspedes de lejos". O, al estilo vietnamita, "Lai Viet Kieu". ¡Es como si el propio puente dijera: "¡Hola, viajero! Adelante, siéntete como en casa, aquí perteneces!" Una antigua "señal de bienvenida", tallada por la mano del propio gobernante.</p>
-
-<h6>El Camino Francés y Por Qué el Puente es Solo Peatonal</h6>
-
-<img src="21.jpg" alt="Detalle del Puente Japonés"/>
-
-<p>Los tiempos cambian, e incluso el Puente Japonés tuvo que soportar sus "experimentos de moda". Durante el dominio colonial, los franceses decidieron: "Oye, ¿por qué no deberían conducir motos aquí?" y nivelaron la carretera a través del puente. Suena a una gran idea para los atascos, ¿verdad? Afortunadamente, esta "innovación" fue cancelada más tarde, y el puente volvió a ser solo para peatones. Y gracias a Dios, porque ¿qué tipo de "símbolo" es si las motos lo cruzan a toda velocidad?</p>
-
-<h6>Un Pequeño Puente con un Gran Corazón</h6>
-<p>Así que, cuando camines por el Puente Japonés, sabrás esto: no solo estás caminando sobre tablones, estás pisando historia viva, llena de leyendas, complejidades culturales e incluso bagres míticos. No solo conecta dos orillas, conecta épocas, pueblos y quizás incluso calma los terremotos. Ese es nuestro Puente Cubierto Japonés: pequeño, pero muy orgulloso y misterioso.</p>
-
-<img src="22.jpg" alt="Detalle del Puente Japonés"/>
+<p>Estamos en constante innovación, explorando nuevas recetas y experimentando con sabores. Nuestro equipo de talentosos chefs y personal apasionado se dedica a garantizar que cada visita sea una delicia. Te invitamos a unirte a nosotros en The Hill Station Deli & Boutique, donde la buena comida, la buena compañía y los buenos momentos siempre están en el menú.</p>
       `,
       internalImageNames: [
-        '2.jpg',
-        '3.jpg',
-        '22.jpg',
-        '20.jpg',
-        '21.jpg',
-        '23.jpg',
-        '24.jpg',
-        '25.jpg',
-        '26.jpg',
+        'hill_station_interior.jpg',
+        'hill_station_food.jpg',
+        'hill_station_exterior.jpg',
       ],
     },
     fr: {
-      title: 'Pont couvert japonais',
+      title: 'The Hill Station Deli & Boutique',
       description:
-        'Célèbre symbole de Hoi An, construit au 16ème siècle par la communauté japonaise.',
+        'Spécialisé dans les produits locaux et les ingrédients frais, offrant un menu délicieux axé sur la qualité.',
       fullDescription: `
-<p>Si vous êtes allé à Hoi An et que vous n'avez pas pris de photo sur le Pont couvert japonais (Chùa Cầu), alors vous n'êtes pas vraiment allé à Hoi An. Sérieusement, ce pont est si charmant qu'il a même figuré sur l'emblème de la ville ! Et pour une bonne raison, il a une histoire très inhabituelle...</p>
+<p>Situé au cœur de l'Ancienne Ville de Hoi An, The Hill Station Deli & Boutique est un point de repère culinaire depuis 2011. Notre aventure a commencé par une idée simple : apporter la fraîcheur des produits locaux et la richesse des traditions culinaires mondiales à nos hôtes. Nous avons commencé petit, avec un charmant deli servant des sandwichs artisanaux, des salades et des pâtisseries faites maison.</p>
 
-<img src="26.jpg" alt="Détail du pont japonais"/>
+<p>Au fil des ans, nous avons grandi, mais notre philosophie fondamentale reste inchangée : des ingrédients de qualité, des saveurs exceptionnelles et une atmosphère accueillante. Nous nous engageons à nous procurer les produits locaux les plus frais, en soutenant les agriculteurs et les fournisseurs locaux dans la mesure du possible. Cet engagement envers la fraîcheur est évident dans chaque plat que nous servons, de nos salades vibrantes à nos plats principaux copieux.</p>
 
-<p>Ce pont est une vraie superstar, il vous regarde depuis le billet de 20 000 Dongs vietnamiens (VND) ! Ne soyez pas surpris si vous voyez des foules de touristes tenir sérieusement ce billet à côté du pont, essayant d'obtenir "ce cliché". Bien que ce ne soit pas le cliché le plus original du monde, il est impossible de résister à un tel selfie ! Après tout, ce n'est pas tous les jours que vous tenez de l'argent dans vos mains qui représente ce qui est derrière vous, n'est-ce pas ?</p>
+<h6>Notre Philosophie Culinaire</h6>
+<p>Chez The Hill Station, nous sommes passionnés par la nourriture. Notre menu est le reflet de notre dévouement à créer des expériences culinaires uniques et mémorables. Nous mêlons les saveurs vietnamiennes traditionnelles aux techniques culinaires internationales, offrant une sélection diversifiée qui répond à tous les goûts. Que vous ayez envie d'une collation légère ou d'un repas copieux, notre cuisine est toujours en ébullition de créativité.</p>
 
-<h6>Les Japonais sont partis, mais le pont est resté</h6>
-<p>Imaginez le 17ème siècle : Hoi An est un centre commercial international en Asie du Sud-Est, attirant des marchands des quatre coins du globe. Les commerçants japonais et chinois étaient si actifs ici qu'ils ont décidé : "Construisons un pont pour faciliter nos visites mutuelles !" Et c'est ainsi qu'en 1593, notre héros a vu le jour.</p>
+<p>Notre comptoir de charcuterie est un atout majeur, proposant une gamme de produits de boulangerie fraîchement préparés, de charcuteries et de fromages. C'est l'endroit idéal pour prendre un déjeuner rapide et délicieux, ou pour faire le plein de provisions gourmandes pour un pique-nique au bord de la rivière. Notre section boutique offre une sélection minutieuse de cadeaux uniques, d'artisanat local et de produits alimentaires spécialisés, ce qui en fait un excellent endroit pour trouver un souvenir ou une gâterie pour vous-même.</p>
 
-<img src="2.jpg" alt="Détail du pont japonais"/>
+<h6>Un Centre Communautaire</h6>
+<p>Plus qu'un simple restaurant, The Hill Station est un lieu de rencontre pour les habitants et les voyageurs. Nous sommes devenus un lieu de rassemblement apprécié, réputé pour son ambiance détendue et son service amical. Nous organisons souvent des événements spéciaux, des dégustations de vin aux cours de cuisine, invitant nos hôtes à découvrir la riche culture de Hoi An à travers sa cuisine.</p>
 
-<p>Peu de gens le savent, mais les Japonais ont vécu activement à Hoi An jusqu'en 1663, et puis... Boum ! Le gouvernement japonais a soudainement déclaré : "Ça suffit, arrêtez de commercer ! Nous entrons en confinement !" (Enfin, presque). Le Japon s'est donc isolé, et son magnifique héritage – ce pont – est resté debout, comme un salut du passé.</p>
-
-<h6>Pont, Temple et un petit mystère</h6>
-
-<img src="25.jpg" alt="Détail du pont japonais"/>
-<small>Statue du dieu taoïste de la Météo, Tran Bo Bac De</small>
-
-<p>Vous traversez le pont, et il y a un... temple ? Oui, juste au milieu du pont, un petit autel est niché. Il est dédié à l'Empereur de Jade taoïste Yu-di. C'est drôle car le taoïsme n'était pas largement pratiqué au Japon, il est donc probable que le temple ait été ajouté par les Vietnamiens plus tard. C'est une sorte de pont culturel qui relie non seulement les rives, mais aussi les croyances !</p>
-
-<img src="24.jpg" alt="Détail du pont japonais"/>
-
-<p>Et des deux côtés du pont, vous êtes accueillis par des statues en pierre de chiens et de singes. Ne demandez pas pourquoi eux spécifiquement – c'est l'un de ces mystères de Hoi An qui vous fait vous gratter la tête. Peut-être est-ce à cause des années de construction (commencé l'année du Chien, terminé l'année du Singe) ? Ou, comme le suggère une autre version, de nombreux empereurs japonais sont nés ces années-là ? Quoi qu'il en soit, ils sont là pour une raison, et les habitants les ornent toujours et font des offrandes. Qui sait, peut-être sont-ils vraiment les gardiens du pont, et votre chance du jour dépend d'eux !</p>
-
-<h6>Combattre le poisson-chat sous-marin</h6>
-<p>C'est là que ça devient fou (dans le bon sens) ! Le pont n'a pas été construit juste pour le plaisir ; il avait une mission très importante – d'immobiliser un gigantesque poisson-chat mythique nommé Onamazu (大鯰) !</p>
-
-<img src="3.jpg" alt="Onamazu"/>
-<small>Onamazu (Japonais : 大鯰 — "poisson-chat géant")</small>
-
-<p>L'essence de la légende : Dans le folklore japonais, il y a cet énorme poisson-chat qui provoque des tremblements de terre quand il agite sa queue. Sa tête, dit-on, est sous l'Inde, sa queue sous le Japon, mais son DOS PASSE JUSTE SOUS LE VIETNAM ! Et les constructeurs du pont, apparemment, étaient des ingénieurs très astucieux, car ils ont construit le pont spécifiquement pour "immobiliser" le dos de ce monstre, l'empêchant de se débattre. Ainsi, le pont japonais est devenu une sorte de presse antisismique pour tout le Centre du Vietnam.</p>
-<img src="20.jpg" alt="Onamazu"/>
-
-<p>Nous ne savons pas à quel point Onamazu a apprécié cette "massage" thérapie, mais le pont, construit sur de solides supports en bois, a vraiment résisté pendant des centaines d'années ! Bien que, pour être honnête, pas sans l'aide de l'humanité. Le pont a subi huit (!) rénovations majeures (même en 2022, il a été littéralement démonté pour une "chirurgie" !), ce qui a probablement aussi un peu aidé à l'empêcher de s'effondrer. Mais le mythe du poisson-chat sonne toujours mieux, n'est-ce pas ?</p>
-
-<h6>Le Prince, le Graveur et Trois Hiéroglyphes</h6>
-
-<p>En 1719, le Prince Nguyễn Phúc Chu a visité Hoi An. Il était une figure importante qui a gouverné le Sud du Vietnam, presque comme un roi, de 1691 à 1725. Et ainsi, dit-on, il n'a pas seulement admiré le pont, mais a personnellement gravé trois caractères chinois au-dessus de la porte du temple ! Pouvez-vous imaginer ? Au lieu d'envoyer des serviteurs, le prince a décidé de faire la gravure lui-même. Il a dû se sentir inspiré !</p>
-
-<img src="23.jpg" alt="Le Prince, le Graveur et Trois Hiéroglyphes"/>
-
-<p>Ces symboles se traduisent très poétiquement : "pont pour accueillir les invités de loin." Ou, dans le style vietnamien, "Lai Viet Kieu." C'est comme si le pont lui-même disait : "Bonjour, voyageur ! Entrez, faites comme chez vous, vous appartenez ici !" Un tel "panneau de bienvenue" ancien, gravé de la main du souverain lui-même.</p>
-
-<h6>La Route Française et Pourquoi le Pont est réservé aux piétons</h6>
-
-<img src="21.jpg" alt="Détail du pont japonais"/>
-
-<p>Les temps changent, et même le Pont japonais a dû endurer ses "expériences de mode". Pendant la domination coloniale, les Français ont décidé : "Hé, pourquoi les motos ne pourraient-elles pas rouler ici ?" et ont nivelé la route à travers le pont. Ça ressemble à une excellente idée pour les embouteillages, n'est-ce pas ? Heureusement, cette "innovation" a été annulée plus tard, et le pont est redevenu réservé aux piétons. Et heureusement, car quel genre de "symbole" est-ce si des vélos y circulent à toute vitesse ?</p>
-
-<h6>Un petit pont avec un grand cœur</h6>
-<p>Alors, quand vous traversez le Pont japonais, sachez ceci : vous ne marchez pas seulement sur des planches, vous foulez une histoire vivante, pleine de légendes, de subtilités culturelles et même de poissons-chats mythiques. Il ne relie pas seulement deux rives – il relie des époques, des peuples et peut-être même calme les tremblements de terre. C'est notre Pont couvert japonais – petit, mais très fier et mystérieux.</p>
-
-<img src="22.jpg" alt="Détail du pont japonais"/>
+<p>Nous innovons constamment, explorons de nouvelles recettes et expérimentons des saveurs. Notre équipe de chefs talentueux et de personnel passionné s'engage à faire de chaque visite un moment agréable. Nous vous invitons à nous rejoindre à The Hill Station Deli & Boutique, où bonne cuisine, bonne compagnie et bons moments sont toujours au menu.</p>
       `,
       internalImageNames: [
-        '2.jpg',
-        '3.jpg',
-        '22.jpg',
-        '20.jpg',
-        '21.jpg',
-        '23.jpg',
-        '24.jpg',
-        '25.jpg',
-        '26.jpg',
+        'hill_station_interior.jpg',
+        'hill_station_food.jpg',
+        'hill_station_exterior.jpg',
       ],
     },
     ru: {
-      title: 'Японский крытый мост',
+      title: 'The Hill Station Deli & Boutique',
       description:
-        'Знаменитый символ Хойана, построенный в XVI веке японской общиной.',
+        'Специализируется на местной продукции и свежих ингредиентах, предлагая вкусное меню с акцентом на качество.',
       fullDescription: `
-<p>Если вы были в Хойане и не сфотографировались на Японском крытом мосту (Chùa Cầu), то вы по-настоящему не были в Хойане. Серьезно, этот мост настолько восхитителен, что он даже попал на герб города! И не зря, у него очень необычная история...</p>
+<p>Расположенный в самом сердце древнего города Хойан, The Hill Station Deli & Boutique является кулинарной достопримечательностью с 2011 года. Наш путь начался с простой идеи: принести свежесть местных продуктов и богатство мировых кулинарных традиций нашим гостям. Мы начинали с малого, с уютного гастронома, предлагающего сэндвичи ручной работы, салаты и домашнюю выпечку.</p>
 
-<img src="26.jpg" alt="Деталь Японского моста"/>
+<img src="hill_station_interior.jpg" alt="Интерьер The Hill Station"/>
 
-<p>Этот мост – настоящая суперзвезда, смотрящая на вас с банкноты в 20 000 вьетнамских донгов (VND)! Не удивляйтесь, если увидите толпы туристов, серьезно держащих эту банкноту рядом с мостом, пытаясь сделать "тот самый кадр". И хотя это, возможно, не самый оригинальный снимок в мире, устоять перед таким селфи просто невозможно! В конце концов, не каждый день держишь в руках деньги, на которых изображено то, что у тебя за спиной, верно?</p>
+<p>За эти годы мы выросли, но наша основная философия остается неизменной: качественные ингредиенты, исключительные вкусы и гостеприимная атмосфера. Мы верим в использование самых свежих местных продуктов, по возможности поддерживая местных фермеров и поставщиков. Эта приверженность свежести проявляется в каждом блюде, которое мы подаем, от наших ярких салатов до сытных основных блюд.</p>
 
-<h6>Японцы ушли, но мост остался</h6>
-<p>Представьте XVII век: Хойан – международный торговый центр Юго-Восточной Азии, привлекающий купцов со всех уголков земного шара. Японские и китайские торговцы были настолько активны здесь, что решили: "Давайте построим мост, чтобы было легче ходить друг к другу в гости!" И вот, в 1593 году, наш герой появился на свет.</p>
+<h6>Наша кулинарная философия</h6>
+<p>В The Hill Station мы увлечены едой. Наше меню — это отражение нашей приверженности созданию уникальных и запоминающихся кулинарных впечатлений. Мы сочетаем традиционные вьетнамские вкусы с международными кулинарными техниками, предлагая разнообразный выбор, который удовлетворит самые разные вкусы. Независимо от того, жаждете ли вы легкой закуски или сытного блюда, наша кухня всегда кипит творчеством.</p>
 
-<img src="2.jpg" alt="Деталь Японского моста"/>
+<p>Наш гастрономический прилавок является изюминкой, предлагая широкий выбор свежеиспеченных изделий, колбас и сыров. Это идеальное место, чтобы быстро и вкусно пообедать или запастись деликатесами для пикника у реки. Наша бутик-секция предлагает тщательно отобранный ассортимент уникальных подарков, местных ремесленных изделий и специализированных продуктов питания, что делает ее отличным местом, чтобы найти сувенир или что-то для себя.</p>
 
-<p>Мало кто знает, но японцы активно жили в Хойане до 1663 года, а затем... Бум! Японское правительство внезапно объявило: "Всё, прекращаем торговлю! Мы уходим на карантин!" (Ну, почти). Так Япония ушла в изоляцию, а её великолепное наследие – этот мост – остался стоять, как привет из прошлого.</p>
+<h6>Общественный центр</h6>
+<p>The Hill Station — это не просто ресторан, это место, где встречаются местные жители и путешественники. Мы стали излюбленным местом сбора, известным своей расслабляющей атмосферой и дружелюбным обслуживанием. Мы часто проводим специальные мероприятия, от дегустаций вин до кулинарных мастер-классов, приглашая наших гостей познакомиться с богатой культурой Хойана через его еду.</p>
 
-<h6>Мост, храм и маленькая тайна</h6>
-
-<img src="25.jpg" alt="Деталь Японского моста"/>
-<small>Статуя даосского бога погоды, Чан Бо Бак Дэ</small>
-
-<p>Вы идете по мосту, а там... храм? Да, прямо посередине моста приютился небольшой алтарь. Он посвящен даосскому Нефритовому Императору Ю-ди. Забавно, потому что даосизм не был широко распространен в Японии, так что, скорее всего, храм был добавлен вьетнамцами позднее. Это такой культурный мост, который соединяет не только берега, но и верования!</p>
-
-<img src="24.jpg" alt="Деталь Японского моста"/>
-
-<p>А по обеим сторонам моста вас встречают каменные статуи собак и обезьян. Не спрашивайте, почему именно они – это одна из тех тайн Хойана, которая заставляет чесать затылок. Может быть, это из-за годов постройки (начали в Год Собаки, закончили в Год Обезьяны)? Или, как предполагает другая версия, многие японские императоры родились в эти годы? В любом случае, они здесь не просто так, и местные жители до сих пор украшают их и делают подношения. Кто знает, может быть, они действительно хранители моста, и от них зависит, повезет ли вам сегодня!</p>
-
-<h6>Борьба с подводным сомом</h6>
-<p>Вот где начинается самое безумное (в хорошем смысле)! Мост был построен не просто для развлечения; у него была очень важная миссия – пригвоздить гигантского мифического сома по имени Онамазу (大鯰)!</p>
-
-<img src="3.jpg" alt="Онамазу"/>
-<small>Онамазу (яп.: 大鯰 — "гигантский сом")</small>
-
-<p>Суть легенды: в японском фольклоре есть этот огромный сом, который вызывает землетрясения, когда виляет хвостом. Его голова, говорят, находится под Индией, его хвост – под Японией, но его СПИНА ПРОХОДИТ ПРЯМО ПОД ВЬЕТНАМОМ! И строители моста, по-видимому, были очень умными инженерами, потому что они построили мост специально, чтобы "пригвоздить" спину этого монстра, предотвращая его метания. Таким образом, Японский мост стал своего рода антисейсмическим прессом для всего Центрального Вьетнама.</p>
-<img src="20.jpg" alt="Онамазу"/>
-
-<p>Мы не знаем, насколько Онамазу оценил эту "массажную" терапию, но мост, построенный на прочных деревянных опорах, действительно простоял сотни лет! Хотя, для честности, не без помощи человечества. Мост прошел восемь (!) крупных реконструкций (даже в 2022 году его буквально разбирали для "операции"!), что, вероятно, также немного помогло ему не развалиться. Но миф о соме все равно звучит круче, не так ли?</p>
-
-<h6>Принц, резчик и три иероглифа</h6>
-
-<p>В 1719 году принц Нгуен Фук Чу посетил Хойан. Он был важной фигурой, правившей Южным Вьетнамом, почти как король, с 1691 по 1725 год. И вот, говорят, он не просто полюбовался мостом, а лично вырезал три китайских иероглифа над дверью храма! Можете себе представить? Вместо того чтобы отправить слуг, принц решил заняться резьбой сам. Он, должно быть, почувствовал вдохновение!</p>
-
-<img src="23.jpg" alt="Принц, резчик и три иероглифа"/>
-
-<p>Эти символы очень поэтично переводятся: "мост для встречи гостей издалека". Или, во вьетнамском стиле, "Лай Вьет Кьеу". Как будто сам мост говорит: "Привет, путник! Заходи, чувствуй себя как дома, ты здесь свой!" Такой вот древний "приветственный знак", вырезанный рукой самого правителя.</p>
-
-<h6>Французская дорога и почему мост только для пешеходов</h6>
-
-<img src="21.jpg" alt="Деталь Японского моста"/>
-
-<p>Времена меняются, и даже Японскому мосту пришлось пережить свои "модные эксперименты." Во время колониального правления французы решили: "Эй, почему бы здесь не ездить мотоциклам?" и выровняли дорогу через мост. Звучит как отличная идея для пробок, верно? К счастью, это "новшество" было позже отменено, и мост снова стал исключительно пешеходным. И слава богу, потому что какой же это "символ", если по нему гоняют мотоциклы?</p>
-
-<h6>Маленький мост с гигантским сердцем</h6>
-<p>Итак, когда вы идете по Японскому мосту, знайте: вы не просто идете по доскам, вы ступаете по живой истории, полной легенд, культурных тонкостей и даже мифических сомов. Он не просто соединяет два берега – он соединяет эпохи, народы и, возможно, даже успокаивает землетрясения. Это наш Японский крытый мост – маленький, но очень гордый и таинственный.</p>
-
-<img src="22.jpg" alt="Деталь Японского моста"/>
+<p>Мы постоянно внедряем инновации, исследуем новые рецепты и экспериментируем со вкусами. Наша команда талантливых поваров и увлеченных сотрудников стремится к тому, чтобы каждый визит был восхитительным. Мы приглашаем вас присоединиться к нам в The Hill Station Deli & Boutique, где хорошая еда, хорошая компания и хорошее время всегда в меню.</p>
       `,
       internalImageNames: [
-        '2.jpg',
-        '3.jpg',
-        '22.jpg',
-        '20.jpg',
-        '21.jpg',
-        '23.jpg',
-        '24.jpg',
-        '25.jpg',
-        '26.jpg',
+        'hill_station_interior.jpg',
+        'hill_station_food.jpg',
+        'hill_station_exterior.jpg',
       ],
     },
     vn: {
-      title: 'Chùa Cầu (Cầu Chùa Nhật Bản)',
+      title: 'The Hill Station Deli & Boutique',
       description:
-        'Biểu tượng nổi tiếng của Hội An, được cộng đồng Nhật Bản xây dựng vào thế kỷ 16.',
+        'Chuyên về sản phẩm địa phương và nguyên liệu tươi ngon, cung cấp thực đơn hấp dẫn với trọng tâm vào chất lượng.',
       fullDescription: `
-<p>Nếu bạn đã đến Hội An mà chưa chụp một bức ảnh tại Chùa Cầu (Cầu Chùa Nhật Bản), thì coi như bạn chưa thực sự đến Hội An. Nghiêm túc mà nói, cây cầu này duyên dáng đến mức nó còn được đưa vào biểu tượng của thành phố! Và có lý do chính đáng, nó có một lịch sử rất khác thường...</p>
+<p>Nằm ở trung tâm Phố cổ Hội An, The Hill Station Deli & Boutique đã là một điểm đến ẩm thực từ năm 2011. Hành trình của chúng tôi bắt đầu với một ý tưởng đơn giản: mang sự tươi ngon của sản phẩm địa phương và sự phong phú của truyền thống ẩm thực toàn cầu đến với khách hàng. Chúng tôi bắt đầu nhỏ, với một cửa hàng deli ấm cúng phục vụ bánh mì sandwich thủ công, salad và bánh ngọt tự làm.</p>
 
-<img src="26.jpg" alt="Chi tiết Cầu Nhật Bản"/>
+<p>Trong những năm qua, chúng tôi đã phát triển, nhưng triết lý cốt lõi của chúng tôi vẫn không thay đổi: nguyên liệu chất lượng, hương vị đặc biệt và không khí ấm cúng. Chúng tôi tin vào việc tìm nguồn sản phẩm địa phương tươi ngon nhất, hỗ trợ nông dân và nhà cung cấp địa phương bất cứ khi nào có thể. Cam kết về sự tươi ngon này thể hiện rõ trong mỗi món ăn chúng tôi phục vụ, từ những món salad sống động đến những món chính thịnh soạn.</p>
 
-<p>Cây cầu này là một ngôi sao thực sự, nhìn lại bạn từ tờ tiền 20.000 Đồng Việt Nam (VND)! Đừng ngạc nhiên nếu bạn thấy đám đông khách du lịch nghiêm túc cầm tờ tiền này bên cạnh cây cầu, cố gắng có được "bức ảnh đó". Mặc dù có thể không phải là bức ảnh độc đáo nhất trên thế giới, nhưng không thể cưỡng lại một bức ảnh selfie như vậy! Rốt cuộc, không phải ngày nào bạn cũng cầm tiền trên tay mà lại miêu tả thứ ở phía sau bạn, đúng không?</p>
+<h6>Triết lý ẩm thực của chúng tôi</h6>
+<p>Tại The Hill Station, chúng tôi đam mê ẩm thực. Thực đơn của chúng tôi là sự phản ánh sự cống hiến của chúng tôi để tạo ra những trải nghiệm ăn uống độc đáo và đáng nhớ. Chúng tôi pha trộn hương vị truyền thống Việt Nam với các kỹ thuật ẩm thực quốc tế, cung cấp một lựa chọn đa dạng phục vụ nhiều khẩu vị khác nhau. Cho dù bạn đang thèm một món ăn nhẹ hay một bữa ăn no, nhà bếp của chúng tôi luôn tràn ngập sự sáng tạo.</p>
 
-<h6>Người Nhật đã rời đi, nhưng cây cầu vẫn ở lại</h6>
-<p>Hãy tưởng tượng thế kỷ 17: Hội An là một trung tâm thương mại quốc tế ở Đông Nam Á, thu hút các thương nhân từ khắp nơi trên thế giới. Các thương nhân Nhật Bản và Trung Quốc hoạt động rất tích cực tại đây đến nỗi họ quyết định: "Hãy xây một cây cầu để dễ dàng ghé thăm nhau hơn!" Và thế là, vào năm 1593, người hùng của chúng ta đã ra đời.</p>
+<p>Quầy deli của chúng tôi là một điểm nhấn, với một loạt các món nướng mới ra lò, thịt nguội và phô mai. Đây là nơi hoàn hảo để có một bữa trưa nhanh chóng và ngon miệng, hoặc để tích trữ các món đồ ăn ngon cho một buổi dã ngoại bên sông. Phần cửa hàng boutique của chúng tôi cung cấp một lựa chọn tuyển chọn các món quà độc đáo, đồ thủ công mỹ nghệ địa phương và các sản phẩm thực phẩm đặc biệt, làm cho nó trở thành một nơi tuyệt vời để tìm một món quà lưu niệm hoặc một món quà tự thưởng cho bản thân.</p>
 
-<img src="2.jpg" alt="Chi tiết Cầu Nhật Bản"/>
+<h6>Một Trung tâm Cộng đồng</h6>
+<p>Không chỉ là một nhà hàng, The Hill Station còn là nơi kết nối người dân địa phương và du khách. Chúng tôi đã trở thành một địa điểm tụ họp được yêu thích, nổi tiếng với không khí thư giãn và dịch vụ thân thiện. Chúng tôi thường tổ chức các sự kiện đặc biệt, từ nếm rượu vang đến các lớp học nấu ăn, mời khách của chúng tôi trải nghiệm văn hóa phong phú của Hội An thông qua ẩm thực của nó.</p>
 
-<p>Ít người biết điều này, nhưng người Nhật đã sống tích cực ở Hội An cho đến năm 1663, và sau đó... Bùm! Chính phủ Nhật Bản đột ngột tuyên bố: "Thôi, ngừng giao thương! Chúng ta sẽ bị cô lập!" (Gần như vậy). Vì vậy, Nhật Bản đã tự cô lập, và di sản tráng lệ của họ – cây cầu này – vẫn đứng vững, như một lời chào từ quá khứ.</p>
+<img src="hill_station_exterior.jpg" alt="Ngoại thất The Hill Station"/>
 
-<h6>Cầu, Chùa và một chút bí ẩn</h6>
-
-<img src="25.jpg" alt="Chi tiết Cầu Nhật Bản"/>
-<small>Tượng Thần Đạo giáo của Thời tiết, Trần Bo Bắc Đế</small>
-
-<p>Bạn đi bộ qua cầu, và có một... ngôi chùa? Vâng, ngay giữa cầu, một bàn thờ nhỏ nép mình. Nó được dành riêng cho Ngọc Hoàng Thượng Đế của Đạo giáo (Yu-di). Thật buồn cười vì Đạo giáo không được thực hành rộng rãi ở Nhật Bản, vì vậy có khả năng ngôi chùa đã được người Việt thêm vào sau này. Đó là một loại cầu văn hóa không chỉ kết nối bờ mà còn kết nối tín ngưỡng!</p>
-
-<img src="24.jpg" alt="Chi tiết Cầu Nhật Bản"/>
-
-<p>Và ở hai bên cầu, bạn được chào đón bởi những bức tượng đá hình chó và khỉ. Đừng hỏi tại sao lại là chúng – đó là một trong những bí ẩn của Hội An khiến bạn phải gãi đầu. Có lẽ là do những năm xây dựng (bắt đầu vào Năm Con Chó, kết thúc vào Năm Con Khỉ)? Hoặc, theo một phiên bản khác, nhiều vị hoàng đế Nhật Bản đã sinh ra trong những năm này? Dù sao đi nữa, chúng ở đây đều có lý do, và người dân địa phương vẫn trang trí và dâng lễ cho chúng. Ai biết được, có lẽ chúng thực sự là những người bảo vệ cây cầu, và liệu bạn có may mắn hôm nay hay không tùy thuộc vào chúng!</p>
-
-<h6>Chống lại Con Cá Trê Khổng Lồ Dưới Nước</h6>
-<p>Đây là phần điên rồ (theo nghĩa tốt)! Cây cầu không chỉ được xây dựng để giải trí; nó có một nhiệm vụ rất quan trọng – để giữ chặt một con cá trê khổng lồ trong thần thoại tên là Namazu (大鯰)!</p>
-
-<img src="3.jpg" alt="Namazu"/>
-<small>Namazu (tiếng Nhật: 大鯰 — "cá trê khổng lồ")</small>
-
-<p>Bản chất của truyền thuyết: Trong văn hóa dân gian Nhật Bản, có một con cá trê khổng lồ gây ra động đất khi nó vẫy đuôi. Đầu nó, người ta nói, ở dưới Ấn Độ, đuôi nó ở dưới Nhật Bản, nhưng LƯNG NÓ LẠI NẰM NGAY DƯỚI VIỆT NAM! Và những người xây cầu, rõ ràng, là những kỹ sư rất thông minh, bởi vì họ đã xây cây cầu đặc biệt để "giữ chặt" lưng của con quái vật này, ngăn nó khỏi vùng vẫy. Do đó, Chùa Cầu đã trở thành một loại "máy ép" chống động đất cho toàn bộ miền Trung Việt Nam.</p>
-<img src="20.jpg" alt="Namazu"/>
-
-<p>Chúng ta không biết Namazu đã đánh giá cao liệu pháp "massage" này đến mức nào, nhưng cây cầu, được xây dựng trên những cột gỗ vững chắc, thực sự đã đứng vững hàng trăm năm! Mặc dù, thành thật mà nói, không phải không có sự giúp đỡ của con người. Cây cầu đã trải qua tám (!) lần trùng tu lớn (thậm chí vào năm 2022 nó đã được tháo dỡ theo nghĩa đen để "phẫu thuật"!), điều này có lẽ cũng giúp ích một chút để nó không bị sập. Nhưng huyền thoại về cá trê vẫn nghe hay hơn, bạn có đồng ý không?</p>
-
-<h6>Chúa Nguyễn Phúc Chu, người chạm khắc và Ba chữ Hán</h6>
-
-<p>Năm 1719, Chúa Nguyễn Phúc Chu đã ghé thăm Hội An. Ông là một nhân vật quan trọng, cai trị miền Nam Việt Nam, gần như một vị vua, từ năm 1691 đến 1725. Và người ta nói rằng, ông không chỉ chiêm ngưỡng cây cầu, mà còn đích thân chạm khắc ba chữ Hán phía trên cửa chùa! Bạn có thể tưởng tượng không? Thay vì cử người hầu, vị chúa đã tự mình chạm khắc. Chắc hẳn ông đã cảm thấy rất hứng thú!</p>
-
-<img src="23.jpg" alt="Chúa Nguyễn Phúc Chu, người chạm khắc và Ba chữ Hán"/>
-
-<p>Những biểu tượng này được dịch rất thơ mộng: "cầu để đón khách từ xa". Hoặc, theo kiểu Việt Nam, "Lai Viễn Kiều". Cứ như thể chính cây cầu đang nói: "Chào mừng, du khách! Hãy vào đi, hãy tự nhiên như ở nhà, bạn thuộc về nơi này!" Một "biển chào" cổ xưa như vậy, được chạm khắc bởi chính tay vị chúa.</p>
-
-<h6>Con đường Pháp và lý do Cầu chỉ dành cho người đi bộ</h6>
-
-<img src="21.jpg" alt="Chi tiết Cầu Nhật Bản"/>
-
-<p>Thời gian thay đổi, và ngay cả Chùa Cầu cũng phải chịu đựng những "thử nghiệm thời trang" của mình. Trong thời kỳ thuộc địa, người Pháp quyết định: "Này, tại sao xe máy không nên đi qua đây?" và san bằng con đường qua cầu. Nghe có vẻ là một ý tưởng tuyệt vời cho tắc nghẽn giao thông, đúng không? May mắn thay, "sáng kiến" này sau đó đã bị hủy bỏ, và cây cầu một lần nữa trở thành cầu dành riêng cho người đi bộ. Và thật may mắn, bởi vì một "biểu tượng" như thế nào nếu xe máy chạy ào ào qua nó?</p>
-
-<h6>Một cây cầu nhỏ với một trái tim khổng lồ</h6>
-<p>Vì vậy, khi bạn đi bộ qua Chùa Cầu, hãy biết điều này: bạn không chỉ đi trên những tấm ván, bạn đang bước đi trên lịch sử sống động, đầy huyền thoại, những chi tiết văn hóa phức tạp, và thậm chí cả những con cá trê thần thoại. Nó không chỉ kết nối hai bờ – nó kết nối các thời đại, các dân tộc, và có lẽ còn làm dịu những trận động đất. Đó chính là Chùa Cầu của chúng ta – nhỏ bé, nhưng rất tự hào và bí ẩn.</p>
-
-<img src="22.jpg" alt="Chi tiết Cầu Nhật Bản"/>
+<p>Chúng tôi không ngừng đổi mới, khám phá các công thức nấu ăn mới và thử nghiệm hương vị. Đội ngũ đầu bếp tài năng và nhân viên nhiệt tình của chúng tôi tận tâm đảm bảo mỗi chuyến thăm là một trải nghiệm thú vị. Chúng tôi mời bạn đến The Hill Station Deli & Boutique, nơi luôn có đồ ăn ngon, bạn bè tốt và những khoảnh khắc tuyệt vời trong thực đơn.</p>
       `,
       internalImageNames: [
-        '2.jpg',
-        '3.jpg',
-        '22.jpg',
-        '20.jpg',
-        '21.jpg',
-        '23.jpg',
-        '24.jpg',
-        '25.jpg',
-        '26.jpg',
+        'hill_station_interior.jpg',
+        'hill_station_food.jpg',
+        'hill_station_exterior.jpg',
       ],
+    },
+    slug: {
+      // <-- Добавлен объект slug для локализованных URL
+      en: 'japanese-covered-bridge',
+      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
+      es: 'puente-cubierto-japones',
+      fr: 'pont-couvert-japonais',
+      vn: 'cau-chua-nhat-ban',
+    },
+    // ru: { /* Русский контент здесь, если есть */ },
+    // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
+    // fr: { /* Французский контент здесь, если есть */ },
+    // vn: { /* Вьетнамский контент здесь, если есть */ },
+  },
+  //Sua
+  {
+    id: 'sua-vegan-restaurant', // <-- ID теперь строковый
+    coordinates: [15.883638636542983, 108.32000846236811], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: '1.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    en: {
+      title: 'Sua Cafe',
+      description:
+        'A special place supporting ethnic minority groups and people with disabilities in Quang Nam.',
+      fullDescription: `
+<p>While passing through multiple burning fields of grass, we came into contact with villagers who suffered great hardship and less fortunate circumstances. Today, there are many ethnic minority groups experiencing great poverty and lacking basic needs such as food and clothing. Disabled people who were born with birth defects due to the effects of Agent Orange passed down genetically through their parents, some who are deaf and with limited speech are employed here. Working here gives them a sense of purpose and belonging. The Thanh Uyen Roastery Sua Cafe gives them the opportunity to provide dedicated customer service.</p>
+
+<p>By supporting our coffee you are greatly helping to provide employment and change lives for the better. We are so thankful for your continued support: Let’s share our smiles and happily celebrate life together!</p>
+
+<h6>Our Mission</h6>
+<p>I created Ong Vang Charity project 7 years ago, with the aim of helping minority ethnic groups in the Quang Nam mountains. Now we are over 200 active members as well as 1800 members. And I give back 10% of the profits of the coffee shop for our project. Thanks to all these people and donations we already built 13 schools, and 4 wells. We help every month too:</p>
+<ul>
+  <li>By giving each month around 2 million VND to each school for food. We also give second-hand clothes every two months.</li>
+  <li>We also help the poor people of Hoi An by distributing bread every morning. And a meal distribution in the city’s hospital twice a month.</li>
+</ul>
+
+<h6>Our Products</h6>
+<p>We are a group of 22 members, of which 80 percent are persons with disabilities. For us, it is very important to give an opportunity and also to try to adapt each task.</p>
+<p>That’s why handcraft comes to us, every person in the group can help and thanks to that we have a great selection of products. We are making lanterns and embroidery painting! Come buy one of our products help the whole community and give employment to more people in need.</p>
+      `,
+      internalImageNames: [
+        'sua_cafe_1.jpg',
+        'sua_cafe_2.jpg',
+        // Добавьте сюда имена файлов изображений, связанных с этим кафе
+      ],
+    },
+    es: {
+      title: 'Sua Cafe',
+      description:
+        'Un lugar especial que apoya a los grupos étnicos minoritarios y a las personas con discapacidad en las montañas de Quang Nam.',
+      fullDescription: `
+<p>Mientras pasábamos por varios campos de hierba en llamas, entramos en contacto con aldeanos que sufrían grandes dificultades y circunstancias menos afortunadas. Hoy en día, muchos grupos étnicos minoritarios experimentan una gran pobreza y carecen de necesidades básicas como alimentos y ropa. Personas con discapacidad que nacieron con defectos de nacimiento debido a los efectos del Agente Naranja, transmitidos genéticamente por sus padres, algunos sordos y con habla limitada, están empleados aquí. Trabajar aquí les da un sentido de propósito y pertenencia. Thanh Uyen Roastery Sua Cafe les da la oportunidad de brindar un servicio al cliente dedicado.</p>
+
+<p>Al apoyar nuestro café, usted está ayudando enormemente a proporcionar empleo y a cambiar vidas para mejor. ¡Estamos muy agradecidos por su continuo apoyo: Compartamos nuestras sonrisas y celebremos felizmente la vida juntos!</p>
+
+<h6>Nuestra Misión</h6>
+<p>Creé el proyecto benéfico Ong Vang hace 7 años, con el objetivo de ayudar a los grupos étnicos minoritarios en las montañas de Quang Nam. Ahora contamos con más de 200 miembros activos, así como 1800 miembros. Y devuelvo el 10% de las ganancias de la cafetería a nuestro proyecto. Gracias a todas estas personas y donaciones ya hemos construido 13 escuelas y 4 pozos. También ayudamos cada mes:</p>
+<ul>
+  <li>Dando cada mes alrededor de 2 millones de VND a cada escuela para alimentos. También damos ropa de segunda mano cada dos meses.</li>
+  <li>También ayudamos a los pobres de Hoi An distribuyendo pan todas las mañanas. Y una distribución de comidas en el hospital de la ciudad dos veces al mes.</li>
+</ul>
+
+<h6>Nuestros Productos</h6>
+<p>Somos un grupo de 22 miembros, de los cuales el 80 por ciento son personas con discapacidad. Para nosotros, es muy importante dar una oportunidad y también tratar de adaptar cada tarea.</p>
+<p>Por eso la artesanía llega a nosotros, cada persona del grupo puede ayudar y gracias a eso tenemos una gran selección de productos. ¡Estamos haciendo linternas y pinturas de bordado! Venga a comprar uno de nuestros productos, ayude a toda la comunidad y dé empleo a más personas necesitadas.</p>
+      `,
+      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+    },
+    fr: {
+      title: 'Sua Cafe',
+      description:
+        'Un lieu spécial qui soutient les groupes ethniques minoritaires et les personnes handicapées dans les montagnes de Quang Nam.',
+      fullDescription: `
+<p>En traversant plusieurs champs d'herbe en feu, nous sommes entrés en contact avec des villageois qui souffraient de grandes difficultés et de circonstances moins favorables. Aujourd'hui, de nombreux groupes ethniques minoritaires connaissent une grande pauvreté et manquent de produits de première nécessité tels que la nourriture et les vêtements. Les personnes handicapées nées avec des malformations congénitales dues aux effets de l'Agent Orange, transmis génétiquement par leurs parents, certaines sourdes et ayant des difficultés d'élocution, sont employées ici. Travailler ici leur donne un sentiment d'utilité et d'appartenance. Le Thanh Uyen Roastery Sua Cafe leur donne l'opportunité de fournir un service client dédié.</p>
+
+<p>En soutenant notre café, vous contribuez grandement à créer des emplois et à améliorer des vies. Nous vous sommes très reconnaissants de votre soutien continu : Partageons nos sourires et célébrons joyeusement la vie ensemble !</p>
+
+<h6>Notre Mission</h6>
+<p>J'ai créé le projet caritatif Ong Vang il y a 7 ans, dans le but d'aider les groupes ethniques minoritaires des montagnes de Quang Nam. Nous comptons maintenant plus de 200 membres actifs ainsi que 1800 membres. Et je reverse 10 % des bénéfices du café à notre projet. Grâce à toutes ces personnes et à ces dons, nous avons déjà construit 13 écoles et 4 puits. Nous aidons également chaque mois :</p>
+<ul>
+  <li>En donnant chaque mois environ 2 millions de VND à chaque école pour la nourriture. Nous donnons également des vêtements de seconde main tous les deux mois.</li>
+  <li>Nous aidons également les pauvres de Hoi An en distribuant du pain tous les matins. Et une distribution de repas à l'hôpital de la ville deux fois par mois.</li>
+</ul>
+
+<h6>Nos Produits</h6>
+<p>Nous sommes un groupe de 22 membres, dont 80 % sont des personnes handicapées. Pour nous, il est très important de leur donner une opportunité et d'essayer d'adapter chaque tâche.</p>
+<p>C'est pourquoi l'artisanat vient à nous, chaque personne du groupe peut aider et grâce à cela, nous avons une grande sélection de produits. Nous fabriquons des lanternes et des peintures brodées ! Venez acheter l'un de nos produits, aidez toute la communauté et donnez un emploi à plus de personnes dans le besoin.</p>
+      `,
+      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+    },
+    ru: {
+      title: 'Кофейня Sua Cafe',
+      description:
+        'Особое место, поддерживающее этнические меньшинства и людей с ограниченными возможностями в горах Куангнам.',
+      fullDescription: `
+<p>Проходя через выжженные травяные поля, мы встретились с жителями деревень, которые переживали большие трудности и жили в менее благоприятных условиях. Сегодня многие этнические меньшинства испытывают крайнюю нищету и лишены базовых потребностей, таких как еда и одежда. Люди с ограниченными возможностями, родившиеся с врожденными дефектами из-за последствий Agent Orange, передаваемых генетически от их родителей, некоторые из которых глухие и с ограниченной речью, трудоустроены здесь. Работа здесь дает им чувство цели и принадлежности. Кофейня Thanh Uyen Roastery Sua Cafe предоставляет им возможность оказывать внимательное обслуживание клиентов.</p>
+
+<p>Поддерживая наш кофе, вы вносите огромный вклад в обеспечение занятости и изменение жизни к лучшему. Мы очень благодарны за вашу постоянную поддержку: Давайте делиться улыбками и счастливо праздновать жизнь вместе!</p>
+
+<h6>Наша Миссия</h6>
+<p>Я создал благотворительный проект Ong Vang 7 лет назад с целью помощи этническим меньшинствам в горах Куангнам. Сейчас у нас более 200 активных членов, а также 1800 просто членов. И я отдаю 10% прибыли кофейни на наш проект. Благодаря всем этим людям и пожертвованиям мы уже построили 13 школ и 4 колодца. Мы также помогаем каждый месяц:</p>
+<ul>
+  <li>Выделяя около 2 миллионов донгов (VND) каждой школе ежемесячно на еду. Мы также раздаем подержанную одежду каждые два месяца.</li>
+  <li>Мы также помогаем бедным жителям Хойана, ежедневно раздавая хлеб по утрам. И дважды в месяц организуем раздачу еды в городской больнице.</li>
+</ul>
+
+<h6>Наши Продукты</h6>
+<p>Мы – группа из 22 человек, из которых 80 процентов – люди с ограниченными возможностями. Для нас очень важно предоставлять возможности и стараться адаптировать каждую задачу.</p>
+<p>Именно поэтому мы занимаемся ремеслами – каждый человек в группе может помочь, и благодаря этому у нас есть большой выбор продуктов. Мы изготавливаем фонарики и вышитые картины! Приходите и купите один из наших продуктов, помогите всему сообществу и предоставьте работу большему количеству нуждающихся людей.</p>
+      `,
+      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+    },
+    vn: {
+      title: 'Sua Cafe',
+      description:
+        'Một nơi đặc biệt hỗ trợ các nhóm dân tộc thiểu số và người khuyết tật ở vùng núi Quảng Nam.',
+      fullDescription: `
+<p>Khi đi qua nhiều cánh đồng cỏ đang cháy, chúng tôi đã tiếp xúc với những người dân làng gặp nhiều khó khăn và hoàn cảnh kém may mắn. Ngày nay, có nhiều nhóm dân tộc thiểu số đang sống trong cảnh nghèo đói và thiếu thốn những nhu cầu cơ bản như thức ăn và quần áo. Những người khuyết tật sinh ra với dị tật bẩm sinh do ảnh hưởng của chất độc màu da cam được di truyền qua cha mẹ của họ, một số người bị điếc và có khả năng nói hạn chế đang được tuyển dụng tại đây. Làm việc ở đây mang lại cho họ cảm giác có mục đích và thuộc về. Quán cà phê Thanh Uyên Roastery Sua Cafe mang đến cho họ cơ hội cung cấp dịch vụ khách hàng tận tâm.</p>
+
+<p>Bằng cách ủng hộ cà phê của chúng tôi, bạn đang góp phần rất lớn vào việc tạo việc làm và thay đổi cuộc sống tốt đẹp hơn. Chúng tôi rất biết ơn sự hỗ trợ liên tục của bạn: Hãy cùng chia sẻ nụ cười và vui vẻ ăn mừng cuộc sống cùng nhau!</p>
+
+<h6>Sứ mệnh của chúng tôi</h6>
+<p>Tôi đã tạo ra dự án từ thiện Ông Vàng 7 năm trước, với mục đích giúp đỡ các nhóm dân tộc thiểu số ở vùng núi Quảng Nam. Hiện tại chúng tôi có hơn 200 thành viên tích cực cũng như 1800 thành viên. Và tôi trích 10% lợi nhuận của quán cà phê cho dự án của chúng tôi. Nhờ tất cả những người này và những đóng góp, chúng tôi đã xây dựng 13 trường học và 4 giếng nước. Chúng tôi cũng giúp đỡ hàng tháng:</p>
+<ul>
+  <li>Bằng cách trao khoảng 2 triệu VND cho mỗi trường học để mua thức ăn hàng tháng. Chúng tôi cũng tặng quần áo cũ hai tháng một lần.</li>
+  <li>Chúng tôi cũng giúp đỡ người nghèo ở Hội An bằng cách phân phát bánh mì mỗi sáng. Và phân phát bữa ăn tại bệnh viện thành phố hai lần một tháng.</li>
+</ul>
+
+<h6>Sản phẩm của chúng tôi</h6>
+<p>Chúng tôi là một nhóm gồm 22 thành viên, trong đó 80% là người khuyết tật. Đối với chúng tôi, điều rất quan trọng là tạo cơ hội và cũng cố gắng điều chỉnh từng nhiệm vụ.</p>
+<p>Đó là lý do tại sao đồ thủ công đến với chúng tôi, mỗi người trong nhóm đều có thể giúp đỡ và nhờ đó, chúng tôi có một lựa chọn sản phẩm tuyệt vời. Chúng tôi đang làm đèn lồng và tranh thêu! Hãy đến mua một trong những sản phẩm của chúng tôi để giúp đỡ cả cộng đồng và tạo việc làm cho nhiều người cần giúp đỡ hơn.</p>
+      `,
+      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL

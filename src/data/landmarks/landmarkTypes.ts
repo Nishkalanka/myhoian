@@ -1,6 +1,6 @@
 // src/data/landmarks/landmarkTypes.ts
 
-export type CategorySlug = 'museum' | 'food-drinks' | 'art-galleries';
+export type CategorySlug = 'museum' | 'food-drinks' | 'art-galleries'; // <-- Обновите, если будут новые категории
 
 export interface LandmarkContent {
   title: string;
@@ -19,13 +19,14 @@ interface BaseLandmark {
   category: CategorySlug[];
   slug: {
     en: string;
-    ru: string;
-    es: string;
-    fr: string;
-    vn: string;
+    ru?: string; // Могут быть необязательными, если не у всех достопримечательностей есть слаги на всех языках
+    es?: string;
+    fr?: string;
+    vn?: string;
   };
   // Явно указываем, что английский контент обязателен
   en: LandmarkContent;
+  color?: string; // <--- ДОБАВЛЕНО: Добавляем необязательное свойство color
 }
 
 // Определяем языковые свойства как Record, где ключами являются LangCode,

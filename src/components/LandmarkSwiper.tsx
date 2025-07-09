@@ -12,11 +12,6 @@ import 'swiper/css/pagination';
 
 import { type Landmark, type LandmarkContent } from '../data'; // Убедитесь, что пути правильные
 
-// Предполагаем, что getImageUrl и snackbarImages будут переданы
-// или импортированы здесь, если они не глобальные.
-// Пока оставим их как есть, чтобы не усложнять первый шаг.
-// Позже мы их вынесем в отдельный utils или хук.
-
 interface LandmarkSwiperProps {
   filteredLandmarks: Landmark[];
   activeIndex: number | null;
@@ -95,8 +90,8 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
             style={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: 'flex-end',
+              alignItems: 'flex-end',
               padding: '8px',
               boxSizing: 'border-box',
               cursor: 'pointer',
@@ -117,7 +112,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'flex-end',
                 width: '100%',
                 height: '100%',
               }}
@@ -153,11 +148,11 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                // ИЗМЕНЕНИЕ ЗДЕСЬ: justify-content на flex-end
+                justifyContent: 'flex-end', // <--- ИЗМЕНЕНО!
                 alignItems: 'flex-start',
                 padding: '8px',
                 boxSizing: 'border-box',
-                cursor: 'pointer',
                 backgroundColor:
                   activeIndex === index
                     ? theme.palette.background.paper
@@ -173,6 +168,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                   display: 'flex',
                   gap: 1,
                   flexDirection: { xs: 'row', md: 'row' },
+                  width: '100%', // Добавлено, чтобы Box занимал всю ширину для корректного выравнивания
                 }}
               >
                 {landmark.imageUrl && (
@@ -206,7 +202,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                     flexGrow: 1,
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
+                    justifyContent: 'center', // Можно оставить center или изменить на flex-start
                     alignItems: 'flex-start',
                     minWidth: 0,
                   }}
@@ -232,7 +228,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                       e.stopPropagation();
                       onSlideOrButtonDetailClick(index, e);
                     }}
-                    sx={{ mt: 'auto' }}
+                    sx={{ mt: 'auto' }} // mt: 'auto' также помогает прижать кнопку к низу
                   >
                     {t('moreDetails')}
                   </Button>

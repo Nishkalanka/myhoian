@@ -14,7 +14,7 @@ import ReactDOM from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
 
 import { hoiAnLandmarks } from '../data/index';
-import type { Landmark } from '../data/index';
+import type { Landmark, LandmarkContent, CategorySlug } from '../data/index'; // Убедитесь, что CategorySlug импортирован
 
 import { MapProvider } from '../contexts/MapContext';
 import { useMapContext } from '../contexts/MapContext';
@@ -23,6 +23,9 @@ import { IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import '/src/index.css'; // Используем ваш CSS
+
+// Импортируем функцию для получения цвета категории
+import { getCategoryColor } from '../utils/categoryColors'; // <-- НОВОЕ
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
 
@@ -42,10 +45,12 @@ interface CustomMarkerProps {
   isActive: boolean;
   onClick: (event: React.MouseEvent) => void;
   isBouncing: boolean;
+  markerColor: string; // <-- НОВОЕ: Добавляем пропс для цвета маркера
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
-  ({ isActive, onClick, isBouncing }) => {
+  ({ isActive, onClick, isBouncing, markerColor }) => {
+    // <-- НОВОЕ: Принимаем markerColor
     const handleClick = useCallback(
       (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -63,9 +68,9 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
         sx={{
           p: 0,
           lineHeight: 1,
-          color: isActive ? 'error.main' : 'primary.main',
+          color: isActive ? 'error.main' : markerColor, // <-- ИЗМЕНЕНО: Используем markerColor
           '&:hover': {
-            color: isActive ? 'error.dark' : 'primary.dark',
+            color: isActive ? 'error.dark' : markerColor, // <-- ИЗМЕНЕНО: Используем markerColor
           },
           transition: 'transform 0.3s ease-in-out',
           transform: isActive ? 'scale(1.5)' : 'scale(1)',
@@ -87,7 +92,6 @@ export const MapComponent: React.FC<MapComponentProps> = ({
   setCenterMapFn,
 }) => {
   const { i18n } = useTranslation();
-
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
@@ -96,6 +100,24 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
   const markerObjectsRef = useRef<mapboxgl.Marker[]>([]);
   const markerRootsRef = useRef<ReactDOM.Root[]>([]);
+
+  // Вспомогательная функция для получения локализованного контента (скопирована из HeroSection)
+  // Оставляем эту функцию, так как она может пригодиться, когда попапы будут включены снова.
+  const getLocalizedContent = useCallback(
+    (landmark: Landmark): LandmarkContent => {
+      const lang = i18n.language as keyof Pick<
+        Landmark,
+        'ru' | 'en' | 'es' | 'fr' | 'vn'
+      >;
+
+      if (lang === 'ru' && landmark.ru) return landmark.ru;
+      if (lang === 'es' && landmark.es) return landmark.es;
+      if (lang === 'fr' && landmark.fr) return landmark.fr;
+      if (lang === 'vn' && landmark.vn) return landmark.vn;
+      return landmark.en;
+    },
+    [i18n.language]
+  );
 
   const memoizedSetCenterMapFn = useCallback(
     (mapInstance: mapboxgl.Map | null) => {
@@ -182,6 +204,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
     const currentMapInstance = map.current;
 
+    // Очищаем предыдущие маркеры
     markerRootsRef.current.forEach((root) => {
       queueMicrotask(() => {
         try {
@@ -200,6 +223,10 @@ export const MapComponent: React.FC<MapComponentProps> = ({
       const root = ReactDOM.createRoot(markerContainer);
       markerRootsRef.current.push(root);
 
+      // Получаем цвет для маркера
+      // Если у достопримечательности есть первая категория, используем ее. Иначе - "default".
+      const categoryColor = getCategoryColor(landmark.category[0] || 'default'); // <-- НОВОЕ
+
       root.render(
         <CustomMarker
           isActive={activeIndex === index}
@@ -208,16 +235,50 @@ export const MapComponent: React.FC<MapComponentProps> = ({
             onMapMarkerClick(index, event);
           }}
           isBouncing={!hasUserInteracted}
+          markerColor={categoryColor} // <-- НОВОЕ: Передаем цвет в CustomMarker
         />
       );
+
+      // --- НАЧАЛО ЗАКОММЕНТИРОВАННОГО КОДА ПОПАПА ---
+      // Получаем локализованное название для попапа
+      // const landmarkTitle = getLocalizedContent(landmark).title;
+
+      // Создаем попап
+      // const popup = new mapboxgl.Popup({
+      //   offset: 25, // Смещение попапа от маркера
+      //   closeButton: false, // Не показывать кнопку закрытия
+      //   closeOnClick: true, // Закрывать попап при клике на карту
+      //   className: "landmark-popup", // Добавляем класс для стилизации
+      // }).setHTML(`<h4>${landmarkTitle}</h4>`); // Устанавливаем HTML-содержимое
+      // --- КОНЕЦ ЗАКОММЕНТИРОВАННОГО КОДА ПОПАПА ---
 
       const marker = new mapboxgl.Marker({
         element: markerContainer,
         anchor: 'bottom',
       })
-        // ИСПРАВЛЕНО: Возвращаем обмен местами, так как данные [широта, долгота]
-        .setLngLat([landmark.coordinates[1], landmark.coordinates[0]])
+        .setLngLat([landmark.coordinates[1], landmark.coordinates[0]]) // [долгота, широта]
+        // .setPopup(popup) // <-- Закомментировано: Привязываем попап к маркеру
         .addTo(currentMapInstance);
+
+      // --- НАЧАЛО ЗАКОММЕНТИРОВАННОГО КОДА ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ ПОПАПА ---
+      // Опционально: открывать попап активного маркера
+      // if (activeIndex === index) {
+      //   popup.addTo(currentMapInstance);
+      // }
+
+      // Дополнительная логика: открывать/закрывать попап при активности
+      // markerContainer.addEventListener("mouseenter", () => {
+      //   if (!popup.isOpen()) {
+      //     popup.addTo(currentMapInstance);
+      //   }
+      // });
+      // markerContainer.addEventListener("mouseleave", () => {
+      //   if (popup.isOpen() && activeIndex !== index) {
+      //     // Закрывать, если не активный маркер
+      //     popup.remove();
+      //   }
+      // });
+      // --- КОНЕЦ ЗАКОММЕНТИРОВАННОГО КОДА ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ ПОПАПА ---
 
       markerObjectsRef.current.push(marker);
     });
@@ -227,6 +288,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     isMapLoaded,
     onMapMarkerClick,
     hasUserInteracted,
+    getLocalizedContent, // Зависимость для getLocalizedContent, даже если попапы закомментированы
   ]);
 
   return (
