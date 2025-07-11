@@ -513,9 +513,9 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
                 onClick={centerMapOnUserLocation}
                 sx={{
                   position: 'absolute',
-                  opacity: 0.6,
-                  bottom: 200,
-                  right: 16,
+                  opacity: 0.5,
+                  bottom: 184,
+                  right: 8,
                   zIndex: 1000,
                   backgroundColor: theme.palette.background.paper,
                   '&:hover': {

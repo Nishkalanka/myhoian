@@ -22,10 +22,8 @@ import { useMapContext } from '../contexts/MapContext';
 import { IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-import '/src/index.css'; // Используем ваш CSS
-
-// Импортируем функцию для получения цвета категории
-import { getCategoryColor } from '../utils/categoryColors'; // <-- НОВОЕ
+import '/src/index.css';
+import { getCategoryColor } from '../utils/categoryColors';
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
 
@@ -78,7 +76,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
         }}
         aria-label="landmark-marker"
       >
-        <LocationOnIcon sx={{ fontSize: 40 }} />
+        <LocationOnIcon sx={{ fontSize: 35 }} />
       </IconButton>
     );
   }

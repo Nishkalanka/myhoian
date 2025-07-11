@@ -39,6 +39,11 @@ const translationES: TranslationContent = {
   footer: {
     copyright: 'Todos los derechos reservados.',
   },
+  categories: {
+    museum: 'Museos',
+    'food-drinks': 'Comida y Bebidas',
+    'art-galleries': 'Arte',
+  },
 };
 
 export default translationES;

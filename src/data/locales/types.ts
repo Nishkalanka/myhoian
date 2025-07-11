@@ -35,4 +35,10 @@ export interface TranslationContent {
   footer: {
     copyright: string;
   };
+
+  categories: {
+    museum: string;
+    'food-drinks': string;
+    'art-galleries': string;
+  };
 }

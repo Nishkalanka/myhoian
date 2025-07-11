@@ -40,6 +40,11 @@ const translationRU: TranslationContent = {
   footer: {
     copyright: 'Все права защищены.',
   },
+  categories: {
+    museum: 'Музеи',
+    'food-drinks': 'Еда и напитки',
+    'art-galleries': 'Арт-галереи',
+  },
 };
 
 export default translationRU;

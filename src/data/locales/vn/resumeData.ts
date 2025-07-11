@@ -39,6 +39,11 @@ const translationVN: TranslationContent = {
   footer: {
     copyright: 'Mọi quyền được bảo lưu.',
   },
+  categories: {
+    museum: 'Bảo tàng',
+    'food-drinks': 'Đồ ăn & Thức uống',
+    'art-galleries': 'Nghệ thuật',
+  },
 };
 
 export default translationVN;

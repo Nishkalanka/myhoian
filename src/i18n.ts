@@ -11,8 +11,8 @@ import translationFR from './data/locales/fr/resumeData.js';
 import translationVN from './data/locales/vn/resumeData.js';
 
 i18n
-  .use(LanguageDetector) // Определяет язык браузера
-  .use(initReactI18next) // Передает i18n экземпляр react-i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources: {
       en: {
@@ -31,28 +31,26 @@ i18n
         translation: translationVN,
       },
     },
-    // <--- ПРОВЕРЬТЕ ЭТИ ПАРАМЕТРЫ
-    lng: 'en', // Язык по умолчанию при первой загрузке, если не определен детектором
-    fallbackLng: 'en', // Язык, который будет использоваться, если нет перевода или текущий язык не найден.
-    supportedLngs: ['en', 'ru', 'es', 'fr', 'vn'], // Явно указываем поддерживаемые языки
-    nonExplicitSupportedLngs: true, // Позволяет детектору выбирать из fallback, даже если не указано в supportedLngs напрямую
-    load: 'languageOnly', // Загружать только основной язык (например, 'en' вместо 'en-US')
+    lng: 'en',
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'ru', 'es', 'fr', 'vn'],
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
 
     interpolation: {
-      escapeValue: false, // React уже экранирует от XSS, так что это не нужно
+      escapeValue: false,
     },
-    debug: false, // Установи в true, если нужна отладка (для продакшена false)
+    debug: false,
 
-    // <--- ОПЦИИ ДЛЯ LanguageDetector
     detection: {
-      order: ['path', 'localStorage', 'navigator'], // Порядок, в котором детектор будет искать язык
-      caches: ['localStorage'], // Где хранить последний выбранный язык
+      // Исключаем 'path' из порядка определения языка.
+      // Теперь язык будет определяться только из localStorage или настроек браузера.
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     },
-    // --- ВАЖНОЕ ИЗМЕНЕНИЕ ЗДЕСЬ ---
     react: {
-      useSuspense: true, // <-- Включаем Suspense для React
+      useSuspense: true,
     },
-    // ----------------------------
   });
 
 export default i18n;

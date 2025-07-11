@@ -101,3 +101,7 @@
 .marker-bounce {
   animation: bounce 1.5s infinite;
 }
+
+.mapboxgl-ctrl {
+  display: none !important;
+}

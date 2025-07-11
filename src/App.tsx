@@ -7,20 +7,18 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  // Navigate, // Удаляем Navigate, так как мы больше не перенаправляем на /en/
 } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 
 function App() {
-  // Состояние для выбранных категорий, теперь инициализируется с 'museum'
   const [selectedCategorySlugs, setSelectedCategorySlugs] = useState<string[]>([
     'museum',
     'food-drinks',
     'art-galleries',
   ]);
 
-  // Функция для обработки выбора категорий, передается в Header
   const handleCategorySelection = (selectedSlugs: string[]) => {
     setSelectedCategorySlugs(selectedSlugs);
   };
@@ -66,19 +64,16 @@ function App() {
             />
 
             <Routes>
+              {/* Убираем все маршруты с /:lang */}
+              {/* Вместо них используем один корневой маршрут */}
               <Route
-                path="/:lang"
+                path="/" // Теперь основной маршрут просто "/"
                 element={
                   <HeroSection selectedCategorySlugs={selectedCategorySlugs} />
                 }
               />
-              <Route
-                path="/:lang/"
-                element={
-                  <HeroSection selectedCategorySlugs={selectedCategorySlugs} />
-                }
-              />
-              <Route path="/" element={<Navigate to="/en/" replace />} />
+              {/* Удаляем Navigate, так как не нужно перенаправлять */}
+              {/* <Route path="/" element={<Navigate to="/en/" replace />} /> */}
             </Routes>
           </Box>
         </Suspense>
