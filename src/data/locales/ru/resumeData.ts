@@ -44,6 +44,7 @@ const translationRU: TranslationContent = {
     museum: 'Музеи',
     'food-drinks': 'Еда и напитки',
     'art-galleries': 'Арт-галереи',
+    clubs: 'Клубы',
   },
 };
 

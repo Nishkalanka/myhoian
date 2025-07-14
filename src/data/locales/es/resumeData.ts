@@ -43,6 +43,7 @@ const translationES: TranslationContent = {
     museum: 'Museos',
     'food-drinks': 'Comida y Bebidas',
     'art-galleries': 'Arte',
+    clubs: 'Clubs',
   },
 };
 

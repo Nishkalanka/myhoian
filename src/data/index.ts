@@ -13,6 +13,7 @@ export type { Landmark, CategorySlug, LandmarkContent, LangCode };
 import { museumLandmarks } from './landmarks/museums.js';
 import { foodDrinksLandmarks } from './landmarks/food-drinks.js';
 import { artGalleriesLandmarks } from './landmarks/art-galleries.js';
+import { clubsLandmarks } from './landmarks/clubs.js';
 // import { otherLandmarks } from "./landmarks/other.js";
 
 // =========================================================================
@@ -23,6 +24,7 @@ export const hoiAnLandmarks: Landmark[] = [
   ...museumLandmarks,
   ...foodDrinksLandmarks,
   ...artGalleriesLandmarks,
+  ...clubsLandmarks,
   // ...otherLandmarks,
 ];
 
@@ -55,7 +57,10 @@ export const getLandmarksByCategoryAndLanguage = (
     case 'food-drinks':
       categorySpecificLandmarks = foodDrinksLandmarks;
       break;
-    case 'art-galleries': // Исправлено на "art-galleries" для соответствия CategorySlug
+    case 'art-galleries':
+      categorySpecificLandmarks = artGalleriesLandmarks;
+      break;
+    case 'clubs':
       categorySpecificLandmarks = artGalleriesLandmarks;
       break;
     // case "other":

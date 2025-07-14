@@ -8,6 +8,7 @@ export const categoryColors: Record<CategorySlug | 'default', string> = {
   museum: '#1976d2',
   'food-drinks': '#ed6c02',
   'art-galleries': '#9c27b0',
+  clubs: '#000',
   default: '#ff980',
 };
 

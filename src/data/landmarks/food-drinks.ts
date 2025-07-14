@@ -154,120 +154,216 @@ export const foodDrinksLandmarks: Landmark[] = [
     id: 'sua-vegan-restaurant', // <-- ID теперь строковый
     coordinates: [15.883638636542983, 108.32000846236811], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['food-drinks'],
-    imageUrl: '1.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '58.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
-      title: 'Sua Cafe',
+      title: 'Sua Vegan Restaurant',
       description:
-        'A special place supporting ethnic minority groups and people with disabilities in Quang Nam.',
+        'A special and heartwarming vegan restaurant in Hoi An, renowned for its delicious plant-based cuisine and its unique mission of employing deaf and mute staff.',
       fullDescription: `
-<p>While passing through multiple burning fields of grass, we came into contact with villagers who suffered great hardship and less fortunate circumstances. Today, there are many ethnic minority groups experiencing great poverty and lacking basic needs such as food and clothing. Disabled people who were born with birth defects due to the effects of Agent Orange passed down genetically through their parents, some who are deaf and with limited speech are employed here. Working here gives them a sense of purpose and belonging. The Thanh Uyen Roastery Sua Cafe gives them the opportunity to provide dedicated customer service.</p>
+<p><strong>Sua Vegan Restaurant</strong> in Hoi An is more than just a place to eat; it's a truly special establishment known for its delicious vegan food and its incredibly inspiring social mission. What sets Sua apart is its commitment to employing and empowering <strong>deaf and mute individuals</strong>, offering them meaningful opportunities and fostering a unique, heartwarming dining experience.</p>
 
-<p>By supporting our coffee you are greatly helping to provide employment and change lives for the better. We are so thankful for your continued support: Let’s share our smiles and happily celebrate life together!</p>
-
-<h6>Our Mission</h6>
-<p>I created Ong Vang Charity project 7 years ago, with the aim of helping minority ethnic groups in the Quang Nam mountains. Now we are over 200 active members as well as 1800 members. And I give back 10% of the profits of the coffee shop for our project. Thanks to all these people and donations we already built 13 schools, and 4 wells. We help every month too:</p>
+<h6>A Special Place with a Heartfelt Mission:</h6>
 <ul>
-  <li>By giving each month around 2 million VND to each school for food. We also give second-hand clothes every two months.</li>
-  <li>We also help the poor people of Hoi An by distributing bread every morning. And a meal distribution in the city’s hospital twice a month.</li>
+  <li><strong>Empowering Employment:</strong> Sua Vegan Restaurant provides invaluable employment opportunities for deaf and mute people, giving them a platform to showcase their skills and contribute to the community. This initiative highlights inclusivity and creates a supportive environment.</li>
+  <li><strong>Unique Communication:</strong> Don't be surprised by a slightly different but charming way of ordering. The staff are adept at communicating through a combination of written notes, gestures, and a warm, welcoming attitude. It's an opportunity for guests to engage in a unique and respectful interaction.</li>
+  <li><strong>Inspiring Atmosphere:</strong> The presence of the dedicated and hardworking staff contributes to an incredibly positive and humble atmosphere. Many visitors find their experience here deeply moving and memorable.</li>
 </ul>
 
-<h6>Our Products</h6>
-<p>We are a group of 22 members, of which 80 percent are persons with disabilities. For us, it is very important to give an opportunity and also to try to adapt each task.</p>
-<p>That’s why handcraft comes to us, every person in the group can help and thanks to that we have a great selection of products. We are making lanterns and embroidery painting! Come buy one of our products help the whole community and give employment to more people in need.</p>
+<h6>Vegan Delights:</h6>
+<ul>
+  <li><strong>Pure Plant-Based Cuisine:</strong> As the name suggests, Sua is entirely vegan, offering a diverse menu of plant-based dishes that are both healthy and incredibly flavorful.</li>
+  <li><strong>Vietnamese & Fusion:</strong> The menu typically features a blend of traditional Vietnamese vegan dishes (like fresh spring rolls, various noodle soups, rice dishes) alongside some creative fusion options.</li>
+  <li><strong>Fresh Ingredients:</strong> Emphasis is placed on fresh, local vegetables, herbs, and plant-based proteins, ensuring vibrant and wholesome meals.</li>
+  <li><strong>Dietary Friendly:</strong> A great choice for vegans, vegetarians, and anyone looking for healthy, light, and flavorful meals.</li>
+</ul>
+
+<h6>Atmosphere & Ambiance:</h6>
+<ul>
+  <li><strong>Calm and Serene:</strong> Despite being popular, the atmosphere often remains calm and peaceful, allowing guests to relax and savor their meals.</li>
+  <li><strong>Authentic Charm:</strong> The decor is usually simple yet charming, reflecting traditional Vietnamese aesthetics with a modern, clean twist.</li>
+</ul>
+
+<h6>Location:</h6>
+<p>Sua Vegan Restaurant is typically located within or near the central Ancient Town area of Hoi An, making it convenient for tourists exploring the historical sites. Its exact address might be found on a quieter street, offering a peaceful escape from the main crowds.</p>
+<p><strong>Always verify the exact address locally or on recent online maps, as businesses can sometimes change locations.</strong></p>
+
+<h6>Visitor Tips:</h6>
+<ul>
+  <li><strong>Be Patient and Respectful:</strong> Embrace the unique communication style. A smile and a clear written note often go a long way.</li>
+  <li><strong>Support the Mission:</strong> By dining here, you are directly supporting a wonderful social enterprise.</li>
+  <li><strong>Try the Local Specialties:</strong> Explore their vegan versions of classic Vietnamese dishes.</li>
+  <li><strong>Consider Lunch:</strong> It's a great spot for a healthy and satisfying lunch during your exploration of Hoi An.</li>
+</ul>
       `,
-      internalImageNames: [
-        'sua_cafe_1.jpg',
-        'sua_cafe_2.jpg',
-        // Добавьте сюда имена файлов изображений, связанных с этим кафе
-      ],
+      internalImageNames: [], // Добавьте имена файлов изображений, если они будут
     },
     es: {
-      title: 'Sua Cafe',
+      title: 'Sua Vegan Restaurant',
       description:
-        'Un lugar especial que apoya a los grupos étnicos minoritarios y a las personas con discapacidad en las montañas de Quang Nam.',
+        'Un restaurante vegano especial y conmovedor en Hoi An, famoso por su deliciosa cocina a base de plantas y su misión única de emplear personal sordo y mudo.',
       fullDescription: `
-<p>Mientras pasábamos por varios campos de hierba en llamas, entramos en contacto con aldeanos que sufrían grandes dificultades y circunstancias menos afortunadas. Hoy en día, muchos grupos étnicos minoritarios experimentan una gran pobreza y carecen de necesidades básicas como alimentos y ropa. Personas con discapacidad que nacieron con defectos de nacimiento debido a los efectos del Agente Naranja, transmitidos genéticamente por sus padres, algunos sordos y con habla limitada, están empleados aquí. Trabajar aquí les da un sentido de propósito y pertenencia. Thanh Uyen Roastery Sua Cafe les da la oportunidad de brindar un servicio al cliente dedicado.</p>
+<p><strong>Sua Vegan Restaurant</strong> en Hoi An es más que un simple lugar para comer; es un establecimiento verdaderamente especial conocido por su deliciosa comida vegana y su increíble misión social inspiradora. Lo que distingue a Sua es su compromiso de emplear y empoderar a <strong>personas sordas y mudas</strong>, ofreciéndoles oportunidades significativas y fomentando una experiencia gastronómica única y conmovedora.</p>
 
-<p>Al apoyar nuestro café, usted está ayudando enormemente a proporcionar empleo y a cambiar vidas para mejor. ¡Estamos muy agradecidos por su continuo apoyo: Compartamos nuestras sonrisas y celebremos felizmente la vida juntos!</p>
-
-<h6>Nuestra Misión</h6>
-<p>Creé el proyecto benéfico Ong Vang hace 7 años, con el objetivo de ayudar a los grupos étnicos minoritarios en las montañas de Quang Nam. Ahora contamos con más de 200 miembros activos, así como 1800 miembros. Y devuelvo el 10% de las ganancias de la cafetería a nuestro proyecto. Gracias a todas estas personas y donaciones ya hemos construido 13 escuelas y 4 pozos. También ayudamos cada mes:</p>
+<h6>Un Lugar Especial con una Misión Sincera:</h6>
 <ul>
-  <li>Dando cada mes alrededor de 2 millones de VND a cada escuela para alimentos. También damos ropa de segunda mano cada dos meses.</li>
-  <li>También ayudamos a los pobres de Hoi An distribuyendo pan todas las mañanas. Y una distribución de comidas en el hospital de la ciudad dos veces al mes.</li>
+  <li><strong>Empleo Empoderador:</strong> Sua Vegan Restaurant brinda oportunidades de empleo invaluables para personas sordas y mudas, dándoles una plataforma para mostrar sus habilidades y contribuir a la comunidad. Esta iniciativa destaca la inclusión y crea un ambiente de apoyo.</li>
+  <li><strong>Comunicación Única:</strong> No se sorprenda por una forma de pedir un poco diferente pero encantadora. El personal es experto en comunicarse a través de una combinación de notas escritas, gestos y una actitud cálida y acogedora. Es una oportunidad para que los huéspedes se involucren en una interacción única y respetuosa.</li>
+  <li><strong>Ambiente Inspirador:</strong> La presencia del personal dedicado y trabajador contribuye a una atmósfera increíblemente positiva y humilde. Muchos visitantes encuentran su experiencia aquí profundamente conmovedora y memorable.</li>
 </ul>
 
-<h6>Nuestros Productos</h6>
-<p>Somos un grupo de 22 miembros, de los cuales el 80 por ciento son personas con discapacidad. Para nosotros, es muy importante dar una oportunidad y también tratar de adaptar cada tarea.</p>
-<p>Por eso la artesanía llega a nosotros, cada persona del grupo puede ayudar y gracias a eso tenemos una gran selección de productos. ¡Estamos haciendo linternas y pinturas de bordado! Venga a comprar uno de nuestros productos, ayude a toda la comunidad y dé empleo a más personas necesitadas.</p>
+<h6>Delicias Veganas:</h6>
+<ul>
+  <li><strong>Cocina Pura a Base de Plantas:</strong> Como su nombre lo indica, Sua es completamente vegano, ofreciendo un menú diverso de platos a base de plantas que son saludables y increíblemente sabrosos.</li>
+  <li><strong>Vietnamita y Fusión:</strong> El menú generalmente presenta una mezcla de platos veganos vietnamitas tradicionales (como rollitos de primavera frescos, varias sopas de fideos, platos de arroz) junto con algunas opciones de fusión creativas.</li>
+  <li><strong>Ingredientes Frescos:</strong> Se hace hincapié en verduras, hierbas y proteínas vegetales frescas y locales, lo que garantiza comidas vibrantes y saludables.</li>
+  <li><strong>Apto para Dietas:</strong> Una excelente opción para veganos, vegetarianos y cualquiera que busque comidas saludables, ligeras y sabrosas.</li>
+</ul>
+
+<h6>Atmósfera y Ambiente:</h6>
+<ul>
+  <li><strong>Tranquilo y Sereno:</strong> A pesar de ser popular, el ambiente a menudo se mantiene tranquilo y pacífico, lo que permite a los huéspedes relajarse y saborear sus comidas.</li>
+  <li><strong>Encanto Auténtico:</strong> La decoración suele ser sencilla pero encantadora, lo que refleja la estética tradicional vietnamita con un toque moderno y limpio.</li>
+</ul>
+
+<h6>Ubicación:</h6>
+<p>Sua Vegan Restaurant suele estar ubicado dentro o cerca del área central del Casco Antiguo de Hoi An, lo que lo hace conveniente para los turistas que exploran los sitios históricos. Su dirección exacta podría encontrarse en una calle más tranquila, ofreciendo un escape pacífico de las principales multitudes.</p>
+<p><strong>Siempre verifique la dirección exacta a nivel local o en mapas en línea recientes, ya que los negocios a veces pueden cambiar de ubicación.</strong></p>
+
+<h6>Consejos para Visitantes:</h6>
+<ul>
+  <li><strong>Sea Paciente y Respetuoso:</strong> Adopte el estilo de comunicación único. Una sonrisa y una nota escrita clara suelen ser muy útiles.</li>
+  <li><strong>Apoye la Misión:</strong> Al cenar aquí, está apoyando directamente una maravillosa empresa social.</li>
+  <li><strong>Pruebe las Especialidades Locales:</strong> Explore sus versiones veganas de platos vietnamitas clásicos.</li>
+  <li><strong>Considere Almorzar:</strong> Es un gran lugar para un almuerzo saludable y satisfactorio durante su exploración de Hoi An.</li>
+</ul>
       `,
-      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+      internalImageNames: [],
     },
     fr: {
-      title: 'Sua Cafe',
+      title: 'Sua Vegan Restaurant',
       description:
-        'Un lieu spécial qui soutient les groupes ethniques minoritaires et les personnes handicapées dans les montagnes de Quang Nam.',
+        "Un restaurant végétalien spécial et chaleureux à Hoi An, réputé pour sa délicieuse cuisine à base de plantes et sa mission unique d'employer du personnel sourd et muet.",
       fullDescription: `
-<p>En traversant plusieurs champs d'herbe en feu, nous sommes entrés en contact avec des villageois qui souffraient de grandes difficultés et de circonstances moins favorables. Aujourd'hui, de nombreux groupes ethniques minoritaires connaissent une grande pauvreté et manquent de produits de première nécessité tels que la nourriture et les vêtements. Les personnes handicapées nées avec des malformations congénitales dues aux effets de l'Agent Orange, transmis génétiquement par leurs parents, certaines sourdes et ayant des difficultés d'élocution, sont employées ici. Travailler ici leur donne un sentiment d'utilité et d'appartenance. Le Thanh Uyen Roastery Sua Cafe leur donne l'opportunité de fournir un service client dédié.</p>
+<p><strong>Sua Vegan Restaurant</strong> à Hoi An est bien plus qu'un simple endroit pour manger ; c'est un établissement véritablement spécial, connu pour sa délicieuse cuisine végétalienne et sa mission sociale incroyablement inspirante. Ce qui distingue Sua est son engagement à employer et à autonomiser les <strong>personnes sourdes et muettes</strong>, en leur offrant des opportunités significatives et en favorisant une expérience culinaire unique et émouvante.</p>
 
-<p>En soutenant notre café, vous contribuez grandement à créer des emplois et à améliorer des vies. Nous vous sommes très reconnaissants de votre soutien continu : Partageons nos sourires et célébrons joyeusement la vie ensemble !</p>
-
-<h6>Notre Mission</h6>
-<p>J'ai créé le projet caritatif Ong Vang il y a 7 ans, dans le but d'aider les groupes ethniques minoritaires des montagnes de Quang Nam. Nous comptons maintenant plus de 200 membres actifs ainsi que 1800 membres. Et je reverse 10 % des bénéfices du café à notre projet. Grâce à toutes ces personnes et à ces dons, nous avons déjà construit 13 écoles et 4 puits. Nous aidons également chaque mois :</p>
+<h6>Un Lieu Spécial avec une Mission Sincère :</h6>
 <ul>
-  <li>En donnant chaque mois environ 2 millions de VND à chaque école pour la nourriture. Nous donnons également des vêtements de seconde main tous les deux mois.</li>
-  <li>Nous aidons également les pauvres de Hoi An en distribuant du pain tous les matins. Et une distribution de repas à l'hôpital de la ville deux fois par mois.</li>
+  <li><strong>Emploi Autonomisant :</strong> Le Sua Vegan Restaurant offre des opportunités d'emploi inestimables aux personnes sourdes et muettes, leur donnant une plateforme pour montrer leurs compétences et contribuer à la communauté. Cette initiative met en lumière l'inclusion et crée un environnement de soutien.</li>
+  <li><strong>Communication Unique :</strong> Ne soyez pas surpris par une façon de commander légèrement différente mais charmante. Le personnel est habile à communiquer par une combinaison de notes écrites, de gestes et d'une attitude chaleureuse et accueillante. C'est une opportunité pour les clients de s'engager dans une interaction unique et respectueuse.</li>
+  <li><strong>Atmosphère Inspirante :</strong> La présence du personnel dévoué et travailleur contribue à une atmosphère incroyablement positive et humble. De nombreux visiteurs trouvent leur expérience ici profondément émouvante et mémorable.</li>
 </ul>
 
-<h6>Nos Produits</h6>
-<p>Nous sommes un groupe de 22 membres, dont 80 % sont des personnes handicapées. Pour nous, il est très important de leur donner une opportunité et d'essayer d'adapter chaque tâche.</p>
-<p>C'est pourquoi l'artisanat vient à nous, chaque personne du groupe peut aider et grâce à cela, nous avons une grande sélection de produits. Nous fabriquons des lanternes et des peintures brodées ! Venez acheter l'un de nos produits, aidez toute la communauté et donnez un emploi à plus de personnes dans le besoin.</p>
+<h6>Délices Végétaliens :</h6>
+<ul>
+  <li><strong>Cuisine Purement Végétale :</strong> Comme son nom l'indique, Sua est entièrement végétalien, offrant un menu diversifié de plats à base de plantes qui sont à la fois sains et incroyablement savoureux.</li>
+  <li><strong>Vietnamien & Fusion :</strong> Le menu propose généralement un mélange de plats végétaliens vietnamiens traditionnels (comme les rouleaux de printemps frais, diverses soupes de nouilles, plats de riz) ainsi que des options de fusion créatives.</li>
+  <li><strong>Ingrédients Frais :</strong> L'accent est mis sur les légumes, les herbes et les protéines végétales frais et locaux, garantissant des repas vibrants et sains.</li>
+  <li><strong>Adapté aux Régimes :</strong> Un excellent choix pour les végétaliens, les végétariens et toute personne à la recherche de repas sains, légers et savoureux.</li>
+</ul>
+
+<h6>Atmosphère & Ambiance :</h6>
+<ul>
+  <li><strong>Calme et Serein :</strong> Bien qu'étant populaire, l'atmosphère reste souvent calme et paisible, permettant aux clients de se détendre et de savourer leurs repas.</li>
+  <li><strong>Charme Authentique :</strong> Le décor est généralement simple mais charmant, reflétant l'esthétique traditionnelle vietnamienne avec une touche moderne et épurée.</li>
+</ul>
+
+<h6>Localisation :</h6>
+<p>Le Sua Vegan Restaurant est généralement situé dans ou à proximité de la zone centrale de la Vieille Ville de Hoi An, ce qui le rend pratique pour les touristes explorant les sites historiques. Son adresse exacte pourrait se trouver dans une rue plus calme, offrant une évasion paisible des principales foules.</p>
+<p><strong>Veuillez toujours vérifier l'adresse exacte localement ou sur des cartes en ligne récentes, car les entreprises peuvent parfois changer d'emplacement.</strong></p>
+
+<h6>Conseils pour les Visiteurs :</h6>
+<ul>
+  <li><strong>Soyez Patient et Respectueux :</strong> Adoptez le style de communication unique. Un sourire et une note écrite claire sont souvent très utiles.</li>
+  <li><strong>Soutenez la Mission :</strong> En dînant ici, vous soutenez directement une merveilleuse entreprise sociale.</li>
+  <li><strong>Goûtez les Spécialités Locales :</strong> Explorez leurs versions végétaliennes des plats vietnamiens classiques.</li>
+  <li><strong>Considérez le Déjeuner :</strong> C'est un excellent endroit pour un déjeuner sain et satisfaisant lors de votre exploration de Hoi An.</li>
+</ul>
       `,
-      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+      internalImageNames: [],
     },
     ru: {
-      title: 'Кофейня Sua Cafe',
+      title: 'Sua Vegan Restaurant',
       description:
-        'Особое место, поддерживающее этнические меньшинства и людей с ограниченными возможностями в горах Куангнам.',
+        'Особый и душевный веганский ресторан в Хойане, известный своей вкусной растительной кухней и уникальной миссией по трудоустройству глухонемых сотрудников.',
       fullDescription: `
-<p>Проходя через выжженные травяные поля, мы встретились с жителями деревень, которые переживали большие трудности и жили в менее благоприятных условиях. Сегодня многие этнические меньшинства испытывают крайнюю нищету и лишены базовых потребностей, таких как еда и одежда. Люди с ограниченными возможностями, родившиеся с врожденными дефектами из-за последствий Agent Orange, передаваемых генетически от их родителей, некоторые из которых глухие и с ограниченной речью, трудоустроены здесь. Работа здесь дает им чувство цели и принадлежности. Кофейня Thanh Uyen Roastery Sua Cafe предоставляет им возможность оказывать внимательное обслуживание клиентов.</p>
+<p><strong>Sua Vegan Restaurant</strong> в Хойане — это не просто место, где можно поесть; это поистине особенное заведение, известное своей вкусной веганской едой и невероятно вдохновляющей социальной миссией. Что отличает Sua, так это его приверженность трудоустройству и расширению прав и возможностей <strong>глухонемых людей</strong>, предлагая им значимые возможности и создавая уникальный, трогательный опыт обеда.</p>
 
-<p>Поддерживая наш кофе, вы вносите огромный вклад в обеспечение занятости и изменение жизни к лучшему. Мы очень благодарны за вашу постоянную поддержку: Давайте делиться улыбками и счастливо праздновать жизнь вместе!</p>
-
-<h6>Наша Миссия</h6>
-<p>Я создал благотворительный проект Ong Vang 7 лет назад с целью помощи этническим меньшинствам в горах Куангнам. Сейчас у нас более 200 активных членов, а также 1800 просто членов. И я отдаю 10% прибыли кофейни на наш проект. Благодаря всем этим людям и пожертвованиям мы уже построили 13 школ и 4 колодца. Мы также помогаем каждый месяц:</p>
+<h6>Особенное место с искренней миссией:</h6>
 <ul>
-  <li>Выделяя около 2 миллионов донгов (VND) каждой школе ежемесячно на еду. Мы также раздаем подержанную одежду каждые два месяца.</li>
-  <li>Мы также помогаем бедным жителям Хойана, ежедневно раздавая хлеб по утрам. И дважды в месяц организуем раздачу еды в городской больнице.</li>
+  <li><strong>Расширение прав и возможностей через трудоустройство:</strong> Sua Vegan Restaurant предоставляет бесценные возможности трудоустройства для глухонемых людей, давая им платформу для демонстрации своих навыков и внесения вклада в сообщество. Эта инициатива подчеркивает инклюзивность и создает благоприятную среду.</li>
+  <li><strong>Уникальное общение:</strong> Не удивляйтесь немного иному, но очаровательному способу заказа. Персонал искусен в общении с помощью письменных заметок, жестов и теплого, гостеприимного отношения. Это возможность для гостей вступить в уникальное и уважительное взаимодействие.</li>
+  <li><strong>Вдохновляющая атмосфера:</strong> Присутствие преданного своему делу и трудолюбивого персонала способствует невероятно позитивной и скромной атмосфере. Многие посетители находят свой опыт здесь глубоко трогательным и запоминающимся.</li>
 </ul>
 
-<h6>Наши Продукты</h6>
-<p>Мы – группа из 22 человек, из которых 80 процентов – люди с ограниченными возможностями. Для нас очень важно предоставлять возможности и стараться адаптировать каждую задачу.</p>
-<p>Именно поэтому мы занимаемся ремеслами – каждый человек в группе может помочь, и благодаря этому у нас есть большой выбор продуктов. Мы изготавливаем фонарики и вышитые картины! Приходите и купите один из наших продуктов, помогите всему сообществу и предоставьте работу большему количеству нуждающихся людей.</p>
+<h6>Веганские изыски:</h6>
+<ul>
+  <li><strong>Чистая растительная кухня:</strong> Как следует из названия, Sua полностью веганский, предлагая разнообразное меню из растительных блюд, которые являются одновременно полезными и невероятно ароматными.</li>
+  <li><strong>Вьетнамская и фьюжн:</strong> Меню обычно включает в себя сочетание традиционных вьетнамских веганских блюд (например, свежие спринг-роллы, различные супы с лапшой, рисовые блюда) наряду с некоторыми креативными фьюжн-вариантами.</li>
+  <li><strong>Свежие ингредиенты:</strong> Особое внимание уделяется свежим местным овощам, травам и растительным белкам, что обеспечивает яркие и полезные блюда.</li>
+  <li><strong>Подходит для диетического питания:</strong> Отличный выбор для веганов, вегетарианцев и всех, кто ищет здоровые, легкие и ароматные блюда.</li>
+</ul>
+
+<h6>Атмосфера и обстановка:</h6>
+<ul>
+  <li><strong>Спокойный и безмятежный:</strong> Несмотря на популярность, атмосфера часто остается спокойной и мирной, позволяя гостям расслабиться и насладиться едой.</li>
+  <li><strong>Подлинный шарм:</strong> Декор обычно простой, но очаровательный, отражающий традиционную вьетнамскую эстетику с современным, чистым оттенком.</li>
+</ul>
+
+<h6>Расположение:</h6>
+<p>Sua Vegan Restaurant обычно расположен в центральной части Старого города Хойана или очень близко к нему, что делает его удобным для туристов, исследующих исторические места. Его точный адрес может быть найден на более тихой улице, предлагая спокойное убежище от основной толпы.</p>
+<p><strong>Всегда уточняйте точный адрес на месте или на свежих онлайн-картах, так как предприятия иногда могут менять свое местоположение.</strong></p>
+
+<h6>Советы для посетителей:</h6>
+<ul>
+  <li><strong>Будьте терпеливы и уважительны:</strong> Примите уникальный стиль общения. Улыбка и четкая письменная заметка часто очень помогают.</li>
+  <li><strong>Поддержите миссию:</strong> Обедая здесь, вы напрямую поддерживаете замечательное социальное предприятие.</li>
+  <li><strong>Попробуйте местные деликатесы:</strong> Изучите их веганские версии классических вьетнамских блюд.</li>
+  <li><strong>Рассмотрите обед:</strong> Это отличное место для здорового и сытного обеда во время вашего знакомства с Хойаном.</li>
+</ul>
       `,
-      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+      internalImageNames: [],
     },
     vn: {
-      title: 'Sua Cafe',
+      title: 'Sua Vegan Restaurant',
       description:
-        'Một nơi đặc biệt hỗ trợ các nhóm dân tộc thiểu số và người khuyết tật ở vùng núi Quảng Nam.',
+        'Một nhà hàng thuần chay đặc biệt và ấm áp ở Hội An, nổi tiếng với ẩm thực thực vật ngon miệng và sứ mệnh độc đáo là tuyển dụng nhân viên khiếm thính và khiếm ngôn.',
       fullDescription: `
-<p>Khi đi qua nhiều cánh đồng cỏ đang cháy, chúng tôi đã tiếp xúc với những người dân làng gặp nhiều khó khăn và hoàn cảnh kém may mắn. Ngày nay, có nhiều nhóm dân tộc thiểu số đang sống trong cảnh nghèo đói và thiếu thốn những nhu cầu cơ bản như thức ăn và quần áo. Những người khuyết tật sinh ra với dị tật bẩm sinh do ảnh hưởng của chất độc màu da cam được di truyền qua cha mẹ của họ, một số người bị điếc và có khả năng nói hạn chế đang được tuyển dụng tại đây. Làm việc ở đây mang lại cho họ cảm giác có mục đích và thuộc về. Quán cà phê Thanh Uyên Roastery Sua Cafe mang đến cho họ cơ hội cung cấp dịch vụ khách hàng tận tâm.</p>
+<p><strong>Sua Vegan Restaurant</strong> ở Hội An không chỉ là một nơi để ăn uống; đây là một cơ sở thực sự đặc biệt, nổi tiếng với các món ăn chay thơm ngon và sứ mệnh xã hội đầy cảm hứng. Điều làm nên sự khác biệt của Sua là cam kết tuyển dụng và trao quyền cho <strong>những người khiếm thính và khiếm ngôn</strong>, mang đến cho họ những cơ hội có ý nghĩa và tạo ra trải nghiệm ăn uống độc đáo, ấm lòng.</p>
 
-<p>Bằng cách ủng hộ cà phê của chúng tôi, bạn đang góp phần rất lớn vào việc tạo việc làm và thay đổi cuộc sống tốt đẹp hơn. Chúng tôi rất biết ơn sự hỗ trợ liên tục của bạn: Hãy cùng chia sẻ nụ cười và vui vẻ ăn mừng cuộc sống cùng nhau!</p>
-
-<h6>Sứ mệnh của chúng tôi</h6>
-<p>Tôi đã tạo ra dự án từ thiện Ông Vàng 7 năm trước, với mục đích giúp đỡ các nhóm dân tộc thiểu số ở vùng núi Quảng Nam. Hiện tại chúng tôi có hơn 200 thành viên tích cực cũng như 1800 thành viên. Và tôi trích 10% lợi nhuận của quán cà phê cho dự án của chúng tôi. Nhờ tất cả những người này và những đóng góp, chúng tôi đã xây dựng 13 trường học và 4 giếng nước. Chúng tôi cũng giúp đỡ hàng tháng:</p>
+<h6>Một Địa điểm Đặc biệt với Sứ mệnh Từ tâm:</h6>
 <ul>
-  <li>Bằng cách trao khoảng 2 triệu VND cho mỗi trường học để mua thức ăn hàng tháng. Chúng tôi cũng tặng quần áo cũ hai tháng một lần.</li>
-  <li>Chúng tôi cũng giúp đỡ người nghèo ở Hội An bằng cách phân phát bánh mì mỗi sáng. Và phân phát bữa ăn tại bệnh viện thành phố hai lần một tháng.</li>
+  <li><strong>Trao quyền Thông qua Việc làm:</strong> Sua Vegan Restaurant cung cấp các cơ hội việc làm vô giá cho người khiếm thính và khiếm ngôn, tạo cho họ một nền tảng để thể hiện kỹ năng và đóng góp cho cộng đồng. Sáng kiến này đề cao sự hòa nhập và tạo ra một môi trường hỗ trợ.</li>
+  <li><strong>Giao tiếp Độc đáo:</strong> Đừng ngạc nhiên bởi một cách gọi món hơi khác nhưng duyên dáng. Nhân viên thông thạo giao tiếp thông qua sự kết hợp của ghi chú viết tay, cử chỉ và thái độ nồng nhiệt, hiếu khách. Đây là cơ hội để khách hàng tham gia vào một tương tác độc đáo và tôn trọng.</li>
+  <li><strong>Không gian Truyền cảm hứng:</strong> Sự hiện diện của đội ngũ nhân viên tận tâm và chăm chỉ góp phần tạo nên một không khí vô cùng tích cực và khiêm tốn. Nhiều du khách nhận thấy trải nghiệm của họ ở đây vô cùng cảm động và đáng nhớ.</li>
 </ul>
 
-<h6>Sản phẩm của chúng tôi</h6>
-<p>Chúng tôi là một nhóm gồm 22 thành viên, trong đó 80% là người khuyết tật. Đối với chúng tôi, điều rất quan trọng là tạo cơ hội và cũng cố gắng điều chỉnh từng nhiệm vụ.</p>
-<p>Đó là lý do tại sao đồ thủ công đến với chúng tôi, mỗi người trong nhóm đều có thể giúp đỡ và nhờ đó, chúng tôi có một lựa chọn sản phẩm tuyệt vời. Chúng tôi đang làm đèn lồng và tranh thêu! Hãy đến mua một trong những sản phẩm của chúng tôi để giúp đỡ cả cộng đồng và tạo việc làm cho nhiều người cần giúp đỡ hơn.</p>
+<h6>Đồ ăn chay ngon miệng:</h6>
+<ul>
+  <li><strong>Ẩm thực Thuần thực vật:</strong> Đúng như tên gọi, Sua hoàn toàn thuần chay, cung cấp thực đơn đa dạng các món ăn từ thực vật, vừa tốt cho sức khỏe vừa vô cùng đậm đà hương vị.</li>
+  <li><strong>Món Việt & Fusion:</strong> Thực đơn thường có sự pha trộn giữa các món ăn chay truyền thống Việt Nam (như nem tươi, các loại bún, cơm) cùng với một số lựa chọn fusion sáng tạo.</li>
+  <li><strong>Nguyên liệu Tươi sống:</strong> Sự nhấn mạnh được đặt vào các loại rau, thảo mộc và protein thực vật tươi, địa phương, đảm bảo các bữa ăn sống động và bổ dưỡng.</li>
+  <li><strong>Phù hợp với Chế độ ăn kiêng:</strong> Một lựa chọn tuyệt vời cho người ăn chay, người ăn chay trường và bất kỳ ai đang tìm kiếm những bữa ăn lành mạnh, nhẹ nhàng và đầy hương vị.</li>
+</ul>
+
+<h6>Bầu không khí & Không gian:</h6>
+<ul>
+  <li><strong>Bình yên và Thanh tịnh:</strong> Mặc dù nổi tiếng, không gian thường vẫn bình tĩnh và yên bình, cho phép khách thư giãn và thưởng thức bữa ăn của họ.</li>
+  <li><strong>Nét duyên dáng Authenticity:</strong> Trang trí thường đơn giản nhưng quyến rũ, phản ánh nét thẩm mỹ truyền thống Việt Nam với một chút hiện đại, sạch sẽ.</li>
+</ul>
+
+<h6>Vị trí:</h6>
+<p>Sua Vegan Restaurant thường nằm trong hoặc rất gần khu vực Phố cổ Hội An, giúp khách du lịch dễ dàng tiếp cận để khám phá các di tích lịch sử. Địa chỉ chính xác của nó có thể nằm trên một con phố yên tĩnh hơn, mang đến một lối thoát bình yên khỏi đám đông chính.</p>
+<p><strong>Luôn xác minh địa chỉ chính xác tại địa phương hoặc trên các bản đồ trực tuyến gần đây, vì các doanh nghiệp đôi khi có thể thay đổi vị trí.</strong></p>
+
+<h6>Mẹo dành cho Du khách:</h6>
+<ul>
+  <li><strong>Hãy Kiên nhẫn và Tôn trọng:</strong> Chấp nhận phong cách giao tiếp độc đáo. Một nụ cười và một ghi chú viết rõ ràng thường rất hữu ích.</li>
+  <li><strong>Ủng hộ Sứ mệnh:</strong> Bằng cách dùng bữa tại đây, bạn đang trực tiếp ủng hộ một doanh nghiệp xã hội tuyệt vời.</li>
+  <li><strong>Thử các Món Đặc sản Địa phương:</strong> Khám phá các phiên bản chay của các món ăn Việt Nam cổ điển của họ.</li>
+  <li><strong>Cân nhắc dùng Bữa trưa:</strong> Đây là một địa điểm tuyệt vời cho một bữa trưa lành mạnh và no bụng trong chuyến khám phá Hội An của bạn.</li>
+</ul>
       `,
-      internalImageNames: [], // ЗАПОЛНИТЬ ПРИ НЕОБХОДИМОСТИ
+      internalImageNames: [],
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL

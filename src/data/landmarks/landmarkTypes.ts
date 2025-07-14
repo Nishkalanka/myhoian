@@ -1,6 +1,6 @@
 // src/data/landmarks/landmarkTypes.ts
 
-export type CategorySlug = 'museum' | 'food-drinks' | 'art-galleries'; // <-- Обновите, если будут новые категории
+export type CategorySlug = 'museum' | 'food-drinks' | 'art-galleries' | 'clubs'; // <-- Обновите, если будут новые категории
 
 export interface LandmarkContent {
   title: string;

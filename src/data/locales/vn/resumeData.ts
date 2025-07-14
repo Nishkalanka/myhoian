@@ -43,6 +43,7 @@ const translationVN: TranslationContent = {
     museum: 'Bảo tàng',
     'food-drinks': 'Đồ ăn & Thức uống',
     'art-galleries': 'Nghệ thuật',
+    clubs: 'Câu lạc bộ',
   },
 };
 

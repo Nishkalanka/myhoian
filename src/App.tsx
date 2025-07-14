@@ -17,6 +17,7 @@ function App() {
     'museum',
     'food-drinks',
     'art-galleries',
+    'clubs',
   ]);
 
   const handleCategorySelection = (selectedSlugs: string[]) => {

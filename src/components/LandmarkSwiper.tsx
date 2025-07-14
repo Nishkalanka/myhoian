@@ -241,7 +241,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                     <Stack
                       direction="row"
                       spacing={0.5}
-                      sx={{ mb: 0.5, flexWrap: 'wrap' }}
+                      sx={{ mt: 0.5, flexWrap: 'wrap' }}
                     >
                       {landmark.category.map((catSlug: CategorySlug) => {
                         // Указываем тип CategorySlug
@@ -253,7 +253,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                             size="small"
                             variant="filled"
                             sx={{
-                              height: 20,
+                              height: 18,
                               fontSize: '0.75rem',
                               backgroundColor: categoryColor, // <-- УСТАНАВЛИВАЕМ ЦВЕТ ФОНА
                               color:
@@ -273,7 +273,8 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                     component="h3"
                     sx={{
                       mb: 0.5,
-                      mt: 0.5,
+                      mt: 1,
+                      lineHeight: 1.4,
                       textAlign: 'left',
                       width: '100%',
                       WebkitLineClamp: 2,

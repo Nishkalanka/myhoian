@@ -40,5 +40,6 @@ export interface TranslationContent {
     museum: string;
     'food-drinks': string;
     'art-galleries': string;
+    clubs: string;
   };
 }
