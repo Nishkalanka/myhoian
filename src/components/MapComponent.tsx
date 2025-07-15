@@ -68,7 +68,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
         }}
         aria-label="landmark-marker"
       >
-        <LocationOnIcon sx={{ fontSize: 35 }} />
+        <LocationOnIcon sx={{ fontSize: 30 }} />
       </IconButton>
     );
   }
@@ -137,8 +137,8 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     const newMap = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [108.34391265913898, 15.874180418981076],
-      zoom: 12,
+      center: [108.34391265913898, 15.888422719170611],
+      zoom: 12.1,
       pitch: 50,
       bearing: 0,
       attributionControl: false,
