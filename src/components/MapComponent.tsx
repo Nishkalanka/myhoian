@@ -146,8 +146,8 @@ export const MapComponent: React.FC<MapComponentProps> = ({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [108.32607252520863, 15.877085241922142], // [долгота, широта]
-      zoom: 17,
-      pitch: 0,
+      zoom: 11,
+      pitch: 50,
       bearing: 0,
       attributionControl: false,
     });
