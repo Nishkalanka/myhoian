@@ -1,20 +1,13 @@
 // src/components/MapComponent.tsx
 
-import React, {
-  useRef,
-  useEffect,
-  useState,
-  useCallback,
-  useLayoutEffect,
-} from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactDOM from 'react-dom/client';
 
 import { useTranslation } from 'react-i18next';
 
-import { hoiAnLandmarks } from '../data/index';
-import type { Landmark, LandmarkContent, CategorySlug } from '../data/index'; // Убедитесь, что CategorySlug импортирован
+import type { Landmark, LandmarkContent, CategorySlug } from '../data/index';
 
 import { MapProvider } from '../contexts/MapContext';
 import { useMapContext } from '../contexts/MapContext';
@@ -43,12 +36,11 @@ interface CustomMarkerProps {
   isActive: boolean;
   onClick: (event: React.MouseEvent) => void;
   isBouncing: boolean;
-  markerColor: string; // <-- НОВОЕ: Добавляем пропс для цвета маркера
+  markerColor: string;
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
   ({ isActive, onClick, isBouncing, markerColor }) => {
-    // <-- НОВОЕ: Принимаем markerColor
     const handleClick = useCallback(
       (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -66,9 +58,9 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
         sx={{
           p: 0,
           lineHeight: 1,
-          color: isActive ? 'error.main' : markerColor, // <-- ИЗМЕНЕНО: Используем markerColor
+          color: isActive ? 'error.main' : markerColor,
           '&:hover': {
-            color: isActive ? 'error.dark' : markerColor, // <-- ИЗМЕНЕНО: Используем markerColor
+            color: isActive ? 'error.dark' : markerColor,
           },
           transition: 'transform 0.3s ease-in-out',
           transform: isActive ? 'scale(1.5)' : 'scale(1)',
@@ -96,11 +88,12 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
 
-  const markerObjectsRef = useRef<mapboxgl.Marker[]>([]);
-  const markerRootsRef = useRef<ReactDOM.Root[]>([]);
+  // Карта для хранения ссылок на маркеры и их корни, чтобы легко их удалять
+  const individualMarkers = useRef<
+    Map<number, { marker: mapboxgl.Marker; root: ReactDOM.Root }>
+  >(new Map());
 
-  // Вспомогательная функция для получения локализованного контента (скопирована из HeroSection)
-  // Оставляем эту функцию, так как она может пригодиться, когда попапы будут включены снова.
+  // Вспомогательная функция для получения локализованного контента
   const getLocalizedContent = useCallback(
     (landmark: Landmark): LandmarkContent => {
       const lang = i18n.language as keyof Pick<
@@ -121,10 +114,9 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     (mapInstance: mapboxgl.Map | null) => {
       if (!mapInstance) return;
       setCenterMapFn(() => (coords: [number, number], zoom?: number) => {
-        // coords уже должны быть [долгота, широта]
         mapInstance.flyTo({
           center: coords,
-          zoom: zoom || mapInstance.getZoom(),
+          zoom: zoom ?? mapInstance.getZoom(),
           essential: true,
         });
       });
@@ -145,8 +137,8 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     const newMap = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [108.32607252520863, 15.877085241922142], // [долгота, широта]
-      zoom: 11,
+      center: [108.34391265913898, 15.874180418981076],
+      zoom: 12,
       pitch: 50,
       bearing: 0,
       attributionControl: false,
@@ -159,15 +151,113 @@ export const MapComponent: React.FC<MapComponentProps> = ({
 
     newMap.on('load', () => {
       setIsMapLoaded(true);
+
+      newMap.addSource('landmarks-data', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [],
+        },
+        cluster: true,
+        clusterMaxZoom: 14,
+        clusterRadius: 50,
+      });
+
+      newMap.addLayer({
+        id: 'clusters',
+        type: 'circle',
+        source: 'landmarks-data',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': [
+            'step',
+            ['get', 'point_count'],
+            '#ffbf00',
+            100,
+            '#f1f075',
+            750,
+            '#f28cb1',
+          ],
+          'circle-radius': [
+            'step',
+            ['get', 'point_count'],
+            20,
+            100,
+            30,
+            750,
+            40,
+          ],
+        },
+      });
+
+      newMap.addLayer({
+        id: 'cluster-count',
+        type: 'symbol',
+        source: 'landmarks-data',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': '{point_count_abbreviated}',
+          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 12,
+        },
+        paint: {
+          'text-color': 'rgb(46, 46, 57)',
+        },
+      });
+
+      // ВНИМАНИЕ: `@ts-expect-error` на этой строке больше НЕ НУЖЕН,
+      // так как проблема с `getClusterExpansionZoom` была решена.
+      newMap.on('click', 'clusters', (e: mapboxgl.MapMouseEvent) => {
+        const features = newMap.queryRenderedFeatures(e.point, {
+          layers: ['clusters'],
+        });
+        const clusterId = features[0].properties?.cluster_id;
+        (
+          newMap.getSource('landmarks-data') as mapboxgl.GeoJSONSource
+        ).getClusterExpansionZoom(
+          clusterId,
+          (err: Error | null | undefined, zoom: number | null | undefined) => {
+            if (err) {
+              console.error('Error getting cluster expansion zoom:', err);
+              return;
+            }
+            if (features[0].geometry.type === 'Point' && zoom != null) {
+              newMap.easeTo({
+                center: features[0].geometry.coordinates as [number, number],
+                zoom: zoom,
+              });
+            }
+          }
+        );
+      });
+
+      // ИСПОЛЬЗУЕМ `as any` для обхода проблемы типизации Mapbox GL JS
+      newMap.on(
+        'mouseenter',
+        'clusters' as any,
+        (e: mapboxgl.MapMouseEvent) => {
+          newMap.getCanvas().style.cursor = 'pointer';
+        }
+      );
+      // ИСПОЛЬЗУЕМ `as any` для обхода проблемы типизации Mapbox GL JS
+      newMap.on(
+        'mouseleave',
+        'clusters' as any,
+        (e: mapboxgl.MapMouseEvent) => {
+          newMap.getCanvas().style.cursor = '';
+        }
+      );
     });
 
-    const handleMapClickListener = () => {
+    // ИСПРАВЛЕНО: MapboxEvent вместо MapMouseEvent
+    const handleMapClickListener = (_e: mapboxgl.MapboxEvent) => {
       setHasUserInteracted(true);
       onMapClick();
     };
     newMap.on('click', handleMapClickListener);
 
-    const handleMapMoveStart = () => {
+    // ИСПРАВЛЕНО: MapboxEvent вместо MapMouseEvent
+    const handleMapMoveStart = (_e: mapboxgl.MapboxEvent) => {
       setHasUserInteracted(true);
     };
     newMap.on('movestart', handleMapMoveStart);
@@ -176,8 +266,12 @@ export const MapComponent: React.FC<MapComponentProps> = ({
       if (newMap) {
         newMap.off('click', handleMapClickListener);
         newMap.off('movestart', handleMapMoveStart);
+        // Обработчики слоев:
+        newMap.off('click', 'clusters' as any); // Убираем listener
+        newMap.off('mouseenter', 'clusters' as any); // Убираем listener
+        newMap.off('mouseleave', 'clusters' as any); // Убираем listener
 
-        markerRootsRef.current.forEach((root) => {
+        individualMarkers.current.forEach(({ marker, root }) => {
           queueMicrotask(() => {
             try {
               root.unmount();
@@ -185,10 +279,15 @@ export const MapComponent: React.FC<MapComponentProps> = ({
               /* do nothing */
             }
           });
+          marker.remove();
         });
-        markerObjectsRef.current.forEach((marker) => marker.remove());
-        markerObjectsRef.current = [];
-        markerRootsRef.current = [];
+        individualMarkers.current.clear();
+
+        if (newMap.getLayer('cluster-count'))
+          newMap.removeLayer('cluster-count');
+        if (newMap.getLayer('clusters')) newMap.removeLayer('clusters');
+        if (newMap.getSource('landmarks-data'))
+          newMap.removeSource('landmarks-data');
 
         newMap.remove();
         map.current = null;
@@ -201,92 +300,153 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     if (!isMapLoaded || !map.current) return;
 
     const currentMapInstance = map.current;
+    const source = currentMapInstance.getSource(
+      'landmarks-data'
+    ) as mapboxgl.GeoJSONSource;
 
-    // Очищаем предыдущие маркеры
-    markerRootsRef.current.forEach((root) => {
-      queueMicrotask(() => {
-        try {
-          root.unmount();
-        } catch (e) {
-          /* do nothing */
+    if (!source) {
+      return;
+    }
+
+    const geojsonFeatures: GeoJSON.Feature<
+      GeoJSON.Point,
+      { originalIndex: number; category: CategorySlug }
+    >[] = landmarks.map((landmark, index) => ({
+      type: 'Feature',
+      properties: {
+        originalIndex: index,
+        category: landmark.category[0] || 'default',
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [landmark.coordinates[1], landmark.coordinates[0]],
+      },
+    }));
+
+    source.setData({
+      type: 'FeatureCollection',
+      features: geojsonFeatures,
+    });
+
+    const updateIndividualMarkers = () => {
+      const newUnclusteredPoints = new Map<
+        number,
+        GeoJSON.Feature<GeoJSON.Point>
+      >();
+
+      currentMapInstance
+        .querySourceFeatures('landmarks-data', {
+          filter: ['!', ['has', 'point_count']],
+        })
+        .forEach((_feature) => {
+          if (
+            _feature.properties &&
+            typeof _feature.properties.originalIndex === 'number'
+          ) {
+            newUnclusteredPoints.set(
+              _feature.properties.originalIndex,
+              _feature as GeoJSON.Feature<GeoJSON.Point>
+            );
+          }
+        });
+
+      individualMarkers.current.forEach((markerData, originalIndex) => {
+        if (!newUnclusteredPoints.has(originalIndex)) {
+          queueMicrotask(() => {
+            try {
+              markerData.root.unmount();
+            } catch (e) {
+              /* do nothing */
+            }
+          });
+          markerData.marker.remove();
+          individualMarkers.current.delete(originalIndex);
         }
       });
-    });
-    markerObjectsRef.current.forEach((marker) => marker.remove());
-    markerObjectsRef.current = [];
-    markerRootsRef.current = [];
 
-    landmarks.forEach((landmark: Landmark, index: number) => {
-      const markerContainer = document.createElement('div');
-      const root = ReactDOM.createRoot(markerContainer);
-      markerRootsRef.current.push(root);
+      newUnclusteredPoints.forEach((_feature, originalIndex) => {
+        const landmark = landmarks[originalIndex];
+        if (!landmark) return;
 
-      // Получаем цвет для маркера
-      // Если у достопримечательности есть первая категория, используем ее. Иначе - "default".
-      const categoryColor = getCategoryColor(landmark.category[0] || 'default'); // <-- НОВОЕ
+        if (!individualMarkers.current.has(originalIndex)) {
+          const markerContainer = document.createElement('div');
+          const root = ReactDOM.createRoot(markerContainer);
+          const categoryColor = getCategoryColor(
+            landmark.category[0] || 'default'
+          );
 
-      root.render(
-        <CustomMarker
-          isActive={activeIndex === index}
-          onClick={(event) => {
-            setHasUserInteracted(true);
-            onMapMarkerClick(index, event);
-          }}
-          isBouncing={!hasUserInteracted}
-          markerColor={categoryColor} // <-- НОВОЕ: Передаем цвет в CustomMarker
-        />
-      );
+          root.render(
+            <CustomMarker
+              isActive={activeIndex === originalIndex}
+              onClick={(event) => {
+                setHasUserInteracted(true);
+                onMapMarkerClick(originalIndex, event);
+              }}
+              isBouncing={!hasUserInteracted}
+              markerColor={categoryColor}
+            />
+          );
 
-      // --- НАЧАЛО ЗАКОММЕНТИРОВАННОГО КОДА ПОПАПА ---
-      // Получаем локализованное название для попапа
-      // const landmarkTitle = getLocalizedContent(landmark).title;
+          const marker = new mapboxgl.Marker({
+            element: markerContainer,
+            anchor: 'bottom',
+          })
+            .setLngLat([landmark.coordinates[1], landmark.coordinates[0]])
+            .addTo(currentMapInstance);
 
-      // Создаем попап
-      // const popup = new mapboxgl.Popup({
-      //   offset: 25, // Смещение попапа от маркера
-      //   closeButton: false, // Не показывать кнопку закрытия
-      //   closeOnClick: true, // Закрывать попап при клике на карту
-      //   className: "landmark-popup", // Добавляем класс для стилизации
-      // }).setHTML(`<h4>${landmarkTitle}</h4>`); // Устанавливаем HTML-содержимое
-      // --- КОНЕЦ ЗАКОММЕНТИРОВАННОГО КОДА ПОПАПА ---
+          individualMarkers.current.set(originalIndex, { marker, root });
+        } else {
+          const markerData = individualMarkers.current.get(originalIndex);
+          if (markerData) {
+            const categoryColor = getCategoryColor(
+              landmark.category[0] || 'default'
+            );
+            markerData.root.render(
+              <CustomMarker
+                isActive={activeIndex === originalIndex}
+                onClick={(event) => {
+                  setHasUserInteracted(true);
+                  onMapMarkerClick(originalIndex, event);
+                }}
+                isBouncing={!hasUserInteracted}
+                markerColor={categoryColor}
+              />
+            );
+          }
+        }
+      });
+    };
 
-      const marker = new mapboxgl.Marker({
-        element: markerContainer,
-        anchor: 'bottom',
-      })
-        .setLngLat([landmark.coordinates[1], landmark.coordinates[0]]) // [долгота, широта]
-        // .setPopup(popup) // <-- Закомментировано: Привязываем попап к маркеру
-        .addTo(currentMapInstance);
+    currentMapInstance.on('render', updateIndividualMarkers);
+    currentMapInstance.on('moveend', updateIndividualMarkers);
 
-      // --- НАЧАЛО ЗАКОММЕНТИРОВАННОГО КОДА ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ ПОПАПА ---
-      // Опционально: открывать попап активного маркера
-      // if (activeIndex === index) {
-      //   popup.addTo(currentMapInstance);
-      // }
+    updateIndividualMarkers();
 
-      // Дополнительная логика: открывать/закрывать попап при активности
-      // markerContainer.addEventListener("mouseenter", () => {
-      //   if (!popup.isOpen()) {
-      //     popup.addTo(currentMapInstance);
-      //   }
-      // });
-      // markerContainer.addEventListener("mouseleave", () => {
-      //   if (popup.isOpen() && activeIndex !== index) {
-      //     // Закрывать, если не активный маркер
-      //     popup.remove();
-      //   }
-      // });
-      // --- КОНЕЦ ЗАКОММЕНТИРОВАННОГО КОДА ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ ПОПАПА ---
+    return () => {
+      if (currentMapInstance) {
+        currentMapInstance.off('render', updateIndividualMarkers);
+        currentMapInstance.off('moveend', updateIndividualMarkers);
+      }
 
-      markerObjectsRef.current.push(marker);
-    });
+      individualMarkers.current.forEach(({ marker, root }) => {
+        queueMicrotask(() => {
+          try {
+            root.unmount();
+          } catch (e) {
+            /* do nothing */
+          }
+        });
+        marker.remove();
+      });
+      individualMarkers.current.clear();
+    };
   }, [
     landmarks,
     activeIndex,
     isMapLoaded,
     onMapMarkerClick,
     hasUserInteracted,
-    getLocalizedContent, // Зависимость для getLocalizedContent, даже если попапы закомментированы
+    getLocalizedContent,
   ]);
 
   return (
@@ -316,7 +476,7 @@ function LocationMarker() {
 
     const onLocationSuccess = (pos: GeolocationPosition) => {
       const { latitude, longitude, accuracy } = pos.coords;
-      const newPosition: [number, number] = [longitude, latitude]; // [долгота, широта]
+      const newPosition: [number, number] = [longitude, latitude];
 
       if (currentMap) {
         if (userMarkerRef.current) {
@@ -335,7 +495,7 @@ function LocationMarker() {
             element: el,
             anchor: 'center',
           })
-            .setLngLat(newPosition) // [долгота, широта]
+            .setLngLat(newPosition)
             .addTo(currentMap);
         }
 
@@ -400,8 +560,8 @@ function LocationMarker() {
       }
     };
 
-    const onLocationError = (err: GeolocationPositionError) => {
-      // console.error(`Geolocation error (${err.code}): ${err.message}`);
+    const onLocationError = (_err: GeolocationPositionError) => {
+      // console.error(`Geolocation error (${_err.code}): ${_err.message}`);
     };
 
     const watchId = navigator.geolocation.watchPosition(
