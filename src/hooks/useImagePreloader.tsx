@@ -1,40 +1,32 @@
 // src/hooks/useImagePreloader.ts
-import { useState, useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import type { Landmark } from '../data';
+import { useState, useEffect } from 'react';
+import { fullDescriptionImageMap } from '../utils/imagePaths';
+import { type Landmark } from '../data';
+
+// Utility to get image URL from glob import
+const getImageUrl = (images: Record<string, string>) => (name: string) =>
+  images[`../assets/img/pictures/${name}`];
 
 interface UseImagePreloaderProps {
-  snackbarImages: { welcome: string; error: string };
-  fullDescriptionImageMap: Record<string, string>;
-  filteredLandmarks: Landmark[]; // Используем все landmarks здесь, если прелоадим все основные изображения
-  getImageUrl: (name: string) => string | undefined;
-  t: (key: string) => string;
-  i18n: any; // Use proper i18n type if available
-  setSnackbar: (
-    message: string,
-    type: 'welcome' | 'error' | 'info' | 'success' | 'warning' | null
-  ) => void;
+  filteredLandmarks: Landmark[];
+  snackbarImages: Record<string, string>;
+  allImages: Record<string, string>; // Pass the result of import.meta.glob
 }
 
 export const useImagePreloader = ({
-  snackbarImages,
-  fullDescriptionImageMap,
   filteredLandmarks,
-  getImageUrl,
-  t,
-  i18n,
-  setSnackbar,
+  snackbarImages,
+  allImages,
 }: UseImagePreloaderProps) => {
   const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [showPreloader, setShowPreloader] = useState(true);
-  const snackbarTimerIdRef = useRef<number | null>(null);
+  const getLocalImageUrl = getImageUrl(allImages);
 
   useEffect(() => {
     const imagesToLoad = [
       snackbarImages.welcome,
       ...Object.values(fullDescriptionImageMap).filter(Boolean),
       ...filteredLandmarks
-        .map((landmark) => getImageUrl(landmark.imageUrl))
+        .map((landmark) => getLocalImageUrl(landmark.imageUrl))
         .filter(Boolean),
     ];
 
@@ -60,42 +52,15 @@ export const useImagePreloader = ({
         img.onload = handleImageLoad;
         img.onerror = handleImageLoad;
       } else {
-        handleImageLoad();
+        handleImageLoad(); // Count empty URLs as loaded
       }
     });
 
     return () => {
-      if (snackbarTimerIdRef.current) {
-        clearTimeout(snackbarTimerIdRef.current);
-      }
+      // Cleanup function if needed, though for image preloading it's often less critical
+      // unless you have dynamic image sets that change frequently.
     };
-  }, [filteredLandmarks, fullDescriptionImageMap, getImageUrl, snackbarImages]);
+  }, [filteredLandmarks, snackbarImages, getLocalImageUrl]);
 
-  useEffect(() => {
-    if (isContentLoaded) {
-      const timer = setTimeout(() => {
-        setShowPreloader(false);
-      }, 500) as unknown as number; // Type assertion for setTimeout return type
-      return () => clearTimeout(timer);
-    }
-  }, [isContentLoaded]);
-
-  useEffect(() => {
-    if (!showPreloader) {
-      if (snackbarTimerIdRef.current) {
-        clearTimeout(snackbarTimerIdRef.current);
-      }
-      snackbarTimerIdRef.current = setTimeout(() => {
-        setSnackbar(t('welcomeMessage'), 'welcome');
-      }, 500) as unknown as number;
-
-      return () => {
-        if (snackbarTimerIdRef.current) {
-          clearTimeout(snackbarTimerIdRef.current);
-        }
-      };
-    }
-  }, [i18n.language, t, showPreloader, setSnackbar]);
-
-  return { isContentLoaded, showPreloader };
+  return { isContentLoaded };
 };
