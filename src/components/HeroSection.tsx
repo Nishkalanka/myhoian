@@ -56,7 +56,7 @@ interface HeroSectionProps {
 }
 
 function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
-  const { t } = useTranslation(); // i18n больше не нужен здесь
+  const { t } = useTranslation();
   const theme = useTheme();
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -71,6 +71,7 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
   const { filteredLandmarks } = useFilteredLandmarks({ selectedCategorySlugs });
 
   // --- ИСПОЛЬЗУЕМ ХУК УПРАВЛЕНИЯ МОДАЛЬНЫМ ОКНОМ ---
+  // ИЗМЕНЕНИЕ: Удаляем { getImageUrl } из вызова useLandmarkModal
   const {
     openModal,
     selectedLandmarkForModal,
@@ -81,7 +82,7 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
     getLocalizedContent,
     getProcessedFullDescription,
     setLoadedModalImages,
-  } = useLandmarkModal({ getImageUrl });
+  } = useLandmarkModal(); // <--- ИСПРАВЛЕНО ЗДЕСЬ
 
   // --- ИСПОЛЬЗУЕМ ХУК ВЗАИМОДЕЙСТВИЙ С КАРТОЙ ---
   const {
