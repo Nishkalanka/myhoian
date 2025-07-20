@@ -137,9 +137,9 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     const newMap = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [108.34391265913898, 15.888422719170611],
-      zoom: 12.1,
-      pitch: 50,
+      center: [108.32601152345488, 15.877122578067937],
+      zoom: 17,
+      pitch: 0,
       bearing: 0,
       attributionControl: false,
     });
