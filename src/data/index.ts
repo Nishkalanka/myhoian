@@ -1,10 +1,10 @@
-// src/data/index.ts (без изменений, просто для полноты)
+// src/data/index.ts
 
 import type {
   Landmark,
   CategorySlug,
   LandmarkContent,
-  LangCode, // Импортируем новый тип LangCode
+  LangCode,
 } from './landmarks/landmarkTypes.js';
 
 export type { Landmark, CategorySlug, LandmarkContent, LangCode };
@@ -14,7 +14,7 @@ import { museumLandmarks } from './landmarks/museums.js';
 import { foodDrinksLandmarks } from './landmarks/food-drinks.js';
 import { artGalleriesLandmarks } from './landmarks/art-galleries.js';
 import { clubsLandmarks } from './landmarks/clubs.js';
-// import { otherLandmarks } from "./landmarks/other.js";
+// import { otherLandmarks } from "./landmarks/other.js"; // Закомментировано, если не используется
 
 // =========================================================================
 // 1. Создаем ОБЩИЙ список ВСЕХ достопримечательностей.
@@ -25,7 +25,7 @@ export const hoiAnLandmarks: Landmark[] = [
   ...foodDrinksLandmarks,
   ...artGalleriesLandmarks,
   ...clubsLandmarks,
-  // ...otherLandmarks,
+  // ...otherLandmarks, // Закомментировано, если не используется
 ];
 
 // =========================================================================
@@ -33,23 +33,16 @@ export const hoiAnLandmarks: Landmark[] = [
 //    Используем LangCode для языковых параметров.
 // =========================================================================
 
-// Теперь lang типизируется как LangCode
 export const getLandmarksByLanguage = (lang: LangCode): Landmark[] => {
-  // Фильтруем, чтобы вернуть только те достопримечательности,
-  // у которых есть контент для запрошенного языка.
-  // Так как 'en' является обязательным, а другие - необязательными,
-  // эта проверка `!== undefined` важна.
   return hoiAnLandmarks.filter((landmark) => landmark[lang] !== undefined);
 };
 
-// Теперь lang типизируется как LangCode
 export const getLandmarksByCategoryAndLanguage = (
   category: CategorySlug,
   lang: LangCode
 ): Landmark[] => {
   let categorySpecificLandmarks: Landmark[] = [];
 
-  // Определяем, из какого общего списка категорий брать данные
   switch (category) {
     case 'museum':
       categorySpecificLandmarks = museumLandmarks;
@@ -61,16 +54,15 @@ export const getLandmarksByCategoryAndLanguage = (
       categorySpecificLandmarks = artGalleriesLandmarks;
       break;
     case 'clubs':
-      categorySpecificLandmarks = artGalleriesLandmarks;
+      categorySpecificLandmarks = clubsLandmarks; // <-- ИСПРАВЛЕНО ЗДЕСЬ
       break;
-    // case "other":
+    // case "other": // Закомментировано, если не используется
     //   categorySpecificLandmarks = otherLandmarks;
     //   break;
     default:
       categorySpecificLandmarks = [];
   }
 
-  // Фильтруем по наличию контента для нужного языка
   return categorySpecificLandmarks.filter(
     (landmark) => landmark[lang] !== undefined
   );
@@ -80,20 +72,13 @@ export const getLandmarksByCategoryAndLanguage = (
 // (ОПЦИОНАЛЬНО) Добавление функции для получения данных по slug и языку
 // =========================================================================
 
-// Теперь lang типизируется как LangCode
 export const getLandmarkBySlugAndLanguage = (
   slug: string,
-  lang: LangCode // <--- Здесь тоже используем LangCode
+  lang: LangCode
 ): Landmark | undefined => {
   const found = hoiAnLandmarks.find((landmark) => {
-    // TypeScript теперь уверен, что `lang` - это один из ключей объекта `landmark.slug`,
-    // поскольку `LangCode` это гарантирует.
-    // Проверка `landmark.slug` на существование не нужна, т.к. по интерфейсу он обязателен.
     return landmark.slug[lang] === slug;
   });
 
-  // Возвращаем объект только если контент для данного языка существует
-  // Добавляем проверку `found && found[lang]` на случай, если для найденного Landmark
-  // отсутствует контент на запрошенном языке (если языки необязательны).
   return found && found[lang] ? found : undefined;
 };
