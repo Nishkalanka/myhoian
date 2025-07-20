@@ -40,3 +40,9 @@ type LocalizedOptionalContent = Partial<
 // Объединяем BaseLandmark и LocalizedOptionalContent
 // Это позволит индексировать Landmark по LangCode, где en обязателен, остальные опциональны.
 export type Landmark = BaseLandmark & LocalizedOptionalContent;
+
+// --- ДОБАВЬТЕ ЭТО НОВОЕ ОПРЕДЕЛЕНИЕ ---
+export interface LocalizedLandmark extends Landmark {
+  localizedContent: LandmarkContent;
+}
+// ------------------------------------

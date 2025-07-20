@@ -14,30 +14,31 @@ import {
   type Landmark,
   type LandmarkContent,
   type CategorySlug,
-} from '../data'; // Импортируем CategorySlug
-import { getCategoryColor } from '../utils/categoryColors'; // <-- ИМПОРТИРУЕМ ФУНКЦИЮ ДЛЯ ЦВЕТА КАТЕГОРИИ
+} from '../data';
+import { getCategoryColor } from '../utils/categoryColors';
+import type { LocalizedLandmark } from '../data/landmarks/landmarkTypes.js';
 
 interface LandmarkSwiperProps {
-  filteredLandmarks: Landmark[];
+  filteredLandmarks: LocalizedLandmark[]; // <--- ИЗМЕНИТЬ ЗДЕСЬ
   activeIndex: number | null;
   hasInteractedWithMarkers: boolean;
   isContentLoaded: boolean;
   snackbarImages: { welcome: string | undefined; error: string | undefined };
   getImageUrl: (name: string) => string | undefined;
-  getLocalizedContent: (landmark: Landmark) => LandmarkContent;
+  getLocalizedContent: (landmark: LocalizedLandmark) => LandmarkContent; // <--- ИЗМЕНИТЬ ЗДЕСЬ
   onSlideChange: (swiper: any) => void;
   onSlideOrButtonDetailClick: (index: number, event: React.MouseEvent) => void;
   swiperRef: React.MutableRefObject<any>;
 }
 
 const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
-  filteredLandmarks,
+  filteredLandmarks, // Теперь TypeScript знает, что это LocalizedLandmark[]
   activeIndex,
   hasInteractedWithMarkers,
   isContentLoaded,
   snackbarImages,
   getImageUrl,
-  getLocalizedContent,
+  getLocalizedContent, // Теперь TypeScript знает, что это функция принимает LocalizedLandmark
   onSlideChange,
   onSlideOrButtonDetailClick,
   swiperRef,
@@ -146,18 +147,17 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
         )}
 
         {/* Слайды достопримечательностей */}
-        {filteredLandmarks.map((landmark: Landmark, index: number) => {
-          const content = getLocalizedContent(landmark);
+        {filteredLandmarks.map((landmark: LocalizedLandmark, index: number) => {
+          // <--- ИЗМЕНИТЬ ЗДЕСЬ
+          const content = getLocalizedContent(landmark); // Теперь это работает без ошибок
 
           // Логика обрезки текста
-          const maxDescriptionLength = 120; // Примерное максимальное количество символов для 2х строк
+          const maxDescriptionLength = 120;
           let displayDescription = content.description;
           if (
             displayDescription &&
             displayDescription.length > maxDescriptionLength
           ) {
-            // Обрезаем текст до maxDescriptionLength, а затем до последнего пробела,
-            // чтобы не обрезать слово посредине
             displayDescription = displayDescription.substring(
               0,
               maxDescriptionLength
@@ -244,8 +244,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                       sx={{ mt: 0.5, flexWrap: 'wrap' }}
                     >
                       {landmark.category.map((catSlug: CategorySlug) => {
-                        // Указываем тип CategorySlug
-                        const categoryColor = getCategoryColor(catSlug); // <-- ПОЛУЧАЕМ ЦВЕТ КАТЕГОРИИ
+                        const categoryColor = getCategoryColor(catSlug);
                         return (
                           <Chip
                             key={catSlug}
@@ -255,11 +254,11 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = ({
                             sx={{
                               height: 18,
                               fontSize: '0.75rem',
-                              backgroundColor: categoryColor, // <-- УСТАНАВЛИВАЕМ ЦВЕТ ФОНА
+                              backgroundColor: categoryColor,
                               color:
-                                theme.palette.getContrastText(categoryColor), // <-- УСТАНАВЛИВАЕМ КОНТРАСТНЫЙ ЦВЕТ ТЕКСТА
+                                theme.palette.getContrastText(categoryColor),
                               '&:hover': {
-                                backgroundColor: alpha(categoryColor, 0.8), // Делаем немного темнее при наведении
+                                backgroundColor: alpha(categoryColor, 0.8),
                               },
                             }}
                           />

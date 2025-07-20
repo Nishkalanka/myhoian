@@ -1,14 +1,13 @@
-// src/components/LanguageSwitcher.tsx
-
+// src/components/header/LanguageSwitcher.tsx
 import React from 'react';
-import { FormControl, Select, MenuItem, InputLabel } from '@mui/material';
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import ReactCountryFlag from 'react-country-flag';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../contexts/LanguageContext'; // Путь остается прежним, так как LanguageSwitcher находится на том же уровне, что и contexts
+import { useLanguage } from '../../contexts/LanguageContext'; // Импортируем useLanguage
 
-export const LanguageSwitcher: React.FC = () => {
+const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
-  const { setLang } = useLanguage();
+  const { setLang } = useLanguage(); // Используем хук для установки языка
 
   const changeLanguage = (event: any) => {
     const selectedLang = event.target.value as string;
@@ -17,8 +16,6 @@ export const LanguageSwitcher: React.FC = () => {
 
   return (
     <FormControl variant="outlined" sx={{ minWidth: 80 }}>
-      {/* InputLabel для Material-UI Select: обычно используется для плавающего лейбла.
-          Если вам не нужен видимый лейбл, этот компонент можно удалить или сделать пустым. */}
       <InputLabel id="language-select-label"></InputLabel>
       <Select
         labelId="language-select-label"
@@ -78,3 +75,5 @@ export const LanguageSwitcher: React.FC = () => {
     </FormControl>
   );
 };
+
+export default LanguageSwitcher;

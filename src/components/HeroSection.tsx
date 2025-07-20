@@ -1,9 +1,7 @@
 // src/components/HeroSection.tsx
 
 import { Container, Box, Grid } from '@mui/material';
-
 import { useTranslation } from 'react-i18next';
-
 import React, {
   useState,
   useRef,
@@ -20,7 +18,16 @@ import { LandmarkDetailsDialog } from './LandmarkDetailsDialog';
 import { UserLocationButton } from './UserLocationButton';
 import { AppSnackbar, type SnackbarType } from './AppSnackbar';
 
-import { hoiAnLandmarks, type Landmark, type CategorySlug } from '../data';
+// Import Landmark, LandmarkContent, and CategorySlug from "../data"
+import {
+  hoiAnLandmarks,
+  type Landmark,
+  type LandmarkContent,
+  type CategorySlug,
+} from '../data';
+
+// Import LocalizedLandmark DIRECTLY from its definition file
+import type { LocalizedLandmark } from '../data/landmarks/landmarkTypes.js'; // <-- KEEP THIS LINE
 
 const images = import.meta.glob('../assets/img/pictures/*', {
   eager: true,
@@ -39,9 +46,20 @@ type ShowSnackbarFn = (message: string, type: SnackbarType) => void;
 
 interface HeroSectionProps {
   selectedCategorySlugs: string[];
+  routeCoordinates: [number, number][];
+  isRouteVisible: boolean;
 }
 
-function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
+// REMOVE THIS LOCAL DECLARATION:
+// interface LocalizedLandmark extends Landmark {
+//   localizedContent: LandmarkContent;
+// }
+
+function HeroSection({
+  selectedCategorySlugs,
+  routeCoordinates,
+  isRouteVisible,
+}: HeroSectionProps) {
   const { t, i18n } = useTranslation();
   const { currentLang } = useLanguage();
 
@@ -54,7 +72,7 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
 
   const [openModal, setOpenModal] = useState(false);
   const [selectedLandmarkForModal, setSelectedLandmarkForModal] =
-    useState<Landmark | null>(null);
+    useState<LocalizedLandmark | null>(null);
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState<string>('');
@@ -70,11 +88,10 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
       clearTimeout(snackbarTimerIdRef.current);
       snackbarTimerIdRef.current = null;
     }
-    setOpenSnackbar(false); // Сначала закрываем, чтобы обновить или погасить
+    setOpenSnackbar(false);
     setSnackbarMessage(message);
     setSnackbarType(type);
 
-    // Если тип null и сообщение пустое (т.е. showSnackbar("", null) был вызван), мы не открываем его заново
     if (type === null && message === '') {
       return;
     }
@@ -84,19 +101,31 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
     }, 50) as unknown as number;
   }, []);
 
-  const filteredLandmarks = useMemo(() => {
-    const landmarksToFilter = hoiAnLandmarks;
+  const filteredLandmarks: LocalizedLandmark[] = useMemo(() => {
+    const lang = i18n.language as keyof Pick<
+      Landmark,
+      'ru' | 'en' | 'es' | 'fr' | 'vn'
+    >;
 
-    if (selectedCategorySlugs.length === 0) {
-      return landmarksToFilter;
-    }
+    const getLocalizedContent = (landmark: Landmark) => {
+      if (lang === 'ru' && landmark.ru) return landmark.ru;
+      if (lang === 'es' && landmark.es) return landmark.es;
+      if (lang === 'fr' && landmark.fr) return landmark.fr;
+      if (lang === 'vn' && landmark.vn) return landmark.vn;
+      return landmark.en;
+    };
 
-    return landmarksToFilter.filter((landmark) =>
+    const landmarksToProcess = hoiAnLandmarks.filter((landmark) =>
       (landmark.category as CategorySlug[]).some((category) =>
         selectedCategorySlugs.includes(category)
       )
     );
-  }, [selectedCategorySlugs, currentLang]);
+
+    return landmarksToProcess.map((landmark) => ({
+      ...landmark,
+      localizedContent: getLocalizedContent(landmark),
+    }));
+  }, [selectedCategorySlugs, i18n.language]);
 
   useEffect(() => {
     const imagesToLoad = [
@@ -164,7 +193,6 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
     }
   }, [i18n.language, t, showPreloader, showSnackbar]);
 
-  // Снекбар при клике на пустую область карты
   const handleMapClick = useCallback(() => {
     showSnackbar(t('noMarkers'), 'info');
   }, [t, showSnackbar]);
@@ -185,7 +213,7 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
     []
   );
 
-  const handleOpenModal = useCallback((landmark: Landmark) => {
+  const handleOpenModal = useCallback((landmark: LocalizedLandmark) => {
     setSelectedLandmarkForModal(landmark);
     setOpenModal(true);
   }, []);
@@ -195,10 +223,9 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
     setSelectedLandmarkForModal(null);
   }, []);
 
-  // Клик по маркеру - должен ТОЛЬКО ЗАКРЫВАТЬ существующий снекбар
   const handleMapMarkerClick = useCallback(
-    (index: number /* event: React.MouseEvent */) => {
-      showSnackbar('', null); // Только закрывает
+    (index: number) => {
+      showSnackbar('', null);
       const landmark = filteredLandmarks[index];
       if (!landmark) {
         console.warn('Clicked marker with invalid index:', index);
@@ -213,10 +240,9 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
     [centerMapFn, filteredLandmarks, showSnackbar]
   );
 
-  // Клик по слайду/кнопке детали - должен ТОЛЬКО ЗАКРЫВАТЬ существующий снекбар
   const handleSlideOrButtonDetailClick = useCallback(
-    (index: number /* event: React.MouseEvent */) => {
-      showSnackbar('', null); // Только закрывает
+    (index: number) => {
+      showSnackbar('', null);
       setActiveIndex(index);
       const landmark = filteredLandmarks[index];
       if (!landmark) {
@@ -305,6 +331,9 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
                 onMapMarkerClick={handleMapMarkerClick}
                 onMapClick={handleMapClick}
                 setCenterMapFn={setCenterMapFn}
+                routeCoordinates={routeCoordinates}
+                hasUserInteracted={hasInteractedWithMarkers}
+                isRouteVisible={isRouteVisible}
               />
 
               <UserLocationButton
@@ -320,7 +349,9 @@ function HeroSection({ selectedCategorySlugs }: HeroSectionProps) {
               isContentLoaded={isContentLoaded}
               snackbarImages={snackbarImages}
               getImageUrl={getImageUrl}
-              getLocalizedContent={(landmark: Landmark) => landmark.en}
+              getLocalizedContent={(landmark: LocalizedLandmark) =>
+                landmark.localizedContent || landmark.en
+              }
               onSlideChange={(swiper) => {
                 if (swiper.activeIndex !== activeIndex) {
                   setActiveIndex(swiper.activeIndex);
