@@ -7,8 +7,8 @@ import mapboxgl from 'mapbox-gl';
 import { IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-import { getCategoryColor } from '../../utils/categoryColors'; // Убедись, что путь правильный
-import type { Landmark, CategorySlug } from '../../data'; // Убедись, что путь правильный
+import { getCategoryColor } from '../../utils/categoryColors';
+import type { Landmark, CategorySlug } from '../../data';
 
 // Определение пропсов для CustomMarker
 interface CustomMarkerProps {
@@ -56,7 +56,8 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
 
 // Определение пропсов для MapMarkersLayer
 interface MapMarkersLayerProps {
-  map: React.MutableRefObject<mapboxgl.Map | null>;
+  // ЭТА СТРОКА ИЗМЕНЕНА: map теперь ожидает сам экземпляр карты (mapboxgl.Map), а не реф
+  map: mapboxgl.Map | null;
   landmarks: Landmark[];
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
@@ -64,7 +65,7 @@ interface MapMarkersLayerProps {
 }
 
 export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
-  map,
+  map, // <--- map теперь сам экземпляр карты
   landmarks,
   activeIndex,
   onMapMarkerClick,
@@ -76,7 +77,8 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
   >(new Map());
 
   useEffect(() => {
-    const currentMapInstance = map.current;
+    // ЭТА СТРОКА ИЗМЕНЕНА: УБРАЛИ ".current", так как `map` уже является экземпляром карты
+    const currentMapInstance = map;
     if (!currentMapInstance) return;
 
     const updateIndividualMarkers = () => {

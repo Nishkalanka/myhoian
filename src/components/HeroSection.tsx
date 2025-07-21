@@ -8,26 +8,25 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
+  memo,
 } from 'react';
 
 import { useLanguage } from '../contexts/LanguageContext';
+// import { useMapContext } from "../contexts/MapContext"; // Больше не нужен MapContext здесь
 import Preloader from './Preloader';
 import LandmarkSwiper from './LandmarkSwiper';
-import { MapComponent } from './MapComponent';
+// import { MapComponent } from "./MapComponent"; // Больше не нужен MapComponent здесь
 import { LandmarkDetailsDialog } from './LandmarkDetailsDialog';
 import { UserLocationButton } from './UserLocationButton';
 import { AppSnackbar, type SnackbarType } from './AppSnackbar';
 
-// Import Landmark, LandmarkContent, and CategorySlug from "../data"
 import {
   hoiAnLandmarks,
   type Landmark,
   type LandmarkContent,
   type CategorySlug,
 } from '../data';
-
-// Import LocalizedLandmark DIRECTLY from its definition file
-import type { LocalizedLandmark } from '../data/landmarks/landmarkTypes.js'; // <-- KEEP THIS LINE
+import type { LocalizedLandmark } from '../data/landmarks/landmarkTypes.js';
 
 const images = import.meta.glob('../assets/img/pictures/*', {
   eager: true,
@@ -46,29 +45,33 @@ type ShowSnackbarFn = (message: string, type: SnackbarType) => void;
 
 interface HeroSectionProps {
   selectedCategorySlugs: string[];
-  routeCoordinates: [number, number][];
-  isRouteVisible: boolean;
+  routeCoordinates: [number, number][]; // Возможно, это больше не нужно HeroSection
+  isRouteVisible: boolean; // Возможно, это больше не нужно HeroSection
+  filteredLandmarks: LocalizedLandmark[]; // Новый пропс
+  activeIndex: number | null; // Новый пропс
+  setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>; // Новый пропс
+  setHasUserInteracted: React.Dispatch<React.SetStateAction<boolean>>; // Новый пропс
+  hasInteractedWithMarkers: boolean; // Новый пропс
 }
-
-// REMOVE THIS LOCAL DECLARATION:
-// interface LocalizedLandmark extends Landmark {
-//   localizedContent: LandmarkContent;
-// }
 
 function HeroSection({
   selectedCategorySlugs,
-  routeCoordinates,
-  isRouteVisible,
+  routeCoordinates, // Удалите, если не используется
+  isRouteVisible, // Удалите, если не используется
+  filteredLandmarks, // Принимаем как пропс
+  activeIndex,
+  setActiveIndex,
+  setHasUserInteracted,
+  hasInteractedWithMarkers,
 }: HeroSectionProps) {
+  console.log('HeroSection: Render');
+
   const { t, i18n } = useTranslation();
   const { currentLang } = useLanguage();
+  // const { centerMap } = useMapContext(); // Больше не нужен MapContext здесь
 
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  // const [activeIndex, setActiveIndex] = useState<number | null>(null); // Теперь пропсы
   const swiperRef = useRef<any>(null);
-
-  const [centerMapFn, setCenterMapFn] = useState<
-    ((coords: [number, number], zoom?: number) => void) | null
-  >(null);
 
   const [openModal, setOpenModal] = useState(false);
   const [selectedLandmarkForModal, setSelectedLandmarkForModal] =
@@ -79,7 +82,7 @@ function HeroSection({
   const [snackbarType, setSnackbarType] = useState<SnackbarType>(null);
   const snackbarTimerIdRef = useRef<number | null>(null);
 
-  const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
+  // const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false); // Теперь пропс
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
 
@@ -101,31 +104,15 @@ function HeroSection({
     }, 50) as unknown as number;
   }, []);
 
-  const filteredLandmarks: LocalizedLandmark[] = useMemo(() => {
-    const lang = i18n.language as keyof Pick<
-      Landmark,
-      'ru' | 'en' | 'es' | 'fr' | 'vn'
-    >;
+  // filteredLandmarks теперь приходит как пропс
+  // const filteredLandmarks: LocalizedLandmark[] = useMemo(() => { /* ... */ }, [selectedCategorySlugs, i18n.language]);
 
-    const getLocalizedContent = (landmark: Landmark) => {
-      if (lang === 'ru' && landmark.ru) return landmark.ru;
-      if (lang === 'es' && landmark.es) return landmark.es;
-      if (lang === 'fr' && landmark.fr) return landmark.fr;
-      if (lang === 'vn' && landmark.vn) return landmark.vn;
-      return landmark.en;
+  useEffect(() => {
+    console.log('HeroSection: Mounted');
+    return () => {
+      console.log('HeroSection: Unmounted (Cleaning up)');
     };
-
-    const landmarksToProcess = hoiAnLandmarks.filter((landmark) =>
-      (landmark.category as CategorySlug[]).some((category) =>
-        selectedCategorySlugs.includes(category)
-      )
-    );
-
-    return landmarksToProcess.map((landmark) => ({
-      ...landmark,
-      localizedContent: getLocalizedContent(landmark),
-    }));
-  }, [selectedCategorySlugs, i18n.language]);
+  }, []);
 
   useEffect(() => {
     const imagesToLoad = [
@@ -223,22 +210,8 @@ function HeroSection({
     setSelectedLandmarkForModal(null);
   }, []);
 
-  const handleMapMarkerClick = useCallback(
-    (index: number) => {
-      showSnackbar('', null);
-      const landmark = filteredLandmarks[index];
-      if (!landmark) {
-        console.warn('Clicked marker with invalid index:', index);
-        return;
-      }
-      setActiveIndex(index);
-      if (centerMapFn) {
-        centerMapFn([landmark.coordinates[1], landmark.coordinates[0]], 18);
-      }
-      setHasUserInteracted(true);
-    },
-    [centerMapFn, filteredLandmarks, showSnackbar]
-  );
+  // handleMapMarkerClick больше не здесь, он в App.tsx
+  // const handleMapMarkerClick = useCallback(/* ... */);
 
   const handleSlideOrButtonDetailClick = useCallback(
     (index: number) => {
@@ -252,19 +225,26 @@ function HeroSection({
       handleOpenModal(landmark);
       setHasUserInteracted(true);
     },
-    [handleOpenModal, filteredLandmarks, showSnackbar]
+    [
+      handleOpenModal,
+      filteredLandmarks,
+      showSnackbar,
+      setActiveIndex,
+      setHasUserInteracted,
+    ]
   );
 
   useEffect(() => {
-    if (activeIndex !== null && centerMapFn) {
-      const landmark = filteredLandmarks[activeIndex];
-      if (landmark) {
-        centerMapFn([landmark.coordinates[1], landmark.coordinates[0]], 18);
-      } else {
-        setActiveIndex(null);
-      }
-    }
-  }, [activeIndex, centerMapFn, filteredLandmarks]);
+    // Больше не используем centerMap напрямую, HeroSection просто управляет swiper
+    // if (activeIndex !== null && centerMap) {
+    //   const landmark = filteredLandmarks[activeIndex];
+    //   if (landmark) {
+    //     centerMap([landmark.coordinates[1], landmark.coordinates[0]], 18);
+    //   } else {
+    //     setActiveIndex(null);
+    //   }
+    // }
+  }, [activeIndex, filteredLandmarks]); // centerMap удален
 
   return (
     <Box
@@ -320,26 +300,13 @@ function HeroSection({
               sx={{
                 flexGrow: 1,
                 minHeight: 0,
-                position: 'absolute',
-                height: '100%',
+                position: 'absolute', // Этот Box больше не должен быть абсолютным, если MapComponent вне его
+                height: '100%', // Эти стили должны быть пересмотрены, если MapComponent вынесен
                 width: '100%',
               }}
             >
-              <MapComponent
-                landmarks={filteredLandmarks}
-                activeIndex={activeIndex}
-                onMapMarkerClick={handleMapMarkerClick}
-                onMapClick={handleMapClick}
-                setCenterMapFn={setCenterMapFn}
-                routeCoordinates={routeCoordinates}
-                hasUserInteracted={hasInteractedWithMarkers}
-                isRouteVisible={isRouteVisible}
-              />
-
-              <UserLocationButton
-                centerMapFn={centerMapFn}
-                onShowSnackbar={showSnackbar}
-              />
+              {/* <MapComponent ... /> Больше не здесь */}
+              {/* <UserLocationButton ... /> Больше не здесь */}
             </Box>
 
             <LandmarkSwiper
@@ -385,4 +352,4 @@ function HeroSection({
   );
 }
 
-export default React.memo(HeroSection);
+export default memo(HeroSection);

@@ -3,16 +3,15 @@ import React from 'react';
 import {
   Toolbar,
   IconButton,
-  Box,
-  Typography,
   Stack,
-  useTheme,
+  // useTheme, // Больше не нужен здесь, так как LogoTitleLink его инкапсулирует
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next'; // Больше не нужен здесь, т.к. t('logoTitle') перемещен
 
-import LanguageSwitcher from './LanguageSwitcher'; // Новый компонент
-import CategoryFilterButton from './CategoryFilterButton'; // Новый компонент
+import LanguageSwitcher from './LanguageSwitcher';
+import CategoryFilterButton from './CategoryFilterButton';
+import LogoTitleLink from '../common/LogoTitleLink'; // Импортируем новый компонент
 
 interface MainAppBarProps {
   logoSrc: string;
@@ -29,8 +28,8 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
   onOpenFilterDrawer,
   selectedCategorySlugs,
 }) => {
-  const { t } = useTranslation();
-  const theme = useTheme();
+  // const { t } = useTranslation(); // Удалено
+  // const theme = useTheme(); // Удалено
 
   return (
     <Toolbar disableGutters sx={{ minHeight: 'unset !important' }}>
@@ -45,41 +44,8 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
         <MenuIcon />
       </IconButton>
 
-      {/* Логотип и заголовок */}
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-          '&:hover': {
-            opacity: 0.8,
-          },
-          flexShrink: 0,
-          mr: 'auto',
-        }}
-        onClick={onLogoClick}
-      >
-        <img
-          src={logoSrc}
-          alt="LOGO"
-          style={{
-            width: 'auto',
-            height: '36px',
-            display: 'block',
-            marginRight: theme.spacing(1),
-          }}
-        />
-        <Typography
-          variant="body2"
-          component="span"
-          sx={{
-            fontWeight: 600,
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {t('logoTitle')}
-        </Typography>
-      </Box>
+      {/* Логотип и заголовок - теперь это отдельный компонент */}
+      <LogoTitleLink logoSrc={logoSrc} onClick={onLogoClick} />
 
       {/* Выбор языка и кнопка фильтра */}
       <Stack
@@ -88,12 +54,11 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
         spacing={1}
         sx={{ flexShrink: 0, ml: 'auto' }}
       >
-        <LanguageSwitcher /> {/* Использование отдельного компонента */}
+        <LanguageSwitcher />
         <CategoryFilterButton
           onClick={onOpenFilterDrawer}
           selectedCategorySlugs={selectedCategorySlugs}
-        />{' '}
-        {/* Использование отдельного компонента */}
+        />
       </Stack>
     </Toolbar>
   );

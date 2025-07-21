@@ -1,365 +1,304 @@
 // src/components/MapComponent.tsx
 
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import type {
-  Feature,
-  Point,
-  GeoJsonProperties,
-  FeatureCollection,
-  LineString,
-} from 'geojson';
-import type { Landmark, CategorySlug } from '../data/index';
+import type { Feature, Point, GeoJsonProperties, LineString } from 'geojson';
 
-import { MapProvider } from '../contexts/MapContext';
 import { useMapContext } from '../contexts/MapContext';
-
+import { useLanguage } from '../contexts/LanguageContext';
 import { MapMarkersLayer } from './map/MapMarkersLayer';
 
-// Your Mapbox Access Token
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN as string;
-
 interface MapComponentProps {
-  landmarks: Landmark[];
+  landmarks: any[]; // Landmark[]
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   onMapClick: () => void;
-  setCenterMapFn: React.Dispatch<
-    React.SetStateAction<
-      ((coords: [number, number], zoom?: number | undefined) => void) | null
-    >
-  >;
-  routeCoordinates?: [number, number][]; // <--- CHANGE THIS LINE: Make it optional
+  routeCoordinates?: [number, number][];
   hasUserInteracted: boolean;
   isRouteVisible: boolean;
 }
 
-export const MapComponent = React.memo(
-  ({
-    landmarks,
-    activeIndex,
-    onMapMarkerClick,
-    onMapClick,
-    setCenterMapFn,
-    routeCoordinates,
-    hasUserInteracted,
-    isRouteVisible,
-  }: MapComponentProps) => {
-    const mapContainerRef = useRef<HTMLDivElement | null>(null);
-    const map = useRef<mapboxgl.Map | null>(null);
-    const [isMapLoaded, setIsMapLoaded] = useState(false);
+export const MapComponent = ({
+  landmarks,
+  activeIndex,
+  onMapMarkerClick,
+  onMapClick,
+  routeCoordinates,
+  hasUserInteracted,
+  isRouteVisible,
+}: MapComponentProps) => {
+  console.log('MapComponent: Render'); // Лог рендера
 
-    const memoizedSetCenterMapFn = useCallback(
-      (mapInstance: mapboxgl.Map | null) => {
-        if (!mapInstance) return;
-        setCenterMapFn(() => (coords: [number, number], zoom?: number) => {
-          mapInstance.flyTo({
-            center: coords,
-            zoom: zoom ?? mapInstance.getZoom(),
-            essential: true,
-          });
-        });
-      },
-      [setCenterMapFn]
-    );
+  const { map, mapContainerRef } = useMapContext();
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
+  const { currentLang } = useLanguage();
 
-    useEffect(() => {
-      if (map.current) {
-        memoizedSetCenterMapFn(map.current);
-        return;
-      }
+  useEffect(() => {
+    if (!map) {
+      setIsMapLoaded(false);
+      return;
+    }
 
-      if (!mapContainerRef.current) {
-        return;
-      }
+    console.log('MapComponent: Attaching layers and handlers to existing map.');
 
-      console.log('MapComponent: Initializing Mapbox map...');
+    const handleMapLoad = () => {
+      setIsMapLoaded(true);
+      console.log('MapComponent: Map instance reported as loaded.');
+    };
 
-      const newMap = new mapboxgl.Map({
-        container: mapContainerRef.current,
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [108.32601152345488, 15.877122578067937],
-        zoom: 17,
-        pitch: 0,
-        bearing: 0,
-        attributionControl: false,
+    if (map.loaded()) {
+      handleMapLoad();
+    } else {
+      map.on('load', handleMapLoad);
+    }
+
+    if (!map.getSource('landmarks-data')) {
+      map.addSource('landmarks-data', {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] },
+        cluster: true,
+        clusterMaxZoom: 14,
+        clusterRadius: 50,
       });
 
-      map.current = newMap;
+      map.addLayer({
+        id: 'clusters',
+        type: 'circle',
+        source: 'landmarks-data',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': [
+            'step',
+            ['get', 'point_count'],
+            '#ffbf00',
+            100,
+            '#f1f075',
+            750,
+            '#f28cb1',
+          ],
+          'circle-radius': [
+            'step',
+            ['get', 'point_count'],
+            20,
+            100,
+            30,
+            750,
+            40,
+          ],
+        },
+      });
 
-      newMap.addControl(new mapboxgl.NavigationControl(), 'top-right');
-      memoizedSetCenterMapFn(newMap);
+      map.addLayer({
+        id: 'cluster-count',
+        type: 'symbol',
+        source: 'landmarks-data',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': '{point_count_abbreviated}',
+          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 12,
+        },
+        paint: {
+          'text-color': 'rgb(46, 46, 57)',
+        },
+      });
 
-      newMap.on('load', () => {
-        setIsMapLoaded(true);
-
-        newMap.addSource('landmarks-data', {
-          type: 'geojson',
-          data: {
-            type: 'FeatureCollection',
-            features: [],
-          },
-          cluster: true,
-          clusterMaxZoom: 14,
-          clusterRadius: 50,
+      map.on('click', 'clusters' as any, (e: mapboxgl.MapMouseEvent) => {
+        const features = map.queryRenderedFeatures(e.point, {
+          layers: ['clusters'],
         });
-
-        newMap.addLayer({
-          id: 'clusters',
-          type: 'circle',
-          source: 'landmarks-data',
-          filter: ['has', 'point_count'],
-          paint: {
-            'circle-color': [
-              'step',
-              ['get', 'point_count'],
-              '#ffbf00',
-              100,
-              '#f1f075',
-              750,
-              '#f28cb1',
-            ],
-            'circle-radius': [
-              'step',
-              ['get', 'point_count'],
-              20,
-              100,
-              30,
-              750,
-              40,
-            ],
-          },
-        });
-
-        newMap.addLayer({
-          id: 'cluster-count',
-          type: 'symbol',
-          source: 'landmarks-data',
-          filter: ['has', 'point_count'],
-          layout: {
-            'text-field': '{point_count_abbreviated}',
-            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-            'text-size': 12,
-          },
-          paint: {
-            'text-color': 'rgb(46, 46, 57)',
-          },
-        });
-
-        newMap.on('click', 'clusters', (e: mapboxgl.MapMouseEvent) => {
-          const features = newMap.queryRenderedFeatures(e.point, {
-            layers: ['clusters'],
-          });
-          const clusterId = features[0].properties?.cluster_id;
-          (
-            newMap.getSource('landmarks-data') as mapboxgl.GeoJSONSource
-          ).getClusterExpansionZoom(
-            clusterId,
-            (
-              err: Error | null | undefined,
-              zoom: number | null | undefined
-            ) => {
-              if (err) {
-                return;
-              }
-              if (features[0].geometry.type === 'Point' && zoom != null) {
-                newMap.easeTo({
-                  center: features[0].geometry.coordinates as [number, number],
-                  zoom: zoom,
-                });
-              }
+        const clusterId = features[0].properties?.cluster_id;
+        (
+          map.getSource('landmarks-data') as mapboxgl.GeoJSONSource
+        ).getClusterExpansionZoom(
+          clusterId,
+          (err: Error | null | undefined, zoom: number | null | undefined) => {
+            if (err) return;
+            if (features[0].geometry.type === 'Point' && zoom != null) {
+              map.easeTo({
+                center: features[0].geometry.coordinates as [number, number],
+                zoom: zoom,
+              });
             }
-          );
-        });
-
-        newMap.on(
-          'mouseenter',
-          'clusters' as any,
-          (_e: mapboxgl.MapMouseEvent) => {
-            newMap.getCanvas().style.cursor = 'pointer';
           }
         );
-        newMap.on(
-          'mouseleave',
-          'clusters' as any,
-          (_e: mapboxgl.MapMouseEvent) => {
-            newMap.getCanvas().style.cursor = '';
-          }
-        );
-
-        // --- ADDING SOURCE AND LAYER FOR STATIC ROUTE ON MAP LOAD ---
-        newMap.addSource('static-route', {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: [], // Initially empty coordinates
-            },
-          },
-        });
-
-        newMap.addLayer({
-          id: 'static-route-line',
-          type: 'line',
-          source: 'static-route',
-          layout: {
-            'line-join': 'round',
-            'line-cap': 'round',
-          },
-          paint: {
-            'line-color': '#007bff',
-            'line-width': 6,
-            'line-opacity': 0.75,
-          },
-        });
-        // --- END ADDING LAYERS FOR STATIC ROUTE ---
       });
 
-      // --- CLICK HANDLER FOR GETTING COORDINATES ---
-      const handleMapClickListener = (e: mapboxgl.MapMouseEvent) => {
-        const { lng, lat } = e.lngLat;
-        console.log('Map clicked: Longitude:', lng, 'Latitude:', lat);
-        onMapClick(); // Call existing prop for snackbar
-      };
+      map.on('mouseenter', 'clusters' as any, (e) => {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      map.on('mouseleave', 'clusters' as any, (e) => {
+        map.getCanvas().style.cursor = '';
+      });
+    }
 
-      newMap.on('click', handleMapClickListener);
-      // --- END CLICK HANDLER ---
-
-      const handleMapMoveStart = (_e: mapboxgl.MapboxEvent) => {
-        // This is a map movement handler if you need to do something when movement starts
-      };
-      newMap.on('movestart', handleMapMoveStart);
-
-      // Cleanup logic when component unmounts
-      return () => {
-        if (newMap) {
-          console.log('MapComponent: Removing Mapbox map...');
-          newMap.off('click', handleMapClickListener);
-          newMap.off('movestart', handleMapMoveStart);
-          newMap.off('click', 'clusters' as any);
-          newMap.off('mouseenter', 'clusters' as any);
-          newMap.off('mouseleave', 'clusters' as any);
-
-          const removeMapLayer = (id: string) => {
-            if (newMap.getLayer(id)) newMap.removeLayer(id);
-          };
-          const removeMapSource = (id: string) => {
-            if (newMap.getSource(id)) newMap.removeSource(id);
-          };
-
-          removeMapLayer('cluster-count');
-          removeMapLayer('clusters');
-          removeMapSource('landmarks-data');
-
-          removeMapLayer('static-route-line');
-          removeMapSource('static-route');
-
-          newMap.remove();
-          map.current = null;
-          setIsMapLoaded(false);
-        }
-      };
-    }, [onMapClick, memoizedSetCenterMapFn]);
-
-    // useEffect for updating GeoJSON data in source (for markers/clusters)
-    useEffect(() => {
-      if (!isMapLoaded || !map.current) return;
-
-      const currentMapInstance = map.current;
-      const source = currentMapInstance.getSource(
-        'landmarks-data'
-      ) as mapboxgl.GeoJSONSource;
-
-      if (source) {
-        const geojsonFeatures: Feature<Point, GeoJsonProperties>[] =
-          landmarks.map((landmark, index) => ({
-            type: 'Feature',
-            properties: {
-              originalIndex: index,
-              category: landmark.category[0] || 'default',
-            },
-            geometry: {
-              type: 'Point',
-              coordinates: [landmark.coordinates[1], landmark.coordinates[0]],
-            },
-          }));
-        source.setData({
-          type: 'FeatureCollection',
-          features: geojsonFeatures,
-        });
-      } else {
-        console.warn(
-          "MapComponent: 'landmarks-data' source not found during update."
-        );
-      }
-    }, [landmarks, isMapLoaded]);
-
-    // --- useEffect for updating static route ---
-    useEffect(() => {
-      if (!isMapLoaded || !map.current) {
-        return;
-      }
-
-      const mapInstance = map.current;
-      const sourceId = 'static-route';
-
-      const source = mapInstance.getSource(sourceId) as mapboxgl.GeoJSONSource;
-      if (source) {
-        const geojson: Feature<LineString> = {
+    if (!map.getSource('static-route')) {
+      map.addSource('static-route', {
+        type: 'geojson',
+        data: {
           type: 'Feature',
           properties: {},
           geometry: {
             type: 'LineString',
-            // Use routeCoordinates if available and visible, otherwise an empty array
-            coordinates:
-              isRouteVisible && routeCoordinates && routeCoordinates.length > 1
-                ? routeCoordinates
-                : [],
+            coordinates: [],
           },
-        };
-        source.setData(geojson);
-      } else {
-        console.warn(
-          "MapComponent: 'static-route' source not found during update."
-        );
-      }
-    }, [routeCoordinates, isMapLoaded, isRouteVisible]);
+        },
+      });
 
-    return (
-      <MapProvider mapRef={map}>
-        <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
-        {isMapLoaded && <LocationMarker />}
-        {isMapLoaded && (
-          <MapMarkersLayer
-            map={map}
-            landmarks={landmarks}
-            activeIndex={activeIndex}
-            onMapMarkerClick={onMapMarkerClick}
-            hasUserInteracted={hasUserInteracted}
-          />
-        )}
-      </MapProvider>
-    );
-  }
-);
+      map.addLayer({
+        id: 'static-route-line',
+        type: 'line',
+        source: 'static-route',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round',
+        },
+        paint: {
+          'line-color': '#007bff',
+          'line-width': 6,
+          'line-opacity': 0.75,
+        },
+      });
+    }
 
-// LocationMarker and its logic remain the same
+    if (!map._controls.some((c) => c instanceof mapboxgl.NavigationControl)) {
+      map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    }
+
+    const handleMapClickListener = (e: mapboxgl.MapMouseEvent) => {
+      onMapClick();
+    };
+    map.on('click', handleMapClickListener);
+
+    const handleMapMoveStart = (_e: mapboxgl.MapboxEvent) => {
+      /* ваша логика */
+    };
+    map.on('movestart', handleMapMoveStart);
+
+    return () => {
+      console.log(
+        'MapComponent: Cleaning up layers and handlers (on unmount).'
+      ); // Лог очистки
+      map.off('load', handleMapLoad);
+      map.off('click', handleMapClickListener);
+      map.off('movestart', handleMapMoveStart);
+
+      map.off('click', 'clusters' as any);
+      map.off('mouseenter', 'clusters' as any);
+      map.off('mouseleave', 'clusters' as any);
+
+      const removeMapLayerSafe = (id: string) => {
+        if (map.getLayer(id)) {
+          map.removeLayer(id);
+        }
+      };
+      const removeMapSourceSafe = (id: string) => {
+        if (map.getSource(id)) {
+          map.removeSource(id);
+        }
+      };
+
+      removeMapLayerSafe('cluster-count');
+      removeMapLayerSafe('clusters');
+      removeMapSourceSafe('landmarks-data');
+
+      removeMapLayerSafe('static-route-line');
+      removeMapSourceSafe('static-route');
+
+      setIsMapLoaded(false);
+    };
+  }, [map, onMapClick]);
+
+  useEffect(() => {
+    if (!isMapLoaded || !map) return;
+
+    const source = map.getSource('landmarks-data') as mapboxgl.GeoJSONSource;
+    if (source) {
+      const geojsonFeatures: Feature<Point, GeoJsonProperties>[] =
+        landmarks.map((landmark, index) => ({
+          type: 'Feature',
+          properties: {
+            originalIndex: index,
+            category: landmark.category[0] || 'default',
+          },
+          geometry: {
+            type: 'Point',
+            coordinates: [landmark.coordinates[1], landmark.coordinates[0]],
+          },
+        }));
+      source.setData({
+        type: 'FeatureCollection',
+        features: geojsonFeatures,
+      });
+    } else {
+      console.warn(
+        "MapComponent: 'landmarks-data' source not found during update."
+      );
+    }
+  }, [landmarks, isMapLoaded, currentLang, map]);
+
+  useEffect(() => {
+    if (!isMapLoaded || !map) {
+      return;
+    }
+
+    const sourceId = 'static-route';
+    const source = map.getSource(sourceId) as mapboxgl.GeoJSONSource;
+    if (source) {
+      const geojson: Feature<LineString> = {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates:
+            isRouteVisible && routeCoordinates && routeCoordinates.length > 1
+              ? routeCoordinates
+              : [],
+        },
+      };
+      source.setData(geojson);
+    } else {
+      console.warn(
+        "MapComponent: 'static-route' source not found during update."
+      );
+    }
+  }, [routeCoordinates, isMapLoaded, isRouteVisible, map]);
+
+  return (
+    <>
+      <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
+      {isMapLoaded && map && <LocationMarker />}{' '}
+      {isMapLoaded && map && (
+        <MapMarkersLayer
+          map={map}
+          landmarks={landmarks}
+          activeIndex={activeIndex}
+          onMapMarkerClick={onMapMarkerClick}
+          hasUserInteracted={hasUserInteracted}
+        />
+      )}
+    </>
+  );
+};
+
+// LocationMarker component definition (без изменений)
 function LocationMarker() {
+  console.log('LocationMarker: Render'); // Лог рендера
   const { map } = useMapContext();
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const circleSourceId = 'user-location-circle';
   const circleLayerId = 'user-location-circle-layer';
 
   useEffect(() => {
-    if (!map.current) {
+    if (!map) {
       return;
     }
 
-    const currentMap = map.current;
+    console.log('LocationMarker: Effect run (map present).'); // Лог эффекта
+
+    const currentMap = map;
 
     if (!navigator.geolocation) {
       return;
@@ -462,6 +401,7 @@ function LocationMarker() {
     );
 
     return () => {
+      console.log('LocationMarker: Cleaning up.'); // Лог очистки
       navigator.geolocation.clearWatch(watchId);
       if (userMarkerRef.current) {
         userMarkerRef.current.remove();
@@ -488,6 +428,5 @@ function LocationMarker() {
       }
     };
   }, [map]);
-
   return null;
 }

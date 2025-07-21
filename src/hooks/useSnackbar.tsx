@@ -1,4 +1,4 @@
-// src/hooks/useSnackbar.tsx  <-- Обратите внимание на .tsx
+// src/hooks/useSnackbar.tsx
 import React, { useState, useCallback, useRef } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';

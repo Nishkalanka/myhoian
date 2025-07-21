@@ -1,26 +1,27 @@
-// src/components/Header.tsx
-import React, { useState, useCallback } from 'react';
-import { Box, AppBar } from '@mui/material';
+import React, { useCallback } from 'react';
+import { AppBar } from '@mui/material';
 
-// Импортируем новые компоненты
+// Импортируем наш новый пользовательский хук
+import { useDrawerToggle } from '../hooks/useToggle';
+
+// Импортируем константы
+import { TELEGRAM_LINK, WHATSAPP_LINK, EMAIL_LINK } from '../data/appConstants';
+
+// Импортируем компоненты (уже хорошо структурированы)
 import MainAppBar from './header/MainAppBar';
 import MainMenuDrawer from './header/MainMenuDrawer';
 import FilterDrawer from './header/FilterDrawer';
 import WelcomeDialog from './header/WelcomeDialog';
-
-// Переиспользуем существующие компоненты
 import CategoryFilter from './CategoryFilter';
 import logoSvg from '../assets/img/logo.svg';
 
 interface HeaderProps {
   onSelectCategories: (selectedSlugs: string[]) => void;
   selectedCategorySlugs: string[];
-  // Добавлены новые пропсы для управления видимостью маршрута
   toggleRouteVisibility: () => void;
   isRouteVisible: boolean;
 }
 
-// Загрузка изображений для диалога приветствия
 const images = import.meta.glob('../assets/img/pictures/*', {
   eager: true,
   as: 'url',
@@ -28,44 +29,34 @@ const images = import.meta.glob('../assets/img/pictures/*', {
 const getImageUrl = (name: string) => images[`../assets/img/pictures/${name}`];
 const dialogImage = getImageUrl('dragon.png');
 
-// Константы для ссылок на социальные сети (если они используются только здесь)
-const TELEGRAM_LINK = 'https://t.me/pashanishka';
-const WHATSAPP_LINK = 'https://wa.me/84357923401';
-const EMAIL_LINK = 'mailto:hatifnatts@gmail.com';
-
 const Header: React.FC<HeaderProps> = ({
   onSelectCategories,
   selectedCategorySlugs,
   toggleRouteVisibility,
   isRouteVisible,
 }) => {
-  const [openWelcomeDialog, setOpenWelcomeDialog] = useState(false);
-  const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
-  const [mainMenuDrawerOpen, setMainMenuDrawerOpen] = useState(false);
+  const {
+    isOpen: isWelcomeDialogOpen,
+    openDrawer: openWelcomeDialog,
+    closeDrawer: closeWelcomeDialog,
+  } = useDrawerToggle(false);
 
+  const {
+    isOpen: isFilterDrawerOpen,
+    openDrawer: openFilterDrawer,
+    closeDrawer: closeFilterDrawer,
+  } = useDrawerToggle(false);
+
+  const {
+    isOpen: isMainMenuDrawerOpen,
+    openDrawer: openMainMenuDrawer,
+    closeDrawer: closeMainMenuDrawer,
+  } = useDrawerToggle(false);
+
+  // Обработчик клика по логотипу
   const handleLogoClick = useCallback(() => {
-    setOpenWelcomeDialog(true);
-  }, []);
-
-  const handleCloseWelcomeDialog = useCallback(() => {
-    setOpenWelcomeDialog(false);
-  }, []);
-
-  // ИЗМЕНЕНО: toggleDrawer теперь возвращает функцию, которая просто устанавливает состояние
-  const toggleFilterDrawer = useCallback(
-    (open: boolean) => () => {
-      setFilterDrawerOpen(open);
-    },
-    []
-  );
-
-  // ИЗМЕНЕНО: toggleDrawer теперь возвращает функцию, которая просто устанавливает состояние
-  const toggleMainMenuDrawer = useCallback(
-    (open: boolean) => () => {
-      setMainMenuDrawerOpen(open);
-    },
-    []
-  );
+    openWelcomeDialog();
+  }, [openWelcomeDialog]);
 
   return (
     <AppBar
@@ -93,19 +84,18 @@ const Header: React.FC<HeaderProps> = ({
       <MainAppBar
         logoSrc={logoSvg}
         onLogoClick={handleLogoClick}
-        onOpenMainMenu={toggleMainMenuDrawer(true)} // ИЗМЕНЕНО: нет лишних ()
-        onOpenFilterDrawer={toggleFilterDrawer(true)} // ИЗМЕНЕНО: нет лишних ()
+        onOpenMainMenu={openMainMenuDrawer} // Прямой вызов функции
+        onOpenFilterDrawer={openFilterDrawer} // Прямой вызов функции
         selectedCategorySlugs={selectedCategorySlugs}
       />
 
       {/* Выдвижное меню (левое) */}
       <MainMenuDrawer
-        open={mainMenuDrawerOpen}
-        onClose={toggleMainMenuDrawer(false)} // ИЗМЕНЕНО: нет лишних ()
-        // Передаем функции для пунктов меню
+        open={isMainMenuDrawerOpen}
+        onClose={closeMainMenuDrawer} // Прямой вызов функции
         onToggleRouteVisibility={toggleRouteVisibility}
         isRouteVisible={isRouteVisible}
-        onHomeClick={() => console.log('Home clicked in Header')} // Пример, можно убрать
+        onHomeClick={() => console.log('Home clicked')}
         onAboutClick={() => console.log('About clicked')}
         onServicesClick={() => console.log('Services clicked')}
         onContactClick={() => console.log('Contact clicked')}
@@ -113,17 +103,17 @@ const Header: React.FC<HeaderProps> = ({
 
       {/* Выдвижное меню (правое) для фильтров */}
       <FilterDrawer
-        open={filterDrawerOpen}
-        onClose={toggleFilterDrawer(false)} // ИЗМЕНЕНО: нет лишних ()
+        open={isFilterDrawerOpen}
+        onClose={closeFilterDrawer} // Прямой вызов функции
         onSelectCategories={onSelectCategories}
         selectedCategorySlugs={selectedCategorySlugs}
-        CategoryFilterComponent={CategoryFilter} // Передаем сам компонент фильтра
+        CategoryFilterComponent={CategoryFilter}
       />
 
       {/* Диалог приветствия */}
       <WelcomeDialog
-        open={openWelcomeDialog}
-        onClose={handleCloseWelcomeDialog}
+        open={isWelcomeDialogOpen}
+        onClose={closeWelcomeDialog} // Прямой вызов функции
         dialogImage={dialogImage}
         telegramLink={TELEGRAM_LINK}
         whatsappLink={WHATSAPP_LINK}
