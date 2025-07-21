@@ -12,12 +12,10 @@ import React, {
 } from 'react';
 
 import { useLanguage } from '../contexts/LanguageContext';
-// import { useMapContext } from "../contexts/MapContext"; // Больше не нужен MapContext здесь
 import Preloader from './Preloader';
 import LandmarkSwiper from './LandmarkSwiper';
-// import { MapComponent } from "./MapComponent"; // Больше не нужен MapComponent здесь
 import { LandmarkDetailsDialog } from './LandmarkDetailsDialog';
-import { UserLocationButton } from './UserLocationButton';
+import { UserLocationButton } from './UserLocationButton'; // Можно удалить, если не используется в рендере
 import { AppSnackbar, type SnackbarType } from './AppSnackbar';
 
 import {
@@ -45,32 +43,39 @@ type ShowSnackbarFn = (message: string, type: SnackbarType) => void;
 
 interface HeroSectionProps {
   selectedCategorySlugs: string[];
-  routeCoordinates: [number, number][]; // Возможно, это больше не нужно HeroSection
-  isRouteVisible: boolean; // Возможно, это больше не нужно HeroSection
-  filteredLandmarks: LocalizedLandmark[]; // Новый пропс
-  activeIndex: number | null; // Новый пропс
-  setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>; // Новый пропс
-  setHasUserInteracted: React.Dispatch<React.SetStateAction<boolean>>; // Новый пропс
-  hasInteractedWithMarkers: boolean; // Новый пропс
+  // routeCoordinates?: [number, number][]; // Удаляем, если не используется
+  // isRouteVisible?: boolean; // Удаляем, если не используется
+  filteredLandmarks: LocalizedLandmark[];
+  activeIndex: number | null;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  setHasUserInteracted: React.Dispatch<React.SetStateAction<boolean>>;
+  hasInteractedWithMarkers: boolean;
+  getLocalizedContent: (landmark: Landmark) => LandmarkContent; // Добавляем этот пропс
 }
 
 function HeroSection({
   selectedCategorySlugs,
-  routeCoordinates, // Удалите, если не используется
-  isRouteVisible, // Удалите, если не используется
-  filteredLandmarks, // Принимаем как пропс
+  // routeCoordinates, // Удаляем
+  // isRouteVisible, // Удаляем
+  filteredLandmarks,
   activeIndex,
   setActiveIndex,
   setHasUserInteracted,
   hasInteractedWithMarkers,
+  getLocalizedContent, // Деструктурируем
 }: HeroSectionProps) {
-  console.log('HeroSection: Render');
+  console.log('HeroSection: Render', {
+    selectedCategorySlugs: selectedCategorySlugs.length,
+    // routeCoordinatesLength: routeCoordinates?.length, // Удаляем
+    // isRouteVisible, // Удаляем
+    filteredLandmarksCount: filteredLandmarks.length,
+    activeIndex,
+    hasInteractedWithMarkers,
+  });
 
   const { t, i18n } = useTranslation();
   const { currentLang } = useLanguage();
-  // const { centerMap } = useMapContext(); // Больше не нужен MapContext здесь
 
-  // const [activeIndex, setActiveIndex] = useState<number | null>(null); // Теперь пропсы
   const swiperRef = useRef<any>(null);
 
   const [openModal, setOpenModal] = useState(false);
@@ -82,30 +87,31 @@ function HeroSection({
   const [snackbarType, setSnackbarType] = useState<SnackbarType>(null);
   const snackbarTimerIdRef = useRef<number | null>(null);
 
-  // const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false); // Теперь пропс
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
+
+  const welcomeSnackbarShownRef = useRef(false); // Новый реф для отслеживания показа приветственного снекбара
 
   const showSnackbar: ShowSnackbarFn = useCallback((message, type) => {
     if (snackbarTimerIdRef.current) {
       clearTimeout(snackbarTimerIdRef.current);
       snackbarTimerIdRef.current = null;
     }
-    setOpenSnackbar(false);
-    setSnackbarMessage(message);
-    setSnackbarType(type);
 
     if (type === null && message === '') {
+      setOpenSnackbar(false);
+      setSnackbarMessage('');
+      setSnackbarType(null);
       return;
     }
+
+    setSnackbarMessage(message);
+    setSnackbarType(type);
 
     snackbarTimerIdRef.current = setTimeout(() => {
       setOpenSnackbar(true);
     }, 50) as unknown as number;
   }, []);
-
-  // filteredLandmarks теперь приходит как пропс
-  // const filteredLandmarks: LocalizedLandmark[] = useMemo(() => { /* ... */ }, [selectedCategorySlugs, i18n.language]);
 
   useEffect(() => {
     console.log('HeroSection: Mounted');
@@ -153,7 +159,7 @@ function HeroSection({
         clearTimeout(snackbarTimerIdRef.current);
       }
     };
-  }, [filteredLandmarks]);
+  }, [filteredLandmarks, snackbarImages, getImageUrl]);
 
   useEffect(() => {
     if (isContentLoaded) {
@@ -174,9 +180,11 @@ function HeroSection({
     }
   }, [activeIndex]);
 
+  // Этот эффект теперь срабатывает только один раз, когда showPreloader становится false
   useEffect(() => {
-    if (!showPreloader) {
+    if (!showPreloader && !welcomeSnackbarShownRef.current) {
       showSnackbar(t('welcomeMessage'), 'welcome');
+      welcomeSnackbarShownRef.current = true; // Отмечаем, что снекбар показан
     }
   }, [i18n.language, t, showPreloader, showSnackbar]);
 
@@ -210,11 +218,8 @@ function HeroSection({
     setSelectedLandmarkForModal(null);
   }, []);
 
-  // handleMapMarkerClick больше не здесь, он в App.tsx
-  // const handleMapMarkerClick = useCallback(/* ... */);
-
   const handleSlideOrButtonDetailClick = useCallback(
-    (index: number) => {
+    (index: number, _event: React.MouseEvent) => {
       showSnackbar('', null);
       setActiveIndex(index);
       const landmark = filteredLandmarks[index];
@@ -233,18 +238,6 @@ function HeroSection({
       setHasUserInteracted,
     ]
   );
-
-  useEffect(() => {
-    // Больше не используем centerMap напрямую, HeroSection просто управляет swiper
-    // if (activeIndex !== null && centerMap) {
-    //   const landmark = filteredLandmarks[activeIndex];
-    //   if (landmark) {
-    //     centerMap([landmark.coordinates[1], landmark.coordinates[0]], 18);
-    //   } else {
-    //     setActiveIndex(null);
-    //   }
-    // }
-  }, [activeIndex, filteredLandmarks]); // centerMap удален
 
   return (
     <Box
@@ -303,9 +296,7 @@ function HeroSection({
               isContentLoaded={isContentLoaded}
               snackbarImages={snackbarImages}
               getImageUrl={getImageUrl}
-              getLocalizedContent={(landmark: LocalizedLandmark) =>
-                landmark.localizedContent || landmark.en
-              }
+              getLocalizedContent={getLocalizedContent} // Передаем пропс
               onSlideChange={(swiper) => {
                 if (swiper.activeIndex !== activeIndex) {
                   setActiveIndex(swiper.activeIndex);
