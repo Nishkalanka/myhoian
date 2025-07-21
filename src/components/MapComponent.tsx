@@ -1,5 +1,5 @@
 // src/components/MapComponent.tsx
-import React, { useEffect, useState, useRef, memo } from 'react'; // <-- Убрали useCallback, так как он не используется
+import React, { useEffect, useState, useRef, memo, useCallback } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -7,30 +7,48 @@ import type { Feature, Point, GeoJsonProperties, LineString } from 'geojson';
 
 import { useMapContext } from '../contexts/MapContext';
 import { MapMarkersLayer } from './map/MapMarkersLayer';
+// --- ДОБАВЛЕНЫ ИМПОРТЫ ДЛЯ КНОПКИ ЛОКАЦИИ ---
+import { UserLocationButton } from './UserLocationButton';
+import type { ShowSnackbarFn } from './UserLocationButton';
+// --- КОНЕЦ ДОБАВЛЕННЫХ ИМПОРТОВ ---
 
 interface MapComponentProps {
-  landmarks: any[]; // Landmark[] - уже локализованные
+  landmarks: any[];
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   onMapClick: () => void;
   routeCoordinates?: [number, number][];
   hasUserInteracted: boolean;
   isRouteVisible: boolean;
+  onShowSnackbar: ShowSnackbarFn; // <-- ДОБАВЛЕН НОВЫЙ ПРОПС
 }
 
 export const MapComponent = memo(function MapComponent({
   landmarks,
   activeIndex,
-  onMapMarkerClick,
-  onMapClick,
+  onMapMarkerClick: onMapMarkerClickProp,
+  onMapClick: onMapClickProp,
   routeCoordinates,
   hasUserInteracted,
   isRouteVisible,
+  onShowSnackbar, // <-- Извлекаем новый пропс
 }: MapComponentProps) {
   console.log('MapComponent: Render');
 
   const { map, mapContainerRef } = useMapContext();
   const [isMapLoaded, setIsMapLoaded] = useState(false);
+
+  // Оборачиваем колбэки в useCallback, чтобы их ссылки были стабильными
+  const onMapClickCallback = useCallback(() => {
+    onMapClickProp();
+  }, [onMapClickProp]);
+
+  const onMapMarkerClickCallback = useCallback(
+    (index: number, event: React.MouseEvent) => {
+      onMapMarkerClickProp(index, event);
+    },
+    [onMapMarkerClickProp]
+  );
 
   // Ref для маркера местоположения пользователя
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
@@ -172,7 +190,7 @@ export const MapComponent = memo(function MapComponent({
     }
 
     const handleMapClickListener = () => {
-      onMapClick();
+      onMapClickCallback(); // Используем стабилизированный колбэк
     };
     map.on('click', handleMapClickListener);
 
@@ -181,7 +199,8 @@ export const MapComponent = memo(function MapComponent({
     };
     map.on('movestart', handleMapMoveStart);
 
-    // Геолокация
+    // Геолокация - логика для отрисовки маркера и круга (остается без изменений, так как UserLocationButton
+    // только центрирует карту, но не управляет этим визуальным представлением напрямую)
     const onLocationSuccess = (pos: GeolocationPosition) => {
       const { latitude, longitude, accuracy } = pos.coords;
       const newPosition: [number, number] = [longitude, latitude];
@@ -254,11 +273,11 @@ export const MapComponent = memo(function MapComponent({
               0,
               ['/', ['get', 'radius'], ['literal', 100]],
               20,
-              ['/', ['get', 'radius'], ['literal', 1]], // <-- Исправлено: добавлена закрывающая скобка для literal, и для всего выражения
+              ['/', ['get', 'radius'], ['literal', 1]],
             ],
             'circle-color': 'rgba(0, 128, 255, 0.4)',
             'circle-stroke-color': 'rgba(0, 128, 255, 0.8)',
-            'circle-stroke-width': 1, // <-- Исправлено: убраны кавычки, так как это числовое значение
+            'circle-stroke-width': 1,
           },
         });
       }
@@ -338,7 +357,7 @@ export const MapComponent = memo(function MapComponent({
 
       setIsMapLoaded(false);
     };
-  }, [map, onMapClick]); // map и onMapClick - необходимые зависимости
+  }, [map, onMapClickCallback]); // Используем стабилизированный колбэк в зависимостях
 
   // Эффект для обновления данных о локациях (достопримечательностях)
   useEffect(() => {
@@ -352,7 +371,7 @@ export const MapComponent = memo(function MapComponent({
         landmarks.map((landmark, index) => ({
           type: 'Feature',
           properties: {
-            originalIndex: index,
+            originalIndex: index, // Важно для MapMarkersLayer
             category:
               landmark.category && landmark.category.length > 0
                 ? landmark.category[0]
@@ -431,25 +450,29 @@ export const MapComponent = memo(function MapComponent({
   return (
     <>
       <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
-      {/* Теперь логика LocationMarker интегрирована напрямую */}
-      {isMapLoaded && map && (
-        <React.Fragment>
-          {' '}
-          {/* Используем Fragment, чтобы вернуть несколько элементов */}
-          {/* Условный рендеринг маркера и круга, если это необходимо */}
-          {/* Логика маркера пользователя и круга уже в useEffect, здесь только их JSX-представление, если нужно */}
-          {/* Таким образом, <LocationMarker /> здесь не требуется. */}
-        </React.Fragment>
-      )}
       {isMapLoaded && map && (
         <MapMarkersLayer
           map={map}
           landmarks={landmarks}
           activeIndex={activeIndex}
-          onMapMarkerClick={onMapMarkerClick}
+          onMapMarkerClick={onMapMarkerClickCallback}
           hasUserInteracted={hasUserInteracted}
         />
       )}
+      {/* --- ДОБАВЛЕН КОМПОНЕНТ КНОПКИ ЛОКАЦИИ --- */}
+      {isMapLoaded && map && (
+        <UserLocationButton
+          centerMapFn={(coords: [number, number], zoom?: number) => {
+            map.easeTo({
+              center: coords,
+              zoom: zoom || map.getZoom(),
+              duration: 800,
+            });
+          }}
+          onShowSnackbar={onShowSnackbar}
+        />
+      )}
+      {/* --- КОНЕЦ КОМПОНЕНТА КНОПКИ ЛОКАЦИИ --- */}
     </>
   );
 });

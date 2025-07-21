@@ -45,6 +45,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
           transition: 'transform 0.3s ease-in-out',
           transform: isActive ? 'scale(1.5)' : 'scale(1)',
           cursor: 'pointer',
+          animation: isBouncing ? 'pulse 1s infinite alternate' : 'none',
         }}
         aria-label="landmark-marker"
       >
@@ -56,7 +57,6 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
 
 // Определение пропсов для MapMarkersLayer
 interface MapMarkersLayerProps {
-  // ЭТА СТРОКА ИЗМЕНЕНА: map теперь ожидает сам экземпляр карты (mapboxgl.Map), а не реф
   map: mapboxgl.Map | null;
   landmarks: Landmark[];
   activeIndex: number | null;
@@ -65,77 +65,80 @@ interface MapMarkersLayerProps {
 }
 
 export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
-  map, // <--- map теперь сам экземпляр карты
+  map,
   landmarks,
   activeIndex,
   onMapMarkerClick,
   hasUserInteracted,
 }) => {
-  // Карта для хранения ссылок на маркеры и их корни, чтобы легко их удалять
   const individualMarkers = useRef<
     Map<number, { marker: mapboxgl.Marker; root: ReactDOM.Root }>
   >(new Map());
 
+  // Этот useEffect будет отвечать за создание/удаление Mapbox-маркеров и их React-корней.
+  // Он будет срабатывать только при изменении `map` или `landmarks`.
+  // Изменение `activeIndex` не должно приводить к пересозданию маркеров.
   useEffect(() => {
-    // ЭТА СТРОКА ИЗМЕНЕНА: УБРАЛИ ".current", так как `map` уже является экземпляром карты
     const currentMapInstance = map;
-    if (!currentMapInstance) return;
+    if (!currentMapInstance) {
+      console.log('MapMarkersLayer: Map instance is null, returning.');
+      return;
+    }
 
-    const updateIndividualMarkers = () => {
+    console.log('MapMarkersLayer: Setting up map event listeners for markers.');
+
+    const updateVisibleMarkers = () => {
+      //console.log('MapMarkersLayer: updateVisibleMarkers triggered.');
       const newUnclusteredPoints = new Map<
         number,
         GeoJSON.Feature<GeoJSON.Point>
       >();
 
-      // Запрашиваем "несгруппированные" (unclustered) точки с карты
-      currentMapInstance
-        .querySourceFeatures('landmarks-data', {
-          filter: ['!', ['has', 'point_count']],
-        })
-        .forEach((_feature) => {
-          if (
-            _feature.properties &&
-            typeof _feature.properties.originalIndex === 'number'
-          ) {
-            newUnclusteredPoints.set(
-              _feature.properties.originalIndex,
-              _feature as GeoJSON.Feature<GeoJSON.Point>
-            );
-          }
-        });
-
-      // Удаляем маркеры, которых больше нет в новых "несгруппированных" точках
-      individualMarkers.current.forEach((markerData, originalIndex) => {
-        if (!newUnclusteredPoints.has(originalIndex)) {
-          queueMicrotask(() => {
-            try {
-              markerData.root.unmount();
-            } catch (e) {
-              /* do nothing */
+      try {
+        currentMapInstance
+          .querySourceFeatures('landmarks-data', {
+            filter: ['!', ['has', 'point_count']],
+          })
+          .forEach((feature) => {
+            if (
+              feature.properties &&
+              typeof feature.properties.originalIndex === 'number' &&
+              feature.geometry &&
+              feature.geometry.type === 'Point'
+            ) {
+              newUnclusteredPoints.set(
+                feature.properties.originalIndex,
+                feature as GeoJSON.Feature<GeoJSON.Point>
+              );
             }
           });
-          markerData.marker.remove();
-          individualMarkers.current.delete(originalIndex);
-        }
-      });
+      } catch (error) {
+        console.warn('MapMarkersLayer: Error querying source features:', error);
+        return;
+      }
 
-      // Добавляем или обновляем маркеры для текущих "несгруппированных" точек
-      newUnclusteredPoints.forEach((_feature, originalIndex) => {
+      // Обновляем/добавляем маркеры
+      newUnclusteredPoints.forEach((feature, originalIndex) => {
         const landmark = landmarks[originalIndex];
-        if (!landmark) return;
+        if (!landmark) {
+          return;
+        }
 
         const categoryColor = getCategoryColor(
-          landmark.category[0] || 'default'
+          (landmark.category && landmark.category.length > 0
+            ? landmark.category[0]
+            : 'default') as CategorySlug
         );
 
         if (!individualMarkers.current.has(originalIndex)) {
           // Создаем новый маркер
+          //console.log(`MapMarkersLayer: Creating new marker for index ${originalIndex}`);
           const markerContainer = document.createElement('div');
           const root = ReactDOM.createRoot(markerContainer);
 
           root.render(
             <CustomMarker
-              isActive={activeIndex === originalIndex}
+              isActive={activeIndex === originalIndex} // initial active state
               onClick={(event) => onMapMarkerClick(originalIndex, event)}
               isBouncing={!hasUserInteracted}
               markerColor={categoryColor}
@@ -146,56 +149,107 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
             element: markerContainer,
             anchor: 'bottom',
           })
-            .setLngLat([landmark.coordinates[1], landmark.coordinates[0]])
+            .setLngLat(feature.geometry.coordinates as [number, number])
             .addTo(currentMapInstance);
 
           individualMarkers.current.set(originalIndex, { marker, root });
         } else {
-          // Обновляем существующий маркер
+          // Обновляем существующий маркер.
+          // Здесь мы не вызываем render, так как для CustomMarker props activeIndex
+          // обновляются в отдельном useEffect ниже.
+          // Только если координаты изменились, мы обновляем LngLat.
           const markerData = individualMarkers.current.get(originalIndex);
           if (markerData) {
-            markerData.root.render(
-              <CustomMarker
-                isActive={activeIndex === originalIndex}
-                onClick={(event) => onMapMarkerClick(originalIndex, event)}
-                isBouncing={!hasUserInteracted}
-                markerColor={categoryColor}
-              />
+            markerData.marker.setLngLat(
+              feature.geometry.coordinates as [number, number]
             );
           }
         }
       });
+
+      // Удаляем маркеры, которых больше нет
+      individualMarkers.current.forEach((markerData, originalIndex) => {
+        if (!newUnclusteredPoints.has(originalIndex)) {
+          //console.log(`MapMarkersLayer: Removing marker for index ${originalIndex}`);
+          // *** ИЗМЕНЕНИЕ ЗДЕСЬ: Откладываем unmount в setTimeout ***
+          setTimeout(() => {
+            try {
+              markerData.root.unmount();
+            } catch (e) {
+              console.error('Error unmounting marker root (deferred):', e);
+            }
+          }, 0);
+          markerData.marker.remove();
+          individualMarkers.current.delete(originalIndex);
+        }
+      });
     };
 
-    // Привязываем обработчик к событиям 'render' и 'moveend' карты
-    // чтобы маркеры обновлялись при изменении видимости/кластеризации
-    currentMapInstance.on('render', updateIndividualMarkers);
-    currentMapInstance.on('moveend', updateIndividualMarkers);
+    // Привязываем обработчик к событиям карты
+    currentMapInstance.on('idle', updateVisibleMarkers);
+    currentMapInstance.on('moveend', updateVisibleMarkers);
+    currentMapInstance.on('sourcedata', updateVisibleMarkers);
 
-    // Вызываем один раз при монтировании/обновлении, чтобы сразу отобразить маркеры
-    updateIndividualMarkers();
+    // Initial call
+    const initialRenderTimeout = setTimeout(() => {
+      if (currentMapInstance.loaded()) {
+        updateVisibleMarkers();
+      }
+    }, 0);
 
-    // Функция очистки при размонтировании компонента
     return () => {
+      console.log('MapMarkersLayer: Cleaning up markers and listeners.');
+      clearTimeout(initialRenderTimeout);
+
       if (currentMapInstance) {
-        currentMapInstance.off('render', updateIndividualMarkers);
-        currentMapInstance.off('moveend', updateIndividualMarkers);
+        currentMapInstance.off('idle', updateVisibleMarkers);
+        currentMapInstance.off('moveend', updateVisibleMarkers);
+        currentMapInstance.off('sourcedata', updateVisibleMarkers);
       }
 
-      // Удаляем все маркеры и размонтируем React-корни
       individualMarkers.current.forEach(({ marker, root }) => {
-        queueMicrotask(() => {
+        // *** ИЗМЕНЕНИЕ ЗДЕСЬ: Откладываем unmount в setTimeout при размонтировании компонента ***
+        setTimeout(() => {
           try {
             root.unmount();
           } catch (e) {
-            /* do nothing */
+            console.error(
+              'Error unmounting marker root during cleanup (deferred):',
+              e
+            );
           }
-        });
+        }, 0);
         marker.remove();
       });
       individualMarkers.current.clear();
     };
-  }, [map, landmarks, activeIndex, onMapMarkerClick, hasUserInteracted]); // Зависимости useEffect
+  }, [map, landmarks, hasUserInteracted]); // activeIndex УБРАН из зависимостей этого useEffect
 
-  return null; // Этот компонент не рендерит ничего сам, он управляет сайд-эффектами на карте
+  // НОВЫЙ useEffect для обновления состояния активности маркеров
+  // Этот эффект будет срабатывать только при изменении activeIndex.
+  // Он будет рендерить CustomMarker заново с новыми пропсами.
+  useEffect(() => {
+    //console.log("MapMarkersLayer: Updating active marker status.", { activeIndex });
+    individualMarkers.current.forEach((markerData, originalIndex) => {
+      const landmark = landmarks[originalIndex];
+      if (!landmark) return;
+
+      const categoryColor = getCategoryColor(
+        (landmark.category && landmark.category.length > 0
+          ? landmark.category[0]
+          : 'default') as CategorySlug
+      );
+
+      markerData.root.render(
+        <CustomMarker
+          isActive={activeIndex === originalIndex}
+          onClick={(event) => onMapMarkerClick(originalIndex, event)}
+          isBouncing={!hasUserInteracted}
+          markerColor={categoryColor}
+        />
+      );
+    });
+  }, [activeIndex, landmarks, onMapMarkerClick, hasUserInteracted]); // Зависимости для обновления активности
+
+  return null;
 };
