@@ -1,9 +1,9 @@
-// src/contexts/ThemeContext.tsx
+// src/contexts/ThemeContext.tsx (ИСПРАВЛЕННЫЙ ДЛЯ ПРИНУДИТЕЛЬНОЙ ТЕМНОЙ ТЕМЫ)
 import React, { createContext, useContext, useState, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import type { PaletteMode } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material';
-import { getDesignTokens } from '../theme/theme'; // Мы создадим этот файл далее
+import { getDesignTokens } from '../theme/theme'; // Убедитесь в правильности пути
 
 // Определяем тип для нашего контекста
 interface ThemeContextType {
@@ -22,27 +22,24 @@ interface ThemeContextProviderProps {
 export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({
   children,
 }) => {
-  // --- ИЗМЕНЕНИЕ ЛОГИКИ ОПРЕДЕЛЕНИЯ initialMode ЗДЕСЬ ---
-  const [mode, setMode] = useState<PaletteMode>(() => {
-    // 1. Пытаемся получить сохраненную тему из localStorage
-    const savedMode = localStorage.getItem('themeMode') as PaletteMode | null;
+  // Принудительно устанавливаем mode в 'dark' и не позволяем ему меняться.
+  // Можно даже не использовать useState, если тема абсолютно фиксирована
+  const mode: PaletteMode = 'dark'; // <--- ЖЕСТКО ЗАДАЕМ ТЕМНЫЙ РЕЖИМ
 
-    // 2. Если есть сохраненная тема, используем ее.
-    // 3. Если нет сохраненной темы, по умолчанию устанавливаем 'dark'.
-    //    Игнорируем prefers-color-scheme для начальной установки, но
-    //    сохраняем ее для пользовательского переключения.
-    return savedMode || 'dark'; // Если savedMode null/undefined, то будет 'dark'
-  });
-  // --- КОНЕЦ ИЗМЕНЕНИЯ ---
-
-  // Функция для переключения темы
+  // Заглушка для toggleColorMode, если он все еще нужен где-то для типа, но не должен ничего делать
   const toggleColorMode = React.useCallback(() => {
-    setMode((prevMode) => {
-      const newMode = prevMode === 'light' ? 'dark' : 'light';
-      localStorage.setItem('themeMode', newMode); // Сохраняем выбор пользователя
-      return newMode;
-    });
+    console.warn('Theme switching is disabled.');
+    // Ничего не делаем
   }, []);
+
+  // Если вы хотите, чтобы localStorage сохранял выбор, но тема была только dark
+  // const [mode, setMode] = useState<PaletteMode>(() => {
+  //   localStorage.setItem('themeMode', 'dark'); // Всегда сохраняем 'dark'
+  //   return 'dark';
+  // });
+  // const toggleColorMode = React.useCallback(() => {
+  //   // Ничего не делаем, тема всегда dark
+  // }, []);
 
   // Создаем объект темы на основе текущего режима (mode)
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);

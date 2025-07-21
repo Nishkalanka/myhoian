@@ -125,7 +125,6 @@ function App() {
             isRouteVisible={isRouteVisible}
           />
 
-          {/* MapComponent теперь находится здесь, ВНЕ HeroSection */}
           <Box
             sx={{
               flexGrow: 1,

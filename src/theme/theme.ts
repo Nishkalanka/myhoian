@@ -4,39 +4,40 @@ import type { PaletteMode } from '@mui/material';
 export const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
-    ...(mode === 'light'
+    // Если mode === "dark", используем темные цвета
+    ...(mode === 'dark'
       ? {
-          // Палитра для светлой темы
+          // ПАЛИТРА ДЛЯ ТЕМНОЙ ТЕМЫ
           primary: {
-            main: '#1976d2',
+            main: '#90caf9', // Светло-голубой
           },
           secondary: {
-            main: '#dc004e',
+            main: '#f48fb1', // Розовый
           },
           background: {
-            default: '#f8f9fa',
-            paper: '#ffffff',
+            default: '#2e2e39', // <-- ТЕМНО-СЕРЫЙ ФОН
+            paper: '#2e2e39', // <-- ТЕМНО-СЕРЫЙ ФОН ДЛЯ КОМПОНЕНТОВ (карточки, диалоги)
           },
           text: {
-            primary: '#212529',
-            secondary: '#495057',
+            primary: '#e0e0e0', // <-- СВЕТЛЫЙ ТЕКСТ
+            secondary: '#a0a0a0', // <-- СВЕТЛО-СЕРЫЙ ТЕКСТ
           },
         }
       : {
-          // Палитра для темной темы
+          // ПАЛИТРА ДЛЯ СВЕТЛОЙ ТЕМЫ
           primary: {
-            main: '#90caf9',
+            main: '#1976d2', // Синий
           },
           secondary: {
-            main: '#f48fb1',
+            main: '#dc004e', // Красный
           },
           background: {
-            default: '#2e2e39',
-            paper: '#2e2e39',
+            default: '#f8f9fa', // <-- СВЕТЛО-СЕРЫЙ ФОН
+            paper: '#ffffff', // <-- БЕЛЫЙ ФОН ДЛЯ КОМПОНЕНТОВ
           },
           text: {
-            primary: '#e0e0e0',
-            secondary: '#a0a0a0',
+            primary: '#212529', // <-- ТЕМНЫЙ ТЕКСТ
+            secondary: '#495057', // <-- ТЕМНО-СЕРЫЙ ТЕКСТ
           },
         }),
   },
@@ -45,7 +46,5 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     h1: {
       fontSize: '3rem',
     },
-    // ... другие настройки типографики
   },
-  // ... другие настройки, такие как компоненты, shadow, spacing
 });

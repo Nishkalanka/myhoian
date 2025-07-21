@@ -296,19 +296,6 @@ function HeroSection({
               overflow: 'hidden',
             }}
           >
-            <Box
-              sx={{
-                flexGrow: 1,
-                minHeight: 0,
-                position: 'absolute', // Этот Box больше не должен быть абсолютным, если MapComponent вне его
-                height: '100%', // Эти стили должны быть пересмотрены, если MapComponent вынесен
-                width: '100%',
-              }}
-            >
-              {/* <MapComponent ... /> Больше не здесь */}
-              {/* <UserLocationButton ... /> Больше не здесь */}
-            </Box>
-
             <LandmarkSwiper
               filteredLandmarks={filteredLandmarks}
               activeIndex={activeIndex}
