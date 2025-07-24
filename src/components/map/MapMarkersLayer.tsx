@@ -8,9 +8,8 @@ import { IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import { getCategoryColor } from '../../utils/categoryColors';
-import type { Landmark, CategorySlug } from '../../data';
+import type { Landmark, CategorySlug, LandmarkContent } from '../../data';
 
-// Определение пропсов для CustomMarker
 interface CustomMarkerProps {
   isActive: boolean;
   onClick: (event: React.MouseEvent) => void;
@@ -18,7 +17,6 @@ interface CustomMarkerProps {
   markerColor: string;
 }
 
-// Компонент CustomMarker
 const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
   ({ isActive, onClick, isBouncing, markerColor }) => {
     const handleClick = useCallback(
@@ -55,13 +53,13 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
   }
 );
 
-// Определение пропсов для MapMarkersLayer
 interface MapMarkersLayerProps {
   map: mapboxgl.Map | null;
-  landmarks: Landmark[];
+  landmarks: Landmark[]; // Нелокализованные данные
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   hasUserInteracted: boolean;
+  getLocalizedContent: (landmark: Landmark) => LandmarkContent;
 }
 
 export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
@@ -70,25 +68,22 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
   activeIndex,
   onMapMarkerClick,
   hasUserInteracted,
+  getLocalizedContent,
 }) => {
   const individualMarkers = useRef<
     Map<number, { marker: mapboxgl.Marker; root: ReactDOM.Root }>
   >(new Map());
 
-  // Этот useEffect будет отвечать за создание/удаление Mapbox-маркеров и их React-корней.
-  // Он будет срабатывать только при изменении `map` или `landmarks`.
-  // Изменение `activeIndex` не должно приводить к пересозданию маркеров.
+  // Этот useEffect отвечает за создание/удаление Mapbox-маркеров и их React-корней.
+  // Он должен срабатывать только при изменении `map` или `landmarks` (НЕЛОКАЛИЗОВАННЫХ).
+
   useEffect(() => {
     const currentMapInstance = map;
     if (!currentMapInstance) {
-      console.log('MapMarkersLayer: Map instance is null, returning.');
       return;
     }
 
-    console.log('MapMarkersLayer: Setting up map event listeners for markers.');
-
     const updateVisibleMarkers = () => {
-      //console.log('MapMarkersLayer: updateVisibleMarkers triggered.');
       const newUnclusteredPoints = new Map<
         number,
         GeoJSON.Feature<GeoJSON.Point>
@@ -113,14 +108,14 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
             }
           });
       } catch (error) {
-        console.warn('MapMarkersLayer: Error querying source features:', error);
+        // console.warn("MapMarkersLayer: Error querying source features:", error);
         return;
       }
 
-      // Обновляем/добавляем маркеры
       newUnclusteredPoints.forEach((feature, originalIndex) => {
         const landmark = landmarks[originalIndex];
         if (!landmark) {
+          // console.warn(`MapMarkersLayer: Landmark not found for index ${originalIndex} during updateVisibleMarkers.`);
           return;
         }
 
@@ -131,14 +126,12 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         );
 
         if (!individualMarkers.current.has(originalIndex)) {
-          // Создаем новый маркер
-          //console.log(`MapMarkersLayer: Creating new marker for index ${originalIndex}`);
           const markerContainer = document.createElement('div');
           const root = ReactDOM.createRoot(markerContainer);
 
           root.render(
             <CustomMarker
-              isActive={activeIndex === originalIndex} // initial active state
+              isActive={activeIndex === originalIndex}
               onClick={(event) => onMapMarkerClick(originalIndex, event)}
               isBouncing={!hasUserInteracted}
               markerColor={categoryColor}
@@ -154,29 +147,27 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
 
           individualMarkers.current.set(originalIndex, { marker, root });
         } else {
-          // Обновляем существующий маркер.
-          // Здесь мы не вызываем render, так как для CustomMarker props activeIndex
-          // обновляются в отдельном useEffect ниже.
-          // Только если координаты изменились, мы обновляем LngLat.
           const markerData = individualMarkers.current.get(originalIndex);
           if (markerData) {
-            markerData.marker.setLngLat(
-              feature.geometry.coordinates as [number, number]
-            );
+            const currentLngLat = markerData.marker.getLngLat();
+            const newLngLat = feature.geometry.coordinates as [number, number];
+            if (
+              currentLngLat.lng !== newLngLat[0] ||
+              currentLngLat.lat !== newLngLat[1]
+            ) {
+              markerData.marker.setLngLat(newLngLat);
+            }
           }
         }
       });
 
-      // Удаляем маркеры, которых больше нет
       individualMarkers.current.forEach((markerData, originalIndex) => {
         if (!newUnclusteredPoints.has(originalIndex)) {
-          //console.log(`MapMarkersLayer: Removing marker for index ${originalIndex}`);
-          // *** ИЗМЕНЕНИЕ ЗДЕСЬ: Откладываем unmount в setTimeout ***
           setTimeout(() => {
             try {
               markerData.root.unmount();
             } catch (e) {
-              console.error('Error unmounting marker root (deferred):', e);
+              // console.error("MapMarkersLayer: Error unmounting marker root (deferred) during removal:", e);
             }
           }, 0);
           markerData.marker.remove();
@@ -185,12 +176,10 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
       });
     };
 
-    // Привязываем обработчик к событиям карты
     currentMapInstance.on('idle', updateVisibleMarkers);
     currentMapInstance.on('moveend', updateVisibleMarkers);
     currentMapInstance.on('sourcedata', updateVisibleMarkers);
 
-    // Initial call
     const initialRenderTimeout = setTimeout(() => {
       if (currentMapInstance.loaded()) {
         updateVisibleMarkers();
@@ -198,7 +187,6 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
     }, 0);
 
     return () => {
-      console.log('MapMarkersLayer: Cleaning up markers and listeners.');
       clearTimeout(initialRenderTimeout);
 
       if (currentMapInstance) {
@@ -207,32 +195,33 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         currentMapInstance.off('sourcedata', updateVisibleMarkers);
       }
 
-      individualMarkers.current.forEach(({ marker, root }) => {
-        // *** ИЗМЕНЕНИЕ ЗДЕСЬ: Откладываем unmount в setTimeout при размонтировании компонента ***
+      // Capture current ref value for cleanup
+      const currentMarkers = individualMarkers.current;
+      currentMarkers.forEach(({ marker, root }) => {
         setTimeout(() => {
           try {
             root.unmount();
           } catch (e) {
-            console.error(
-              'Error unmounting marker root during cleanup (deferred):',
-              e
-            );
+            // console.error("MapMarkersLayer: Error unmounting marker root during cleanup (deferred):", e);
           }
         }, 0);
         marker.remove();
       });
-      individualMarkers.current.clear();
+      currentMarkers.clear(); // Clear the captured map
     };
-  }, [map, landmarks, hasUserInteracted]); // activeIndex УБРАН из зависимостей этого useEffect
+  }, [map, landmarks]); // Зависит только от map и landmarks (нелокализованных)
 
-  // НОВЫЙ useEffect для обновления состояния активности маркеров
-  // Этот эффект будет срабатывать только при изменении activeIndex.
-  // Он будет рендерить CustomMarker заново с новыми пропсами.
+  // Этот useEffect для обновления состояния активности маркеров и их стиля.
+  // Он будет срабатывать при изменении activeIndex, hasUserInteracted, onMapMarkerClick
+  // или getLocalizedContent (т.е. при смене языка).
   useEffect(() => {
-    //console.log("MapMarkersLayer: Updating active marker status.", { activeIndex });
+    // console.log("MapMarkersLayer: Second useEffect triggered. Updating CustomMarker props.");
     individualMarkers.current.forEach((markerData, originalIndex) => {
       const landmark = landmarks[originalIndex];
-      if (!landmark) return;
+      if (!landmark) {
+        // console.warn(`MapMarkersLayer: Landmark not found for index ${originalIndex} during second useEffect.`);
+        return;
+      }
 
       const categoryColor = getCategoryColor(
         (landmark.category && landmark.category.length > 0
@@ -240,16 +229,25 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
           : 'default') as CategorySlug
       );
 
+      // Перерисовываем только React-компонент внутри существующего Mapbox маркера
       markerData.root.render(
         <CustomMarker
           isActive={activeIndex === originalIndex}
           onClick={(event) => onMapMarkerClick(originalIndex, event)}
           isBouncing={!hasUserInteracted}
           markerColor={categoryColor}
+          // localizedTitle={getLocalizedContent(landmark).title} // Если CustomMarker будет отображать текст
         />
       );
     });
-  }, [activeIndex, landmarks, onMapMarkerClick, hasUserInteracted]); // Зависимости для обновления активности
+    // Зависимости для обновления активности и локализованного контента
+  }, [
+    activeIndex,
+    landmarks,
+    onMapMarkerClick,
+    hasUserInteracted,
+    getLocalizedContent,
+  ]);
 
   return null;
 };

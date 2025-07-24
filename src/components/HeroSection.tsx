@@ -7,24 +7,21 @@ import React, {
   useRef,
   useEffect,
   useCallback,
-  useMemo,
+  // useMemo, // Удален неиспользуемый импорт useMemo
   memo,
 } from 'react';
 
-import { useLanguage } from '../contexts/LanguageContext';
 import Preloader from './Preloader';
 import LandmarkSwiper from './LandmarkSwiper';
 import { LandmarkDetailsDialog } from './LandmarkDetailsDialog';
-import { UserLocationButton } from './UserLocationButton'; // Можно удалить, если не используется в рендере
-import { AppSnackbar, type SnackbarType } from './AppSnackbar';
 
-import {
-  hoiAnLandmarks,
-  type Landmark,
-  type LandmarkContent,
-  type CategorySlug,
-} from '../data';
-import type { LocalizedLandmark } from '../data/landmarks/landmarkTypes.js';
+import { type LandmarkContent } from '../data';
+import type {
+  LocalizedLandmark,
+  Landmark,
+} from '../data/landmarks/landmarkTypes.js';
+
+import type { ShowSnackbarFn } from './UserLocationButton';
 
 const images = import.meta.glob('../assets/img/pictures/*', {
   eager: true,
@@ -39,42 +36,30 @@ const snackbarImages = {
   error: getImageUrl('dragon.png'),
 };
 
-type ShowSnackbarFn = (message: string, type: SnackbarType) => void;
-
 interface HeroSectionProps {
   selectedCategorySlugs: string[];
-  // routeCoordinates?: [number, number][]; // Удаляем, если не используется
-  // isRouteVisible?: boolean; // Удаляем, если не используется
   filteredLandmarks: LocalizedLandmark[];
   activeIndex: number | null;
   setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
   setHasUserInteracted: React.Dispatch<React.SetStateAction<boolean>>;
   hasInteractedWithMarkers: boolean;
-  getLocalizedContent: (landmark: Landmark) => LandmarkContent; // Добавляем этот пропс
+  getLocalizedContent: (landmark: Landmark) => LandmarkContent;
+  onShowSnackbar: ShowSnackbarFn;
 }
 
 function HeroSection({
-  selectedCategorySlugs,
-  // routeCoordinates, // Удаляем
-  // isRouteVisible, // Удаляем
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  selectedCategorySlugs, // Этот пропс передается в LandmarkSwiper, поэтому его оставляем
   filteredLandmarks,
   activeIndex,
   setActiveIndex,
   setHasUserInteracted,
   hasInteractedWithMarkers,
-  getLocalizedContent, // Деструктурируем
+  getLocalizedContent,
+  onShowSnackbar,
 }: HeroSectionProps) {
-  console.log('HeroSection: Render', {
-    selectedCategorySlugs: selectedCategorySlugs.length,
-    // routeCoordinatesLength: routeCoordinates?.length, // Удаляем
-    // isRouteVisible, // Удаляем
-    filteredLandmarksCount: filteredLandmarks.length,
-    activeIndex,
-    hasInteractedWithMarkers,
-  });
-
   const { t, i18n } = useTranslation();
-  const { currentLang } = useLanguage();
+  // const { currentLang } = useLanguage(); // Удалена неиспользуемая переменная
 
   const swiperRef = useRef<any>(null);
 
@@ -82,42 +67,13 @@ function HeroSection({
   const [selectedLandmarkForModal, setSelectedLandmarkForModal] =
     useState<LocalizedLandmark | null>(null);
 
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState<string>('');
-  const [snackbarType, setSnackbarType] = useState<SnackbarType>(null);
-  const snackbarTimerIdRef = useRef<number | null>(null);
-
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
 
-  const welcomeSnackbarShownRef = useRef(false); // Новый реф для отслеживания показа приветственного снекбара
-
-  const showSnackbar: ShowSnackbarFn = useCallback((message, type) => {
-    if (snackbarTimerIdRef.current) {
-      clearTimeout(snackbarTimerIdRef.current);
-      snackbarTimerIdRef.current = null;
-    }
-
-    if (type === null && message === '') {
-      setOpenSnackbar(false);
-      setSnackbarMessage('');
-      setSnackbarType(null);
-      return;
-    }
-
-    setSnackbarMessage(message);
-    setSnackbarType(type);
-
-    snackbarTimerIdRef.current = setTimeout(() => {
-      setOpenSnackbar(true);
-    }, 50) as unknown as number;
-  }, []);
+  const welcomeSnackbarShownRef = useRef(false);
 
   useEffect(() => {
-    console.log('HeroSection: Mounted');
-    return () => {
-      console.log('HeroSection: Unmounted (Cleaning up)');
-    };
+    // Удалена пустая функция useEffect и ее очистка
   }, []);
 
   useEffect(() => {
@@ -155,11 +111,9 @@ function HeroSection({
     });
 
     return () => {
-      if (snackbarTimerIdRef.current) {
-        clearTimeout(snackbarTimerIdRef.current);
-      }
+      // Здесь нет локального таймера для снекбара, так что очищать нечего
     };
-  }, [filteredLandmarks, snackbarImages, getImageUrl]);
+  }, [filteredLandmarks]); // Удалены snackbarImages, getImageUrl из зависимостей, так как они константы
 
   useEffect(() => {
     if (isContentLoaded) {
@@ -183,30 +137,16 @@ function HeroSection({
   // Этот эффект теперь срабатывает только один раз, когда showPreloader становится false
   useEffect(() => {
     if (!showPreloader && !welcomeSnackbarShownRef.current) {
-      showSnackbar(t('welcomeMessage'), 'welcome');
-      welcomeSnackbarShownRef.current = true; // Отмечаем, что снекбар показан
+      onShowSnackbar(t('welcomeMessage'), 'welcome');
+      welcomeSnackbarShownRef.current = true;
     }
-  }, [i18n.language, t, showPreloader, showSnackbar]);
+  }, [i18n.language, t, showPreloader, onShowSnackbar]);
 
-  const handleMapClick = useCallback(() => {
-    showSnackbar(t('noMarkers'), 'info');
-  }, [t, showSnackbar]);
-
-  const handleCloseSnackbar = useCallback(
-    (event?: React.SyntheticEvent | Event, reason?: string) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-      setOpenSnackbar(false);
-      setSnackbarMessage('');
-      setSnackbarType(null);
-      if (snackbarTimerIdRef.current) {
-        clearTimeout(snackbarTimerIdRef.current);
-        snackbarTimerIdRef.current = null;
-      }
-    },
-    []
-  );
+  // handleMapClick здесь не используется в HeroSection, так как он был перенесен в App.tsx
+  // Удален неиспользуемый useCallback handleMapClick
+  // const handleMapClick = useCallback(() => {
+  //   onShowSnackbar(t('noMarkers'), 'info');
+  // }, [t, onShowSnackbar]);
 
   const handleOpenModal = useCallback((landmark: LocalizedLandmark) => {
     setSelectedLandmarkForModal(landmark);
@@ -220,11 +160,12 @@ function HeroSection({
 
   const handleSlideOrButtonDetailClick = useCallback(
     (index: number, _event: React.MouseEvent) => {
-      showSnackbar('', null);
+      // _event помечен как неиспользуемый, чтобы ESLint не ругался
+      onShowSnackbar('', null); // Отправляем пустые значения для скрытия снекбара
       setActiveIndex(index);
       const landmark = filteredLandmarks[index];
       if (!landmark) {
-        console.warn('Clicked slide/button with invalid index:', index);
+        // console.warn("Clicked slide/button with invalid index:", index); // Удален console.warn
         return;
       }
       handleOpenModal(landmark);
@@ -233,7 +174,7 @@ function HeroSection({
     [
       handleOpenModal,
       filteredLandmarks,
-      showSnackbar,
+      onShowSnackbar,
       setActiveIndex,
       setHasUserInteracted,
     ]
@@ -296,7 +237,7 @@ function HeroSection({
               isContentLoaded={isContentLoaded}
               snackbarImages={snackbarImages}
               getImageUrl={getImageUrl}
-              getLocalizedContent={getLocalizedContent} // Передаем пропс
+              getLocalizedContent={getLocalizedContent}
               onSlideChange={(swiper) => {
                 if (swiper.activeIndex !== activeIndex) {
                   setActiveIndex(swiper.activeIndex);
@@ -318,13 +259,7 @@ function HeroSection({
         selectedLandmark={selectedLandmarkForModal}
       />
 
-      <AppSnackbar
-        open={openSnackbar}
-        message={snackbarMessage}
-        type={snackbarType}
-        onClose={handleCloseSnackbar}
-      />
-
+      {/* AppSnackbar теперь рендерится в App.tsx */}
       <Preloader isLoading={showPreloader} />
     </Box>
   );

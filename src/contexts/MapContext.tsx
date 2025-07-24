@@ -28,8 +28,6 @@ interface MapProviderProps {
 }
 
 export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
-  console.log('MapProvider: Render'); // Лог рендера
-
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const mapInitializedRef = useRef(false);
@@ -39,7 +37,6 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
       return;
     }
 
-    console.log('MapProvider: Initializing Mapbox map...');
     mapInitializedRef.current = true;
 
     const newMap = new mapboxgl.Map({
@@ -54,7 +51,6 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
 
     newMap.on('load', () => {
       setMap(newMap);
-      console.log('MapProvider: Map loaded and set in context.');
     });
 
     newMap.on('error', (e) => {
@@ -63,7 +59,6 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
 
     return () => {
       if (newMap) {
-        console.log('MapProvider: Cleaning up map instance.');
         newMap.remove();
         setMap(null);
         mapInitializedRef.current = false;

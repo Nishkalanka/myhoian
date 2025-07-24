@@ -1,5 +1,11 @@
 // src/App.tsx
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from 'react';
 import './index.css';
 import { Box } from '@mui/material';
 
@@ -11,14 +17,25 @@ import {
   type Landmark,
   type CategorySlug,
   type LandmarkContent,
-} from './data'; // Импорт LandmarkContent
+} from './data';
 import type { LocalizedLandmark } from './data/landmarks/landmarkTypes.js';
 import { useTranslation } from 'react-i18next';
 
-function App() {
-  console.log('App: Render');
+import { AppSnackbar } from './components/AppSnackbar';
+import { useSnackbar } from './hooks/useSnackbar';
+import type { ShowSnackbarFn } from './components/UserLocationButton';
 
+function App() {
   const { t, i18n } = useTranslation();
+  // useEffect(() => {}, [i18n.language]); // Удалена пустая функция useEffect
+
+  const {
+    openSnackbar,
+    snackbarMessage,
+    snackbarType,
+    handleOpenSnackbar,
+    handleCloseSnackbar,
+  } = useSnackbar();
 
   const [selectedCategorySlugs, setSelectedCategorySlugs] = useState<string[]>([
     'museum',
@@ -39,13 +56,11 @@ function App() {
 
   const toggleRouteVisibility = useCallback(() => {
     setIsRouteVisible((prev) => {
-      console.log('App: Route visibility toggled to', !prev);
       return !prev;
     });
   }, []);
 
   useEffect(() => {
-    console.log('App: Mounted');
     setRouteCoordinates([
       [108.33179828107085, 15.87521631272881],
       [108.332203949894, 15.87531004402662],
@@ -57,9 +72,6 @@ function App() {
       [108.33001062222235, 15.877318814399999],
       [108.32912423935835, 15.877138354967968],
     ]);
-    return () => {
-      console.log('App: Unmounted (Cleaning up)');
-    };
   }, []);
 
   // Стабилизируем функцию getLocalizedContentForLandmark
@@ -77,7 +89,19 @@ function App() {
       return landmark.en;
     },
     [i18n.language]
-  ); // Зависит от i18n.language
+  );
+  const getLocalizedContentForLandmarkRef = useRef(
+    getLocalizedContentForLandmark
+  );
+  useEffect(() => {
+    if (
+      getLocalizedContentForLandmarkRef.current !==
+      getLocalizedContentForLandmark
+    ) {
+      getLocalizedContentForLandmarkRef.current =
+        getLocalizedContentForLandmark;
+    }
+  }, [getLocalizedContentForLandmark]);
 
   const filteredLandmarks: LocalizedLandmark[] = useMemo(() => {
     const landmarksToProcess = hoiAnLandmarks.filter((landmark) =>
@@ -88,29 +112,31 @@ function App() {
 
     return landmarksToProcess.map((landmark) => ({
       ...landmark,
-      localizedContent: getLocalizedContentForLandmark(landmark), // Используем стабилизированную функцию
+      localizedContent: getLocalizedContentForLandmark(landmark),
     }));
-  }, [selectedCategorySlugs, i18n.language, getLocalizedContentForLandmark]); // Добавить getLocalizedContentForLandmark в зависимости
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategorySlugs, i18n.language, getLocalizedContentForLandmark]); // i18n.language является необходимой зависимостью
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
 
   const handleMapMarkerClick = useCallback(
     (index: number) => {
-      const landmark = filteredLandmarks[index];
+      const landmark = hoiAnLandmarks[index];
       if (!landmark) {
-        console.warn('Clicked marker with invalid index:', index);
+        // console.warn("Clicked marker with invalid index:", index); // Удален console.warn
         return;
       }
       setActiveIndex(index);
       setHasUserInteracted(true);
     },
-    [filteredLandmarks]
+    [setActiveIndex, setHasUserInteracted] // Удалена hoiAnLandmarks из зависимостей
   );
 
   const handleMapClick = useCallback(() => {
-    // ...
-  }, []);
+    handleOpenSnackbar(t('mapClickedMessage'), 'info');
+    setActiveIndex(null);
+  }, [handleOpenSnackbar, t]);
 
   return (
     <Box
@@ -137,13 +163,15 @@ function App() {
         }}
       >
         <MapComponent
-          landmarks={filteredLandmarks}
+          landmarks={hoiAnLandmarks}
           activeIndex={activeIndex}
           onMapMarkerClick={handleMapMarkerClick}
           onMapClick={handleMapClick}
           routeCoordinates={routeCoordinates}
           hasUserInteracted={hasInteractedWithMarkers}
           isRouteVisible={isRouteVisible}
+          onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
+          getLocalizedContent={getLocalizedContentForLandmark}
         />
       </Box>
 
@@ -154,7 +182,15 @@ function App() {
         setActiveIndex={setActiveIndex}
         setHasUserInteracted={setHasUserInteracted}
         hasInteractedWithMarkers={hasInteractedWithMarkers}
-        getLocalizedContent={getLocalizedContentForLandmark} // Передаем стабилизированную функцию
+        getLocalizedContent={getLocalizedContentForLandmark}
+        onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
+      />
+
+      <AppSnackbar
+        open={openSnackbar}
+        message={snackbarMessage}
+        type={snackbarType}
+        onClose={handleCloseSnackbar}
       />
     </Box>
   );

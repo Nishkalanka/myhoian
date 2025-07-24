@@ -3,7 +3,7 @@
 import React, {
   createContext,
   useContext,
-  useState, // Оставил, если вдруг понадобится для других целей, но для currentLang не используется
+  // useState, // Удален неиспользуемый импорт useState
   useEffect,
   useCallback,
   useTransition,
@@ -28,8 +28,6 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
-  console.log('LanguageProvider: Render'); // Лог рендера
-
   const { i18n } = useTranslation();
   const [isPending, startTransition] = useTransition();
 
@@ -47,12 +45,10 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   );
 
   // Этот useEffect будет срабатывать при монтировании/размонтировании самого LanguageProvider
-  useEffect(() => {
-    console.log('LanguageProvider: Mounted');
-    return () => {
-      console.log('LanguageProvider: Unmounted (Cleaning up)');
-    };
-  }, []); // Пустой массив зависимостей
+  // Пустой useEffect без зависимостей и без тела не нужен. Удален.
+  // useEffect(() => {
+  //   return () => {};
+  // }, []);
 
   return (
     <LanguageContext.Provider

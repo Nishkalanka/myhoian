@@ -1,5 +1,5 @@
 // src/components/LandmarkSwiper.tsx
-import React, { useCallback, memo } from 'react';
+import React, { memo } from 'react'; // Удален useCallback
 import { Box, Typography, Button, useTheme, Chip, Stack } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
@@ -10,14 +10,10 @@ import 'swiper/css';
 // @ts-expect-error Swiper types missing
 import 'swiper/css/pagination';
 
-import {
-  // type Landmark, // <--- УДАЛИТЬ: этот тип больше не используется напрямую здесь
-  type LandmarkContent,
-  type CategorySlug,
-} from '../data';
+import { type LandmarkContent, type CategorySlug } from '../data';
 import { getCategoryColor } from '../utils/categoryColors';
 import type { LocalizedLandmark } from '../data/landmarks/landmarkTypes.js';
-import { type Landmark } from '../data/landmarks/landmarkTypes'; // Добавил импорт Landmark
+import { type Landmark } from '../data/landmarks/landmarkTypes';
 
 interface LandmarkSwiperProps {
   filteredLandmarks: LocalizedLandmark[];
@@ -26,7 +22,6 @@ interface LandmarkSwiperProps {
   isContentLoaded: boolean;
   snackbarImages: { welcome: string | undefined; error: string | undefined };
   getImageUrl: (name: string) => string | undefined;
-  // Обновляем тип: теперь она принимает Landmark, а не LocalizedLandmark, т.к. именно такой тип приходит из App.tsx
   getLocalizedContent: (landmark: Landmark) => LandmarkContent;
   onSlideChange: (swiper: any) => void;
   onSlideOrButtonDetailClick: (index: number, event: React.MouseEvent) => void;
@@ -41,18 +36,11 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
     isContentLoaded,
     snackbarImages,
     getImageUrl,
-    getLocalizedContent, // Теперь это стабилизированная функция из App.tsx
+    getLocalizedContent,
     onSlideChange,
     onSlideOrButtonDetailClick,
     swiperRef,
   }) {
-    console.log('LandmarkSwiper: Render', {
-      filteredLandmarksCount: filteredLandmarks.length,
-      activeIndex,
-      hasInteractedWithMarkers,
-      isContentLoaded,
-    });
-
     const { t } = useTranslation();
     const theme = useTheme();
 
@@ -165,9 +153,8 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
           {/* Слайды достопримечательностей */}
           {filteredLandmarks.map(
             (landmark: LocalizedLandmark, index: number) => {
-              const content = getLocalizedContent(landmark); // Теперь вызываем getLocalizedContent как функцию
+              const content = getLocalizedContent(landmark as Landmark);
 
-              // Логика обрезки текста
               const maxDescriptionLength = 120;
               let displayDescription = content.description;
               if (

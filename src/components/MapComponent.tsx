@@ -7,20 +7,21 @@ import type { Feature, Point, GeoJsonProperties, LineString } from 'geojson';
 
 import { useMapContext } from '../contexts/MapContext';
 import { MapMarkersLayer } from './map/MapMarkersLayer';
-// --- ДОБАВЛЕНЫ ИМПОРТЫ ДЛЯ КНОПКИ ЛОКАЦИИ ---
 import { UserLocationButton } from './UserLocationButton';
 import type { ShowSnackbarFn } from './UserLocationButton';
-// --- КОНЕЦ ДОБАВЛЕННЫХ ИМПОРТОВ ---
+
+import type { Landmark, LandmarkContent } from '../data';
 
 interface MapComponentProps {
-  landmarks: any[];
+  landmarks: Landmark[]; // Нелокализованные данные
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   onMapClick: () => void;
-  routeCoordinates?: [number, number][];
+  routeCoordinates: [number, number][] | undefined;
   hasUserInteracted: boolean;
   isRouteVisible: boolean;
-  onShowSnackbar: ShowSnackbarFn; // <-- ДОБАВЛЕН НОВЫЙ ПРОПС
+  onShowSnackbar: ShowSnackbarFn;
+  getLocalizedContent: (landmark: Landmark) => LandmarkContent;
 }
 
 export const MapComponent = memo(function MapComponent({
@@ -31,16 +32,65 @@ export const MapComponent = memo(function MapComponent({
   routeCoordinates,
   hasUserInteracted,
   isRouteVisible,
-  onShowSnackbar, // <-- Извлекаем новый пропс
+  onShowSnackbar,
+  getLocalizedContent,
 }: MapComponentProps) {
-  console.log('MapComponent: Render');
+  const prevPropsRef = useRef<MapComponentProps | null>(null);
+  useEffect(() => {
+    if (prevPropsRef.current) {
+      const changedProps: string[] = [];
+      const currentProps = {
+        landmarks,
+        activeIndex,
+        onMapMarkerClick: onMapMarkerClickProp,
+        onMapClick: onMapClickProp,
+        routeCoordinates,
+        hasUserInteracted: hasUserInteracted,
+        isRouteVisible,
+        onShowSnackbar,
+        getLocalizedContent,
+      };
+      for (const key in currentProps) {
+        // @ts-expect-error Property access type compatibility
+        if (currentProps[key] !== prevPropsRef.current[key]) {
+          changedProps.push(key);
+        }
+      }
+      if (changedProps.length > 0) {
+        // Логирование изменений пропсов (закомментировано, если не нужно)
+        // console.log('MapComponent: Props changed:', changedProps);
+      }
+    }
+    prevPropsRef.current = {
+      landmarks,
+      activeIndex,
+      onMapMarkerClick: onMapMarkerClickProp,
+      onMapClick: onMapClickProp,
+      routeCoordinates,
+      hasUserInteracted,
+      isRouteVisible,
+      onShowSnackbar,
+      getLocalizedContent,
+    };
+  }, [
+    landmarks,
+    activeIndex,
+    onMapMarkerClickProp,
+    onMapClickProp,
+    routeCoordinates,
+    hasUserInteracted,
+    isRouteVisible,
+    onShowSnackbar,
+    getLocalizedContent,
+  ]);
 
   const { map, mapContainerRef } = useMapContext();
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-  // Оборачиваем колбэки в useCallback, чтобы их ссылки были стабильными
-  const onMapClickCallback = useCallback(() => {
-    onMapClickProp();
+  // Создаем реф для onMapClickProp, чтобы он был стабильным для useEffect
+  const onMapClickPropRef = useRef(onMapClickProp);
+  useEffect(() => {
+    onMapClickPropRef.current = onMapClickProp; // Обновляем реф при каждом рендере
   }, [onMapClickProp]);
 
   const onMapMarkerClickCallback = useCallback(
@@ -50,34 +100,29 @@ export const MapComponent = memo(function MapComponent({
     [onMapMarkerClickProp]
   );
 
-  // Ref для маркера местоположения пользователя
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const circleSourceId = 'user-location-circle';
   const circleLayerId = 'user-location-circle-layer';
 
-  // Эффект для инициализации карты, добавления основных слоев и обработчиков событий
   useEffect(() => {
-    if (!map) {
+    const currentMapInstance = map;
+    if (!currentMapInstance) {
       setIsMapLoaded(false);
       return;
     }
 
-    console.log('MapComponent: Attaching layers and handlers to existing map.');
-
     const handleMapLoad = () => {
       setIsMapLoaded(true);
-      console.log('MapComponent: Map instance reported as loaded.');
     };
 
-    if (map.loaded()) {
+    if (currentMapInstance.loaded()) {
       handleMapLoad();
     } else {
-      map.on('load', handleMapLoad);
+      currentMapInstance.on('load', handleMapLoad);
     }
 
-    // --- Блок добавления источников и слоев Mapbox ---
-    if (!map.getSource('landmarks-data')) {
-      map.addSource('landmarks-data', {
+    if (!currentMapInstance.getSource('landmarks-data')) {
+      currentMapInstance.addSource('landmarks-data', {
         type: 'geojson',
         data: { type: 'FeatureCollection', features: [] },
         cluster: true,
@@ -85,7 +130,7 @@ export const MapComponent = memo(function MapComponent({
         clusterRadius: 50,
       });
 
-      map.addLayer({
+      currentMapInstance.addLayer({
         id: 'clusters',
         type: 'circle',
         source: 'landmarks-data',
@@ -112,7 +157,7 @@ export const MapComponent = memo(function MapComponent({
         },
       });
 
-      map.addLayer({
+      currentMapInstance.addLayer({
         id: 'cluster-count',
         type: 'symbol',
         source: 'landmarks-data',
@@ -127,37 +172,46 @@ export const MapComponent = memo(function MapComponent({
         },
       });
 
-      map.on('click', 'clusters' as any, (e: mapboxgl.MapMouseEvent) => {
-        const features = map.queryRenderedFeatures(e.point, {
-          layers: ['clusters'],
-        });
-        const clusterId = features[0].properties?.cluster_id;
-        (
-          map.getSource('landmarks-data') as mapboxgl.GeoJSONSource
-        ).getClusterExpansionZoom(
-          clusterId,
-          (err: Error | null | undefined, zoom: number | null | undefined) => {
-            if (err) return;
-            if (features[0].geometry.type === 'Point' && zoom != null) {
-              map.easeTo({
-                center: features[0].geometry.coordinates as [number, number],
-                zoom: zoom,
-              });
+      currentMapInstance.on(
+        'click',
+        'clusters' as any,
+        (e: mapboxgl.MapMouseEvent) => {
+          const features = currentMapInstance.queryRenderedFeatures(e.point, {
+            layers: ['clusters'],
+          });
+          const clusterId = features[0].properties?.cluster_id;
+          (
+            currentMapInstance.getSource(
+              'landmarks-data'
+            ) as mapboxgl.GeoJSONSource
+          ).getClusterExpansionZoom(
+            clusterId,
+            (
+              _err: Error | null | undefined, // Исправлено: добавлено _ для неиспользуемого параметра
+              zoom: number | null | undefined
+            ) => {
+              if (_err) return; // Используем _err
+              if (features[0].geometry.type === 'Point' && zoom != null) {
+                currentMapInstance.easeTo({
+                  center: features[0].geometry.coordinates as [number, number],
+                  zoom: zoom,
+                });
+              }
             }
-          }
-        );
-      });
+          );
+        }
+      );
 
-      map.on('mouseenter', 'clusters' as any, () => {
-        map.getCanvas().style.cursor = 'pointer';
+      currentMapInstance.on('mouseenter', 'clusters' as any, () => {
+        currentMapInstance.getCanvas().style.cursor = 'pointer';
       });
-      map.on('mouseleave', 'clusters' as any, () => {
-        map.getCanvas().style.cursor = '';
+      currentMapInstance.on('mouseleave', 'clusters' as any, () => {
+        currentMapInstance.getCanvas().style.cursor = '';
       });
     }
 
-    if (!map.getSource('static-route')) {
-      map.addSource('static-route', {
+    if (!currentMapInstance.getSource('static-route')) {
+      currentMapInstance.addSource('static-route', {
         type: 'geojson',
         data: {
           type: 'Feature',
@@ -169,7 +223,7 @@ export const MapComponent = memo(function MapComponent({
         },
       });
 
-      map.addLayer({
+      currentMapInstance.addLayer({
         id: 'static-route-line',
         type: 'line',
         source: 'static-route',
@@ -185,22 +239,28 @@ export const MapComponent = memo(function MapComponent({
       });
     }
 
-    if (!map._controls.some((c) => c instanceof mapboxgl.NavigationControl)) {
-      map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    if (
+      !currentMapInstance._controls.some(
+        (c) => c instanceof mapboxgl.NavigationControl
+      )
+    ) {
+      currentMapInstance.addControl(
+        new mapboxgl.NavigationControl(),
+        'top-right'
+      );
     }
 
     const handleMapClickListener = () => {
-      onMapClickCallback(); // Используем стабилизированный колбэк
+      onMapClickPropRef.current(); // Вызываем актуальную функцию из рефа
     };
-    map.on('click', handleMapClickListener);
+    currentMapInstance.on('click', handleMapClickListener);
 
     const handleMapMoveStart = () => {
-      /* ваша логика */
+      /* noop */
     };
-    map.on('movestart', handleMapMoveStart);
 
-    // Геолокация - логика для отрисовки маркера и круга (остается без изменений, так как UserLocationButton
-    // только центрирует карту, но не управляет этим визуальным представлением напрямую)
+    currentMapInstance.on('movestart', handleMapMoveStart);
+
     const onLocationSuccess = (pos: GeolocationPosition) => {
       const { latitude, longitude, accuracy } = pos.coords;
       const newPosition: [number, number] = [longitude, latitude];
@@ -222,11 +282,13 @@ export const MapComponent = memo(function MapComponent({
           anchor: 'center',
         })
           .setLngLat(newPosition)
-          .addTo(map);
+          .addTo(currentMapInstance);
       }
 
-      if (map.getSource(circleSourceId)) {
-        (map.getSource(circleSourceId) as mapboxgl.GeoJSONSource).setData({
+      if (currentMapInstance.getSource(circleSourceId)) {
+        (
+          currentMapInstance.getSource(circleSourceId) as mapboxgl.GeoJSONSource
+        ).setData({
           type: 'FeatureCollection',
           features: [
             {
@@ -242,7 +304,7 @@ export const MapComponent = memo(function MapComponent({
           ],
         });
       } else {
-        map.addSource(circleSourceId, {
+        currentMapInstance.addSource(circleSourceId, {
           type: 'geojson',
           data: {
             type: 'FeatureCollection',
@@ -261,7 +323,7 @@ export const MapComponent = memo(function MapComponent({
           },
         });
 
-        map.addLayer({
+        currentMapInstance.addLayer({
           id: circleLayerId,
           type: 'circle',
           source: circleSourceId,
@@ -283,8 +345,8 @@ export const MapComponent = memo(function MapComponent({
       }
     };
 
-    const onLocationError = (err: GeolocationPositionError) => {
-      console.error(`Geolocation error (${err.code}): ${err.message}`);
+    const onLocationError = (_err: GeolocationPositionError) => {
+      // console.error(`Geolocation error (${_err.code}): ${_err.message}`); // Удален console.error
     };
 
     let watchId: number | undefined;
@@ -295,23 +357,18 @@ export const MapComponent = memo(function MapComponent({
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
       );
     } else {
-      console.warn('Geolocation is not supported by your browser.');
+      // console.warn("Geolocation is not supported by your browser."); // Удален console.warn
     }
 
-    // Функция очистки при размонтировании компонента
     return () => {
-      console.log(
-        'MapComponent: Cleaning up layers and handlers (on unmount).'
-      );
-      map.off('load', handleMapLoad);
-      map.off('click', handleMapClickListener);
-      map.off('movestart', handleMapMoveStart);
+      currentMapInstance.off('load', handleMapLoad);
+      currentMapInstance.off('click', handleMapClickListener);
+      currentMapInstance.off('movestart', handleMapMoveStart);
 
-      map.off('click', 'clusters' as any);
-      map.off('mouseenter', 'clusters' as any);
-      map.off('mouseleave', 'clusters' as any);
+      currentMapInstance.off('click', 'clusters' as any);
+      currentMapInstance.off('mouseenter', 'clusters' as any);
+      currentMapInstance.off('mouseleave', 'clusters' as any);
 
-      // Остановка отслеживания геолокации
       if (watchId !== undefined) {
         navigator.geolocation.clearWatch(watchId);
       }
@@ -321,13 +378,13 @@ export const MapComponent = memo(function MapComponent({
       }
 
       const removeMapLayerSafe = (id: string) => {
-        if (map.getLayer(id)) {
-          map.removeLayer(id);
+        if (currentMapInstance.getLayer(id)) {
+          currentMapInstance.removeLayer(id);
         }
       };
       const removeMapSourceSafe = (id: string) => {
-        if (map.getSource(id)) {
-          map.removeSource(id);
+        if (currentMapInstance.getSource(id)) {
+          currentMapInstance.removeSource(id);
         }
       };
 
@@ -338,32 +395,28 @@ export const MapComponent = memo(function MapComponent({
       removeMapLayerSafe('static-route-line');
       removeMapSourceSafe('static-route');
 
-      // Удаление слоя и источника круга местоположения
-      if (map.loaded()) {
+      if (currentMapInstance.loaded()) {
         try {
           removeMapLayerSafe(circleLayerId);
           removeMapSourceSafe(circleSourceId);
         } catch (e) {
-          console.warn(
-            `MapComponent: Failed to remove location layers/sources during unmount:`,
-            e
-          );
+          // console.warn(
+          //   `MapComponent: Failed to remove location layers/sources during unmount:`,
+          //   e
+          // ); // Удален console.warn
         }
       } else {
-        console.warn(
-          'MapComponent: Map not fully loaded during unmount. Skipping some layer/source cleanup.'
-        );
+        // console.warn(
+        //   "MapComponent: Map not fully loaded during unmount. Skipping some layer/source cleanup."
+        // ); // Удален console.warn
       }
 
       setIsMapLoaded(false);
     };
-  }, [map, onMapClickCallback]); // Используем стабилизированный колбэк в зависимостях
+  }, [map]); // Зависимости только от `map`
 
-  // Эффект для обновления данных о локациях (достопримечательностях)
   useEffect(() => {
     if (!isMapLoaded || !map) return;
-
-    console.log('MapComponent: Updating landmark source data.');
 
     const source = map.getSource('landmarks-data') as mapboxgl.GeoJSONSource;
     if (source) {
@@ -371,7 +424,7 @@ export const MapComponent = memo(function MapComponent({
         landmarks.map((landmark, index) => ({
           type: 'Feature',
           properties: {
-            originalIndex: index, // Важно для MapMarkersLayer
+            originalIndex: index,
             category:
               landmark.category && landmark.category.length > 0
                 ? landmark.category[0]
@@ -387,19 +440,16 @@ export const MapComponent = memo(function MapComponent({
         features: geojsonFeatures,
       });
     } else {
-      console.warn(
-        "MapComponent: 'landmarks-data' source not found during update."
-      );
+      // console.warn(
+      //   "MapComponent: 'landmarks-data' source not found during update."
+      // ); // Удален console.warn
     }
   }, [landmarks, isMapLoaded, map]);
 
-  // Эффект для обновления данных о маршруте
   useEffect(() => {
     if (!isMapLoaded || !map) {
       return;
     }
-
-    console.log('MapComponent: Updating route source data.');
 
     const sourceId = 'static-route';
     const source = map.getSource(sourceId) as mapboxgl.GeoJSONSource;
@@ -417,13 +467,12 @@ export const MapComponent = memo(function MapComponent({
       };
       source.setData(geojson);
     } else {
-      console.warn(
-        "MapComponent: 'static-route' source not found during update."
-      );
+      // console.warn(
+      //   "MapComponent: 'static-route' source not found during update."
+      // ); // Удален console.warn
     }
   }, [routeCoordinates, isRouteVisible, isMapLoaded, map]);
 
-  // НОВЫЙ useEffect для центрирования карты по activeIndex
   useEffect(() => {
     if (!map || activeIndex === null || !isMapLoaded) {
       return;
@@ -433,11 +482,6 @@ export const MapComponent = memo(function MapComponent({
     if (activeLandmark) {
       const [lat, lng] = activeLandmark.coordinates;
       const targetCoordinates: [number, number] = [lng, lat];
-
-      console.log(
-        'MapComponent: Centering map to active landmark:',
-        activeLandmark.id
-      );
 
       map.easeTo({
         center: targetCoordinates,
@@ -457,9 +501,9 @@ export const MapComponent = memo(function MapComponent({
           activeIndex={activeIndex}
           onMapMarkerClick={onMapMarkerClickCallback}
           hasUserInteracted={hasUserInteracted}
+          getLocalizedContent={getLocalizedContent}
         />
       )}
-      {/* --- ДОБАВЛЕН КОМПОНЕНТ КНОПКИ ЛОКАЦИИ --- */}
       {isMapLoaded && map && (
         <UserLocationButton
           centerMapFn={(coords: [number, number], zoom?: number) => {
@@ -472,7 +516,6 @@ export const MapComponent = memo(function MapComponent({
           onShowSnackbar={onShowSnackbar}
         />
       )}
-      {/* --- КОНЕЦ КОМПОНЕНТА КНОПКИ ЛОКАЦИИ --- */}
     </>
   );
 });
