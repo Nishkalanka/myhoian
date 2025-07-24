@@ -62,7 +62,7 @@ function App() {
 
   useEffect(() => {
     setRouteCoordinates([
-      [108.33179828107085, 15.87521631272881],
+      /*[108.33179828107085, 15.87521631272881],
       [108.332203949894, 15.87531004402662],
       [108.33318597999323, 15.875130148544812],
       [108.33307482899937, 15.876236581779779],
@@ -70,8 +70,9 @@ function App() {
       [108.33425316230614, 15.877918721988124],
       [108.33263343889013, 15.8776531248554],
       [108.33001062222235, 15.877318814399999],
-      [108.32912423935835, 15.877138354967968],
+      [108.32912423935835, 15.877138354967968],*/
     ]);
+    // return () => {}; // Удалена пустая функция очистки
   }, []);
 
   // Стабилизируем функцию getLocalizedContentForLandmark
@@ -115,14 +116,16 @@ function App() {
       localizedContent: getLocalizedContentForLandmark(landmark),
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCategorySlugs, i18n.language, getLocalizedContentForLandmark]); // i18n.language является необходимой зависимостью
+  }, [selectedCategorySlugs, i18n.language, getLocalizedContentForLandmark]);
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
 
   const handleMapMarkerClick = useCallback(
     (index: number) => {
-      const landmark = hoiAnLandmarks[index];
+      // Важно: здесь мы должны использовать filteredLandmarks, чтобы получить правильный Landmark по индексу
+      // из текущего отфильтрованного списка, а не из полного hoiAnLandmarks.
+      const landmark = filteredLandmarks[index];
       if (!landmark) {
         // console.warn("Clicked marker with invalid index:", index); // Удален console.warn
         return;
@@ -130,7 +133,7 @@ function App() {
       setActiveIndex(index);
       setHasUserInteracted(true);
     },
-    [setActiveIndex, setHasUserInteracted] // Удалена hoiAnLandmarks из зависимостей
+    [setActiveIndex, setHasUserInteracted, filteredLandmarks] // Добавлена filteredLandmarks в зависимости
   );
 
   const handleMapClick = useCallback(() => {
@@ -163,7 +166,7 @@ function App() {
         }}
       >
         <MapComponent
-          landmarks={hoiAnLandmarks}
+          landmarks={filteredLandmarks} // <-- ИЗМЕНЕНО: Теперь передаем отфильтрованные данные
           activeIndex={activeIndex}
           onMapMarkerClick={handleMapMarkerClick}
           onMapClick={handleMapClick}

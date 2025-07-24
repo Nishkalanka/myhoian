@@ -110,7 +110,6 @@ const Header: React.FC<HeaderProps> = ({
         CategoryFilterComponent={CategoryFilter}
       />
 
-      {/* Диалог приветствия */}
       <WelcomeDialog
         open={isWelcomeDialogOpen}
         onClose={closeWelcomeDialog} // Прямой вызов функции
