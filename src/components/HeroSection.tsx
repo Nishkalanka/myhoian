@@ -142,12 +142,6 @@ function HeroSection({
     }
   }, [i18n.language, t, showPreloader, onShowSnackbar]);
 
-  // handleMapClick здесь не используется в HeroSection, так как он был перенесен в App.tsx
-  // Удален неиспользуемый useCallback handleMapClick
-  // const handleMapClick = useCallback(() => {
-  //   onShowSnackbar(t('noMarkers'), 'info');
-  // }, [t, onShowSnackbar]);
-
   const handleOpenModal = useCallback((landmark: LocalizedLandmark) => {
     setSelectedLandmarkForModal(landmark);
     setOpenModal(true);
@@ -161,7 +155,7 @@ function HeroSection({
   const handleSlideOrButtonDetailClick = useCallback(
     (index: number, _event: React.MouseEvent) => {
       // _event помечен как неиспользуемый, чтобы ESLint не ругался
-      onShowSnackbar('', null); // Отправляем пустые значения для скрытия снекбара
+
       setActiveIndex(index);
       const landmark = filteredLandmarks[index];
       if (!landmark) {
