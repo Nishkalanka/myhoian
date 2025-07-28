@@ -40,6 +40,9 @@ const translationRU: TranslationContent = {
   footer: {
     copyright: 'Все права защищены.',
   },
+  menu: {
+    title: 'Меню',
+  },
   categories: {
     museum: 'Музеи',
     'food-drinks': 'Еда и напитки',

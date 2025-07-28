@@ -40,6 +40,9 @@ const translationEN: TranslationContent = {
     copyright: 'All rights reserved.',
   },
 
+  menu: {
+    title: 'Menu',
+  },
   categories: {
     museum: 'Museums',
     'food-drinks': 'Food & Drinks',

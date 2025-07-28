@@ -39,6 +39,9 @@ const translationES: TranslationContent = {
   footer: {
     copyright: 'Todos los derechos reservados.',
   },
+  menu: {
+    title: 'Menú',
+  },
   categories: {
     museum: 'Museos',
     'food-drinks': 'Comida y Bebidas',

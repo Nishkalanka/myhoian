@@ -36,6 +36,10 @@ export interface TranslationContent {
     copyright: string;
   };
 
+  menu: {
+    title: string;
+  };
+
   categories: {
     museum: string;
     'food-drinks': string;

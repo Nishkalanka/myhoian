@@ -39,6 +39,9 @@ const translationVN: TranslationContent = {
   footer: {
     copyright: 'Mọi quyền được bảo lưu.',
   },
+  menu: {
+    title: 'Menu',
+  },
   categories: {
     museum: 'Bảo tàng',
     'food-drinks': 'Đồ ăn & Thức uống',
