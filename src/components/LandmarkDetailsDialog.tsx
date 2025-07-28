@@ -5,7 +5,7 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button,
+  Button, // <- Убедитесь, что Button импортирован
   IconButton,
   Typography,
   Stack,
@@ -13,9 +13,9 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
-import { type Landmark, type LandmarkContent } from '../data'; // Убедитесь, что пути к data корректны
-import { fullDescriptionImageMap } from '../utils/imagePaths'; // Убедитесь, что пути к imagePaths корректны
-import { getImageUrl as getGlobalImageUrl } from './HeroSection'; // ВРЕМЕННЫЙ ИМПОРТ: будем уточнять позже
+import { type Landmark, type LandmarkContent } from '../data';
+import { fullDescriptionImageMap } from '../utils/imagePaths';
+import { getImageUrl as getGlobalImageUrl } from './HeroSection';
 
 interface LandmarkDetailsDialogProps {
   open: boolean;
@@ -34,7 +34,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
     new Set()
   );
 
-  // Локализованный контент для выбранной достопримечательности
   const getLocalizedContent = useCallback(
     (landmark: Landmark): LandmarkContent => {
       const lang = i18n.language as keyof Pick<
@@ -46,12 +45,11 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
       if (lang === 'es' && landmark.es) return landmark.es;
       if (lang === 'fr' && landmark.fr) return landmark.fr;
       if (lang === 'vn' && landmark.vn) return landmark.vn;
-      return landmark.en; // Возвращаем английский как запасной вариант
+      return landmark.en;
     },
     [i18n.language]
   );
 
-  // Обработка полного описания для встраивания изображений
   const getProcessedFullDescription = useCallback(
     (landmark: Landmark) => {
       const content = getLocalizedContent(landmark);
@@ -80,7 +78,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
         });
       }
 
-      // Добавляем обертку и класс для плавной загрузки изображений
       processedHtml = processedHtml.replace(
         /<img([^>]+?)\/?>/g,
         '<div class="landmark__img-wrapper"><img class="image-fade-in"$1/></div>'
@@ -90,7 +87,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
     [getLocalizedContent]
   );
 
-  // Эффект для прокрутки и обработки изображений внутри диалога при открытии
   useEffect(() => {
     if (open && dialogContentRef.current) {
       dialogContentRef.current.scrollTop = 0;
@@ -101,7 +97,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
 
       imgElements.forEach((img) => {
         const imageElement = img as HTMLImageElement;
-        // Проверяем, было ли изображение уже загружено, прежде чем добавлять слушателей
         if (imageElement.complete) {
           imageElement.classList.add('loaded');
         } else {
@@ -112,7 +107,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
           };
 
           const handleError = () => {
-            imageElement.classList.add('loaded'); // Добавляем loaded даже при ошибке, чтобы избежать застрявших состояний
+            imageElement.classList.add('loaded');
             imageElement.removeEventListener('load', handleLoad);
             imageElement.removeEventListener('error', handleError);
           };
@@ -122,7 +117,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
         }
       });
     }
-  }, [open, selectedLandmark]); // Зависимость от selectedLandmark для перерендера при смене достопримечательности
+  }, [open, selectedLandmark]);
 
   return (
     <Dialog
@@ -155,6 +150,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
             color="inherit"
             onClick={onClose}
             aria-label="close"
+            // autoFocus // Можно добавить autoFocus сюда, если эта кнопка всегда первая
           >
             <CloseIcon />
           </IconButton>
@@ -167,7 +163,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
             {selectedLandmark.imageUrl && (
               <Box
                 component="img"
-                src={getGlobalImageUrl(selectedLandmark.imageUrl)} // Используем импортированную функцию
+                src={getGlobalImageUrl(selectedLandmark.imageUrl)}
                 alt={getLocalizedContent(selectedLandmark).title}
                 className={`image-fade-in ${loadedModalImages.has(getGlobalImageUrl(selectedLandmark.imageUrl)) ? 'loaded' : ''}`}
                 onLoad={() =>
@@ -211,7 +207,9 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
       </DialogContent>
 
       <DialogActions>
-        <Button onClick={onClose}>{t('close')}</Button>
+        <Button onClick={onClose} autoFocus>
+          {t('close')}
+        </Button>{' '}
       </DialogActions>
     </Dialog>
   );
