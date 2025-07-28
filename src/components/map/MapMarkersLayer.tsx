@@ -59,7 +59,7 @@ interface MapMarkersLayerProps {
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   hasUserInteracted: boolean;
-  getLocalizedContent: (landmark: Landmark) => LandmarkContent;
+  getLocalizedContent: (landmark: Landmark) => LandmarkContent; // <-- Снова принимаем саму функцию
 }
 
 export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
@@ -68,15 +68,14 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
   activeIndex,
   onMapMarkerClick,
   hasUserInteracted,
-  getLocalizedContent,
+  getLocalizedContent, // <-- Теперь эта функция здесь обновляется
 }) => {
   const individualMarkers = useRef<
     Map<number, { marker: mapboxgl.Marker; root: ReactDOM.Root }>
   >(new Map());
 
   // Этот useEffect отвечает за создание/удаление Mapbox-маркеров и их React-корней.
-  // Он должен срабатывать только при изменении `map` или `landmarks` (НЕЛОКАЛИЗОВАННЫХ).
-
+  // Он должен срабатывать только при изменении `map` или `landmarks`.
   useEffect(() => {
     const currentMapInstance = map;
     if (!currentMapInstance) {
@@ -115,7 +114,6 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
       newUnclusteredPoints.forEach((feature, originalIndex) => {
         const landmark = landmarks[originalIndex];
         if (!landmark) {
-          // console.warn(`MapMarkersLayer: Landmark not found for index ${originalIndex} during updateVisibleMarkers.`);
           return;
         }
 
@@ -195,7 +193,6 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         currentMapInstance.off('sourcedata', updateVisibleMarkers);
       }
 
-      // Capture current ref value for cleanup
       const currentMarkers = individualMarkers.current;
       currentMarkers.forEach(({ marker, root }) => {
         setTimeout(() => {
@@ -207,9 +204,9 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         }, 0);
         marker.remove();
       });
-      currentMarkers.clear(); // Clear the captured map
+      currentMarkers.clear();
     };
-  }, [map, landmarks]); // Зависит только от map и landmarks (нелокализованных)
+  }, [map, landmarks]); // <-- УДАЛЕНА getLocalizedContent из зависимостей первого useEffect
 
   // Этот useEffect для обновления состояния активности маркеров и их стиля.
   // Он будет срабатывать при изменении activeIndex, hasUserInteracted, onMapMarkerClick
@@ -217,9 +214,8 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
   useEffect(() => {
     // console.log("MapMarkersLayer: Second useEffect triggered. Updating CustomMarker props.");
     individualMarkers.current.forEach((markerData, originalIndex) => {
-      const landmark = landmarks[originalIndex];
+      const landmark = landmarks[originalIndex]; // landmarks тоже меняется, но не должен вызывать пересоздание
       if (!landmark) {
-        // console.warn(`MapMarkersLayer: Landmark not found for index ${originalIndex} during second useEffect.`);
         return;
       }
 
@@ -236,17 +232,18 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
           onClick={(event) => onMapMarkerClick(originalIndex, event)}
           isBouncing={!hasUserInteracted}
           markerColor={categoryColor}
-          // localizedTitle={getLocalizedContent(landmark).title} // Если CustomMarker будет отображать текст
+          // Если CustomMarker будет отображать локализованный текст,
+          // вам понадобится передать его сюда через `getLocalizedContent(landmark).title`
+          // localizedTitle={getLocalizedContent(landmark).title}
         />
       );
     });
     // Зависимости для обновления активности и локализованного контента
   }, [
     activeIndex,
-    landmarks,
     onMapMarkerClick,
     hasUserInteracted,
-    getLocalizedContent,
+    getLocalizedContent, // <-- Эта зависимость ОСТАЕТСЯ, так как она влияет на ре-рендер CustomMarker
   ]);
 
   return null;

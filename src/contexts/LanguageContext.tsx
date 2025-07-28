@@ -3,10 +3,8 @@
 import React, {
   createContext,
   useContext,
-  // useState, // Удален неиспользуемый импорт useState
-  useEffect,
   useCallback,
-  useTransition,
+  // useTransition, // <-- УДАЛИТЬ ЭТУ СТРОКУ
   type ReactNode,
 } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 interface LanguageContextType {
   currentLang: string;
   setLang: (lang: string) => void;
-  isLanguageTransitionPending: boolean;
+  // isLanguageTransitionPending: boolean; // <-- УДАЛИТЬ ЭТУ СТРОКУ, если не используешь
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -29,30 +27,28 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
 }) => {
   const { i18n } = useTranslation();
-  const [isPending, startTransition] = useTransition();
+  // const [isPending, startTransition] = useTransition(); // <-- УДАЛИТЬ ЭТУ СТРОКУ
 
   const currentLang = i18n.language;
 
   const setLang = useCallback(
     (newLang: string) => {
       if (newLang !== i18n.language) {
-        startTransition(() => {
-          i18n.changeLanguage(newLang);
-        });
+        // startTransition(() => { // <-- УДАЛИТЬ ЭТУ СТРОКУ
+        i18n.changeLanguage(newLang);
+        // }); // <-- УДАЛИТЬ ЭТУ СТРОКУ
       }
     },
-    [i18n, startTransition]
+    [i18n] // <-- УДАЛИТЬ startTransition из зависимостей
   );
-
-  // Этот useEffect будет срабатывать при монтировании/размонтировании самого LanguageProvider
-  // Пустой useEffect без зависимостей и без тела не нужен. Удален.
-  // useEffect(() => {
-  //   return () => {};
-  // }, []);
 
   return (
     <LanguageContext.Provider
-      value={{ currentLang, setLang, isLanguageTransitionPending: isPending }}
+      value={{
+        currentLang,
+        setLang,
+        // isLanguageTransitionPending: isPending // <-- УДАЛИТЬ ЭТУ СТРОКУ, если не используешь
+      }}
     >
       {children}
     </LanguageContext.Provider>

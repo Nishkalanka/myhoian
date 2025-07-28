@@ -13,7 +13,7 @@ import type { ShowSnackbarFn } from './UserLocationButton';
 import type { Landmark, LandmarkContent } from '../data';
 
 interface MapComponentProps {
-  landmarks: Landmark[]; // Нелокализованные данные
+  landmarks: Landmark[];
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   onMapClick: () => void;
@@ -21,7 +21,10 @@ interface MapComponentProps {
   hasUserInteracted: boolean;
   isRouteVisible: boolean;
   onShowSnackbar: ShowSnackbarFn;
-  getLocalizedContent: (landmark: Landmark) => LandmarkContent;
+  // Изменено: теперь это реф на функцию
+  getLocalizedContentRef: React.MutableRefObject<
+    (landmark: Landmark) => LandmarkContent
+  >;
 }
 
 export const MapComponent = memo(function MapComponent({
@@ -33,8 +36,11 @@ export const MapComponent = memo(function MapComponent({
   hasUserInteracted,
   isRouteVisible,
   onShowSnackbar,
-  getLocalizedContent,
+  getLocalizedContentRef, // <-- Изменено название пропса
 }: MapComponentProps) {
+  // ... (оставьте логирование prevPropsRef, если оно вам нужно для отладки, но оно не влияет на проблему)
+  // УДАЛИТЕ ИЛИ ЗАКОММЕНТИРУЙТЕ этот блок, он больше не нужен для отладки мигания
+  /*
   const prevPropsRef = useRef<MapComponentProps | null>(null);
   useEffect(() => {
     if (prevPropsRef.current) {
@@ -48,7 +54,7 @@ export const MapComponent = memo(function MapComponent({
         hasUserInteracted: hasUserInteracted,
         isRouteVisible,
         onShowSnackbar,
-        getLocalizedContent,
+        getLocalizedContent: getLocalizedContentRef, // Важно: сравнивать рефы, а не их текущее значение
       };
       for (const key in currentProps) {
         // @ts-expect-error Property access type compatibility
@@ -57,8 +63,7 @@ export const MapComponent = memo(function MapComponent({
         }
       }
       if (changedProps.length > 0) {
-        // Логирование изменений пропсов (закомментировано, если не нужно)
-        // console.log('MapComponent: Props changed:', changedProps);
+        console.log('MapComponent: Props changed:', changedProps);
       }
     }
     prevPropsRef.current = {
@@ -70,7 +75,7 @@ export const MapComponent = memo(function MapComponent({
       hasUserInteracted,
       isRouteVisible,
       onShowSnackbar,
-      getLocalizedContent,
+      getLocalizedContentRef,
     };
   }, [
     landmarks,
@@ -81,16 +86,16 @@ export const MapComponent = memo(function MapComponent({
     hasUserInteracted,
     isRouteVisible,
     onShowSnackbar,
-    getLocalizedContent,
+    getLocalizedContentRef, // <-- Важно: теперь это реф
   ]);
+  */
 
   const { map, mapContainerRef } = useMapContext();
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-  // Создаем реф для onMapClickProp, чтобы он был стабильным для useEffect
   const onMapClickPropRef = useRef(onMapClickProp);
   useEffect(() => {
-    onMapClickPropRef.current = onMapClickProp; // Обновляем реф при каждом рендере
+    onMapClickPropRef.current = onMapClickProp;
   }, [onMapClickProp]);
 
   const onMapMarkerClickCallback = useCallback(
@@ -120,6 +125,10 @@ export const MapComponent = memo(function MapComponent({
     } else {
       currentMapInstance.on('load', handleMapLoad);
     }
+
+    // ... (весь ваш существующий код для инициализации слоев, источников, контролов, геолокации)
+    // Этот большой useEffect остается почти без изменений.
+    // Только убедитесь, что везде используется currentMapInstance.
 
     if (!currentMapInstance.getSource('landmarks-data')) {
       currentMapInstance.addSource('landmarks-data', {
@@ -187,10 +196,10 @@ export const MapComponent = memo(function MapComponent({
           ).getClusterExpansionZoom(
             clusterId,
             (
-              _err: Error | null | undefined, // Исправлено: добавлено _ для неиспользуемого параметра
+              _err: Error | null | undefined,
               zoom: number | null | undefined
             ) => {
-              if (_err) return; // Используем _err
+              if (_err) return;
               if (features[0].geometry.type === 'Point' && zoom != null) {
                 currentMapInstance.easeTo({
                   center: features[0].geometry.coordinates as [number, number],
@@ -251,7 +260,7 @@ export const MapComponent = memo(function MapComponent({
     }
 
     const handleMapClickListener = () => {
-      onMapClickPropRef.current(); // Вызываем актуальную функцию из рефа
+      onMapClickPropRef.current();
     };
     currentMapInstance.on('click', handleMapClickListener);
 
@@ -346,7 +355,7 @@ export const MapComponent = memo(function MapComponent({
     };
 
     const onLocationError = (_err: GeolocationPositionError) => {
-      // console.error(`Geolocation error (${_err.code}): ${_err.message}`); // Удален console.error
+      // console.error(`Geolocation error (${_err.code}): ${_err.message}`);
     };
 
     let watchId: number | undefined;
@@ -357,7 +366,7 @@ export const MapComponent = memo(function MapComponent({
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
       );
     } else {
-      // console.warn("Geolocation is not supported by your browser."); // Удален console.warn
+      // console.warn("Geolocation is not supported by your browser.");
     }
 
     return () => {
@@ -403,12 +412,12 @@ export const MapComponent = memo(function MapComponent({
           // console.warn(
           //   `MapComponent: Failed to remove location layers/sources during unmount:`,
           //   e
-          // ); // Удален console.warn
+          // );
         }
       } else {
         // console.warn(
         //   "MapComponent: Map not fully loaded during unmount. Skipping some layer/source cleanup."
-        // ); // Удален console.warn
+        // );
       }
 
       setIsMapLoaded(false);
@@ -442,7 +451,7 @@ export const MapComponent = memo(function MapComponent({
     } else {
       // console.warn(
       //   "MapComponent: 'landmarks-data' source not found during update."
-      // ); // Удален console.warn
+      // );
     }
   }, [landmarks, isMapLoaded, map]);
 
@@ -469,7 +478,7 @@ export const MapComponent = memo(function MapComponent({
     } else {
       // console.warn(
       //   "MapComponent: 'static-route' source not found during update."
-      // ); // Удален console.warn
+      // );
     }
   }, [routeCoordinates, isRouteVisible, isMapLoaded, map]);
 
@@ -501,7 +510,8 @@ export const MapComponent = memo(function MapComponent({
           activeIndex={activeIndex}
           onMapMarkerClick={onMapMarkerClickCallback}
           hasUserInteracted={hasUserInteracted}
-          getLocalizedContent={getLocalizedContent}
+          // Передаем текущее значение функции через .current
+          getLocalizedContent={getLocalizedContentRef.current} // <-- Изменено
         />
       )}
       {isMapLoaded && map && (

@@ -19,6 +19,7 @@ import {
   type LandmarkContent,
 } from './data';
 import type { LocalizedLandmark } from './data/landmarks/landmarkTypes.js';
+
 import { useTranslation } from 'react-i18next';
 
 import { AppSnackbar } from './components/AppSnackbar';
@@ -27,7 +28,6 @@ import type { ShowSnackbarFn } from './components/UserLocationButton';
 
 function App() {
   const { t, i18n } = useTranslation();
-  // useEffect(() => {}, [i18n.language]); // Удалена пустая функция useEffect
 
   const {
     openSnackbar,
@@ -55,27 +55,13 @@ function App() {
   const [isRouteVisible, setIsRouteVisible] = useState<boolean>(true);
 
   const toggleRouteVisibility = useCallback(() => {
-    setIsRouteVisible((prev) => {
-      return !prev;
-    });
+    setIsRouteVisible((prev) => !prev);
   }, []);
 
   useEffect(() => {
-    setRouteCoordinates([
-      /*[108.33179828107085, 15.87521631272881],
-      [108.332203949894, 15.87531004402662],
-      [108.33318597999323, 15.875130148544812],
-      [108.33307482899937, 15.876236581779779],
-      [108.33458097111202, 15.87645732752091],
-      [108.33425316230614, 15.877918721988124],
-      [108.33263343889013, 15.8776531248554],
-      [108.33001062222235, 15.877318814399999],
-      [108.32912423935835, 15.877138354967968],*/
-    ]);
-    // return () => {}; // Удалена пустая функция очистки
+    setRouteCoordinates([]);
   }, []);
 
-  // Стабилизируем функцию getLocalizedContentForLandmark
   const getLocalizedContentForLandmark = useCallback(
     (landmark: Landmark): LandmarkContent => {
       const lang = i18n.language as keyof Pick<
@@ -91,55 +77,58 @@ function App() {
     },
     [i18n.language]
   );
+
   const getLocalizedContentForLandmarkRef = useRef(
     getLocalizedContentForLandmark
   );
   useEffect(() => {
-    if (
-      getLocalizedContentForLandmarkRef.current !==
-      getLocalizedContentForLandmark
-    ) {
-      getLocalizedContentForLandmarkRef.current =
-        getLocalizedContentForLandmark;
-    }
+    getLocalizedContentForLandmarkRef.current = getLocalizedContentForLandmark;
   }, [getLocalizedContentForLandmark]);
 
-  const filteredLandmarks: LocalizedLandmark[] = useMemo(() => {
-    const landmarksToProcess = hoiAnLandmarks.filter((landmark) =>
+  const baseFilteredLandmarks: Landmark[] = useMemo(() => {
+    return hoiAnLandmarks.filter((landmark) =>
       (landmark.category as CategorySlug[]).some((category) =>
         selectedCategorySlugs.includes(category)
       )
     );
+  }, [selectedCategorySlugs]);
 
-    return landmarksToProcess.map((landmark) => ({
+  const localizedFilteredLandmarksForHero: LocalizedLandmark[] = useMemo(() => {
+    return baseFilteredLandmarks.map((landmark) => ({
       ...landmark,
       localizedContent: getLocalizedContentForLandmark(landmark),
     }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCategorySlugs, i18n.language, getLocalizedContentForLandmark]);
+  }, [baseFilteredLandmarks, getLocalizedContentForLandmark]);
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
 
   const handleMapMarkerClick = useCallback(
     (index: number) => {
-      // Важно: здесь мы должны использовать filteredLandmarks, чтобы получить правильный Landmark по индексу
-      // из текущего отфильтрованного списка, а не из полного hoiAnLandmarks.
-      const landmark = filteredLandmarks[index];
+      const landmark = baseFilteredLandmarks[index];
       if (!landmark) {
-        // console.warn("Clicked marker with invalid index:", index); // Удален console.warn
         return;
       }
       setActiveIndex(index);
       setHasUserInteracted(true);
     },
-    [setActiveIndex, setHasUserInteracted, filteredLandmarks] // Добавлена filteredLandmarks в зависимости
+    [setActiveIndex, setHasUserInteracted, baseFilteredLandmarks]
   );
 
+  // --- ИЗМЕНЕНИЯ ЗДЕСЬ ---
   const handleMapClick = useCallback(() => {
-    handleOpenSnackbar(t('mapClickedMessage'), 'info');
+    // Проверяем, инициализирован ли i18n, прежде чем использовать t()
+    if (i18n.isInitialized) {
+      handleOpenSnackbar(t('swiperWelcomeSubtitle'), 'info');
+    } else {
+      // Опционально: показать запасное сообщение или ничего не делать,
+      // если i18n еще не готов.
+      // handleOpenSnackbar("Map clicked!", "info");
+      console.warn('i18n not initialized, cannot translate map click message.');
+    }
     setActiveIndex(null);
-  }, [handleOpenSnackbar, t]);
+  }, [handleOpenSnackbar, t, i18n.isInitialized]); // <-- Добавлена i18n.isInitialized в зависимости
+  // --- КОНЕЦ ИЗМЕНЕНИЙ ---
 
   return (
     <Box
@@ -166,7 +155,7 @@ function App() {
         }}
       >
         <MapComponent
-          landmarks={filteredLandmarks} // <-- ИЗМЕНЕНО: Теперь передаем отфильтрованные данные
+          landmarks={baseFilteredLandmarks}
           activeIndex={activeIndex}
           onMapMarkerClick={handleMapMarkerClick}
           onMapClick={handleMapClick}
@@ -174,13 +163,13 @@ function App() {
           hasUserInteracted={hasInteractedWithMarkers}
           isRouteVisible={isRouteVisible}
           onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
-          getLocalizedContent={getLocalizedContentForLandmark}
+          getLocalizedContentRef={getLocalizedContentForLandmarkRef}
         />
       </Box>
 
       <HeroSection
         selectedCategorySlugs={selectedCategorySlugs}
-        filteredLandmarks={filteredLandmarks}
+        filteredLandmarks={localizedFilteredLandmarksForHero}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         setHasUserInteracted={setHasUserInteracted}

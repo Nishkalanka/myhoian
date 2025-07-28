@@ -2,14 +2,7 @@
 
 import { Container, Box, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useCallback,
-  // useMemo, // Удален неиспользуемый импорт useMemo
-  memo,
-} from 'react';
+import React, { useState, useRef, useEffect, useCallback, memo } from 'react';
 
 import Preloader from './Preloader';
 import LandmarkSwiper from './LandmarkSwiper';
@@ -48,8 +41,7 @@ interface HeroSectionProps {
 }
 
 function HeroSection({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  selectedCategorySlugs, // Этот пропс передается в LandmarkSwiper, поэтому его оставляем
+  selectedCategorySlugs,
   filteredLandmarks,
   activeIndex,
   setActiveIndex,
@@ -59,7 +51,6 @@ function HeroSection({
   onShowSnackbar,
 }: HeroSectionProps) {
   const { t, i18n } = useTranslation();
-  // const { currentLang } = useLanguage(); // Удалена неиспользуемая переменная
 
   const swiperRef = useRef<any>(null);
 
@@ -70,12 +61,9 @@ function HeroSection({
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const [showPreloader, setShowPreloader] = useState(true);
 
-  const welcomeSnackbarShownRef = useRef(false);
+  // const welcomeSnackbarShownRef = useRef(false); // <-- УДАЛИТЬ ЭТУ СТРОКУ
 
-  useEffect(() => {
-    // Удалена пустая функция useEffect и ее очистка
-  }, []);
-
+  // useEffect для загрузки изображений
   useEffect(() => {
     const imagesToLoad = [
       snackbarImages.welcome,
@@ -106,15 +94,14 @@ function HeroSection({
         img.onload = handleImageLoad;
         img.onerror = handleImageLoad;
       } else {
-        handleImageLoad();
+        handleImageLoad(); // Учитываем пустые URL как загруженные
       }
     });
 
-    return () => {
-      // Здесь нет локального таймера для снекбара, так что очищать нечего
-    };
-  }, [filteredLandmarks]); // Удалены snackbarImages, getImageUrl из зависимостей, так как они константы
+    // Очистка не требуется, так как это одноразовый процесс
+  }, [filteredLandmarks]);
 
+  // useEffect для скрытия прелоадера
   useEffect(() => {
     if (isContentLoaded) {
       const timer = setTimeout(() => {
@@ -124,6 +111,7 @@ function HeroSection({
     }
   }, [isContentLoaded]);
 
+  // useEffect для синхронизации Swiper с activeIndex
   useEffect(() => {
     if (
       swiperRef.current &&
@@ -134,13 +122,22 @@ function HeroSection({
     }
   }, [activeIndex]);
 
-  // Этот эффект теперь срабатывает только один раз, когда showPreloader становится false
+  // --- ИЗМЕНЕНИЯ ЗДЕСЬ ---
+  // Этот эффект теперь срабатывает при каждой смене языка, когда прелоадер исчез
   useEffect(() => {
-    if (!showPreloader && !welcomeSnackbarShownRef.current) {
-      onShowSnackbar(t('welcomeMessage'), 'welcome');
-      welcomeSnackbarShownRef.current = true;
+    // Ждем, пока прелоадер скроется и i18n будет инициализирован.
+    // Если i18n еще не инициализирован, t() может вернуть ключ.
+    if (!showPreloader && i18n.isInitialized) {
+      // Добавим небольшую задержку для начального показа,
+      // чтобы не конфликтовать с анимацией прелоадера.
+      // При смене языка эта задержка также будет, что нормально.
+      const welcomeTimer = setTimeout(() => {
+        onShowSnackbar(t('welcomeMessage'), 'welcome');
+      }, 100); // Небольшая задержка, можно убрать, если не нужна
+      return () => clearTimeout(welcomeTimer);
     }
-  }, [i18n.language, t, showPreloader, onShowSnackbar]);
+  }, [showPreloader, i18n.isInitialized, i18n.language, onShowSnackbar, t]);
+  // --- КОНЕЦ ИЗМЕНЕНИЙ ---
 
   const handleOpenModal = useCallback((landmark: LocalizedLandmark) => {
     setSelectedLandmarkForModal(landmark);
@@ -154,24 +151,15 @@ function HeroSection({
 
   const handleSlideOrButtonDetailClick = useCallback(
     (index: number, _event: React.MouseEvent) => {
-      // _event помечен как неиспользуемый, чтобы ESLint не ругался
-
       setActiveIndex(index);
       const landmark = filteredLandmarks[index];
       if (!landmark) {
-        // console.warn("Clicked slide/button with invalid index:", index); // Удален console.warn
         return;
       }
       handleOpenModal(landmark);
       setHasUserInteracted(true);
     },
-    [
-      handleOpenModal,
-      filteredLandmarks,
-      onShowSnackbar,
-      setActiveIndex,
-      setHasUserInteracted,
-    ]
+    [handleOpenModal, filteredLandmarks, setActiveIndex, setHasUserInteracted]
   );
 
   return (
@@ -253,7 +241,6 @@ function HeroSection({
         selectedLandmark={selectedLandmarkForModal}
       />
 
-      {/* AppSnackbar теперь рендерится в App.tsx */}
       <Preloader isLoading={showPreloader} />
     </Box>
   );

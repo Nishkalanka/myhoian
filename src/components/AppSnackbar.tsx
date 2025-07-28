@@ -46,7 +46,7 @@ export const AppSnackbar: React.FC<AppSnackbarProps> = ({
       case 'info':
         return '#ffbf00'; // Синий для информации
       case 'success':
-        return '#4caf50'; // Зеленый для успеха
+        return '#ffbf00'; // Зеленый для успеха
       case 'warning':
         return '#ff9800'; // Оранжевый для предупреждения
       default:
