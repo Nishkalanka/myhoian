@@ -8,6 +8,13 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Добавьте эту секцию, чтобы предотвратить установку неработающего плагина.
+[[plugins]]
+  package = "@netlify/plugin-neon"
+  # Этот флаг отключает плагин
+  [plugins.inputs]
+  disabled = true
+
 [dev]
   # Удаляем 'port' и 'target_port'
   # Netlify Dev не будет пытаться проксировать фронтенд
