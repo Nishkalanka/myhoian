@@ -8,12 +8,6 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-# Эта секция отключает плагин Netlify Neon
-[[plugins]]
-  package = "@netlify/plugin-neon"
-  [plugins.inputs]
-    disabled = true
-
 [dev]
   functions_port = 8888
   publish = "dist"
