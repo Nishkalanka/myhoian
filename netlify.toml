@@ -10,7 +10,6 @@
 
 # Добавьте эту секцию, чтобы предотвратить установку неработающего плагина.
 [[plugins]]
-  package = "@netlify/plugin-neon"
   # Этот флаг отключает плагин
   [plugins.inputs]
   disabled = true
