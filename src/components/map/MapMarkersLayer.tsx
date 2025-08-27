@@ -189,7 +189,7 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
       }
     }, 0);
 
-    // Функция очистки при размонтировании компонента!
+    // Функция очистки при размонтировании компонента
     return () => {
       clearTimeout(initialRenderTimeout);
 
