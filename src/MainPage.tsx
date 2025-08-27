@@ -20,15 +20,13 @@ import {
 import type { LocalizedLandmark } from './data/landmarks/landmarkTypes.js';
 
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 import { AppSnackbar } from './components/AppSnackbar';
 import { useSnackbar } from './hooks/useSnackbar';
 import type { ShowSnackbarFn } from './components/UserLocationButton';
 
-function App() {
+function MainPage() {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
 
   const {
     openSnackbar,
@@ -112,23 +110,8 @@ function App() {
       }
       setActiveIndex(index);
       setHasUserInteracted(true);
-
-      // Здесь мы выбираем правильный slug в зависимости от текущего языка
-      const currentLanguage = i18n.language as keyof typeof landmark.slug;
-      const slug = landmark.slug[currentLanguage];
-      if (slug) {
-        navigate(`/${i18n.language}/${slug}`, { replace: true });
-      } else {
-        console.error(`Slug for language '${currentLanguage}' not found.`);
-      }
     },
-    [
-      setActiveIndex,
-      setHasUserInteracted,
-      baseFilteredLandmarks,
-      navigate,
-      i18n.language,
-    ]
+    [setActiveIndex, setHasUserInteracted, baseFilteredLandmarks]
   );
 
   const handleMapClick = useCallback(() => {
@@ -138,17 +121,10 @@ function App() {
       console.warn('i18n not initialized, cannot translate map click message.');
     }
     setActiveIndex(null);
-    navigate('/', { replace: true });
-  }, [handleOpenSnackbar, t, i18n.isInitialized, navigate]);
+  }, [handleOpenSnackbar, t, i18n.isInitialized]);
 
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <>
       <Header
         onSelectCategories={handleCategorySelection}
         selectedCategorySlugs={selectedCategorySlugs}
@@ -196,8 +172,8 @@ function App() {
         type={snackbarType}
         onClose={handleCloseSnackbar}
       />
-    </Box>
+    </>
   );
 }
 
-export default App;
+export default MainPage;
