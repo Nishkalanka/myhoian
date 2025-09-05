@@ -20,7 +20,7 @@ import {
 import type { LocalizedLandmark } from './data/landmarks/landmarkTypes.js';
 
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { AppSnackbar } from './components/AppSnackbar';
 import { useSnackbar } from './hooks/useSnackbar';
@@ -29,6 +29,10 @@ import type { ShowSnackbarFn } from './components/UserLocationButton';
 function App() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const { slug: urlSlug, lang: urlLang } = useParams<{
+    slug: string;
+    lang: string;
+  }>();
 
   const {
     openSnackbar,
@@ -86,34 +90,31 @@ function App() {
     getLocalizedContentForLandmarkRef.current = getLocalizedContentForLandmark;
   }, [getLocalizedContentForLandmark]);
 
-  const baseFilteredLandmarks: Landmark[] = useMemo(() => {
-    return hoiAnLandmarks.filter((landmark) =>
+  const localizedFilteredLandmarks: LocalizedLandmark[] = useMemo(() => {
+    const baseFilteredLandmarks = hoiAnLandmarks.filter((landmark) =>
       (landmark.category as CategorySlug[]).some((category) =>
         selectedCategorySlugs.includes(category)
       )
     );
-  }, [selectedCategorySlugs]);
 
-  const localizedFilteredLandmarksForHero: LocalizedLandmark[] = useMemo(() => {
     return baseFilteredLandmarks.map((landmark) => ({
       ...landmark,
       localizedContent: getLocalizedContentForLandmark(landmark),
     }));
-  }, [baseFilteredLandmarks, getLocalizedContentForLandmark]);
+  }, [selectedCategorySlugs, getLocalizedContentForLandmark]);
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
 
   const handleMapMarkerClick = useCallback(
     (index: number) => {
-      const landmark = baseFilteredLandmarks[index];
+      const landmark = localizedFilteredLandmarks[index];
       if (!landmark) {
         return;
       }
       setActiveIndex(index);
       setHasUserInteracted(true);
 
-      // Здесь мы выбираем правильный slug в зависимости от текущего языка
       const currentLanguage = i18n.language as keyof typeof landmark.slug;
       const slug = landmark.slug[currentLanguage];
       if (slug) {
@@ -125,7 +126,7 @@ function App() {
     [
       setActiveIndex,
       setHasUserInteracted,
-      baseFilteredLandmarks,
+      localizedFilteredLandmarks,
       navigate,
       i18n.language,
     ]
@@ -140,6 +141,33 @@ function App() {
     setActiveIndex(null);
     navigate('/', { replace: true });
   }, [handleOpenSnackbar, t, i18n.isInitialized, navigate]);
+
+  // Этот useEffect выбирает маркер по URL
+  useEffect(() => {
+    if (urlSlug && localizedFilteredLandmarks.length > 0) {
+      const foundIndex = localizedFilteredLandmarks.findIndex((landmark) => {
+        const slugs = Object.values(landmark.slug);
+        return slugs.some(
+          (slug) => slug?.toLowerCase() === urlSlug.toLowerCase()
+        );
+      });
+      if (foundIndex !== -1) {
+        setActiveIndex(foundIndex);
+        setHasUserInteracted(true);
+      } else {
+        setActiveIndex(null);
+      }
+    } else {
+      setActiveIndex(null);
+    }
+  }, [urlSlug, localizedFilteredLandmarks, i18n.language]);
+
+  // НОВЫЙ useEffect для переключения языка по URL
+  useEffect(() => {
+    if (urlLang && i18n.language !== urlLang) {
+      i18n.changeLanguage(urlLang);
+    }
+  }, [urlLang, i18n]);
 
   return (
     <Box
@@ -167,7 +195,7 @@ function App() {
         }}
       >
         <MapComponent
-          landmarks={baseFilteredLandmarks}
+          landmarks={localizedFilteredLandmarks}
           activeIndex={activeIndex}
           onMapMarkerClick={handleMapMarkerClick}
           onMapClick={handleMapClick}
@@ -181,7 +209,7 @@ function App() {
 
       <HeroSection
         selectedCategorySlugs={selectedCategorySlugs}
-        filteredLandmarks={localizedFilteredLandmarksForHero}
+        filteredLandmarks={localizedFilteredLandmarks}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         setHasUserInteracted={setHasUserInteracted}
