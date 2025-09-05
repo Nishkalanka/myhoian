@@ -77,6 +77,18 @@
       property="twitter:image"
       content="https://myhoian.netlify.app/og-image.png"
     />
+    <script type="speculationrules">
+      {
+        "prerender": [
+          { "where": { "href_matches": "/*" }, "eagerness": "moderate" }
+        ],
+        "prefetch": [
+          { "where": { "href_matches": "/*" }, "eagerness": "moderate" }
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-D39-jrCD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dy7P5RKE.css">
   </head>
   <body style="background-color: rgb(46, 46, 57)">
     <noscript
@@ -88,6 +100,5 @@
       ></iframe
     ></noscript>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
