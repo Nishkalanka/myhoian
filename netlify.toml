@@ -13,3 +13,8 @@
   publish = "dist"
   functions = "netlify/functions"
   open_browser = false
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
