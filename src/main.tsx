@@ -12,7 +12,12 @@ import { MapProvider } from './contexts/MapContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // Оборачиваем все в BrowserRouter
-  <BrowserRouter>
+  <BrowserRouter
+    future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    }}
+  >
     <ThemeContextProvider>
       <CssBaseline />
       <LanguageProvider>
