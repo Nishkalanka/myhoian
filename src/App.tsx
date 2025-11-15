@@ -7,6 +7,8 @@ import React, {
 } from 'react';
 import './index.css';
 import { Box } from '@mui/material';
+// 💥 ИМПОРТИРУЕМ HELMET ДЛЯ УПРАВЛЕНИЯ SEO-МЕТАДАННЫМИ
+import { Helmet } from 'react-helmet-async';
 
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -170,61 +172,121 @@ function App() {
   }, [urlLang, i18n]);
 
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <Header
-        onSelectCategories={handleCategorySelection}
-        selectedCategorySlugs={selectedCategorySlugs}
-        toggleRouteVisibility={toggleRouteVisibility}
-        isRouteVisible={isRouteVisible}
-      />
+    <>
+      {/* 💥 БЛОК SEO ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (КАРТЫ) - ХАРДКОДИНГ НА РУССКОМ */}
+      <Helmet>
+        {/* Title */}
+        <title>Интерактивная Карта Хойана | Достопримечательности Хойана</title>
+
+        {/* Standard SEO Metas */}
+        <meta
+          name="description"
+          content="Путеводитель по Хойану. Интерактивная карта, избранные места, еда, музеи и галереи. Создайте свой маршрут для исследования Вьетнама."
+        />
+        <meta
+          name="keywords"
+          content="Хойан, карта, достопримечательности, Вьетнам, маршруты, еда, туризм, MyHoiAn"
+        />
+        <meta name="author" content="MyHoiAn" />
+
+        {/* Canonical URL */}
+        <link
+          rel="canonical"
+          href={`https://myhoian.app${window.location.pathname}`}
+        />
+
+        {/* Open Graph (for social sharing) */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://vashsite.com${window.location.pathname}`}
+        />
+        <meta
+          property="og:title"
+          content="Интерактивная Карта Хойана 2024 | Достопримечательности и Маршруты"
+        />
+        <meta
+          property="og:description"
+          content="Путеводитель по Хойану. Интерактивная карта, избранные места, еда, музеи и галереи. Создайте свой маршрут для исследования Вьетнама."
+        />
+        <meta property="og:image" content="https://myhoian.app/og-image.png" />
+
+        {/* Twitter Card (for Twitter sharing) */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://vashsite.com${window.location.pathname}`}
+        />
+        <meta
+          property="twitter:title"
+          content="Интерактивная Карта Хойана 2024 | Достопримечательности и Маршруты"
+        />
+        <meta
+          property="twitter:description"
+          content="Путеводитель по Хойану. Интерактивная карта, избранные места, еда, музеи и галереи. Создайте свой маршрут для исследования Вьетнама."
+        />
+        <meta
+          property="twitter:image"
+          content="https://myhoian.app/og-image.png"
+        />
+      </Helmet>
 
       <Box
         sx={{
-          flexGrow: 1,
-          minHeight: 0,
-          position: 'absolute',
-          height: '100%',
-          width: '100%',
-          overflow: 'hidden',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <MapComponent
-          landmarks={localizedFilteredLandmarks}
-          activeIndex={activeIndex}
-          onMapMarkerClick={handleMapMarkerClick}
-          onMapClick={handleMapClick}
-          routeCoordinates={routeCoordinates}
-          hasUserInteracted={hasInteractedWithMarkers}
+        <Header
+          onSelectCategories={handleCategorySelection}
+          selectedCategorySlugs={selectedCategorySlugs}
+          toggleRouteVisibility={toggleRouteVisibility}
           isRouteVisible={isRouteVisible}
+        />
+
+        <Box
+          sx={{
+            flexGrow: 1,
+            minHeight: 0,
+            position: 'absolute',
+            height: '100%',
+            width: '100%',
+            overflow: 'hidden',
+          }}
+        >
+          <MapComponent
+            landmarks={localizedFilteredLandmarks}
+            activeIndex={activeIndex}
+            onMapMarkerClick={handleMapMarkerClick}
+            onMapClick={handleMapClick}
+            routeCoordinates={routeCoordinates}
+            hasUserInteracted={hasInteractedWithMarkers}
+            isRouteVisible={isRouteVisible}
+            onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
+            getLocalizedContentRef={getLocalizedContentForLandmarkRef}
+          />
+        </Box>
+
+        <HeroSection
+          selectedCategorySlugs={selectedCategorySlugs}
+          filteredLandmarks={localizedFilteredLandmarks}
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+          setHasUserInteracted={setHasUserInteracted}
+          hasInteractedWithMarkers={hasInteractedWithMarkers}
+          getLocalizedContent={getLocalizedContentForLandmark}
           onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
-          getLocalizedContentRef={getLocalizedContentForLandmarkRef}
+        />
+
+        <AppSnackbar
+          open={openSnackbar}
+          message={snackbarMessage}
+          type={snackbarType}
+          onClose={handleCloseSnackbar}
         />
       </Box>
-
-      <HeroSection
-        selectedCategorySlugs={selectedCategorySlugs}
-        filteredLandmarks={localizedFilteredLandmarks}
-        activeIndex={activeIndex}
-        setActiveIndex={setActiveIndex}
-        setHasUserInteracted={setHasUserInteracted}
-        hasInteractedWithMarkers={hasInteractedWithMarkers}
-        getLocalizedContent={getLocalizedContentForLandmark}
-        onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
-      />
-
-      <AppSnackbar
-        open={openSnackbar}
-        message={snackbarMessage}
-        type={snackbarType}
-        onClose={handleCloseSnackbar}
-      />
-    </Box>
+    </>
   );
 }
 
