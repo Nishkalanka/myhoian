@@ -14,6 +14,10 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import logoSvg from '../assets/img/logo.svg';
 import heroBg from '../assets/img/tours/bg.png';
+import JapanBr from '../assets/img/pictures/2.jpg';
+import Canton from '../assets/img/pictures/14.jpg';
+import Tanky from '../assets/img/pictures/9.jpg';
+import Quan from '../assets/img/pictures/15.jpg';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -22,48 +26,46 @@ const products = [
     id: 1,
     name: 'Японский мост',
     color: 'Главный символ Хойана. Построен в 1593 году.',
-    imageSrc: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e',
+    imageSrc: JapanBr,
     imageAlt: 'Leather-bound daily planner with gold embossing.',
   },
   {
     id: 2,
     name: 'Фуцзянский зал собраний',
     color: 'Очень хороший зал',
-    imageSrc: 'https://images.unsplash.com/photo-1529978567524-3dfb744b7769',
+    imageSrc: Canton,
     imageAlt: 'Smart notebook with digital pen and app connectivity.',
   },
   {
     id: 3,
     name: 'Дом Тан Ки',
     color: 'Один из самых ярких образцов традиционной архитектуры.',
-
-    imageSrc:
-      'https://plus.unsplash.com/premium_photo-1685134731588-783ca7471b65',
+    imageSrc: Tanky,
     imageAlt: 'Recycled paper weekly planner with plant-based ink.',
   },
   {
     id: 4,
     name: 'Музей',
     color: 'Очень хороший музей с интересными экспонатами.',
-    imageSrc: 'https://images.unsplash.com/photo-1633360821222-7e8df83639fb',
+    imageSrc: Quan,
     imageAlt: 'Rose gold fountain pen set with ink cartridges.',
   },
 ] as const;
 
 const features = [
   {
-    name: '5',
-    description: 'Время',
+    name: '3 - 5 ч.',
+    description: 'Время экскурсии',
     icon: MenuIcon,
   },
   {
-    name: '2',
-    description: 'Размер',
+    name: '1 - 5 чел.',
+    description: 'Размер группы',
     icon: MenuIcon,
   },
   {
-    name: '3',
-    description: 'Формат ',
+    name: 'Пеший',
+    description: 'Формат экскурсии',
     icon: MenuIcon,
   },
 ];
@@ -180,44 +182,46 @@ function LandingPage() {
             <br></br> бережно хранящий наследие веков.
           </Typography>
         </Box>
-        <Box>
-          <Container maxWidth="md">
-            <Box
-              sx={{
-                mt: 4,
-                maxWidth: 'xs',
-                mx: 'auto',
-                display: 'grid',
-                gridTemplateColumns: { xs: '1fr 1fr 1fr', md: '1fr 1fr 1fr' },
-                gap: 2,
-                textAlign: 'center',
-              }}
-            >
-              {features.map((feature) => (
-                <Grid item xs={12} sm={12} key={feature.name}>
-                  <Box
-                    sx={{
-                      border: (theme) => `1px solid ${theme.palette.divider}`,
-                      borderRadius: 2,
-                      boxShadow: 1,
-                    }}
-                  >
-                    <Paper
-                      elevation={0}
-                      sx={{
-                        pt: 7,
-                        border: 'none',
-                        backgroundColor: 'gray.50',
-                        p: 1,
-                        borderRadius: 2,
-                        height: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        whiteSpace: 'nowrap',
-                        gap: 1,
-                      }}
-                    >
-                      {/* Icon 
+
+        <Box
+          sx={{
+            mt: 4,
+            maxWidth: 'lg',
+            mx: 'auto',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr 1fr 1fr', md: '1fr 1fr 1fr' },
+            gap: 2,
+            textAlign: 'center',
+            px: 1,
+          }}
+        >
+          {features.map((feature) => (
+            <Grid item xs={12} sm={12} key={feature.name}>
+              <Box
+                sx={{
+                  border: (theme) => `1px solid ${theme.palette.divider}`,
+                  borderRadius: 2,
+                  boxShadow: 1,
+                }}
+              >
+                <Paper
+                  elevation={0}
+                  sx={{
+                    pt: 6,
+                    border: 'none',
+                    backgroundColor: 'gray.50',
+                    p: 1,
+                    borderRadius: 2,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    AlignItems: 'center',
+                    JustifyContent: 'center',
+                    overflow: 'break-word',
+                    gap: 1,
+                  }}
+                >
+                  {/* Icon 
                     <Box
                       sx={{
                         display: "flex",
@@ -234,35 +238,20 @@ function LandingPage() {
                       <feature.icon fontSize="small" />
                     </Box>
 */}
-                      <Typography
-                        sx={{
-                          color: 'gray.900',
-                          fontWeight: 600,
-                          fontSize: 'md',
-                        }}
-                      >
-                        {feature.name}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          mt: 0.5,
-                          color: 'gray.600',
-                          fontSize: 'md',
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {feature.description}
-                      </Typography>
-                    </Paper>
-                  </Box>
-                </Grid>
-              ))}
-            </Box>
-          </Container>
+                  <Typography variant="body1" sx={{ fontWeight: 900 }}>
+                    {feature.name}
+                  </Typography>
+                  <Typography variant="caption">
+                    {feature.description}
+                  </Typography>
+                </Paper>
+              </Box>
+            </Grid>
+          ))}
         </Box>
 
         <Box>
-          <Box sx={{ maxWidth: 'lg', mx: 'auto', px: 2, py: 8 }}>
+          <Box sx={{ maxWidth: 'lg', mx: 'auto', px: 1, py: 6 }}>
             <Box
               sx={{
                 display: 'flex',
@@ -306,7 +295,7 @@ function LandingPage() {
             */}
             </Box>
 
-            <Grid container spacing={2} sx={{ mt: 3 }}>
+            <Grid container spacing={2} sx={{ mt: 1 }}>
               {products.map((product) => (
                 <Grid item key={product.id} xs={6} sm={6} md={3}>
                   <Box
@@ -358,21 +347,17 @@ function LandingPage() {
                 </Grid>
               ))}
             </Grid>
-            {/* Мобильная ссылка "Shop the collection" 
-          <Box sx={{ mt: 4, display: { xs: "block", md: "none" } }}>
-            <Link
-              href="#"
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                color: "blue.600",
-                "&:hover": { color: "blue.700" },
-              }}
-            >
-              Shop the collection
-            </Link>
-          </Box>*/}
           </Box>
+        </Box>
+        <Box sx={{ px: 1 }}>
+          <Typography variant="subtitle1">
+            Мы пройдем по мощеным улочкам, где каждый камень помнит шаги купцов
+            и моряков. Вы узнаете секреты старинных купеческих домов, поймете их
+            уникальную архитектуру и функционал, который делал их одновременно
+            домом, магазином и храмом. Мы разгадаем тайны семейных часовен и
+            многонациональных сборных залов, каждый из которых является
+            свидетельством богатой культурной мозаики Хойана.
+          </Typography>
         </Box>
       </Container>
     </>
