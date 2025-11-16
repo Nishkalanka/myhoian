@@ -13,6 +13,7 @@ import {
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import logoSvg from '../assets/img/logo.svg';
+import heroBg from '../assets/img/tours/bg.png';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -110,99 +111,113 @@ function LandingPage() {
           content="https://vashsite.com/images/hoian-preview.jpg"
         />
       </Helmet>
-      <Box
+      <Container
+        maxWidth="xs"
         sx={{
-          textAlign: 'center',
-          mt: 2,
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'contain',
+          backgroundPosition: '0px 0px',
+          backgroundColor: '#040c19',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        <img src={logoSvg} width={44} alt="Логотип компании" className="logo" />
-      </Box>
-      <Box
-        sx={{
-          flex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          gap: 2,
-          mt: 2,
-          textAlign: 'center',
-        }}
-      >
+        {/* Логотип  */}
         <Box
           sx={{
-            fontWeight: 600,
-            fontSize: 'sx',
-            textTransform: 'uppercase',
-            letterSpacing: 0.5,
+            textAlign: 'center',
+            pt: 2,
           }}
         >
-          Авторская экскурсия-лекция
+          <img
+            src={logoSvg}
+            width={32}
+            alt="Логотип компании"
+            className="logo"
+          />
         </Box>
-        <Typography
-          variant="h1"
+        {/* HERO */}
+        <Box
           sx={{
-            fontSize: { xs: '4xl', sm: '5xl', md: '6xl' },
-            fontWeight: 800,
-            textTransform: 'uppercase',
-            letterSpacing: 1,
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            gap: 1,
+            mt: 1,
+            height: '55vh',
+            textAlign: 'center',
           }}
         >
-          Хойан
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: 'lg',
-            color: 'gray.500',
-            maxWidth: '54ch',
-          }}
-        >
-          Жемчужина Юго-Восточной Азии.<br></br> Cтаринный торговый порт,
-          <br></br> бережно хранящий наследие веков.
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          bgcolor: 'background.paper',
-        }}
-      >
-        <Container maxWidth="md">
           <Box
             sx={{
-              mt: 4,
-              maxWidth: 'xs',
-              mx: 'auto',
-              display: 'grid',
-              gridTemplateColumns: { xs: '1fr 1fr 1fr', md: '1fr 1fr 1fr' },
-              gap: 2,
-              textAlign: 'center',
+              fontWeight: 600,
+              fontSize: 'sx',
+              textTransform: 'uppercase',
+              letterSpacing: 0.5,
             }}
           >
-            {features.map((feature) => (
-              <Grid item xs={12} sm={12} key={feature.name}>
-                <Box
-                  sx={{
-                    border: (theme) => `1px solid ${theme.palette.divider}`,
-                    borderRadius: 2,
-                    boxShadow: 1,
-                  }}
-                >
-                  <Paper
-                    elevation={0}
+            Авторская экскурсия-лекция
+          </Box>
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: 'xl', sm: '5xl', md: '6xl' },
+              fontWeight: 900,
+              textTransform: 'uppercase',
+              letterSpacing: 1,
+            }}
+          >
+            Хойан
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              fontSize: 'lg',
+              color: 'gray.500',
+            }}
+          >
+            Жемчужина Юго-Восточной Азии.<br></br> Cтаринный торговый порт,
+            <br></br> бережно хранящий наследие веков.
+          </Typography>
+        </Box>
+        <Box>
+          <Container maxWidth="md">
+            <Box
+              sx={{
+                mt: 4,
+                maxWidth: 'xs',
+                mx: 'auto',
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr 1fr 1fr', md: '1fr 1fr 1fr' },
+                gap: 2,
+                textAlign: 'center',
+              }}
+            >
+              {features.map((feature) => (
+                <Grid item xs={12} sm={12} key={feature.name}>
+                  <Box
                     sx={{
-                      pt: 7,
-                      border: 'none',
-                      backgroundColor: 'gray.50',
-                      p: 1,
+                      border: (theme) => `1px solid ${theme.palette.divider}`,
                       borderRadius: 2,
-                      height: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      whiteSpace: 'nowrap',
-                      gap: 1,
+                      boxShadow: 1,
                     }}
                   >
-                    {/* Icon 
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        pt: 7,
+                        border: 'none',
+                        backgroundColor: 'gray.50',
+                        p: 1,
+                        borderRadius: 2,
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        whiteSpace: 'nowrap',
+                        gap: 1,
+                      }}
+                    >
+                      {/* Icon 
                     <Box
                       sx={{
                         display: "flex",
@@ -219,63 +234,63 @@ function LandingPage() {
                       <feature.icon fontSize="small" />
                     </Box>
 */}
-                    <Typography
-                      sx={{
-                        color: 'gray.900',
-                        fontWeight: 600,
-                        fontSize: 'md',
-                      }}
-                    >
-                      {feature.name}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        mt: 0.5,
-                        color: 'gray.600',
-                        fontSize: 'md',
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      {feature.description}
-                    </Typography>
-                  </Paper>
-                </Box>
-              </Grid>
-            ))}
-          </Box>
-        </Container>
-      </Box>
+                      <Typography
+                        sx={{
+                          color: 'gray.900',
+                          fontWeight: 600,
+                          fontSize: 'md',
+                        }}
+                      >
+                        {feature.name}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          mt: 0.5,
+                          color: 'gray.600',
+                          fontSize: 'md',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {feature.description}
+                      </Typography>
+                    </Paper>
+                  </Box>
+                </Grid>
+              ))}
+            </Box>
+          </Container>
+        </Box>
 
-      <Box sx={{ bgcolor: 'background.paper' }}>
-        <Box sx={{ maxWidth: 'lg', mx: 'auto', px: 2, py: 8 }}>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
+        <Box>
+          <Box sx={{ maxWidth: 'lg', mx: 'auto', px: 2, py: 8 }}>
             <Box
               sx={{
-                flex: 1,
                 display: 'flex',
                 alignItems: 'center',
-                flexDirection: 'column',
-                textAlign: 'center',
+                justifyContent: 'space-between',
               }}
             >
               <Box
                 sx={{
-                  fontWeight: 600,
-                  fontSize: 'sx',
-                  textTransform: 'uppercase',
-                  letterSpacing: 0.5,
+                  flex: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  textAlign: 'center',
                 }}
               >
-                Ключевые места в фокусе
+                <Box
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: 'sx',
+                    textTransform: 'uppercase',
+                    letterSpacing: 0.5,
+                  }}
+                >
+                  Ключевые места в фокусе
+                </Box>
               </Box>
-            </Box>
-            {/*
+              {/*
             <Link
               href="#"
               sx={{
@@ -289,58 +304,61 @@ function LandingPage() {
               See more
             </Link>
             */}
-          </Box>
+            </Box>
 
-          <Grid container spacing={2} sx={{ mt: 3 }}>
-            {products.map((product) => (
-              <Grid item key={product.id} xs={6} sm={6} md={3}>
-                <Box
-                  sx={{
-                    position: 'relative',
-                    '&:hover img': { opacity: 0.75 },
-                  }}
-                >
+            <Grid container spacing={2} sx={{ mt: 3 }}>
+              {products.map((product) => (
+                <Grid item key={product.id} xs={6} sm={6} md={3}>
                   <Box
                     sx={{
-                      height: { xs: 140, lg: 180, xl: 200 },
-                      width: '100%',
-                      overflow: 'hidden',
-                      borderRadius: 1,
-                      bgcolor: 'gray.200',
+                      position: 'relative',
+                      '&:hover img': { opacity: 0.75 },
                     }}
                   >
-                    <img
-                      alt={product.imageAlt}
-                      src={product.imageSrc}
-                      style={{
-                        height: '100%',
-                        width: '100%',
-                        objectFit: 'cover',
-                        objectPosition: 'center',
-                      }}
-                    />
-                  </Box>
-                  <Typography variant="body1" sx={{ mt: 1, color: 'gray.700' }}>
                     <Box
-                      component="span"
-                      sx={{ position: 'absolute', inset: 0 }}
-                    />
-                    {product.name}
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{ mt: 0.5, color: 'gray.600' }}
-                  >
-                    {product.color}
-                  </Typography>
-                  <Typography
-                    sx={{ mt: 0.5, fontWeight: 'medium', color: 'gray.900' }}
-                  ></Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-          {/* Мобильная ссылка "Shop the collection" 
+                      sx={{
+                        height: { xs: 140, lg: 180, xl: 200 },
+                        width: '100%',
+                        overflow: 'hidden',
+                        borderRadius: 1,
+                        bgcolor: 'gray.200',
+                      }}
+                    >
+                      <img
+                        alt={product.imageAlt}
+                        src={product.imageSrc}
+                        style={{
+                          height: '100%',
+                          width: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center',
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      variant="body1"
+                      sx={{ mt: 1, color: 'gray.700' }}
+                    >
+                      <Box
+                        component="span"
+                        sx={{ position: 'absolute', inset: 0 }}
+                      />
+                      {product.name}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      sx={{ mt: 0.5, color: 'gray.600' }}
+                    >
+                      {product.color}
+                    </Typography>
+                    <Typography
+                      sx={{ mt: 0.5, fontWeight: 'medium', color: 'gray.900' }}
+                    ></Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+            {/* Мобильная ссылка "Shop the collection" 
           <Box sx={{ mt: 4, display: { xs: "block", md: "none" } }}>
             <Link
               href="#"
@@ -354,8 +372,9 @@ function LandingPage() {
               Shop the collection
             </Link>
           </Box>*/}
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </>
   );
 }
