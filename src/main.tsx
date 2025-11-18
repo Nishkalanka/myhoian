@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './i18n.ts';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async'; // 💥 Добавляем HelmetProvider
+import { HelmetProvider } from 'react-helmet-async';
 // 1. Импортируй свой новый компонент
 import LandingPage from './pages/LandingPage.tsx';
 

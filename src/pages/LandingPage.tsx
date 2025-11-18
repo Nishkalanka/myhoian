@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react'; // ⬅️ ИМПОРТ useState
 import {
   Box,
   Typography,
   Button,
   Container,
-  Link,
   Avatar,
   Grid,
   Paper,
+  Modal, // ⬅️ ИМПОРТ Modal
 } from '@mui/material';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 // Импортируем Helmet
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
+
 import logoSvg from '../assets/img/logo.svg';
 import heroBg from '../assets/img/tours/bg.png';
+
+import profilePicture from '../assets/img/tours/profile.png';
+
 import JapanBr from '../assets/img/pictures/2.jpg';
 import Canton from '../assets/img/pictures/14.jpg';
 import Tanky from '../assets/img/pictures/9.jpg';
@@ -21,7 +31,23 @@ import Quan from '../assets/img/pictures/15.jpg';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
+// ⬅️ 1. ОПРЕДЕЛЯЕМ СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА
+const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: { xs: 300, sm: 400 }, // Адаптивная ширина
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+  borderRadius: 2,
+  outline: 'none',
+};
+
 const products = [
+  // ... (данные products)
   {
     id: 1,
     name: 'Японский мост',
@@ -53,6 +79,7 @@ const products = [
 ] as const;
 
 const features = [
+  // ... (данные features)
   {
     name: '3 - 5 ч.',
     description: 'Время экскурсии',
@@ -71,9 +98,14 @@ const features = [
 ];
 
 function LandingPage() {
+  // ⬅️ 2. ОБЪЯВЛЯЕМ СОСТОЯНИЕ ДЛЯ МОДАЛЬНОГО ОКНА
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
-      {/* 1. БЛОК SEO (HEAD) - все, что нужно для Google и Яндекс (ОСТАВЛЕНО ВАШЕ СОДЕРЖИМОЕ) */}
+      {/* 1. БЛОК SEO (HEAD) */}
       <Helmet>
         {/* Title (Главный SEO-тег, до 70 символов) */}
         <title>
@@ -121,6 +153,7 @@ function LandingPage() {
           backgroundPosition: '0px 0px',
           backgroundColor: '#040c19',
           backgroundRepeat: 'no-repeat',
+          pb: 8,
         }}
       >
         {/* Логотип  */}
@@ -130,12 +163,7 @@ function LandingPage() {
             pt: 2,
           }}
         >
-          <img
-            src={logoSvg}
-            width={32}
-            alt="Логотип компании"
-            className="logo"
-          />
+          <img src={logoSvg} width={32} alt="Логотип" className="logo" />
         </Box>
         {/* HERO */}
         <Box
@@ -176,11 +204,21 @@ function LandingPage() {
             sx={{
               fontSize: 'lg',
               color: 'gray.500',
+              mb: 1,
             }}
           >
             Жемчужина Юго-Восточной Азии.<br></br> Cтаринный торговый порт,
             <br></br> бережно хранящий наследие веков.
           </Typography>
+          {/* ⬅️ ПРИВЯЗЫВАЕМ handleOpen К КНОПКЕ */}
+          <Button
+            onClick={handleOpen}
+            sx={{ color: '#FFBF00', borderColor: '#FFBF00' }}
+            size="small"
+            variant="outlined"
+          >
+            Напишите нам
+          </Button>
         </Box>
 
         <Box
@@ -221,23 +259,6 @@ function LandingPage() {
                     gap: 1,
                   }}
                 >
-                  {/* Icon 
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: 36,
-                        height: 36,
-                        whiteSpace: "nowrap",
-                        borderRadius: 999,
-                        color: "background.default",
-                        bgcolor: "primary.700",
-                      }}
-                    >
-                      <feature.icon fontSize="small" />
-                    </Box>
-*/}
                   <Typography variant="body1" sx={{ fontWeight: 900 }}>
                     {feature.name}
                   </Typography>
@@ -279,20 +300,6 @@ function LandingPage() {
                   Ключевые места в фокусе
                 </Box>
               </Box>
-              {/*
-            <Link
-              href="#"
-              sx={{
-                display: { xs: "none", md: "inline-flex" },
-                alignItems: "center",
-                color: "primary.600",
-                textDecoration: "none",
-                "&:hover": { color: "primary.700" },
-              }}
-            >
-              See more
-            </Link>
-            */}
             </Box>
 
             <Grid container spacing={2} sx={{ mt: 1 }}>
@@ -349,17 +356,142 @@ function LandingPage() {
             </Grid>
           </Box>
         </Box>
-        <Box sx={{ px: 1 }}>
-          <Typography variant="subtitle1">
-            Мы пройдем по мощеным улочкам, где каждый камень помнит шаги купцов
-            и моряков. Вы узнаете секреты старинных купеческих домов, поймете их
-            уникальную архитектуру и функционал, который делал их одновременно
-            домом, магазином и храмом. Мы разгадаем тайны семейных часовен и
-            многонациональных сборных залов, каждый из которых является
-            свидетельством богатой культурной мозаики Хойана.
-          </Typography>
+
+        {/* Блок Гида */}
+        <Box
+          sx={{
+            fontWeight: 600,
+            fontSize: 'sx',
+            textTransform: 'uppercase',
+            letterSpacing: 0.5,
+            textAlign: 'center',
+            mb: 2,
+          }}
+        >
+          Опытный гид
         </Box>
+        <Paper
+          elevation={0}
+          sx={{
+            border: 'none',
+            backgroundColor: 'gray.50',
+            p: 4,
+            mb: 6,
+            borderRadius: 2,
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            JustifyContent: 'center',
+            overflow: 'break-word',
+            gap: 1,
+          }}
+        >
+          <Avatar
+            src={profilePicture}
+            sx={{
+              width: 92,
+              height: 92,
+              mb: 1,
+              border: '2px solid',
+              borderColor: '#FFBF00',
+              backgroundColor: '#FFBF00',
+              boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.3)',
+            }}
+          />
+          <Typography variant="h6" sx={{ fontWeight: 900 }}>
+            Павел
+          </Typography>
+          <Typography variant="body2">Профессиональный гид</Typography>
+          <Typography variant="caption" sx={{ mb: 2 }}>
+            Лучший способ понять культурное наследие Хойана совершить пешеходную
+            экскурсию с опытным гидом!
+          </Typography>
+
+          <Button
+            onClick={handleOpen}
+            sx={{ color: '#FFBF00', borderColor: '#FFBF00' }}
+            size="small"
+            variant="outlined"
+          >
+            Забронировать
+          </Button>
+        </Paper>
+
+        {/* Блок FAQ */}
+        <Box
+          sx={{
+            fontWeight: 600,
+            fontSize: 'sx',
+            textTransform: 'uppercase',
+            letterSpacing: 0.5,
+            textAlign: 'center',
+            mb: 2,
+          }}
+        >
+          Остались вопросы ?
+        </Box>
+
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ArrowDropDownIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography component="span">Стоимость</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+              eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ArrowDropDownIcon />}
+            aria-controls="panel2-content"
+            id="panel2-header"
+          >
+            <Typography component="span">Программа</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+              eget.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
       </Container>
+
+      {/* ⬅️ 3. КОРРЕКТНО РАЗМЕЩЕННОЕ МОДАЛЬНОЕ ОКНО */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={modalStyle}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Напишите нам в Telegram!
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Чтобы связаться с Павлом и забронировать экскурсию, пожалуйста,
+            перейдите в Telegram.
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{ mt: 2 }}
+            href="https://t.me/yourtelegramusername"
+            target="_blank"
+          >
+            Открыть Telegram
+          </Button>
+        </Box>
+      </Modal>
     </>
   );
 }
