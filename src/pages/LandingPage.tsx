@@ -138,10 +138,7 @@ const LandingPage: React.FC = () => {
         />
 
         {/* OG Image: Замените URL на реальный, абсолютный путь к картинке-превью. */}
-        <meta
-          property="og:image"
-          content="https://myhoian.app/public/og-image.png"
-        />
+        <meta property="og:image" content="https://myhoian.app/og-image.png" />
       </Helmet>
 
       <Container
