@@ -203,7 +203,7 @@ function App() {
         />
         <meta
           property="og:title"
-          content="Интерактивная Карта Хойана 2024 | Достопримечательности и Маршруты"
+          content="Интерактивная Карта Хойана 2025 | Достопримечательности и Маршруты"
         />
         <meta
           property="og:description"
