@@ -199,7 +199,7 @@ function App() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={`https://vashsite.com${window.location.pathname}`}
+          content={`https://myhoian.app${window.location.pathname}`}
         />
         <meta
           property="og:title"
@@ -210,25 +210,6 @@ function App() {
           content="Путеводитель по Хойану. Интерактивная карта, избранные места, еда, музеи и галереи. Создайте свой маршрут для исследования Вьетнама."
         />
         <meta property="og:image" content="https://myhoian.app/og-image.png" />
-
-        {/* Twitter Card (for Twitter sharing) */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content={`https://vashsite.com${window.location.pathname}`}
-        />
-        <meta
-          property="twitter:title"
-          content="Интерактивная Карта Хойана 2024 | Достопримечательности и Маршруты"
-        />
-        <meta
-          property="twitter:description"
-          content="Путеводитель по Хойану. Интерактивная карта, избранные места, еда, музеи и галереи. Создайте свой маршрут для исследования Вьетнама."
-        />
-        <meta
-          property="twitter:image"
-          content="https://myhoian.app/og-image.png"
-        />
       </Helmet>
 
       <Box
