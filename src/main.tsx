@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Routes>
               {/* 2. Добавь новый маршрут для посадочной страницы */}
               <Route
-                path="/hoian/avtorskaya-ekskursiya"
+                path="/hoian-avtorskaya-ekskursiya"
                 element={<LandingPage />}
               />
 

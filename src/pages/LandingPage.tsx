@@ -134,7 +134,7 @@ const LandingPage: React.FC = () => {
         {/* 🚨 Open Graph URL: УКАЗЫВАЕМ НОВЫЙ URL */}
         <meta
           property="og:url"
-          content="https://myhoian.app/hoian/avtorskaya-ekskursiya"
+          content="https://myhoian.app/hoian-avtorskaya-ekskursiya"
         />
 
         {/* OG Image: Замените URL на реальный, абсолютный путь к картинке-превью. */}
