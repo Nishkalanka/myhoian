@@ -26,7 +26,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <MapProvider>
             <Routes>
               {/* 2. Добавь новый маршрут для посадочной страницы */}
-              <Route path="/landing" element={<LandingPage />} />
+              <Route
+                path="/hoian/avtorskaya-ekskursiya"
+                element={<LandingPage />}
+              />
 
               {/* 3. Оставь существующие динамические маршруты */}
               <Route path="/:lang/:slug" element={<App />} />
