@@ -22,6 +22,9 @@ import Canton from '../assets/img/pictures/14.jpg';
 import Tanky from '../assets/img/pictures/9.jpg';
 import Quan from '../assets/img/pictures/15.jpg';
 
+// 🚨 НОВЫЙ ИМПОРТ ДЛЯ OG-IMAGE
+import ogImage from '../assets/img/og-image.png';
+
 import MenuIcon from '@mui/icons-material/Menu'; // Нужен для данных features
 
 // --- ТИПЫ И ДАННЫЕ (ОСТАВЛЯЕМ ПОКА ЗДЕСЬ) ---
@@ -137,8 +140,8 @@ const LandingPage: React.FC = () => {
           content="https://myhoian.app/hoian-avtorskaya-ekskursiya"
         />
 
-        {/* OG Image: Замените URL на реальный, абсолютный путь к картинке-превью. */}
-        <meta property="og:image" content="https://myhoian.app/og-image.png" />
+        {/* 🚨 OG Image: ИСПОЛЬЗУЕМ ПЕРЕМЕННУЮ ДЛЯ ХЕШИРОВАННОГО ПУТИ */}
+        <meta property="og:image" content={`https://myhoian.app${ogImage}`} />
       </Helmet>
 
       <Container
