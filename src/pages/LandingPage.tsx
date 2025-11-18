@@ -117,7 +117,7 @@ const LandingPage: React.FC = () => {
         {/* 🚨 Каноническая ссылка: УКАЗЫВАЕМ НОВЫЙ URL (ОБЯЗАТЕЛЬНО!) */}
         <link
           rel="canonical"
-          href="https://myhoian.app/hoian/avtorskaya-ekskursiya"
+          href="https://myhoian.app/hoian-avtorskaya-ekskursiya"
         />
 
         {/* Open Graph Tags (для красивого отображения в Telegram, VK, Facebook и т.д.) */}
