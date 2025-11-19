@@ -103,7 +103,6 @@ const LandingPage: React.FC = () => {
         {/* Title: Главный SEO-тег (длина 50-60 символов). */}
         <title>
           Авторская экскурсия по Хойану 2025: Туры на русском, цены, бронь!
-          Тест2
         </title>
         <meta name="yandex-verification" content="0f8e0c7d581350fb" />
         {/* Keywords: Актуальны для Яндекса. */}
