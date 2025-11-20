@@ -199,7 +199,8 @@ const LandingPage: React.FC = () => {
         {/* 🚨 OG Image: ИСПОЛЬЗУЕМ ПЕРЕМЕННУЮ ДЛЯ ХЕШИРОВАННОГО ПУТИ */}
         <meta property="og:image" content={`https://myhoian.app${ogImage}`} />
       </Helmet>
-
+      {/* ⬅️ ПРЕЛОАДЕР */}
+      <Preloader isLoading={showPreloader} />
       <Container
         maxWidth="xs"
         sx={{
@@ -234,9 +235,6 @@ const LandingPage: React.FC = () => {
 
       {/* ⬅️ МОДАЛЬНОЕ ОКНО */}
       <ModalContact open={open} handleClose={handleClose} />
-
-      {/* ⬅️ ПРЕЛОАДЕР */}
-      <Preloader isLoading={showPreloader} />
     </>
   );
 };
