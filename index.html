@@ -34,47 +34,7 @@
 <body style="background-color: rgb(46, 46, 57)">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDGQQ8PB" height="0" width="0"
       style="display: none; visibility: hidden"></iframe></noscript>
-  <div id="root">
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #2e2e39;
-      }
-
-      .initial-preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100dvh;
-        background-color: #2e2e39;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-
-      .initial-preloader img {
-        width: 56px;
-        height: auto;
-        object-fit: contain;
-        /* box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2), 0px 10px 14px 1px rgba(0,0,0,0.14), 0px 4px 18px 3px rgba(0,0,0,0.12); Based on MUI shadow 10 approx or just simple drop shadow if needed, but simple is safer for raw css */
-        margin-bottom: 24px;
-        /* mb: 3 -> 3 * 8px */
-      }
-
-      @media (min-width: 600px) {
-        .initial-preloader img {
-          width: 82px;
-        }
-      }
-    </style>
-    <div class="initial-preloader">
-      <img src="/logo.svg" alt="My Hoian Logo" />
-    </div>
-  </div>
+  <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
