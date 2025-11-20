@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node prerender.js",
+    "build": "tsc && vite build && node prerender.js && npx -y tsx generate-sitemap.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
