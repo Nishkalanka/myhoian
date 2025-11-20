@@ -92,4 +92,13 @@ module.exports = [
       // Добавь здесь другие правила ESLint, которые тебе нравятся
     },
   },
+  // 6. Специальная конфигурация для Node.js скриптов
+  {
+    files: ['prerender.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
 ];

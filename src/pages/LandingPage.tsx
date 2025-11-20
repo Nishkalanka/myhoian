@@ -120,7 +120,7 @@ const LandingPage: React.FC = () => {
         {/* Open Graph Tags (для красивого отображения в Telegram, VK, Facebook и т.д.) */}
         <meta
           property="og:title"
-          content="Авторская экскурсия по Хойану 2025: Туры на русском, цены, бронь. Тест."
+          content="Авторская экскурсия по Хойану 2025: Туры на русском, цены, бронь."
         />
         <meta
           property="og:description"
