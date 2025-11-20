@@ -104,7 +104,7 @@ const LandingPage: React.FC = () => {
         <title>
           Авторская экскурсия по Хойану 2025: Туры на русском, цены, бронь!
         </title>
-        <meta name="yandex-verification" content="0f8e0c7d581350fb" />
+
         {/* Keywords: Актуальны для Яндекса. */}
         <meta
           name="keywords"
