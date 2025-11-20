@@ -177,7 +177,7 @@ function App() {
       <Helmet>
         {/* Title */}
         <title>Интерактивная Карта Хойана | Достопримечательности Хойана</title>
-        <meta name="yandex-verification" content="0f8e0c7d581350fb" />
+        <meta name="yandex-verification" content="1b6410b72540e463" />
         {/* Standard SEO Metas */}
         <meta
           name="description"
