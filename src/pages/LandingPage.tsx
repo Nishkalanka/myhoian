@@ -11,6 +11,7 @@ import SectionFeatures from './components/SectionFeatures';
 import SectionHighlights from './components/SectionHighlights';
 import SectionGuide from './components/SectionGuide';
 import SectionFAQ from './components/SectionFAQ';
+import Preloader from '../components/Preloader';
 
 // ⬅️ ИМПОРТЫ РЕСУРСОВ
 import logoSvg from '../assets/img/logo.svg';
@@ -97,6 +98,51 @@ const LandingPage: React.FC = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // --- ЛОГИКА ПРЕЛОАДЕРА ---
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  React.useEffect(() => {
+    const imagesToLoad = [
+      heroBg,
+      heroBg2,
+      profilePicture,
+      ...products.map((p) => p.imageSrc),
+    ];
+
+    let loadedCount = 0;
+    const totalCount = imagesToLoad.length;
+
+    if (totalCount === 0) {
+      setIsContentLoaded(true);
+      return;
+    }
+
+    const handleImageLoad = () => {
+      loadedCount++;
+      if (loadedCount === totalCount) {
+        setIsContentLoaded(true);
+      }
+    };
+
+    imagesToLoad.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = handleImageLoad;
+      img.onerror = handleImageLoad;
+    });
+  }, []);
+
+  React.useEffect(() => {
+    if (isContentLoaded) {
+      const timer = setTimeout(() => {
+        setShowPreloader(false);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [isContentLoaded]);
+  // --- КОНЕЦ ЛОГИКИ ПРЕЛОАДЕРА ---
+
   return (
     <>
       <Helmet>
@@ -172,6 +218,9 @@ const LandingPage: React.FC = () => {
 
       {/* ⬅️ МОДАЛЬНОЕ ОКНО */}
       <ModalContact open={open} handleClose={handleClose} />
+
+      {/* ⬅️ ПРЕЛОАДЕР */}
+      <Preloader isLoading={showPreloader} />
     </>
   );
 };

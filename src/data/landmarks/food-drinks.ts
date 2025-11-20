@@ -367,11 +367,11 @@ export const foodDrinksLandmarks: Landmark[] = [
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'sua-vegan-restaurant',
+      ru: 'sua-veganskii-restoran',
+      es: 'restaurante-vegano-sua',
+      fr: 'restaurant-vegane-sua',
+      vn: 'nha-hang-thuan-chay-sua',
     },
     // ru: { /* Русский контент здесь, если есть */ },
     // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
@@ -596,11 +596,11 @@ export const foodDrinksLandmarks: Landmark[] = [
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'fefe-roastery',
+      ru: 'fefe-roastery', // <-- Замените на реальный slug para el ruso
+      es: 'fefe-roastery',
+      fr: 'fefe-roastery',
+      vn: 'fefe-roastery',
     },
   },
 ];

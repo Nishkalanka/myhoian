@@ -26,7 +26,6 @@ const SectionFeatures: React.FC<SectionFeaturesProps> = ({ features }) => (
       gridTemplateColumns: { xs: '1fr 1fr 1fr', md: '1fr 1fr 1fr' },
       gap: 2,
       textAlign: 'center',
-      px: 1,
     }}
   >
     {features.map((feature) => (

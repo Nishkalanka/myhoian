@@ -4715,11 +4715,11 @@ export const museumLandmarks: Landmark[] = [
     },
 
     slug: {
-      en: 'ba-my-temple-gate',
-      ru: 'ba-my-temple-gate',
-      es: 'ba-my-temple-gate',
-      fr: 'ba-my-temple-gate',
-      vn: 'ba-my-temple-gate',
+      en: 'hoi-an-museum',
+      ru: 'muzei-hoi-an',
+      es: 'museo-de-hoi-an',
+      fr: 'musee-de-hoi-an',
+      vn: 'bao-tang-hoi-an',
     },
   },
 ];

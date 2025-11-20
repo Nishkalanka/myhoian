@@ -1,7 +1,7 @@
 // SectionHighlights.tsx
 
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, Divider, Chip } from '@mui/material';
 
 // Определяем типы для данных
 interface Product {
@@ -19,7 +19,7 @@ interface SectionHighlightsProps {
 
 const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
   <Box>
-    <Box sx={{ maxWidth: 'lg', mx: 'auto', px: 1, py: 6 }}>
+    <Box sx={{ maxWidth: 'lg', mx: 'auto', pt: 6, pb: 2 }}>
       <Box
         sx={{
           display: 'flex',
@@ -51,13 +51,8 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
 
       <Grid container spacing={2} sx={{ mt: 1 }}>
         {products.map((product) => (
-          <Grid item key={product.id} xs={6} sm={6} md={3}>
-            <Box
-              sx={{
-                position: 'relative',
-                '&:hover img': { opacity: 0.75 },
-              }}
-            >
+          <Grid item key={product.id} xs={6} sm={6} md={6}>
+            <Box>
               <Box
                 sx={{
                   height: { xs: 140, lg: 180, xl: 200 },
@@ -78,20 +73,19 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
                   }}
                 />
               </Box>
-              <Typography variant="body1" sx={{ mt: 1, color: 'gray.700' }}>
-                <Box component="span" sx={{ position: 'absolute', inset: 0 }} />
+              <Typography variant="body1" sx={{ mt: 1 }}>
                 {product.name}
               </Typography>
-              <Typography variant="caption" sx={{ mt: 0.5, color: 'gray.600' }}>
-                {product.color}
-              </Typography>
-              <Typography
-                sx={{ mt: 0.5, fontWeight: 'medium', color: 'gray.900' }}
-              ></Typography>
+              <Typography variant="caption">{product.color}</Typography>
             </Box>
           </Grid>
         ))}
       </Grid>
+    </Box>
+    <Box>
+      <Divider sx={{ mb: 6 }}>
+        <Chip label="и это еще далеко не все" size="small" />
+      </Divider>
     </Box>
   </Box>
 );
