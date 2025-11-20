@@ -56,7 +56,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
           boxShadow: 'inset 2px 2px 4px rgba(0, 0, 0, 0.3)',
         }}
       />
-      <Typography variant="h6" sx={{ fontWeight: 900 }}>
+      <Typography variant="h6" sx={{}}>
         Павел
       </Typography>
       <Typography variant="body2">Профессиональный гид</Typography>

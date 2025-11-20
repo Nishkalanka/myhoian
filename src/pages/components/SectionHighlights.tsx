@@ -52,7 +52,7 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
       <Grid container spacing={2} sx={{ mt: 1 }}>
         {products.map((product) => (
           <Grid item key={product.id} xs={6} sm={6} md={6}>
-            <Box>
+            <Box sx={{ mb: 1 }}>
               <Box
                 sx={{
                   height: { xs: 140, lg: 180, xl: 200 },
@@ -76,14 +76,16 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
               <Typography variant="body1" sx={{ mt: 1 }}>
                 {product.name}
               </Typography>
-              <Typography variant="caption">{product.color}</Typography>
+              <Typography sx={{ lineHeight: 1.6 }} variant="caption">
+                {product.color}
+              </Typography>
             </Box>
           </Grid>
         ))}
       </Grid>
     </Box>
     <Box>
-      <Divider sx={{ mb: 6 }}>
+      <Divider sx={{ mt: 1, mb: 6 }}>
         <Chip label="и это еще далеко не все" size="small" />
       </Divider>
     </Box>

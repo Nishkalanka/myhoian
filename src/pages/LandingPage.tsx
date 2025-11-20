@@ -22,6 +22,8 @@ import JapanBr from '../assets/img/pictures/2.jpg';
 import Canton from '../assets/img/pictures/14.jpg';
 import Tanky from '../assets/img/pictures/9.jpg';
 import Quan from '../assets/img/pictures/15.jpg';
+import Quan2 from '../assets/img/pictures/16.jpg';
+import Quan3 from '../assets/img/pictures/17.jpg';
 
 // 🚨 НОВЫЙ ИМПОРТ ДЛЯ OG-IMAGE
 import ogImage from '../assets/img/og-image.png';
@@ -70,6 +72,20 @@ const products: Product[] = [
     name: 'Музей',
     color: 'Очень хороший музей с интересными экспонатами.',
     imageSrc: Quan,
+    imageAlt: 'Rose gold fountain pen set with ink cartridges.',
+  },
+  {
+    id: 5,
+    name: 'Музей',
+    color: 'Очень хороший музей с интересными экспонатами.',
+    imageSrc: Quan2,
+    imageAlt: 'Rose gold fountain pen set with ink cartridges.',
+  },
+  {
+    id: 6,
+    name: 'Музей',
+    color: 'Очень хороший музей с интересными экспонатами.',
+    imageSrc: Quan3,
     imageAlt: 'Rose gold fountain pen set with ink cartridges.',
   },
 ];
