@@ -147,12 +147,36 @@ const LandingPage: React.FC = () => {
       img.onload = handleImageLoad;
       img.onerror = handleImageLoad;
     });
+
+    // Safety timeout: force load after 3 seconds
+    const safetyTimer = setTimeout(() => {
+      if (loadedCount < totalCount) {
+        console.warn('Preloader safety timeout triggered');
+        setIsContentLoaded(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(safetyTimer);
   }, []);
 
   React.useEffect(() => {
     if (isContentLoaded) {
       const timer = setTimeout(() => {
         setShowPreloader(false);
+
+        // Remove the static preloader from index.html
+        const globalPreloader = document.getElementById('global-preloader');
+        if (globalPreloader) {
+          globalPreloader.style.opacity = '0';
+          globalPreloader.style.visibility = 'hidden';
+
+          // Wait for transition to finish before removing
+          setTimeout(() => {
+            if (globalPreloader && globalPreloader.parentNode) {
+              globalPreloader.parentNode.removeChild(globalPreloader);
+            }
+          }, 500);
+        }
       }, 500);
       return () => clearTimeout(timer);
     }
