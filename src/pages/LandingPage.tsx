@@ -92,12 +92,12 @@ const products: Product[] = [
 
 const features: Feature[] = [
   {
-    name: '3 - 5 ч.',
+    name: '3 - 4 ч.',
     description: 'Время экскурсии',
     icon: MenuIcon,
   },
   {
-    name: '1 - 5 чел.',
+    name: '5 - 7 чел.',
     description: 'Размер группы',
     icon: MenuIcon,
   },

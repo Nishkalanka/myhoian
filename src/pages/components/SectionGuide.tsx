@@ -24,7 +24,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
         mb: 2,
       }}
     >
-      Опытный гид
+      Указующий направление
     </Box>
     <Paper
       elevation={0}
@@ -59,10 +59,11 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
       <Typography variant="h6" sx={{}}>
         Павел
       </Typography>
-      <Typography variant="body2">Профессиональный гид</Typography>
+      <Typography variant="body2" sx={{ сolor: '#FFBF00' }}>
+        Гид и автор лекций по Вьетнаму
+      </Typography>
       <Typography variant="caption" sx={{ mb: 2 }}>
-        Лучший способ понять культурное наследие Хойана совершить пешеходную
-        экскурсию с опытным гидом!
+        15 лет живу Азией и в Азии. Мне есть что рассказать вам про Вьетнам.
       </Typography>
 
       <Button
