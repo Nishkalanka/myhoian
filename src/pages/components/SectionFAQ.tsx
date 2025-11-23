@@ -50,7 +50,7 @@ const SectionFAQ: React.FC = () => (
           </Divider>
         </Box>
         <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          1000 000 vnd
+          1.000.000 vnd
         </Typography>
         <Typography
           variant="caption"
@@ -167,7 +167,7 @@ const SectionFAQ: React.FC = () => (
         </Box>
 
         <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          1500 000 vnd
+          1.500.000 vnd
         </Typography>
         <Typography
           variant="caption"
@@ -288,7 +288,7 @@ const SectionFAQ: React.FC = () => (
           </Divider>
         </Box>
         <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          500 000 vnd
+          400.000 vnd
         </Typography>
         <Typography
           variant="caption"
@@ -321,7 +321,7 @@ const SectionFAQ: React.FC = () => (
           </Divider>
         </Box>
         <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          400 000 vnd
+          400.000 vnd
         </Typography>
         <Typography
           variant="caption"
