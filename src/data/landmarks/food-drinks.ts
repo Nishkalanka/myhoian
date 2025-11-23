@@ -383,7 +383,7 @@ export const foodDrinksLandmarks: Landmark[] = [
     id: 'fefe-roastery', // <-- ID теперь строковый
     coordinates: [15.877930767963667, 108.32668616386269], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['food-drinks'],
-    imageUrl: '58.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '61.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
       title: 'Fefe Roastery ',
       description:

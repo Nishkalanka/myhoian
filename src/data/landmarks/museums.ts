@@ -4227,7 +4227,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'ba-my-temple-gate',
     coordinates: [15.878134915388056, 108.32715736781965],
     category: ['museum'],
-    imageUrl: '48.jpg',
+    imageUrl: '60.jpg',
 
     // =========================================================================
     // ENGLISH CONTENT (en)

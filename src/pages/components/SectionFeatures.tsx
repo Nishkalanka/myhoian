@@ -43,7 +43,7 @@ const SectionFeatures: React.FC<SectionFeaturesProps> = ({ features }) => (
               pt: 6,
               border: 'none',
               backgroundColor: 'gray.50',
-              p: 1,
+              p: 2,
               borderRadius: 2,
               height: '100%',
               display: 'flex',
