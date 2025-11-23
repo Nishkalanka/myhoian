@@ -163,20 +163,6 @@ const LandingPage: React.FC = () => {
     if (isContentLoaded) {
       const timer = setTimeout(() => {
         setShowPreloader(false);
-
-        // Remove the static preloader from index.html
-        const globalPreloader = document.getElementById('global-preloader');
-        if (globalPreloader) {
-          globalPreloader.style.opacity = '0';
-          globalPreloader.style.visibility = 'hidden';
-
-          // Wait for transition to finish before removing
-          setTimeout(() => {
-            if (globalPreloader && globalPreloader.parentNode) {
-              globalPreloader.parentNode.removeChild(globalPreloader);
-            }
-          }, 500);
-        }
       }, 500);
       return () => clearTimeout(timer);
     }
@@ -242,6 +228,10 @@ const LandingPage: React.FC = () => {
 
           backgroundColor: '#040c19',
           pb: 8,
+
+          // 🚨 Fix FOUC: Hide content until preloader is done
+          opacity: showPreloader ? 0 : 1,
+          transition: 'opacity 0.8s ease-in-out',
         }}
       >
         {/* Логотип */}
