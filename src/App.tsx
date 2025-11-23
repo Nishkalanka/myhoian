@@ -67,6 +67,18 @@ function App() {
 
   useEffect(() => {
     setRouteCoordinates([]);
+
+    // Remove the static preloader from index.html when App mounts
+    const globalPreloader = document.getElementById('global-preloader');
+    if (globalPreloader) {
+      globalPreloader.style.opacity = '0';
+      globalPreloader.style.visibility = 'hidden';
+      setTimeout(() => {
+        if (globalPreloader && globalPreloader.parentNode) {
+          globalPreloader.parentNode.removeChild(globalPreloader);
+        }
+      }, 500);
+    }
   }, []);
 
   const getLocalizedContentForLandmark = useCallback(
