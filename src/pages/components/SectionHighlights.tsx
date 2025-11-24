@@ -85,8 +85,8 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
       </Grid>
     </Box>
     <Box>
-      <Divider sx={{ mt: 1, mb: 6 }}>
-        <Chip label="и это еще далеко не все" size="small" />
+      <Divider sx={{ mt: 2, mb: 8 }}>
+        <Chip label="и это еще далеко не все" size="medium" />
       </Divider>
     </Box>
   </Box>

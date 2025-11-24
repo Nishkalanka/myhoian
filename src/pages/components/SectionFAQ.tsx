@@ -16,8 +16,6 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
 
 // Компонент не принимает пропсов
 const SectionFAQ: React.FC = () => (
@@ -288,7 +286,7 @@ const SectionFAQ: React.FC = () => (
           </Divider>
         </Box>
         <Typography variant="h4" sx={{ textAlign: 'center' }}>
-          400.000 vnd
+          500.000 vnd
         </Typography>
         <Typography
           variant="caption"

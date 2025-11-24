@@ -9,7 +9,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
       ? {
           // ПАЛИТРА ДЛЯ ТЕМНОЙ ТЕМЫ
           primary: {
-            main: '#90caf9', // Светло-голубой
+            main: '#FFBF00', // Светло-голубой
           },
           secondary: {
             main: '#f48fb1', // Розовый

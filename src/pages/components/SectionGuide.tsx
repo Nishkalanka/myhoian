@@ -66,12 +66,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
         15 лет живу Азией и в Азии. Мне есть что рассказать вам про Вьетнам.
       </Typography>
 
-      <Button
-        onClick={handleOpen}
-        sx={{ color: '#FFBF00', borderColor: '#FFBF00' }}
-        size="small"
-        variant="outlined"
-      >
+      <Button onClick={handleOpen} sx={{}} size="small" variant="contained">
         Бесплатная консультация
       </Button>
     </Paper>

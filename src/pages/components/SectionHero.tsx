@@ -53,12 +53,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ handleOpen }) => (
       Жемчужина Юго-Восточной Азии.<br></br> Cтаринный торговый порт,<br></br>{' '}
       бережно хранящий наследие веков.
     </Typography>
-    <Button
-      onClick={handleOpen}
-      sx={{ color: '#FFBF00', borderColor: '#FFBF00' }}
-      size="small"
-      variant="outlined"
-    >
+    <Button onClick={handleOpen} sx={{}} size="small" variant="outlined">
       Напишите нам
     </Button>
   </Box>

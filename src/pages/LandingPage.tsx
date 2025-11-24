@@ -1,7 +1,7 @@
 // LandingPage.tsx (ФИНАЛЬНАЯ ВЕРСИЯ)
 
 import React, { useState } from 'react';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Stack } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 
 // ⬅️ ИМПОРТЫ СЕКЦИЙ
@@ -12,6 +12,9 @@ import SectionHighlights from './components/SectionHighlights';
 import SectionGuide from './components/SectionGuide';
 import SectionFAQ from './components/SectionFAQ';
 import Preloader from '../components/Preloader';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 // ⬅️ ИМПОРТЫ РЕСУРСОВ
 import logoSvg from '../assets/img/logo.svg';
@@ -23,7 +26,7 @@ import Canton from '../assets/img/pictures/14.jpg';
 import Tanky from '../assets/img/pictures/9.jpg';
 import Quan from '../assets/img/pictures/15.jpg';
 import Quan2 from '../assets/img/pictures/16.jpg';
-import Quan3 from '../assets/img/pictures/17.jpg';
+import Quan3 from '../assets/img/pictures/62.jpg';
 
 // 🚨 НОВЫЙ ИМПОРТ ДЛЯ OG-IMAGE
 import ogImage from '../assets/img/og-image.png';
@@ -51,42 +54,42 @@ const products: Product[] = [
     name: 'Японский мост',
     color: 'Главный символ Хойана. Построен в 1593 году.',
     imageSrc: JapanBr,
-    imageAlt: 'Leather-bound daily planner with gold embossing.',
+    imageAlt: 'Японский мост в Хойане',
   },
   {
     id: 2,
     name: 'Фуцзянский зал собраний',
-    color: 'Очень хороший зал',
+    color: 'Китайское наследство',
     imageSrc: Canton,
-    imageAlt: 'Smart notebook with digital pen and app connectivity.',
+    imageAlt: 'Фуцзянский зал собраний',
   },
   {
     id: 3,
     name: 'Дом Тан Ки',
-    color: 'Один из самых ярких образцов традиционной архитектуры.',
+    color: 'Один из самых ярких образцов традиционной архитектуры в Хойане',
     imageSrc: Tanky,
-    imageAlt: 'Recycled paper weekly planner with plant-based ink.',
+    imageAlt: 'Дом Тан Ки',
   },
   {
     id: 4,
-    name: 'Музей',
-    color: 'Очень хороший музей с интересными экспонатами.',
+    name: 'Храм Куанг Конга',
+    color: 'Наиболее значимое святилище построенное в 1653 году',
     imageSrc: Quan,
-    imageAlt: 'Rose gold fountain pen set with ink cartridges.',
+    imageAlt: 'Храм Куанг Конга',
   },
   {
     id: 5,
-    name: 'Музей',
-    color: 'Очень хороший музей с интересными экспонатами.',
+    name: 'Музеи',
+    color: 'Посещение нескольких музеев Хойана',
     imageSrc: Quan2,
-    imageAlt: 'Rose gold fountain pen set with ink cartridges.',
+    imageAlt: 'Музеи',
   },
   {
     id: 6,
-    name: 'Музей',
-    color: 'Очень хороший музей с интересными экспонатами.',
+    name: 'Театр',
+    color: 'Традиционное выступление вьетнамских артистов.',
     imageSrc: Quan3,
-    imageAlt: 'Rose gold fountain pen set with ink cartridges.',
+    imageAlt: 'Театр',
   },
 ];
 
@@ -259,6 +262,14 @@ const LandingPage: React.FC = () => {
         <SectionHighlights products={products} />
         <SectionGuide profilePicture={profilePicture} handleOpen={handleOpen} />
         <SectionFAQ />
+
+        <Box sx={{ textAlign: 'center', pt: 6 }}>
+          <Stack direction="row" sx={{ justifyContent: 'center' }} spacing={4}>
+            <WhatsAppIcon />
+            <InstagramIcon />
+            <TelegramIcon />
+          </Stack>
+        </Box>
       </Container>
 
       {/* ⬅️ МОДАЛЬНОЕ ОКНО */}

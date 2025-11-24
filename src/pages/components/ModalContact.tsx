@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Box, Typography, Button, Modal } from '@mui/material';
+import logoSvg from '../../assets/img/logo.svg';
 
 // ⬅️ Определяем типы для пропсов
 interface ModalContactProps {
@@ -16,10 +17,10 @@ const modalStyle = {
   transform: 'translate(-50%, -50%)',
   width: { xs: 300, sm: 400 },
   bgcolor: 'background.paper',
-  border: '2px solid #000',
   boxShadow: 24,
   p: 4,
   borderRadius: 2,
+  textAlign: 'center',
   outline: 'none',
 };
 
@@ -33,20 +34,46 @@ const ModalContact: React.FC<ModalContactProps> = ({ open, handleClose }) => {
       aria-describedby="modal-modal-description"
     >
       <Box sx={modalStyle}>
+        <Box
+          sx={{
+            textAlign: 'center',
+            mb: 2,
+            width: '48px',
+            height: '48px',
+            mx: 'auto',
+          }}
+        >
+          <img src={logoSvg} width={48} alt="Логотип" className="logo" />
+        </Box>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-          Напишите нам в Telegram!
+          Напишите нам!
         </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          Чтобы связаться с Павлом и забронировать экскурсию, пожалуйста,
-          перейдите в Telegram.
+        <Typography id="modal-modal-description" variant="body2" sx={{ mt: 2 }}>
+          Свяжитесь с нами для бесплатной консультации или бронирования!
         </Typography>
         <Button
           variant="contained"
-          sx={{ mt: 2 }}
-          href="https://t.me/yourtelegramusername" // ⬅️ Замени на реальный юзернейм
+          sx={{ mt: 2, width: '100%' }}
+          href="https://t.me/pashanishka" // ⬅️ Замени на реальный юзернейм
           target="_blank"
         >
-          Открыть Telegram
+          Telegram
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ mt: 2, width: '100%' }}
+          href="https://wa.me/84357923401" // ⬅️ Замени на реальный юзернейм
+          target="_blank"
+        >
+          WhatsApp
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ mt: 2, width: '100%' }}
+          href="https://www.instagram.com/myhoian.app/" // ⬅️ Замени на реальный юзернейм
+          target="_blank"
+        >
+          Instagram
         </Button>
       </Box>
     </Modal>
