@@ -2,7 +2,6 @@ import { Container, Box, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import React, { useState, useRef, useEffect, useCallback, memo } from 'react';
 
-import Preloader from '../../../shared/ui/Preloader.js';
 import LandmarkSwiper from '../../../entities/landmark/ui/LandmarkSwiper.js';
 import { LandmarkDetailsDialog } from '../../../entities/landmark/ui/LandmarkDetailsDialog.js';
 
@@ -45,7 +44,6 @@ function HeroSection({
   const swiperRef = useRef<any>(null);
 
   // Картинки для снэкбара (получаем через общий хук)
-  // Убедись, что 'dragon.png' есть в src/assets/img/pictures/
   const snackbarImages = {
     welcome: getImageUrl('dragon.png'),
     error: getImageUrl('dragon.png'),
@@ -55,56 +53,7 @@ function HeroSection({
   const [selectedLandmarkForModal, setSelectedLandmarkForModal] =
     useState<LocalizedLandmark | null>(null);
 
-  const [isContentLoaded, setIsContentLoaded] = useState(false);
-  const [showPreloader, setShowPreloader] = useState(true);
-
-  // 1. Эффект для предзагрузки изображений
-  useEffect(() => {
-    const imagesToLoad = [
-      snackbarImages.welcome,
-      ...filteredLandmarks
-        .map((landmark) => getImageUrl(landmark.imageUrl))
-        .filter((url): url is string => !!url),
-    ];
-
-    let loadedCount = 0;
-    const totalCount = imagesToLoad.length;
-
-    if (totalCount === 0) {
-      setIsContentLoaded(true);
-      return;
-    }
-
-    const handleImageLoad = () => {
-      loadedCount++;
-      if (loadedCount === totalCount) {
-        setIsContentLoaded(true);
-      }
-    };
-
-    imagesToLoad.forEach((url) => {
-      if (url) {
-        const img = new Image();
-        img.src = url;
-        img.onload = handleImageLoad;
-        img.onerror = handleImageLoad;
-      } else {
-        handleImageLoad();
-      }
-    });
-  }, [filteredLandmarks, getImageUrl, snackbarImages.welcome]);
-
-  // 2. Эффект для скрытия прелоадера
-  useEffect(() => {
-    if (isContentLoaded) {
-      const timer = setTimeout(() => {
-        setShowPreloader(false);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [isContentLoaded]);
-
-  // 3. Эффект для синхронизации Swiper с активным индексом
+  // Эффект для синхронизации Swiper с активным индексом
   useEffect(() => {
     if (
       swiperRef.current &&
@@ -115,15 +64,15 @@ function HeroSection({
     }
   }, [activeIndex]);
 
-  // 4. Эффект для показа приветствия (срабатывает при загрузке и смене языка)
+  // Эффект для показа приветствия (срабатывает при загрузке и смене языка)
   useEffect(() => {
-    if (!showPreloader && i18n.isInitialized) {
+    if (i18n.isInitialized) {
       const welcomeTimer = setTimeout(() => {
         onShowSnackbar(t('welcomeMessage'), 'welcome');
       }, 100);
       return () => clearTimeout(welcomeTimer);
     }
-  }, [showPreloader, i18n.isInitialized, i18n.language, onShowSnackbar, t]);
+  }, [i18n.isInitialized, i18n.language, onShowSnackbar, t]);
 
   const handleOpenModal = useCallback((landmark: LocalizedLandmark) => {
     setSelectedLandmarkForModal(landmark);
@@ -135,8 +84,9 @@ function HeroSection({
     setSelectedLandmarkForModal(null);
   }, []);
 
+  // 🔥 ИСПРАВЛЕНИЕ: Удален аргумент _event, так как он не использовался
   const handleSlideOrButtonDetailClick = useCallback(
-    (index: number, _event: React.MouseEvent) => {
+    (index: number) => {
       setActiveIndex(index);
       const landmark = filteredLandmarks[index];
       if (!landmark) {
@@ -202,7 +152,7 @@ function HeroSection({
               filteredLandmarks={filteredLandmarks}
               activeIndex={activeIndex}
               hasInteractedWithMarkers={hasInteractedWithMarkers}
-              isContentLoaded={isContentLoaded}
+              isContentLoaded={true}
               snackbarImages={snackbarImages}
               getImageUrl={getImageUrl}
               getLocalizedContent={getLocalizedContent}
@@ -226,8 +176,6 @@ function HeroSection({
         onClose={handleCloseModal}
         selectedLandmark={selectedLandmarkForModal}
       />
-
-      <Preloader isLoading={showPreloader} />
     </Box>
   );
 }
