@@ -5,15 +5,15 @@ import type {
   CategorySlug,
   LandmarkContent,
   LangCode,
-} from './landmarks/landmarkTypes.js';
+} from '../entities/landmark/model/landmarkTypes.js';
 
 export type { Landmark, CategorySlug, LandmarkContent, LangCode };
 
 // ИМПОРТИРУЕМ ДАННЫЕ НАПРЯМУЮ ИЗ ФАЙЛОВ КАТЕГОРИЙ (они уже содержат все языки)
-import { museumLandmarks } from './landmarks/museums.js';
-import { foodDrinksLandmarks } from './landmarks/food-drinks.js';
-import { artGalleriesLandmarks } from './landmarks/art-galleries.js';
-import { clubsLandmarks } from './landmarks/clubs.js';
+import { museumLandmarks } from '../entities/landmark/model/museums.js';
+import { foodDrinksLandmarks } from '../entities/landmark/model/food-drinks.js';
+import { artGalleriesLandmarks } from '../entities/landmark/model/art-galleries.js';
+import { clubsLandmarks } from '../entities/landmark/model/clubs.js';
 // import { otherLandmarks } from "./landmarks/other.js"; // Закомментировано, если не используется
 
 // =========================================================================

@@ -9,7 +9,7 @@ import LandingPage2 from './pages/LandingPage2.tsx';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeContextProvider } from './contexts/ThemeContexts';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { MapProvider } from './contexts/MapContext';
+import { MapProvider } from './entities/map/model/MapContext.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // Оборачиваем все приложение в HelmetProvider

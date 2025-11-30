@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const toPrerender = ['/hoian-avtorskaya-ekskursiya'];
+const toPrerender = ['', '/hoian-avtorskaya-ekskursiya'];
 
 async function prerender() {
   console.log('Starting preview server...');

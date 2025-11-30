@@ -1,32 +1,26 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useMemo,
-  useRef,
-} from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import './index.css';
 import { Box } from '@mui/material';
 // 💥 ИМПОРТИРУЕМ HELMET ДЛЯ УПРАВЛЕНИЯ SEO-МЕТАДАННЫМИ
 import { Helmet } from 'react-helmet-async';
 
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import { MapComponent } from './components/MapComponent';
+import Header from './widgets/header/ui/Header';
+import HeroSection from './widgets/hero/ui/HeroSection';
+import { MapComponent } from './widgets/map/ui/MapComponent';
 import {
   hoiAnLandmarks,
   type Landmark,
   type CategorySlug,
   type LandmarkContent,
 } from './data';
-import type { LocalizedLandmark } from './data/landmarks/landmarkTypes.js';
+import type { LocalizedLandmark } from './entities/landmark/model/landmarkTypes.js';
 
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { AppSnackbar } from './components/AppSnackbar';
-import { useSnackbar } from './hooks/useSnackbar';
-import type { ShowSnackbarFn } from './components/UserLocationButton';
+import { AppSnackbar } from './shared/ui/AppSnackbar';
+import { useSnackbar } from './shared/lib/useSnackbar';
+import type { ShowSnackbarFn } from './features/user-location/ui/UserLocationButton.js';
 
 function App() {
   const { t, i18n } = useTranslation();

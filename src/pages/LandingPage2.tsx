@@ -11,7 +11,7 @@ import SectionFeatures from './components/SectionFeatures';
 import SectionHighlights from './components/SectionHighlights';
 import SectionGuide from './components/SectionGuide';
 import SectionFAQ from './components/SectionFAQ';
-import Preloader from '../components/Preloader';
+import Preloader from '../shared/ui/Preloader';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
