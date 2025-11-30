@@ -249,11 +249,11 @@ export const clubsLandmarks: Landmark[] = [
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'cham-chi-club',
+      ru: 'cham-chi-club', // <-- Замените на реальный slug para el ruso
+      es: 'cham-chi-club',
+      fr: 'cham-chi-club',
+      vn: 'cham-chi-club',
     },
     // ru: { /* Русский контент здесь, если есть */ },
     // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
@@ -262,7 +262,7 @@ export const clubsLandmarks: Landmark[] = [
   },
   //Roots-Bar
   {
-    id: 'roots-bar ', // <-- ID теперь строковый
+    id: 'roots-bar', // <-- ID теперь строковый
     coordinates: [15.912238405333042, 108.34211628537149], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['clubs'], // <-- Категория "museum"
     imageUrl: '55.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
@@ -482,17 +482,12 @@ export const clubsLandmarks: Landmark[] = [
       internalImageNames: [],
     },
     slug: {
-      // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'roots-bar',
+      ru: 'roots-bar', // <-- Замените на реальный slug para el ruso
+      es: 'roots-bar',
+      fr: 'roots-bar',
+      vn: 'roots-bar',
     },
-    // ru: { /* Русский контент здесь, если есть */ },
-    // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
-    // fr: { /* Французский контент здесь, если есть */ },
-    // vn: { /* Вьетнамский контент здесь, если есть */ },
   },
   //Saranai
   {
@@ -727,11 +722,11 @@ export const clubsLandmarks: Landmark[] = [
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'saranai',
+      ru: 'saranai', // <-- Замените на реальный slug para el ruso
+      es: 'saranai',
+      fr: 'saranai',
+      vn: 'saranai',
     },
     // ru: { /* Русский контент здесь, если есть */ },
     // es: { /* Испанский контент здесь, si hay */ }, // Обновлено

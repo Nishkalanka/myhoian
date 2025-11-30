@@ -219,11 +219,11 @@ export const artGalleriesLandmarks: Landmark[] = [
     },
     slug: {
       // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'rainbow-coffee-restaurant',
+      ru: 'rainbow-coffee-restaurant', // <-- Замените на реальный slug para el ruso
+      es: 'rainbow-coffee-restaurant',
+      fr: 'rainbow-coffee-restaurant',
+      vn: 'rainbow-coffee-restaurant',
     },
     // ru: { /* Русский контент здесь, если есть */ },
     // es: { /* Испанский контент здесь, si hay */ }, // Обновлено

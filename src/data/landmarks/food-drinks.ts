@@ -137,17 +137,12 @@ export const foodDrinksLandmarks: Landmark[] = [
       ],
     },
     slug: {
-      // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'the-hill-station-deli-and-boutique',
+      ru: 'the-hill-station-deli-and-boutique',
+      es: 'the-hill-station-deli-and-boutique',
+      fr: 'the-hill-station-deli-and-boutique',
+      vn: 'the-hill-station-deli-and-boutique',
     },
-    // ru: { /* Русский контент здесь, если есть */ },
-    // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
-    // fr: { /* Французский контент здесь, если есть */ },
-    // vn: { /* Вьетнамский контент здесь, если есть */ },
   },
   //Sua
   {

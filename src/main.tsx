@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 // 1. Импортируй свой новый компонент
 import LandingPage from './pages/LandingPage.tsx';
-
+import LandingPage2 from './pages/LandingPage2.tsx';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeContextProvider } from './contexts/ThemeContexts';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -25,13 +25,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <LanguageProvider>
           <MapProvider>
             <Routes>
-              {/* 2. Добавь новый маршрут для посадочной страницы */}
               <Route
                 path="/hoian-avtorskaya-ekskursiya"
                 element={<LandingPage />}
               />
-
-              {/* 3. Оставь существующие динамические маршруты */}
+              <Route path="/kvest" element={<LandingPage2 />} />
               <Route path="/:lang/:slug" element={<App />} />
               <Route path="/" element={<App />} />
             </Routes>

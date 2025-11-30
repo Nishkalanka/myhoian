@@ -1,4 +1,4 @@
-// LandingPage.tsx (ФИНАЛЬНАЯ ВЕРСИЯ)
+// LandingPage2.tsx (ФИНАЛЬНАЯ ВЕРСИЯ)
 
 import React, { useState } from 'react';
 import { Box, Container, Stack } from '@mui/material';
