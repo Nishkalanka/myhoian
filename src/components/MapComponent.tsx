@@ -271,20 +271,40 @@ export const MapComponent = memo(function MapComponent({
     currentMapInstance.on('movestart', handleMapMoveStart);
 
     const onLocationSuccess = (pos: GeolocationPosition) => {
-      const { latitude, longitude, accuracy } = pos.coords;
+      const { latitude, longitude, accuracy, heading } = pos.coords;
       const newPosition: [number, number] = [longitude, latitude];
 
       if (userMarkerRef.current) {
         userMarkerRef.current.setLngLat(newPosition);
+
+        const el = userMarkerRef.current.getElement();
+        let arrow = el.querySelector('.location-heading-arrow') as HTMLElement;
+
+        if (!arrow) {
+          arrow = document.createElement('div');
+          arrow.className = 'location-heading-arrow';
+          el.appendChild(arrow);
+        }
+
+        if (heading !== null && heading !== undefined && !isNaN(heading)) {
+          arrow.style.display = 'block';
+          arrow.style.transform = `rotate(${heading}deg)`;
+        } else {
+          arrow.style.display = 'none';
+        }
       } else {
         const el = document.createElement('div');
         el.className = 'location-marker';
-        el.style.width = '12px';
-        el.style.height = '12px';
-        el.style.borderRadius = '50%';
-        el.style.backgroundColor = 'blue';
-        el.style.border = '2px solid white';
-        el.style.boxShadow = '0 0 5px rgba(0,0,0,0.5)';
+        // Inline styles removed to rely on src/index.css
+
+        const arrow = document.createElement('div');
+        arrow.className = 'location-heading-arrow';
+        el.appendChild(arrow);
+
+        if (heading !== null && heading !== undefined && !isNaN(heading)) {
+          arrow.style.display = 'block';
+          arrow.style.transform = `rotate(${heading}deg)`;
+        }
 
         userMarkerRef.current = new mapboxgl.Marker({
           element: el,
@@ -354,7 +374,7 @@ export const MapComponent = memo(function MapComponent({
       }
     };
 
-    const onLocationError = (_err: GeolocationPositionError) => {
+    const onLocationError = () => {
       // console.error(`Geolocation error (${_err.code}): ${_err.message}`);
     };
 

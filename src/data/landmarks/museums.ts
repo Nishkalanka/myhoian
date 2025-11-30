@@ -4229,496 +4229,233 @@ export const museumLandmarks: Landmark[] = [
     category: ['museum'],
     imageUrl: '60.jpg',
 
-    // =========================================================================
-    // ENGLISH CONTENT (en)
-    // =========================================================================
     en: {
       title: 'Ba Mu Temple Gate',
-      description: 'Every Portrait is an Open Soul of Vietnam!',
+      description:
+        'A mesmerizing gate reflecting deep spiritual history and Taoist philosophy.',
       fullDescription: `
-<p>
-    For a moment, forget about ancient temples and trading houses. In Hoi An, there's a truly special place where history is written not in stone, but in human faces and stories. We're talking about the <strong>Precious Heritage Art Gallery Museum</strong>, a project by French photographer <strong>Réhahn</strong>, a man called "the photographer who captures the souls of his models."
-</p>
-<img src="49.jpg" alt="Precious Heritage Art Gallery Museum"/>
-<p>
-    Réhahn is not just a man with a camera. He is a true explorer of humanity who traveled to over 35 countries before settling in his beloved Hoi An. For him, photography is a way to get closer to people, hear their stories, and understand their culture. "Good contact (and photography) starts with respect," says Réhahn, and his works reflect this in every frame.
-</p>
+<h3>Tam Quan Gate & Ba Mu Temple: Where Myths Meet Reflections</h3>
 
-<h6>"Hidden Smile" and a Project That Changed Lives</h6>
-<p>
-    In 2011, Réhahn met a woman who changed everything – a 72-year-old boat captain named <strong>Bui Thi Xong</strong>. When he asked to take her portrait, she shyly laughed and covered her mouth. This is how the legendary photograph <strong>"Hidden Smile"</strong> came to be – a photo that conquered the world, became the most expensive Asian photograph (sold for $150,000!), and was even presented by the President of Vietnam to Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Precious Heritage Art Gallery Museum"/>
-<p>
-    For Réhahn, this photograph is "the embodiment of true Vietnam," a mix of modesty, humor, wisdom, and happiness. And it was this encounter that inspired him to create the <strong>Giving Back Project</strong>, a project to return a portion of the profits to the subjects of his photographs.
-</p>
-<p>
-    But "Hidden Smile" was just the beginning. Another iconic work is the portrait of a girl named An Phuoc with blue eyes from the Cham people, which graced the covers of international magazines. Réhahn never rushes; he waits for trust to develop naturally. "The success of a portrait depends not on technique, but on a sincere and meaningful connection with the subject," he believes.
-</p>
+<p>Many see this merely as a perfect photo backdrop, but beyond these gates lies one of Hoi An’s deepest spiritual stories. Standing before you is the <strong>Tam Quan</strong> (Three-Entrance Gate), a miraculous survivor of a majestic temple complex founded in 1626 by the Minh Huong community.</p>
 
-<h6>Precious Heritage Museum: The Heart of Vietnamese Diversity</h6>
-<p>
-    Réhahn's most ambitious project is <strong>Precious Heritage</strong>. It began with studying the 54 ethnic groups of Vietnam and evolved into a decade-long exploration of their cultural heritage, crafts, and stories. By 2020, Réhahn completed his mission, having met representatives of all groups.
-</p>
-<img src="51.jpg" alt="Precious Heritage Art Gallery Museum"/>
-<p>
-    And the result of this incredible work is the <strong>Precious Heritage Museum in Hoi An</strong>, opened in 2017. It is the only museum in the world that houses artifacts from all ethnic groups of Vietnam! Imagine: 100 stunning photographs, 62 authentic national costumes, five halls, and 500 square meters of space dedicated to cultural diversity.
-</p>
-<p>
-    "Before Vietnam, I couldn't imagine a country where so many languages, traditions, and identities coexist," says Réhahn. His mission is to preserve this fragile and unique heritage.
-</p>
-<p>
-    Visiting the Precious Heritage Art Gallery Museum is not just a tour; it's an emotional journey that will allow you to glimpse into the most hidden corners of Vietnam through the faces of its people. Prepare to leave inspired and with a smile on your face!
-</p>
-<img src="50.jpg" alt="Precious Heritage Art Gallery Museum"/>
+<h3>Hidden Meanings & Philosophy</h3>
+<p>The gate’s architecture encodes the Buddhist concept of the "Three Liberations": <em>Emptiness</em> (letting go of attachments), <em>Formlessness</em> (seeing the essence), and <em>Desirelessness</em>. Walking through meant leaving the chaotic world behind.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>But the true magic lies in its name. The temple honors the <strong>Twelve Midwives (Ba Mu)</strong>—deities from ancient animist beliefs intertwined with Taoism. Legend says these twelve celestial fairies "sculpt" every child in the womb: one shapes the eyes, another the smile, a third the first steps. For centuries, this site absorbed prayers for birth and health, blending the Confucian ancestor cult with vibrant folk magic.</p>
+
+<p>Notice the pond before the gate. In Taoist tradition, water represents <em>Yin</em>—softness and depth—balancing the <em>Yang</em> of the stone and sun. The gate’s reflection creates an illusion of a perfect circle, echoing the Buddhist Wheel of Samsara and the eternal cycle of rebirth.</p>
+`,
+      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
     },
 
     // =========================================================================
     // RUSSIAN CONTENT (ru)
     // =========================================================================
     ru: {
-      title: 'Музей-галерея искусства «Ценное наследие»',
-      description: 'Каждый портрет — открытая душа Вьетнама!',
+      title: 'Ворота храма Ба Му',
+      description:
+        'Завораживающие ворота, отражающие глубокую духовную историю и даосскую философию.',
       fullDescription: `
-<p>
-    На мгновение забудьте о древних храмах и торговых домах. В Хойане есть поистине особенное место, где история пишется не камнем, а человеческими лицами и рассказами. Речь идет о <strong>Музее-галерее искусства «Ценное наследие»</strong> — проекте французского фотографа <strong>Реана (Réhahn)</strong>, человека, которого называют «фотографом, улавливающим души своих моделей».
-</p>
-<img src="49.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
-<p>
-    Реан — не просто человек с камерой. Он настоящий исследователь человечества, который путешествовал по более чем 35 странам, прежде чем поселиться в своем любимом Хойане. Для него фотография — это способ сблизиться с людьми, услышать их истории и понять их культуру. «Хороший контакт (и фотография) начинаются с уважения», — говорит Реан, и его работы отражают это в каждом кадре.
-</p>
+<h3>Ворота Там Куан и Храм Ба Му: Где мифы встречаются с отражениями</h3>
 
-<h6>«Скрытая улыбка» и проект, изменивший жизни</h6>
-<p>
-    В 2011 году Реан встретил женщину, которая изменила все, — 72-летнюю капитаншу лодки по имени <strong>Буй Тхи Сонг</strong>. Когда он попросил ее разрешения сделать портрет, она застенчиво засмеялась и прикрыла рот. Так появилась легендарная фотография <strong>«Скрытая улыбка»</strong> — снимок, который покорил мир, стал самой дорогой азиатской фотографией (продан за 150 000 долларов!) и даже был подарен президентом Вьетнама Эммануэлю Макрону.
-</p>
-<img src="52.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
-<p>
-    Для Реана эта фотография — «воплощение истинного Вьетнама», смесь скромности, юмора, мудрости и счастья. И именно эта встреча вдохновила его на создание <strong>проекта «Возвращая должное» (Giving Back Project)</strong> — проекта по возвращению части прибыли героям его фотографий.
-</p>
-<p>
-    Но «Скрытая улыбка» была лишь началом. Еще одна знаковая работа — портрет девочки по имени Ан Фуок с голубыми глазами из народа Чам, который украшал обложки международных журналов. Реан никогда не торопится; он ждет, пока доверие разовьется естественным образом. «Успех портрета зависит не от техники, а от искренней и значимой связи с моделью», — считает он.
-</p>
+<p>Многие видят здесь лишь идеальный фон для фотографий, но за этими воротами скрывается одна из самых глубоких сакральных историй Хойана. Перед вами — <strong>Там Куан</strong> (Tam Quan), или "Трехпролетные ворота", чудом уцелевший вход в некогда величественный храмовый комплекс, заложенный еще в 1626 году общиной Мин Хыонг.</p>
 
-<h6>Музей «Ценное наследие»: сердце вьетнамского разнообразия</h6>
-<p>
-    Самый амбициозный проект Реана — <strong>«Ценное наследие» (Precious Heritage)</strong>. Он начался с изучения 54 этнических групп Вьетнама и превратился в десятилетнее исследование их культурного наследия, ремесел и историй. К 2020 году Реан завершил свою миссию, встретившись с представителями всех групп.
-</p>
-<img src="51.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
-<p>
-    И результатом этой невероятной работы стал <strong>Музей «Ценное наследие» в Хойане</strong>, открытый в 2017 году. Это единственный в мире музей, в котором хранятся артефакты всех этнических групп Вьетнама! Представьте себе: 100 потрясающих фотографий, 62 подлинных национальных костюма, пять залов и 500 квадратных метров площади, посвященной культурному разнообразию.
-</p>
-<p>
-    «До Вьетнама я не мог представить себе страну, где сосуществуют столько языков, традиций и идентичностей», — говорит Реан. Его миссия — сохранить это хрупкое и уникальное наследие.
-</p>
-<p>
-    Посещение Музея-галереи искусства «Ценное наследие» — это не просто экскурсия; это эмоциональное путешествие, которое позволит вам заглянуть в самые потаенные уголки Вьетнама через лица его людей. Приготовьтесь уйти вдохновленными и с улыбкой на лице!
-</p>
-<img src="50.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
+<h3>Скрытые смыслы и философия</h3>
+<p>В архитектуре ворот зашифрован буддийский концепт «Трёх освобождений»: <em>Пустота</em> (отказ от привязанностей), <em>Бесформенность</em> (видение сути вещей) и <em>Отсутствие желаний</em>. Проходя сквозь них, человек должен был оставить мирскую суету позади.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Но истинная магия места — в его названии. Храм посвящен <strong>Двенадцати Повитухам (Ba Mu)</strong> — божествам из древних анимистических верований, которые позже переплелись с даосизмом. Согласно легенде, эти двенадцать небесных фей буквально «лепят» ребенка еще в утробе матери: одна отвечает за глаза, другая за улыбку, третья за первые шаги. Это место веками впитывало молитвы о рождении и здоровье детей, соединяя конфуцианский культ предков с живой народной магией.</p>
+
+<p>Обратите внимание на пруд перед воротами. В даосской традиции вода символизирует <em>Инь</em> — мягкость и глубину, уравновешивая <em>Ян</em> — твердость камня и яркость солнца. Отражение ворот в воде создает иллюзию полного круга, напоминая о буддийском колесе Сансары и бесконечном цикле перерождений.</p>
+`,
+      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
     },
 
     // =========================================================================
     // SPANISH CONTENT (es)
     // =========================================================================
     es: {
-      title: 'Museo Galería de Arte Patrimonio Precioso',
-      description: '¡Cada retrato es un alma abierta de Vietnam!',
+      title: 'Puerta del Templo Ba Mu',
+      description:
+        'Una puerta fascinante que refleja una profunda historia espiritual y la filosofía taoísta.',
       fullDescription: `
-<p>
-    Por un momento, olvídese de los templos antiguos y las casas comerciales. En Hoi An, hay un lugar verdaderamente especial donde la historia no está escrita en piedra, sino en rostros e historias humanas. Estamos hablando del <strong>Museo Galería de Arte Patrimonio Precioso</strong>, un proyecto del fotógrafo francés <strong>Réhahn</strong>, un hombre llamado "el fotógrafo que captura las almas de sus modelos".
-</p>
-<img src="49.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
-<p>
-    Réhahn no es solo un hombre con una cámara. Es un verdadero explorador de la humanidad que viajó por más de 35 países antes de establecerse en su amado Hoi An. Para él, la fotografía es una forma de acercarse a las personas, escuchar sus historias y comprender su cultura. "Un buen contacto (y fotografía) comienza con el respeto", dice Réhahn, y sus obras lo reflejan en cada encuadre.
-</p>
+<h3>Puerta Tam Quan y Templo Ba Mu: Donde los Mitos se Reflejan</h3>
 
-<h6>"Sonrisa Oculta" y un Proyecto que Cambió Vidas</h6>
-<p>
-    En 2011, Réhahn conoció a una mujer que lo cambió todo: una capitana de barco de 72 años llamada <strong>Bui Thi Xong</strong>. Cuando le pidió tomar su retrato, ella se rió tímidamente y se cubrió la boca. Así nació la legendaria fotografía <strong>"Sonrisa Oculta"</strong>, una foto que conquistó el mundo, se convirtió en la fotografía asiática más cara (¡vendida por $150,000!), e incluso fue presentada por el Presidente de Vietnam a Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
-<p>
-    Para Réhahn, esta fotografía es "la encarnación del verdadero Vietnam", una mezcla de modestia, humor, sabiduría y felicidad. Y fue este encuentro lo que lo inspiró a crear el <strong>Proyecto de Devolución (Giving Back Project)</strong>, un proyecto para devolver una parte de las ganancias a los sujetos de sus fotografías.
-</p>
-<p>
-    Pero "Sonrisa Oculta" fue solo el comienzo. Otra obra icónica es el retrato de una niña llamada An Phuoc con ojos azules del pueblo Cham, que apareció en las portadas de revistas internacionales. Réhahn nunca se apresura; espera que la confianza se desarrolle naturalmente. "El éxito de un retrato no depende de la técnica, sino de una conexión sincera y significativa con el sujeto", cree.
-</p>
+<p>Muchos ven aquí solo un fondo perfecto para fotos, pero detrás de estas puertas se esconde una de las historias espirituales más profundas de Hoi An. Ante usted se alza la <strong>Tam Quan</strong> (Puerta de Tres Entradas), superviviente milagrosa de un majestuoso complejo fundado en 1626 por la comunidad Minh Huong.</p>
 
-<h6>Museo Patrimonio Precioso: El Corazón de la Diversidad Vietnamita</h6>
-<p>
-    El proyecto más ambicioso de Réhahn es <strong>Patrimonio Precioso (Precious Heritage)</strong>. Comenzó con el estudio de los 54 grupos étnicos de Vietnam y evolucionó hacia una exploración de una década de su patrimonio cultural, artesanías e historias. Para 2020, Réhahn completó su misión, habiendo conocido a representantes de todos los grupos.
-</p>
-<img src="51.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
-<p>
-    Y el resultado de este increíble trabajo es el <strong>Museo Patrimonio Precioso en Hoi An</strong>, inaugurado en 2017. ¡Es el único museo en el mundo que alberga artefactos de todos los grupos étnicos de Vietnam! Imagínese: 100 fotografías impresionantes, 62 trajes nacionales auténticos, cinco salas y 500 metros cuadrados de espacio dedicados a la diversidad cultural.
-</p>
-<p>
-    "Antes de Vietnam, no podía imaginar un país donde coexistieran tantos idiomas, tradiciones e identidades", dice Réhahn. Su misión es preservar este patrimonio frágil y único.
-</p>
-<p>
-    Visitar el Museo Galería de Arte Patrimonio Precioso no es solo un recorrido; es un viaje emocional que le permitirá vislumbrar los rincones más ocultos de Vietnam a través de los rostros de su gente. ¡Prepárese para irse inspirado y con una sonrisa en su rostro!
-</p>
-<img src="50.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
+<h3>Significados Ocultos y Filosofía</h3>
+<p>La arquitectura cifra el concepto budista de las "Tres Liberaciones": <em>Vacío</em> (soltar los apegos), <em>Sin Forma</em> (ver la esencia) y <em>Sin Deseos</em>. Cruzarlas significaba dejar atrás el caos mundano.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Pero la verdadera magia reside en su nombre. El templo honra a las <strong>Doce Parteras (Ba Mu)</strong>, deidades de antiguas creencias animistas entrelazadas con el taoísmo. La leyenda dice que estas hadas celestiales "esculpen" al niño en el vientre: una forma los ojos, otra la sonrisa, otra los primeros pasos. Durante siglos, este lugar absorbió oraciones por el nacimiento y la salud, uniendo el culto confuciano a los antepasados con la magia popular.</p>
+
+<p>Observe el estanque frente a la puerta. En la tradición taoísta, el agua representa el <em>Yin</em> —suavidad y profundidad— equilibrando el <em>Yang</em> de la piedra y el sol. El reflejo crea la ilusión de un círculo completo, evocando la Rueda del Samsara budista y el ciclo eterno del renacimiento.</p>
+`,
+      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
     },
 
     // =========================================================================
     // FRENCH CONTENT (fr)
     // =========================================================================
     fr: {
-      title: "Musée-Galerie d'Art du Patrimoine Précieux",
-      description: 'Chaque portrait est une âme ouverte du Vietnam !',
+      title: 'Porte du Temple Ba Mu',
+      description:
+        'Une porte envoûtante reflétant une profonde histoire spirituelle et la philosophie taoïste.',
       fullDescription: `
-<p>
-    Oubliez un instant les temples anciens et les maisons de commerce. À Hoi An, il existe un lieu vraiment spécial où l'histoire n'est pas écrite dans la pierre, mais dans les visages et les histoires humaines. Nous parlons du <strong>Musée-Galerie d'Art du Patrimoine Précieux</strong>, un projet du photographe français <strong>Réhahn</strong>, un homme surnommé "le photographe qui capture l'âme de ses modèles".
-</p>
-<img src="49.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
-<p>
-    Réhahn n'est pas seulement un homme avec un appareil photo. C'est un véritable explorateur de l'humanité qui a voyagé dans plus de 35 pays avant de s'installer dans son cher Hoi An. Pour lui, la photographie est un moyen de se rapprocher des gens, d'écouter leurs histoires et de comprendre leur culture. "Un bon contact (et la photographie) commence par le respect", dit Réhahn, et ses œuvres le reflètent dans chaque image.
-</p>
+<h3>Porte Tam Quan et Temple Ba Mu : Au Carrefour des Mythes</h3>
 
-<h6>"Sourire Caché" et un projet qui a changé des vies</h6>
-<p>
-    En 2011, Réhahn a rencontré une femme qui a tout changé – une capitaine de bateau de 72 ans nommée <strong>Bui Thi Xong</strong>. Quand il lui a demandé de prendre son portrait, elle a ri timidement et a couvert sa bouche. C'est ainsi qu'est née la légendaire photographie <strong>"Sourire Caché"</strong> – une photo qui a conquis le monde, est devenue la photographie asiatique la plus chère (vendue pour 150 000 $ !), et a même été présentée par le Président du Vietnam à Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
-<p>
-    Pour Réhahn, cette photographie est "l'incarnation du vrai Vietnam", un mélange de modestie, d'humour, de sagesse et de bonheur. Et c'est cette rencontre qui l'a inspiré à créer le <strong>Projet de Redonner (Giving Back Project)</strong>, un projet visant à reverser une partie des bénéfices aux sujets de ses photographies.
-</p>
-<p>
-    Mais "Sourire Caché" n'était que le début. Une autre œuvre emblématique est le portrait d'une fille nommée An Phuoc aux yeux bleus du peuple Cham, qui a fait la couverture de magazines internationaux. Réhahn ne se presse jamais ; il attend que la confiance se développe naturellement. "Le succès d'un portrait ne dépend pas de la technique, mais d'une connexion sincère et significative avec le sujet", estime-t-il.
-</p>
+<p>Beaucoup ne voient ici qu'un décor photo parfait, mais derrière ces portes se cache l'une des histoires spirituelles les plus profondes de Hoi An. Vous voici devant la <strong>Tam Quan</strong> (Porte à Trois Entrées), miraculeuse survivante d'un complexe majestueux fondé en 1626 par la communauté Minh Huong.</p>
 
-<h6>Musée du Patrimoine Précieux : Le cœur de la diversité vietnamienne</h6>
-<p>
-    Le projet le plus ambitieux de Réhahn est le <strong>Patrimoine Précieux</strong>. Il a commencé par l'étude des 54 groupes ethniques du Vietnam et a évolué vers une exploration d'une décennie de leur patrimoine culturel, de leurs métiers et de leurs histoires. En 2020, Réhahn a achevé sa mission, après avoir rencontré des représentants de tous les groupes.
-</p>
-<img src="51.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
-<p>
-    Et le résultat de ce travail incroyable est le <strong>Musée du Patrimoine Précieux à Hoi An</strong>, ouvert en 2017. C'est le seul musée au monde qui abrite des artefacts de toutes les ethnies du Vietnam ! Imaginez : 100 photographies époustouflantes, 62 costumes nationaux authentiques, cinq salles et 500 mètres carrés d'espace dédiés à la diversité culturelle.
-</p>
-<p>
-    "Avant le Vietnam, je ne pouvais pas imaginer un pays où coexistent autant de langues, de traditions et d'identités", dit Réhahn. Sa mission est de préserver ce patrimoine fragile et unique.
-</p>
-<p>
-    Visiter le Musée-Galerie d'Art du Patrimoine Précieux n'est pas seulement une visite ; c'est un voyage émotionnel qui vous permettra de jeter un coup d'œil dans les coins les plus cachés du Vietnam à travers les visages de ses habitants. Préparez-vous à repartir inspiré et avec le sourire aux lèvres !
-</p>
-<img src="50.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
+<h3>Sens Cachés et Philosophie</h3>
+<p>L'architecture encode le concept bouddhiste des "Trois Libérations" : <em>Vacuité</em> (lâcher les attachements), <em>Sans-forme</em> (voir l'essence) et *Sans-désir*. Franchir ces portes signifiait laisser le tumulte du monde derrière soi.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Mais la vraie magie réside dans son nom. Le temple honore les <strong>Douze Sages-Femmes (Ba Mu)</strong>, divinités d'anciennes croyances animistes mêlées au taoïsme. La légende dit que ces fées célestes "sculptent" l'enfant dans le ventre : l'une façonne les yeux, l'autre le sourire, une troisième les premiers pas. Pendant des siècles, ce lieu a absorbé les prières pour la naissance et la santé, fusionnant le culte confucéen des ancêtres avec la magie populaire vivante.</p>
+
+<p>Remarquez l'étang devant la porte. Dans la tradition taoïste, l'eau représente le <em>Yin</em> — douceur et profondeur — équilibrant le <em>Yang</em> de la pierre et du soleil. Le reflet crée l'illusion d'un cercle parfait, rappelant la Roue du Samsara bouddhiste et le cycle éternel des renaissances.</p>
+`,
+      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
     },
 
     // =========================================================================
     // VIETNAMESE CONTENT (vn)
     // =========================================================================
     vn: {
-      title: 'Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá',
-      description: 'Mỗi bức chân dung là một tâm hồn mở của Việt Nam!',
+      title: 'Cổng Chùa Bà Mụ',
+      description:
+        'Cánh cổng đầy mê hoặc phản chiếu lịch sử tâm linh sâu sắc và triết lý Đạo giáo.',
       fullDescription: `
-<p>
-    Trong chốc lát, hãy quên đi những ngôi chùa cổ kính và những ngôi nhà buôn bán. Ở Hội An, có một nơi thực sự đặc biệt nơi lịch sử không được viết bằng đá, mà bằng những khuôn mặt và câu chuyện của con người. Chúng ta đang nói về <strong>Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá</strong>, một dự án của nhiếp ảnh gia người Pháp <strong>Réhahn</strong>, người được mệnh danh là "nhiếp ảnh gia nắm bắt tâm hồn của những người mẫu".
-</p>
-<img src="49.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
-<p>
-    Réhahn không chỉ là một người đàn ông cầm máy ảnh. Anh ấy là một nhà thám hiểm nhân loại thực thụ, người đã đi hơn 35 quốc gia trước khi định cư tại Hội An yêu dấu của mình. Đối với anh, nhiếp ảnh là một cách để đến gần hơn với con người, lắng nghe câu chuyện của họ và hiểu văn hóa của họ. "Sự tiếp xúc tốt (và nhiếp ảnh) bắt đầu bằng sự tôn trọng," Réhahn nói, và các tác phẩm của anh ấy phản ánh điều này trong mỗi khung hình.
-</p>
+<h3>Cổng Tam Quan Chùa Bà Mụ: Nơi Huyền Thoại Soi Bóng</h3>
 
-<h6>"Nụ Cười Ẩn Giấu" và Dự Án Thay Đổi Cuộc Đời</h6>
-<p>
-    Năm 2011, Réhahn gặp một người phụ nữ đã thay đổi mọi thứ – một thuyền trưởng 72 tuổi tên là <strong>Bùi Thị Xong</strong>. Khi anh ấy yêu cầu chụp chân dung của bà, bà cười bẽn lẽn và che miệng. Đây là cách bức ảnh huyền thoại <strong>"Nụ Cười Ẩn Giấu"</strong> ra đời – một bức ảnh đã chinh phục thế giới, trở thành bức ảnh châu Á đắt nhất (bán với giá 150.000 đô la!), và thậm chí còn được Chủ tịch Việt Nam tặng cho Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
-<p>
-    Đối với Réhahn, bức ảnh này là "hiện thân của Việt Nam chân thực", một sự pha trộn giữa sự khiêm tốn, hài hước, trí tuệ và hạnh phúc. Và chính cuộc gặp gỡ này đã truyền cảm hứng cho anh tạo ra <strong>Dự Án Trao Lại (Giving Back Project)</strong>, một dự án nhằm trả lại một phần lợi nhuận cho những người được chụp ảnh.
-</p>
-<p>
-    Nhưng "Nụ Cười Ẩn Giấu" chỉ là khởi đầu. Một tác phẩm biểu tượng khác là chân dung cô bé An Phước với đôi mắt xanh của người Chăm, đã xuất hiện trên trang bìa của nhiều tạp chí quốc tế. Réhahn không bao giờ vội vàng; anh ấy chờ đợi sự tin tưởng phát triển tự nhiên. "Thành công của một bức chân dung không phụ thuộc vào kỹ thuật, mà vào một kết nối chân thành và có ý nghĩa với đối tượng," anh tin.
-</p>
+<p>Nhiều người chỉ thấy nơi đây là một phông nền chụp ảnh hoàn hảo, nhưng ẩn sau cánh cổng này là một trong những câu chuyện tâm linh sâu sắc nhất Hội An. Trước mắt bạn là <strong>Cổng Tam Quan</strong>, di tích sống sót kỳ diệu của một quần thể kiến trúc tráng lệ được cộng đồng Minh Hương khởi dựng từ năm 1626.</p>
 
-<h6>Bảo Tàng Di Sản Quý Giá: Trái Tim của Sự Đa Dạng Việt Nam</h6>
-<p>
-    Dự án tham vọng nhất của Réhahn là <strong>Di Sản Quý Giá (Precious Heritage)</strong>. Nó bắt đầu bằng việc nghiên cứu 54 dân tộc thiểu số của Việt Nam và phát triển thành một cuộc khám phá kéo dài một thập kỷ về di sản văn hóa, nghề thủ công và câu chuyện của họ. Đến năm 2020, Réhahn đã hoàn thành sứ mệnh của mình, sau khi gặp gỡ đại diện của tất cả các nhóm.
-</p>
-<img src="51.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
-<p>
-    Và kết quả của công việc đáng kinh ngạc này là <strong>Bảo Tàng Di Sản Quý Giá ở Hội An</strong>, khai trương vào năm 2017. Đây là bảo tàng duy nhất trên thế giới lưu giữ các hiện vật từ tất cả các dân tộc thiểu số của Việt Nam! Hãy tưởng tượng: 100 bức ảnh tuyệt đẹp, 62 bộ trang phục dân tộc đích thực, năm sảnh và 500 mét vuông không gian dành riêng cho sự đa dạng văn hóa.
-</p>
-<p>
-    "Trước Việt Nam, tôi không thể tưởng tượng một đất nước mà có quá nhiều ngôn ngữ, truyền thống và bản sắc cùng tồn tại," Réhahn nói. Nhiệm vụ của anh ấy là bảo tồn di sản mong manh và độc đáo này.
-</p>
-<p>
-    Ghé thăm Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá không chỉ là một chuyến tham quan; đó là một hành trình cảm xúc sẽ cho phép bạn nhìn thoáng qua những góc khuất nhất của Việt Nam qua khuôn mặt của những người dân nơi đây. Hãy chuẩn bị để ra về với cảm hứng và nụ cười trên môi!
-</p>
-<img src="50.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
+<h3>Ý Nghĩa Ẩn Giấu & Triết Lý</h3>
+<p>Kiến trúc cổng ẩn chứa khái niệm Phật giáo về "Tam Giải Thoát Môn": <em>Không môn</em> (buông bỏ chấp niệm), <em>Vô tướng môn</em> (nhìn thấu bản chất) và <em>Vô tác môn</em> (không mong cầu). Bước qua cổng là để lại bụi trần phía sau.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Nhưng phép màu thực sự nằm ở tên gọi. Ngôi chùa thờ <strong>12 Bà Mụ</strong> — những vị thần bảo trợ từ tín ngưỡng dân gian cổ xưa giao thoa với Đạo giáo. Truyền thuyết kể rằng các Bà Mụ chính là người "nặn" ra hình hài đứa trẻ: người nặn mắt, người nặn nụ cười, người dạy những bước đi đầu đời. Suốt hàng thế kỷ, nơi đây thấm đẫm những lời nguyện cầu cho sự sinh sôi và an lành, kết nối đạo hiếu Khổng giáo với tín ngưỡng dân gian đầy sức sống.</p>
+
+<p>Hãy chú ý hồ nước trước cổng. Trong truyền thống Đạo giáo, nước tượng trưng cho <em>Âm</em> — sự mềm mại, sâu thẳm — cân bằng với <em>Dương</em> của đá và mặt trời. Bóng cổng soi xuống nước tạo nên ảo ảnh của một vòng tròn hoàn hảo, gợi nhắc về Bánh xe Luân hồi trong Phật giáo và sự tái sinh bất tận.</p>
+`,
+      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
     },
 
     slug: {
-      en: 'ba-my-temple-gate',
-      ru: 'ba-my-temple-gate',
-      es: 'ba-my-temple-gate',
-      fr: 'ba-my-temple-gate',
-      vn: 'ba-my-temple-gate',
+      en: 'ba-mu-temple-gate',
+      ru: 'vorota-khrama-ba-mu',
+      es: 'puerta-templo-ba-mu',
+      fr: 'porte-temple-ba-mu',
+      vn: 'cong-chua-ba-mu',
     },
   },
   // Hoi An Museum
   {
     id: 'hoi-an-museum',
-    coordinates: [15.880312100426158, 108.32950950063537],
+    coordinates: [15.880312100426158, 108.32950950063537], // Координаты сохранены
     category: ['museum'],
-    imageUrl: '48.jpg',
+    imageUrl: '63.jpg',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
     // =========================================================================
     en: {
-      title: 'Ba Mu Temple Gate',
-      description: 'Every Portrait is an Open Soul of Vietnam!',
+      title: 'Hoi An Museum',
+      description:
+        'A brief encyclopedia of the city: from ancient times to the golden age of trade.',
       fullDescription: `
-<p>
-    For a moment, forget about ancient temples and trading houses. In Hoi An, there's a truly special place where history is written not in stone, but in human faces and stories. We're talking about the <strong>Precious Heritage Art Gallery Museum</strong>, a project by French photographer <strong>Réhahn</strong>, a man called "the photographer who captures the souls of his models."
-</p>
-<img src="49.jpg" alt="Precious Heritage Art Gallery Museum"/>
-<p>
-    Réhahn is not just a man with a camera. He is a true explorer of humanity who traveled to over 35 countries before settling in his beloved Hoi An. For him, photography is a way to get closer to people, hear their stories, and understand their culture. "Good contact (and photography) starts with respect," says Réhahn, and his works reflect this in every frame.
-</p>
+<h3>Hoi An Museum of History and Culture</h3>
 
-<h6>"Hidden Smile" and a Project That Changed Lives</h6>
-<p>
-    In 2011, Réhahn met a woman who changed everything – a 72-year-old boat captain named <strong>Bui Thi Xong</strong>. When he asked to take her portrait, she shyly laughed and covered her mouth. This is how the legendary photograph <strong>"Hidden Smile"</strong> came to be – a photo that conquered the world, became the most expensive Asian photograph (sold for $150,000!), and was even presented by the President of Vietnam to Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Precious Heritage Art Gallery Museum"/>
-<p>
-    For Réhahn, this photograph is "the embodiment of true Vietnam," a mix of modesty, humor, wisdom, and happiness. And it was this encounter that inspired him to create the <strong>Giving Back Project</strong>, a project to return a portion of the profits to the subjects of his photographs.
-</p>
-<p>
-    But "Hidden Smile" was just the beginning. Another iconic work is the portrait of a girl named An Phuoc with blue eyes from the Cham people, which graced the covers of international magazines. Réhahn never rushes; he waits for trust to develop naturally. "The success of a portrait depends not on technique, but on a sincere and meaningful connection with the subject," he believes.
-</p>
+<p>This place is a concise encyclopedia of the city. The museum helps to build a clear picture in your mind of how Hoi An developed over the centuries. The exhibition is divided into several key stages, covering history from the very first settlements to modern times.</p>
 
-<h6>Precious Heritage Museum: The Heart of Vietnamese Diversity</h6>
-<p>
-    Réhahn's most ambitious project is <strong>Precious Heritage</strong>. It began with studying the 54 ethnic groups of Vietnam and evolved into a decade-long exploration of their cultural heritage, crafts, and stories. By 2020, Réhahn completed his mission, having met representatives of all groups.
-</p>
-<img src="51.jpg" alt="Precious Heritage Art Gallery Museum"/>
-<p>
-    And the result of this incredible work is the <strong>Precious Heritage Museum in Hoi An</strong>, opened in 2017. It is the only museum in the world that houses artifacts from all ethnic groups of Vietnam! Imagine: 100 stunning photographs, 62 authentic national costumes, five halls, and 500 square meters of space dedicated to cultural diversity.
-</p>
-<p>
-    "Before Vietnam, I couldn't imagine a country where so many languages, traditions, and identities coexist," says Réhahn. His mission is to preserve this fragile and unique heritage.
-</p>
-<p>
-    Visiting the Precious Heritage Art Gallery Museum is not just a tour; it's an emotional journey that will allow you to glimpse into the most hidden corners of Vietnam through the faces of its people. Prepare to leave inspired and with a smile on your face!
-</p>
-<img src="50.jpg" alt="Precious Heritage Art Gallery Museum"/>
+<h3>What's Inside:</h3>
+<p>Over 400 authentic artifacts are collected here. You will see traces of the ancient <strong>Sa Huynh culture</strong> (the first inhabitants of these lands), the legacy of the powerful <strong>Champa Kingdom</strong>, and, of course, evidence of the "golden age" when Hoi An was the main trading port of Asia.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>The showcases display ancient ceramics, bronze items, historical maps, and everyday objects used by local merchants and sailors. This is a great opportunity to understand the city's historical foundation in just 15–20 minutes before walking its streets.</p>
+`,
+      internalImageNames: [],
     },
 
     // =========================================================================
     // RUSSIAN CONTENT (ru)
     // =========================================================================
     ru: {
-      title: 'Музей-галерея искусства «Ценное наследие»',
-      description: 'Каждый портрет — открытая душа Вьетнама!',
+      title: 'Музей истории и культуры Хойана',
+      description:
+        'Краткая энциклопедия города: от древности до золотого века торговли.',
       fullDescription: `
-<p>
-    На мгновение забудьте о древних храмах и торговых домах. В Хойане есть поистине особенное место, где история пишется не камнем, а человеческими лицами и рассказами. Речь идет о <strong>Музее-галерее искусства «Ценное наследие»</strong> — проекте французского фотографа <strong>Реана (Réhahn)</strong>, человека, которого называют «фотографом, улавливающим души своих моделей».
-</p>
-<img src="49.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
-<p>
-    Реан — не просто человек с камерой. Он настоящий исследователь человечества, который путешествовал по более чем 35 странам, прежде чем поселиться в своем любимом Хойане. Для него фотография — это способ сблизиться с людьми, услышать их истории и понять их культуру. «Хороший контакт (и фотография) начинаются с уважения», — говорит Реан, и его работы отражают это в каждом кадре.
-</p>
+<h3>Музей истории и культуры Хойана</h3>
 
-<h6>«Скрытая улыбка» и проект, изменивший жизни</h6>
-<p>
-    В 2011 году Реан встретил женщину, которая изменила все, — 72-летнюю капитаншу лодки по имени <strong>Буй Тхи Сонг</strong>. Когда он попросил ее разрешения сделать портрет, она застенчиво засмеялась и прикрыла рот. Так появилась легендарная фотография <strong>«Скрытая улыбка»</strong> — снимок, который покорил мир, стал самой дорогой азиатской фотографией (продан за 150 000 долларов!) и даже был подарен президентом Вьетнама Эммануэлю Макрону.
-</p>
-<img src="52.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
-<p>
-    Для Реана эта фотография — «воплощение истинного Вьетнама», смесь скромности, юмора, мудрости и счастья. И именно эта встреча вдохновила его на создание <strong>проекта «Возвращая должное» (Giving Back Project)</strong> — проекта по возвращению части прибыли героям его фотографий.
-</p>
-<p>
-    Но «Скрытая улыбка» была лишь началом. Еще одна знаковая работа — портрет девочки по имени Ан Фуок с голубыми глазами из народа Чам, который украшал обложки международных журналов. Реан никогда не торопится; он ждет, пока доверие разовьется естественным образом. «Успех портрета зависит не от техники, а от искренней и значимой связи с моделью», — считает он.
-</p>
+<p>Это место — краткая энциклопедия города. Музей помогает выстроить в голове четкую картину того, как развивался Хойан на протяжении веков. Экспозиция разделена на несколько ключевых этапов, охватывая историю от самых первых поселений до современности.</p>
 
-<h6>Музей «Ценное наследие»: сердце вьетнамского разнообразия</h6>
-<p>
-    Самый амбициозный проект Реана — <strong>«Ценное наследие» (Precious Heritage)</strong>. Он начался с изучения 54 этнических групп Вьетнама и превратился в десятилетнее исследование их культурного наследия, ремесел и историй. К 2020 году Реан завершил свою миссию, встретившись с представителями всех групп.
-</p>
-<img src="51.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
-<p>
-    И результатом этой невероятной работы стал <strong>Музей «Ценное наследие» в Хойане</strong>, открытый в 2017 году. Это единственный в мире музей, в котором хранятся артефакты всех этнических групп Вьетнама! Представьте себе: 100 потрясающих фотографий, 62 подлинных национальных костюма, пять залов и 500 квадратных метров площади, посвященной культурному разнообразию.
-</p>
-<p>
-    «До Вьетнама я не мог представить себе страну, где сосуществуют столько языков, традиций и идентичностей», — говорит Реан. Его миссия — сохранить это хрупкое и уникальное наследие.
-</p>
-<p>
-    Посещение Музея-галереи искусства «Ценное наследие» — это не просто экскурсия; это эмоциональное путешествие, которое позволит вам заглянуть в самые потаенные уголки Вьетнама через лица его людей. Приготовьтесь уйти вдохновленными и с улыбкой на лице!
-</p>
-<img src="50.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
+<h3>Что внутри:</h3>
+<p>Здесь собрано более 400 подлинных артефактов. Вы увидите следы древней <strong>культуры Сахюинь</strong> (первые жители этих земель), наследие могущественного <strong>королевства Чампа</strong> и, конечно, свидетельства «золотого века», когда Хойан был главным торговым портом Азии.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>В витринах представлены старинная керамика, бронзовые изделия, исторические карты и предметы быта, которыми пользовались местные купцы и моряки. Это отличная возможность за 15–20 минут понять исторический фундамент города, прежде чем гулять по его улицам.</p>
+`,
+      internalImageNames: [],
     },
 
     // =========================================================================
     // SPANISH CONTENT (es)
     // =========================================================================
     es: {
-      title: 'Museo Galería de Arte Patrimonio Precioso',
-      description: '¡Cada retrato es un alma abierta de Vietnam!',
+      title: 'Museo de Historia y Cultura de Hoi An',
+      description:
+        'Una breve enciclopedia de la ciudad: desde la antigüedad hasta la edad de oro del comercio.',
       fullDescription: `
-<p>
-    Por un momento, olvídese de los templos antiguos y las casas comerciales. En Hoi An, hay un lugar verdaderamente especial donde la historia no está escrita en piedra, sino en rostros e historias humanas. Estamos hablando del <strong>Museo Galería de Arte Patrimonio Precioso</strong>, un proyecto del fotógrafo francés <strong>Réhahn</strong>, un hombre llamado "el fotógrafo que captura las almas de sus modelos".
-</p>
-<img src="49.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
-<p>
-    Réhahn no es solo un hombre con una cámara. Es un verdadero explorador de la humanidad que viajó por más de 35 países antes de establecerse en su amado Hoi An. Para él, la fotografía es una forma de acercarse a las personas, escuchar sus historias y comprender su cultura. "Un buen contacto (y fotografía) comienza con el respeto", dice Réhahn, y sus obras lo reflejan en cada encuadre.
-</p>
+<h3>Museo de Historia y Cultura de Hoi An</h3>
 
-<h6>"Sonrisa Oculta" y un Proyecto que Cambió Vidas</h6>
-<p>
-    En 2011, Réhahn conoció a una mujer que lo cambió todo: una capitana de barco de 72 años llamada <strong>Bui Thi Xong</strong>. Cuando le pidió tomar su retrato, ella se rió tímidamente y se cubrió la boca. Así nació la legendaria fotografía <strong>"Sonrisa Oculta"</strong>, una foto que conquistó el mundo, se convirtió en la fotografía asiática más cara (¡vendida por $150,000!), e incluso fue presentada por el Presidente de Vietnam a Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
-<p>
-    Para Réhahn, esta fotografía es "la encarnación del verdadero Vietnam", una mezcla de modestia, humor, sabiduría y felicidad. Y fue este encuentro lo que lo inspiró a crear el <strong>Proyecto de Devolución (Giving Back Project)</strong>, un proyecto para devolver una parte de las ganancias a los sujetos de sus fotografías.
-</p>
-<p>
-    Pero "Sonrisa Oculta" fue solo el comienzo. Otra obra icónica es el retrato de una niña llamada An Phuoc con ojos azules del pueblo Cham, que apareció en las portadas de revistas internacionales. Réhahn nunca se apresura; espera que la confianza se desarrolle naturalmente. "El éxito de un retrato no depende de la técnica, sino de una conexión sincera y significativa con el sujeto", cree.
-</p>
+<p>Este lugar es una enciclopedia concisa de la ciudad. El museo ayuda a construir una imagen clara en su mente de cómo se desarrolló Hoi An a lo largo de los siglos. La exposición se divide en varias etapas clave, abarcando la historia desde los primeros asentamientos hasta los tiempos modernos.</p>
 
-<h6>Museo Patrimonio Precioso: El Corazón de la Diversidad Vietnamita</h6>
-<p>
-    El proyecto más ambicioso de Réhahn es <strong>Patrimonio Precioso (Precious Heritage)</strong>. Comenzó con el estudio de los 54 grupos étnicos de Vietnam y evolucionó hacia una exploración de una década de su patrimonio cultural, artesanías e historias. Para 2020, Réhahn completó su misión, habiendo conocido a representantes de todos los grupos.
-</p>
-<img src="51.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
-<p>
-    Y el resultado de este increíble trabajo es el <strong>Museo Patrimonio Precioso en Hoi An</strong>, inaugurado en 2017. ¡Es el único museo en el mundo que alberga artefactos de todos los grupos étnicos de Vietnam! Imagínese: 100 fotografías impresionantes, 62 trajes nacionales auténticos, cinco salas y 500 metros cuadrados de espacio dedicados a la diversidad cultural.
-</p>
-<p>
-    "Antes de Vietnam, no podía imaginar un país donde coexistieran tantos idiomas, tradiciones e identidades", dice Réhahn. Su misión es preservar este patrimonio frágil y único.
-</p>
-<p>
-    Visitar el Museo Galería de Arte Patrimonio Precioso no es solo un recorrido; es un viaje emocional que le permitirá vislumbrar los rincones más ocultos de Vietnam a través de los rostros de su gente. ¡Prepárese para irse inspirado y con una sonrisa en su rostro!
-</p>
-<img src="50.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
+<h3>Qué hay dentro:</h3>
+<p>Aquí se recogen más de 400 artefactos auténticos. Verá rastros de la antigua <strong>cultura Sa Huynh</strong> (los primeros habitantes de estas tierras), el legado del poderoso <strong>Reino Champa</strong> y, por supuesto, evidencia de la "edad de oro" cuando Hoi An era el principal puerto comercial de Asia.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Las vitrinas muestran cerámicas antiguas, artículos de bronce, mapas históricos y objetos cotidianos utilizados por los comerciantes y marineros locales. Esta es una gran oportunidad para comprender los cimientos históricos de la ciudad en solo 15–20 minutos antes de caminar por sus calles.</p>
+`,
+      internalImageNames: [],
     },
 
     // =========================================================================
     // FRENCH CONTENT (fr)
     // =========================================================================
     fr: {
-      title: "Musée-Galerie d'Art du Patrimoine Précieux",
-      description: 'Chaque portrait est une âme ouverte du Vietnam !',
+      title: "Musée d'Histoire et de Culture de Hoi An",
+      description:
+        "Une brève encyclopédie de la ville : de l'Antiquité à l'âge d'or du commerce.",
       fullDescription: `
-<p>
-    Oubliez un instant les temples anciens et les maisons de commerce. À Hoi An, il existe un lieu vraiment spécial où l'histoire n'est pas écrite dans la pierre, mais dans les visages et les histoires humaines. Nous parlons du <strong>Musée-Galerie d'Art du Patrimoine Précieux</strong>, un projet du photographe français <strong>Réhahn</strong>, un homme surnommé "le photographe qui capture l'âme de ses modèles".
-</p>
-<img src="49.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
-<p>
-    Réhahn n'est pas seulement un homme avec un appareil photo. C'est un véritable explorateur de l'humanité qui a voyagé dans plus de 35 pays avant de s'installer dans son cher Hoi An. Pour lui, la photographie est un moyen de se rapprocher des gens, d'écouter leurs histoires et de comprendre leur culture. "Un bon contact (et la photographie) commence par le respect", dit Réhahn, et ses œuvres le reflètent dans chaque image.
-</p>
+<h3>Musée d'Histoire et de Culture de Hoi An</h3>
 
-<h6>"Sourire Caché" et un projet qui a changé des vies</h6>
-<p>
-    En 2011, Réhahn a rencontré une femme qui a tout changé – une capitaine de bateau de 72 ans nommée <strong>Bui Thi Xong</strong>. Quand il lui a demandé de prendre son portrait, elle a ri timidement et a couvert sa bouche. C'est ainsi qu'est née la légendaire photographie <strong>"Sourire Caché"</strong> – une photo qui a conquis le monde, est devenue la photographie asiatique la plus chère (vendue pour 150 000 $ !), et a même été présentée par le Président du Vietnam à Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
-<p>
-    Pour Réhahn, cette photographie est "l'incarnation du vrai Vietnam", un mélange de modestie, d'humour, de sagesse et de bonheur. Et c'est cette rencontre qui l'a inspiré à créer le <strong>Projet de Redonner (Giving Back Project)</strong>, un projet visant à reverser une partie des bénéfices aux sujets de ses photographies.
-</p>
-<p>
-    Mais "Sourire Caché" n'était que le début. Une autre œuvre emblématique est le portrait d'une fille nommée An Phuoc aux yeux bleus du peuple Cham, qui a fait la couverture de magazines internationaux. Réhahn ne se presse jamais ; il attend que la confiance se développe naturellement. "Le succès d'un portrait ne dépend pas de la technique, mais d'une connexion sincère et significative avec le sujet", estime-t-il.
-</p>
+<p>Cet endroit est une encyclopédie concise de la ville. Le musée aide à se forger une image claire de la façon dont Hoi An s'est développée au fil des siècles. L'exposition est divisée en plusieurs étapes clés, couvrant l'histoire depuis les tout premiers établissements jusqu'aux temps modernes.</p>
 
-<h6>Musée du Patrimoine Précieux : Le cœur de la diversité vietnamienne</h6>
-<p>
-    Le projet le plus ambitieux de Réhahn est le <strong>Patrimoine Précieux</strong>. Il a commencé par l'étude des 54 groupes ethniques du Vietnam et a évolué vers une exploration d'une décennie de leur patrimoine culturel, de leurs métiers et de leurs histoires. En 2020, Réhahn a achevé sa mission, après avoir rencontré des représentants de tous les groupes.
-</p>
-<img src="51.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
-<p>
-    Et le résultat de ce travail incroyable est le <strong>Musée du Patrimoine Précieux à Hoi An</strong>, ouvert en 2017. C'est le seul musée au monde qui abrite des artefacts de toutes les ethnies du Vietnam ! Imaginez : 100 photographies époustouflantes, 62 costumes nationaux authentiques, cinq salles et 500 mètres carrés d'espace dédiés à la diversité culturelle.
-</p>
-<p>
-    "Avant le Vietnam, je ne pouvais pas imaginer un pays où coexistent autant de langues, de traditions et d'identités", dit Réhahn. Sa mission est de préserver ce patrimoine fragile et unique.
-</p>
-<p>
-    Visiter le Musée-Galerie d'Art du Patrimoine Précieux n'est pas seulement une visite ; c'est un voyage émotionnel qui vous permettra de jeter un coup d'œil dans les coins les plus cachés du Vietnam à travers les visages de ses habitants. Préparez-vous à repartir inspiré et avec le sourire aux lèvres !
-</p>
-<img src="50.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
+<h3>Ce qu'il y a à l'intérieur :</h3>
+<p>Plus de 400 artefacts authentiques sont rassemblés ici. Vous verrez des traces de l'ancienne <strong>culture Sa Huynh</strong> (les premiers habitants de ces terres), l'héritage du puissant <strong>Royaume de Champa</strong> et, bien sûr, des témoignages de "l'âge d'or" où Hoi An était le principal port de commerce d'Asie.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Les vitrines exposent des céramiques anciennes, des objets en bronze, des cartes historiques et des objets du quotidien utilisés par les marchands et marins locaux. C'est une excellente occasion de comprendre les fondements historiques de la ville en seulement 15–20 minutes avant de parcourir ses rues.</p>
+`,
+      internalImageNames: [],
     },
 
     // =========================================================================
     // VIETNAMESE CONTENT (vn)
     // =========================================================================
     vn: {
-      title: 'Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá',
-      description: 'Mỗi bức chân dung là một tâm hồn mở của Việt Nam!',
+      title: 'Bảo tàng Lịch sử - Văn hóa Hội An',
+      description:
+        'Bách khoa toàn thư thu nhỏ về thành phố: từ cổ đại đến thời kỳ hoàng kim của thương mại.',
       fullDescription: `
-<p>
-    Trong chốc lát, hãy quên đi những ngôi chùa cổ kính và những ngôi nhà buôn bán. Ở Hội An, có một nơi thực sự đặc biệt nơi lịch sử không được viết bằng đá, mà bằng những khuôn mặt và câu chuyện của con người. Chúng ta đang nói về <strong>Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá</strong>, một dự án của nhiếp ảnh gia người Pháp <strong>Réhahn</strong>, người được mệnh danh là "nhiếp ảnh gia nắm bắt tâm hồn của những người mẫu".
-</p>
-<img src="49.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
-<p>
-    Réhahn không chỉ là một người đàn ông cầm máy ảnh. Anh ấy là một nhà thám hiểm nhân loại thực thụ, người đã đi hơn 35 quốc gia trước khi định cư tại Hội An yêu dấu của mình. Đối với anh, nhiếp ảnh là một cách để đến gần hơn với con người, lắng nghe câu chuyện của họ và hiểu văn hóa của họ. "Sự tiếp xúc tốt (và nhiếp ảnh) bắt đầu bằng sự tôn trọng," Réhahn nói, và các tác phẩm của anh ấy phản ánh điều này trong mỗi khung hình.
-</p>
+<h3>Bảo tàng Lịch sử - Văn hóa Hội An</h3>
 
-<h6>"Nụ Cười Ẩn Giấu" và Dự Án Thay Đổi Cuộc Đời</h6>
-<p>
-    Năm 2011, Réhahn gặp một người phụ nữ đã thay đổi mọi thứ – một thuyền trưởng 72 tuổi tên là <strong>Bùi Thị Xong</strong>. Khi anh ấy yêu cầu chụp chân dung của bà, bà cười bẽn lẽn và che miệng. Đây là cách bức ảnh huyền thoại <strong>"Nụ Cười Ẩn Giấu"</strong> ra đời – một bức ảnh đã chinh phục thế giới, trở thành bức ảnh châu Á đắt nhất (bán với giá 150.000 đô la!), và thậm chí còn được Chủ tịch Việt Nam tặng cho Emmanuel Macron.
-</p>
-<img src="52.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
-<p>
-    Đối với Réhahn, bức ảnh này là "hiện thân của Việt Nam chân thực", một sự pha trộn giữa sự khiêm tốn, hài hước, trí tuệ và hạnh phúc. Và chính cuộc gặp gỡ này đã truyền cảm hứng cho anh tạo ra <strong>Dự Án Trao Lại (Giving Back Project)</strong>, một dự án nhằm trả lại một phần lợi nhuận cho những người được chụp ảnh.
-</p>
-<p>
-    Nhưng "Nụ Cười Ẩn Giấu" chỉ là khởi đầu. Một tác phẩm biểu tượng khác là chân dung cô bé An Phước với đôi mắt xanh của người Chăm, đã xuất hiện trên trang bìa của nhiều tạp chí quốc tế. Réhahn không bao giờ vội vàng; anh ấy chờ đợi sự tin tưởng phát triển tự nhiên. "Thành công của một bức chân dung không phụ thuộc vào kỹ thuật, mà vào một kết nối chân thành và có ý nghĩa với đối tượng," anh tin.
-</p>
+<p>Nơi đây giống như một cuốn bách khoa toàn thư thu nhỏ về thành phố. Bảo tàng giúp bạn hình dung rõ nét về quá trình phát triển của Hội An qua nhiều thế kỷ. Khu trưng bày được chia thành nhiều giai đoạn chính, bao quát lịch sử từ những khu định cư đầu tiên cho đến thời hiện đại.</p>
 
-<h6>Bảo Tàng Di Sản Quý Giá: Trái Tim của Sự Đa Dạng Việt Nam</h6>
-<p>
-    Dự án tham vọng nhất của Réhahn là <strong>Di Sản Quý Giá (Precious Heritage)</strong>. Nó bắt đầu bằng việc nghiên cứu 54 dân tộc thiểu số của Việt Nam và phát triển thành một cuộc khám phá kéo dài một thập kỷ về di sản văn hóa, nghề thủ công và câu chuyện của họ. Đến năm 2020, Réhahn đã hoàn thành sứ mệnh của mình, sau khi gặp gỡ đại diện của tất cả các nhóm.
-</p>
-<img src="51.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
-<p>
-    Và kết quả của công việc đáng kinh ngạc này là <strong>Bảo Tàng Di Sản Quý Giá ở Hội An</strong>, khai trương vào năm 2017. Đây là bảo tàng duy nhất trên thế giới lưu giữ các hiện vật từ tất cả các dân tộc thiểu số của Việt Nam! Hãy tưởng tượng: 100 bức ảnh tuyệt đẹp, 62 bộ trang phục dân tộc đích thực, năm sảnh và 500 mét vuông không gian dành riêng cho sự đa dạng văn hóa.
-</p>
-<p>
-    "Trước Việt Nam, tôi không thể tưởng tượng một đất nước mà có quá nhiều ngôn ngữ, truyền thống và bản sắc cùng tồn tại," Réhahn nói. Nhiệm vụ của anh ấy là bảo tồn di sản mong manh và độc đáo này.
-</p>
-<p>
-    Ghé thăm Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá không chỉ là một chuyến tham quan; đó là một hành trình cảm xúc sẽ cho phép bạn nhìn thoáng qua những góc khuất nhất của Việt Nam qua khuôn mặt của những người dân nơi đây. Hãy chuẩn bị để ra về với cảm hứng và nụ cười trên môi!
-</p>
-<img src="50.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
+<h3>Bên trong có gì:</h3>
+<p>Hơn 400 hiện vật gốc được lưu giữ tại đây. Bạn sẽ thấy dấu vết của <strong>văn hóa Sa Huỳnh</strong> cổ xưa (những cư dân đầu tiên của vùng đất này), di sản của <strong>Vương quốc Chăm Pa</strong> hùng mạnh và tất nhiên là những minh chứng cho "thời kỳ hoàng kim" khi Hội An là thương cảng chính của châu Á.</p>
 
-    `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+<p>Các tủ trưng bày giới thiệu gốm sứ cổ, đồ đồng, bản đồ lịch sử và các vật dụng hàng ngày được các thương nhân và thủy thủ địa phương sử dụng. Đây là cơ hội tuyệt vời để tìm hiểu nền tảng lịch sử của thành phố chỉ trong 15–20 phút trước khi dạo bước trên những con phố cổ.</p>
+`,
+      internalImageNames: [],
     },
 
     slug: {
       en: 'hoi-an-museum',
-      ru: 'muzei-hoi-an',
-      es: 'museo-de-hoi-an',
-      fr: 'musee-de-hoi-an',
+      ru: 'muzei-istorii-hoi-ana',
+      es: 'museo-historia-hoi-an',
+      fr: 'musee-histoire-hoi-an',
       vn: 'bao-tang-hoi-an',
     },
   },

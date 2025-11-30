@@ -73,8 +73,13 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
     Map<number, { marker: mapboxgl.Marker; root: ReactDOM.Root }>
   >(new Map());
 
+  const landmarksRef = useRef(landmarks);
+  useEffect(() => {
+    landmarksRef.current = landmarks;
+  }, [landmarks]);
+
   // Эффект 1: Отвечает за создание, обновление позиции и удаление Mapbox-маркеров.
-  // Зависит только от `map` и `landmarks`. Запускается редко.
+  // Зависит только от `map`. Запускается редко.
   useEffect(() => {
     const currentMapInstance = map;
     if (!currentMapInstance) {
@@ -111,7 +116,8 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
 
       // Обновляем существующие маркеры или создаем новые
       newUnclusteredPoints.forEach((feature, originalIndex) => {
-        const landmark = landmarks[originalIndex];
+        // Используем ref, чтобы не зависеть от landmarks в массиве зависимостей
+        const landmark = landmarksRef.current[originalIndex];
         if (!landmark) {
           return;
         }
@@ -190,6 +196,8 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
     }, 0);
 
     // Функция очистки при размонтировании компонента
+    const markersMap = individualMarkers.current;
+
     return () => {
       clearTimeout(initialRenderTimeout);
 
@@ -199,7 +207,7 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         currentMapInstance.off('sourcedata', updateVisibleMarkers);
       }
 
-      individualMarkers.current.forEach(({ marker, root }) => {
+      markersMap.forEach(({ marker, root }) => {
         setTimeout(() => {
           try {
             root.unmount();
@@ -209,9 +217,10 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         }, 0);
         marker.remove();
       });
-      individualMarkers.current.clear();
+      markersMap.clear();
     };
-  }, [map, landmarks]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [map]); // Убрали landmarks из зависимостей
 
   // Эффект 2: Отвечает за обновление пропсов CustomMarker.
   // Зависит от `activeIndex`, `hasUserInteracted` и других пропсов, которые могут часто меняться.

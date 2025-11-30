@@ -232,7 +232,7 @@ export const artGalleriesLandmarks: Landmark[] = [
   },
   //Not-From-Here
   {
-    id: 'Not-From-Here', // <-- ID теперь строковый
+    id: 'Not-From-Here-Gallery', // <-- ID теперь строковый
     coordinates: [15.886900514248364, 108.36724746339776], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['art-galleries'], // <-- Категория "museum"
     imageUrl: '59.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
@@ -412,16 +412,11 @@ export const artGalleriesLandmarks: Landmark[] = [
       internalImageNames: [],
     },
     slug: {
-      // <-- Добавлен объект slug для локализованных URL
-      en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
-      es: 'puente-cubierto-japones',
-      fr: 'pont-couvert-japonais',
-      vn: 'cau-chua-nhat-ban',
+      en: 'not-from-here-art-gallery',
+      ru: 'not-from-here-art-gallery', // <-- Замените на реальный slug para el ruso
+      es: 'not-from-here-art-gallery',
+      fr: 'not-from-here-art-gallery',
+      vn: 'not-from-here-art-gallery',
     },
-    // ru: { /* Русский контент здесь, если есть */ },
-    // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
-    // fr: { /* Французский контент здесь, если есть */ },
-    // vn: { /* Вьетнамский контент здесь, если есть */ },
   },
 ];
