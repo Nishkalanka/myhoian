@@ -18,6 +18,7 @@ const generateSitemap = () => {
 
   // Landing Page
   urls.push(`${BASE_URL}/hoian-avtorskaya-ekskursiya`);
+  urls.push(`${BASE_URL}/kvest`);
 
   // 2. Dynamic Routes (Landmarks)
   // Route pattern: /:lang/:slug
