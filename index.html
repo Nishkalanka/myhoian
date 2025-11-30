@@ -42,6 +42,16 @@
       padding: 0;
       background-color: rgb(46, 46, 57);
     }
+
+    /* Hide root until React mounts and preloader appears */
+    #root {
+      opacity: 0;
+    }
+
+    /* Show root when preloader is ready */
+    #root.loaded {
+      opacity: 1;
+    }
   </style>
 </head>
 

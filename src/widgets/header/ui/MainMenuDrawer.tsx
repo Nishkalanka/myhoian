@@ -58,7 +58,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
           </IconButton>
         </Box>
         <Divider />
-        {/*
+
         <List>
           <MenuItem
             onClick={() => {
@@ -67,8 +67,8 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
               onClose(); // Закрываем Drawer после выбора пункта меню
             }}
           >
-            {t("menu.home")} (
-            {isRouteVisible ? t("menu.hideRoute") : t("menu.showRoute")})
+            {t('menu.home')} (
+            {isRouteVisible ? t('menu.hideRoute') : t('menu.showRoute')})
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -76,7 +76,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
               onClose();
             }}
           >
-            {t("menu.about")}
+            {t('menu.about')}
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -84,7 +84,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
               onClose();
             }}
           >
-            {t("menu.services")}
+            {t('menu.services')}
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -92,9 +92,9 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
               onClose();
             }}
           >
-            {t("menu.contact")}
+            {t('menu.contact')}
           </MenuItem>
-        </List>*/}
+        </List>
       </Box>
     </Drawer>
   );

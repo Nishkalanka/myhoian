@@ -20,6 +20,12 @@ function AppWrapper() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Show root immediately (preloader will be visible)
+    const rootElement = document.getElementById('root');
+    if (rootElement) {
+      rootElement.classList.add('loaded');
+    }
+
     // Hide preloader after a short delay for smooth transition
     const timer = setTimeout(() => {
       setIsLoading(false);
