@@ -42,16 +42,6 @@
       padding: 0;
       background-color: rgb(46, 46, 57);
     }
-
-    /* Hide root until React mounts and preloader appears */
-    #root {
-      opacity: 0;
-    }
-
-    /* Show root when preloader is ready */
-    #root.loaded {
-      opacity: 1;
-    }
   </style>
 </head>
 
@@ -59,6 +49,42 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDGQQ8PB" height="0" width="0"
       style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- Static preloader - shows immediately before React loads -->
+  <div id="static-preloader" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(46, 46, 57);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+  ">
+    <img src="/logo.svg" alt="Loading..." style="
+        width: 56px;
+        height: auto;
+        animation: pulse 1s ease-in-out infinite;
+      " />
+  </div>
+
+  <style>
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  </style>
+
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

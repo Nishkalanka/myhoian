@@ -58,7 +58,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
           </IconButton>
         </Box>
         <Divider />
-
+        {/*
         <List>
           <MenuItem
             onClick={() => {
@@ -95,6 +95,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
             {t('menu.contact')}
           </MenuItem>
         </List>
+*/}
       </Box>
     </Drawer>
   );
