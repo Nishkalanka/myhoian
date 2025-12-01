@@ -37,6 +37,29 @@ async function prerender() {
       // Wait for React/Helmet to update the DOM
       await new Promise((r) => setTimeout(r, 5000));
 
+      // 🚀 CRITICAL FIX: Restore the preloader state!
+      // The React app removes the preloader on mount. We must put it back
+      // so that the static HTML served to the user HAS the visible preloader.
+      await page.evaluate(() => {
+        // 1. Remove the 'loaded' class so the preloader isn't hidden by CSS
+        document.body.classList.remove('loaded');
+
+        // 2. Re-create the preloader element if it's missing
+        if (!document.getElementById('initial-preloader')) {
+          const preloader = document.createElement('div');
+          preloader.id = 'initial-preloader';
+          preloader.innerHTML = '<img src="/logo.svg" alt="MyHoiAn Logo" />';
+
+          // Insert it at the beginning of the body (or before #root)
+          const root = document.getElementById('root');
+          if (root) {
+            document.body.insertBefore(preloader, root);
+          } else {
+            document.body.insertBefore(preloader, document.body.firstChild);
+          }
+        }
+      });
+
       const html = await page.content();
 
       // Determine output path
