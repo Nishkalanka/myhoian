@@ -7,6 +7,8 @@ const translationVN: TranslationContent = {
   details: 'Chi tiết',
   category: 'Danh mục',
   description: 'Mô tả',
+  dish: 'Món ăn',
+  price: 'Giá',
   youAreHere: 'Bạn đang ở đây',
   close: 'Đóng',
   noDetailsAvailable: 'Không có thông tin chi tiết cho đối tượng này.',

@@ -7,6 +7,8 @@ const translationRU: TranslationContent = {
   details: 'Детали',
   category: 'Категория',
   description: 'Описание',
+  dish: 'Блюдо',
+  price: 'Цена',
   youAreHere: 'Вы здесь',
   close: 'Закрыть',
   noDetailsAvailable: 'Подробности по данному объекту отсутствуют.',

@@ -7,6 +7,8 @@ const translationEN: TranslationContent = {
   details: 'Details',
   category: 'Category',
   description: 'Description',
+  dish: 'Dish',
+  price: 'Price',
   youAreHere: 'You are here',
   close: 'Close',
   noDetailsAvailable: 'No details available for this object.',

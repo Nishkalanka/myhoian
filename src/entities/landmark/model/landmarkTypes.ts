@@ -2,11 +2,23 @@
 
 export type CategorySlug = 'museum' | 'food-drinks' | 'art-galleries' | 'clubs'; // <-- Обновите, если будут новые категории
 
+export interface MenuItem {
+  name: string;
+  description?: string;
+  price: string;
+}
+
+export interface MenuCategory {
+  categoryName: string;
+  items: MenuItem[];
+}
+
 export interface LandmarkContent {
   title: string;
   description: string;
   fullDescription?: string; // Необязательное поле
   internalImageNames?: string[]; // Необязательное поле
+  menu?: MenuCategory[];
 }
 
 export type LangCode = 'en' | 'ru' | 'es' | 'fr' | 'vn';

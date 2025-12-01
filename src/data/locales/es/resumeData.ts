@@ -7,6 +7,8 @@ const translationES: TranslationContent = {
   details: 'Detalles',
   category: 'Categoría',
   description: 'Descripción',
+  dish: 'Plato',
+  price: 'Precio',
   youAreHere: 'Estás aquí',
   close: 'Cerrar',
   noDetailsAvailable: 'No hay detalles disponibles para este objeto.',

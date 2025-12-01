@@ -12,13 +12,11 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
-
-// Импорты типов
-import { type Landmark, type LandmarkContent } from '../../../data/index'; // Проверь путь к data, если он менялся
-
-// Импорты картинок
+import { type Landmark, type LandmarkContent } from '../../../data/index';
 import { fullDescriptionImageMap } from '../../../shared/lib/imagePaths';
 import { usePictureUrl } from '../../../shared/lib/usePictureUrl';
+import { useMenuDisplay } from '../lib/useMenuDisplay';
+import { LandmarkMenu } from './LandmarkMenu';
 
 interface LandmarkDetailsDialogProps {
   open: boolean;
@@ -32,9 +30,13 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
   selectedLandmark,
 }) => {
   const { t, i18n } = useTranslation();
-
-  // Инициализируем хук для получения картинок
   const getImageUrl = usePictureUrl();
+  const {
+    getLocalizedMenu,
+    getMenuItems,
+    selectedCategory,
+    setSelectedCategory,
+  } = useMenuDisplay();
 
   const dialogContentRef = useRef<HTMLDivElement>(null);
   const [loadedModalImages, setLoadedModalImages] = useState<Set<string>>(
@@ -76,10 +78,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
             processedHtml = processedHtml.replace(
               new RegExp(`src="${imageName}"`, 'g'),
               `src="${realImageUrl}"`
-            );
-          } else {
-            console.warn(
-              `Warning: Image ${imageName} specified in internalImageNames but not found in fullDescriptionImageMap for landmark ${landmark.id}.`
             );
           }
         });
@@ -126,7 +124,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
     }
   }, [open, selectedLandmark]);
 
-  // Вспомогательная переменная для URL картинки (чтобы не вызывать хук в render много раз)
   const mainImageUrl = selectedLandmark?.imageUrl
     ? getImageUrl(selectedLandmark.imageUrl)
     : undefined;
@@ -137,7 +134,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
       onClose={onClose}
       maxWidth="sm"
       fullWidth
-      disableRestoreFocus // Fixes "Blocked aria-hidden" warning when trigger is unmounted
+      disableRestoreFocus
       sx={{
         '& .MuiDialog-paper': {
           width: '100%',
@@ -157,7 +154,6 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
               ? getLocalizedContent(selectedLandmark).title
               : t('details')}
           </Typography>
-
           <IconButton
             edge="end"
             color="inherit"
@@ -208,6 +204,15 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
             ) : (
               <Typography>{t('noDetailsAvailable')}</Typography>
             )}
+
+            {/* ДОБАВЬ МЕНЮ СЮДА */}
+            <LandmarkMenu
+              landmark={selectedLandmark}
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+              getLocalizedMenu={getLocalizedMenu}
+              getMenuItems={getMenuItems}
+            />
           </Box>
         ) : (
           <Typography>{t('noDetailsAvailable')}</Typography>

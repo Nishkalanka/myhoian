@@ -3,137 +3,1722 @@ import type { Landmark } from './landmarkTypes';
 export const foodDrinksLandmarks: Landmark[] = [
   //hill-station
   {
-    id: 'hill-station', // <-- ID теперь строковый
-    coordinates: [15.877801450043398, 108.33391777335922], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    id: 'hill-station',
+    coordinates: [15.877801450043398, 108.33391777335922],
     category: ['food-drinks'],
-    imageUrl: '53.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '53.jpg',
     en: {
       title: 'The Hill Station Deli & Boutique',
       description:
-        'Specializing in local produce and fresh ingredients, offering a delicious menu with a focus on quality.',
+        'Premium deli and boutique offering artisanal sandwiches, gourmet cheese and charcuterie, with a focus on quality ingredients and authentic flavors.',
       fullDescription: `
-<p>Located in the heart of Hoi An’s Ancient Town, The Hill Station Deli & Boutique has been a culinary landmark since 2011. Our journey began with a simple idea: to bring the freshness of local produce and the richness of global culinary traditions to our guests. We started small, with a cozy deli serving artisanal sandwiches, salads, and homemade pastries.</p>
-
-<p>Over the years, we've grown, but our core philosophy remains unchanged: quality ingredients, exceptional flavors, and a welcoming atmosphere. We believe in sourcing the freshest local produce, supporting local farmers and suppliers whenever possible. This commitment to freshness is evident in every dish we serve, from our vibrant salads to our hearty mains.</p>
-
-<h6>Our Culinary Philosophy</h6>
-<p>At The Hill Station, we are passionate about food. Our menu is a reflection of our dedication to creating unique and memorable dining experiences. We blend traditional Vietnamese flavors with international culinary techniques, offering a diverse selection that caters to various tastes. Whether you're craving a light bite or a satisfying meal, our kitchen is always bustling with creativity.</p>
-
-<p>Our deli counter is a highlight, featuring an array of freshly baked goods, charcuterie, and cheeses. It’s the perfect spot to grab a quick and delicious lunch, or to stock up on gourmet provisions for a picnic by the river. Our boutique section offers a curated selection of unique gifts, local handicrafts, and specialty food products, making it a great place to find a souvenir or a treat for yourself.</p>
-
-<h6>A Community Hub</h6>
-<p>More than just a restaurant, The Hill Station is a place where locals and travelers connect. We’ve become a beloved gathering spot, known for our relaxed ambiance and friendly service. We often host special events, from wine tastings to cooking classes, inviting our guests to experience the rich culture of Hoi An through its food.</p>
-
-<p>We are constantly innovating, exploring new recipes, and experimenting with flavors. Our team of talented chefs and passionate staff are dedicated to ensuring every visit is a delightful one. We invite you to join us at The Hill Station Deli & Boutique, where good food, good company, and good times are always on the menu.</p>
-      `,
-      internalImageNames: [
-        'hill_station_interior.jpg',
-        'hill_station_food.jpg',
-        'hill_station_exterior.jpg',
+<p>Located in the heart of Hoi An's Ancient Town, The Hill Station Deli & Boutique has been a culinary landmark since 2011. Our journey began with a simple idea: to bring the freshness of local produce and the richness of global culinary traditions to our guests.</p>
+    `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Breakfast',
+          items: [
+            {
+              name: 'Eggs Benedict',
+              description:
+                'English muffin with 2 poached eggs, ham & hollandaise sauce',
+              price: '175.000',
+            },
+            {
+              name: 'Eggs Florentine',
+              description:
+                'English muffin with 2 poached eggs, spinach & hollandaise sauce',
+              price: '155.000',
+            },
+            {
+              name: 'Omelette with Ham',
+              description:
+                'Served with homemade bread, bacon, salad & fried onion',
+              price: '155.000',
+            },
+            {
+              name: 'Omelette with Gouda Cheese',
+              description:
+                'Served with homemade bread, bacon, salad & fried onion',
+              price: '155.000',
+            },
+            {
+              name: 'Scrambled or Fried Eggs',
+              description:
+                'Served with homemade bread, bacon, salad & fried onion',
+              price: '145.000',
+            },
+            {
+              name: 'Fruit Salad',
+              description: 'Fresh seasonal fruits with yoghurt and honey',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Baguettes',
+          items: [
+            {
+              name: 'Country Ham and Gouda Cheese',
+              description: 'Classic combination on homemade baguette',
+              price: '145.000',
+            },
+            {
+              name: 'Serrano Ham, Tomato, Red Pesto & Garlic',
+              description: 'Spanish ham with vibrant flavors',
+              price: '165.000',
+            },
+            {
+              name: 'Chicken & Dry Cured Bacon',
+              description: 'Hearty protein-packed sandwich',
+              price: '145.000',
+            },
+            {
+              name: 'Blue Cheese & Beetroot Jam',
+              description: 'Sweet and savory combination',
+              price: '165.000',
+            },
+            {
+              name: 'Roasted Bell Pepper, Yellow Pesto & Salad',
+              description: 'Vegetarian option with fresh vegetables',
+              price: '145.000',
+            },
+            {
+              name: 'Italian Salami & Grana Padano Cheese',
+              description: 'Italian classics combined',
+              price: '165.000',
+            },
+            {
+              name: 'Herbal Feta Cheese Spread, Tomato & Basil',
+              description: 'Fresh Mediterranean flavors',
+              price: '145.000',
+            },
+            {
+              name: 'Smoked Salmon, Chives, Red Onion & Cream Cheese',
+              description: 'Luxurious Nordic combination',
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Wraps & Panini',
+          items: [
+            {
+              name: 'Chicken, Coleslaw & Caesar Sauce Wrap',
+              description: 'Creamy and fresh hand-held meal',
+              price: '175.000',
+            },
+            {
+              name: 'Veggie Wrap',
+              description:
+                'Mayonnaise, salad, bell pepper, tomato, onion, cucumber, lime',
+              price: '135.000',
+            },
+            {
+              name: 'Vegetarian Sourdough Panini',
+              description:
+                'Yellow pesto, roasted bell pepper, kale, olive & sun dried tomato',
+              price: '215.000',
+            },
+            {
+              name: 'Ham & Cheese Panini',
+              description:
+                'Country ham, Gouda cheese, caramelized onion & mustard',
+              price: '225.000',
+            },
+            {
+              name: 'Chicken, Red Pesto & Basil Panini',
+              description:
+                'Pesto, grilled chicken, fried Serrano ham, basil & sun dried tomato',
+              price: '225.000',
+            },
+            {
+              name: 'Reuben Sandwich à la The Hill Station',
+              description:
+                'Our take on the classic with homemade Russian dressing, Swiss cheese, pastrami & pickled red cabbage',
+              price: '285.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Crostini & Snacks',
+          items: [
+            {
+              name: 'Raclette Cheese & Roasted Bell Pepper Crostini',
+              description: 'Melted cheese on crispy bread',
+              price: '95.000',
+            },
+            {
+              name: 'Roasted Camembert and Mango Crostini',
+              description: 'Sweet and savory combination',
+              price: '95.000',
+            },
+            {
+              name: 'Serrano Ham, Tomato, Garlic and Olive Oil Crostini',
+              description: 'Classic Italian flavors',
+              price: '95.000',
+            },
+            {
+              name: 'Blue Cheese & Beetroot Jam Crostini',
+              description: 'Elegant flavor pairing',
+              price: '95.000',
+            },
+            {
+              name: 'Croquettes with Serrano Ham',
+              description: 'Served with aioli',
+              price: '145.000',
+            },
+            {
+              name: 'Croquettes with 4 Cheese',
+              description: 'Served with spicy dip',
+              price: '145.000',
+            },
+            {
+              name: 'French Fries',
+              description: 'Served with ketchup and mayonnaise',
+              price: '95.000',
+            },
+            {
+              name: 'Hummus',
+              description: 'Served with bread',
+              price: '135.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Soup & Salads',
+          items: [
+            {
+              name: 'Rustic Tomato Soup',
+              description: 'Homemade comfort classic',
+              price: '115.000',
+            },
+            {
+              name: 'Garden Salad',
+              description: 'Seasonal greens & olives',
+              price: '125.000',
+            },
+            {
+              name: 'Classic Caesar Salad',
+              description: 'Lettuce, croutons, bacon, Grana Padano & dressing',
+              price: '145.000',
+            },
+            {
+              name: 'Watermelon & Feta Salad',
+              description: 'Fresh and refreshing combination',
+              price: '175.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Main Courses',
+          items: [
+            {
+              name: 'Thai Basil Fry with Chicken',
+              description: 'Basil & chili stir-fried with minced chicken',
+              price: '145.000',
+            },
+            {
+              name: 'Bangers & Mash',
+              description:
+                'Homemade sausages with gravy, green peas & mashed potato',
+              price: '245.000',
+            },
+            {
+              name: 'Homemade Spaghetti with Yellow Pesto & Feta',
+              description: 'Fresh pasta with sun-dried tomato',
+              price: '195.000',
+            },
+            {
+              name: 'Homemade Spaghetti with Smoked Salmon',
+              description: 'Broccoli & creamy sauce',
+              price: '265.000',
+            },
+            {
+              name: 'Scandinavian Meatballs',
+              description: 'Served with gravy, pickles and mashed potato',
+              price: '215.000',
+            },
+            {
+              name: 'Chicken and Chorizo Stew',
+              description: 'Served with rice',
+              price: '225.000',
+            },
+            {
+              name: 'Four Cheese Potato Gratin',
+              description: 'Served with a side salad',
+              price: '245.000',
+            },
+            {
+              name: 'Beef Stew "Bo Kho"',
+              description:
+                'The Hill Station signature - slow cooked beef infused with traditional Vietnamese herbs (cinnamon, star anise). Served with bread, rice or mashed potato',
+              price: '295.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Desserts',
+          items: [
+            {
+              name: 'Blueberry Cheesecake',
+              description: 'Classic creamy cheesecake with fresh blueberries',
+              price: '95.000',
+            },
+            {
+              name: 'Warm Chocolate Brownie',
+              description: 'With whipped cream',
+              price: '95.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cheese & Charcuterie Plates',
+          items: [
+            {
+              name: 'Smoked Salmon Platter',
+              description: 'Cream cheese, capers, red onion and bread',
+              price: '295.000',
+            },
+            {
+              name: 'Mixed Cheese Plate',
+              description: '3 assorted cheeses',
+              price: '295.000',
+            },
+            {
+              name: 'Gourmet Cheese Plate',
+              description:
+                '5 assorted cheeses with homemade bread, mango jam and condiments',
+              price: '395.000',
+            },
+            {
+              name: 'Mixed Cold Cut Plate',
+              description: '3 assorted cold cuts',
+              price: '295.000',
+            },
+            {
+              name: 'Gourmet Cold Cut Plate',
+              description:
+                '5 assorted cold cuts with homemade bread, jam, olive oil and condiments',
+              price: '395.000',
+            },
+            {
+              name: 'Snack Plate',
+              description: 'Two cold cuts and one cheese for one person',
+              price: '325.000',
+            },
+            {
+              name: 'Mixed Gourmet Plate',
+              description:
+                'Two cold cuts & three cheeses with homemade bread, jam, olive oil and condiments',
+              price: '445.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Specialty Raclette',
+          items: [
+            {
+              name: 'Raclette Set for 1 Person',
+              description:
+                'Melted cheese classic served with potatoes, bread, pickles, salad and assorted charcuterie',
+              price: '495.000',
+            },
+            {
+              name: 'Raclette Set for 2 Persons',
+              description:
+                'Melted cheese classic served with potatoes, bread, pickles, salad and assorted charcuterie',
+              price: '890.000',
+            },
+            {
+              name: 'Raclette Set for 4 Persons',
+              description:
+                'Melted cheese classic served with potatoes, bread, pickles, salad and assorted charcuterie',
+              price: '1.590.000',
+            },
+            {
+              name: 'Wine Pairing - Alsatian Riesling',
+              description:
+                'Gustave Lorentz Riesling (bottle) - Special price only with Raclette',
+              price: '1.190.000',
+            },
+          ],
+        },
       ],
     },
     es: {
       title: 'The Hill Station Deli & Boutique',
       description:
-        'Especializado en productos locales e ingredientes frescos, ofreciendo un delicioso menú con énfasis en la calidad.',
+        'Delicatessen y boutique premium que ofrece sándwiches artesanales, quesos y charcutería gourmet, con énfasis en ingredientes de calidad y sabores auténticos.',
       fullDescription: `
-<p>Ubicado en el corazón del Casco Antiguo de Hoi An, The Hill Station Deli & Boutique ha sido un punto de referencia culinario desde 2011. Nuestro viaje comenzó con una idea simple: llevar la frescura de los productos locales y la riqueza de las tradiciones culinarias globales a nuestros huéspedes. Comenzamos pequeños, con una acogedora charcutería que servía sándwiches artesanales, ensaladas y repostería casera.</p>
-
-<p>A lo largo de los años, hemos crecido, pero nuestra filosofía principal sigue siendo la misma: ingredientes de calidad, sabores excepcionales y un ambiente acogedor. Creemos en la obtención de los productos locales más frescos, apoyando a los agricultores y proveedores locales siempre que sea posible. Este compromiso con la frescura es evidente en cada plato que servimos, desde nuestras vibrantes ensaladas hasta nuestros abundantes platos principales.</p>
-
-<h6>Nuestra Filosofía Culinaria</h6>
-<p>En The Hill Station, nos apasiona la comida. Nuestro menú es un reflejo de nuestra dedicación a crear experiencias gastronómicas únicas y memorables. Fusionamos sabores vietnamitas tradicionales con técnicas culinarias internacionales, ofreciendo una selección diversa que satisface una amplia gama de gustos. Ya sea que busques un bocado ligero o una comida sustanciosa, nuestra cocina siempre está llena de creatividad.</p>
-
-<p>Nuestro mostrador de charcutería es un punto destacado, con una variedad de productos horneados frescos, embutidos y quesos. Es el lugar perfecto para un almuerzo rápido y delicioso, o para abastecerse de provisiones gourmet para un picnic junto al río. Nuestra sección de boutique ofrece una cuidada selección de regalos únicos, artesanías locales y productos alimenticios especiales, lo que lo convierte en un excelente lugar para encontrar un recuerdo o un capricho para ti.</p>
-
-<h6>Un Centro Comunitario</h6>
-<p>Más que un simple restaurante, The Hill Station es un lugar donde se conectan lugareños y viajeros. Nos hemos convertido en un lugar de reunión muy querido, conocido por nuestro ambiente relajado y nuestro servicio amable. A menudo organizamos eventos especiales, desde catas de vino hasta clases de cocina, invitando a nuestros huéspedes a experimentar la rica cultura de Hoi An a través de su comida.</p>
-
-<p>Estamos en constante innovación, explorando nuevas recetas y experimentando con sabores. Nuestro equipo de talentosos chefs y personal apasionado se dedica a garantizar que cada visita sea una delicia. Te invitamos a unirte a nosotros en The Hill Station Deli & Boutique, donde la buena comida, la buena compañía y los buenos momentos siempre están en el menú.</p>
-      `,
-      internalImageNames: [
-        'hill_station_interior.jpg',
-        'hill_station_food.jpg',
-        'hill_station_exterior.jpg',
+<p>Ubicado en el corazón del Casco Antiguo de Hoi An, The Hill Station Deli & Boutique ha sido un referente culinario desde 2011.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Desayuno',
+          items: [
+            {
+              name: 'Huevos Benedictinos',
+              description:
+                'Muffin inglés con 2 huevos escalfados, jamón y salsa holandesa',
+              price: '175.000',
+            },
+            {
+              name: 'Huevos Florentina',
+              description:
+                'Muffin inglés con 2 huevos escalfados, espinacas y salsa holandesa',
+              price: '155.000',
+            },
+            {
+              name: 'Tortilla con Jamón',
+              description:
+                'Servido con pan casero, tocino, ensalada y cebolla frita',
+              price: '155.000',
+            },
+            {
+              name: 'Tortilla con Queso Gouda',
+              description:
+                'Servido con pan casero, tocino, ensalada y cebolla frita',
+              price: '155.000',
+            },
+            {
+              name: 'Huevos Revueltos o Fritos',
+              description:
+                'Servido con pan casero, tocino, ensalada y cebolla frita',
+              price: '145.000',
+            },
+            {
+              name: 'Ensalada de Frutas',
+              description: 'Frutas frescas de temporada con yogur y miel',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Baguettes',
+          items: [
+            {
+              name: 'Jamón de Campo y Queso Gouda',
+              description: 'Combinación clásica en baguette casero',
+              price: '145.000',
+            },
+            {
+              name: 'Jamón Serrano, Tomate, Pesto Rojo y Ajo',
+              description: 'Jamón español con sabores vibrantes',
+              price: '165.000',
+            },
+            {
+              name: 'Pollo y Tocino Curado',
+              description: 'Sándwich repleto de proteína',
+              price: '145.000',
+            },
+            {
+              name: 'Queso Azul y Mermelada de Remolacha',
+              description: 'Combinación dulce y salada',
+              price: '165.000',
+            },
+            {
+              name: 'Pimiento Rojo Asado, Pesto Amarillo y Ensalada',
+              description: 'Opción vegetariana con verduras frescas',
+              price: '145.000',
+            },
+            {
+              name: 'Salami Italiano y Queso Grana Padano',
+              description: 'Clásicos italianos combinados',
+              price: '165.000',
+            },
+            {
+              name: 'Propagación de Queso Feta Aromático, Tomate y Albahaca',
+              description: 'Sabores frescos del Mediterráneo',
+              price: '145.000',
+            },
+            {
+              name: 'Salmón Ahumado, Cebollino, Cebolla Roja y Queso Crema',
+              description: 'Combinación lujosa nórdica',
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Wraps y Paninis',
+          items: [
+            {
+              name: 'Wrap de Pollo, Coleslaw y Salsa César',
+              description: 'Comida fresca y cremosa',
+              price: '175.000',
+            },
+            {
+              name: 'Wrap Vegetariano',
+              description:
+                'Mayonesa, ensalada, pimiento rojo, tomate, cebolla, pepino, lima',
+              price: '135.000',
+            },
+            {
+              name: 'Panini de Masa Madre Vegetariano',
+              description:
+                'Pesto amarillo, pimiento rojo asado, col rizada, aceituna y tomate secado al sol',
+              price: '215.000',
+            },
+            {
+              name: 'Panini de Jamón y Queso',
+              description:
+                'Jamón de campo, queso Gouda, cebolla caramelizada y mostaza',
+              price: '225.000',
+            },
+            {
+              name: 'Panini de Pollo, Pesto Rojo y Albahaca',
+              description:
+                'Pesto, pollo a la parrilla, jamón serrano frito, albahaca y tomate secado al sol',
+              price: '225.000',
+            },
+            {
+              name: 'Sándwich Reuben à la The Hill Station',
+              description:
+                'Nuestra versión del clásico con aderezo ruso casero, queso suizo, pastrami y col roja encurtida',
+              price: '285.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Crostinis y Aperitivos',
+          items: [
+            {
+              name: 'Crostini de Queso Raclette y Pimiento Rojo Asado',
+              description: 'Queso fundido en pan crujiente',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini de Camembert Asado y Mango',
+              description: 'Combinación dulce y salada',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini de Jamón Serrano, Tomate, Ajo y Aceite de Oliva',
+              description: 'Sabores clásicos italianos',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini de Queso Azul y Mermelada de Remolacha',
+              description: 'Emparejamiento elegante de sabores',
+              price: '95.000',
+            },
+            {
+              name: 'Croquetas con Jamón Serrano',
+              description: 'Servido con alioli',
+              price: '145.000',
+            },
+            {
+              name: 'Croquetas con 4 Quesos',
+              description: 'Servido con salsa picante',
+              price: '145.000',
+            },
+            {
+              name: 'Papas Fritas',
+              description: 'Servido con ketchup y mayonesa',
+              price: '95.000',
+            },
+            {
+              name: 'Hummus',
+              description: 'Servido con pan',
+              price: '135.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Sopas y Ensaladas',
+          items: [
+            {
+              name: 'Sopa de Tomate Rústica',
+              description: 'Clásico casero reconfortante',
+              price: '115.000',
+            },
+            {
+              name: 'Ensalada de Jardín',
+              description: 'Verduras de temporada y aceitunas',
+              price: '125.000',
+            },
+            {
+              name: 'Ensalada César Clásica',
+              description: 'Lechuga, crutones, tocino, Grana Padano y aderezo',
+              price: '145.000',
+            },
+            {
+              name: 'Ensalada de Sandía y Queso Feta',
+              description: 'Combinación fresca y refrescante',
+              price: '175.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Platos Principales',
+          items: [
+            {
+              name: 'Salteado de Pollo con Albahaca Tailandesa',
+              description: 'Albahaca y chile salteados con pollo molido',
+              price: '145.000',
+            },
+            {
+              name: 'Bangers & Mash',
+              description:
+                'Salchichas caseras con salsa, arvejas verdes y puré de papas',
+              price: '245.000',
+            },
+            {
+              name: 'Espagueti Casero con Pesto Amarillo y Queso Feta',
+              description: 'Pasta fresca con tomate secado al sol',
+              price: '195.000',
+            },
+            {
+              name: 'Espagueti Casero con Salmón Ahumado',
+              description: 'Brócoli y salsa cremosa',
+              price: '265.000',
+            },
+            {
+              name: 'Albóndigas Escandinavas',
+              description: 'Servido con salsa, encurtidos y puré de papas',
+              price: '215.000',
+            },
+            {
+              name: 'Estofado de Pollo y Chorizo',
+              description: 'Servido con arroz',
+              price: '225.000',
+            },
+            {
+              name: 'Gratén de Papas con Cuatro Quesos',
+              description: 'Servido con ensalada fresca',
+              price: '245.000',
+            },
+            {
+              name: 'Estofado de Res "Bo Kho"',
+              description:
+                'Firma de The Hill Station - res cocida lentamente infusionada con hierbas vietnamitas tradicionales (canela, anís estrellado). Se sirve con pan, arroz o puré de papas',
+              price: '295.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Postres',
+          items: [
+            {
+              name: 'Pastel de Queso con Arándanos',
+              description:
+                'Clásico pastel de queso cremoso con arándanos frescos',
+              price: '95.000',
+            },
+            {
+              name: 'Brownie de Chocolate Tibio',
+              description: 'Con crema batida',
+              price: '95.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Tablas de Queso y Charcutería',
+          items: [
+            {
+              name: 'Tabla de Salmón Ahumado',
+              description: 'Queso crema, alcaparras, cebolla roja y pan',
+              price: '295.000',
+            },
+            {
+              name: 'Tabla de Queso Mixto',
+              description: '3 quesos surtidos',
+              price: '295.000',
+            },
+            {
+              name: 'Tabla de Queso Gourmet',
+              description:
+                '5 quesos surtidos con pan casero, mermelada de mango y condimentos',
+              price: '395.000',
+            },
+            {
+              name: 'Tabla de Embutidos Mixtos',
+              description: '3 embutidos surtidos',
+              price: '295.000',
+            },
+            {
+              name: 'Tabla de Embutidos Gourmet',
+              description:
+                '5 embutidos surtidos con pan casero, mermelada, aceite de oliva y condimentos',
+              price: '395.000',
+            },
+            {
+              name: 'Tabla de Aperitivo',
+              description: 'Dos embutidos y un queso para una persona',
+              price: '325.000',
+            },
+            {
+              name: 'Tabla Gourmet Mixta',
+              description:
+                'Dos embutidos y tres quesos con pan casero, mermelada, aceite de oliva y condimentos',
+              price: '445.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Raclette Especial',
+          items: [
+            {
+              name: 'Set de Raclette para 1 Persona',
+              description:
+                'Clásico queso fundido servido con papas, pan, encurtidos, ensalada y charcutería surtida',
+              price: '495.000',
+            },
+            {
+              name: 'Set de Raclette para 2 Personas',
+              description:
+                'Clásico queso fundido servido con papas, pan, encurtidos, ensalada y charcutería surtida',
+              price: '890.000',
+            },
+            {
+              name: 'Set de Raclette para 4 Personas',
+              description:
+                'Clásico queso fundido servido con papas, pan, encurtidos, ensalada y charcutería surtida',
+              price: '1.590.000',
+            },
+            {
+              name: 'Emparejamiento de Vino - Alsatian Riesling',
+              description:
+                'Gustave Lorentz Riesling (botella) - Precio especial solo con Raclette',
+              price: '1.190.000',
+            },
+          ],
+        },
       ],
     },
     fr: {
       title: 'The Hill Station Deli & Boutique',
       description:
-        'Spécialisé dans les produits locaux et les ingrédients frais, offrant un menu délicieux axé sur la qualité.',
+        'Délicatessen et boutique haut de gamme offrant des sandwichs artisanaux, du fromage et de la charcuterie gastronomiques, avec un accent sur les ingrédients de qualité et les saveurs authentiques.',
       fullDescription: `
-<p>Situé au cœur de l'Ancienne Ville de Hoi An, The Hill Station Deli & Boutique est un point de repère culinaire depuis 2011. Notre aventure a commencé par une idée simple : apporter la fraîcheur des produits locaux et la richesse des traditions culinaires mondiales à nos hôtes. Nous avons commencé petit, avec un charmant deli servant des sandwichs artisanaux, des salades et des pâtisseries faites maison.</p>
+<p>Situé au cœur de la Ville Ancienne de Hoi An, The Hill Station Deli & Boutique est un repère culinaire depuis 2011. Notre histoire a commencé par une idée simple : apporter la fraîcheur des produits locaux et la richesse des traditions culinaires mondiales à nos hôtes.</p>
 
-<p>Au fil des ans, nous avons grandi, mais notre philosophie fondamentale reste inchangée : des ingrédients de qualité, des saveurs exceptionnelles et une atmosphère accueillante. Nous nous engageons à nous procurer les produits locaux les plus frais, en soutenant les agriculteurs et les fournisseurs locaux dans la mesure du possible. Cet engagement envers la fraîcheur est évident dans chaque plat que nous servons, de nos salades vibrantes à nos plats principaux copieux.</p>
+<p>Nous nous spécialisons dans les baguettes artisanales, les sandwichs gastronomiques et une impressionnante sélection de fromages et charcuteries européens. Notre équipe de cuisine crée tout à partir de zéro, y compris nos saucisses de marque, pesto et sauce russe maison.</p>
 
-<h6>Notre Philosophie Culinaire</h6>
-<p>Chez The Hill Station, nous sommes passionnés par la nourriture. Notre menu est le reflet de notre dévouement à créer des expériences culinaires uniques et mémorables. Nous mêlons les saveurs vietnamiennes traditionnelles aux techniques culinaires internationales, offrant une sélection diversifiée qui répond à tous les goûts. Que vous ayez envie d'une collation légère ou d'un repas copieux, notre cuisine est toujours en ébullition de créativité.</p>
+<h6>Nos Spécialités</h6>
+<p>The Hill Station est réputé pour notre Sandwich Reuben à la The Hill Station, une interprétation du classique avec sauce russe maison, fromage suisse et pastrami. Nous servons également notre Ragoût de Boeuf signature 'Bo Kho', une fusion unique des traditions vietnamiennes avec les techniques de cuisine européenne.</p>
 
-<p>Notre comptoir de charcuterie est un atout majeur, proposant une gamme de produits de boulangerie fraîchement préparés, de charcuteries et de fromages. C'est l'endroit idéal pour prendre un déjeuner rapide et délicieux, ou pour faire le plein de provisions gourmandes pour un pique-nique au bord de la rivière. Notre section boutique offre une sélection minutieuse de cadeaux uniques, d'artisanat local et de produits alimentaires spécialisés, ce qui en fait un excellent endroit pour trouver un souvenir ou une gâterie pour vous-même.</p>
-
-<h6>Un Centre Communautaire</h6>
-<p>Plus qu'un simple restaurant, The Hill Station est un lieu de rencontre pour les habitants et les voyageurs. Nous sommes devenus un lieu de rassemblement apprécié, réputé pour son ambiance détendue et son service amical. Nous organisons souvent des événements spéciaux, des dégustations de vin aux cours de cuisine, invitant nos hôtes à découvrir la riche culture de Hoi An à travers sa cuisine.</p>
-
-<p>Nous innovons constamment, explorons de nouvelles recettes et expérimentons des saveurs. Notre équipe de chefs talentueux et de personnel passionné s'engage à faire de chaque visite un moment agréable. Nous vous invitons à nous rejoindre à The Hill Station Deli & Boutique, où bonne cuisine, bonne compagnie et bons moments sont toujours au menu.</p>
-      `,
-      internalImageNames: [
-        'hill_station_interior.jpg',
-        'hill_station_food.jpg',
-        'hill_station_exterior.jpg',
+<p>Nos plateaux de fromage et charcuterie sont parfaits pour partager, avec des importations européennes soigneusement sélectionnées aux côtés d'articles frais faits maison. Ne manquez pas notre expérience Raclette - un classique de fromage fondu servi avec tous les accompagnements traditionnels.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Petit-déjeuner',
+          items: [
+            {
+              name: 'Oeufs Bénédicte',
+              description:
+                'Muffin anglais avec 2 oeufs pochés, jambon et sauce hollandaise',
+              price: '175.000',
+            },
+            {
+              name: 'Oeufs Florentine',
+              description:
+                'Muffin anglais avec 2 oeufs pochés, épinards et sauce hollandaise',
+              price: '155.000',
+            },
+            {
+              name: 'Omelette au Jambon',
+              description:
+                'Servie avec pain maison, bacon, salade et oignon frit',
+              price: '155.000',
+            },
+            {
+              name: 'Omelette au Fromage Gouda',
+              description:
+                'Servie avec pain maison, bacon, salade et oignon frit',
+              price: '155.000',
+            },
+            {
+              name: 'Oeufs Brouillés ou Frits',
+              description:
+                'Servis avec pain maison, bacon, salade et oignon frit',
+              price: '145.000',
+            },
+            {
+              name: 'Salade de Fruits',
+              description: 'Fruits frais de saison avec yaourt et miel',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Baguettes',
+          items: [
+            {
+              name: 'Jambon de Pays et Fromage Gouda',
+              description: 'Combinaison classique sur baguette maison',
+              price: '145.000',
+            },
+            {
+              name: 'Jambon Serrano, Tomate, Pesto Rouge et Ail',
+              description: 'Jambon espagnol aux saveurs vibrantes',
+              price: '165.000',
+            },
+            {
+              name: 'Poulet et Bacon Fumé',
+              description: 'Sandwich riche en protéines',
+              price: '145.000',
+            },
+            {
+              name: 'Fromage Bleu et Confiture de Betterave',
+              description: 'Combinaison sucrée-salée',
+              price: '165.000',
+            },
+            {
+              name: 'Poivron Rouge Rôti, Pesto Jaune et Salade',
+              description: 'Option végétarienne avec légumes frais',
+              price: '145.000',
+            },
+            {
+              name: 'Salami Italien et Fromage Grana Padano',
+              description: 'Classiques italiens combinés',
+              price: '165.000',
+            },
+            {
+              name: 'Tartine de Fromage Feta Aromatique, Tomate et Basilic',
+              description: 'Saveurs fraîches de la Méditerranée',
+              price: '145.000',
+            },
+            {
+              name: 'Saumon Fumé, Ciboulette, Oignon Rouge et Fromage à Tartiner',
+              description: 'Combinaison luxueuse nordique',
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Wraps et Paninis',
+          items: [
+            {
+              name: 'Wrap au Poulet, Coleslaw et Sauce César',
+              description: 'Repas frais et crémeux',
+              price: '175.000',
+            },
+            {
+              name: 'Wrap Végétarien',
+              description:
+                'Mayonnaise, salade, poivron rouge, tomate, oignon, concombre, citron vert',
+              price: '135.000',
+            },
+            {
+              name: 'Panini Levain Végétarien',
+              description:
+                'Pesto jaune, poivron rouge rôti, chou frisé, olive et tomate séchée',
+              price: '215.000',
+            },
+            {
+              name: 'Panini Jambon et Fromage',
+              description:
+                'Jambon de pays, fromage Gouda, oignon caramélisé et moutarde',
+              price: '225.000',
+            },
+            {
+              name: 'Panini Poulet, Pesto Rouge et Basilic',
+              description:
+                'Pesto, poulet grillé, jambon serrano frit, basilic et tomate séchée',
+              price: '225.000',
+            },
+            {
+              name: 'Sandwich Reuben à la The Hill Station',
+              description:
+                'Notre interprétation du classique avec sauce russe maison, fromage suisse, pastrami et chou rouge mariné',
+              price: '285.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Crostinis et Amuse-bouches',
+          items: [
+            {
+              name: 'Crostini Fromage Raclette et Poivron Rouge Rôti',
+              description: 'Fromage fondu sur pain croustillant',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini Camembert Rôti et Mangue',
+              description: 'Combinaison sucrée-salée',
+              price: '95.000',
+            },
+            {
+              name: "Crostini Jambon Serrano, Tomate, Ail et Huile d'Olive",
+              description: 'Saveurs classiques italiennes',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini Fromage Bleu et Confiture de Betterave',
+              description: 'Appariement élégant de saveurs',
+              price: '95.000',
+            },
+            {
+              name: 'Croquettes au Jambon Serrano',
+              description: 'Servies avec aïoli',
+              price: '145.000',
+            },
+            {
+              name: 'Croquettes aux 4 Fromages',
+              description: 'Servies avec sauce épicée',
+              price: '145.000',
+            },
+            {
+              name: 'Frites',
+              description: 'Servies avec ketchup et mayonnaise',
+              price: '95.000',
+            },
+            {
+              name: 'Houmous',
+              description: 'Servi avec pain',
+              price: '135.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Soupes et Salades',
+          items: [
+            {
+              name: 'Soupe de Tomate Rustique',
+              description: 'Classique du confort maison',
+              price: '115.000',
+            },
+            {
+              name: 'Salade de Jardin',
+              description: 'Verdures de saison et olives',
+              price: '125.000',
+            },
+            {
+              name: 'Salade César Classique',
+              description:
+                'Laitue, croûtons, bacon, Grana Padano et vinaigrette',
+              price: '145.000',
+            },
+            {
+              name: 'Salade Pastèque et Fromage Feta',
+              description: 'Combinaison fraîche et rafraîchissante',
+              price: '175.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Plats Principaux',
+          items: [
+            {
+              name: 'Sauté de Poulet au Basilic Thaï',
+              description: 'Basilic et piment sautés avec poulet haché',
+              price: '145.000',
+            },
+            {
+              name: 'Bangers & Mash',
+              description:
+                'Saucisses maison avec sauce, petits pois et purée de pommes de terre',
+              price: '245.000',
+            },
+            {
+              name: 'Spaghetti Maison au Pesto Jaune et Fromage Feta',
+              description: 'Pâtes fraîches avec tomate séchée',
+              price: '195.000',
+            },
+            {
+              name: 'Spaghetti Maison au Saumon Fumé',
+              description: 'Brocoli et sauce crémeuse',
+              price: '265.000',
+            },
+            {
+              name: 'Boulettes Scandinaves',
+              description:
+                'Servies avec sauce, cornichons et purée de pommes de terre',
+              price: '215.000',
+            },
+            {
+              name: 'Ragoût de Poulet et Chorizo',
+              description: 'Servi avec riz',
+              price: '225.000',
+            },
+            {
+              name: 'Gratin Dauphinois aux Quatre Fromages',
+              description: 'Servi avec salade fraîche',
+              price: '245.000',
+            },
+            {
+              name: 'Ragoût de Boeuf "Bo Kho"',
+              description:
+                "Signature de The Hill Station - boeuf cuit lentement infusé d'herbes vietnamiennes traditionnelles (cannelle, anis étoilé). Servi avec pain, riz ou purée de pommes de terre",
+              price: '295.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Desserts',
+          items: [
+            {
+              name: 'Cheesecake aux Myrtilles',
+              description:
+                'Classique cheesecake crémeux avec myrtilles fraîches',
+              price: '95.000',
+            },
+            {
+              name: 'Brownie au Chocolat Tiède',
+              description: 'Avec crème fouettée',
+              price: '95.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Plateaux Fromages et Charcuteries',
+          items: [
+            {
+              name: 'Plateau Saumon Fumé',
+              description: 'Fromage à tartiner, câpres, oignon rouge et pain',
+              price: '295.000',
+            },
+            {
+              name: 'Plateau Fromages Mixtes',
+              description: '3 fromages assortis',
+              price: '295.000',
+            },
+            {
+              name: 'Plateau Fromages Gourmet',
+              description:
+                '5 fromages assortis avec pain maison, confiture de mangue et condiments',
+              price: '395.000',
+            },
+            {
+              name: 'Plateau Charcuteries Mixtes',
+              description: '3 charcuteries assorties',
+              price: '295.000',
+            },
+            {
+              name: 'Plateau Charcuteries Gourmet',
+              description:
+                "5 charcuteries assorties avec pain maison, confiture, huile d'olive et condiments",
+              price: '395.000',
+            },
+            {
+              name: 'Plateau Amuse-bouche',
+              description: 'Deux charcuteries et un fromage pour une personne',
+              price: '325.000',
+            },
+            {
+              name: 'Plateau Gourmet Mixte',
+              description:
+                "Deux charcuteries et trois fromages avec pain maison, confiture, huile d'olive et condiments",
+              price: '445.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Raclette Spéciale',
+          items: [
+            {
+              name: 'Set Raclette pour 1 Personne',
+              description:
+                'Classique fromage fondu servi avec pommes de terre, pain, cornichons, salade et charcuterie assortie',
+              price: '495.000',
+            },
+            {
+              name: 'Set Raclette pour 2 Personnes',
+              description:
+                'Classique fromage fondu servi avec pommes de terre, pain, cornichons, salade et charcuterie assortie',
+              price: '890.000',
+            },
+            {
+              name: 'Set Raclette pour 4 Personnes',
+              description:
+                'Classique fromage fondu servi avec pommes de terre, pain, cornichons, salade et charcuterie assortie',
+              price: '1.590.000',
+            },
+            {
+              name: 'Accords Mets-Vins - Riesling Alsacien',
+              description:
+                'Gustave Lorentz Riesling (bouteille) - Prix spécial uniquement avec Raclette',
+              price: '1.190.000',
+            },
+          ],
+        },
       ],
     },
     ru: {
       title: 'The Hill Station Deli & Boutique',
       description:
-        'Специализируется на местной продукции и свежих ингредиентах, предлагая вкусное меню с акцентом на качество.',
+        'Премиум-дели и бутик с ремесленными сэндвичами, гурме-сыром и колбасами, с акцентом на качественные ингредиенты и аутентичные вкусы.',
       fullDescription: `
-<p>Расположенный в самом сердце древнего города Хойан, The Hill Station Deli & Boutique является кулинарной достопримечательностью с 2011 года. Наш путь начался с простой идеи: принести свежесть местных продуктов и богатство мировых кулинарных традиций нашим гостям. Мы начинали с малого, с уютного гастронома, предлагающего сэндвичи ручной работы, салаты и домашнюю выпечку.</p>
-
-<img src="hill_station_interior.jpg" alt="Интерьер The Hill Station"/>
-
-<p>За эти годы мы выросли, но наша основная философия остается неизменной: качественные ингредиенты, исключительные вкусы и гостеприимная атмосфера. Мы верим в использование самых свежих местных продуктов, по возможности поддерживая местных фермеров и поставщиков. Эта приверженность свежести проявляется в каждом блюде, которое мы подаем, от наших ярких салатов до сытных основных блюд.</p>
-
-<h6>Наша кулинарная философия</h6>
-<p>В The Hill Station мы увлечены едой. Наше меню — это отражение нашей приверженности созданию уникальных и запоминающихся кулинарных впечатлений. Мы сочетаем традиционные вьетнамские вкусы с международными кулинарными техниками, предлагая разнообразный выбор, который удовлетворит самые разные вкусы. Независимо от того, жаждете ли вы легкой закуски или сытного блюда, наша кухня всегда кипит творчеством.</p>
-
-<p>Наш гастрономический прилавок является изюминкой, предлагая широкий выбор свежеиспеченных изделий, колбас и сыров. Это идеальное место, чтобы быстро и вкусно пообедать или запастись деликатесами для пикника у реки. Наша бутик-секция предлагает тщательно отобранный ассортимент уникальных подарков, местных ремесленных изделий и специализированных продуктов питания, что делает ее отличным местом, чтобы найти сувенир или что-то для себя.</p>
-
-<h6>Общественный центр</h6>
-<p>The Hill Station — это не просто ресторан, это место, где встречаются местные жители и путешественники. Мы стали излюбленным местом сбора, известным своей расслабляющей атмосферой и дружелюбным обслуживанием. Мы часто проводим специальные мероприятия, от дегустаций вин до кулинарных мастер-классов, приглашая наших гостей познакомиться с богатой культурой Хойана через его еду.</p>
-
-<p>Мы постоянно внедряем инновации, исследуем новые рецепты и экспериментируем со вкусами. Наша команда талантливых поваров и увлеченных сотрудников стремится к тому, чтобы каждый визит был восхитительным. Мы приглашаем вас присоединиться к нам в The Hill Station Deli & Boutique, где хорошая еда, хорошая компания и хорошее время всегда в меню.</p>
-      `,
-      internalImageNames: [
-        'hill_station_interior.jpg',
-        'hill_station_food.jpg',
-        'hill_station_exterior.jpg',
+<p>Расположенный в самом сердце древнего города Хойан, The Hill Station Deli & Boutique является кулинарной достопримечательностью с 2011 года.</p>
+    `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Завтрак',
+          items: [
+            {
+              name: 'Яйца Бенедикт',
+              description:
+                'Английский маффин с 2 яйцами пашот, ветчина и голландский соус',
+              price: '175.000',
+            },
+            {
+              name: 'Яйца Флорентин',
+              description:
+                'Английский маффин с 2 яйцами пашот, шпинат и голландский соус',
+              price: '155.000',
+            },
+            {
+              name: 'Омлет с ветчиной',
+              description:
+                'Подается с домашним хлебом, беконом, салатом и жареным луком',
+              price: '155.000',
+            },
+            {
+              name: 'Омлет с сыром Гауда',
+              description:
+                'Подается с домашним хлебом, беконом, салатом и жареным луком',
+              price: '155.000',
+            },
+            {
+              name: 'Омлет или жареные яйца',
+              description:
+                'Подается с домашним хлебом, беконом, салатом и жареным луком',
+              price: '145.000',
+            },
+            {
+              name: 'Фруктовый салат',
+              description: 'Свежие сезонные фрукты с йогуртом и медом',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Багеты',
+          items: [
+            {
+              name: 'Деревенская ветчина и сыр Гауда',
+              description: 'Классическое сочетание на домашнем багете',
+              price: '145.000',
+            },
+            {
+              name: 'Иберийская ветчина, помидоры, красное песто и чеснок',
+              description: 'Испанская ветчина с яркими вкусами',
+              price: '165.000',
+            },
+            {
+              name: 'Курица и копченый бекон',
+              description: 'Сытный сэндвич с белками',
+              price: '145.000',
+            },
+            {
+              name: 'Горгонзола и варенье из свеклы',
+              description: 'Сладко-соленое сочетание',
+              price: '165.000',
+            },
+            {
+              name: 'Жареный болгарский перец, желтое песто и салат',
+              description: 'Вегетарианский вариант со свежими овощами',
+              price: '145.000',
+            },
+            {
+              name: 'Итальянская салями и сыр Граны Падано',
+              description: 'Итальянские классики в сочетании',
+              price: '165.000',
+            },
+            {
+              name: 'Травяная паста фета, помидоры и базилик',
+              description: 'Свежие средиземноморские вкусы',
+              price: '145.000',
+            },
+            {
+              name: 'Копченый лосось, шнитт-лук, красный лук и сливочный сыр',
+              description: 'Роскошное нордическое сочетание',
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Лепешки и панини',
+          items: [
+            {
+              name: 'Курица, салат из капусты и соус Цезарь в лепешке',
+              description: 'Кремовое и свежее блюдо',
+              price: '175.000',
+            },
+            {
+              name: 'Вегетарианская лепешка',
+              description:
+                'Майонез, салат, болгарский перец, помидоры, лук, огурец, лайм',
+              price: '135.000',
+            },
+            {
+              name: 'Вегетарианский панини на ржаном хлебе',
+              description:
+                'Желтое песто, жареный болгарский перец, капуста, оливки и вяленые помидоры',
+              price: '215.000',
+            },
+            {
+              name: 'Панини ветчина и сыр',
+              description:
+                'Деревенская ветчина, сыр Гауда, карамелизованный лук и горчица',
+              price: '225.000',
+            },
+            {
+              name: 'Панини курица, красное песто и базилик',
+              description:
+                'Песто, курица гриль, жареная иберийская ветчина, базилик и вяленые помидоры',
+              price: '225.000',
+            },
+            {
+              name: 'Сэндвич Рубен по рецепту The Hill Station',
+              description:
+                'Наша интерпретация классики с домашней русской заправкой, швейцарским сыром, пастрами и маринованной красной капустой',
+              price: '285.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Брускетты и закуски',
+          items: [
+            {
+              name: 'Брускетта с раклетом и жареным болгарским перцем',
+              description: 'Расплавленный сыр на хрустящем хлебе',
+              price: '95.000',
+            },
+            {
+              name: 'Брускетта с жареным камамбером и манго',
+              description: 'Сладко-соленое сочетание',
+              price: '95.000',
+            },
+            {
+              name: 'Брускетта с иберийской ветчиной, помидорами, чесноком и оливковым маслом',
+              description: 'Классические итальянские вкусы',
+              price: '95.000',
+            },
+            {
+              name: 'Брускетта с горгонзолой и вареньем из свеклы',
+              description: 'Элегантное сочетание вкусов',
+              price: '95.000',
+            },
+            {
+              name: 'Крокеты с иберийской ветчиной',
+              description: 'Подается с айоли',
+              price: '145.000',
+            },
+            {
+              name: 'Крокеты с 4 видами сыра',
+              description: 'Подается с острым соусом',
+              price: '145.000',
+            },
+            {
+              name: 'Картофель фри',
+              description: 'Подается с кетчупом и майонезом',
+              price: '95.000',
+            },
+            {
+              name: 'Хумус',
+              description: 'Подается с хлебом',
+              price: '135.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Супы и салаты',
+          items: [
+            {
+              name: 'Деревенский томатный суп',
+              description: 'Домашняя комфортная классика',
+              price: '115.000',
+            },
+            {
+              name: 'Садовый салат',
+              description: 'Сезонная зелень и оливки',
+              price: '125.000',
+            },
+            {
+              name: 'Классический салат Цезарь',
+              description: 'Салат, сухарики, бекон, Граны Падано и заправка',
+              price: '145.000',
+            },
+            {
+              name: 'Салат с арбузом и фетой',
+              description: 'Свежее и освежающее сочетание',
+              price: '175.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Основные блюда',
+          items: [
+            {
+              name: 'Жарение с тайским базиликом и курицей',
+              description: 'Базилик и перец с молотой курицей',
+              price: '145.000',
+            },
+            {
+              name: 'Сосиски с картофельным пюре',
+              description:
+                'Домашние сосиски с подливкой, зеленый горошек и картофельное пюре',
+              price: '245.000',
+            },
+            {
+              name: 'Домашняя спагетти с желтым песто и фетой',
+              description: 'Свежая паста с вяленых помидорами',
+              price: '195.000',
+            },
+            {
+              name: 'Домашняя спагетти с копченым лососем',
+              description: 'Брокколи и сливочный соус',
+              price: '265.000',
+            },
+            {
+              name: 'Скандинавские фрикадельки',
+              description:
+                'Подается с подливкой, маринадом и картофельным пюре',
+              price: '215.000',
+            },
+            {
+              name: 'Рагу из курицы и чоризо',
+              description: 'Подается с рисом',
+              price: '225.000',
+            },
+            {
+              name: 'Картофельный гратен с четырьмя видами сыра',
+              description: 'Подается с салатом',
+              price: '245.000',
+            },
+            {
+              name: 'Рагу из говядины Бо Кхо',
+              description:
+                'Фирменное блюдо The Hill Station - медленно тушеная говядина с традиционными вьетнамскими травами (корица, бадьян). Подается с хлебом, рисом или картофельным пюре',
+              price: '295.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Десерты',
+          items: [
+            {
+              name: 'Чизкейк с черникой',
+              description: 'Классический кремовый чизкейк со свежей черникой',
+              price: '95.000',
+            },
+            {
+              name: 'Теплый шоколадный брауни',
+              description: 'С взбитыми сливками',
+              price: '95.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Сыры и колбасы',
+          items: [
+            {
+              name: 'Тарелка копченого лосося',
+              description: 'Сливочный сыр, каперсы, красный лук и хлеб',
+              price: '295.000',
+            },
+            {
+              name: 'Смешанная сырная тарелка',
+              description: '3 разных сыра',
+              price: '295.000',
+            },
+            {
+              name: 'Гурме-сырная тарелка',
+              description:
+                '5 разных сыров с домашним хлебом, манговым вареньем и специями',
+              price: '395.000',
+            },
+            {
+              name: 'Смешанная тарелка колбас',
+              description: '3 разных колбасы',
+              price: '295.000',
+            },
+            {
+              name: 'Гурме-тарелка колбас',
+              description:
+                '5 разных колбас с домашним хлебом, вареньем, оливковым маслом и специями',
+              price: '395.000',
+            },
+            {
+              name: 'Закуска',
+              description: 'Две колбасы и один сыр на одного человека',
+              price: '325.000',
+            },
+            {
+              name: 'Смешанная гурме-тарелка',
+              description:
+                'Две колбасы и три сыра с домашним хлебом, вареньем, оливковым маслом и специями',
+              price: '445.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Специальная раклетт',
+          items: [
+            {
+              name: 'Раклетт на одного',
+              description:
+                'Расплавленный сыр классический вариант с картофелем, хлебом, маринадом, салатом и колбасами',
+              price: '495.000',
+            },
+            {
+              name: 'Раклетт на двоих',
+              description:
+                'Расплавленный сыр классический вариант с картофелем, хлебом, маринадом, салатом и колбасами',
+              price: '890.000',
+            },
+            {
+              name: 'Раклетт на четверых',
+              description:
+                'Расплавленный сыр классический вариант с картофелем, хлебом, маринадом, салатом и колбасами',
+              price: '1.590.000',
+            },
+            {
+              name: 'Винное сочетание - Alsatian Riesling',
+              description:
+                'Gustave Lorentz Riesling (бутылка) - Специальная цена только с раклетт',
+              price: '1.190.000',
+            },
+          ],
+        },
       ],
     },
     vn: {
       title: 'The Hill Station Deli & Boutique',
       description:
-        'Chuyên về sản phẩm địa phương và nguyên liệu tươi ngon, cung cấp thực đơn hấp dẫn với trọng tâm vào chất lượng.',
+        'Deli và boutique hàng cao cấp phục vụ bánh mì thủ công, phô mai và thịt nguội sang trọng, nhấn mạnh vào nguyên liệu chất lượng cao và hương vị chân thực.',
       fullDescription: `
-<p>Nằm ở trung tâm Phố cổ Hội An, The Hill Station Deli & Boutique đã là một điểm đến ẩm thực từ năm 2011. Hành trình của chúng tôi bắt đầu với một ý tưởng đơn giản: mang sự tươi ngon của sản phẩm địa phương và sự phong phú của truyền thống ẩm thực toàn cầu đến với khách hàng. Chúng tôi bắt đầu nhỏ, với một cửa hàng deli ấm cúng phục vụ bánh mì sandwich thủ công, salad và bánh ngọt tự làm.</p>
-
-<p>Trong những năm qua, chúng tôi đã phát triển, nhưng triết lý cốt lõi của chúng tôi vẫn không thay đổi: nguyên liệu chất lượng, hương vị đặc biệt và không khí ấm cúng. Chúng tôi tin vào việc tìm nguồn sản phẩm địa phương tươi ngon nhất, hỗ trợ nông dân và nhà cung cấp địa phương bất cứ khi nào có thể. Cam kết về sự tươi ngon này thể hiện rõ trong mỗi món ăn chúng tôi phục vụ, từ những món salad sống động đến những món chính thịnh soạn.</p>
-
-<h6>Triết lý ẩm thực của chúng tôi</h6>
-<p>Tại The Hill Station, chúng tôi đam mê ẩm thực. Thực đơn của chúng tôi là sự phản ánh sự cống hiến của chúng tôi để tạo ra những trải nghiệm ăn uống độc đáo và đáng nhớ. Chúng tôi pha trộn hương vị truyền thống Việt Nam với các kỹ thuật ẩm thực quốc tế, cung cấp một lựa chọn đa dạng phục vụ nhiều khẩu vị khác nhau. Cho dù bạn đang thèm một món ăn nhẹ hay một bữa ăn no, nhà bếp của chúng tôi luôn tràn ngập sự sáng tạo.</p>
-
-<p>Quầy deli của chúng tôi là một điểm nhấn, với một loạt các món nướng mới ra lò, thịt nguội và phô mai. Đây là nơi hoàn hảo để có một bữa trưa nhanh chóng và ngon miệng, hoặc để tích trữ các món đồ ăn ngon cho một buổi dã ngoại bên sông. Phần cửa hàng boutique của chúng tôi cung cấp một lựa chọn tuyển chọn các món quà độc đáo, đồ thủ công mỹ nghệ địa phương và các sản phẩm thực phẩm đặc biệt, làm cho nó trở thành một nơi tuyệt vời để tìm một món quà lưu niệm hoặc một món quà tự thưởng cho bản thân.</p>
-
-<h6>Một Trung tâm Cộng đồng</h6>
-<p>Không chỉ là một nhà hàng, The Hill Station còn là nơi kết nối người dân địa phương và du khách. Chúng tôi đã trở thành một địa điểm tụ họp được yêu thích, nổi tiếng với không khí thư giãn và dịch vụ thân thiện. Chúng tôi thường tổ chức các sự kiện đặc biệt, từ nếm rượu vang đến các lớp học nấu ăn, mời khách của chúng tôi trải nghiệm văn hóa phong phú của Hội An thông qua ẩm thực của nó.</p>
-
-<img src="hill_station_exterior.jpg" alt="Ngoại thất The Hill Station"/>
-
-<p>Chúng tôi không ngừng đổi mới, khám phá các công thức nấu ăn mới và thử nghiệm hương vị. Đội ngũ đầu bếp tài năng và nhân viên nhiệt tình của chúng tôi tận tâm đảm bảo mỗi chuyến thăm là một trải nghiệm thú vị. Chúng tôi mời bạn đến The Hill Station Deli & Boutique, nơi luôn có đồ ăn ngon, bạn bè tốt và những khoảnh khắc tuyệt vời trong thực đơn.</p>
-      `,
-      internalImageNames: [
-        'hill_station_interior.jpg',
-        'hill_station_food.jpg',
-        'hill_station_exterior.jpg',
+<p>Nằm ở trung tâm Phố cổ Hội An, The Hill Station Deli & Boutique là một điểm đến ẩm thực kể từ năm 2011.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Bữa sáng',
+          items: [
+            {
+              name: 'Trứng Benedictine',
+              description:
+                'Bánh muffin Anh với 2 quả trứng poached, thịt giăm bông và nước sốt hollandaise',
+              price: '175.000',
+            },
+            {
+              name: 'Trứng Florentine',
+              description:
+                'Bánh muffin Anh với 2 quả trứng poached, rau chân vịt và nước sốt hollandaise',
+              price: '155.000',
+            },
+            {
+              name: 'Trứng tráo với Thịt giăm bông',
+              description:
+                'Phục vụ với bánh mì nhà làm, thịt xông khói, salad và hành tây chiên',
+              price: '155.000',
+            },
+            {
+              name: 'Trứng tráo với Phô mai Gouda',
+              description:
+                'Phục vụ với bánh mì nhà làm, thịt xông khói, salad và hành tây chiên',
+              price: '155.000',
+            },
+            {
+              name: 'Trứng xáo hoặc Trứng chiên',
+              description:
+                'Phục vụ với bánh mì nhà làm, thịt xông khói, salad và hành tây chiên',
+              price: '145.000',
+            },
+            {
+              name: 'Salad Trái cây',
+              description: 'Trái cây tươi theo mùa với sữa chua và mật ong',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bánh mì',
+          items: [
+            {
+              name: 'Thịt giăm bông Miền quê và Phô mai Gouda',
+              description: 'Sự kết hợp cổ điển trên bánh mì nhà làm',
+              price: '145.000',
+            },
+            {
+              name: 'Thịt giăm bông Serrano, Cà chua, Pesto đỏ và Tỏi',
+              description: 'Thịt giăm bông Tây Ban Nha với hương vị sôi nổi',
+              price: '165.000',
+            },
+            {
+              name: 'Gà và Thịt xông khói Khô cứng',
+              description: 'Bánh mì đầy đủ protein',
+              price: '145.000',
+            },
+            {
+              name: 'Phô mai Xanh và Mứt Củ cải',
+              description: 'Sự kết hợp ngọt mặn',
+              price: '165.000',
+            },
+            {
+              name: 'Ớt Chuông Nướng, Pesto Vàng và Salad',
+              description: 'Lựa chọn chay với rau tươi',
+              price: '145.000',
+            },
+            {
+              name: 'Salami Ý và Phô mai Grana Padano',
+              description: 'Các kinh điển Ý kết hợp',
+              price: '165.000',
+            },
+            {
+              name: 'Chà Phô mai Feta Thơm, Cà chua và Húng quế',
+              description: 'Hương vị Địa Trung Hải tươi',
+              price: '145.000',
+            },
+            {
+              name: 'Cá hồi Xông khói, Tỏi Scotch, Hành tây đỏ và Phô mai Kem',
+              description: 'Sự kết hợp cao cấp của Bắc Âu',
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Wraps và Paninis',
+          items: [
+            {
+              name: 'Wrap Gà, Coleslaw và Nước sốt Caesar',
+              description: 'Bữa ăn tươi và kem',
+              price: '175.000',
+            },
+            {
+              name: 'Wrap Chay',
+              description:
+                'Xmayonaise, salad, ớt chuông đỏ, cà chua, hành, dưa chuột, chanh tươi',
+              price: '135.000',
+            },
+            {
+              name: 'Panini Bánh mì Chay',
+              description:
+                'Pesto vàng, ớt chuông nướng, bắp cải xoăn, ô liu và cà chua khô nắng',
+              price: '215.000',
+            },
+            {
+              name: 'Panini Thịt giăm bông và Phô mai',
+              description:
+                'Thịt giăm bông miền quê, phô mai Gouda, hành caramel hóa và moutarde',
+              price: '225.000',
+            },
+            {
+              name: 'Panini Gà, Pesto Đỏ và Húng quế',
+              description:
+                'Pesto, gà nướng, thịt giăm bông serrano chiên, húng quế và cà chua khô nắng',
+              price: '225.000',
+            },
+            {
+              name: 'Bánh mì Reuben theo cách của The Hill Station',
+              description:
+                'Cách hiểu của chúng tôi về kinh điển với nước sốt Nga nhà làm, phô mai Thụy Sĩ, pastrami và bắp cải đỏ ngâm',
+              price: '285.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Crostinis và Đồ ăn nhẹ',
+          items: [
+            {
+              name: 'Crostini Phô mai Raclette và Ớt Chuông Nướng',
+              description: 'Phô mai tan trên bánh mì giòn',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini Camembert Nướng và Xoài',
+              description: 'Sự kết hợp ngọt mặn',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini Thịt giăm bông Serrano, Cà chua, Tỏi và Dầu ô liu',
+              description: 'Hương vị cổ điển Ý',
+              price: '95.000',
+            },
+            {
+              name: 'Crostini Phô mai Xanh và Mứt Củ cải',
+              description: 'Kết hợp hương vị tinh tế',
+              price: '95.000',
+            },
+            {
+              name: 'Bánh Croquette với Thịt giăm bông Serrano',
+              description: 'Phục vụ với aioli',
+              price: '145.000',
+            },
+            {
+              name: 'Bánh Croquette với 4 Phô mai',
+              description: 'Phục vụ với nước sốt cay',
+              price: '145.000',
+            },
+            {
+              name: 'Khoai tây chiên',
+              description: 'Phục vụ với ketchup và xayonaise',
+              price: '95.000',
+            },
+            {
+              name: 'Hummus',
+              description: 'Phục vụ với bánh mì',
+              price: '135.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Súp và Salads',
+          items: [
+            {
+              name: 'Súp Cà chua Mộc mạc',
+              description: 'Kinh điển thoải mái nhà làm',
+              price: '115.000',
+            },
+            {
+              name: 'Salad Khu vườn',
+              description: 'Rau tươi theo mùa và ô liu',
+              price: '125.000',
+            },
+            {
+              name: 'Salad Caesar Cổ điển',
+              description:
+                'Xà lách, bánh crouton, thịt xông khói, Grana Padano và nước sốt',
+              price: '145.000',
+            },
+            {
+              name: 'Salad Dưa hấu và Phô mai Feta',
+              description: 'Sự kết hợp tươi và làm mát',
+              price: '175.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Các Món Chính',
+          items: [
+            {
+              name: 'Xào Gà với Húng quế Thái',
+              description: 'Húng quế và ớt xào với gà xay nhuyễn',
+              price: '145.000',
+            },
+            {
+              name: 'Xúc xích và Khoai tây nghiền',
+              description:
+                'Xúc xích nhà làm với nước sốt, đậu Hà Lan xanh và khoai tây nghiền',
+              price: '245.000',
+            },
+            {
+              name: 'Mì Spaghetti Nhà làm với Pesto Vàng và Phô mai Feta',
+              description: 'Mì tươi với cà chua khô nắng',
+              price: '195.000',
+            },
+            {
+              name: 'Mì Spaghetti Nhà làm với Cá hồi Xông khói',
+              description: 'Bông cải xanh và nước sốt kem',
+              price: '265.000',
+            },
+            {
+              name: 'Thớn Scandinavia',
+              description:
+                'Phục vụ với nước sốt, muối chua và khoai tây nghiền',
+              price: '215.000',
+            },
+            {
+              name: 'Hầm Gà và Chorizo',
+              description: 'Phục vụ với cơm',
+              price: '225.000',
+            },
+            {
+              name: 'Gratin Khoai tây Bốn Phô mai',
+              description: 'Phục vụ với salad tươi',
+              price: '245.000',
+            },
+            {
+              name: 'Hầm Thịt bò "Bo Kho"',
+              description:
+                'Chữ ký của The Hill Station - thịt bò được nấu chậm ngâm các loại cây thảo dược Việt Nam truyền thống (quế, hồi). Phục vụ với bánh mì, cơm hoặc khoai tây nghiền',
+              price: '295.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Tráng miệng',
+          items: [
+            {
+              name: 'Bánh phô mai với Việt quất',
+              description: 'Bánh phô mai kem cổ điển với việt quất tươi',
+              price: '95.000',
+            },
+            {
+              name: 'Brownie Chocolate Ấm',
+              description: 'Với kem đánh bông',
+              price: '95.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bàn Phô mai và Thịt Nguội',
+          items: [
+            {
+              name: 'Bàn Cá hồi Xông khói',
+              description: 'Phô mai kem, capers, hành tây đỏ và bánh mì',
+              price: '295.000',
+            },
+            {
+              name: 'Bàn Phô mai Hỗn hợp',
+              description: '3 loại phô mai hỗn hợp',
+              price: '295.000',
+            },
+            {
+              name: 'Bàn Phô mai Cao cấp',
+              description:
+                '5 loại phô mai hỗn hợp với bánh mì nhà làm, mứt xoài và gia vị',
+              price: '395.000',
+            },
+            {
+              name: 'Bàn Thịt Nguội Hỗn hợp',
+              description: '3 loại thịt nguội hỗn hợp',
+              price: '295.000',
+            },
+            {
+              name: 'Bàn Thịt Nguội Cao cấp',
+              description:
+                '5 loại thịt nguội hỗn hợp với bánh mì nhà làm, mứt, dầu ô liu và gia vị',
+              price: '395.000',
+            },
+            {
+              name: 'Bàn Đồ ăn nhẹ',
+              description: 'Hai loại thịt nguội và một phô mai cho một người',
+              price: '325.000',
+            },
+            {
+              name: 'Bàn Hỗn hợp Cao cấp',
+              description:
+                'Hai loại thịt nguội và ba phô mai với bánh mì nhà làm, mứt, dầu ô liu và gia vị',
+              price: '445.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Raclette Đặc biệt',
+          items: [
+            {
+              name: 'Bộ Raclette cho 1 Người',
+              description:
+                'Kinh điển phô mai tan phục vụ với khoai tây, bánh mì, muối chua, salad và thịt nguội hỗn hợp',
+              price: '495.000',
+            },
+            {
+              name: 'Bộ Raclette cho 2 Người',
+              description:
+                'Kinh điển phô mai tan phục vụ với khoai tây, bánh mì, muối chua, salad và thịt nguội hỗn hợp',
+              price: '890.000',
+            },
+            {
+              name: 'Bộ Raclette cho 4 Người',
+              description:
+                'Kinh điển phô mai tan phục vụ với khoai tây, bánh mì, muối chua, salad và thịt nguội hỗn hợp',
+              price: '1.590.000',
+            },
+            {
+              name: 'Kết hợp Rượu - Riesling Alsatian',
+              description:
+                'Gustave Lorentz Riesling (chai) - Giá đặc biệt chỉ khi gọi Raclette',
+              price: '1.190.000',
+            },
+          ],
+        },
       ],
     },
     slug: {
@@ -144,6 +1729,7 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'the-hill-station-deli-and-boutique',
     },
   },
+
   //Sua
   {
     id: 'sua-vegan-restaurant', // <-- ID теперь строковый

@@ -6,6 +6,8 @@ export interface TranslationContent {
   details: string;
   category: string;
   description: string;
+  dish: string;
+  price: string;
   youAreHere: string;
   close: string;
   noDetailsAvailable: string;
