@@ -101,7 +101,16 @@ const LandingPage: React.FC = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // ❌ УДАЛЕНА ВСЯ ЛОГИКА ПРЕЛОАДЕРА И ЗАГРУЗКИ КАРТИНОК
+  // Remove initial preloader
+  React.useEffect(() => {
+    const preloader = document.getElementById('initial-preloader');
+    if (preloader) {
+      document.body.classList.add('loaded');
+      setTimeout(() => {
+        preloader.remove();
+      }, 600);
+    }
+  }, []);
 
   return (
     <>

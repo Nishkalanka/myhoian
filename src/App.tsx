@@ -55,6 +55,7 @@ function App() {
     'art-galleries',
     'clubs',
   ]);
+
   const handleCategorySelection = useCallback(
     (selectedSlugs: string[]) => setSelectedCategorySlugs(selectedSlugs),
     []
@@ -71,6 +72,18 @@ function App() {
 
   useEffect(() => {
     setRouteCoordinates([]);
+
+    // Remove initial preloader
+    const preloader = document.getElementById('initial-preloader');
+    if (preloader) {
+      // Add class to trigger fade out
+      document.body.classList.add('loaded');
+
+      // Remove element after transition completes
+      setTimeout(() => {
+        preloader.remove();
+      }, 600);
+    }
   }, []);
 
   const getLocalizedContentForLandmark = useCallback(

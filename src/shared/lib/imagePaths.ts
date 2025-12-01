@@ -9,7 +9,7 @@ const modules = import.meta.glob(
   { eager: true }
 );
 
-console.log('🔍 [imagePaths] Glob modules found:', Object.keys(modules).length);
+//console.log('🔍 [imagePaths] Glob modules found:', Object.keys(modules).length);
 
 for (const path in modules) {
   // Получаем имя файла (например, "21.jpg")

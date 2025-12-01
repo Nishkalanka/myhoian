@@ -1,10 +1,12 @@
 // src/shared/lib/usePictureUrl.ts
 import { fullDescriptionImageMap } from './imagePaths';
 
-console.log(
+{
+  /*console.log(
   'UsePictureUrl loaded map with keys:',
   Object.keys(fullDescriptionImageMap).length
-);
+);*/
+}
 // Если тут 0, значит карта пустая в момент вызова.
 
 export const usePictureUrl = () => {

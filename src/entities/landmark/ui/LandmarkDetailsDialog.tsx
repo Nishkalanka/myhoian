@@ -137,6 +137,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
       onClose={onClose}
       maxWidth="sm"
       fullWidth
+      disableRestoreFocus // Fixes "Blocked aria-hidden" warning when trigger is unmounted
       sx={{
         '& .MuiDialog-paper': {
           width: '100%',

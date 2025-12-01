@@ -3,12 +3,19 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 
-// Интерфейс для пропсов (нужен только обработчик открытия модала)
+interface HeroContent {
+  label: string;
+  title: string;
+  description: string;
+  buttonText: string;
+}
+
 interface SectionHeroProps {
+  content: HeroContent;
   handleOpen: () => void;
 }
 
-const SectionHero: React.FC<SectionHeroProps> = ({ handleOpen }) => (
+const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => (
   <Box
     sx={{
       flex: 1,
@@ -29,7 +36,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ handleOpen }) => (
         letterSpacing: 0.5,
       }}
     >
-      Авторская экскурсия-лекция
+      {content.label}
     </Box>
     <Typography
       variant="h1"
@@ -40,7 +47,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ handleOpen }) => (
         letterSpacing: 1,
       }}
     >
-      Хойан
+      {content.title}
     </Typography>
     <Typography
       variant="body2"
@@ -48,13 +55,13 @@ const SectionHero: React.FC<SectionHeroProps> = ({ handleOpen }) => (
         fontSize: 'lg',
         color: 'gray.500',
         mb: 1,
+        width: '70%',
       }}
     >
-      Жемчужина Юго-Восточной Азии.<br></br> Cтаринный торговый порт,<br></br>{' '}
-      бережно хранящий наследие веков.
+      {content.description}
     </Typography>
     <Button onClick={handleOpen} sx={{}} size="small" variant="outlined">
-      Напишите нам
+      {content.buttonText}
     </Button>
   </Box>
 );

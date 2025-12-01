@@ -1,4 +1,4 @@
-// LandingPage.tsx (ФИНАЛЬНАЯ ВЕРСИЯ - ЧИСТАЯ, БЕЗ ПРЕЛОАДЕРА)
+// LandingPage.tsx
 
 import React, { useState } from 'react';
 import { Box, Container, Stack } from '@mui/material';
@@ -11,10 +11,7 @@ import SectionFeatures from './components/SectionFeatures';
 import SectionHighlights from './components/SectionHighlights';
 import SectionGuide from './components/SectionGuide';
 import SectionFAQ from './components/SectionFAQ';
-
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
+import SectionContact from './components/SectionContact';
 
 // Импорты ресурсов
 import logoSvg from '../assets/img/logo.svg';
@@ -31,12 +28,13 @@ import Quan3 from '../assets/img/pictures/62.jpg';
 import ogImage from '../assets/img/og-image.png';
 import MenuIcon from '@mui/icons-material/Menu';
 
-// ... (Типы Product, Feature оставляем как есть) ...
+// ===== ТИПЫ =====
 interface Feature {
   name: string;
   description: string;
   icon: typeof MenuIcon;
 }
+
 interface Product {
   id: number;
   name: string;
@@ -44,6 +42,29 @@ interface Product {
   imageSrc: string;
   imageAlt: string;
 }
+
+interface HeroContent {
+  label: string;
+  title: string;
+  description: string;
+  buttonText: string;
+}
+
+// ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
+
+const heroContent: HeroContent = {
+  label: 'Авторская экскурсия-лекция',
+  title: 'Хойан',
+  description:
+    'Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий наследие веков.',
+  buttonText: 'Напишите нам',
+};
+
+const features: Feature[] = [
+  { name: '3 - 4 ч.', description: 'Время экскурсии', icon: MenuIcon },
+  { name: '5 - 7 чел.', description: 'Размер группы', icon: MenuIcon },
+  { name: 'Пеший', description: 'Формат экскурсии', icon: MenuIcon },
+];
 
 const products: Product[] = [
   {
@@ -90,23 +111,26 @@ const products: Product[] = [
   },
 ];
 
-const features: Feature[] = [
-  { name: '3 - 4 ч.', description: 'Время экскурсии', icon: MenuIcon },
-  { name: '5 - 7 чел.', description: 'Размер группы', icon: MenuIcon },
-  { name: 'Пеший', description: 'Формат экскурсии', icon: MenuIcon },
-];
+// ===== КОМПОНЕНТ =====
 
 const LandingPage: React.FC = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // ❌ УДАЛЕНА ВСЯ ЛОГИКА ПРЕЛОАДЕРА И ЗАГРУЗКИ КАРТИНОК
+  React.useEffect(() => {
+    const preloader = document.getElementById('initial-preloader');
+    if (preloader) {
+      document.body.classList.add('loaded');
+      setTimeout(() => {
+        preloader.remove();
+      }, 600);
+    }
+  }, []);
 
   return (
     <>
       <Helmet>
-        {/* ... Твои мета теги ... */}
         <title>
           Авторские экскурсии по Хойану 2025 | Туры на русском по Вьетнаму
         </title>
@@ -181,26 +205,18 @@ const LandingPage: React.FC = () => {
           backgroundRepeat: 'no-repeat, no-repeat',
           backgroundColor: '#040c19',
           pb: 8,
-          // Оппасити всегда 1, без анимаций появления
         }}
       >
         <Box sx={{ textAlign: 'center', pt: 2 }}>
           <img src={logoSvg} width={32} alt="Логотип" className="logo" />
         </Box>
 
-        <SectionHero handleOpen={handleOpen} />
+        <SectionHero content={heroContent} handleOpen={handleOpen} />
         <SectionFeatures features={features} />
         <SectionHighlights products={products} />
         <SectionGuide profilePicture={profilePicture} handleOpen={handleOpen} />
         <SectionFAQ />
-
-        <Box sx={{ textAlign: 'center', pt: 6 }}>
-          <Stack direction="row" sx={{ justifyContent: 'center' }} spacing={4}>
-            <WhatsAppIcon />
-            <InstagramIcon />
-            <TelegramIcon />
-          </Stack>
-        </Box>
+        <SectionContact />
       </Container>
 
       <ModalContact open={open} handleClose={handleClose} />
