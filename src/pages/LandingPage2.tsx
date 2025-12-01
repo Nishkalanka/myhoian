@@ -15,7 +15,7 @@ import SectionContact from './components/SectionContact';
 
 // Импорты ресурсов
 import logoSvg from '../assets/img/logo.svg';
-import heroBg from '../assets/img/tours/bg.png';
+import heroBg from '../assets/img/tours/bg3.webp';
 import heroBg2 from '../assets/img/tours/bg2.png';
 import profilePicture from '../assets/img/tours/profile.png';
 import JapanBr from '../assets/img/pictures/2.jpg';
@@ -48,16 +48,18 @@ interface HeroContent {
   title: string;
   description: string;
   buttonText: string;
+  titleSize?: { xs: string; sm: string; md: string };
 }
 
 // ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
 
 const heroContent: HeroContent = {
-  label: 'Авторская экскурсия-лекция',
-  title: 'Хойан',
+  label: 'Квест-экскурсия',
+  title: 'Хойан в коробке',
   description:
-    'Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий наследие веков.',
+    'Подарите родным не просто сувенир, а частичку настоящего Вьетнама!',
   buttonText: 'Напишите нам',
+  titleSize: { xs: '2rem', sm: '2rem', md: '2rem' },
 };
 
 const features: Feature[] = [
@@ -199,11 +201,11 @@ const LandingPage: React.FC = () => {
       <Container
         maxWidth="xs"
         sx={{
-          backgroundImage: `url(${heroBg}), url(${heroBg2})`,
-          backgroundPosition: 'top center, bottom center',
+          backgroundImage: `url(${heroBg})`,
+          backgroundPosition: 'center 180px',
           backgroundSize: 'contain, contain',
           backgroundRepeat: 'no-repeat, no-repeat',
-          backgroundColor: '#040c19',
+          backgroundColor: '#19202A',
           pb: 8,
         }}
       >

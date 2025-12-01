@@ -11,7 +11,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { MapProvider } from './entities/map/model/MapContext.tsx';
 
 // Ленивая загрузка страниц
-const LandingPage = React.lazy(() => import('./pages/LandingPage.tsx'));
+const Hoian = React.lazy(() => import('./pages/Hoian.tsx'));
 const LandingPage2 = React.lazy(() => import('./pages/LandingPage2.tsx'));
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               <Routes>
                 <Route
                   path="/hoian-avtorskaya-ekskursiya"
-                  element={<LandingPage />}
+                  element={<Hoian />}
                 />
                 <Route path="/kvest" element={<LandingPage2 />} />
                 <Route path="/:lang/:slug" element={<App />} />

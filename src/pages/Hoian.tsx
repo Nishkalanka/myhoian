@@ -48,6 +48,7 @@ interface HeroContent {
   title: string;
   description: string;
   buttonText: string;
+  titleSize?: { xs: string; sm: string; md: string };
 }
 
 // ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
@@ -58,6 +59,7 @@ const heroContent: HeroContent = {
   description:
     'Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий наследие веков.',
   buttonText: 'Напишите нам',
+  titleSize: { xs: '3rem', sm: '3rem', md: '3rem' },
 };
 
 const features: Feature[] = [
