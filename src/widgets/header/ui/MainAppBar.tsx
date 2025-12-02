@@ -2,11 +2,11 @@
 import React from 'react';
 import {
   Toolbar,
-  IconButton,
+  //IconButton,
   Stack,
   // useTheme, // Больше не нужен здесь, так как LogoTitleLink его инкапсулирует
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+//import MenuIcon from '@mui/icons-material/Menu';
 // import { useTranslation } from 'react-i18next'; // Больше не нужен здесь, т.к. t('logoTitle') перемещен
 
 import LanguageSwitcher from '../../../features/language-switcher/ui/LanguageSwitcher';
@@ -16,7 +16,6 @@ import LogoTitleLink from '../../../shared/ui/LogoTitleLink'; // Импорти�
 interface MainAppBarProps {
   logoSrc: string;
   onLogoClick: () => void;
-  onOpenMainMenu: () => void;
   onOpenFilterDrawer: () => void;
   selectedCategorySlugs: string[];
 }
@@ -24,7 +23,6 @@ interface MainAppBarProps {
 const MainAppBar: React.FC<MainAppBarProps> = ({
   logoSrc,
   onLogoClick,
-  onOpenMainMenu,
   onOpenFilterDrawer,
   selectedCategorySlugs,
 }) => {
@@ -33,7 +31,7 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
 
   return (
     <Toolbar disableGutters sx={{ minHeight: 'unset !important' }}>
-      {/* Кнопка открытия главного меню */}
+      {/* Кнопка открытия главного меню 
       <IconButton
         edge="start"
         color="inherit"
@@ -43,7 +41,7 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
       >
         <MenuIcon />
       </IconButton>
-
+*/}
       {/* Логотип и заголовок - теперь это отдельный компонент */}
       <LogoTitleLink logoSrc={logoSrc} onClick={onLogoClick} />
 

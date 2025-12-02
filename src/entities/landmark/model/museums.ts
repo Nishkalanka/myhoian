@@ -2473,6 +2473,311 @@ export const museumLandmarks: Landmark[] = [
       vn: 'bao-tang-san-pham-dia-phuong',
     },
   },
+  // Traditional Art Performance House
+  {
+    id: 'traditional-art-performance-house',
+    coordinates: [15.876024598644353, 108.32974391847458],
+    category: ['museum'], // Строго "museum"
+    imageUrl: 'traditional_art_performance_house.webp',
+
+    // =========================================================================
+    // ENGLISH CONTENT (en)
+    // =========================================================================
+    en: {
+      title: 'Traditional Art Performance House',
+      description:
+        'An intimate cultural venue celebrating the authentic performing arts and traditions of Central Vietnam, offering live performances of folk music, dance, and classical opera.',
+      fullDescription: `
+<p>
+    Nestled in the heart of Hoi An's Ancient Town, the <strong>Traditional Art Performance House</strong> is a vibrant cultural space that preserves and celebrates the authentic performing arts traditions of Central Vietnam. Located at 75 Nguyen Thai Hoc Street in a beautifully restored ancient house, this intimate venue has been a cornerstone of Hoi An's cultural heritage for decades.
+</p>
+
+<p>
+    Housed within a charming two-storey traditional structure with views of the Thu Bon River, the Traditional Art Performance House elegantly blends historical preservation with cultural expression. The <strong>ground floor</strong> functions as an exhibition space where visitors can admire traditional masks and musical instruments, and even participate in hands-on activities such as painting traditional <em>Tuong</em> (classical opera) masks. The <strong>upper floor</strong> serves as a professional performance stage, fully equipped with modern acoustics and lighting to host authentic cultural performances.
+</p>
+
+<h6>A Living Repository of Central Vietnamese Culture</h6>
+<img src="traditional_art_performance_house_2.webp" alt="traditional_art_performance_house_2"/>
+<p>
+    For nearly 30 years, the Traditional Art Performance House has been dedicated to bringing the soul of Vietnamese culture to both domestic and international audiences. With a talented ensemble of musicians, dancers, and choreographers, the venue showcases an impressive repertoire of traditional performing arts that are deeply rooted in the cultural identity of Central Vietnam.
+</p>
+
+<p>
+    The performance programs feature an extraordinary variety of traditional art forms:
+</p>
+
+<ul>
+    <li><strong>Bai Choi Singing:</strong> A unique folk art form that beautifully blends music, poetry, and community games, creating an interactive and emotionally engaging experience.</li>
+    <li><strong>Quang Nam Folk Songs:</strong> Heartfelt melodies that tell stories of everyday life, love, and tradition, accompanied by traditional instruments such as the <em>Dan Bau</em> (one-stringed monochord), bamboo flute, and hand percussion.</li>
+    <li><strong>Central Folk Dances:</strong> Expressive choreography including the water-carrying dance and offering dance, which vividly recreate scenes from local life and spiritual beliefs.</li>
+    <li><strong>Hat Boi (Tuong) - Classical Vietnamese Opera:</strong> A sophisticated art form renowned for its expressive acting, colorful and intricate costumes, and profound emotional depth that captivates audiences with the spiritual and artistic richness of Vietnamese heritage.</li>
+    <li><strong>Traditional Instrumental Ensembles:</strong> Expert performances featuring a variety of traditional Vietnamese instruments that create the distinctive soundscape of Central Vietnam.</li>
+</ul>
+
+<p>
+    What makes the Traditional Art Performance House particularly special is its intimate setting. Unlike large concert halls, the cozy venue allows visitors to appreciate every detail of the performances – from the subtle facial expressions and hand movements of the dancers to the intricate designs embroidered on traditional costumes and the fine craftsmanship of the musical instruments. This intimate atmosphere creates a profound connection between performers and audience, making each show a memorable cultural exchange.
+</p>
+
+<h6>The Heart of Cultural Preservation</h6>
+<img src="traditional_art_performance_house_3.webp" alt="traditional_art_performance_house_3"/>
+<p>
+    The Traditional Art Performance House represents far more than entertainment – it is a living archive of Vietnamese cultural heritage. Each performance tells the story of Hoi An's past and its role as a historical crossroads where diverse cultures met and influenced one another. The venue serves as a bridge between generations, ensuring that traditional art forms that might otherwise fade away are preserved, celebrated, and passed on to future audiences.
+</p>
+
+<p>
+    The performances run regularly throughout the day, with evening shows at 9:00 PM lasting approximately 60 minutes. Visitors holding an Old Town admission ticket typically receive complimentary access to performances, making cultural experience an integral part of exploring Hoi An's heritage. The air-conditioned theater provides comfortable seating and ensures an enjoyable experience regardless of weather conditions.
+</p>
+
+<p>
+    For those seeking an authentic glimpse into the soul of Vietnam – where tradition meets artistry, and history comes alive through music and movement – the Traditional Art Performance House is an essential destination. Here, in an intimate setting surrounded by ancient walls, the spirit of Central Vietnamese culture continues to flourish, inviting visitors to experience the living heritage that has defined Hoi An for centuries.
+</p>
+    `,
+      internalImageNames: [
+        'traditional_art_performance_house_2.webp',
+        'traditional_art_performance_house_3.webp',
+      ],
+    },
+
+    // =========================================================================
+    // RUSSIAN CONTENT (ru)
+    // =========================================================================
+    ru: {
+      title: 'Дом традиционного искусства',
+      description:
+        'Уютная культурная площадка, прославляющая аутентичное сценическое искусство и традиции Центрального Вьетнама, предлагающая живые представления народной музыки, танцев и классической оперы.',
+      fullDescription: `
+<p>
+    Расположенный в сердце древнего города Хойан, <strong>Дом традиционного искусства</strong> является ярким культурным пространством, которое сохраняет и прославляет аутентичные традиции сценического искусства Центрального Вьетнама. Находясь по адресу улица Нгуен Тай Хок, 75 в красиво отреставрированном древнем доме, это уютное место являлось центром культурного наследия Хойана на протяжении десятилетий.
+</p>
+
+<p>
+    Расположенный в очаровательном двухэтажном традиционном здании с видом на реку Тхубон, Дом традиционного искусства элегантно сочетает историческое сохранение с культурным выражением. <strong>Нижний этаж</strong> функционирует как выставочное пространство, где посетители могут восхищаться традиционными масками и музыкальными инструментами, а также участвовать в практических занятиях, таких как роспись традиционных масок <em>Туонга</em> (классической оперы). <strong>Верхний этаж</strong> служит профессиональной сценой для представлений, полностью оснащенной современной акустикой и освещением для проведения аутентичных культурных спектаклей.
+</p>
+
+<h6>Живое хранилище культуры Центрального Вьетнама</h6>
+<img src="traditional_art_performance_house_2.webp" alt="traditional_art_performance_house_2"/>
+<p>
+    На протяжении почти 30 лет Дом традиционного искусства посвящен тому, чтобы привносить душу вьетнамской культуры как для местной, так и для международной аудитории. С талантливым коллективом музыкантов, танцоров и хореографов, это место демонстрирует впечатляющий репертуар традиционного сценического искусства, глубоко укорененного в культурной идентичности Центрального Вьетнама.
+</p>
+
+<p>
+    Программы представлений включают необычайное разнообразие традиционных форм искусства:
+</p>
+
+<ul>
+    <li><strong>Пение Бай Чой:</strong> Уникальная народная форма искусства, которая прекрасно сочетает музыку, поэзию и общественные игры, создавая интерактивный и эмоционально насыщенный опыт.</li>
+    <li><strong>Народные песни провинции Куангнам:</strong> Трогательные мелодии, рассказывающие истории из повседневной жизни, любви и традиций, сопровождаемые традиционными инструментами, такими как <em>Дан Бау</em> (однострунный монохорд), бамбуковая флейта и ударные инструменты.</li>
+    <li><strong>Танцы Центрального Вьетнама:</strong> Выразительная хореография, включающая танец с водой и ритуальный танец, которые ярко воссоздают сцены из местной жизни и духовных верований.</li>
+    <li><strong>Хат Бой (Туонг) - Классическая вьетнамская опера:</strong> Утонченная форма искусства, известная своей выразительной игрой, красочными и сложными костюмами, и глубокой эмоциональной глубиной, которая пленяет зрителей духовным и художественным богатством вьетнамского наследия.</li>
+    <li><strong>Традиционные инструментальные ансамбли:</strong> Мастерские выступления с использованием различных традиционных вьетнамских инструментов, которые создают характерное звучание Центрального Вьетнама.</li>
+</ul>
+
+<p>
+    Особенность Дома традиционного искусства заключается в его уютной атмосфере. В отличие от больших концертных залов, здесь посетители могут оценить каждую деталь представления — от тонких мимических выражений и движений рук танцоров до сложных вышивок на традиционных костюмах и мастерства музыкальных инструментов. Такая интимная атмосфера создает глубокую связь между артистами и публикой, делая каждое представление незабываемым культурным обменом.
+</p>
+
+<h6>Сердце сохранения культуры</h6>
+<img src="traditional_art_performance_house_3.webp" alt="traditional_art_performance_house_3"/>
+<p>
+    Дом традиционного искусства — это гораздо больше, чем просто развлечение; это живой архив вьетнамского культурного наследия. Каждое представление рассказывает историю прошлого Хойана и его роли как исторического перекрестка, где встречались и влияли друг на друга различные культуры. Это место служит мостом между поколениями, обеспечивая сохранение, прославление и передачу традиционных форм искусства будущим поколениям.
+</p>
+
+<p>
+    Представления проходят регулярно в течение дня, с вечерними шоу в 21:00 продолжительностью примерно 60 минут. Посетители с билетом на вход в Старый город обычно получают бесплатный доступ к представлениям, что делает культурный опыт неотъемлемой частью посещения наследия Хойана. Кондиционируемый театр обеспечивает удобные сиденья и комфортный просмотр независимо от погодных условий.
+</p>
+
+<p>
+    Для тех, кто желает получить аутентичное представление о душе Вьетнама — где традиция встречается с искусством, а история оживает через музыку и движение — Дом традиционного искусства является необходимым местом для посещения. Здесь, в уютной атмосфере среди древних стен, дух культуры Центрального Вьетнама продолжает процветать, приглашая посетителей испытать живое наследие, которое определяло Хойан на протяжении веков.
+</p>
+    `,
+      internalImageNames: [
+        'traditional_art_performance_house_2.webp',
+        'traditional_art_performance_house_3.webp',
+      ],
+    },
+
+    // =========================================================================
+    // SPANISH CONTENT (es)
+    // =========================================================================
+    es: {
+      title: 'Casa de Arte Tradicional',
+      description:
+        'Un íntimo lugar cultural que celebra las artes escénicas auténticas y las tradiciones del Vietnam Central, ofreciendo actuaciones en vivo de música folclórica, danza y ópera clásica.',
+      fullDescription: `
+<p>
+    Ubicada en el corazón de la Ciudad Antigua de Hoi An, la <strong>Casa de Arte Tradicional</strong> es un espacio cultural vibrante que preserva y celebra las auténticas tradiciones de las artes escénicas del Vietnam Central. Localizada en la calle Nguyen Thai Hoc, 75, en una casa antigua bellamente restaurada, este íntimo lugar ha sido un pilar del patrimonio cultural de Hoi An durante décadas.
+</p>
+
+<p>
+    Ubicada en una encantadora estructura tradicional de dos pisos con vistas al río Thu Bon, la Casa de Arte Tradicional combina elegantemente la preservación histórica con la expresión cultural. La <strong>planta baja</strong> funciona como espacio de exposición donde los visitantes pueden admirar máscaras tradicionales e instrumentos musicales, e incluso participar en actividades prácticas como la pintura de máscaras tradicionales de <em>Tuong</em> (ópera clásica). El <strong>piso superior</strong> sirve como escenario profesional de actuaciones, completamente equipado con acústica moderna e iluminación para albergar actuaciones culturales auténticas.
+</p>
+
+<h6>Un Repositorio Vivo de la Cultura del Vietnam Central</h6>
+
+<p>
+    Durante casi 30 años, la Casa de Arte Tradicional se ha dedicado a llevar el alma de la cultura vietnamita tanto a audiencias nacionales como internacionales. Con un talentoso conjunto de músicos, bailarines y coreógrafos, el lugar presenta un impresionante repertorio de artes escénicas tradicionales profundamente arraigadas en la identidad cultural del Vietnam Central.
+</p>
+<img src="traditional_art_performance_house_2.webp" alt="traditional_art_performance_house_2"/>
+<p>
+    Los programas de actuaciones presentan una extraordinaria variedad de formas de arte tradicional:
+</p>
+
+<ul>
+    <li><strong>Canto Bai Choi:</strong> Una forma de arte folclórico única que combina hermosamente música, poesía y juegos comunitarios, creando una experiencia interactiva y emocionalmente enriquecedora.</li>
+    <li><strong>Canciones Folclóricas de Quang Nam:</strong> Melodías conmovedoras que cuentan historias de la vida cotidiana, el amor y la tradición, acompañadas por instrumentos tradicionales como el <em>Dan Bau</em> (monocordio de una cuerda), flauta de bambú e instrumentos de percusión.</li>
+    <li><strong>Danzas Folclóricas del Centro:</strong> Coreografía expresiva que incluye la danza del agua y la danza de ofrenda, que recrean vívidamente escenas de la vida local y creencias espirituales.</li>
+    <li><strong>Hat Boi (Tuong) - Ópera Clásica Vietnamita:</strong> Una forma de arte sofisticada conocida por su actuación expresiva, trajes coloridos e intrincados, y profundidad emocional que cautiva a las audiencias con la riqueza espiritual y artística del patrimonio vietnamita.</li>
+    <li><strong>Ensambles Instrumentales Tradicionales:</strong> Actuaciones expertas con una variedad de instrumentos vietnamitas tradicionales que crean el paisaje sonoro distintivo del Vietnam Central.</li>
+</ul>
+
+<p>
+    Lo que hace especialmente particular a la Casa de Arte Tradicional es su ambiente íntimo. A diferencia de las grandes salas de conciertos, el acogedor lugar permite a los visitantes apreciar cada detalle de las actuaciones – desde las sutiles expresiones faciales y movimientos de manos de los bailarines hasta los intrincados diseños bordados en los trajes tradicionales y la artesanía fina de los instrumentos musicales. Esta atmósfera íntima crea una conexión profunda entre los actores y el público, haciendo que cada función sea un intercambio cultural memorable.
+</p>
+
+<h6>El Corazón de la Preservación Cultural</h6>
+<img src="traditional_art_performance_house_3.webp" alt="traditional_art_performance_house_3"/>
+<p>
+    La Casa de Arte Tradicional representa mucho más que entretenimiento – es un archivo viviente del patrimonio cultural vietnamita. Cada actuación cuenta la historia del pasado de Hoi An y su papel como encrucijada histórica donde se encontraban e influenciaban mutuamente diversas culturas. El lugar sirve como puente entre generaciones, asegurando que las formas de arte tradicionales que de otro modo podrían desvanecerse se preserven, celebren y transmitan a las audiencias futuras.
+</p>
+
+<p>
+    Las actuaciones se llevan a cabo regularmente durante el día, con funciones nocturnas a las 21:00 con una duración aproximada de 60 minutos. Los visitantes que cuentan con un boleto de entrada al Casco Antiguo generalmente reciben acceso gratuito a las actuaciones, haciendo que la experiencia cultural sea una parte integral de la exploración del patrimonio de Hoi An. El teatro con aire acondicionado proporciona asientos cómodos y una experiencia agradable independientemente de las condiciones climáticas.
+</p>
+
+<p>
+    Para quienes buscan un vistazo auténtico al alma de Vietnam – donde la tradición se encuentra con el arte, y la historia cobra vida a través de la música y el movimiento – la Casa de Arte Tradicional es un destino imprescindible. Aquí, en un ambiente íntimo rodeado de muros antiguos, el espíritu de la cultura del Vietnam Central continúa floreciendo, invitando a los visitantes a experimentar el patrimonio viviente que ha definido a Hoi An durante siglos.
+</p>
+    `,
+      internalImageNames: [
+        'traditional_art_performance_house_2.webp',
+        'traditional_art_performance_house_3.webp',
+      ],
+    },
+
+    // =========================================================================
+    // FRENCH CONTENT (fr)
+    // =========================================================================
+    fr: {
+      title: 'Maison des Arts Traditionnels',
+      description:
+        "Un lieu culturel intime célébrant les arts de la scène authentiques et les traditions du Vietnam central, offrant des spectacles vivants de musique folklorique, de danse et d'opéra classique.",
+      fullDescription: `
+<p>
+    Nichée au cœur de la Vieille Ville de Hoi An, la <strong>Maison des Arts Traditionnels</strong> est un espace culturel vibrant qui préserve et célèbre les traditions authentiques des arts de la scène du Vietnam central. Localisée rue Nguyen Thai Hoc, 75, dans une ancienne maison magnifiquement restaurée, ce lieu intime a été un pilier du patrimoine culturel de Hoi An pendant des décennies.
+</p>
+
+<p>
+    Abritée dans une charmante structure traditionnelle de deux étages avec vue sur la rivière Thu Bon, la Maison des Arts Traditionnels combine élégamment la préservation historique avec l'expression culturelle. Le <strong>rez-de-chaussée</strong> fonctionne comme un espace d'exposition où les visiteurs peuvent admirer des masques traditionnels et des instruments musicaux, et participer même à des activités pratiques comme la peinture de masques traditionnels de <em>Tuong</em> (opéra classique). L'<strong>étage supérieur</strong> sert de scène professionnelle de spectacles, entièrement équipée d'une acoustique moderne et d'un éclairage pour accueillir des représentations culturelles authentiques.
+</p>
+
+<h6>Un Dépôt Vivant de la Culture du Vietnam Central</h6>
+
+<p>
+    Pendant près de 30 ans, la Maison des Arts Traditionnels s'est consacrée à apporter l'âme de la culture vietnamienne à des audiences nationales et internationales. Avec un ensemble talentueux de musiciens, danseurs et chorégraphes, le lieu présente un répertoire impressionnant d'arts de la scène traditionnels profondément enracinés dans l'identité culturelle du Vietnam central.
+</p>
+<img src="traditional_art_performance_house_2.webp" alt="traditional_art_performance_house_2"/>
+<p>
+    Les programmes de représentations présentent une extraordinaire variété de formes d'art traditionnel :
+</p>
+
+<ul>
+    <li><strong>Chant Bai Choi :</strong> Une forme d'art folklorique unique qui combine magnifiquement la musique, la poésie et les jeux communautaires, créant une expérience interactive et émotionnellement enrichissante.</li>
+    <li><strong>Chansons Folkloriques de Quang Nam :</strong> Des mélodies touchantes qui racontent des histoires de la vie quotidienne, d'amour et de tradition, accompagnées par des instruments traditionnels comme le <em>Dan Bau</em> (monocorde à une corde), la flûte de bambou et les instruments de percussion.</li>
+    <li><strong>Danses Folkloriques du Centre :</strong> Une chorégraphie expressive incluant la danse de l'eau et la danse d'offrande, qui recréent vivement des scènes de la vie locale et des croyances spirituelles.</li>
+    <li><strong>Hat Boi (Tuong) - Opéra Classique Vietnamien :</strong> Une forme d'art sophistiquée réputée pour son jeu expressif, ses costumes colorés et complexes, et sa profondeur émotionnelle qui captive les audiences avec la richesse spirituelle et artistique du patrimoine vietnamien.</li>
+    <li><strong>Ensembles Instrumentaux Traditionnels :</strong> Des représentations expertes mettant en vedette une variété d'instruments vietnamiens traditionnels qui créent le paysage sonore distinctif du Vietnam central.</li>
+</ul>
+
+<p>
+    Ce qui rend la Maison des Arts Traditionnels particulièrement spéciale est son ambiance intime. Contrairement aux grandes salles de concert, ce lieu accueillant permet aux visiteurs d'apprécier chaque détail des représentations – des expressions faciales subtiles et des mouvements de main des danseurs aux motifs brodés complexes sur les costumes traditionnels et l'artisanat fin des instruments musicaux. Cette atmosphère intime crée une connexion profonde entre les artistes et le public, faisant de chaque spectacle un échange culturel mémorable.
+</p>
+
+<h6>Le Cœur de la Préservation Culturelle</h6>
+<img src="traditional_art_performance_house_3.webp" alt="traditional_art_performance_house_3"/>
+<p>
+    La Maison des Arts Traditionnels représente bien plus que du divertissement – c'est une archive vivante du patrimoine culturel vietnamien. Chaque représentation raconte l'histoire du passé de Hoi An et son rôle de carrefour historique où se rencontraient et s'influençaient mutuellement diverses cultures. Le lieu sert de pont entre les générations, garantissant que les formes d'art traditionnel qui pourraient autrement disparaître soient préservées, célébrées et transmises aux futures audiences.
+</p>
+
+<p>
+    Les représentations ont lieu régulièrement tout au long de la journée, avec des spectacles en soirée à 21h00 d'une durée d'environ 60 minutes. Les visiteurs titulaires d'un billet d'entrée au Vieux Quartier reçoivent généralement un accès gratuit aux représentations, ce qui rend l'expérience culturelle une partie intégrante de l'exploration du patrimoine de Hoi An. Le théâtre climatisé offre des sièges confortables et une expérience agréable quel que soit le climat.
+</p>
+
+<p>
+    Pour ceux qui cherchent un aperçu authentique de l'âme du Vietnam – où la tradition rencontre l'art, et l'histoire s'anime à travers la musique et le mouvement – la Maison des Arts Traditionnels est une destination incontournable. Ici, dans une atmosphère intime entourée de murs anciens, l'esprit de la culture du Vietnam central continue de s'épanouir, invitant les visiteurs à vivre le patrimoine vivant qui a défini Hoi An pendant des siècles.
+</p>
+    `,
+      internalImageNames: [
+        'traditional_art_performance_house_2.webp',
+        'traditional_art_performance_house_3.webp',
+      ],
+    },
+
+    // =========================================================================
+    // VIETNAMESE CONTENT (vn)
+    // =========================================================================
+    vn: {
+      title: 'Nhà Biểu Diễn Nghệ Thuật Truyền Thống',
+      description:
+        'Một không gian văn hóa thân mật tôn vinh các nghệ thuật biểu diễn chân thực và truyền thống của Trung Bộ Việt Nam, mang đến các buổi biểu diễn trực tiếp của nhạc dân gian, múa và opera cổ điển.',
+      fullDescription: `
+<p>
+    Nằm ở trung tâm của Phố Cổ Hội An, <strong>Nhà Biểu Diễn Nghệ Thuật Truyền Thống</strong> là một không gian văn hóa sôi động bảo tồn và tôn vinh các truyền thống chân thực của các nghệ thuật biểu diễn Trung Bộ Việt Nam. Nằm tại số 75 đường Nguyễn Thái Học trong một ngôi nhà cổ được phục hồi tuyệt đẹp, địa điểm thân mật này đã là nền tảng của di sản văn hóa Hội An trong nhiều thập kỷ.
+</p>
+
+<p>
+    Được lưu trữ trong một cấu trúc truyền thống quyến rũ có hai tầng với tầm nhìn sông Thu Bồn, Nhà Biểu Diễn Nghệ Thuật Truyền Thống kết hợp một cách thanh lịch việc bảo tồn lịch sử với biểu hiện văn hóa. <strong>Tầng trệt</strong> hoạt động như một không gian trưng bày nơi khách thăm có thể ngưỡng mộ những chiếc mặt nạ truyền thống và các nhạc cụ, và thậm chí tham gia các hoạt động thực hành như vẽ những chiếc mặt nạ truyền thống <em>Tuồng</em> (opera cổ điển). <strong>Tầng trên</strong> đóng vai trò là sân khấu biểu diễn chuyên nghiệp, được trang bị đầy đủ với âm học hiện đại và ánh sáng để tổ chức các buổi biểu diễn văn hóa chân thực.
+</p>
+
+<h6>Kho Lưu Trữ Sống của Văn Hóa Trung Bộ Việt Nam</h6>
+
+<p>
+    Trong gần 30 năm, Nhà Biểu Diễn Nghệ Thuật Truyền Thống đã dành riêng để mang linh hồn của văn hóa Việt Nam đến cho cả khán giả trong nước và quốc tế. Với một tập hợp tài năng của các nhạc sĩ, vũ công và biên đạo múa, địa điểm này trình bày một loạt ấn tượng các nghệ thuật biểu diễn truyền thống sâu sắc gốc rễ trong bản sắc văn hóa Trung Bộ Việt Nam.
+</p>
+<img src="traditional_art_performance_house_2.webp" alt="traditional_art_performance_house_2"/>
+<p>
+    Các chương trình biểu diễn có nội dung với sự đa dạng đặc biệt của các hình thức nghệ thuật truyền thống:
+</p>
+
+<ul>
+    <li><strong>Hát Bài Chòi:</strong> Một hình thức nghệ thuật dân gian độc đáo kết hợp tuyệt vời âm nhạc, thơ ca và các trò chơi cộng đồng, tạo ra trải nghiệm tương tác và giàu cảm xúc.</li>
+    <li><strong>Dân Ca Quảng Nam:</strong> Những giai điệu xúc cảm kể câu chuyện về cuộc sống hàng ngày, tình yêu và truyền thống, được đi kèm bởi các nhạc cụ truyền thống như <em>Đàn Bầu</em> (một dây đơn), sáo tre và các nhạc cụ gõ.</li>
+    <li><strong>Điệu Múa Dân Gian Trung Bộ:</strong> Điệu múa biểu cảm bao gồm múa xách nước và múa cúng, tái hiện sinh động các cảnh từ cuộc sống địa phương và niềm tin tâm linh.</li>
+    <li><strong>Hát Bội (Tuồng) - Opera Cổ Điển Việt Nam:</strong> Một hình thức nghệ thuật tinh tế nổi tiếng với diễn xuất biểu cảm, trang phục đầy sắc màu và phức tạp, và độ sâu cảm xúc giàu có thu hút khán giả với sự phong phú tinh thần và nghệ thuật của di sản Việt Nam.</li>
+    <li><strong>Các Nhóm Nhạc Cụ Truyền Thống:</strong> Các buổi biểu diễn chuyên gia với các loại nhạc cụ Việt Nam truyền thống tạo ra bối cảnh âm thanh độc đáo của Trung Bộ Việt Nam.</li>
+</ul>
+
+<p>
+    Điều làm cho Nhà Biểu Diễn Nghệ Thuật Truyền Thống đặc biệt là bầu không khí thân mật của nó. Không giống như những nhạc viện lớn, địa điểm ấm áp cho phép khách thăm đánh giá từng chi tiết của các buổi biểu diễn – từ những biểu hiện khuôn mặt tinh tế và chuyển động tay của những vũ công đến thiết kế thêu phức tạp trên trang phục truyền thống và kỹ thủ công tốt đẹp của các nhạc cụ. Bầu không khí thân mật này tạo ra mối liên hệ sâu sắc giữa các nghệ sĩ biểu diễn và khán giả, làm cho mỗi buổi diễn là một cuộc trao đổi văn hóa đáng nhớ.
+</p>
+
+<h6>Trái Tim của Bảo Tồn Văn Hóa</h6>
+<img src="traditional_art_performance_house_3.webp" alt="traditional_art_performance_house_3"/>
+<p>
+    Nhà Biểu Diễn Nghệ Thuật Truyền Thống đại diện cho nhiều hơn là giải trí – nó là một kho lưu trữ sống của di sản văn hóa Việt Nam. Mỗi buổi biểu diễn kể câu chuyện về quá khứ của Hội An và vai trò của nó như một ngã tư lịch sử nơi các nền văn hóa khác nhau gặp nhau và ảnh hưởng lẫn nhau. Địa điểm này phục vụ như một cây cầu giữa các thế hệ, đảm bảo rằng các hình thức nghệ thuật truyền thống có thể biến mất được bảo tồn, tôn vinh và truyền lại cho các khán giả trong tương lai.
+</p>
+
+<p>
+    Các buổi biểu diễn diễn ra thường xuyên trong suốt ngày, với các buổi tối lúc 21:00 kéo dài khoảng 60 phút. Những khách thăm sở hữu vé vào Phố Cổ thường nhận được quyền truy cập miễn phí vào các buổi biểu diễn, làm cho trải nghiệm văn hóa trở thành một phần không thể thiếu trong việc khám phá di sản của Hội An. Rạp chiếu phim điều hòa không khí cung cấp chỗ ngồi thoải mái và trải nghiệm dễ chịu bất kể điều kiện thời tiết.
+</p>
+
+<p>
+    Đối với những ai tìm kiếm cái nhìn chân thực vào linh hồn của Việt Nam – nơi truyền thống gặp với nghệ thuật, và lịch sử trở nên sống động thông qua âm nhạc và chuyển động – Nhà Biểu Diễn Nghệ Thuật Truyền Thống là một điểm đến không thể thiếu. Ở đây, trong bầu không khí thân mật được bao quanh bởi những bức tường cổ xưa, tinh thần của văn hóa Trung Bộ Việt Nam tiếp tục phát triển, mời gọi khách thăm trải nghiệm di sản sống đã định hình Hội An trong nhiều thế kỷ.
+</p>
+    `,
+      internalImageNames: [
+        'traditional_art_performance_house_2.webp',
+        'traditional_art_performance_house_3.webp',
+      ],
+    },
+
+    slug: {
+      en: 'traditional-art-performance-house',
+      ru: 'dom-traditsionnogo-iskusstva-i-predstavleniy',
+      es: 'casa-de-arte-tradicional-y-actuacion',
+      fr: 'maison-dart-traditionnel-et-spectacle',
+      vn: 'nha-bieu-dien-nghe-thuat-truyen-thong',
+    },
+  },
   // Chinese Assembly Hall of Hoi An
   {
     id: 'trung-hoa-assembly-hall',

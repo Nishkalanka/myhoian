@@ -12,7 +12,7 @@ export const foodDrinksLandmarks: Landmark[] = [
       description:
         'Premium deli and boutique offering artisanal sandwiches, gourmet cheese and charcuterie, with a focus on quality ingredients and authentic flavors.',
       fullDescription: `
-<p>Located in the heart of Hoi An's Ancient Town, The Hill Station Deli & Boutique has been a culinary landmark since 2011. Our journey began with a simple idea: to bring the freshness of local produce and the richness of global culinary traditions to our guests.</p>
+<p>Located in the heart of Hoi An's Ancient Town, The Hill Station Deli & Boutique has been a culinary landmark since 2011.</p>
     `,
       internalImageNames: [],
       menu: [
@@ -345,6 +345,226 @@ export const foodDrinksLandmarks: Landmark[] = [
             },
           ],
         },
+        {
+          categoryName: 'Aperitifs',
+          items: [
+            {
+              name: 'Ricard, Campari or Amaretto',
+              description: 'Classic aperitifs',
+              price: '75.000',
+            },
+            {
+              name: "Bailey's",
+              description: 'Creamy liqueur',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Premium Spirits',
+          items: [
+            {
+              name: 'Vodka, Whiskey, Gin or White Rum',
+              description: 'Premium spirits',
+              price: '85.000',
+            },
+            {
+              name: 'House Spirit with Mixer',
+              description: 'Mixed drink',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Non-Alcoholic Drinks',
+          items: [
+            {
+              name: 'Sprite, Coca-Cola, Fanta',
+              description: 'Soft drinks',
+              price: '30.000',
+            },
+            {
+              name: 'Soda Water',
+              description: 'Carbonated water',
+              price: '30.000',
+            },
+            {
+              name: 'Tonic Water',
+              description: 'Tonic drink',
+              price: '30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Freshly Squeezed Juices',
+          items: [
+            {
+              name: '100% Fresh Orange Juice',
+              description: 'Freshly squeezed orange juice',
+              price: '65.000',
+            },
+            {
+              name: 'Watermelon Juice',
+              description: 'Freshly squeezed watermelon juice',
+              price: '65.000',
+            },
+            {
+              name: 'Mango Juice',
+              description: 'Freshly squeezed mango juice',
+              price: '65.000',
+            },
+            {
+              name: 'Lime Juice',
+              description: 'Freshly squeezed lime juice',
+              price: '35.000',
+            },
+            {
+              name: 'Young Coconut',
+              description: 'Fresh coconut milk',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Tea',
+          items: [
+            {
+              name: 'Green Tea, Jasmine Tea, Black Tea, Oolong, Earl Grey',
+              description: 'High quality tea Vergers du Mekong',
+              price: '35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Coffee',
+          items: [
+            {
+              name: 'Orange Americano',
+              description: 'Coffee with orange flavor',
+              price: '85.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Classic Italian coffee',
+              price: '55.000',
+            },
+            {
+              name: 'Latte',
+              description: 'Coffee with milk',
+              price: '55.000',
+            },
+            {
+              name: 'Espresso',
+              description: 'Strong black coffee',
+              price: '45.000',
+            },
+            {
+              name: 'Vietnamese Coffee Black/White',
+              description: 'Traditional Vietnamese coffee',
+              price: '30.000',
+            },
+            {
+              name: 'Espresso Macchiato',
+              description: 'Espresso with a touch of milk',
+              price: '50.000',
+            },
+            {
+              name: 'Hot Chocolate',
+              description: 'Hot chocolate drink',
+              price: '65.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Classic black coffee',
+              price: '45.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Carlsberg Beer',
+          items: [
+            {
+              name: 'Carlsberg Lager 4.7% - 330ml',
+              description: 'Classic lager beer',
+              price: '40.000',
+            },
+            {
+              name: 'Carlsberg Lager 4.7% - 500ml',
+              description: 'Classic lager beer',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 330ml',
+              description: 'Pilsner beer',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 550ml',
+              description: 'Pilsner beer',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Craft Beer',
+          items: [
+            {
+              name: 'Kroneburg 1664 Blanc - Wheat 5%',
+              description: 'Wheat beer',
+              price: '75.000',
+            },
+            {
+              name: 'Beach Blonde - Blonde Ale 5%',
+              description: 'Blonde ale',
+              price: '85.000',
+            },
+            {
+              name: 'Fire Eater Stout - Cacao-Chili Stout 7.3%',
+              description: 'Spicy stout from 7 Bridges',
+              price: '125.000',
+            },
+            {
+              name: 'Sunset Tangerine - Fruit Wheat 4.2%',
+              description: 'Wheat beer with tangerine',
+              price: '115.000',
+            },
+            {
+              name: 'Hibiscus Cider - Cider 4.8%',
+              description: 'Hibiscus cider from Bazan Brewing',
+              price: '115.000',
+            },
+            {
+              name: 'Pacific Pilsner - Pilsner 5%',
+              description: 'Pilsner beer',
+              price: '115.000',
+            },
+            {
+              name: 'East West Pale Ale - Pale Ale 6%',
+              description: 'Pale ale from East West',
+              price: '115.000',
+            },
+            {
+              name: 'Black Shadows Espresso Martini Stout - Stout 6.4%',
+              description: 'Espresso stout',
+              price: '135.000',
+            },
+            {
+              name: 'Dream Alone - Pale Ale 5.7%',
+              description: 'Pale ale from Heart of Darkness',
+              price: '125.000',
+            },
+            {
+              name: 'Dream Sensations - Hazy IPA 5.7%',
+              description: 'Hazy IPA',
+              price: '125.000',
+            },
+            {
+              name: 'Kurtz Insane IPA - IPA 7.1%',
+              description: 'Strong IPA',
+              price: '135.000',
+            },
+          ],
+        },
       ],
     },
     es: {
@@ -353,7 +573,7 @@ export const foodDrinksLandmarks: Landmark[] = [
         'Delicatessen y boutique premium que ofrece sándwiches artesanales, quesos y charcutería gourmet, con énfasis en ingredientes de calidad y sabores auténticos.',
       fullDescription: `
 <p>Ubicado en el corazón del Casco Antiguo de Hoi An, The Hill Station Deli & Boutique ha sido un referente culinario desde 2011.</p>
-  `,
+    `,
       internalImageNames: [],
       menu: [
         {
@@ -686,6 +906,218 @@ export const foodDrinksLandmarks: Landmark[] = [
             },
           ],
         },
+        {
+          categoryName: 'Aperitivos',
+          items: [
+            {
+              name: 'Ricard, Campari o Amaretto',
+              description: 'Aperitivos clásicos',
+              price: '75.000',
+            },
+            { name: "Bailey's", description: 'Licor cremoso', price: '75.000' },
+          ],
+        },
+        {
+          categoryName: 'Bebidas Alcohólicas Premium',
+          items: [
+            {
+              name: 'Vodka, Whiskey, Ginebra o Ron Blanco',
+              description: 'Bebidas espirituosas premium',
+              price: '85.000',
+            },
+            {
+              name: 'Bebida Espirituosa con Mezclador',
+              description: 'Bebida mixta',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bebidas Sin Alcohol',
+          items: [
+            {
+              name: 'Sprite, Coca-Cola, Fanta',
+              description: 'Bebidas gaseosas',
+              price: '30.000',
+            },
+            {
+              name: 'Agua Carbonatada',
+              description: 'Agua gaseosa',
+              price: '30.000',
+            },
+            {
+              name: 'Agua Tónica',
+              description: 'Bebida tónica',
+              price: '30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Jugos Recién Exprimidos',
+          items: [
+            {
+              name: 'Jugo de Naranja 100%',
+              description: 'Jugo de naranja recién exprimido',
+              price: '65.000',
+            },
+            {
+              name: 'Jugo de Sandía',
+              description: 'Jugo de sandía recién exprimido',
+              price: '65.000',
+            },
+            {
+              name: 'Jugo de Mango',
+              description: 'Jugo de mango recién exprimido',
+              price: '65.000',
+            },
+            {
+              name: 'Jugo de Lima',
+              description: 'Jugo de lima recién exprimido',
+              price: '35.000',
+            },
+            {
+              name: 'Coco Joven',
+              description: 'Leche de coco fresca',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Té',
+          items: [
+            {
+              name: 'Té Verde, Té de Jazmín, Té Negro, Oolong, Conde Gris',
+              description: 'Té de alta calidad Vergers du Mekong',
+              price: '35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Café',
+          items: [
+            {
+              name: 'Americano Naranja',
+              description: 'Café con sabor a naranja',
+              price: '85.000',
+            },
+            {
+              name: 'Capuchino',
+              description: 'Café italiano clásico',
+              price: '55.000',
+            },
+            { name: 'Latte', description: 'Café con leche', price: '55.000' },
+            {
+              name: 'Espresso',
+              description: 'Café negro fuerte',
+              price: '45.000',
+            },
+            {
+              name: 'Café Vietnamita Negro/Blanco',
+              description: 'Café vietnamita tradicional',
+              price: '30.000',
+            },
+            {
+              name: 'Espresso Macchiato',
+              description: 'Espresso con toque de leche',
+              price: '50.000',
+            },
+            {
+              name: 'Chocolate Caliente',
+              description: 'Bebida de chocolate caliente',
+              price: '65.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Café negro clásico',
+              price: '45.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cerveza Carlsberg',
+          items: [
+            {
+              name: 'Carlsberg Lager 4.7% - 330ml',
+              description: 'Cerveza Lager clásica',
+              price: '40.000',
+            },
+            {
+              name: 'Carlsberg Lager 4.7% - 500ml',
+              description: 'Cerveza Lager clásica',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 330ml',
+              description: 'Cerveza Pilsner',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 550ml',
+              description: 'Cerveza Pilsner',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cerveza Artesanal',
+          items: [
+            {
+              name: 'Kroneburg 1664 Blanc - Trigo 5%',
+              description: 'Cerveza de trigo',
+              price: '75.000',
+            },
+            {
+              name: 'Beach Blonde - Ale Rubia 5%',
+              description: 'Cerveza rubia',
+              price: '85.000',
+            },
+            {
+              name: 'Fire Eater Stout - Cacao-Chile Stout 7.3%',
+              description: 'Stout picante de 7 Bridges',
+              price: '125.000',
+            },
+            {
+              name: 'Sunset Tangerine - Trigo Frutal 4.2%',
+              description: 'Cerveza de trigo con mandarina',
+              price: '115.000',
+            },
+            {
+              name: 'Hibiscus Cider - Sidra 4.8%',
+              description: 'Sidra de hibisco de Bazan Brewing',
+              price: '115.000',
+            },
+            {
+              name: 'Pacific Pilsner - Pilsner 5%',
+              description: 'Cerveza Pilsner',
+              price: '115.000',
+            },
+            {
+              name: 'East West Pale Ale - Pale Ale 6%',
+              description: 'Pale Ale de East West',
+              price: '115.000',
+            },
+            {
+              name: 'Black Shadows Espresso Martini Stout - Stout 6.4%',
+              description: 'Stout de Espresso',
+              price: '135.000',
+            },
+            {
+              name: 'Dream Alone - Pale Ale 5.7%',
+              description: 'Pale Ale de Heart of Darkness',
+              price: '125.000',
+            },
+            {
+              name: 'Dream Sensations - Hazy IPA 5.7%',
+              description: 'Hazy IPA',
+              price: '125.000',
+            },
+            {
+              name: 'Kurtz Insane IPA - IPA 7.1%',
+              description: 'IPA fuerte',
+              price: '135.000',
+            },
+          ],
+        },
       ],
     },
     fr: {
@@ -693,15 +1125,8 @@ export const foodDrinksLandmarks: Landmark[] = [
       description:
         'Délicatessen et boutique haut de gamme offrant des sandwichs artisanaux, du fromage et de la charcuterie gastronomiques, avec un accent sur les ingrédients de qualité et les saveurs authentiques.',
       fullDescription: `
-<p>Situé au cœur de la Ville Ancienne de Hoi An, The Hill Station Deli & Boutique est un repère culinaire depuis 2011. Notre histoire a commencé par une idée simple : apporter la fraîcheur des produits locaux et la richesse des traditions culinaires mondiales à nos hôtes.</p>
-
-<p>Nous nous spécialisons dans les baguettes artisanales, les sandwichs gastronomiques et une impressionnante sélection de fromages et charcuteries européens. Notre équipe de cuisine crée tout à partir de zéro, y compris nos saucisses de marque, pesto et sauce russe maison.</p>
-
-<h6>Nos Spécialités</h6>
-<p>The Hill Station est réputé pour notre Sandwich Reuben à la The Hill Station, une interprétation du classique avec sauce russe maison, fromage suisse et pastrami. Nous servons également notre Ragoût de Boeuf signature 'Bo Kho', une fusion unique des traditions vietnamiennes avec les techniques de cuisine européenne.</p>
-
-<p>Nos plateaux de fromage et charcuterie sont parfaits pour partager, avec des importations européennes soigneusement sélectionnées aux côtés d'articles frais faits maison. Ne manquez pas notre expérience Raclette - un classique de fromage fondu servi avec tous les accompagnements traditionnels.</p>
-  `,
+<p>Situé au cœur de la Ville Ancienne de Hoi An, The Hill Station Deli & Boutique est un repère culinaire depuis 2011.</p>
+    `,
       internalImageNames: [],
       menu: [
         {
@@ -1033,6 +1458,222 @@ export const foodDrinksLandmarks: Landmark[] = [
               description:
                 'Gustave Lorentz Riesling (bouteille) - Prix spécial uniquement avec Raclette',
               price: '1.190.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Apéritifs',
+          items: [
+            {
+              name: 'Ricard, Campari ou Amaretto',
+              description: 'Apéritifs classiques',
+              price: '75.000',
+            },
+            {
+              name: "Bailey's",
+              description: 'Liqueur crémeuse',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Alcools Premium',
+          items: [
+            {
+              name: 'Vodka, Whiskey, Gin ou Rhum Blanc',
+              description: 'Boissons alcoolisées premium',
+              price: '85.000',
+            },
+            {
+              name: 'Alcool Maison avec Mélangeur',
+              description: 'Boisson mixte',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Boissons Sans Alcool',
+          items: [
+            {
+              name: 'Sprite, Coca-Cola, Fanta',
+              description: 'Boissons gazeuses',
+              price: '30.000',
+            },
+            {
+              name: 'Eau Gazeuse',
+              description: 'Eau gazeuse',
+              price: '30.000',
+            },
+            {
+              name: 'Eau Tonique',
+              description: 'Boisson tonique',
+              price: '30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Jus Frais Pressés',
+          items: [
+            {
+              name: "Jus d'Orange 100%",
+              description: "Jus d'orange frais pressé",
+              price: '65.000',
+            },
+            {
+              name: 'Jus de Pastèque',
+              description: 'Jus de pastèque frais pressé',
+              price: '65.000',
+            },
+            {
+              name: 'Jus de Mangue',
+              description: 'Jus de mangue frais pressé',
+              price: '65.000',
+            },
+            {
+              name: 'Jus de Citron Vert',
+              description: 'Jus de citron vert frais pressé',
+              price: '35.000',
+            },
+            {
+              name: 'Jeune Noix de Coco',
+              description: 'Lait de coco frais',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Thé',
+          items: [
+            {
+              name: 'Thé Vert, Thé au Jasmin, Thé Noir, Oolong, Comte Grey',
+              description: 'Thé de haute qualité Vergers du Mekong',
+              price: '35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Café',
+          items: [
+            {
+              name: 'Americano Orange',
+              description: "Café avec saveur d'orange",
+              price: '85.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Café italien classique',
+              price: '55.000',
+            },
+            { name: 'Latte', description: 'Café au lait', price: '55.000' },
+            {
+              name: 'Espresso',
+              description: 'Café noir fort',
+              price: '45.000',
+            },
+            {
+              name: 'Café Vietnamien Noir/Blanc',
+              description: 'Café vietnamien traditionnel',
+              price: '30.000',
+            },
+            {
+              name: 'Espresso Macchiato',
+              description: 'Espresso avec trait de lait',
+              price: '50.000',
+            },
+            {
+              name: 'Chocolat Chaud',
+              description: 'Boisson chocolatée chaude',
+              price: '65.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Café noir classique',
+              price: '45.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bière Carlsberg',
+          items: [
+            {
+              name: 'Carlsberg Lager 4.7% - 330ml',
+              description: 'Bière Lager classique',
+              price: '40.000',
+            },
+            {
+              name: 'Carlsberg Lager 4.7% - 500ml',
+              description: 'Bière Lager classique',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 330ml',
+              description: 'Bière Pilsner',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 550ml',
+              description: 'Bière Pilsner',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bière Artisanale',
+          items: [
+            {
+              name: 'Kroneburg 1664 Blanc - Blé 5%',
+              description: 'Bière de blé',
+              price: '75.000',
+            },
+            {
+              name: 'Beach Blonde - Pale Ale Blonde 5%',
+              description: 'Bière blonde',
+              price: '85.000',
+            },
+            {
+              name: 'Fire Eater Stout - Stout Cacao-Chili 7.3%',
+              description: 'Stout épicé de 7 Bridges',
+              price: '125.000',
+            },
+            {
+              name: 'Sunset Tangerine - Blé Fruité 4.2%',
+              description: 'Bière de blé à la mandarine',
+              price: '115.000',
+            },
+            {
+              name: 'Hibiscus Cider - Cidre 4.8%',
+              description: "Cidre à l'hibiscus de Bazan Brewing",
+              price: '115.000',
+            },
+            {
+              name: 'Pacific Pilsner - Pilsner 5%',
+              description: 'Bière Pilsner',
+              price: '115.000',
+            },
+            {
+              name: 'East West Pale Ale - Pale Ale 6%',
+              description: "Pale Ale d'East West",
+              price: '115.000',
+            },
+            {
+              name: 'Black Shadows Espresso Martini Stout - Stout 6.4%',
+              description: "Stout à l'espresso",
+              price: '135.000',
+            },
+            {
+              name: 'Dream Alone - Pale Ale 5.7%',
+              description: 'Pale Ale de Heart of Darkness',
+              price: '125.000',
+            },
+            {
+              name: 'Dream Sensations - Hazy IPA 5.7%',
+              description: 'Hazy IPA',
+              price: '125.000',
+            },
+            {
+              name: 'Kurtz Insane IPA - IPA 7.1%',
+              description: 'IPA forte',
+              price: '135.000',
             },
           ],
         },
@@ -1377,6 +2018,226 @@ export const foodDrinksLandmarks: Landmark[] = [
             },
           ],
         },
+        {
+          categoryName: 'Аперитивы',
+          items: [
+            {
+              name: 'Риард, Кампари или Амаретто',
+              description: 'Классические аперитивы',
+              price: '75.000',
+            },
+            {
+              name: 'Бейлис',
+              description: 'Кремовый ликер',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Крепкие спиртные напитки',
+          items: [
+            {
+              name: 'Водка, виски, джин или белый ром',
+              description: 'Домашние спиртные напитки',
+              price: '85.000',
+            },
+            {
+              name: 'Домашний спирт с миксером',
+              description: 'Смешанный напиток',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Безалкогольные напитки',
+          items: [
+            {
+              name: 'Спрайт, Кока-Кола, Фанта',
+              description: 'Газированные напитки',
+              price: '30.000',
+            },
+            {
+              name: 'Содовая вода',
+              description: 'Газированная вода',
+              price: '30.000',
+            },
+            {
+              name: 'Тоник',
+              description: 'Тонизирующий напиток',
+              price: '30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Свежевыжатые соки',
+          items: [
+            {
+              name: 'Апельсиновый сок 100%',
+              description: 'Свежевыжатый апельсиновый сок',
+              price: '65.000',
+            },
+            {
+              name: 'Сок дыни',
+              description: 'Свежевыжатый сок дыни',
+              price: '65.000',
+            },
+            {
+              name: 'Манговый сок',
+              description: 'Свежевыжатый манговый сок',
+              price: '65.000',
+            },
+            {
+              name: 'Сок лайма',
+              description: 'Свежевыжатый сок лайма',
+              price: '35.000',
+            },
+            {
+              name: 'Молодой кокос',
+              description: 'Свежее кокосовое молоко',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Чай',
+          items: [
+            {
+              name: 'Зеленый чай, чай с жасмином, черный чай, улун, Граф Грей',
+              description: 'Высококачественный чай Vergers du Mekong',
+              price: '35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Кофе',
+          items: [
+            {
+              name: 'Оранжевый американо',
+              description: 'Кофе с апельсиновым вкусом',
+              price: '85.000',
+            },
+            {
+              name: 'Капучино',
+              description: 'Классический итальянский кофе',
+              price: '55.000',
+            },
+            {
+              name: 'Латте',
+              description: 'Кофе с молоком',
+              price: '55.000',
+            },
+            {
+              name: 'Эспрессо',
+              description: 'Крепкий черный кофе',
+              price: '45.000',
+            },
+            {
+              name: 'Вьетнамский кофе черный/белый',
+              description: 'Традиционный вьетнамский кофе',
+              price: '30.000',
+            },
+            {
+              name: 'Эспрессо Макиато',
+              description: 'Эспрессо с каплей молока',
+              price: '50.000',
+            },
+            {
+              name: 'Горячий шоколад',
+              description: 'Горячий шоколадный напиток',
+              price: '65.000',
+            },
+            {
+              name: 'Американо',
+              description: 'Классический черный кофе',
+              price: '45.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Пиво Карлсберг',
+          items: [
+            {
+              name: 'Карлсберг Лагер 4.7% - 330мл',
+              description: 'Классическое лагер пиво',
+              price: '40.000',
+            },
+            {
+              name: 'Карлсберг Лагер 4.7% - 500мл',
+              description: 'Классическое лагер пиво',
+              price: '60.000',
+            },
+            {
+              name: 'Карлсберг Пилснер 4.8% - 330мл',
+              description: 'Пилснер пиво',
+              price: '60.000',
+            },
+            {
+              name: 'Карлсберг Пилснер 4.8% - 550мл',
+              description: 'Пилснер пиво',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Ремесленное пиво',
+          items: [
+            {
+              name: 'Кронебург 1664 Блан - Пшеничное 5%',
+              description: 'Пшеничное пиво',
+              price: '75.000',
+            },
+            {
+              name: 'Beach Blonde - Светлый эль 5%',
+              description: 'Светлое пиво',
+              price: '85.000',
+            },
+            {
+              name: 'Fire Eater Stout - Какао-чили стаут 7.3%',
+              description: 'Пряный стаут от 7 Bridges',
+              price: '125.000',
+            },
+            {
+              name: 'Sunset Tangerine - Фруктовое пшеничное 4.2%',
+              description: 'Пшеничное пиво с мандарином',
+              price: '115.000',
+            },
+            {
+              name: 'Hibiscus Cider - Сидр 4.8%',
+              description: 'Гибискусовый сидр от Bazan Brewing',
+              price: '115.000',
+            },
+            {
+              name: 'Pacific Pilsner - Пилснер 5%',
+              description: 'Пилснер пиво',
+              price: '115.000',
+            },
+            {
+              name: 'East West Pale Ale - Бледный эль 6%',
+              description: 'Бледный эль от East West',
+              price: '115.000',
+            },
+            {
+              name: 'Black Shadows Espresso Martini Stout - Стаут 6.4%',
+              description: 'Эспрессо стаут',
+              price: '135.000',
+            },
+            {
+              name: 'Dream Alone - Бледный эль 5.7%',
+              description: 'Бледный эль от Heart of Darkness',
+              price: '125.000',
+            },
+            {
+              name: 'Dream Sensations - Мутный IPA 5.7%',
+              description: 'Хейзи IPA',
+              price: '125.000',
+            },
+            {
+              name: 'Kurtz Insane IPA - IPA 7.1%',
+              description: 'Крепкой IPA',
+              price: '135.000',
+            },
+          ],
+        },
       ],
     },
     vn: {
@@ -1385,7 +2246,7 @@ export const foodDrinksLandmarks: Landmark[] = [
         'Deli và boutique hàng cao cấp phục vụ bánh mì thủ công, phô mai và thịt nguội sang trọng, nhấn mạnh vào nguyên liệu chất lượng cao và hương vị chân thực.',
       fullDescription: `
 <p>Nằm ở trung tâm Phố cổ Hội An, The Hill Station Deli & Boutique là một điểm đến ẩm thực kể từ năm 2011.</p>
-  `,
+    `,
       internalImageNames: [],
       menu: [
         {
@@ -1719,6 +2580,210 @@ export const foodDrinksLandmarks: Landmark[] = [
             },
           ],
         },
+        {
+          categoryName: 'Aperitif',
+          items: [
+            {
+              name: 'Ricard, Campari hoặc Amaretto',
+              description: 'Các aperitif cổ điển',
+              price: '75.000',
+            },
+            { name: "Bailey's", description: 'Rượu kem', price: '75.000' },
+          ],
+        },
+        {
+          categoryName: 'Rượu Cao Cấp',
+          items: [
+            {
+              name: 'Vodka, Whiskey, Gin hoặc Rum Trắng',
+              description: 'Đồ uống rượu cao cấp',
+              price: '85.000',
+            },
+            {
+              name: 'Rượu Nhà với Chế phẩm Trộn',
+              description: 'Đồ uống trộn',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Đồ Uống Không Cồn',
+          items: [
+            {
+              name: 'Sprite, Coca-Cola, Fanta',
+              description: 'Đồ uống có ga',
+              price: '30.000',
+            },
+            { name: 'Nước Soda', description: 'Nước có ga', price: '30.000' },
+            {
+              name: 'Nước Tonic',
+              description: 'Đồ uống tonic',
+              price: '30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Nước Ép Tươi',
+          items: [
+            {
+              name: 'Nước Ép Cam 100%',
+              description: 'Nước ép cam tươi',
+              price: '65.000',
+            },
+            {
+              name: 'Nước Ép Dưa Hấu',
+              description: 'Nước ép dưa hấu tươi',
+              price: '65.000',
+            },
+            {
+              name: 'Nước Ép Xoài',
+              description: 'Nước ép xoài tươi',
+              price: '65.000',
+            },
+            {
+              name: 'Nước Ép Chanh',
+              description: 'Nước ép chanh tươi',
+              price: '35.000',
+            },
+            { name: 'Dừa Xiêm', description: 'Sữa dừa tươi', price: '65.000' },
+          ],
+        },
+        {
+          categoryName: 'Trà',
+          items: [
+            {
+              name: 'Trà Xanh, Trà Hoa Nhài, Trà Đen, Trà Oolong, Trà Bá Tước',
+              description: 'Trà chất lượng cao Vergers du Mekong',
+              price: '35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cà Phê',
+          items: [
+            {
+              name: 'Americano Cam',
+              description: 'Cà phê với hương vị cam',
+              price: '85.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Cà phê Ý cổ điển',
+              price: '55.000',
+            },
+            { name: 'Latte', description: 'Cà phê với sữa', price: '55.000' },
+            {
+              name: 'Espresso',
+              description: 'Cà phê đen mạnh',
+              price: '45.000',
+            },
+            {
+              name: 'Cà Phê Việt Nam Đen/Trắng',
+              description: 'Cà phê Việt Nam truyền thống',
+              price: '30.000',
+            },
+            {
+              name: 'Espresso Macchiato',
+              description: 'Espresso với ít sữa',
+              price: '50.000',
+            },
+            {
+              name: 'Sô-cô-la Nóng',
+              description: 'Đồ uống sô-cô-la nóng',
+              price: '65.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Cà phê đen cổ điển',
+              price: '45.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bia Carlsberg',
+          items: [
+            {
+              name: 'Carlsberg Lager 4.7% - 330ml',
+              description: 'Bia Lager cổ điển',
+              price: '40.000',
+            },
+            {
+              name: 'Carlsberg Lager 4.7% - 500ml',
+              description: 'Bia Lager cổ điển',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 330ml',
+              description: 'Bia Pilsner',
+              price: '60.000',
+            },
+            {
+              name: 'Carlsberg Pilsner 4.8% - 550ml',
+              description: 'Bia Pilsner',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bia Thủ Công',
+          items: [
+            {
+              name: 'Kroneburg 1664 Blanc - Lúa Mạch 5%',
+              description: 'Bia lúa mạch',
+              price: '75.000',
+            },
+            {
+              name: 'Beach Blonde - Pale Ale Vàng 5%',
+              description: 'Bia vàng',
+              price: '85.000',
+            },
+            {
+              name: 'Fire Eater Stout - Stout Cacao-Ớt 7.3%',
+              description: 'Stout cay từ 7 Bridges',
+              price: '125.000',
+            },
+            {
+              name: 'Sunset Tangerine - Lúa Mạch Trái Cây 4.2%',
+              description: 'Bia lúa mạch với quế',
+              price: '115.000',
+            },
+            {
+              name: 'Hibiscus Cider - Rượu Táo 4.8%',
+              description: 'Rượu táo hoa Cúc từ Bazan Brewing',
+              price: '115.000',
+            },
+            {
+              name: 'Pacific Pilsner - Pilsner 5%',
+              description: 'Bia Pilsner',
+              price: '115.000',
+            },
+            {
+              name: 'East West Pale Ale - Pale Ale 6%',
+              description: 'Pale Ale từ East West',
+              price: '115.000',
+            },
+            {
+              name: 'Black Shadows Espresso Martini Stout - Stout 6.4%',
+              description: 'Stout Espresso',
+              price: '135.000',
+            },
+            {
+              name: 'Dream Alone - Pale Ale 5.7%',
+              description: 'Pale Ale từ Heart of Darkness',
+              price: '125.000',
+            },
+            {
+              name: 'Dream Sensations - Hazy IPA 5.7%',
+              description: 'Hazy IPA',
+              price: '125.000',
+            },
+            {
+              name: 'Kurtz Insane IPA - IPA 7.1%',
+              description: 'IPA Mạnh',
+              price: '135.000',
+            },
+          ],
+        },
       ],
     },
     slug: {
@@ -1729,7 +2794,6 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'the-hill-station-deli-and-boutique',
     },
   },
-
   //Sua
   {
     id: 'sua-vegan-restaurant', // <-- ID теперь строковый
@@ -2018,6 +3082,69 @@ export const foodDrinksLandmarks: Landmark[] = [
       es: 'fefe-roastery',
       fr: 'fefe-roastery',
       vn: 'fefe-roastery',
+    },
+  },
+  //Secret-Garden
+  {
+    id: 'secret-garden', // <-- ID теперь строковый
+    coordinates: [15.877724249099783, 108.32800995382493], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'secret-garden.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    en: {
+      title: 'Secret Garden',
+      description: 'Secret Garden in Hoi An is a true oasis of calm and green.',
+      fullDescription: `
+<p>Wow, what a surprise!” – That’s what we often hear from guests who discover us. Tucked away like a hidden gem in the middle of Hoi An Old Town, Secret Garden in Hoi An is a true oasis of calm and green. You’ll find us at the end of the alley next to No.132 Trần Phú Street. Step behind the old walls and into a peaceful garden where traditional Vietnamese dishes and carefully crafted Western flavors come together. Here, time slows, flavors bloom, and every moment feels like home.
+</p>
+      `,
+      internalImageNames: [], // Добавьте имена файлов изображений, если они будут
+    },
+    es: {
+      title: 'Secret Garden',
+      description:
+        'Secret Garden en Hoi An es un verdadero oasis de calma y verdor.',
+      fullDescription: `
+<p>¡Wow, qué sorpresa!" – Eso es lo que frecuentemente escuchamos de los huéspedes que nos descubren. Escondido como una joya oculta en medio de la Ciudad Antigua de Hoi An, Secret Garden en Hoi An es un verdadero oasis de calma y verdor. Nos encontrarás al final del callejón junto al No.132 de la calle Trần Phú. Entra detrás de los muros antiguos en un jardín tranquilo donde los platos vietnamitas tradicionales y los sabores occidentales cuidadosamente elaborados se unen. Aquí, el tiempo se ralentiza, los sabores florecen, y cada momento se siente como en casa.
+</p>
+      `,
+      internalImageNames: [],
+    },
+    fr: {
+      title: 'Secret Garden',
+      description:
+        'Secret Garden à Hoi An est un véritable oasis de calme et de verdure.',
+      fullDescription: `
+<p>"Wow, quel surprise !" – C'est ce que nous entendons souvent de la part des clients qui nous découvrent. Caché comme un joyau secret au cœur de la Vieille Ville de Hoi An, Secret Garden à Hoi An est un véritable oasis de calme et de verdure. Vous nous trouverez au bout de la ruelle à côté du No.132 rue Trần Phú. Franchez les vieux murs et entrez dans un jardin paisible où les plats traditionnels vietnamiens et les saveurs occidentales soigneusement élaborées se rencontrent. Ici, le temps ralentit, les saveurs s'épanouissent, et chaque moment se sent comme à la maison.
+</p>
+      `,
+      internalImageNames: [],
+    },
+    ru: {
+      title: 'Secret Garden',
+      description:
+        'Secret Garden в Хойане — это настоящий оазис спокойствия и зелени.',
+      fullDescription: `
+<p>"Вау, какой сюрприз!" – Вот что мы часто слышим от гостей, которые нас обнаруживают. Спрятанный как скрытая драгоценность в центре Древнего города Хойан, Secret Garden в Хойане — это настоящий оазис спокойствия и зелени. Вы найдете нас в конце переулка рядом с домом № 132 на улице Чан Фу. Шагните за древние стены в мирный сад, где встречаются традиционные вьетнамские блюда и тщательно созданные западные вкусы. Здесь время замедляется, вкусы расцветают, и каждый момент кажется домом.
+</p>
+      `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Secret Garden',
+      description:
+        'Secret Garden ở Hội An là một ốc đảo thực sự của sự yên tĩnh và xanh mát.',
+      fullDescription: `
+<p>"Wow, thật là bất ngờ!" – Đó là những gì chúng tôi thường nghe từ những vị khách phát hiện ra chúng tôi. Ẩn giấu như một viên ngọc quý giá giữa Phố Cổ Hội An, Secret Garden ở Hội An là một ốc đảo thực sự của sự yên tĩnh và xanh mát. Bạn sẽ tìm thấy chúng tôi ở cuối con hẻm bên cạnh Số 132 đường Trần Phú. Bước qua những bức tường cũ vào một khu vườn yên bình nơi các món ăn Việt Nam truyền thống và những hương vị phương Tây được chế tác cẩn thận gặp nhau. Ở đây, thời gian chậm lại, hương vị nở hoa, và mỗi khoảnh khắc đều cảm thấy như ở nhà.
+</p>
+      `,
+      internalImageNames: [],
+    },
+    slug: {
+      en: 'secret-garden-restaurant',
+      ru: 'secret-garden-restoran',
+      es: 'secret-garden-restaurante',
+      fr: 'secret-garden-restaurant',
+      vn: 'nha-hang-secret-garden',
     },
   },
 ];

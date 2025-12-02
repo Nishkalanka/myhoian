@@ -33,10 +33,10 @@ const LanguageSwitcher: React.FC = () => {
       >
         <MenuItem value="en">
           <ReactCountryFlag
-            countryCode="US"
+            countryCode="GB"
             svg
             style={{ width: '1.5em', height: '1.5em', marginRight: '8px' }}
-            title="US"
+            title="GB"
           />{' '}
         </MenuItem>
         <MenuItem value="fr">

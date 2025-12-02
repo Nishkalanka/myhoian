@@ -16,7 +16,7 @@ import {
 
 // Импортируем компоненты
 import MainAppBar from './MainAppBar';
-import MainMenuDrawer from './MainMenuDrawer';
+//import MainMenuDrawer from './MainMenuDrawer';
 import FilterDrawer from '../../../features/filter-landmarks/ui/FilterDrawer';
 import WelcomeDialog from './WelcomeDialog';
 import CategoryFilter from '../../../features/filter-landmarks/ui/CategoryFilter';
@@ -32,8 +32,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({
   onSelectCategories,
   selectedCategorySlugs,
-  toggleRouteVisibility,
-  isRouteVisible,
+  //toggleRouteVisibility,
+  //isRouteVisible,
 }) => {
   // Инициализируем хук для картинок
   const getImageUrl = usePictureUrl();
@@ -56,11 +56,13 @@ const Header: React.FC<HeaderProps> = ({
   } = useDrawerToggle(false);
 
   // Хук для главного меню
+  /*
   const {
     isOpen: isMainMenuDrawerOpen,
     open: openMainMenuDrawer,
     close: closeMainMenuDrawer,
   } = useDrawerToggle(false);
+  */
 
   // Обработчик клика по логотипу
   const handleLogoClick = useCallback(() => {
@@ -93,12 +95,12 @@ const Header: React.FC<HeaderProps> = ({
       <MainAppBar
         logoSrc={logoSvg}
         onLogoClick={handleLogoClick}
-        onOpenMainMenu={openMainMenuDrawer}
+        // onOpenMainMenu={openMainMenuDrawer}
         onOpenFilterDrawer={openFilterDrawer}
         selectedCategorySlugs={selectedCategorySlugs}
       />
 
-      {/* Выдвижное меню (левое) */}
+      {/* Выдвижное меню (левое) 
       <MainMenuDrawer
         open={isMainMenuDrawerOpen}
         onClose={closeMainMenuDrawer}
@@ -108,7 +110,7 @@ const Header: React.FC<HeaderProps> = ({
         onAboutClick={() => console.log('About clicked')}
         onServicesClick={() => console.log('Services clicked')}
         onContactClick={() => console.log('Contact clicked')}
-      />
+      />*/}
 
       {/* Выдвижное меню (правое) для фильтров */}
       <FilterDrawer
