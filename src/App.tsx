@@ -240,6 +240,7 @@ function App() {
         {/* Ленивая секция (грузится в фоне) */}
         <Suspense fallback={null}>
           <HeroSection
+            key="hero-section"
             selectedCategorySlugs={selectedCategorySlugs}
             filteredLandmarks={localizedFilteredLandmarks}
             activeIndex={activeIndex}

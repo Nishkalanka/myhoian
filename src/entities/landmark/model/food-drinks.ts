@@ -4634,4 +4634,62 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'nha-hang-secret-garden',
     },
   },
+  //Cơm Linh - Vietnamese Restaurant
+  {
+    id: 'Com-linh-vietnamese-restaurant', // <-- ID теперь строковый
+    coordinates: [15.878499471297859, 108.32951629728882], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'com-linh.webp',
+    en: {
+      title: 'Cơm Linh - Vietnamese Restaurant',
+      description: 'We are the traditional Vietnamese cuisine and fast food',
+      fullDescription: `
+<p>We are the traditional Vietnamese cuisine and fast food.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Cơm Linh — вьетнамский ресторан',
+      description: 'Традиционная вьетнамская кухня и фастфуд',
+      fullDescription: `
+<p>Мы предлагаем традиционную вьетнамскую кухню и блюда быстрого приготовления.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    es: {
+      title: 'Cơm Linh - Restaurante vietnamita',
+      description: 'Cocina tradicional vietnamita y comida rápida',
+      fullDescription: `
+<p>Ofrecemos cocina tradicional vietnamita y comida rápida.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    fr: {
+      title: 'Cơm Linh - Restaurant vietnamien',
+      description: 'Cuisine vietnamienne traditionnelle et restauration rapide',
+      fullDescription: `
+<p>Nous proposons une cuisine vietnamienne traditionnelle ainsi que de la restauration rapide.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    vn: {
+      title: 'Cơm Linh - Nhà hàng Việt Nam',
+      description: 'Ẩm thực truyền thống Việt Nam và đồ ăn nhanh',
+      fullDescription: `
+<p>Chúng tôi phục vụ ẩm thực truyền thống Việt Nam và các món ăn nhanh.</p>
+  `,
+      internalImageNames: [],
+    },
+    slug: {
+      en: 'com-linh-vietnamese-restaurant',
+      ru: 'com-linh-vietnamese-restaurant',
+      es: 'com-linh-vietnamese-restaurant',
+      fr: 'com-linh-vietnamese-restaurant',
+      vn: 'com-linh-vietnamese-restaurant',
+    },
+  },
 ];

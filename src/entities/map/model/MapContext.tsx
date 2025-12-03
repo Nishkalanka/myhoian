@@ -1,5 +1,3 @@
-// src/contexts/MapContext.tsx
-
 import React, {
   createContext,
   useContext,
@@ -10,16 +8,21 @@ import React, {
   useMemo,
 } from 'react';
 import type { Map } from 'mapbox-gl';
-import type mapboxgl from 'mapbox-gl';
 
-type MapboxGLModule = typeof mapboxgl;
+// 🛠 FIX: Используем any для модуля, чтобы TS не ругался на несовпадение типов при импорте
+
+type MapboxGLModule = any;
+
+// 🌍 SINGLETON: Глобальная переменная живет вне жизненного цикла React
+// Это гарантирует, что new mapboxgl.Map() вызовется ровно 1 раз за сессию вкладки.
+let globalMapInstance: Map | null = null;
 
 interface MapContextType {
   map: Map | null;
   mapContainerRef: React.MutableRefObject<HTMLDivElement | null>;
   centerMap: (center: [number, number], zoom?: number) => void;
   mapboxglModule: MapboxGLModule | null;
-  isMapLoaded: boolean; // Экспортируем состояние загрузки, если нужно снаружи
+  isMapLoaded: boolean;
 }
 
 const MapContext = createContext<MapContextType | undefined>(undefined);
@@ -34,31 +37,64 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
   const [mapboxglModule, setMapboxglModule] = useState<MapboxGLModule | null>(
     null
   );
-  const [isMapLoaded, setIsMapLoaded] = useState(false); // ✨ Состояние загрузки
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
 
-  const mapInstanceRef = useRef<Map | null>(null);
-  const mapInitializedRef = useRef(false);
+  // Реф для хранения модуля, чтобы восстановить его при ре-маунте
+  const mapboxglModuleRef = useRef<MapboxGLModule | null>(null);
 
   useEffect(() => {
-    if (!mapContainerRef.current || mapInitializedRef.current) return;
+    // 1. СЦЕНАРИЙ ВОССТАНОВЛЕНИЯ
+    // Если карта уже была создана ранее (при смене языка или роута)
+    if (globalMapInstance) {
+      console.log('♻️ [MapContext] Восстановление существующей карты');
+      setMap(globalMapInstance);
 
-    mapInitializedRef.current = true;
+      if (mapboxglModuleRef.current) {
+        setMapboxglModule(mapboxglModuleRef.current);
+      } else {
+        // Если реф пуст (страница перезагрузилась), пробуем подгрузить модуль снова, но карту не трогаем
+        import('mapbox-gl').then((mod) => {
+          setMapboxglModule(mod.default || mod);
+          mapboxglModuleRef.current = mod.default || mod;
+        });
+      }
+
+      // Небольшая задержка для плавности UI
+      setTimeout(() => setIsMapLoaded(true), 100);
+      return;
+    }
+
+    // 2. СЦЕНАРИЙ ПЕРВОЙ ИНИЦИАЛИЗАЦИИ
+    if (!mapContainerRef.current) return;
+
     let isMounted = true;
 
     const initializeMap = async () => {
       try {
-        const mapboxgl = (await import('mapbox-gl')).default;
+        // Double-check: если пока мы ждали, карту уже кто-то создал
+        if (globalMapInstance) return;
+
+        console.log('🚀 [MapContext] Загрузка Mapbox GL JS...');
+
+        // Ленивая загрузка
+        const mapboxglImport = await import('mapbox-gl');
+        const mapboxgl = mapboxglImport.default || mapboxglImport;
         await import('mapbox-gl/dist/mapbox-gl.css');
 
         if (!isMounted) return;
 
+        // Сохраняем модуль
+        mapboxglModuleRef.current = mapboxgl;
         setMapboxglModule(mapboxgl);
+
         if (!mapContainerRef.current) return;
 
         mapboxgl.accessToken = import.meta.env
           .VITE_MAPBOX_ACCESS_TOKEN as string;
 
-        const mapInstance = new mapboxgl.Map({
+        console.log('🗺️ [MapContext] Создание новой карты...');
+
+        globalMapInstance = new mapboxgl.Map({
           container: mapContainerRef.current,
           style: 'mapbox://styles/mapbox/streets-v11',
           center: [108.32601152345488, 15.877122578067937],
@@ -68,25 +104,19 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
           attributionControl: false,
         });
 
-        mapInstanceRef.current = mapInstance;
-
-        // ✨ Ждем, пока карта полностью загрузит стиль и базовые тайлы
-        mapInstance.on('load', () => {
+        globalMapInstance.on('load', () => {
           if (isMounted) {
-            setMap(mapInstance);
-            // Небольшая задержка, чтобы точно не видеть серый фон
-            setTimeout(() => {
-              setIsMapLoaded(true);
-            }, 150);
+            console.log('✅ [MapContext] Карта загружена (load event)');
+            setMap(globalMapInstance);
+            setTimeout(() => setIsMapLoaded(true), 150);
           }
         });
 
-        mapInstance.on('error', (e) => {
-          console.error('Mapbox GL JS Error:', e.error);
+        globalMapInstance.on('error', (e: any) => {
+          console.error('[MapContext] Error:', e);
         });
       } catch (error) {
-        console.error('Failed to load mapbox-gl:', error);
-        if (isMounted) mapInitializedRef.current = false;
+        console.error('[MapContext] Failed to load mapbox-gl:', error);
       }
     };
 
@@ -94,46 +124,33 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
 
     return () => {
       isMounted = false;
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.remove();
-        mapInstanceRef.current = null;
-      }
-      setMap(null);
-      setIsMapLoaded(false); // Сбрасываем при размонтировании
-      mapInitializedRef.current = false;
+      // 🛑 ВАЖНО: Мы НЕ вызываем globalMapInstance.remove() здесь.
+      // Мы хотим, чтобы карта жила в памяти даже при размонтировании компонента.
+
+      // Сбрасываем локальный стейт, но не глобальный инстанс
+      setIsMapLoaded(false);
     };
   }, []);
 
   const centerMap = useCallback(
     (center: [number, number], zoom?: number) => {
-      if (map) {
-        map.flyTo({ center, zoom: zoom || map.getZoom() });
+      const currentMap = map || globalMapInstance;
+      if (currentMap) {
+        currentMap.flyTo({ center, zoom: zoom || currentMap.getZoom() });
+      } else {
+        console.warn('MapProvider: Cannot center map, map instance is null.');
       }
     },
     [map]
   );
 
   const contextValue = useMemo(
-    () => ({
-      map,
-      mapContainerRef,
-      centerMap,
-      mapboxglModule,
-      isMapLoaded,
-    }),
+    () => ({ map, mapContainerRef, centerMap, mapboxglModule, isMapLoaded }),
     [map, centerMap, mapboxglModule, isMapLoaded]
   );
 
   return (
-    <MapContext.Provider value={contextValue}>
-      {/* 
-            ✨ Обертка для плавного появления. 
-            Мы применяем стили прямо к контейнеру карты через пропсы или CSS.
-            Но так как ref передается извне (скорее всего), 
-            лучше всего управлять классом на самом div с картой.
-        */}
-      {children}
-    </MapContext.Provider>
+    <MapContext.Provider value={contextValue}>{children}</MapContext.Provider>
   );
 };
 

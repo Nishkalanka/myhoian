@@ -1,5 +1,3 @@
-// src/components/map/MapMarkersLayer.tsx
-
 import React, { useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom/client';
 import type { Map as MapboxMap, Marker } from 'mapbox-gl';
@@ -10,8 +8,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { getCategoryColor } from '../../../shared/lib/categoryColors';
 import type { Landmark, CategorySlug, LandmarkContent } from '../../../data';
 
-// Define the type for the mapbox-gl module
-type MapboxGLModule = typeof import('mapbox-gl');
+// 🛠 FIX: Используем any, чтобы соответствовать типу в MapContext
+
+type MapboxGLModule = any;
 
 interface CustomMarkerProps {
   isActive: boolean;
@@ -62,7 +61,7 @@ interface MapMarkersLayerProps {
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   hasUserInteracted: boolean;
   getLocalizedContent: (landmark: Landmark) => LandmarkContent;
-  mapboxglModule: MapboxGLModule; // Receive the module as a prop
+  mapboxglModule: MapboxGLModule;
 }
 
 export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
@@ -83,16 +82,11 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
     landmarksRef.current = landmarks;
   }, [landmarks]);
 
-  // Эффект 1: Отвечает за создание, обновление позиции и удаление Mapbox-маркеров.
-  // Зависит только от `map`. Запускается редко.
   useEffect(() => {
     const currentMapInstance = map;
-    if (!currentMapInstance) {
-      return;
-    }
+    if (!currentMapInstance) return;
 
     const updateVisibleMarkers = () => {
-      // Собираем все точки, которые не являются кластерами
       const newUnclusteredPoints = new Map<
         number,
         GeoJSON.Feature<GeoJSON.Point>
@@ -119,20 +113,14 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         return;
       }
 
-      // Обновляем существующие маркеры или создаем новые
       newUnclusteredPoints.forEach((feature, originalIndex) => {
-        // Используем ref, чтобы не зависеть от landmarks в массиве зависимостей
         const landmark = landmarksRef.current[originalIndex];
-        if (!landmark) {
-          return;
-        }
+        if (!landmark) return;
 
-        // Получаем пропсы для CustomMarker, но не рендерим его здесь!
         const categoryColor = getCategoryColor(
-          (landmark.category && landmark.category.length > 0
-            ? landmark.category[0]
-            : 'default') as CategorySlug
+          (landmark.category?.[0] || 'default') as CategorySlug
         );
+
         const markerProps = {
           isActive: activeIndex === originalIndex,
           onClick: (event: React.MouseEvent) =>
@@ -142,13 +130,10 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         };
 
         if (!individualMarkers.current.has(originalIndex)) {
-          // Создание нового маркера
           const markerContainer = document.createElement('div');
           const root = ReactDOM.createRoot(markerContainer);
-
           root.render(<CustomMarker {...markerProps} />);
 
-          // Use mapboxglModule to create the marker
           const marker = new mapboxglModule.Marker({
             element: markerContainer,
             anchor: 'bottom',
@@ -158,7 +143,6 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
 
           individualMarkers.current.set(originalIndex, { marker, root });
         } else {
-          // Обновляем позицию маркера, если она изменилась
           const markerData = individualMarkers.current.get(originalIndex);
           if (markerData) {
             const currentLngLat = markerData.marker.getLngLat();
@@ -173,77 +157,65 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
         }
       });
 
-      // Удаляем маркеры, которые больше не видны
       individualMarkers.current.forEach((markerData, originalIndex) => {
         if (!newUnclusteredPoints.has(originalIndex)) {
-          setTimeout(() => {
+          // Безопасное удаление
+          requestAnimationFrame(() => {
             try {
               markerData.root.unmount();
             } catch (e) {
-              // error
+              /* ignore */
             }
-          }, 0);
-          markerData.marker.remove();
+            markerData.marker.remove();
+          });
           individualMarkers.current.delete(originalIndex);
         }
       });
     };
 
-    // Привязываем обработчики событий
     currentMapInstance.on('idle', updateVisibleMarkers);
     currentMapInstance.on('moveend', updateVisibleMarkers);
     currentMapInstance.on('sourcedata', updateVisibleMarkers);
 
-    // Вызываем начальный рендер
     const initialRenderTimeout = setTimeout(() => {
-      if (currentMapInstance.loaded()) {
-        updateVisibleMarkers();
-      }
+      if (currentMapInstance.loaded()) updateVisibleMarkers();
     }, 0);
 
-    // Функция очистки при размонтировании компонента
     const markersMap = individualMarkers.current;
 
     return () => {
       clearTimeout(initialRenderTimeout);
-
       if (currentMapInstance) {
         currentMapInstance.off('idle', updateVisibleMarkers);
         currentMapInstance.off('moveend', updateVisibleMarkers);
         currentMapInstance.off('sourcedata', updateVisibleMarkers);
       }
 
+      // Аккуратная очистка
       markersMap.forEach(({ marker, root }) => {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           try {
             root.unmount();
           } catch (e) {
-            // error
+            /* ignore */
           }
-        }, 0);
-        marker.remove();
+          marker.remove();
+        });
       });
       markersMap.clear();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map, mapboxglModule]); // Added mapboxglModule dependency
+  }, [map, mapboxglModule]);
 
-  // Эффект 2: Отвечает за обновление пропсов CustomMarker.
-  // Зависит от `activeIndex`, `hasUserInteracted` и других пропсов, которые могут часто меняться.
   useEffect(() => {
     individualMarkers.current.forEach((markerData, originalIndex) => {
       const landmark = landmarks[originalIndex];
-      if (!landmark) {
-        return;
-      }
+      if (!landmark) return;
 
       const categoryColor = getCategoryColor(
-        (landmark.category && landmark.category.length > 0
-          ? landmark.category[0]
-          : 'default') as CategorySlug
+        (landmark.category?.[0] || 'default') as CategorySlug
       );
 
-      // Перерисовываем только React-компонент, а не весь маркер
       markerData.root.render(
         <CustomMarker
           isActive={activeIndex === originalIndex}

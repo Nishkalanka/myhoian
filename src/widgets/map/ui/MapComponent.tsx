@@ -1,7 +1,5 @@
-// src/components/MapComponent.tsx
-import React, { useEffect, useState, useRef, memo, useCallback } from 'react';
-import type { Map, Marker, MapMouseEvent, GeoJSONSource } from 'mapbox-gl';
-
+import React, { useEffect, useRef, memo, useCallback } from 'react';
+import type { Marker, MapMouseEvent, GeoJSONSource } from 'mapbox-gl';
 import type { Feature, Point, GeoJsonProperties, LineString } from 'geojson';
 
 import { useMapContext } from '../../../entities/map/model/MapContext';
@@ -23,11 +21,17 @@ interface MapComponentProps {
   hasUserInteracted: boolean;
   isRouteVisible: boolean;
   onShowSnackbar: ShowSnackbarFn;
-  // Изменено: теперь это реф на функцию
   getLocalizedContentRef: React.MutableRefObject<
     (landmark: Landmark) => LandmarkContent
   >;
 }
+
+// 🛡️ ОПТИМИЗАЦИЯ: Изолированный контейнер для карты.
+const MapContainerDiv = memo(
+  React.forwardRef<HTMLDivElement>((_props, ref) => {
+    return <div ref={ref} style={{ height: '100%', width: '100%' }} />;
+  })
+);
 
 export const MapComponent = memo(function MapComponent({
   landmarks,
@@ -38,10 +42,10 @@ export const MapComponent = memo(function MapComponent({
   hasUserInteracted,
   isRouteVisible,
   onShowSnackbar,
-  getLocalizedContentRef, // <-- Изменено название пропса
+  getLocalizedContentRef,
 }: MapComponentProps) {
-  const { map, mapContainerRef, mapboxglModule } = useMapContext();
-  const [isMapLoaded, setIsMapLoaded] = useState(false);
+  // Достаем isMapLoaded из контекста
+  const { map, mapContainerRef, mapboxglModule, isMapLoaded } = useMapContext();
 
   const onMapClickPropRef = useRef(onMapClickProp);
   useEffect(() => {
@@ -59,23 +63,12 @@ export const MapComponent = memo(function MapComponent({
   const circleSourceId = 'user-location-circle';
   const circleLayerId = 'user-location-circle-layer';
 
+  // Эффект настройки карты (слои, контролы)
   useEffect(() => {
     const currentMapInstance = map;
-    // We need both the map instance AND the module to be loaded
-    if (!currentMapInstance || !mapboxglModule) {
-      setIsMapLoaded(false);
-      return;
-    }
+    if (!currentMapInstance || !mapboxglModule || !isMapLoaded) return;
 
-    const handleMapLoad = () => {
-      setIsMapLoaded(true);
-    };
-
-    if (currentMapInstance.loaded()) {
-      handleMapLoad();
-    } else {
-      currentMapInstance.on('load', handleMapLoad);
-    }
+    // --- НАСТРОЙКА ИСТОЧНИКОВ И СЛОЕВ (Landmarks, Route, Clusters) ---
 
     if (!currentMapInstance.getSource('landmarks-data')) {
       currentMapInstance.addSource('landmarks-data', {
@@ -123,9 +116,7 @@ export const MapComponent = memo(function MapComponent({
           'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
           'text-size': 12,
         },
-        paint: {
-          'text-color': 'rgb(46, 46, 57)',
-        },
+        paint: { 'text-color': 'rgb(46, 46, 57)' },
       });
 
       currentMapInstance.on('click', 'clusters' as any, (e: MapMouseEvent) => {
@@ -133,11 +124,12 @@ export const MapComponent = memo(function MapComponent({
           layers: ['clusters'],
         });
         const clusterId = features[0].properties?.cluster_id;
+
         (
           currentMapInstance.getSource('landmarks-data') as GeoJSONSource
         ).getClusterExpansionZoom(
           clusterId,
-          (_err: Error | null | undefined, zoom: number | null | undefined) => {
+          (_err: any, zoom: number | null | undefined) => {
             if (_err) return;
             if (features[0].geometry.type === 'Point' && zoom != null) {
               currentMapInstance.easeTo({
@@ -152,6 +144,7 @@ export const MapComponent = memo(function MapComponent({
       currentMapInstance.on('mouseenter', 'clusters' as any, () => {
         currentMapInstance.getCanvas().style.cursor = 'pointer';
       });
+
       currentMapInstance.on('mouseleave', 'clusters' as any, () => {
         currentMapInstance.getCanvas().style.cursor = '';
       });
@@ -163,10 +156,7 @@ export const MapComponent = memo(function MapComponent({
         data: {
           type: 'Feature',
           properties: {},
-          geometry: {
-            type: 'LineString',
-            coordinates: [],
-          },
+          geometry: { type: 'LineString', coordinates: [] },
         },
       });
 
@@ -174,10 +164,7 @@ export const MapComponent = memo(function MapComponent({
         id: 'static-route-line',
         type: 'line',
         source: 'static-route',
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round',
-        },
+        layout: { 'line-join': 'round', 'line-cap': 'round' },
         paint: {
           'line-color': '#007bff',
           'line-width': 6,
@@ -186,9 +173,11 @@ export const MapComponent = memo(function MapComponent({
       });
     }
 
+    // Контролы
+
     if (
       !currentMapInstance._controls.some(
-        (c) => c instanceof mapboxglModule.NavigationControl
+        (c: any) => c instanceof mapboxglModule.NavigationControl
       )
     ) {
       currentMapInstance.addControl(
@@ -202,28 +191,20 @@ export const MapComponent = memo(function MapComponent({
     };
     currentMapInstance.on('click', handleMapClickListener);
 
-    const handleMapMoveStart = () => {
-      /* noop */
-    };
-
-    currentMapInstance.on('movestart', handleMapMoveStart);
-
+    // Geolocation Logic
     const onLocationSuccess = (pos: GeolocationPosition) => {
       const { latitude, longitude, accuracy, heading } = pos.coords;
       const newPosition: [number, number] = [longitude, latitude];
 
       if (userMarkerRef.current) {
         userMarkerRef.current.setLngLat(newPosition);
-
         const el = userMarkerRef.current.getElement();
         let arrow = el.querySelector('.location-heading-arrow') as HTMLElement;
-
         if (!arrow) {
           arrow = document.createElement('div');
           arrow.className = 'location-heading-arrow';
           el.appendChild(arrow);
         }
-
         if (heading !== null && heading !== undefined && !isNaN(heading)) {
           arrow.style.display = 'block';
           arrow.style.transform = `rotate(${heading}deg)`;
@@ -233,17 +214,13 @@ export const MapComponent = memo(function MapComponent({
       } else {
         const el = document.createElement('div');
         el.className = 'location-marker';
-        // Inline styles removed to rely on src/index.css
-
         const arrow = document.createElement('div');
         arrow.className = 'location-heading-arrow';
         el.appendChild(arrow);
-
         if (heading !== null && heading !== undefined && !isNaN(heading)) {
           arrow.style.display = 'block';
           arrow.style.transform = `rotate(${heading}deg)`;
         }
-
         userMarkerRef.current = new mapboxglModule.Marker({
           element: el,
           anchor: 'center',
@@ -259,13 +236,8 @@ export const MapComponent = memo(function MapComponent({
             features: [
               {
                 type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: newPosition,
-                },
-                properties: {
-                  radius: accuracy,
-                },
+                geometry: { type: 'Point', coordinates: newPosition },
+                properties: { radius: accuracy },
               },
             ],
           }
@@ -278,18 +250,12 @@ export const MapComponent = memo(function MapComponent({
             features: [
               {
                 type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: newPosition,
-                },
-                properties: {
-                  radius: accuracy,
-                },
+                geometry: { type: 'Point', coordinates: newPosition },
+                properties: { radius: accuracy },
               },
             ],
           },
         });
-
         currentMapInstance.addLayer({
           id: circleLayerId,
           type: 'circle',
@@ -312,79 +278,58 @@ export const MapComponent = memo(function MapComponent({
       }
     };
 
-    const onLocationError = () => {
-      // console.error(`Geolocation error (${_err.code}): ${_err.message}`);
-    };
-
     let watchId: number | undefined;
     if (navigator.geolocation) {
       watchId = navigator.geolocation.watchPosition(
         onLocationSuccess,
-        onLocationError,
+        (error) => {
+          console.warn('Geo error:', error.message);
+        },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
       );
-    } else {
-      // console.warn("Geolocation is not supported by your browser.");
     }
 
     return () => {
-      currentMapInstance.off('load', handleMapLoad);
+      // CLEANUP
       currentMapInstance.off('click', handleMapClickListener);
-      currentMapInstance.off('movestart', handleMapMoveStart);
 
       currentMapInstance.off('click', 'clusters' as any);
+
       currentMapInstance.off('mouseenter', 'clusters' as any);
+
       currentMapInstance.off('mouseleave', 'clusters' as any);
 
-      if (watchId !== undefined) {
-        navigator.geolocation.clearWatch(watchId);
-      }
+      if (watchId !== undefined) navigator.geolocation.clearWatch(watchId);
+
       if (userMarkerRef.current) {
         userMarkerRef.current.remove();
         userMarkerRef.current = null;
       }
 
-      const removeMapLayerSafe = (id: string) => {
-        if (currentMapInstance.getLayer(id)) {
-          currentMapInstance.removeLayer(id);
-        }
-      };
-      const removeMapSourceSafe = (id: string) => {
-        if (currentMapInstance.getSource(id)) {
-          currentMapInstance.removeSource(id);
-        }
-      };
-
-      removeMapLayerSafe('cluster-count');
-      removeMapLayerSafe('clusters');
-      removeMapSourceSafe('landmarks-data');
-
-      removeMapLayerSafe('static-route-line');
-      removeMapSourceSafe('static-route');
-
-      if (currentMapInstance.loaded()) {
-        try {
-          removeMapLayerSafe(circleLayerId);
-          removeMapSourceSafe(circleSourceId);
-        } catch (e) {
-          // console.warn(
-          //   `MapComponent: Failed to remove location layers/sources during unmount:`,
-          //   e
-          // );
-        }
-      } else {
-        // console.warn(
-        //   "MapComponent: Map not fully loaded during unmount. Skipping some layer/source cleanup."
-        // );
+      try {
+        if (currentMapInstance.getLayer('cluster-count'))
+          currentMapInstance.removeLayer('cluster-count');
+        if (currentMapInstance.getLayer('clusters'))
+          currentMapInstance.removeLayer('clusters');
+        if (currentMapInstance.getSource('landmarks-data'))
+          currentMapInstance.removeSource('landmarks-data');
+        if (currentMapInstance.getLayer('static-route-line'))
+          currentMapInstance.removeLayer('static-route-line');
+        if (currentMapInstance.getSource('static-route'))
+          currentMapInstance.removeSource('static-route');
+        if (currentMapInstance.getLayer(circleLayerId))
+          currentMapInstance.removeLayer(circleLayerId);
+        if (currentMapInstance.getSource(circleSourceId))
+          currentMapInstance.removeSource(circleSourceId);
+      } catch (e) {
+        // ignore
       }
-
-      setIsMapLoaded(false);
     };
-  }, [map, mapboxglModule]); // Зависимости от `map` и `mapboxglModule`
+  }, [map, mapboxglModule, isMapLoaded]);
 
+  // Эффект обновления GeoJSON (Landmarks)
   useEffect(() => {
     if (!isMapLoaded || !map) return;
-
     const source = map.getSource('landmarks-data') as GeoJSONSource;
     if (source) {
       const geojsonFeatures: Feature<Point, GeoJsonProperties>[] =
@@ -392,34 +337,21 @@ export const MapComponent = memo(function MapComponent({
           type: 'Feature',
           properties: {
             originalIndex: index,
-            category:
-              landmark.category && landmark.category.length > 0
-                ? landmark.category[0]
-                : 'default',
+            category: landmark.category?.[0] || 'default',
           },
           geometry: {
             type: 'Point',
             coordinates: [landmark.coordinates[1], landmark.coordinates[0]],
           },
         }));
-      source.setData({
-        type: 'FeatureCollection',
-        features: geojsonFeatures,
-      });
-    } else {
-      // console.warn(
-      //   "MapComponent: 'landmarks-data' source not found during update."
-      // );
+      source.setData({ type: 'FeatureCollection', features: geojsonFeatures });
     }
   }, [landmarks, isMapLoaded, map]);
 
+  // Эффект обновления маршрута
   useEffect(() => {
-    if (!isMapLoaded || !map) {
-      return;
-    }
-
-    const sourceId = 'static-route';
-    const source = map.getSource(sourceId) as GeoJSONSource;
+    if (!isMapLoaded || !map) return;
+    const source = map.getSource('static-route') as GeoJSONSource;
     if (source) {
       const geojson: Feature<LineString> = {
         type: 'Feature',
@@ -433,34 +365,23 @@ export const MapComponent = memo(function MapComponent({
         },
       };
       source.setData(geojson);
-    } else {
-      // console.warn(
-      //   "MapComponent: 'static-route' source not found during update."
-      // );
     }
   }, [routeCoordinates, isRouteVisible, isMapLoaded, map]);
 
+  // Эффект полета камеры (easeTo)
   useEffect(() => {
-    if (!map || activeIndex === null || !isMapLoaded) {
-      return;
-    }
-
+    if (!map || activeIndex === null || !isMapLoaded) return;
     const activeLandmark = landmarks[activeIndex];
     if (activeLandmark) {
       const [lat, lng] = activeLandmark.coordinates;
-      const targetCoordinates: [number, number] = [lng, lat];
-
-      map.easeTo({
-        center: targetCoordinates,
-        zoom: map.getZoom(),
-        duration: 800,
-      });
+      map.easeTo({ center: [lng, lat], zoom: map.getZoom(), duration: 800 });
     }
   }, [activeIndex, landmarks, map, isMapLoaded]);
 
   return (
     <>
-      <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
+      <MapContainerDiv ref={mapContainerRef} />
+
       {isMapLoaded && map && mapboxglModule && (
         <MapMarkersLayer
           map={map}
@@ -468,11 +389,11 @@ export const MapComponent = memo(function MapComponent({
           activeIndex={activeIndex}
           onMapMarkerClick={onMapMarkerClickCallback}
           hasUserInteracted={hasUserInteracted}
-          // Передаем текущее значение функции через .current
-          getLocalizedContent={getLocalizedContentRef.current} // <-- Изменено
+          getLocalizedContent={getLocalizedContentRef.current}
           mapboxglModule={mapboxglModule}
         />
       )}
+
       {isMapLoaded && map && (
         <UserLocationButton
           centerMapFn={(coords: [number, number], zoom?: number) => {
