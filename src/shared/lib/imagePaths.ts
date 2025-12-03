@@ -2,17 +2,15 @@
 
 export const fullDescriptionImageMap: Record<string, string> = {};
 
-// Glob для поиска картинок. Путь корректный:
-// src/shared/lib/ -> ../../assets/img/pictures/
+// Glob для поиска картинок
 const modules = import.meta.glob(
   '../../assets/img/pictures/*.{png,jpeg,jpg,gif,webp,svg}',
   { eager: true }
 );
 
-//console.log('🔍 [imagePaths] Glob modules found:', Object.keys(modules).length);
+// console.log('🔍 [imagePaths] Glob modules found:', Object.keys(modules).length);
 
 for (const path in modules) {
-  // Получаем имя файла (например, "21.jpg")
   const fileName = path.split('/').pop();
   const moduleContent = modules[path];
 
@@ -20,7 +18,6 @@ for (const path in modules) {
 
   let url: string | undefined;
 
-  // Пытаемся достать URL разными способами, чтобы угодить Vite
   if (typeof moduleContent === 'string') {
     url = moduleContent;
   } else if (
@@ -31,17 +28,20 @@ for (const path in modules) {
     // @ts-expect-error: Module structure varies in Vite glob import
     url = moduleContent.default;
   } else {
-    console.warn(
-      `⚠️ [imagePaths] Unknown module format for ${fileName}:`,
-      moduleContent
-    );
+    continue;
   }
 
   if (url) {
-    fullDescriptionImageMap[fileName] = url;
+    // ✅ ИСПРАВЛЕНО: Преобразуем абсолютный путь в правильный
+    const fixedUrl = url.replace(/^\/src\/assets/, '');
+    fullDescriptionImageMap[fileName] = fixedUrl;
+    // console.log(`✅ [imagePaths] Mapped: ${fileName} → ${fixedUrl}`);
   }
 }
 
-//console.log('✅ [imagePaths] Final Map Size:', Object.keys(fullDescriptionImageMap).length);
-// Раскомментируй, если нужно увидеть список всех загруженных файлов:
+// ✅ Логи ВНЕ цикла!
+// console.log(
+//   '✅ [imagePaths] Final Map Size:',
+//   Object.keys(fullDescriptionImageMap).length
+// );
 // console.log('✅ [imagePaths] Keys:', Object.keys(fullDescriptionImageMap));

@@ -12,7 +12,7 @@ import { MapProvider } from './entities/map/model/MapContext.tsx';
 
 // Ленивая загрузка страниц
 const Hoian = React.lazy(() => import('./pages/Hoian.tsx'));
-const LandingPage2 = React.lazy(() => import('./pages/LandingPage2.tsx'));
+const LandingPage2 = React.lazy(() => import('./pages/Kvest.tsx'));
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
@@ -29,7 +29,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   path="/hoian-avtorskaya-ekskursiya"
                   element={<Hoian />}
                 />
-                <Route path="/kvest" element={<LandingPage2 />} />
+                <Route
+                  path="/kvest-ekskursiya-hoian-v-korobke"
+                  element={<LandingPage2 />}
+                />
                 <Route path="/:lang/:slug" element={<App />} />
                 <Route path="/" element={<App />} />
               </Routes>

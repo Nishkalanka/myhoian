@@ -1,38 +1,30 @@
-// LandingPage.tsx
+// src/pages/LandingPage/LandingPage.tsx
 
 import React, { useState } from 'react';
-import { Box, Container, Stack } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 
 // Импорты секций
-import ModalContact from './components/ModalContact';
-import SectionHero from './components/SectionHero';
-import SectionFeatures from './components/SectionFeatures';
-import SectionHighlights from './components/SectionHighlights';
-import SectionGuide from './components/SectionGuide';
-import SectionFAQ from './components/SectionFAQ';
-import SectionContact from './components/SectionContact';
+import ModalContact from './sections/ModalContact';
+import SectionHero from './sections/SectionHero';
+import SectionFeatures from './sections/SectionFeatures';
+import SectionHighlights from './sections/SectionHighlights';
+import SectionGuide from './sections/SectionGuide';
+import SectionFAQ from './sections/SectionFAQ';
+import SectionContact from './sections/SectionContact';
 
-// Импорты ресурсов
+// ✅ ИМПОРТЫ ИКОНОК
 import logoSvg from '../assets/img/logo.svg';
-import heroBg from '../assets/img/tours/bg.png';
-import heroBg2 from '../assets/img/tours/bg2.png';
-import profilePicture from '../assets/img/tours/profile.png';
-import JapanBr from '../assets/img/pictures/2.jpg';
-import Canton from '../assets/img/pictures/14.jpg';
-import Tanky from '../assets/img/pictures/9.jpg';
-import Quan from '../assets/img/pictures/15.jpg';
-import Quan2 from '../assets/img/pictures/16.jpg';
-import Quan3 from '../assets/img/pictures/62.jpg';
-
 import ogImage from '../assets/img/og-image.png';
-import MenuIcon from '@mui/icons-material/Menu';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import GroupsIcon from '@mui/icons-material/Groups';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 
 // ===== ТИПЫ =====
 interface Feature {
   name: string;
   description: string;
-  icon: typeof MenuIcon;
+  icon: React.ElementType; // ✅ React компонент
 }
 
 interface Product {
@@ -62,10 +54,23 @@ const heroContent: HeroContent = {
   titleSize: { xs: '3rem', sm: '3rem', md: '3rem' },
 };
 
+// ✅ РАЗНЫЕ ИКОНКИ ДЛЯ КАЖДОЙ ФИЧИ
 const features: Feature[] = [
-  { name: '3 - 4 ч.', description: 'Время экскурсии', icon: MenuIcon },
-  { name: '5 - 7 чел.', description: 'Размер группы', icon: MenuIcon },
-  { name: 'Пеший', description: 'Формат экскурсии', icon: MenuIcon },
+  {
+    name: '4 - 5 ч.',
+    description: 'Время экскурсии',
+    icon: AccessTimeIcon, // ⏱️ Часы
+  },
+  {
+    name: '5 - 7 чел.',
+    description: 'Размер группы',
+    icon: GroupsIcon, // 👥 Люди
+  },
+  {
+    name: 'Пеший',
+    description: 'Формат экскурсии',
+    icon: DirectionsWalkIcon, // 🚶 Ходьба
+  },
 ];
 
 const products: Product[] = [
@@ -73,42 +78,42 @@ const products: Product[] = [
     id: 1,
     name: 'Японский мост',
     color: 'Главный символ Хойана. Построен в 1593 году.',
-    imageSrc: JapanBr,
+    imageSrc: 'pictures/2.jpg',
     imageAlt: 'Японский мост в Хойане',
   },
   {
     id: 2,
     name: 'Фуцзянский зал собраний',
     color: 'Китайское наследство',
-    imageSrc: Canton,
+    imageSrc: 'pictures/14.jpg',
     imageAlt: 'Фуцзянский зал собраний',
   },
   {
     id: 3,
     name: 'Дом Тан Ки',
     color: 'Один из самых ярких образцов традиционной архитектуры в Хойане',
-    imageSrc: Tanky,
+    imageSrc: 'pictures/9.jpg',
     imageAlt: 'Дом Тан Ки',
   },
   {
     id: 4,
     name: 'Храм Куанг Конга',
     color: 'Наиболее значимое святилище построенное в 1653 году',
-    imageSrc: Quan,
+    imageSrc: 'pictures/15.jpg',
     imageAlt: 'Храм Куанг Конга',
   },
   {
     id: 5,
     name: 'Музеи',
     color: 'Посещение нескольких музеев Хойана',
-    imageSrc: Quan2,
+    imageSrc: 'pictures/16.jpg',
     imageAlt: 'Музеи',
   },
   {
     id: 6,
     name: 'Театр',
     color: 'Традиционное выступление вьетнамских артистов.',
-    imageSrc: Quan3,
+    imageSrc: 'pictures/62.jpg',
     imageAlt: 'Театр',
   },
 ];
@@ -201,12 +206,22 @@ const LandingPage: React.FC = () => {
       <Container
         maxWidth="xs"
         sx={{
-          backgroundImage: `url(${heroBg}), url(${heroBg2})`,
+          position: 'relative',
+          backgroundColor: '#040c19',
+          pb: 8,
+          backgroundImage: `
+            url(/img/tours/bg.webp),
+            url(/img/tours/bg2.webp)
+          `,
           backgroundPosition: 'top center, bottom center',
           backgroundSize: 'contain, contain',
           backgroundRepeat: 'no-repeat, no-repeat',
-          backgroundColor: '#040c19',
-          pb: 8,
+          '@supports not (background-image: url(/img/tours/bg.webp))': {
+            backgroundImage: `
+              url(/img/tours/bg.png),
+              url(/img/tours/bg2.png)
+            `,
+          },
         }}
       >
         <Box sx={{ textAlign: 'center', pt: 2 }}>
@@ -216,7 +231,10 @@ const LandingPage: React.FC = () => {
         <SectionHero content={heroContent} handleOpen={handleOpen} />
         <SectionFeatures features={features} />
         <SectionHighlights products={products} />
-        <SectionGuide profilePicture={profilePicture} handleOpen={handleOpen} />
+        <SectionGuide
+          profilePicture="tours/profile.png"
+          handleOpen={handleOpen}
+        />
         <SectionFAQ />
         <SectionContact />
       </Container>

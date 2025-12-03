@@ -1,3 +1,5 @@
+// src/entities/landmark/ui/LandmarkDetailsDialog.tsx
+
 import React, { useCallback, useRef, useEffect, useState } from 'react';
 import {
   Dialog,
@@ -12,9 +14,10 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
-import { type Landmark, type LandmarkContent } from '../../../data/index';
+import type { Landmark, LandmarkContent } from '../../../data/index';
 import { fullDescriptionImageMap } from '../../../shared/lib/imagePaths';
 import { usePictureUrl } from '../../../shared/lib/usePictureUrl';
+import { getOptimizedFullDescription } from '../../../shared/lib/landmarkOptimization';
 import { useMenuDisplay } from '../lib/useMenuDisplay';
 import { LandmarkMenu } from './LandmarkMenu';
 
@@ -23,6 +26,121 @@ interface LandmarkDetailsDialogProps {
   onClose: () => void;
   selectedLandmark: Landmark | null;
 }
+
+// ✅ Инъектим CSS стили один раз при загрузке
+const injectLandmarkStyles = () => {
+  if (document.getElementById('landmark-details-styles')) return;
+
+  const style = document.createElement('style');
+  style.id = 'landmark-details-styles';
+  style.textContent = `
+    .image-fade-in {
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+      display: block;
+    }
+
+    .image-fade-in.loaded {
+      opacity: 1 !important;
+    }
+
+    .landmark__img-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 75%;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #666;
+      margin: 16px 0;
+    }
+
+    .landmark__img-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+    }
+
+    .landmark__img-wrapper img.loaded {
+      opacity: 1 !important;
+    }
+
+    .landmark-details-content p {
+      margin: 16px 0;
+      line-height: 1.6;
+    }
+
+    .landmark-details-content h6 {
+      margin: 20px 0 10px 0;
+      font-weight: 600;
+    }
+
+    .landmark-details-content small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: #666;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
+// ✅ Функция загрузки картинок (отдельно)
+const loadImagesInDialog = (
+  dialogContentRef: React.MutableRefObject<HTMLDivElement | null>
+): IntersectionObserver | null => {
+  if (!dialogContentRef.current) return null;
+
+  const images = dialogContentRef.current.querySelectorAll(
+    'img[data-src]'
+  ) as NodeListOf<HTMLImageElement>;
+
+  if (!images || images.length === 0) {
+    console.log('🖼️ [Dialog] No images found');
+    return null;
+  }
+
+  //console.log(`🖼️ [Dialog] Loading ${images.length} images`);
+
+  let loadedCount = 0;
+
+  const imageObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          const dataSrc = img.getAttribute('data-src');
+
+          if (dataSrc) {
+            //console.log(`📥 Loading: ${dataSrc}`);
+            img.src = dataSrc;
+            img.classList.add('loaded');
+            img.removeAttribute('data-src');
+            loadedCount++;
+            imageObserver.unobserve(img);
+
+            // Если все картинки загружены
+            if (loadedCount === images.length) {
+              //console.log('✅ All images loaded');
+            }
+          }
+        }
+      });
+    },
+    { rootMargin: '100px' }
+  );
+
+  images.forEach((img) => {
+    imageObserver.observe(img);
+  });
+
+  return imageObserver;
+};
 
 export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
   open,
@@ -42,6 +160,13 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
   const [loadedModalImages, setLoadedModalImages] = useState<Set<string>>(
     new Set()
   );
+  // ✅ ИСПРАВЛЕНО: инициализируем как null, не undefined
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  // ✅ Инъектим стили один раз
+  useEffect(() => {
+    injectLandmarkStyles();
+  }, []);
 
   const getLocalizedContent = useCallback(
     (landmark: Landmark): LandmarkContent => {
@@ -59,70 +184,30 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
     [i18n.language]
   );
 
-  const getProcessedFullDescription = useCallback(
-    (landmark: Landmark) => {
-      const content = getLocalizedContent(landmark);
-      const descriptionHtml = content.fullDescription;
-      const internalImageNames = content.internalImageNames;
-
-      if (!descriptionHtml) {
-        return '';
-      }
-
-      let processedHtml = descriptionHtml;
-
-      if (internalImageNames && internalImageNames.length > 0) {
-        internalImageNames.forEach((imageName: string) => {
-          const realImageUrl = fullDescriptionImageMap[imageName];
-          if (realImageUrl) {
-            processedHtml = processedHtml.replace(
-              new RegExp(`src="${imageName}"`, 'g'),
-              `src="${realImageUrl}"`
-            );
-          }
-        });
-      }
-
-      processedHtml = processedHtml.replace(
-        /<img([^>]+?)\/?>/g,
-        '<div class="landmark__img-wrapper"><img class="image-fade-in"$1/></div>'
-      );
-      return processedHtml;
-    },
-    [getLocalizedContent]
-  );
-
+  // ✅ ГЛАВНОЕ: Срабатывает когда диалог ОТКРЫВАЕТСЯ или меняется landmark
   useEffect(() => {
-    if (open && dialogContentRef.current) {
-      dialogContentRef.current.scrollTop = 0;
-
-      const imgElements = dialogContentRef.current.querySelectorAll(
-        '.landmark-details-content .landmark__img-wrapper img'
-      );
-
-      imgElements.forEach((img) => {
-        const imageElement = img as HTMLImageElement;
-        if (imageElement.complete) {
-          imageElement.classList.add('loaded');
-        } else {
-          const handleLoad = () => {
-            imageElement.classList.add('loaded');
-            imageElement.removeEventListener('load', handleLoad);
-            imageElement.removeEventListener('error', handleError);
-          };
-
-          const handleError = () => {
-            imageElement.classList.add('loaded');
-            imageElement.removeEventListener('load', handleLoad);
-            imageElement.removeEventListener('error', handleError);
-          };
-
-          imageElement.addEventListener('load', handleLoad);
-          imageElement.addEventListener('error', handleError);
-        }
-      });
+    if (!open || !selectedLandmark) {
+      // Очищаем observer если диалог закрывается
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+      return;
     }
-  }, [open, selectedLandmark]);
+
+    //console.log('📖 [Dialog] Opening with landmark:', selectedLandmark.id);
+
+    // ✅ Задержка чтобы DOM отрендерился
+    const timer = setTimeout(() => {
+      const observer = loadImagesInDialog(dialogContentRef);
+      // ✅ ИСПРАВЛЕНО: присваиваем результат правильно
+      observerRef.current = observer;
+    }, 50);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [open, selectedLandmark?.id]); // ✅ Зависит от open И id
 
   const mainImageUrl = selectedLandmark?.imageUrl
     ? getImageUrl(selectedLandmark.imageUrl)
@@ -173,7 +258,9 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
                 component="img"
                 src={mainImageUrl}
                 alt={getLocalizedContent(selectedLandmark).title}
-                className={`image-fade-in ${loadedModalImages.has(mainImageUrl) ? 'loaded' : ''}`}
+                className={`image-fade-in ${
+                  loadedModalImages.has(mainImageUrl) ? 'loaded' : ''
+                }`}
                 onLoad={() =>
                   setLoadedModalImages((prev) =>
                     new Set(prev).add(mainImageUrl)
@@ -189,6 +276,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
                   aspectRatio: '4/3',
                   objectFit: 'cover',
                   borderRadius: '8px',
+                  mb: 2,
                 }}
               />
             )}
@@ -198,14 +286,17 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
                 className="landmark-details-content"
                 sx={{ mb: 2 }}
                 dangerouslySetInnerHTML={{
-                  __html: getProcessedFullDescription(selectedLandmark),
+                  __html: getOptimizedFullDescription(
+                    selectedLandmark,
+                    getLocalizedContent(selectedLandmark),
+                    fullDescriptionImageMap
+                  ),
                 }}
               />
             ) : (
               <Typography>{t('noDetailsAvailable')}</Typography>
             )}
 
-            {/* ДОБАВЬ МЕНЮ СЮДА */}
             <LandmarkMenu
               landmark={selectedLandmark}
               selectedCategory={selectedCategory}

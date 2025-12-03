@@ -1,5 +1,6 @@
 // src/components/LandmarkSwiper.tsx
-import React, { memo } from 'react'; // Удален useCallback
+
+import React, { memo, useCallback } from 'react';
 import { Box, Typography, Button, useTheme, Chip, Stack } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
@@ -31,6 +32,91 @@ interface LandmarkSwiperProps {
   swiperRef: React.MutableRefObject<any>;
 }
 
+// ✅ Инъектим CSS стили для картинок
+const injectSwiperImageStyles = () => {
+  if (document.getElementById('swiper-image-styles')) return;
+
+  const style = document.createElement('style');
+  style.id = 'swiper-image-styles';
+  style.textContent = `
+    .swiper-slide-image {
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide-image.loaded {
+      opacity: 1 !important;
+    }
+
+    .swiper-slide-image-wrapper {
+      width: 100%;
+      height: 100%;
+      background: #f5f5f5;
+      overflow: hidden;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
+// ✅ Оптимизированный Image компонент с WebP поддержкой
+interface OptimizedImageProps {
+  src: string | undefined;
+  alt: string;
+  onLoad?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const OptimizedImage = memo<OptimizedImageProps>(
+  ({ src, alt, onLoad, className = '', style }) => {
+    const [imageSrc, setImageSrc] = React.useState<string | undefined>(src);
+    const [isLoaded, setIsLoaded] = React.useState(false);
+
+    React.useEffect(() => {
+      if (!src) return;
+
+      // ✅ Пытаемся загрузить WebP версию
+      const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
+      const img = new Image();
+      img.onload = () => {
+        setImageSrc(webpSrc);
+      };
+      img.onerror = () => {
+        // Fallback на оригинальный формат
+        setImageSrc(src);
+      };
+      img.src = webpSrc;
+    }, [src]);
+
+    return (
+      <Box
+        component="img"
+        src={imageSrc}
+        alt={alt}
+        className={`swiper-slide-image ${isLoaded ? 'loaded' : ''} ${className}`}
+        style={style}
+        onLoad={() => {
+          setIsLoaded(true);
+          onLoad?.();
+        }}
+        onError={() => {
+          // Если WebP не загрузился, показываем оригинал
+          setImageSrc(src);
+          setIsLoaded(true);
+          onLoad?.();
+        }}
+      />
+    );
+  }
+);
+
+OptimizedImage.displayName = 'OptimizedImage';
+
 const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
   function LandmarkSwiper({
     filteredLandmarks,
@@ -46,6 +132,16 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
   }) {
     const { t } = useTranslation();
     const theme = useTheme();
+
+    // ✅ Инъектим стили один раз
+    React.useEffect(() => {
+      injectSwiperImageStyles();
+    }, []);
+
+    // ✅ Callback для загрузки картинки
+    const handleImageLoad = useCallback(() => {
+      //console.log('🖼️ [Swiper] Image loaded');
+    }, []);
 
     return (
       <Box
@@ -110,7 +206,6 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                 borderRadius: '8px',
                 textAlign: 'center',
                 height: '172px',
-
                 opacity: isContentLoaded ? 1 : 0,
                 transform: isContentLoaded
                   ? 'translateY(0)'
@@ -129,16 +224,15 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                   height: '100%',
                 }}
               >
-                <Box
-                  component="img"
+                <OptimizedImage
                   src={snackbarImages.welcome}
                   alt="Welcome"
-                  sx={{
-                    width: { xs: 72 },
-                    height: { xs: 'auto' },
+                  style={{
+                    width: 72,
+                    height: 'auto',
                     objectFit: 'contain',
-                    mb: 1,
-                    mt: 1,
+                    marginBottom: 8,
+                    marginTop: 8,
                   }}
                 />
                 <Typography variant="h6" component="h3" sx={{ mb: 0 }}>
@@ -189,7 +283,6 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                     justifyContent: 'flex-end',
                     alignItems: 'flex-start',
                     padding: '8px',
-
                     boxSizing: 'border-box',
                     backgroundColor:
                       activeIndex === index
@@ -221,17 +314,14 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                           alignItems: 'center',
                           aspectRatio: '4/5',
                           justifyContent: 'center',
+                          backgroundColor: '#f5f5f5',
                         }}
                       >
-                        <Box
-                          component="img"
+                        {/* ✅ Оптимизированная картинка с WebP поддержкой */}
+                        <OptimizedImage
                           src={getImageUrl(landmark.imageUrl)}
                           alt={content.title}
-                          sx={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                          }}
+                          onLoad={handleImageLoad}
                         />
                       </Box>
                     )}
@@ -331,5 +421,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
     );
   }
 );
+
+LandmarkSwiper.displayName = 'LandmarkSwiper';
 
 export default LandmarkSwiper;
