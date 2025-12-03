@@ -5,10 +5,11 @@ import type { Landmark } from './landmarkTypes';
 export const museumLandmarks: Landmark[] = [
   //japanese-covered-bridge
   {
-    id: 'japanese-covered-bridge', // <-- ID теперь строковый
-    coordinates: [15.877122578067937, 108.32601152345488], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
-    category: ['museum'], // <-- Категория "museum"
-    imageUrl: 'japanese_covered_bridge.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    id: 'japanese-covered-bridge',
+    coordinates: [15.877122578067937, 108.32601152345488],
+    category: ['museum'],
+    imageUrl: 'japanese_covered_bridge.webp',
+
     en: {
       title: 'Japanese Covered Bridge',
       description:
@@ -16,37 +17,37 @@ export const museumLandmarks: Landmark[] = [
       fullDescription: `
 <p>If you've been to Hoi An and haven't taken a picture on the Japanese Covered Bridge (Chùa Cầu), then you haven't really been to Hoi An. Seriously, this bridge is so charming that it even made it onto the city's emblem! And for good reason – it has a very unusual history...</p>
 
-<img src="japanese_covered_bridge_7.webp" alt="Japanese Covered Bridge Detail"/>
+<img src="japanese_covered_bridge_7.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>This bridge is a true superstar, staring back at you from the 20,000 Vietnamese Dong (VND) banknote! Don't be surprised if you see crowds of tourists seriously holding this banknote next to the bridge, trying to get "that shot." While it may not be the most original shot in the world, it's impossible to resist such a selfie! After all, it's not every day you hold money in your hands that depicts what's behind you, right?</p>
 
 <h6>The Japanese Left, But The Bridge Remained</h6>
 <p>Imagine the 17th century: Hoi An is an international trade hub in Southeast Asia, attracting merchants from all corners of the globe. Japanese and Chinese traders were so active here that they decided: "Let's build a bridge to make it easier to visit each other!" And so, in 1593, our hero came into being.</p>
 
-<img src="japanese_covered_bridge_old.webp" alt="Japanese Covered Bridge Detail"/>
+<img src="japanese_covered_bridge_old.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Few people know this, but the Japanese actively lived in Hoi An until 1663, and then... Boom! The Japanese government suddenly declared: "That's it, stop trading! We're going into isolation!" (Well, almost). So Japan went into isolation, and its magnificent legacy – this bridge – remained standing, like a greeting from the past.</p>
 
 <h6>Bridge, Temple, and a Little Mystery</h6>
 
-<img src="japanese_covered_bridge_6.webp" alt="Japanese Covered Bridge Detail"/>
+<img src="japanese_covered_bridge_6.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 <small>Statue of the Taoist God of Weather, Tran Bo Bac De</small>
 
 <p>You walk across the bridge, and there's a... temple? Yes, right in the middle of the bridge, a small altar is nestled. It's dedicated to the Taoist Jade Emperor Yu-di. It's funny because Taoism wasn't widely practiced in Japan, so it's likely the temple was added by the Vietnamese later. It's a kind of cultural bridge that connects not only shores but also beliefs!</p>
 
-<img src="japanese_covered_bridge_5.webp" alt="Japanese Covered Bridge Detail"/>
+<img src="japanese_covered_bridge_5.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>And on both sides of the bridge, you're greeted by stone statues of dogs and monkeys. Don't ask why them specifically – it's one of those Hoi An mysteries that makes you scratch your head. Maybe it's because of the years of construction (started in the Year of the Dog, finished in the Year of the Monkey)? Or, as another version suggests, many Japanese emperors were born in these years? In any case, they're here for a reason, and locals still adorn them and make offerings. Who knows, maybe they really are the guardians of the bridge, and whether you'll be lucky today depends on them!</p>
 
 <h6>Fighting the Underwater Catfish</h6>
 <p>Here's where it gets wild (in a good way)! The bridge wasn't built just for fun; it had a very important mission – to pin down a gigantic mythical catfish named Onamazu (大鯰)!</p>
 
-<img src="onamazu_1.webp" alt="Onamazu"/>
+<img src="onamazu_1.webp" alt="Onamazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 <small>Onamazu (Japanese: 大鯰 — "giant catfish")</small>
 
 <p>The essence of the legend: In Japanese folklore, there's this enormous catfish that causes earthquakes when it wiggles its tail. Its head, they say, is under India, its tail under Japan, but its BACK PASSES RIGHT UNDER VIETNAM! And the bridge builders, apparently, were very clever engineers, because they built the bridge specifically to "pin down" the back of this monster, preventing it from thrashing. Thus, the Japanese Bridge became a kind of anti-seismic press for all of Central Vietnam.</p>
 
-<img src="onamazu_2.webp" alt="Onamazu"/>
+<img src="onamazu_2.webp" alt="Onamazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>We don't know how much Onamazu appreciated this "massage" therapy, but the bridge, built on strong wooden supports, truly has stood for hundreds of years! Although, to be honest, not without humanity's help. The bridge has undergone eight (!) major renovations (even in 2022 it was literally disassembled for "surgery"!), which probably also helped a bit to keep it from falling apart. But the catfish myth still sounds cooler, don't you agree?</p>
 
@@ -54,21 +55,21 @@ export const museumLandmarks: Landmark[] = [
 
 <p>In 1719, Prince Nguyễn Phúc Chu visited Hoi An. He was an important figure who ruled Southern Vietnam, almost like a king, from 1691 to 1725. And so, they say, he didn't just admire the bridge, but personally carved three Chinese characters above the temple door! Can you imagine? Instead of sending servants, the prince decided to do the carving himself. He must have felt inspired!</p>
 
-<img src="japanese_covered_bridge_4.webp" alt="Japanese Covered Bridge Detail"/>
+<img src="japanese_covered_bridge_4.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>These symbols translate very poetically: "bridge for welcoming guests from afar." Or, in Vietnamese style, "Lai Viet Kieu." It's as if the bridge itself is saying: "Hello, traveler! Come in, make yourself at home, you belong here!" Such an ancient "welcome sign," carved by the hand of the ruler himself.</p>
 
 <h6>The French Road and Why the Bridge is Pedestrian Only</h6>
 
-<img src="japanese_covered_bridge_2.webp" alt="Japanese Covered Bridge Detail"/>
+<img src="japanese_covered_bridge_2.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Times change, and even the Japanese Bridge had to endure its "fashion experiments." During colonial rule, the French decided: "Hey, why shouldn't motorcycles drive here?" and leveled the road across the bridge. Sounds like a great idea for traffic jams, right? Fortunately, this "innovation" was later canceled, and the bridge once again became pedestrian-only. And thank goodness, because what kind of "symbol" is it if bikes are speeding across it?</p>
 
 <h6>A Small Bridge with a Giant Heart</h6>
 <p>So, when you walk across the Japanese Bridge, know this: you're not just walking on planks, you're treading on living history, full of legends, cultural intricacies, and even mythical catfish. It doesn't just connect two shores – it connects eras, peoples, and perhaps even calms earthquakes. That's our Japanese Covered Bridge – small, but very proud and mysterious.</p>
 
-<img src="japanese_covered_bridge_3.webp" alt="Japanese Covered Bridge Detail"/>
-  `,
+<img src="japanese_covered_bridge_3.webp" alt="Japanese Covered Bridge Detail" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+    `,
       internalImageNames: [
         'japanese_covered_bridge_old.webp',
         'onamazu_1.webp',
@@ -81,222 +82,7 @@ export const museumLandmarks: Landmark[] = [
         'onamazu_2.webp',
       ],
     },
-    es: {
-      title: 'Puente Cubierto Japonés',
-      description:
-        'El símbolo icónico de Hoi An, construido en el siglo XVI por la comunidad japonesa.',
-      fullDescription: `
-<p>Si has estado en Hoi An y no te has tomado una foto en el Puente Cubierto Japonés (Chùa Cầu), entonces realmente no has estado en Hoi An. En serio, este puente es tan encantador que incluso llegó al emblema de la ciudad. Y por una buena razón: ¡tiene una historia muy inusual!</p>
 
-<img src="japanese_covered_bridge_7.webp" alt="Detalle del Puente Cubierto Japonés"/>
-
-<p>¡Este puente es una verdadera superestrella, mirándote desde el billete de 20.000 Dong vietnamitas (VND)! No te sorprendas si ves multitudes de turistas sosteniendo seriamente este billete junto al puente, tratando de conseguir "esa foto". Aunque no sea la foto más original del mundo, ¡es imposible resistirse a un selfie así! Después de todo, no todos los días tienes dinero en tus manos que representa lo que está detrás de ti, ¿verdad?</p>
-
-<h6>Los Japoneses Se Fueron, Pero El Puente Permaneció</h6>
-<p>Imagina el siglo XVII: Hoi An es un centro de comercio internacional en el sudeste asiático, atrayendo a mercaderes de todos los rincones del mundo. Los comerciantes japoneses y chinos eran tan activos aquí que decidieron: "¡Construyamos un puente para que sea más fácil visitarnos!" Y así, en 1593, nació nuestro héroe.</p>
-
-<img src="japanese_covered_bridge_old.webp" alt="Detalle del Puente Cubierto Japonés"/>
-
-<p>Poca gente sabe esto, pero los japoneses vivieron activamente en Hoi An hasta 1663, y luego... ¡Boom! El gobierno japonés de repente declaró: "¡Ya está, parad de comerciar! ¡Nos vamos al aislamiento!" (Bueno, casi). Así que Japón entró en aislamiento, y su magnífico legado – este puente – permaneció en pie, como un saludo del pasado.</p>
-
-<h6>Puente, Templo Y Un Pequeño Misterio</h6>
-
-<img src="japanese_covered_bridge_6.webp" alt="Detalle del Puente Cubierto Japonés"/>
-<small>Estatua del Dios Taoísta del Clima, Tran Bo Bac De</small>
-
-<p>Caminas por el puente, ¿y hay un... templo? Sí, justo en el medio del puente, se encuentra un pequeño altar. Está dedicado al Emperador de Jade Taoísta Yu-di. Es curioso porque el taoísmo no era muy practicado en Japón, así que es probable que el templo fuera añadido por los vietnamitas más tarde. Es una especie de puente cultural que conecta no solo orillas sino también creencias.</p>
-
-<img src="japanese_covered_bridge_5.webp" alt="Detalle del Puente Cubierto Japonés"/>
-
-<p>Y a ambos lados del puente, te saludan estatuas de piedra de perros y monos. No preguntes por qué ellos específicamente – es uno de esos misterios de Hoi An que te hacen rascarte la cabeza. ¿Quizás sea por los años de construcción (empezó en el Año del Perro, terminó en el Año del Mono)? O, como sugiere otra versión, ¿muchos emperadores japoneses nacieron en estos años? En cualquier caso, están aquí por una razón, y los lugareños todavía los adornan y hacen ofrendas. Quién sabe, ¡quizás realmente sean los guardianes del puente, y tu suerte hoy dependa de ellos!</p>
-
-<h6>Luchando Contra El Bagre Submarino</h6>
-<p>¡Aquí es donde la cosa se pone salvaje (en el buen sentido)! El puente no fue construido solo por diversión; tenía una misión muy importante: ¡sujetar a un gigantesco bagre mítico llamado Onamazu (大鯰)!</p>
-
-<img src="onamazu_1.webp" alt="Onamazu"/>
-<small>Onamazu (Japonés: 大鯰 — "bagre gigante")</small>
-
-<p>La esencia de la leyenda: En el folclore japonés, existe este enorme bagre que causa terremotos cuando menea su cola. Su cabeza, dicen, está bajo la India, su cola bajo Japón, ¡pero su ESPALDA PASA JUSTO BAJO VIETNAM! Y los constructores del puente, al parecer, eran ingenieros muy inteligentes, porque construyeron el puente específicamente para "sujetar" la espalda de este monstruo, impidiendo que se agitara. Así, el Puente Japonés se convirtió en una especie de prensa antisísmica para todo el centro de Vietnam.</p>
-
-<img src="onamazu_2.webp" alt="Onamazu"/>
-
-<p>No sabemos cuánto apreció Onamazu esta terapia de "masaje", pero el puente, construido sobre fuertes soportes de madera, ¡realmente ha resistido durante cientos de años! Aunque, para ser honesto, no sin la ayuda de la humanidad. El puente ha sufrido ocho (¡!) renovaciones importantes (¡incluso en 2022 fue literalmente desensamblado para una "cirugía"!), lo que probablemente también ayudó un poco a que no se desmoronara. Pero el mito del bagre sigue sonando más genial, ¿no crees?</p>
-
-<h6>El Príncipe, El Tallador Y Tres Jeroglíficos</h6>
-
-<p>En 1719, el Príncipe Nguyễn Phúc Chu visitó Hoi An. Fue una figura importante que gobernó el sur de Vietnam, casi como un rey, de 1691 a 1725. Y así, dicen, no solo admiró el puente, ¡sino que personalmente talló tres caracteres chinos sobre la puerta del templo! ¿Te imaginas? En lugar de enviar sirvientes, el príncipe decidió hacer el tallado él mismo. ¡Debe haberse sentido inspirado!</p>
-
-<img src="japanese_covered_bridge_4.webp" alt="Detalle del Puente Cubierto Japonés"/>
-
-<p>Estos símbolos se traducen muy poéticamente: "puente para dar la bienvenida a los huéspedes de lejos". O, al estilo vietnamita, "Lai Viet Kieu". ¡Es como si el propio puente dijera: "¡Hola, viajero! Adelante, siéntete como en casa, aquí perteneces!" Una antigua "señal de bienvenida", tallada por la mano del propio gobernante.</p>
-
-<h6>El Camino Francés Y Por Qué El Puente Es Solo Peatonal</h6>
-
-<img src="japanese_covered_bridge_2.webp" alt="Detalle del Puente Cubierto Japonés"/>
-
-<p>Los tiempos cambian, e incluso el Puente Japonés tuvo que soportar sus "experimentos de moda". Durante el dominio colonial, los franceses decidieron: "Oye, ¿por qué no deberían conducir motos aquí?" y nivelaron la carretera a través del puente. Suena a una gran idea para los atascos, ¿verdad? Afortunadamente, esta "innovación" fue cancelada más tarde, y el puente volvió a ser solo para peatones. Y gracias a Dios, porque ¿qué tipo de "símbolo" es si las motos lo cruzan a toda velocidad?</p>
-
-<h6>Un Pequeño Puente Con Un Gran Corazón</h6>
-<p>Así que, cuando camines por el Puente Japonés, sabrás esto: no solo estás caminando sobre tablones, estás pisando historia viva, llena de leyendas, complejidades culturales e incluso bagres míticos. No solo conecta dos orillas, conecta épocas, pueblos y quizás incluso calma los terremotos. Ese es nuestro Puente Cubierto Japonés: pequeño, pero muy orgulloso y misterioso.</p>
-
-<img src="japanese_covered_bridge_3.webp" alt="Detalle del Puente Cubierto Japonés"/>
-  `,
-      internalImageNames: [
-        'japanese_covered_bridge_old.webp',
-        'onamazu_1.webp',
-        'japanese_covered_bridge_2.webp',
-        'japanese_covered_bridge_3.webp',
-        'japanese_covered_bridge_4.webp',
-        'japanese_covered_bridge_5.webp',
-        'japanese_covered_bridge_6.webp',
-        'japanese_covered_bridge_7.webp',
-        'onamazu_2.webp',
-      ],
-    },
-    fr: {
-      title: 'Pont couvert japonais',
-      description:
-        'Le symbole emblématique de Hoi An, construit au 16ème siècle par la communauté japonaise.',
-      fullDescription: `
-<p>Si vous êtes allé à Hoi An sans prendre de photo sur le Pont Couvert Japonais (Chùa Cầu), alors vous ne connaissez pas vraiment Hoi An. Sérieusement, ce pont est si charmant qu'il figure même sur l'emblème de la ville ! Et c'est pour une bonne raison – il a une histoire très inusitée...</p>
-
-<img src="japanese_covered_bridge_7.webp" alt="Détail du Pont Couvert Japonais"/>
-
-<p>Ce pont est une véritable superstar, vous regardant depuis le billet de 20 000 Dong vietnamiens (VND) ! Ne soyez pas surpris si vous voyez des foules de touristes tenant sérieusement ce billet à côté du pont, essayant d'obtenir "ce cliché". Bien que ce ne soit pas le cliché le plus original du monde, il est impossible de résister à un tel selfie ! Après tout, ce n'est pas tous les jours que vous tenez de l'argent dans vos mains qui représente ce qui est derrière vous, n'est-ce pas ?</p>
-
-<h6>Les Japonais Sont Partis, Mais Le Pont Est Resté</h6>
-<p>Imaginez le 17ème siècle : Hoi An est un centre commercial international en Asie du Sud-Est, attirant des marchands de tous les coins du globe. Les commerçants japonais et chinois étaient si actifs ici qu'ils ont décidé : "Construisons un pont pour faciliter nos visites mutuelles !" Et c'est ainsi qu'en 1593, notre héros a vu le jour.</p>
-
-<img src="japanese_covered_bridge_old.webp" alt="Détail du Pont Couvert Japonais"/>
-
-<p>Peu de gens le savent, mais les Japonais ont vécu activement à Hoi An jusqu'en 1663, et puis... Boum ! Le gouvernement japonais a soudainement déclaré : "Ça suffit, arrêtez de commercer ! Nous entrons en isolement !" (Enfin, presque). Le Japon s'est donc isolé, et son magnifique héritage – ce pont – est resté debout, comme un salut du passé.</p>
-
-<h6>Pont, Temple Et Un Petit Mystère</h6>
-
-<img src="japanese_covered_bridge_6.webp" alt="Détail du Pont Couvert Japonais"/>
-<small>Statue du dieu taoïste de la Météo, Tran Bo Bac De</small>
-
-<p>Vous traversez le pont, et il y a un... temple ? Oui, juste au milieu du pont, un petit autel est niché. Il est dédié à l'Empereur de Jade taoïste Yu-di. C'est amusant car le taoïsme n'était pas largement pratiqué au Japon, il est donc probable que le temple ait été ajouté par les Vietnamiens plus tard. C'est une sorte de pont culturel qui relie non seulement les rives, mais aussi les croyances !</p>
-
-<img src="japanese_covered_bridge_5.webp" alt="Détail du Pont Couvert Japonais"/>
-
-<p>Et des deux côtés du pont, vous êtes accueillis par des statues en pierre de chiens et de singes. Ne demandez pas pourquoi eux spécifiquement – c'est l'un de ces mystères de Hoi An qui vous fait vous gratter la tête. Peut-être est-ce à cause des années de construction (commencé l'année du Chien, terminé l'année du Singe) ? Ou, comme le suggère une autre version, de nombreux empereurs japonais sont nés ces années-là ? Quoi qu'il en soit, ils sont là pour une raison, et les habitants les ornent toujours et font des offrandes. Qui sait, peut-être sont-ils vraiment les gardiens du pont, et votre chance du jour dépend d'eux !</p>
-
-<h6>Combattre Le Poisson-Chat Sous-Marin</h6>
-<p>C'est là que ça devient fou (dans le bon sens) ! Le pont n'a pas été construit juste pour le plaisir ; il avait une mission très importante – d'immobiliser un gigantesque poisson-chat mythique nommé Onamazu (大鯰) !</p>
-
-<img src="onamazu_1.webp" alt="Onamazu"/>
-<small>Onamazu (Japonais : 大鯰 — "poisson-chat géant")</small>
-
-<p>L'essence de la légende : Dans le folklore japonais, il y a cet énorme poisson-chat qui provoque des tremblements de terre quand il agite sa queue. Sa tête, dit-on, est sous l'Inde, sa queue sous le Japon, mais son DOS PASSE JUSTE SOUS LE VIETNAM ! Et les constructeurs du pont, apparemment, étaient des ingénieurs très astucieux, car ils ont construit le pont spécifiquement pour "immobiliser" le dos de ce monstre, l'empêchant de se débattre. Ainsi, le pont japonais est devenu une sorte de presse antisismique pour tout le centre du Vietnam.</p>
-
-<img src="onamazu_2.webp" alt="Onamazu"/>
-
-<p>Nous ne savons pas à quel point Onamazu a apprécié cette thérapie de "massage", mais le pont, construit sur de solides supports en bois, a vraiment résisté pendant des centaines d'années ! Bien que, pour être honnête, pas sans l'aide de l'humanité. Le pont a subi huit (!) rénovations majeures (même en 2022, il a été littéralement démonté pour une "chirurgie" !), ce qui a probablement aussi un peu aidé à l'empêcher de s'effondrer. Mais le mythe du poisson-chat sonne toujours mieux, n'est-ce pas ?</p>
-
-<h6>Le Prince, Le Graveur Et Trois Hiéroglyphes</h6>
-
-<p>En 1719, le Prince Nguyễn Phúc Chu a visité Hoi An. Il était une figure importante qui a gouverné le sud du Vietnam, presque comme un roi, de 1691 à 1725. Et ainsi, dit-on, il n'a pas seulement admiré le pont, mais a personnellement gravé trois caractères chinois au-dessus de la porte du temple ! Pouvez-vous imaginer ? Au lieu d'envoyer des serviteurs, le prince a décidé de faire la gravure lui-même. Il a dû se sentir inspiré !</p>
-
-<img src="japanese_covered_bridge_4.webp" alt="Détail du Pont Couvert Japonais"/>
-
-<p>Ces symboles se traduisent très poétiquement : "pont pour accueillir les invités de loin." Ou, dans le style vietnamien, "Lai Viet Kieu." C'est comme si le pont lui-même disait : "Bonjour, voyageur ! Entrez, faites comme chez vous, vous appartenez ici !" Un tel "panneau de bienvenue" ancien, gravé de la main du souverain lui-même.</p>
-
-<h6>La Route Française Et Pourquoi Le Pont Est Réservé Aux Piétons</h6>
-
-<img src="japanese_covered_bridge_2.webp" alt="Détail du Pont Couvert Japonais"/>
-
-<p>Les temps changent, et même le Pont Japonais a dû endurer ses "expériences de mode". Pendant la domination coloniale, les Français ont décidé : "Hé, pourquoi les motos ne pourraient-elles pas rouler ici ?" et ont nivelé la route à travers le pont. Ça ressemble à une excellente idée pour les embouteillages, n'est-ce pas ? Heureusement, cette "innovation" a été annulée plus tard, et le pont est redevenu réservé aux piétons. Et heureusement, car quel genre de "symbole" est-ce si des vélos y circulent à toute vitesse ?</p>
-
-<h6>Un Petit Pont Avec Un Grand Cœur</h6>
-<p>Alors, quand vous traversez le Pont Japonais, sachez ceci : vous ne marchez pas seulement sur des planches, vous foulez une histoire vivante, pleine de légendes, de subtilités culturelles et même de poissons-chats mythiques. Il ne relie pas seulement deux rives – il relie des époques, des peuples et peut-être même calme les tremblements de terre. C'est notre Pont Couvert Japonais – petit, mais très fier et mystérieux.</p>
-
-<img src="japanese_covered_bridge_3.webp" alt="Détail du Pont Couvert Japonais"/>
-  `,
-      internalImageNames: [
-        'japanese_covered_bridge_old.webp',
-        'onamazu_1.webp',
-        'japanese_covered_bridge_2.webp',
-        'japanese_covered_bridge_3.webp',
-        'japanese_covered_bridge_4.webp',
-        'japanese_covered_bridge_5.webp',
-        'japanese_covered_bridge_6.webp',
-        'japanese_covered_bridge_7.webp',
-        'onamazu_2.webp',
-      ],
-    },
-    vn: {
-      title: 'Chùa Cầu (Cầu Chùa Nhật Bản)',
-      description:
-        'Biểu tượng nổi tiếng của Hội An, được cộng đồng Nhật Bản xây dựng vào thế kỷ 16.',
-      fullDescription: `
-<p>Nếu bạn đã đến Hội An mà chưa chụp ảnh tại Chùa Cầu (Cầu Chùa Nhật Bản), thì coi như bạn chưa thực sự đến Hội An. Nghiêm túc mà nói, cây cầu này quyến rũ đến nỗi nó còn lên được hình ảnh trên biểu tượng của thành phố! Và có lý do chính đáng – nó có một lịch sử rất không bình thường...</p>
-
-<img src="japanese_covered_bridge_7.webp" alt="Chi tiết Chùa Cầu"/>
-
-<p>Cây cầu này là một ngôi sao thực sự, nhìn lại bạn từ tờ tiền 20.000 Đồng Việt Nam (VND)! Đừng ngạc nhiên nếu bạn thấy đám đông khách du lịch nghiêm túc cầm tờ tiền này bên cạnh cây cầu, cố gắng có được "bức ảnh đó". Mặc dù có thể không phải là bức ảnh độc đáo nhất trên thế giới, nhưng không thể cưỡng lại một bức ảnh selfie như vậy! Rốt cuộc, không phải ngày nào bạn cũng cầm tiền trên tay mà nó lại miêu tả thứ ở phía sau bạn, đúng không?</p>
-
-<h6>Người Nhật Đã Rời Đi, Nhưng Cây Cầu Vẫn Ở Lại</h6>
-<p>Hãy tưởng tượng thế kỷ 17: Hội An là một trung tâm thương mại quốc tế ở Đông Nam Á, thu hút các thương nhân từ khắp nơi trên thế giới. Các thương nhân Nhật Bản và Trung Quốc hoạt động rất tích cực tại đây đến nỗi họ quyết định: "Hãy xây một cây cầu để dễ dàng ghé thăm nhau hơn!" Và thế là, vào năm 1593, người hùng của chúng ta đã ra đời.</p>
-
-<img src="japanese_covered_bridge_old.webp" alt="Chi tiết Chùa Cầu"/>
-
-<p>Ít người biết điều này, nhưng người Nhật đã sống tích cực ở Hội An cho đến năm 1663, và sau đó... Bùm! Chính phủ Nhật Bản đột ngột tuyên bố: "Thôi, ngừng giao thương! Chúng ta sẽ bị cô lập!" (Gần như vậy). Vì vậy, Nhật Bản đã tự cô lập, và di sản tráng lệ của họ – cây cầu này – vẫn đứng vững, như một lời chào từ quá khứ.</p>
-
-<h6>Cầu, Chùa Và Một Chút Bí Ẩn</h6>
-
-<img src="japanese_covered_bridge_6.webp" alt="Chi tiết Chùa Cầu"/>
-<small>Tượng Thần Đạo giáo của Thời tiết, Trần Bo Bắc Đế</small>
-
-<p>Bạn đi bộ qua cầu, và có một... ngôi chùa? Vâng, ngay giữa cầu, một bàn thờ nhỏ nép mình. Nó được dành riêng cho Ngọc Hoàng (Yu-di) theo Đạo giáo. Thật buồn cười vì Đạo giáo không được thực hành rộng rãi ở Nhật Bản, vì vậy có khả năng ngôi chùa đã được người Việt thêm vào sau này. Đó là một loại cầu văn hóa không chỉ kết nối bờ mà còn kết nối tín ngưỡng!</p>
-
-<img src="japanese_covered_bridge_5.webp" alt="Chi tiết Chùa Cầu"/>
-
-<p>Và ở hai bên cầu, bạn được chào đón bởi những bức tượng đá hình chó và khỉ. Đừng hỏi tại sao lại là chúng – đó là một trong những bí ẩn của Hội An khiến bạn phải gãi đầu. Có lẽ là do những năm xây dựng (bắt đầu vào Năm Con Chó, kết thúc vào Năm Con Khỉ)? Hoặc, theo một phiên bản khác, nhiều vị hoàng đế Nhật Bản đã sinh ra trong những năm này? Dù sao đi nữa, chúng ở đây đều có lý do, và người dân địa phương vẫn trang trí và dâng lễ cho chúng. Ai biết được, có lẽ chúng thực sự là những người bảo vệ cây cầu, và liệu bạn có may mắn hôm nay hay không tùy thuộc vào chúng!</p>
-
-<h6>Chống Lại Con Cá Trê Khổng Lồ Dưới Nước</h6>
-<p>Đây là phần điên rồ (theo nghĩa tốt)! Cây cầu không chỉ được xây dựng để giải trí; nó có một nhiệm vụ rất quan trọng – để giữ chặt một con cá trê khổng lồ trong thần thoại tên là Namazu (大鯰)!</p>
-
-<img src="onamazu_1.webp" alt="Namazu"/>
-<small>Namazu (tiếng Nhật: 大鯰 — "cá trê khổng lồ")</small>
-
-<p>Bản chất của truyền thuyết: Trong văn hóa dân gian Nhật Bản, có một con cá trê khổng lồ gây ra động đất khi nó vẫy đuôi. Đầu nó, người ta nói, ở dưới Ấn Độ, đuôi nó ở dưới Nhật Bản, nhưng LƯNG NÓ LẠI NẰM NGAY DƯỚI VIỆT NAM! Và những người xây cầu, rõ ràng, là những kỹ sư rất thông minh, bởi vì họ đã xây cây cầu đặc biệt để "giữ chặt" lưng của con quái vật này, ngăn nó khỏi vùng vẫy. Do đó, Chùa Cầu đã trở thành một loại "máy ép" chống động đất cho toàn bộ miền Trung Việt Nam.</p>
-
-<img src="onamazu_2.webp" alt="Namazu"/>
-
-<p>Chúng ta không biết Namazu đã đánh giá cao liệu pháp "massage" này đến mức nào, nhưng cây cầu, được xây dựng trên những cột gỗ vững chắc, thực sự đã đứng vững hàng trăm năm! Mặc dù, thành thật mà nói, không phải không có sự giúp đỡ của con người. Cây cầu đã trải qua tám (!) lần trùng tu lớn (thậm chí vào năm 2022 nó đã được tháo dỡ theo nghĩa đen để "phẫu thuật"!), điều này có lẽ cũng giúp ích một chút để nó không bị sập. Nhưng huyền thoại về cá trê vẫn nghe hay hơn, bạn có đồng ý không?</p>
-
-<h6>Vua Nguyễn Phúc Chu, Người Chạm Khắc Và Ba Chữ Hán</h6>
-
-<p>Năm 1719, Vua Nguyễn Phúc Chu đã ghé thăm Hội An. Ông là một nhân vật quan trọng, cai trị miền Nam Việt Nam, gần như một vị vua, từ năm 1691 đến 1725. Và người ta nói rằng, ông không chỉ chiêm ngưỡng cây cầu, mà còn đích thân chạm khắc ba chữ Hán phía trên cửa chùa! Bạn có thể tưởng tượng không? Thay vì cử người hầu, vị vua đã tự mình chạm khắc. Chắc hẳn ông đã cảm thấy rất hứng thú!</p>
-
-<img src="japanese_covered_bridge_4.webp" alt="Chi tiết Chùa Cầu"/>
-
-<p>Những biểu tượng này được dịch rất thơ mộng: "cầu để đón khách từ xa". Hoặc, theo kiểu Việt Nam, "Lai Viễn Kiều". Cứ như thể chính cây cầu đang nói: "Chào mừng, du khách! Hãy vào đi, hãy tự nhiên như ở nhà, bạn thuộc về nơi này!" Một "biển chào" cổ xưa như vậy, được chạm khắc bởi chính tay vị vua.</p>
-
-<h6>Con Đường Pháp Và Lý Do Cầu Chỉ Dành Cho Người Đi Bộ</h6>
-
-<img src="japanese_covered_bridge_2.webp" alt="Chi tiết Chùa Cầu"/>
-
-<p>Thời gian thay đổi, và ngay cả Chùa Cầu cũng phải chịu đựng những "thử nghiệm thời trang" của mình. Trong thời kỳ thuộc địa, người Pháp quyết định: "Này, tại sao xe máy không nên đi qua đây?" và san bằng con đường qua cầu. Nghe có vẻ là một ý tưởng tuyệt vời cho tắc nghẽn giao thông, đúng không? May mắn thay, "sáng kiến" này sau đó đã bị hủy bỏ, và cây cầu một lần nữa trở thành cầu dành riêng cho người đi bộ. Và thật may mắn, bởi vì một "biểu tượng" như thế nào nếu xe máy chạy ào ào qua nó?</p>
-
-<h6>Một Cây Cầu Nhỏ Với Một Trái Tim Khổng Lồ</h6>
-<p>Vì vậy, khi bạn đi bộ qua Chùa Cầu, hãy biết điều này: bạn không chỉ đi trên những tấm ván, bạn đang bước đi trên lịch sử sống động, đầy huyền thoại, những chi tiết văn hóa phức tạp, và thậm chí cả những con cá trê thần thoại. Nó không chỉ kết nối hai bờ – nó kết nối các thời đại, các dân tộc, và có lẽ còn làm dịu những trận động đất. Đó chính là Chùa Cầu của chúng ta – nhỏ bé, nhưng rất tự hào và bí ẩn.</p>
-
-<img src="japanese_covered_bridge_3.webp" alt="Chi tiết Chùa Cầu"/>
-  `,
-      internalImageNames: [
-        'japanese_covered_bridge_old.webp',
-        'onamazu_1.webp',
-        'japanese_covered_bridge_2.webp',
-        'japanese_covered_bridge_3.webp',
-        'japanese_covered_bridge_4.webp',
-        'japanese_covered_bridge_5.webp',
-        'japanese_covered_bridge_6.webp',
-        'japanese_covered_bridge_7.webp',
-        'onamazu_2.webp',
-      ],
-    },
     ru: {
       title: 'Японский крытый мост',
       description:
@@ -304,73 +90,37 @@ export const museumLandmarks: Landmark[] = [
       fullDescription: `
 <p>Если вы были в Хойане и не сфотографировались на Японском крытом мосте (Чуа Кау), то вы так и не побывали в Хойане по-настоящему. Серьёзно! Этот мост настолько очарователен, что даже попал на герб города. И не просто так – у него очень необычная история...</p>
 
-<img 
-  src="japanese_covered_bridge_7.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="japanese_covered_bridge_7.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Этот мост – настоящая звезда! Его портрет украшает банкноту достоинством 20 000 донгов (VND). Не удивляйтесь, если увидите толпы туристов, серьёзно прижимающих банкноту к мосту, чтобы получить "тот самый кадр". Может быть, это не самый оригинальный способ сфотографироваться в мире, но устоять перед таким селфи невозможно! Ведь не каждый день в руках оказывается деньги, на которых изображено то, что находится позади тебя, правда?</p>
 
 <h6>Японцы уехали, но мост остался</h6>
 <p>Представьте себе XVII век: Хойан – крупнейший торговый центр Юго-Восточной Азии, притягивающий купцов со всех концов света. Японские и китайские торговцы были здесь так активны, что решили: "Давайте построим мост, чтобы нам было легче навещать друг друга!" И вот, в 1593 году, наш герой появился на свет.</p>
 
-<img 
-  src="japanese_covered_bridge_old.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="japanese_covered_bridge_old.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Мало кто знает, но японцы активно жили в Хойане до 1663 года, а потом... Бум! Японское правительство внезапно объявило: "Хватит торговать! Переходим на самоизоляцию!" (Ну, почти так). Япония закрылась для мира, а её великолепное наследие – этот мост – остался стоять, как приветствие из прошлого.</p>
 
 <h6>Мост, храм и немного мистики</h6>
 
-<img 
-  src="japanese_covered_bridge_6.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="japanese_covered_bridge_6.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 <small>Статуя даосского Бога Погоды Тран Бо Бак Де</small>
 
 <p>Переходите мост, и вдруг... храм? Да! Прямо в середине моста затаился маленький алтарь. Посвящён он даосскому Нефритовому Императору Юди. Забавно то, что даосизм в Японии не был особо распространён, поэтому алтарь, скорее всего, добавили вьетнамцы позже. Получился вот такой культурный мост – соединяет не только берега, но и верования!</p>
 
-<img 
-  src="japanese_covered_bridge_5.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="japanese_covered_bridge_5.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>По обе стороны моста вас встречают каменные статуи собак и обезьян. Не спрашивайте почему именно они – это одна из тех загадок Хойана, которая заставляет почесать голову. Может быть, потому что строительство совпадало с Годом Собаки и Годом Обезьяны? Или, как говорит другая версия, потому что многие японские императоры родились в эти года? Как бы то ни было, они здесь не просто так, и местные по-прежнему украшают их и преподносят дары. Кто знает, может быть, они действительно хранители моста, и ваша удача сегодня зависит от них!</p>
 
 <h6>Битва с подводным сомом</h6>
 <p>Вот здесь история становится по-настоящему дикой (в хорошем смысле)! Мост строился не просто для забавы – у него была очень важная миссия: придавить гигантского мифического сома по имени Намадзу (大鯰)!</p>
 
-<img 
-  src="onamazu_1.webp" 
-  alt="Намадзу"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="onamazu_1.webp" alt="Намадзу" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 <small>Намадзу (яп.: 大鯰 — "гигантский сом")</small>
 
 <p>Суть легенды такова: в японском фольклоре существует огромный сом, который вызывает землетрясения, когда вилял хвостом. Его голова, говорят, находится под Индией, хвост – под Японией, а СПИНА ПРОХОДИТ ПРЯМО ПОД ВЬЕТНАМОМ! Строители моста, очевидно, были очень умными инженерами – они построили мост специально, чтобы "прижать" спину этого монстра и помешать ему вилять. Так Японский мост стал чем-то вроде противосейсмического пресса для всего центрального Вьетнама!</p>
 
-<img 
-  src="onamazu_2.webp" 
-  alt="Намадзу"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="onamazu_2.webp" alt="Намадзу" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Неизвестно, насколько Намадзу оценил эту "массажную терапию", но мост, построенный на прочных деревянных опорах, действительно стоит уже сотни лет! Хотя, честно говоря, не без помощи людей. Мост прошёл восемь (!) масштабных реставраций (даже в 2022 году его буквально разбирали на "хирургию"!), что тоже немало помогло ему не разваливаться. Но легенда о соме звучит куда круче, согласитесь?</p>
 
@@ -378,39 +128,240 @@ export const museumLandmarks: Landmark[] = [
 
 <p>В 1719 году принц Нгуен Фук Чу посетил Хойан. Это был важный деятель, правивший Южным Вьетнамом почти как король, с 1691 по 1725 год. И вот, говорят, он не просто восхищался мостом, а лично вырезал три китайских иероглифа над дверью храма! Представляете? Вместо того чтобы послать слуг, принц решил сделать это сам. Должно быть, его вдохновило это место!</p>
 
-<img 
-  src="japanese_covered_bridge_4.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="japanese_covered_bridge_4.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Эти символы переводятся очень поэтично: "мост для встречи гостей издалека". Или по-вьетнамски "Лай Виет Киеу". Как будто сам мост говорит: "Привет, путник! Добро пожаловать! Ты здесь на месте!" Такая древняя "приветственная табличка", вырезанная рукой самого правителя.</p>
 
 <h6>Французская дорога и почему мост только для пешеходов</h6>
 
-<img 
-  src="japanese_covered_bridge_2.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
+<img src="japanese_covered_bridge_2.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
 
 <p>Времена меняются, и даже Японский мост пришлось пережить свои "эксперименты с модой". Во времена колониального правления французы решили: "Почему бы мотоциклам не ездить здесь?" и построили дорогу прямо через мост. Отличная идея для пробок, правда? К счастью, это "нововведение" позже отменили, и мост снова стал пешеходным. И хорошо, что так – какой же это "символ", если через него носятся мотоциклы?</p>
 
 <h6>Маленький мост с большим сердцем</h6>
 <p>Итак, когда вы переходите Японский крытый мост, помните: вы идёте не просто по доскам, вы ступаете по живой истории, полной легенд, культурных тонкостей и даже мифических сомов. Он соединяет не просто два берега – он соединяет эпохи, народы и, возможно, даже усмиряет землетрясения. Вот такой он, наш Японский крытый мост – маленький, но очень гордый и загадочный.</p>
 
-<img 
-  src="japanese_covered_bridge_3.webp" 
-  alt="Деталь Японского крытого моста"
-  width="800"
-  height="600"
-  style="width: 100%; height: auto; object-fit: cover;"
-/>
-  `,
+<img src="japanese_covered_bridge_3.webp" alt="Деталь Японского крытого моста" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+    `,
+      internalImageNames: [
+        'japanese_covered_bridge_old.webp',
+        'onamazu_1.webp',
+        'japanese_covered_bridge_2.webp',
+        'japanese_covered_bridge_3.webp',
+        'japanese_covered_bridge_4.webp',
+        'japanese_covered_bridge_5.webp',
+        'japanese_covered_bridge_6.webp',
+        'japanese_covered_bridge_7.webp',
+        'onamazu_2.webp',
+      ],
+    },
+
+    es: {
+      title: 'Puente Cubierto Japonés',
+      description:
+        'El símbolo icónico de Hoi An, construido en el siglo XVI por la comunidad japonesa.',
+      fullDescription: `
+<p>Si has estado en Hoi An y no te has tomado una foto en el Puente Cubierto Japonés (Chùa Cầu), entonces realmente no has estado en Hoi An. En serio, este puente es tan encantador que incluso llegó al emblema de la ciudad. Y por una buena razón: ¡tiene una historia muy inusual!</p>
+
+<img src="japanese_covered_bridge_7.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>¡Este puente es una verdadera superestrella, mirándote desde el billete de 20.000 Dong vietnamitas (VND)! No te sorprendas si ves multitudes de turistas sosteniendo seriamente este billete junto al puente, tratando de conseguir "esa foto". Aunque no sea la foto más original del mundo, ¡es imposible resistirse a un selfie así! Después de todo, no todos los días tienes dinero en tus manos que representa lo que está detrás de ti, ¿verdad?</p>
+
+<h6>Los Japoneses Se Fueron, Pero El Puente Permaneció</h6>
+<p>Imagina el siglo XVII: Hoi An es un centro de comercio internacional en el sudeste asiático, atrayendo a mercaderes de todos los rincones del mundo. Los comerciantes japoneses y chinos eran tan activos aquí que decidieron: "¡Construyamos un puente para que sea más fácil visitarnos!" Y así, en 1593, nació nuestro héroe.</p>
+
+<img src="japanese_covered_bridge_old.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Poca gente sabe esto, pero los japoneses vivieron activamente en Hoi An hasta 1663, y luego... ¡Boom! El gobierno japonés de repente declaró: "¡Ya está, parad de comerciar! ¡Nos vamos al aislamiento!" (Bueno, casi). Así que Japón entró en aislamiento, y su magnífico legado – este puente – permaneció en pie, como un saludo del pasado.</p>
+
+<h6>Puente, Templo Y Un Pequeño Misterio</h6>
+
+<img src="japanese_covered_bridge_6.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+<small>Estatua del Dios Taoísta del Clima, Tran Bo Bac De</small>
+
+<p>Caminas por el puente, ¿y hay un... templo? Sí, justo en el medio del puente, se encuentra un pequeño altar. Está dedicado al Emperador de Jade Taoísta Yu-di. Es curioso porque el taoísmo no era muy practicado en Japón, así que es probable que el templo fuera añadido por los vietnamitas más tarde. Es una especie de puente cultural que conecta no solo orillas sino también creencias.</p>
+
+<img src="japanese_covered_bridge_5.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Y a ambos lados del puente, te saludan estatuas de piedra de perros y monos. No preguntes por qué ellos específicamente – es uno de esos misterios de Hoi An que te hacen rascarte la cabeza. ¿Quizás sea por los años de construcción (empezó en el Año del Perro, terminó en el Año del Mono)? O, como sugiere otra versión, ¿muchos emperadores japoneses nacieron en estos años? En cualquier caso, están aquí por una razón, y los lugareños todavía los adornan y hacen ofrendas. Quién sabe, ¡quizás realmente sean los guardianes del puente, y tu suerte hoy dependa de ellos!</p>
+
+<h6>Luchando Contra El Bagre Submarino</h6>
+<p>¡Aquí es donde la cosa se pone salvaje (en el buen sentido)! El puente no fue construido solo por diversión; tenía una misión muy importante: ¡sujetar a un gigantesco bagre mítico llamado Onamazu (大鯰)!</p>
+
+<img src="onamazu_1.webp" alt="Onamazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+<small>Onamazu (Japonés: 大鯰 — "bagre gigante")</small>
+
+<p>La esencia de la leyenda: En el folclore japonés, existe este enorme bagre que causa terremotos cuando menea su cola. Su cabeza, dicen, está bajo la India, su cola bajo Japón, ¡pero su ESPALDA PASA JUSTO BAJO VIETNAM! Y los constructores del puente, al parecer, eran ingenieros muy inteligentes, porque construyeron el puente específicamente para "sujetar" la espalda de este monstruo, impidiendo que se agitara. Así, el Puente Japonés se convirtió en una especie de prensa antisísmica para todo el centro de Vietnam.</p>
+
+<img src="onamazu_2.webp" alt="Onamazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>No sabemos cuánto apreció Onamazu esta terapia de "masaje", pero el puente, construido sobre fuertes soportes de madera, ¡realmente ha resistido durante cientos de años! Aunque, para ser honesto, no sin la ayuda de la humanidad. El puente ha sufrido ocho (¡!) renovaciones importantes (¡incluso en 2022 fue literalmente desensamblado para una "cirugía"!), lo que probablemente también ayudó un poco a que no se desmoronara. Pero el mito del bagre sigue sonando más genial, ¿no crees?</p>
+
+<h6>El Príncipe, El Tallador Y Tres Jeroglíficos</h6>
+
+<p>En 1719, el Príncipe Nguyễn Phúc Chu visitó Hoi An. Fue una figura importante que gobernó el sur de Vietnam, casi como un rey, de 1691 a 1725. Y así, dicen, no solo admiró el puente, ¡sino que personalmente talló tres caracteres chinos sobre la puerta del templo! ¿Te imaginas? En lugar de enviar sirvientes, el príncipe decidió hacer el tallado él mismo. ¡Debe haberse sentido inspirado!</p>
+
+<img src="japanese_covered_bridge_4.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Estos símbolos se traducen muy poéticamente: "puente para dar la bienvenida a los huéspedes de lejos". O, al estilo vietnamita, "Lai Viet Kieu". ¡Es como si el propio puente dijera: "¡Hola, viajero! Adelante, siéntete como en casa, aquí perteneces!" Una antigua "señal de bienvenida", tallada por la mano del propio gobernante.</p>
+
+<h6>El Camino Francés Y Por Qué El Puente Es Solo Peatonal</h6>
+
+<img src="japanese_covered_bridge_2.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Los tiempos cambian, e incluso el Puente Japonés tuvo que soportar sus "experimentos de moda". Durante el dominio colonial, los franceses decidieron: "Oye, ¿por qué no deberían conducir motos aquí?" y nivelaron la carretera a través del puente. Suena a una gran idea para los atascos, ¿verdad? Afortunadamente, esta "innovación" fue cancelada más tarde, y el puente volvió a ser solo para peatones. Y gracias a Dios, porque ¿qué tipo de "símbolo" es si las motos lo cruzan a toda velocidad?</p>
+
+<h6>Un Pequeño Puente Con Un Gran Corazón</h6>
+<p>Así que, cuando camines por el Puente Japonés, sabrás esto: no solo estás caminando sobre tablones, estás pisando historia viva, llena de leyendas, complejidades culturales e incluso bagres míticos. No solo conecta dos orillas, conecta épocas, pueblos y quizás incluso calma los terremotos. Ese es nuestro Puente Cubierto Japonés: pequeño, pero muy orgulloso y misterioso.</p>
+
+<img src="japanese_covered_bridge_3.webp" alt="Detalle del Puente Cubierto Japonés" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+    `,
+      internalImageNames: [
+        'japanese_covered_bridge_old.webp',
+        'onamazu_1.webp',
+        'japanese_covered_bridge_2.webp',
+        'japanese_covered_bridge_3.webp',
+        'japanese_covered_bridge_4.webp',
+        'japanese_covered_bridge_5.webp',
+        'japanese_covered_bridge_6.webp',
+        'japanese_covered_bridge_7.webp',
+        'onamazu_2.webp',
+      ],
+    },
+
+    fr: {
+      title: 'Pont couvert japonais',
+      description:
+        'Le symbole emblématique de Hoi An, construit au 16ème siècle par la communauté japonaise.',
+      fullDescription: `
+<p>Si vous êtes allé à Hoi An sans prendre de photo sur le Pont Couvert Japonais (Chùa Cầu), alors vous ne connaissez pas vraiment Hoi An. Sérieusement, ce pont est si charmant qu'il figure même sur l'emblème de la ville ! Et c'est pour une bonne raison – il a une histoire très inusitée...</p>
+
+<img src="japanese_covered_bridge_7.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Ce pont est une véritable superstar, vous regardant depuis le billet de 20 000 Dong vietnamiens (VND) ! Ne soyez pas surpris si vous voyez des foules de touristes tenant sérieusement ce billet à côté du pont, essayant d'obtenir "ce cliché". Bien que ce ne soit pas le cliché le plus original du monde, il est impossible de résister à un tel selfie ! Après tout, ce n'est pas tous les jours que vous tenez de l'argent dans vos mains qui représente ce qui est derrière vous, n'est-ce pas ?</p>
+
+<h6>Les Japonais Sont Partis, Mais Le Pont Est Resté</h6>
+<p>Imaginez le 17ème siècle : Hoi An est un centre commercial international en Asie du Sud-Est, attirant des marchands de tous les coins du globe. Les commerçants japonais et chinois étaient si actifs ici qu'ils ont décidé : "Construisons un pont pour faciliter nos visites mutuelles !" Et c'est ainsi qu'en 1593, notre héros a vu le jour.</p>
+
+<img src="japanese_covered_bridge_old.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Peu de gens le savent, mais les Japonais ont vécu activement à Hoi An jusqu'en 1663, et puis... Boum ! Le gouvernement japonais a soudainement déclaré : "Ça suffit, arrêtez de commercer ! Nous entrons en isolement !" (Enfin, presque). Le Japon s'est donc isolé, et son magnifique héritage – ce pont – est resté debout, comme un salut du passé.</p>
+
+<h6>Pont, Temple Et Un Petit Mystère</h6>
+
+<img src="japanese_covered_bridge_6.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+<small>Statue du dieu taoïste de la Météo, Tran Bo Bac De</small>
+
+<p>Vous traversez le pont, et il y a un... temple ? Oui, juste au milieu du pont, un petit autel est niché. Il est dédié à l'Empereur de Jade taoïste Yu-di. C'est amusant car le taoïsme n'était pas largement pratiqué au Japon, il est donc probable que le temple ait été ajouté par les Vietnamiens plus tard. C'est une sorte de pont culturel qui relie non seulement les rives, mais aussi les croyances !</p>
+
+<img src="japanese_covered_bridge_5.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Et des deux côtés du pont, vous êtes accueillis par des statues en pierre de chiens et de singes. Ne demandez pas pourquoi eux spécifiquement – c'est l'un de ces mystères de Hoi An qui vous fait vous gratter la tête. Peut-être est-ce à cause des années de construction (commencé l'année du Chien, terminé l'année du Singe) ? Ou, comme le suggère une autre version, de nombreux empereurs japonais sont nés ces années-là ? Quoi qu'il en soit, ils sont là pour une raison, et les habitants les ornent toujours et font des offrandes. Qui sait, peut-être sont-ils vraiment les gardiens du pont, et votre chance du jour dépend d'eux !</p>
+
+<h6>Combattre Le Poisson-Chat Sous-Marin</h6>
+<p>C'est là que ça devient fou (dans le bon sens) ! Le pont n'a pas été construit juste pour le plaisir ; il avait une mission très importante – d'immobiliser un gigantesque poisson-chat mythique nommé Onamazu (大鯰) !</p>
+
+<img src="onamazu_1.webp" alt="Onamazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+<small>Onamazu (Japonais : 大鯰 — "poisson-chat géant")</small>
+
+<p>L'essence de la légende : Dans le folklore japonais, il y a cet énorme poisson-chat qui provoque des tremblements de terre quand il agite sa queue. Sa tête, dit-on, est sous l'Inde, sa queue sous le Japon, mais son DOS PASSE JUSTE SOUS LE VIETNAM ! Et les constructeurs du pont, apparemment, étaient des ingénieurs très astucieux, car ils ont construit le pont spécifiquement pour "immobiliser" le dos de ce monstre, l'empêchant de se débattre. Ainsi, le pont japonais est devenu une sorte de presse antisismique pour tout le centre du Vietnam.</p>
+
+<img src="onamazu_2.webp" alt="Onamazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Nous ne savons pas à quel point Onamazu a apprécié cette thérapie de "massage", mais le pont, construit sur de solides supports en bois, a vraiment résisté pendant des centaines d'années ! Bien que, pour être honnête, pas sans l'aide de l'humanité. Le pont a subi huit (!) rénovations majeures (même en 2022, il a été littéralement démonté pour une "chirurgie" !), ce qui a probablement aussi un peu aidé à l'empêcher de s'effondrer. Mais le mythe du poisson-chat sonne toujours mieux, n'est-ce pas ?</p>
+
+<h6>Le Prince, Le Graveur Et Trois Hiéroglyphes</h6>
+
+<p>En 1719, le Prince Nguyễn Phúc Chu a visité Hoi An. Il était une figure importante qui a gouverné le sud du Vietnam, presque comme un roi, de 1691 à 1725. Et ainsi, dit-on, il n'a pas seulement admiré le pont, mais a personnellement gravé trois caractères chinois au-dessus de la porte du temple ! Pouvez-vous imaginer ? Au lieu d'envoyer des serviteurs, le prince a décidé de faire la gravure lui-même. Il a dû se sentir inspiré !</p>
+
+<img src="japanese_covered_bridge_4.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Ces symboles se traduisent très poétiquement : "pont pour accueillir les invités de loin." Ou, dans le style vietnamien, "Lai Viet Kieu." C'est comme si le pont lui-même disait : "Bonjour, voyageur ! Entrez, faites comme chez vous, vous appartenez ici !" Un tel "panneau de bienvenue" ancien, gravé de la main du souverain lui-même.</p>
+
+<h6>La Route Française Et Pourquoi Le Pont Est Réservé Aux Piétons</h6>
+
+<img src="japanese_covered_bridge_2.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Les temps changent, et même le Pont Japonais a dû endurer ses "expériences de mode". Pendant la domination coloniale, les Français ont décidé : "Hé, pourquoi les motos ne pourraient-elles pas rouler ici ?" et ont nivelé la route à travers le pont. Ça ressemble à une excellente idée pour les embouteillages, n'est-ce pas ? Heureusement, cette "innovation" a été annulée plus tard, et le pont est redevenu réservé aux piétons. Et heureusement, car quel genre de "symbole" est-ce si des vélos y circulent à toute vitesse ?</p>
+
+<h6>Un Petit Pont Avec Un Grand Cœur</h6>
+<p>Alors, quand vous traversez le Pont Japonais, sachez ceci : vous ne marchez pas seulement sur des planches, vous foulez une histoire vivante, pleine de légendes, de subtilités culturelles et même de poissons-chats mythiques. Il ne relie pas seulement deux rives – il relie des époques, des peuples et peut-être même calme les tremblements de terre. C'est notre Pont Couvert Japonais – petit, mais très fier et mystérieux.</p>
+
+<img src="japanese_covered_bridge_3.webp" alt="Détail du Pont Couvert Japonais" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+    `,
+      internalImageNames: [
+        'japanese_covered_bridge_old.webp',
+        'onamazu_1.webp',
+        'japanese_covered_bridge_2.webp',
+        'japanese_covered_bridge_3.webp',
+        'japanese_covered_bridge_4.webp',
+        'japanese_covered_bridge_5.webp',
+        'japanese_covered_bridge_6.webp',
+        'japanese_covered_bridge_7.webp',
+        'onamazu_2.webp',
+      ],
+    },
+
+    vn: {
+      title: 'Chùa Cầu (Cầu Chùa Nhật Bản)',
+      description:
+        'Biểu tượng nổi tiếng của Hội An, được cộng đồng Nhật Bản xây dựng vào thế kỷ 16.',
+      fullDescription: `
+<p>Nếu bạn đã đến Hội An mà chưa chụp ảnh tại Chùa Cầu (Cầu Chùa Nhật Bản), thì coi như bạn chưa thực sự đến Hội An. Nghiêm túc mà nói, cây cầu này quyến rũ đến nỗi nó còn lên được hình ảnh trên biểu tượng của thành phố! Và có lý do chính đáng – nó có một lịch sử rất không bình thường...</p>
+
+<img src="japanese_covered_bridge_7.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Cây cầu này là một ngôi sao thực sự, nhìn lại bạn từ tờ tiền 20.000 Đồng Việt Nam (VND)! Đừng ngạc nhiên nếu bạn thấy đám đông khách du lịch nghiêm túc cầm tờ tiền này bên cạnh cây cầu, cố gắng có được "bức ảnh đó". Mặc dù có thể không phải là bức ảnh độc đáo nhất trên thế giới, nhưng không thể cưỡng lại một bức ảnh selfie như vậy! Rốt cuộc, không phải ngày nào bạn cũng cầm tiền trên tay mà nó lại miêu tả thứ ở phía sau bạn, đúng không?</p>
+
+<h6>Người Nhật Đã Rời Đi, Nhưng Cây Cầu Vẫn Ở Lại</h6>
+<p>Hãy tưởng tượng thế kỷ 17: Hội An là một trung tâm thương mại quốc tế ở Đông Nam Á, thu hút các thương nhân từ khắp nơi trên thế giới. Các thương nhân Nhật Bản và Trung Quốc hoạt động rất tích cực tại đây đến nỗi họ quyết định: "Hãy xây một cây cầu để dễ dàng ghé thăm nhau hơn!" Và thế là, vào năm 1593, người hùng của chúng ta đã ra đời.</p>
+
+<img src="japanese_covered_bridge_old.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Ít người biết điều này, nhưng người Nhật đã sống tích cực ở Hội An cho đến năm 1663, và sau đó... Bùm! Chính phủ Nhật Bản đột ngột tuyên bố: "Thôi, ngừng giao thương! Chúng ta sẽ bị cô lập!" (Gần như vậy). Vì vậy, Nhật Bản đã tự cô lập, và di sản tráng lệ của họ – cây cầu này – vẫn đứng vững, như một lời chào từ quá khứ.</p>
+
+<h6>Cầu, Chùa Và Một Chút Bí Ẩn</h6>
+
+<img src="japanese_covered_bridge_6.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+<small>Tượng Thần Đạo giáo của Thời tiết, Trần Bo Bắc Đế</small>
+
+<p>Bạn đi bộ qua cầu, và có một... ngôi chùa? Vâng, ngay giữa cầu, một bàn thờ nhỏ nép mình. Nó được dành riêng cho Ngọc Hoàng (Yu-di) theo Đạo giáo. Thật buồn cười vì Đạo giáo không được thực hành rộng rãi ở Nhật Bản, vì vậy có khả năng ngôi chùa đã được người Việt thêm vào sau này. Đó là một loại cầu văn hóa không chỉ kết nối bờ mà còn kết nối tín ngưỡng!</p>
+
+<img src="japanese_covered_bridge_5.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Và ở hai bên cầu, bạn được chào đón bởi những bức tượng đá hình chó và khỉ. Đừng hỏi tại sao lại là chúng – đó là một trong những bí ẩn của Hội An khiến bạn phải gãi đầu. Có lẽ là do những năm xây dựng (bắt đầu vào Năm Con Chó, kết thúc vào Năm Con Khỉ)? Hoặc, theo một phiên bản khác, nhiều vị hoàng đế Nhật Bản đã sinh ra trong những năm này? Dù sao đi nữa, chúng ở đây đều có lý do, và người dân địa phương vẫn trang trí và dâng lễ cho chúng. Ai biết được, có lẽ chúng thực sự là những người bảo vệ cây cầu, và liệu bạn có may mắn hôm nay hay không tùy thuộc vào chúng!</p>
+
+<h6>Chống Lại Con Cá Trê Khổng Lồ Dưới Nước</h6>
+<p>Đây là phần điên rồ (theo nghĩa tốt)! Cây cầu không chỉ được xây dựng để giải trí; nó có một nhiệm vụ rất quan trọng – để giữ chặt một con cá trê khổng lồ trong thần thoại tên là Namazu (大鯰)!</p>
+
+<img src="onamazu_1.webp" alt="Namazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+<small>Namazu (tiếng Nhật: 大鯰 — "cá trê khổng lồ")</small>
+
+<p>Bản chất của truyền thuyết: Trong văn hóa dân gian Nhật Bản, có một con cá trê khổng lồ gây ra động đất khi nó vẫy đuôi. Đầu nó, người ta nói, ở dưới Ấn Độ, đuôi nó ở dưới Nhật Bản, nhưng LƯNG NÓ LẠI NẰM NGAY DƯỚI VIỆT NAM! Và những người xây cầu, rõ ràng, là những kỹ sư rất thông minh, bởi vì họ đã xây cây cầu đặc biệt để "giữ chặt" lưng của con quái vật này, ngăn nó khỏi vùng vẫy. Do đó, Chùa Cầu đã trở thành một loại "máy ép" chống động đất cho toàn bộ miền Trung Việt Nam.</p>
+
+<img src="onamazu_2.webp" alt="Namazu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Chúng ta không biết Namazu đã đánh giá cao liệu pháp "massage" này đến mức nào, nhưng cây cầu, được xây dựng trên những cột gỗ vững chắc, thực sự đã đứng vững hàng trăm năm! Mặc dù, thành thật mà nói, không phải không có sự giúp đỡ của con người. Cây cầu đã trải qua tám (!) lần trùng tu lớn (thậm chí vào năm 2022 nó đã được tháo dỡ theo nghĩa đen để "phẫu thuật"!), điều này có lẽ cũng giúp ích một chút để nó không bị sập. Nhưng huyền thoại về cá trê vẫn nghe hay hơn, bạn có đồng ý không?</p>
+
+<h6>Vua Nguyễn Phúc Chu, Người Chạm Khắc Và Ba Chữ Hán</h6>
+
+<p>Năm 1719, Vua Nguyễn Phúc Chu đã ghé thăm Hội An. Ông là một nhân vật quan trọng, cai trị miền Nam Việt Nam, gần như một vị vua, từ năm 1691 đến 1725. Và người ta nói rằng, ông không chỉ chiêm ngưỡng cây cầu, mà còn đích thân chạm khắc ba chữ Hán phía trên cửa chùa! Bạn có thể tưởng tượng không? Thay vì cử người hầu, vị vua đã tự mình chạm khắc. Chắc hẳn ông đã cảm thấy rất hứng thú!</p>
+
+<img src="japanese_covered_bridge_4.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Những biểu tượng này được dịch rất thơ mộng: "cầu để đón khách từ xa". Hoặc, theo kiểu Việt Nam, "Lai Viễn Kiều". Cứ như thể chính cây cầu đang nói: "Chào mừng, du khách! Hãy vào đi, hãy tự nhiên như ở nhà, bạn thuộc về nơi này!" Một "biển chào" cổ xưa như vậy, được chạm khắc bởi chính tay vị vua.</p>
+
+<h6>Con Đường Pháp Và Lý Do Cầu Chỉ Dành Cho Người Đi Bộ</h6>
+
+<img src="japanese_covered_bridge_2.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+
+<p>Thời gian thay đổi, và ngay cả Chùa Cầu cũng phải chịu đựng những "thử nghiệm thời trang" của mình. Trong thời kỳ thuộc địa, người Pháp quyết định: "Này, tại sao xe máy không nên đi qua đây?" và san bằng con đường qua cầu. Nghe có vẻ là một ý tưởng tuyệt vời cho tắc nghẽn giao thông, đúng không? May mắn thay, "sáng kiến" này sau đó đã bị hủy bỏ, và cây cầu một lần nữa trở thành cầu dành riêng cho người đi bộ. Và thật may mắn, bởi vì một "biểu tượng" như thế nào nếu xe máy chạy ào ào qua nó?</p>
+
+<h6>Một Cây Cầu Nhỏ Với Một Trái Tim Khổng Lồ</h6>
+<p>Vì vậy, khi bạn đi bộ qua Chùa Cầu, hãy biết điều này: bạn không chỉ đi trên những tấm ván, bạn đang bước đi trên lịch sử sống động, đầy huyền thoại, những chi tiết văn hóa phức tạp, và thậm chí cả những con cá trê thần thoại. Nó không chỉ kết nối hai bờ – nó kết nối các thời đại, các dân tộc, và có lẽ còn làm dịu những trận động đất. Đó chính là Chùa Cầu của chúng ta – nhỏ bé, nhưng rất tự hào và bí ẩn.</p>
+
+<img src="japanese_covered_bridge_3.webp" alt="Chi tiết Chùa Cầu" width="800" height="600" style="width: 100%; height: auto; object-fit: cover; border-radius: 8px;"/>
+    `,
       internalImageNames: [
         'japanese_covered_bridge_old.webp',
         'onamazu_1.webp',
@@ -425,24 +376,19 @@ export const museumLandmarks: Landmark[] = [
     },
 
     slug: {
-      // <-- Добавлен объект slug для локализованных URL
       en: 'japanese-covered-bridge',
-      ru: 'yaponskiy-krytyy-most', // <-- Замените на реальный slug para el ruso
+      ru: 'yaponskiy-krytyy-most',
       es: 'puente-cubierto-japones',
       fr: 'pont-couvert-japonais',
       vn: 'cau-chua-nhat-ban',
     },
-    // ru: { /* Русский контент здесь, если есть */ },
-    // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
-    // fr: { /* Французский контент здесь, если есть */ },
-    // vn: { /* Вьетнамский контент здесь, если есть */ },
   },
   // Cantonese Assembly Hall
   {
     id: 'cantonese-assembly-hall',
     coordinates: [15.877134908051383, 108.32652751922738],
     category: ['museum'],
-    imageUrl: '4.jpg',
+    imageUrl: '4.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -480,7 +426,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>Architectural Masterpiece and Details That Will Surprise You</h6>
-<img src="29.jpg" alt="Cantonese Assembly Hall"/>
+<img src="29.webp" alt="Cantonese Assembly Hall"/>
 <p>
     The Cantonese Assembly Hall is a true architectural extravaganza, pure Cantonese style! Built of wood, stone, and red brick, the complex immediately captures your attention with its details:
 </p>
@@ -508,7 +454,7 @@ export const museumLandmarks: Landmark[] = [
     Be sure to visit the Cantonese Assembly Hall to delve deep into the history and culture of Hoi An's Chinese diaspora. It is truly an impressive and beautifully preserved place!
 </p>
     `,
-      internalImageNames: ['29.jpg'],
+      internalImageNames: ['29.webp'],
     },
 
     // =========================================================================
@@ -547,7 +493,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>Архитектурный шедевр и детали, которые вас удивят</h6>
-<img src="29.jpg" alt="Кантонский сборный зал"/>
+<img src="29.webp" alt="Кантонский сборный зал"/>
 <p>
     Кантонский сборный зал — это настоящая архитектурная феерия, чистый кантонский стиль! Построенный из дерева, камня и красного кирпича, комплекс сразу привлекает внимание своими деталями:
 </p>
@@ -575,7 +521,7 @@ export const museumLandmarks: Landmark[] = [
     Обязательно посетите Кантонский сборный зал, чтобы глубоко погрузиться в историю и культуру китайской диаспоры Хойана. Это поистине впечатляющее и прекрасно сохранившееся место!
 </p>
     `,
-      internalImageNames: ['29.jpg'],
+      internalImageNames: ['29.webp'],
     },
 
     // =========================================================================
@@ -614,7 +560,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>Obra Maestra Arquitectónica y Detalles Que Te Sorprenderán</h6>
-<img src="29.jpg" alt="Sala de la Asamblea Cantonesa"/>
+<img src="29.webp" alt="Sala de la Asamblea Cantonesa"/>
 <p>
     ¡La Sala de la Asamblea Cantonesa es una verdadera extravagancia arquitectónica, puro estilo cantonés! Construido con madera, piedra y ladrillo rojo, el complejo capta inmediatamente tu atención con sus detalles:
 </p>
@@ -642,7 +588,7 @@ export const museumLandmarks: Landmark[] = [
     Asegúrate de visitar la Sala de la Asamblea Cantonesa para profundizar en la historia y la cultura de la diáspora china de Hoi An. ¡Es realmente un lugar impresionante y maravillosamente conservado!
 </p>
     `,
-      internalImageNames: ['29.jpg'],
+      internalImageNames: ['29.webp'],
     },
 
     // =========================================================================
@@ -681,7 +627,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>Chef-d'œuvre architectural et détails qui vous surprendront</h6>
-<img src="29.jpg" alt="Salle de l'Assemblée Cantonaise"/>
+<img src="29.webp" alt="Salle de l'Assemblée Cantonaise"/>
 <p>
     La Salle de l'Assemblée Cantonaise est une véritable extravagance architecturale, pur style cantonais ! Construite en bois, en pierre et en brique rouge, le complexe attire immédiatement votre attention par ses détails :
 </p>
@@ -709,7 +655,7 @@ export const museumLandmarks: Landmark[] = [
     Assurez-vous de visiter la Salle de l'Assemblée Cantonaise pour vous plonger profondément dans l'histoire et la culture de la diaspora chinoise de Hoi An. C'est vraiment un endroit impressionnant et magnifiquement préservé !
 </p>
     `,
-      internalImageNames: ['29.jpg'],
+      internalImageNames: ['29.webp'],
     },
 
     // =========================================================================
@@ -748,7 +694,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>Kiệt tác kiến trúc và những chi tiết sẽ làm bạn ngạc nhiên</h6>
-<img src="29.jpg" alt="Hội Quán Quảng Triệu"/>
+<img src="29.webp" alt="Hội Quán Quảng Triệu"/>
 <p>
     Hội Quán Quảng Triệu là một kiệt tác kiến trúc thực sự, mang đậm phong cách Quảng Đông! Được xây dựng bằng gỗ, đá và gạch đỏ, khu phức hợp này ngay lập tức thu hút sự chú ý của bạn với các chi tiết:
 </p>
@@ -776,7 +722,7 @@ export const museumLandmarks: Landmark[] = [
     Hãy chắc chắn ghé thăm Hội Quán Quảng Triệu để tìm hiểu sâu hơn về lịch sử và văn hóa của cộng đồng người Hoa ở Hội An. Đó thực sự là một nơi ấn tượng và được bảo tồn tuyệt vời!
 </p>
     `,
-      internalImageNames: ['29.jpg'],
+      internalImageNames: ['29.webp'],
     },
 
     slug: {
@@ -792,7 +738,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'phung-hung-house',
     coordinates: [15.877187252525204, 108.32579993502969],
     category: ['museum'], // Строго "museum" как указано!
-    imageUrl: '5.jpg',
+    imageUrl: '5.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -832,7 +778,7 @@ export const museumLandmarks: Landmark[] = [
     Phung Hung House is not just a dot on the map of Hoi An. It's a gateway to its trading past, a living testament to cultural richness, and a place where you can feel the true spirit of the city. Be sure to check it out!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -873,7 +819,7 @@ export const museumLandmarks: Landmark[] = [
     Дом Фунг Хынг — это не просто точка на карте Хойана. Это ворота в его торговое прошлое, живое свидетельство культурного богатства и место, где можно почувствовать настоящий дух города. Обязательно загляните сюда!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -914,7 +860,7 @@ export const museumLandmarks: Landmark[] = [
     La Casa de Phung Hung no es solo un punto en el mapa de Hoi An. Es una puerta de entrada a su pasado comercial, un testimonio vivo de la riqueza cultural y un lugar donde puedes sentir el verdadero espíritu de la ciudad. ¡Asegúrate de visitarla!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -955,7 +901,7 @@ export const museumLandmarks: Landmark[] = [
     La Maison Phung Hung n'est pas seulement un point sur la carte de Hoi An. C'est une porte d'entrée vers son passé commercial, un témoignage vivant de la richesse culturelle, et un endroit où vous pouvez ressentir le véritable esprit de la ville. Assurez-vous d'y jeter un coup d'œil !
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -996,7 +942,7 @@ export const museumLandmarks: Landmark[] = [
     Nhà Cổ Phùng Hưng không chỉ là một chấm nhỏ trên bản đồ Hội An. Đó là cánh cổng dẫn đến quá khứ thương mại của nó, một minh chứng sống động về sự phong phú văn hóa và một nơi bạn có thể cảm nhận tinh thần thực sự của thành phố. Hãy chắc chắn ghé thăm!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     slug: {
@@ -1012,7 +958,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'sa-huynh-cultural-museum',
     coordinates: [15.877044021697701, 108.32639923348592],
     category: ['museum'], // Строго "museum"
-    imageUrl: '6.jpg',
+    imageUrl: '6.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -1043,7 +989,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>What awaits you inside the museum:</h6>
-<img src="27.jpg" alt="Sa Huynh Cultural Museum"/>
+<img src="27.webp" alt="Sa Huynh Cultural Museum"/>
 <p>
     The Sa Huynh Cultural Museum is not a dusty archive, but a real treasure chest! It houses about 1000 unique artifacts found right here in Hoi An and on the nearby Cham Islands. Each exhibit is a piece of ancient life that will tell you its story.
 </p>
@@ -1066,7 +1012,7 @@ export const museumLandmarks: Landmark[] = [
     Don't miss the chance to touch the very origins of Hoi An and understand what laid the foundation for its greatness! The Sa Huynh Cultural Museum is not just history; it's a prologue to your adventure in Hoi An!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -1098,7 +1044,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Что вас ждет внутри музея:</h6>
-<img src="27.jpg" alt="Музей культуры Са Хюинь"/>
+<img src="27.webp" alt="Музей культуры Са Хюинь"/>
 <p>
     Музей культуры Са Хюинь — это не пыльный архив, а настоящий сундук с сокровищами! Здесь хранится около 1000 уникальных артефактов, найденных прямо здесь, в Хойане, и на близлежащих Чамских островах. Каждый экспонат — это частичка древней жизни, которая расскажет вам свою историю.
 </p>
@@ -1121,7 +1067,7 @@ export const museumLandmarks: Landmark[] = [
     Не упустите шанс прикоснуться к самым истокам Хойана и понять, что заложило основу его величия! Музей культуры Са Хюинь — это не просто история; это пролог к вашему приключению в Хойане!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -1153,7 +1099,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Lo que te espera dentro del museo:</h6>
-<img src="27.jpg" alt="Museo Cultural Sa Huynh"/>
+<img src="27.webp" alt="Museo Cultural Sa Huynh"/>
 <p>
     El Museo Cultural Sa Huynh no es un archivo polvoriento, ¡sino un verdadero cofre del tesoro! Alberga alrededor de 1000 artefactos únicos encontrados aquí mismo en Hoi An y en las cercanas islas Cham. Cada exhibición es una pieza de vida antigua que te contará su historia.
 </p>
@@ -1176,7 +1122,7 @@ export const museumLandmarks: Landmark[] = [
     ¡No pierdas la oportunidad de tocar los orígenes mismos de Hoi An y comprender qué sentó las bases de su grandeza! ¡El Museo Cultural Sa Huynh no es solo historia; es un prólogo a tu aventura en Hoi An!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -1208,7 +1154,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Ce qui vous attend à l'intérieur du musée :</h6>
-<img src="27.jpg" alt="Musée Culturel Sa Huynh"/>
+<img src="27.webp" alt="Musée Culturel Sa Huynh"/>
 <p>
     Le Musée Culturel Sa Huynh n'est pas une archive poussiéreuse, mais un véritable coffre au trésor ! Il abrite environ 1000 artefacts uniques trouvés ici même à Hoi An et sur les îles Cham voisines. Chaque exposition est un morceau de vie ancienne qui vous racontera son histoire.
 </p>
@@ -1231,7 +1177,7 @@ export const museumLandmarks: Landmark[] = [
     Ne manquez pas l'occasion de toucher aux origines mêmes de Hoi An et de comprendre ce qui a jeté les bases de sa grandeur ! Le Musée Culturel Sa Huynh n'est pas seulement de l'histoire ; c'est un prologue à votre aventure à Hoi An !
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     // =========================================================================
@@ -1263,7 +1209,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Những gì đang chờ đợi bạn bên trong bảo tàng:</h6>
-<img src="27.jpg" alt="Bảo tàng Văn hóa Sa Huỳnh"/>
+<img src="27.webp" alt="Bảo tàng Văn hóa Sa Huỳnh"/>
 <p>
     Bảo tàng Văn hóa Sa Huỳnh không phải là một kho lưu trữ bụi bặm, mà là một kho báu thực sự! Nơi đây lưu giữ khoảng 1000 hiện vật độc đáo được tìm thấy ngay tại Hội An và trên quần đảo Chăm gần đó. Mỗi hiện vật là một mảnh đời cổ đại sẽ kể cho bạn nghe câu chuyện của nó.
 </p>
@@ -1286,7 +1232,7 @@ export const museumLandmarks: Landmark[] = [
     Đừng bỏ lỡ cơ hội để chạm vào những nguồn gốc của Hội An và hiểu được điều gì đã đặt nền móng cho sự vĩ đại của nó! Bảo tàng Văn hóa Sa Huỳnh không chỉ là lịch sử; đó là lời mở đầu cho cuộc phiêu lưu của bạn ở Hội An!
 </p>
     `,
-      internalImageNames: ['27.jpg'],
+      internalImageNames: ['27.webp'],
     },
 
     slug: {
@@ -1302,7 +1248,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'duc-an-house',
     coordinates: [15.877072142790434, 108.32731599830328],
     category: ['museum'], // Строго "museum"
-    imageUrl: '7.jpg',
+    imageUrl: '7.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -1326,7 +1272,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Duc An House is a classic example of Hoi An's unique architectural style, demonstrating a fusion of cultures:
 </p>
-<img src="30.jpg" alt="Duc An House"/>
+<img src="30.webp" alt="Duc An House"/>
 <ul>
     <li>The house is built in the traditional "tube house" style: a narrow facade, but a long, deep interior space.</li>
     <li>Durable and long-lasting ironwood was used, thanks to which the house has been preserved for centuries.</li>
@@ -1340,7 +1286,7 @@ export const museumLandmarks: Landmark[] = [
     Duc An House is a true "living museum," allowing you to experience the atmosphere of past centuries and understand how Hoi An's merchants lived and worked. Its role in the revolutionary movement gives it special significance as a place where Vietnam's history was forged. Visiting this house is a unique opportunity not only to see ancient architecture but also to touch the rich history of a family that is inextricably linked with the history of all Hoi An.
 </p>
     `,
-      internalImageNames: ['30.jpg'],
+      internalImageNames: ['30.webp'],
     },
 
     // =========================================================================
@@ -1365,7 +1311,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Дом Дык Ан является классическим примером уникального архитектурного стиля Хойана, демонстрируя слияние культур:
 </p>
-<img src="30.jpg" alt="Дом Дык Ан"/>
+<img src="30.webp" alt="Дом Дык Ан"/>
 <ul>
     <li>Дом построен в традиционном стиле "трубчатого дома": узкий фасад, но длинное, глубокое внутреннее пространство.</li>
     <li>Использовалось прочное и долговечное железное дерево, благодаря чему дом сохранился на протяжении веков.</li>
@@ -1379,7 +1325,7 @@ export const museumLandmarks: Landmark[] = [
     Дом Дык Ан — это настоящий "живой музей", позволяющий ощутить атмосферу прошлых веков и понять, как жили и работали купцы Хойана. Его роль в революционном движении придает ему особое значение как месту, где ковалась история Вьетнама. Посещение этого дома — уникальная возможность не только увидеть древнюю архитектуру, но и прикоснуться к богатой истории семьи, которая неразрывно связана с историей всего Хойана.
 </p>
     `,
-      internalImageNames: ['30.jpg'],
+      internalImageNames: ['30.webp'],
     },
 
     // =========================================================================
@@ -1404,7 +1350,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     La Casa Duc An es un ejemplo clásico del estilo arquitectónico único de Hoi An, demostrando una fusión de culturas:
 </p>
-<img src="30.jpg" alt="Casa Duc An"/>
+<img src="30.webp" alt="Casa Duc An"/>
 <ul>
     <li>La casa está construida en el estilo tradicional de "casa tubo": una fachada estrecha, pero un espacio interior largo y profundo.</li>
     <li>Se utilizó madera de hierro duradera y de larga duración, gracias a lo cual la casa se ha conservado durante siglos.</li>
@@ -1418,7 +1364,7 @@ export const museumLandmarks: Landmark[] = [
     La Casa Duc An es un verdadero "museo viviente", que te permite experimentar la atmósfera de siglos pasados y comprender cómo vivían y trabajaban los comerciantes de Hoi An. Su papel en el movimiento revolucionario le otorga un significado especial como un lugar donde se forjó la historia de Vietnam. Visitar esta casa es una oportunidad única no solo para ver arquitectura antigua, sino también para tocar la rica historia de una familia que está inextricablemente ligada a la historia de todo Hoi An.
 </p>
     `,
-      internalImageNames: ['30.jpg'],
+      internalImageNames: ['30.webp'],
     },
 
     // =========================================================================
@@ -1443,7 +1389,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     La Maison Duc An est un exemple classique du style architectural unique de Hoi An, démontrant une fusion de cultures :
 </p>
-<img src="30.jpg" alt="Maison Duc An"/>
+<img src="30.webp" alt="Maison Duc An"/>
 <ul>
     <li>La maison est construite dans le style traditionnel de la "maison tube" : une façade étroite, mais un espace intérieur long et profond.</li>
     <li>Du bois de fer durable et résistant a été utilisé, grâce auquel la maison a été préservée pendant des siècles.</li>
@@ -1457,7 +1403,7 @@ export const museumLandmarks: Landmark[] = [
     La Maison Duc An est un véritable "musée vivant", vous permettant de découvrir l'atmosphère des siècles passés et de comprendre comment les marchands de Hoi An vivaient et travaillaient. Son rôle dans le mouvement révolutionnaire lui confère une signification particulière en tant que lieu où l'histoire du Vietnam a été forgée. Visiter cette maison est une occasion unique non seulement de voir l'architecture ancienne, mais aussi de toucher à la riche histoire d'une famille inextricablement liée à l'histoire de tout Hoi An.
 </p>
     `,
-      internalImageNames: ['30.jpg'],
+      internalImageNames: ['30.webp'],
     },
 
     // =========================================================================
@@ -1482,7 +1428,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Nhà Đức An là một ví dụ điển hình về phong cách kiến trúc độc đáo của Hội An, thể hiện sự pha trộn văn hóa:
 </p>
-<img src="30.jpg" alt="Nhà Đức An"/>
+<img src="30.webp" alt="Nhà Đức An"/>
 <ul>
     <li>Ngôi nhà được xây dựng theo kiểu "nhà ống" truyền thống: mặt tiền hẹp, nhưng không gian nội thất dài và sâu.</li>
     <li>Gỗ lim bền và lâu năm đã được sử dụng, nhờ đó ngôi nhà đã được bảo tồn qua nhiều thế kỷ.</li>
@@ -1496,7 +1442,7 @@ export const museumLandmarks: Landmark[] = [
     Nhà Đức An là một "bảo tàng sống" thực sự, cho phép bạn trải nghiệm bầu không khí của các thế kỷ đã qua và hiểu cách các thương nhân Hội An đã sống và làm việc. Vai trò của nó trong phong trào cách mạng mang lại cho nó ý nghĩa đặc biệt như một nơi mà lịch sử Việt Nam đã được định hình. Tham quan ngôi nhà này là một cơ hội duy nhất không chỉ để xem kiến trúc cổ kính mà còn để chạm vào lịch sử phong phú của một gia đình gắn bó mật thiết với lịch sử của toàn Hội An.
 </p>
     `,
-      internalImageNames: ['30.jpg'],
+      internalImageNames: ['30.webp'],
     },
 
     slug: {
@@ -1512,7 +1458,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'kazimierz-kwiatkowski-monument',
     coordinates: [15.877200258792449, 108.32779555779305],
     category: ['museum'], // Строго "museum"
-    imageUrl: '8.jpg',
+    imageUrl: '8.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -1530,7 +1476,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>"They Call Me Crazy..." — Kazik's Rebellious Spirit</h6>
-<img src="31.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="31.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski was not one to compromise. When it came to preserving authenticity, he became a force of nature!
 </p>
@@ -1552,7 +1498,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>A Legacy That Lives On</h6>
-<img src="32.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="32.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski tragically died of a heart attack in Hue in 1997, while working on the restoration of the royal palace. He was buried in Poland, but a monument to him has been erected in Hoi An in a park named after him – a rare honor for a foreigner in Vietnam.
 </p>
@@ -1560,7 +1506,7 @@ export const museumLandmarks: Landmark[] = [
     Thanks to his tireless efforts, Hoi An and My Son were recognized as UNESCO World Heritage sites. He taught the Vietnamese to restore while preserving authenticity, and his students continue his work to this day. Even if some stories about him have become legends, they only emphasize how much he inspired people to protect heritage. Kazik is not just a historian; he is the spirit of Hoi An, living in every preserved house, in every carved beam, and in every story about the "crazy Pole" who saved the city.
 </p>
     `,
-      internalImageNames: ['32.jpg', '31.jpg'],
+      internalImageNames: ['32.webp', '31.webp'],
     },
 
     // =========================================================================
@@ -1579,7 +1525,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>«Меня называют сумасшедшим…» — Бунтарский дух Казика</h6>
-<img src="31.jpg" alt="Казимеж Квятковский"/>
+<img src="31.webp" alt="Казимеж Квятковский"/>
 <p>
     Казимеж Квятковский не был человеком компромиссов. Когда дело доходило до сохранения аутентичности, он становился стихией!
 </p>
@@ -1601,7 +1547,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Наследие, которое живет</h6>
-<img src="32.jpg" alt="Казимеж Квятковский"/>
+<img src="32.webp" alt="Казимеж Квятковский"/>
 <p>
     Казимеж Квятковский трагически скончался от сердечного приступа в Хюэ в 1997 году, работая над реставрацией императорского дворца. Он был похоронен в Польше, но в Хойане ему установлен памятник в парке, названном в его честь — редкая честь для иностранца во Вьетнаме.
 </p>
@@ -1609,7 +1555,7 @@ export const museumLandmarks: Landmark[] = [
     Благодаря его неустанным усилиям, Хойан и Мишон были признаны объектами Всемирного наследия ЮНЕСКО. Он научил вьетнамцев реставрировать, сохраняя аутентичность, и его ученики продолжают его дело до сих пор. Даже если некоторые истории о нём стали легендами, они лишь подчеркивают, насколько он вдохновил людей на защиту наследия. Казик — это не просто историк; это дух Хойана, живущий в каждом сохраненном доме, в каждой резной балке и в каждой истории о «сумасшедшем поляке», который спас город.
 </p>
     `,
-      internalImageNames: ['32.jpg', '31.jpg'],
+      internalImageNames: ['32.webp', '31.webp'],
     },
 
     // =========================================================================
@@ -1628,7 +1574,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>"Me llaman loco..." — El espíritu rebelde de Kazik</h6>
-<img src="31.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="31.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski no era de los que se comprometían. ¡Cuando se trataba de preservar la autenticidad, se convertía en una fuerza de la naturaleza!
 </p>
@@ -1650,7 +1596,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Un legado que perdura</h6>
-<img src="32.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="32.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski murió trágicamente de un ataque al corazón en Hue en 1997, mientras trabajaba en la restauración del palacio real. Fue enterrado en Polonia, pero se le ha erigido un monumento en Hoi An en un parque que lleva su nombre, un honor poco común para un extranjero en Vietnam.
 </p>
@@ -1658,7 +1604,7 @@ export const museumLandmarks: Landmark[] = [
     Gracias a sus incansables esfuerzos, Hoi An y My Son fueron reconocidos como sitios del Patrimonio Mundial de la UNESCO. Enseñó a los vietnamitas a restaurar preservando la autenticidad, y sus alumnos continúan su trabajo hasta el día de hoy. Incluso si algunas historias sobre él se han convertido en leyendas, solo enfatizan cuánto inspiró a la gente a proteger el patrimonio. Kazik no es solo un historiador; es el espíritu de Hoi An, que vive en cada casa conservada, en cada viga tallada y en cada historia sobre el "polaco loco" que salvó la ciudad.
 </p>
     `,
-      internalImageNames: ['32.jpg', '31.jpg'],
+      internalImageNames: ['32.webp', '31.webp'],
     },
 
     // =========================================================================
@@ -1677,7 +1623,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>« Ils m'appellent fou... » — L'esprit rebelle de Kazik</h6>
-<img src="31.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="31.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski n'était pas du genre à faire des compromis. Quand il s'agissait de préserver l'authenticité, il devenait une force de la nature !
 </p>
@@ -1699,7 +1645,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Un héritage qui perdure</h6>
-<img src="32.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="32.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski est décédé tragiquement d'une crise cardiaque à Hue en 1997, alors qu'il travaillait à la restauration du palais royal. Il a été enterré en Pologne, mais un monument lui a été érigé à Hoi An dans un parc qui porte son nom – un honneur rare pour un étranger au Vietnam.
 </p>
@@ -1707,7 +1653,7 @@ export const museumLandmarks: Landmark[] = [
     Grâce à ses efforts inlassables, Hoi An et My Son ont été reconnus comme sites du patrimoine mondial de l'UNESCO. Il a enseigné aux Vietnamiens à restaurer tout en préservant l'authenticité, et ses étudiants continuent son travail à ce jour. Même si certaines histoires à son sujet sont devenues des légendes, elles ne font que souligner à quel point il a inspiré les gens à protéger le patrimoine. Kazik n'est pas seulement un historien ; il est l'esprit de Hoi An, vivant dans chaque maison préservée, dans chaque poutre sculptée, et dans chaque histoire sur le « Polonais fou » qui a sauvé la ville.
 </p>
     `,
-      internalImageNames: ['32.jpg', '31.jpg'],
+      internalImageNames: ['32.webp', '31.webp'],
     },
 
     // =========================================================================
@@ -1726,7 +1672,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
 <h6>"Họ gọi tôi là kẻ điên..." — Tinh thần nổi loạn của Kazik</h6>
-<img src="31.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="31.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski không phải là người dễ thỏa hiệp. Khi nói đến việc bảo tồn tính chân thực, ông trở thành một thế lực của tự nhiên!
 </p>
@@ -1748,7 +1694,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Di sản vẫn sống mãi</h6>
-<img src="32.jpg" alt="Kazimierz Kwiatkowski"/>
+<img src="32.webp" alt="Kazimierz Kwiatkowski"/>
 <p>
     Kazimierz Kwiatkowski qua đời bi thảm vì một cơn đau tim ở Huế vào năm 1997, khi đang làm việc phục chế cung điện hoàng gia. Ông được chôn cất ở Ba Lan, nhưng một tượng đài đã được dựng lên cho ông ở Hội An trong một công viên mang tên ông – một vinh dự hiếm có đối với một người nước ngoài ở Việt Nam.
 </p>
@@ -1756,7 +1702,7 @@ export const museumLandmarks: Landmark[] = [
     Nhờ những nỗ lực không mệt mỏi của ông, Hội An và Mỹ Sơn đã được công nhận là Di sản Thế giới của UNESCO. Ông đã dạy người Việt Nam cách phục chế trong khi vẫn giữ được tính chân thực, và học trò của ông vẫn tiếp tục công việc của ông cho đến ngày nay. Ngay cả khi một số câu chuyện về ông đã trở thành truyền thuyết, chúng chỉ nhấn mạnh mức độ ông đã truyền cảm hứng cho mọi người để bảo vệ di sản. Kazik không chỉ là một nhà sử học; ông là linh hồn của Hội An, sống trong mỗi ngôi nhà được bảo tồn, trong mỗi cây xà được chạm khắc, và trong mỗi câu chuyện về "người Ba Lan điên" đã cứu thành phố.
 </p>
     `,
-      internalImageNames: ['32.jpg', '31.jpg'],
+      internalImageNames: ['32.webp', '31.webp'],
     },
 
     slug: {
@@ -1772,7 +1718,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'tan-ky-old-house',
     coordinates: [15.876488698855377, 108.3277670451886],
     category: ['museum'], // Строго "museum"
-    imageUrl: '9.jpg',
+    imageUrl: '9.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -1785,7 +1731,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Imagine strolling through the ancient streets of Hoi An, where every house tells its own story. But among them, there is one special one – the <strong>Tan Ky Old House</strong>. It's not just an ancient mansion; it's a living history book, full of surprises, where people once lived, traded, and even hid from pirates!
 </p>
-<img src="33.jpg" alt="Tan Ky Old House"/>
+<img src="33.webp" alt="Tan Ky Old House"/>
 <p>
     Built more than 200 years ago (in the late 18th - early 19th century) by a successful family of local merchants, Tan Ky Old House is one of the brightest examples of traditional Hoi An architecture. It is still owned and managed by the descendants of that very family, now in its seventh generation! This means you won't see a museum exhibit, but a real, living house where ancestral traditions are carefully preserved.
 </p>
@@ -1802,7 +1748,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Mysteries of the Past and Amazing Finds</h6>
-<img src="34.jpg" alt="Tan Ky Old House"/>
+<img src="34.webp" alt="Tan Ky Old House"/>
 <p>
     Tan Ky Old House is full of secrets that give it a special charm:
 </p>
@@ -1816,7 +1762,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['33.jpg', '34.jpg'],
+      internalImageNames: ['33.webp', '34.webp'],
     },
 
     // =========================================================================
@@ -1830,7 +1776,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Представьте, что вы прогуливаетесь по древним улицам Хойана, где каждый дом рассказывает свою историю. Но среди них есть один особенный — <strong>Старый дом Тан Ки</strong>. Это не просто старинный особняк; это живая книга истории, полная сюрпризов, где когда-то жили люди, торговали и даже прятались от пиратов!
 </p>
-<img src="33.jpg" alt="Старый дом Тан Ки"/>
+<img src="33.webp" alt="Старый дом Тан Ки"/>
 <p>
     Построенный более 200 лет назад (в конце XVIII - начале XIX века) успешной семьей местных купцов, Старый дом Тан Ки является одним из самых ярких образцов традиционной архитектуры Хойана. Он до сих пор принадлежит и управляется потомками той самой семьи, уже седьмым поколением! Это значит, что вы увидите не музейный экспонат, а настоящий, живой дом, где бережно сохраняются традиции предков.
 </p>
@@ -1847,7 +1793,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Тайны прошлого и удивительные находки</h6>
-<img src="34.jpg" alt="Старый дом Тан Ки"/>
+<img src="34.webp" alt="Старый дом Тан Ки"/>
 <p>
     Старый дом Тан Ки полон секретов, которые придают ему особый шарм:
 </p>
@@ -1861,7 +1807,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['33.jpg', '34.jpg'],
+      internalImageNames: ['33.webp', '34.webp'],
     },
 
     // =========================================================================
@@ -1875,7 +1821,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Imagina pasear por las antiguas calles de Hoi An, donde cada casa cuenta su propia historia. Pero entre ellas, hay una muy especial: la <strong>Casa Antigua Tan Ky</strong>. No es solo una antigua mansión; es un libro de historia viviente, lleno de sorpresas, donde la gente vivió, comerciaba e ¡incluso se escondía de los piratas!
 </p>
-<img src="33.jpg" alt="Casa Antigua Tan Ky"/>
+<img src="33.webp" alt="Casa Antigua Tan Ky"/>
 <p>
     Construida hace más de 200 años (a finales del siglo XVIII - principios del XIX) por una exitosa familia de comerciantes locales, la Casa Antigua Tan Ky es uno de los ejemplos más brillantes de la arquitectura tradicional de Hoi An. ¡Todavía es propiedad y está gestionada por los descendientes de esa misma familia, ahora en su séptima generación! Esto significa que no verás una exhibición de museo, sino una casa real y viva donde las tradiciones ancestrales se conservan cuidadosamente.
 </p>
@@ -1892,7 +1838,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Misterios del Pasado y Hallazgos Asombrosos</h6>
-<img src="34.jpg" alt="Casa Antigua Tan Ky"/>
+<img src="34.webp" alt="Casa Antigua Tan Ky"/>
 <p>
     La Casa Antigua Tan Ky está llena de secretos que le dan un encanto especial:
 </p>
@@ -1906,7 +1852,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['33.jpg', '34.jpg'],
+      internalImageNames: ['33.webp', '34.webp'],
     },
 
     // =========================================================================
@@ -1920,7 +1866,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Imaginez-vous flânant dans les rues anciennes de Hoi An, où chaque maison raconte sa propre histoire. Mais parmi elles, il y en a une spéciale – l'<strong>Ancienne Maison Tan Ky</strong>. Ce n'est pas seulement une ancienne demeure ; c'est un livre d'histoire vivant, plein de surprises, où les gens vivaient, commerçaient et se cachaient même des pirates !
 </p>
-<img src="33.jpg" alt="Ancienne Maison Tan Ky"/>
+<img src="33.webp" alt="Ancienne Maison Tan Ky"/>
 <p>
     Construite il y a plus de 200 ans (fin XVIIIe - début XIXe siècle) par une famille de marchands locaux prospères, l'Ancienne Maison Tan Ky est l'un des exemples les plus frappants de l'architecture traditionnelle de Hoi An. Elle est toujours la propriété et gérée par les descendants de cette même famille, qui en est maintenant à sa septième génération ! Cela signifie que vous ne verrez pas une exposition de musée, mais une vraie maison vivante où les traditions ancestrales sont soigneusement préservées.
 </p>
@@ -1937,7 +1883,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Mystères du passé et découvertes étonnantes</h6>
-<img src="34.jpg" alt="Ancienne Maison Tan Ky"/>
+<img src="34.webp" alt="Ancienne Maison Tan Ky"/>
 <p>
     L'Ancienne Maison Tan Ky est pleine de secrets qui lui confèrent un charme particulier :
 </p>
@@ -1951,7 +1897,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['33.jpg', '34.jpg'],
+      internalImageNames: ['33.webp', '34.webp'],
     },
 
     // =========================================================================
@@ -1965,7 +1911,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Hãy tưởng tượng bạn đang dạo bước trên những con phố cổ kính của Hội An, nơi mỗi ngôi nhà đều kể một câu chuyện riêng. Nhưng trong số đó, có một ngôi nhà đặc biệt – <strong>Nhà Cổ Tấn Ký</strong>. Đây không chỉ là một dinh thự cổ kính; đó là một cuốn sách lịch sử sống động, đầy bất ngờ, nơi con người từng sinh sống, buôn bán, và thậm chí trốn tránh cướp biển!
 </p>
-<img src="33.jpg" alt="Nhà Cổ Tấn Ký"/>
+<img src="33.webp" alt="Nhà Cổ Tấn Ký"/>
 <p>
     Được xây dựng hơn 200 năm trước (cuối thế kỷ 18 - đầu thế kỷ 19) bởi một gia đình thương nhân địa phương thành đạt, Nhà Cổ Tấn Ký là một trong những ví dụ điển hình nhất về kiến trúc truyền thống của Hội An. Ngôi nhà vẫn thuộc sở hữu và được quản lý bởi con cháu của chính gia đình đó, hiện đã là thế hệ thứ bảy! Điều này có nghĩa là bạn sẽ không thấy một hiện vật bảo tàng, mà là một ngôi nhà thực sự, sống động nơi các truyền thống tổ tiên được bảo tồn cẩn thận.
 </p>
@@ -1982,7 +1928,7 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Bí ẩn quá khứ và những phát hiện đáng kinh ngạc</h6>
-<img src="34.jpg" alt="Nhà Cổ Tấn Ký"/>
+<img src="34.webp" alt="Nhà Cổ Tấn Ký"/>
 <p>
     Nhà Cổ Tấn Ký chứa đầy những bí mật mang lại cho nó một vẻ quyến rũ đặc biệt:
 </p>
@@ -1996,7 +1942,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['33.jpg', '34.jpg'],
+      internalImageNames: ['33.webp', '34.webp'],
     },
 
     slug: {
@@ -2012,7 +1958,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'quan-thang-ancient-house',
     coordinates: [15.877115400142667, 108.32921889710688],
     category: ['museum'], // Строго "museum"
-    imageUrl: '10.jpg',
+    imageUrl: '10.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -2033,7 +1979,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Quan Thang House is an outstanding example of Hoi An architecture, harmoniously blending Vietnamese, Chinese, and Japanese influences:
 </p>
-<img src="35.jpg" alt="Quan Thang Ancient House"/>
+<img src="35.webp" alt="Quan Thang Ancient House"/>
 <ul>
     <li>It has the typical "tube house" shape of Hoi An: a narrow facade that extends far inwards, all the way to the river at the back.</li>
     <li>Inside, the house is divided into several zones: a commercial space at the entrance with counters, living quarters for the family, and, of course, a sacred place for ancestral worship.</li>
@@ -2049,10 +1995,10 @@ export const museumLandmarks: Landmark[] = [
     Visiting Quan Thang Ancient House is not just a walk through an old building. It's an opportunity to glimpse into the daily life and trading practices of Hoi An's prosperous merchant class from centuries past. The family shrines and the overall atmosphere of the house demonstrate the importance of preserving traditional beliefs and cultural customs. It is an important part of Hoi An's architectural heritage, showcasing the high craftsmanship of local and Chinese artisans.
 </p>
 
-<img src="36.jpg" alt="Quan Thang Ancient House"/>
+<img src="36.webp" alt="Quan Thang Ancient House"/>
 
     `,
-      internalImageNames: ['35.jpg', '36.jpg'],
+      internalImageNames: ['35.webp', '36.webp'],
     },
 
     // =========================================================================
@@ -2074,7 +2020,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Дом Куан Тханг является выдающимся примером архитектуры Хойана, гармонично сочетающей вьетнамское, китайское и японское влияния:
 </p>
-<img src="35.jpg" alt="Древний дом Куан Тханг"/>
+<img src="35.webp" alt="Древний дом Куан Тханг"/>
 <ul>
     <li>Он имеет типичную для Хойана форму «трубчатого дома»: узкий фасад, который уходит далеко вглубь, вплоть до реки на заднем дворе.</li>
     <li>Внутри дом разделен на несколько зон: торговое пространство у входа со прилавками, жилые помещения для семьи и, конечно же, священное место для поклонения предкам.</li>
@@ -2090,10 +2036,10 @@ export const museumLandmarks: Landmark[] = [
     Посещение Древнего дома Куан Тханг — это не просто прогулка по старому зданию. Это возможность заглянуть в повседневную жизнь и торговые практики процветающего купеческого класса Хойана из прошлых веков. Семейные святыни и общая атмосфера дома демонстрируют важность сохранения традиционных верований и культурных обычаев. Это важная часть архитектурного наследия Хойана, демонстрирующая высокое мастерство местных и китайских ремесленников.
 </p>
 
-<img src="36.jpg" alt="Древний дом Куан Тханг"/>
+<img src="36.webp" alt="Древний дом Куан Тханг"/>
 
     `,
-      internalImageNames: ['35.jpg', '36.jpg'],
+      internalImageNames: ['35.webp', '36.webp'],
     },
 
     // =========================================================================
@@ -2115,7 +2061,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     La Casa Quan Thang es un ejemplo sobresaliente de la arquitectura de Hoi An, fusionando armoniosamente influencias vietnamitas, chinas y japonesas:
 </p>
-<img src="35.jpg" alt="Casa Antigua Quan Thang"/>
+<img src="35.webp" alt="Casa Antigua Quan Thang"/>
 <ul>
     <li>Tiene la forma típica de "casa tubo" de Hoi An: una fachada estrecha que se extiende mucho hacia el interior, hasta el río en la parte trasera.</li>
     <li>En el interior, la casa se divide en varias zonas: un espacio comercial en la entrada con mostradores, viviendas para la familia y, por supuesto, un lugar sagrado para el culto ancestral.</li>
@@ -2131,10 +2077,10 @@ export const museumLandmarks: Landmark[] = [
     Visitar la Casa Antigua Quan Thang no es solo un paseo por un edificio antiguo. Es una oportunidad para echar un vistazo a la vida diaria y las prácticas comerciales de la próspera clase mercantil de Hoi An de siglos pasados. Los santuarios familiares y la atmósfera general de la casa demuestran la importancia de preservar las creencias tradicionales y las costumbres culturales. Es una parte importante del patrimonio arquitectónico de Hoi An, mostrando la alta artesanía de los artesanos locales y chinos.
 </p>
 
-<img src="36.jpg" alt="Casa Antigua Quan Thang"/>
+<img src="36.webp" alt="Casa Antigua Quan Thang"/>
 
     `,
-      internalImageNames: ['35.jpg', '36.jpg'],
+      internalImageNames: ['35.webp', '36.webp'],
     },
 
     // =========================================================================
@@ -2156,7 +2102,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     La Maison Quan Thang est un exemple exceptionnel de l'architecture de Hoi An, mélangeant harmonieusement les influences vietnamiennes, chinoises et japonaises :
 </p>
-<img src="35.jpg" alt="Ancienne Maison Quan Thang"/>
+<img src="35.webp" alt="Ancienne Maison Quan Thang"/>
 <ul>
     <li>Elle a la forme typique de « maison tube » de Hoi An : une façade étroite qui s'étend loin vers l'intérieur, jusqu'à la rivière à l'arrière.</li>
     <li>À l'intérieur, la maison est divisée en plusieurs zones : un espace commercial à l'entrée avec des comptoirs, des quartiers d'habitation pour la famille et, bien sûr, un lieu sacré pour le culte ancestral.</li>
@@ -2172,10 +2118,10 @@ export const museumLandmarks: Landmark[] = [
     Visiter l'Ancienne Maison Quan Thang n'est pas seulement une promenade dans un vieux bâtiment. C'est l'occasion de jeter un coup d'œil sur la vie quotidienne et les pratiques commerciales de la prospère classe marchande de Hoi An des siècles passés. Les sanctuaires familiaux et l'atmosphère générale de la maison démontrent l'importance de préserver les croyances traditionnelles et les coutumes culturelles. C'est une partie importante du patrimoine architectural de Hoi An, montrant le grand savoir-faire des artisans locaux et chinois.
 </p>
 
-<img src="36.jpg" alt="Ancienne Maison Quan Thang"/>
+<img src="36.webp" alt="Ancienne Maison Quan Thang"/>
 
     `,
-      internalImageNames: ['35.jpg', '36.jpg'],
+      internalImageNames: ['35.webp', '36.webp'],
     },
 
     // =========================================================================
@@ -2197,7 +2143,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Nhà Quân Thắng là một ví dụ nổi bật về kiến trúc Hội An, hòa quyện hài hòa các ảnh hưởng của Việt Nam, Trung Quốc và Nhật Bản:
 </p>
-<img src="35.jpg" alt="Nhà Cổ Quân Thắng"/>
+<img src="35.webp" alt="Nhà Cổ Quân Thắng"/>
 <ul>
     <li>Nó có hình dạng "nhà ống" điển hình của Hội An: mặt tiền hẹp nhưng kéo dài sâu vào bên trong, tận đến bờ sông phía sau.</li>
     <li>Bên trong, ngôi nhà được chia thành nhiều khu vực: một không gian thương mại ở lối vào với quầy hàng, khu sinh hoạt cho gia đình, và tất nhiên, một nơi linh thiêng để thờ cúng tổ tiên.</li>
@@ -2213,10 +2159,10 @@ export const museumLandmarks: Landmark[] = [
     Tham quan Nhà Cổ Quân Thắng không chỉ là một cuộc dạo chơi qua một tòa nhà cổ. Đó là cơ hội để nhìn thoáng qua cuộc sống hàng ngày và các hoạt động thương mại của tầng lớp thương nhân thịnh vượng của Hội An từ nhiều thế kỷ trước. Các bàn thờ gia đình và bầu không khí chung của ngôi nhà thể hiện tầm quan trọng của việc bảo tồn tín ngưỡng truyền thống và phong tục văn hóa. Đây là một phần quan trọng của di sản kiến trúc Hội An, thể hiện tay nghề cao của các nghệ nhân địa phương và Trung Quốc.
 </p>
 
-<img src="36.jpg" alt="Nhà Cổ Quân Thắng"/>
+<img src="36.webp" alt="Nhà Cổ Quân Thắng"/>
 
     `,
-      internalImageNames: ['35.jpg', '36.jpg'],
+      internalImageNames: ['35.webp', '36.webp'],
     },
 
     slug: {
@@ -2232,7 +2178,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'museum-of-trade-ceramics',
     coordinates: [15.877278909070201, 108.32954973149477],
     category: ['museum'], // Строго "museum"
-    imageUrl: '11.jpg',
+    imageUrl: '11.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -2253,7 +2199,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     The museum offers a deep dive into Hoi An's history as a bustling trading port and its key role in international ceramics trade. It houses an extensive collection – over 430 ancient artifacts, predominantly dating from the 9th to 19th centuries, although some fragments may be even older, dating back to the 7th-10th centuries!
 </p>
-<img src="37.jpg" alt="Museum of Trade Ceramics"/>
+<img src="37.webp" alt="Museum of Trade Ceramics"/>
 <p>
     Imagine that these items sailed here from all corners of the world:
 </p>
@@ -2270,7 +2216,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     The museum is designed to allow you to fully immerse yourself in the atmosphere of ancient trade:
 </p>
-<img src="38.jpg" alt="Museum of Trade Ceramics"/>
+<img src="38.webp" alt="Museum of Trade Ceramics"/>
 <ul>
     <li>Exhibits are arranged on two levels around a central open courtyard, creating the feeling of walking through an old trading house.</li>
     <li>In the museum's open courtyard, there is a full-sized replica of a traditional ceramic kiln. Here you can imagine how all these beautiful items were created.</li>
@@ -2287,7 +2233,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['38.jpg', '37.jpg'],
+      internalImageNames: ['38.webp', '37.webp'],
     },
 
     // =========================================================================
@@ -2309,7 +2255,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Музей предлагает глубокое погружение в историю Хойана как оживленного торгового порта и его ключевую роль в международной торговле керамикой. В нем хранится обширная коллекция — более 430 древних артефактов, преимущественно датируемых IX-XIX веками, хотя некоторые фрагменты могут быть даже старше, относящиеся к VII-X векам!
 </p>
-<img src="37.jpg" alt="Музей торговой керамики"/>
+<img src="37.webp" alt="Музей торговой керамики"/>
 <p>
     Представьте, что эти предметы приплыли сюда со всех уголков мира:
 </p>
@@ -2326,7 +2272,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Музей спроектирован так, чтобы вы могли полностью погрузиться в атмосферу древней торговли:
 </p>
-<img src="38.jpg" alt="Музей торговой керамики"/>
+<img src="38.webp" alt="Музей торговой керамики"/>
 <ul>
     <li>Экспонаты расположены на двух уровнях вокруг центрального открытого внутреннего двора, создавая ощущение прогулки по старому торговому дому.</li>
     <li>В открытом внутреннем дворе музея находится полноразмерная копия традиционной керамической печи. Здесь вы можете представить, как создавались все эти прекрасные предметы.</li>
@@ -2343,7 +2289,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['38.jpg', '37.jpg'],
+      internalImageNames: ['38.webp', '37.webp'],
     },
 
     slug: {
@@ -2359,7 +2305,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'museum-of-local-products',
     coordinates: [15.877226900667111, 108.32979996486384],
     category: ['museum'], // Строго "museum"
-    imageUrl: '12.jpg',
+    imageUrl: '12.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -2380,7 +2326,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     The Museum of Local Products is very thoughtfully organized into four fascinating themes that will reveal the essence of Hoi An to you:
 </p>
-<img src="39.jpg" alt="Museum of Local Products"/>
+<img src="39.webp" alt="Museum of Local Products"/>
 <ul>
     <li><strong>Overview of Local Products:</strong> You'll get a general understanding of what makes this region rich.</li>
     <li><strong>Hoi An – A Spice Transit Point:</strong> This part of the exhibition highlights Hoi An's historical role as a key hub through which flows of spices and other valuable goods passed.</li>
@@ -2404,7 +2350,7 @@ export const museumLandmarks: Landmark[] = [
     The Museum of Local Products in Hoi An is a valuable addition to the city's cultural landscape, offering a unique journey into the gastronomic and trade heritage of the region. Be sure to stop by and breathe in the aroma of history!
 </p>
     `,
-      internalImageNames: ['39.jpg'],
+      internalImageNames: ['39.webp'],
     },
 
     // =========================================================================
@@ -2426,7 +2372,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Музей местных продуктов очень продуманно организован по четырем увлекательным темам, которые раскроют для вас суть Хойана:
 </p>
-<img src="39.jpg" alt="Музей местных продуктов"/>
+<img src="39.webp" alt="Музей местных продуктов"/>
 <ul>
     <li><strong>Обзор местных продуктов:</strong> Вы получите общее представление о том, что делает этот регион богатым.</li>
     <li><strong>Хойан – пункт транзита специй:</strong> Эта часть выставки подчеркивает историческую роль Хойана как ключевого узла, через который проходили потоки специй и других ценных товаров.</li>
@@ -2450,7 +2396,7 @@ export const museumLandmarks: Landmark[] = [
     Музей местных продуктов в Хойане — это ценное дополнение к культурному ландшафту города, предлагающее уникальное путешествие в гастрономическое и торговое наследие региона. Обязательно загляните и вдохните аромат истории!
 </p>
     `,
-      internalImageNames: ['39.jpg'],
+      internalImageNames: ['39.webp'],
     },
 
     // =========================================================================
@@ -2472,7 +2418,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     El Museo de Productos Locales está muy cuidadosamente organizado en cuatro temas fascinantes que te revelarán la esencia de Hoi An:
 </p>
-<img src="39.jpg" alt="Museo de Productos Locales"/>
+<img src="39.webp" alt="Museo de Productos Locales"/>
 <ul>
     <li><strong>Panorama de Productos Locales:</strong> Obtendrás una comprensión general de lo que enriquece esta región.</li>
     <li><strong>Hoi An – Un Punto de Tránsito de Especias:</strong> Esta parte de la exposición destaca el papel histórico de Hoi An como un centro clave a través del cual fluían especias y otros bienes valiosos.</li>
@@ -2496,7 +2442,7 @@ export const museumLandmarks: Landmark[] = [
     El Museo de Productos Locales en Hoi An es una valiosa adición al paisaje cultural de la ciudad, ofreciendo un viaje único al patrimonio gastronómico y comercial de la región. ¡Asegúrate de pasar y respirar el aroma de la historia!
 </p>
     `,
-      internalImageNames: ['39.jpg'],
+      internalImageNames: ['39.webp'],
     },
 
     // =========================================================================
@@ -2518,7 +2464,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Le Musée des Produits Locaux est très soigneusement organisé en quatre thèmes fascinants qui vous révéleront l'essence de Hoi An :
 </p>
-<img src="39.jpg" alt="Musée des Produits Locaux"/>
+<img src="39.webp" alt="Musée des Produits Locaux"/>
 <ul>
     <li><strong>Aperçu des produits locaux :</strong> Vous aurez une compréhension générale de ce qui rend cette région riche.</li>
     <li><strong>Hoi An – Un point de transit des épices :</strong> Cette partie de l'exposition met en lumière le rôle historique de Hoi An en tant que plaque tournante clé par laquelle transitaient les flux d'épices et d'autres marchandises précieuses.</li>
@@ -2542,7 +2488,7 @@ export const museumLandmarks: Landmark[] = [
     Le Musée des Produits Locaux à Hoi An est un ajout précieux au paysage culturel de la ville, offrant un voyage unique dans le patrimoine gastronomique et commercial de la région. N'oubliez pas de vous arrêter et de respirer l'arôme de l'histoire !
 </p>
     `,
-      internalImageNames: ['39.jpg'],
+      internalImageNames: ['39.webp'],
     },
 
     // =========================================================================
@@ -2564,7 +2510,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Bảo Tàng Sản Phẩm Địa Phương được tổ chức rất chu đáo thành bốn chủ đề hấp dẫn sẽ tiết lộ bản chất của Hội An cho bạn:
 </p>
-<img src="39.jpg" alt="Bảo Tàng Sản Phẩm Địa Phương"/>
+<img src="39.webp" alt="Bảo Tàng Sản Phẩm Địa Phương"/>
 <ul>
     <li><strong>Tổng quan về sản phẩm địa phương:</strong> Bạn sẽ có cái nhìn tổng thể về những gì làm cho vùng này trở nên giàu có.</li>
     <li><strong>Hội An – Điểm trung chuyển gia vị:</strong> Phần triển lãm này nhấn mạnh vai trò lịch sử của Hội An là một trung tâm trung chuyển quan trọng nơi các dòng gia vị và các hàng hóa có giá trị khác đã đi qua.</li>
@@ -2588,7 +2534,7 @@ export const museumLandmarks: Landmark[] = [
     Bảo Tàng Sản Phẩm Địa Phương ở Hội An là một sự bổ sung có giá trị vào cảnh quan văn hóa của thành phố, mang đến một hành trình độc đáo vào di sản ẩm thực và thương mại của vùng. Hãy chắc chắn ghé qua và hít thở hương thơm của lịch sử!
 </p>
     `,
-      internalImageNames: ['39.jpg'],
+      internalImageNames: ['39.webp'],
     },
 
     slug: {
@@ -2909,7 +2855,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'trung-hoa-assembly-hall',
     coordinates: [15.877372981079134, 108.33001799930773],
     category: ['museum'], // Строго "museum"
-    imageUrl: '13.jpg',
+    imageUrl: '13.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -2952,7 +2898,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Ensure these images are relevant if they are for a different place. If not, update or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Ensure these images are relevant if they are for a different place. If not, update or remove.
     },
 
     // =========================================================================
@@ -2996,7 +2942,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3040,7 +2986,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3084,7 +3030,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3128,7 +3074,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     slug: {
@@ -3144,7 +3090,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'fujian-assembly-hall',
     coordinates: [15.877479589047237, 108.33062773730362],
     category: ['museum'], // Строго "museum"
-    imageUrl: '14.jpg',
+    imageUrl: '14.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -3190,7 +3136,7 @@ export const museumLandmarks: Landmark[] = [
     The Fujian Assembly Hall is not only an architectural masterpiece but also a living testament to the history of the Chinese community in Hoi An, its immense contribution to the city's development, and the careful preservation of cultural traditions. Its visit is a must for those who want to truly understand the multifaceted heritage of Hoi An Ancient Town.
 </p>
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Ensure these images are relevant if they are for a different place. If not, update or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Ensure these images are relevant if they are for a different place. If not, update or remove.
     },
 
     // =========================================================================
@@ -3237,7 +3183,7 @@ export const museumLandmarks: Landmark[] = [
     Сборный зал Фуцзянь – это не только архитектурный шедевр, но и живое свидетельство истории китайской общины в Хойане, ее огромного вклада в развитие города и бережного сохранения культурных традиций. Его посещение обязательно для тех, кто хочет по-настоящему понять многогранное наследие Древнего города Хойан.
 </p>
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3284,7 +3230,7 @@ export const museumLandmarks: Landmark[] = [
     La Sala de Asamblea Fujian no es solo una obra maestra arquitectónica, sino también un testimonio vivo de la historia de la comunidad china en Hoi An, su inmensa contribución al desarrollo de la ciudad y la cuidadosa preservación de las tradiciones culturales. Su visita es obligatoria para aquellos que quieran comprender verdaderamente el patrimonio multifacético del Casco Antiguo de Hoi An.
 </p>
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3331,7 +3277,7 @@ export const museumLandmarks: Landmark[] = [
     La Salle de l'Assemblée de Fujian n'est pas seulement un chef-d'œuvre architectural, mais aussi un témoignage vivant de l'histoire de la communauté chinoise à Hoi An, de son immense contribution au développement de la ville et de la préservation minutieuse des traditions culturelles. Sa visite est un incontournable pour ceux qui veulent vraiment comprendre le patrimoine multiforme de la Vieille Ville de Hoi An.
 </p>
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3378,7 +3324,7 @@ export const museumLandmarks: Landmark[] = [
     Hội Quán Phúc Kiến không chỉ là một kiệt tác kiến trúc mà còn là một minh chứng sống động cho lịch sử của cộng đồng người Hoa ở Hội An, những đóng góp to lớn của họ vào sự phát triển của thành phố và việc bảo tồn cẩn thận các truyền thống văn hóa. Việc ghé thăm nơi đây là điều bắt buộc đối với những ai muốn thực sự hiểu di sản đa diện của Phố cổ Hội An.
 </p>
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     slug: {
@@ -3394,7 +3340,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'quan-cong-temple',
     coordinates: [15.87753059676167, 108.33137596808865],
     category: ['museum'], // Строго "museum"
-    imageUrl: '15.jpg',
+    imageUrl: '15.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -3415,7 +3361,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Quan Cong Temple is a vivid example of Chinese temple architecture, full of distinctive features and rich decoration:
 </p>
-<img src="41.jpg" alt="Quan Cong Temple / Ong Pagoda"/>
+<img src="41.webp" alt="Quan Cong Temple / Ong Pagoda"/>
 <small>The green dragons carved on the entrance door of Ong Pagoda are the embodiment of Quan Cong.</small>
 <ul>
     <li>Entry to the temple is through impressive <strong>Triple Gates</strong> adorned with colorful patterns. On either side of the gates stand figures of guardians or majestic guardian lions.</li>
@@ -3427,7 +3373,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     There are also very interesting side rooms:
 </p>
-<img src="40.jpg" alt="Quan Cong Temple / Ong Pagoda"/>
+<img src="40.webp" alt="Quan Cong Temple / Ong Pagoda"/>
 <ul>
     <li>In the left room, there is an altar dedicated to the patron of trade and prosperity.</li>
     <li>And on the right is a sanctuary dedicated to Quan Cong's famous horse, known as the "Red Hare," which was famous for its incredible speed. Its statue here is an important element.</li>
@@ -3437,13 +3383,13 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Quan Cong Temple is an active place of worship for local residents, especially for the Chinese diaspora and Vietnamese. It is often visited by businessmen to ask for blessings for honest and successful trade. The temple also serves as a center for various traditional Chinese and Vietnamese festivals, including Lunar New Year, which are accompanied by rituals, music, and dances (for example, the famous lion dance).
 </p>
-<img src="42.jpg" alt="Quan Cong Temple / Ong Pagoda"/>
+<img src="42.webp" alt="Quan Cong Temple / Ong Pagoda"/>
 <small>Historical antiquities remain untouched at Ong Pagoda in Hoi An after more than 300 years</small>
 <p>
     If you are going to visit only one assembly hall in Hoi An, it might be worth choosing the Cantonese Assembly Hall – it truly impresses with its scale and decorations. However, Quan Cong Temple is a unique living museum that provides a deep understanding of Hoi An's rich history, trade connections, and cultural exchange, as well as the spiritual beliefs that shaped the lives of its inhabitants for centuries. Visiting this temple is an integral part of getting to know the Ancient Town of Hoi An.
 </p>
     `,
-      internalImageNames: ['40.jpg', '42.jpg', '41.jpg'], // Ensure these images are relevant if they are for a different place. If not, update or remove.
+      internalImageNames: ['40.webp', '42.webp', '41.webp'], // Ensure these images are relevant if they are for a different place. If not, update or remove.
     },
 
     // =========================================================================
@@ -3464,7 +3410,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Храм Куан Конга является ярким примером китайской храмовой архитектуры, полной отличительных черт и богатого убранства:
 </p>
-<img src="41.jpg" alt="Храм Куан Конга / Пагода Онга"/>
+<img src="41.webp" alt="Храм Куан Конга / Пагода Онга"/>
 <small>Зеленые драконы, вырезанные на входной двери пагоды Онг, являются воплощением Куан Конга.</small>
 <ul>
     <li>Вход в храм осуществляется через впечатляющие <strong>Тройные Ворота</strong>, украшенные красочными узорами. По обе стороны ворот стоят фигуры стражей или величественные львы-хранители.</li>
@@ -3476,7 +3422,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Также есть очень интересные боковые комнаты:
 </p>
-<img src="40.jpg" alt="Храм Куан Конга / Пагода Онга"/>
+<img src="40.webp" alt="Храм Куан Конга / Пагода Онга"/>
 <ul>
     <li>В левой комнате находится алтарь, посвященный покровителю торговли и процветания.</li>
     <li>А справа — святилище, посвященное знаменитому коню Куан Конга, известному как «Красный Заяц», который славился своей невероятной скоростью. Его статуя здесь является важным элементом.</li>
@@ -3486,13 +3432,13 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Храм Куан Конга является действующим местом поклонения для местных жителей, особенно для китайской диаспоры и вьетнамцев. Его часто посещают бизнесмены, чтобы просить благословения для честной и успешной торговли. Храм также служит центром для различных традиционных китайских и вьетнамских фестивалей, включая Лунный Новый год, которые сопровождаются ритуалами, музыкой и танцами (например, знаменитым танцем льва).
 </p>
-<img src="42.jpg" alt="Храм Куан Конга / Пагода Онга"/>
+<img src="42.webp" alt="Храм Куан Конга / Пагода Онга"/>
 <small>Исторические древности остаются нетронутыми в пагоде Онг в Хойане спустя более 300 лет</small>
 <p>
     Если вы собираетесь посетить только один сборный зал в Хойане, возможно, стоит выбрать Кантонский Сборный зал – он действительно впечатляет своим масштабом и украшениями. Однако Храм Куан Конга — это уникальный живой музей, который дает глубокое понимание богатой истории Хойана, торговых связей и культурного обмена, а также духовных верований, которые формировали жизнь его жителей на протяжении веков. Посещение этого храма является неотъемлемой частью знакомства с Древним городом Хойан.
 </p>
     `,
-      internalImageNames: ['40.jpg', '42.jpg', '41.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['40.webp', '42.webp', '41.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3514,7 +3460,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     El Templo de Quan Cong es un vívido ejemplo de la arquitectura de templos chinos, llena de características distintivas y rica decoración:
 </p>
-<img src="41.jpg" alt="Templo de Quan Cong / Pagoda Ong"/>
+<img src="41.webp" alt="Templo de Quan Cong / Pagoda Ong"/>
 <small>Los dragones verdes tallados en la puerta de entrada de la Pagoda Ong son la encarnación de Quan Cong.</small>
 <ul>
     <li>La entrada al templo es a través de impresionantes <strong>Puertas Triples</strong> adornadas con coloridos patrones. A cada lado de las puertas se encuentran figuras de guardianes o majestuosos leones guardianes.</li>
@@ -3526,7 +3472,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     También hay salas laterales muy interesantes:
 </p>
-<img src="40.jpg" alt="Templo de Quan Cong / Pagoda Ong"/>
+<img src="40.webp" alt="Templo de Quan Cong / Pagoda Ong"/>
 <ul>
     <li>En la sala izquierda, hay un altar dedicado al patrón del comercio y la prosperidad.</li>
     <li>Y a la derecha hay un santuario dedicado al famoso caballo de Quan Cong, conocido como el "Liebre Roja", que era famoso por su increíble velocidad. Su estatua aquí es un elemento importante.</li>
@@ -3536,13 +3482,13 @@ export const museumLandmarks: Landmark[] = [
 <p>
     El Templo de Quan Cong es un lugar de culto activo para los residentes locales, especialmente para la diáspora china y vietnamita. A menudo es visitado por empresarios para pedir bendiciones para un comercio honesto y exitoso. El templo también sirve como centro para varios festivales tradicionales chinos y vietnamitas, incluido el Año Nuevo Lunar, que se acompañan de rituales, música y bailes (por ejemplo, la famosa danza del león).
 </p>
-<img src="42.jpg" alt="Templo de Quan Cong / Pagoda Ong"/>
+<img src="42.webp" alt="Templo de Quan Cong / Pagoda Ong"/>
 <small>Las antigüedades históricas permanecen intactas en la Pagoda Ong en Hoi An después de más de 300 años</small>
 <p>
     Si vas a visitar solo una sala de asamblea en Hoi An, podría valer la pena elegir la Sala de Asamblea Cantonesa, realmente impresiona por su escala y decoraciones. Sin embargo, el Templo de Quan Cong es un museo viviente único que proporciona una comprensión profunda de la rica historia de Hoi An, las conexiones comerciales y el intercambio cultural, así como las creencias espirituales que dieron forma a la vida de sus habitantes durante siglos. Visitar este templo es una parte integral para conocer el Casco Antiguo de Hoi An.
 </p>
     `,
-      internalImageNames: ['40.jpg', '42.jpg', '41.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['40.webp', '42.webp', '41.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3564,7 +3510,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Le Temple de Quan Cong est un exemple frappant de l'architecture de temple chinois, pleine de caractéristiques distinctives et d'une riche décoration :
 </p>
-<img src="41.jpg" alt="Temple de Quan Cong / Pagode Ong"/>
+<img src="41.webp" alt="Temple de Quan Cong / Pagode Ong"/>
 <small>Les dragons verts sculptés sur la porte d'entrée de la Pagode Ong sont l'incarnation de Quan Cong.</small>
 <ul>
     <li>L'entrée du temple se fait par d'impressionnantes <strong>Portes Triples</strong> ornées de motifs colorés. De chaque côté des portes se dressent des figures de gardiens ou de majestueux lions gardiens.</li>
@@ -3576,7 +3522,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Il y a aussi des pièces latérales très intéressantes :
 </p>
-<img src="40.jpg" alt="Temple de Quan Cong / Pagode Ong"/>
+<img src="40.webp" alt="Temple de Quan Cong / Pagode Ong"/>
 <ul>
     <li>Dans la pièce de gauche, il y a un autel dédié au patron du commerce et de la prospérité.</li>
     <li>Et à droite se trouve un sanctuaire dédié au célèbre cheval de Quan Cong, connu sous le nom de "Lièvre Rouge", qui était célèbre pour son incroyable vitesse. Sa statue ici est un élément important.</li>
@@ -3586,13 +3532,13 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Le Temple de Quan Cong est un lieu de culte actif pour les résidents locaux, en particulier pour la diaspora chinoise et vietnamienne. Il est souvent visité par les hommes d'affaires pour demander des bénédictions pour un commerce honnête et fructueux. Le temple sert également de centre pour divers festivals traditionnels chinois et vietnamiens, y compris le Nouvel An lunaire, qui sont accompagnés de rituels, de musique et de danses (par exemple, la célèbre danse du lion).
 </p>
-<img src="42.jpg" alt="Temple de Quan Cong / Pagode Ong"/>
+<img src="42.webp" alt="Temple de Quan Cong / Pagode Ong"/>
 <small>Les antiquités historiques restent intactes à la Pagode Ong à Hoi An après plus de 300 ans</small>
 <p>
     Si vous ne deviez visiter qu'une seule salle d'assemblée à Hoi An, il pourrait être intéressant de choisir la Salle de l'Assemblée cantonaise – elle impressionne vraiment par son ampleur et ses décorations. Cependant, le Temple de Quan Cong est un musée vivant unique qui offre une compréhension profonde de la riche histoire de Hoi An, des liens commerciaux et des échanges culturels, ainsi que des croyances spirituelles qui ont façonné la vie de ses habitants pendant des siècles. La visite de ce temple est une partie intégrante de la découverte de la Vieille Ville de Hoi An.
 </p>
     `,
-      internalImageNames: ['40.jpg', '42.jpg', '41.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['40.webp', '42.webp', '41.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     // =========================================================================
@@ -3613,7 +3559,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Chùa Ông là một ví dụ sống động về kiến trúc đền thờ Trung Quốc, đầy những nét đặc trưng và trang trí phong phú:
 </p>
-<img src="41.jpg" alt="Chùa Ông / Miếu Quan Công"/>
+<img src="41.webp" alt="Chùa Ông / Miếu Quan Công"/>
 <small>Những con rồng xanh được chạm khắc trên cửa vào Chùa Ông là hiện thân của Quan Công.</small>
 <ul>
     <li>Lối vào chùa qua <strong>Tam Quan</strong> ấn tượng được trang trí bằng các họa tiết đầy màu sắc. Hai bên cổng là tượng các vị thần hộ pháp hoặc những con sư tử đá uy nghi.</li>
@@ -3625,7 +3571,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Ngoài ra còn có những phòng phụ rất thú vị:
 </p>
-<img src="40.jpg" alt="Chùa Ông / Miếu Quan Công"/>
+<img src="40.webp" alt="Chùa Ông / Miếu Quan Công"/>
 <ul>
     <li>Trong phòng bên trái, có một bàn thờ dành cho vị thần bảo trợ thương mại và thịnh vượng.</li>
     <li>Và bên phải là một điện thờ dành cho con ngựa nổi tiếng của Quan Công, được gọi là "Xích Thố", nổi tiếng với tốc độ đáng kinh ngạc. Bức tượng của nó ở đây là một yếu tố quan trọng.</li>
@@ -3635,13 +3581,13 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Chùa Ông là một nơi thờ cúng tích cực của người dân địa phương, đặc biệt là đối với cộng đồng người Hoa và người Việt. Nó thường được các doanh nhân ghé thăm để cầu xin phước lành cho một hoạt động kinh doanh trung thực và thành công. Ngôi đền cũng phục vụ như một trung tâm cho các lễ hội truyền thống khác nhau của Trung Quốc và Việt Nam, bao gồm Tết Nguyên Đán, đi kèm với các nghi lễ, âm nhạc và vũ điệu (ví dụ, múa lân nổi tiếng).
 </p>
-<img src="42.jpg" alt="Chùa Ông / Miếu Quan Công"/>
+<img src="42.webp" alt="Chùa Ông / Miếu Quan Công"/>
 <small>Những cổ vật lịch sử vẫn còn nguyên vẹn tại Chùa Ông ở Hội An sau hơn 300 năm</small>
 <p>
     Nếu bạn chỉ định thăm một hội quán ở Hội An, có lẽ nên chọn Hội Quán Quảng Đông – nó thực sự gây ấn tượng với quy mô và các đồ trang trí của nó. Tuy nhiên, Chùa Ông là một bảo tàng sống độc đáo mang lại sự hiểu biết sâu sắc về lịch sử phong phú của Hội An, các mối liên kết thương mại và trao đổi văn hóa, cũng như các tín ngưỡng tâm linh đã định hình cuộc sống của cư dân nơi đây trong nhiều thế kỷ. Ghé thăm ngôi đền này là một phần không thể thiếu để tìm hiểu về Phố cổ Hội An.
 </p>
     `,
-      internalImageNames: ['40.jpg', '42.jpg', '41.jpg'], // Check if these images are relevant. If not, replace or remove.
+      internalImageNames: ['40.webp', '42.webp', '41.webp'], // Check if these images are relevant. If not, replace or remove.
     },
 
     slug: {
@@ -3657,7 +3603,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'museum-of-traditional-medicine',
     coordinates: [15.876645447545563, 108.32985812007384],
     category: ['museum'],
-    imageUrl: '16.jpg',
+    imageUrl: '16.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -3697,7 +3643,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -3738,7 +3684,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -3779,7 +3725,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -3820,7 +3766,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -3861,7 +3807,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     slug: {
@@ -3877,7 +3823,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'museum-of-folk-culture',
     coordinates: [15.876582072649137, 108.32984229159041],
     category: ['museum'],
-    imageUrl: '17.jpg',
+    imageUrl: '17.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -3914,7 +3860,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -3952,7 +3898,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -3990,7 +3936,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -4028,7 +3974,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     // =========================================================================
@@ -4066,7 +4012,7 @@ export const museumLandmarks: Landmark[] = [
 </p>
 
     `,
-      internalImageNames: ['9.jpg', '2.jpg', '3.jpg'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
+      internalImageNames: ['9.webp', '2.webp', '3.webp'], // Consider removing or updating internalImageNames if they are generic or not specifically related to this museum.
     },
 
     slug: {
@@ -4082,7 +4028,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'teochew-assembly-hall',
     coordinates: [15.877797676562944, 108.33307758196435],
     category: ['museum'],
-    imageUrl: '18.jpg',
+    imageUrl: '18.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -4095,16 +4041,16 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Among the many magnificent assembly halls of Hoi An, there is one that immediately catches the eye with its special style and rich history – it's the <strong>Teochew Assembly Hall</strong>. It is also called Trieu Chau Assembly Hall or, simply, Ong Bon Pagoda. And it's no coincidence, as it was built by the Chinese community from the Chaozhou (Teochew) region in distant 1845!
 </p>
-<img src="43.jpg" alt="Teochew Assembly Hall"/>
+<img src="43.webp" alt="Teochew Assembly Hall"/>
 <p>
     This hall was originally a center for the social and religious life of all Teochew Chinese who lived and traded in Hoi An. It served as a place for meetings, festivals, and mutual assistance. And although the hall has been repeatedly renovated and rebuilt, especially in 1887, 1970, and 1991, it has retained its unique appearance and status as one of the few ancient relics of Vietnam, recognized even by the French School of the Far East!
 </p>
 <h6>Architectural Magic and the Art of Details</h6>
-<img src="44.jpg" alt="Teochew Assembly Hall"/>
+<img src="44.webp" alt="Teochew Assembly Hall"/>
 <p>
     The Teochew Assembly Hall is a true architectural masterpiece, where Chinese style harmoniously intertwines with local Vietnamese elements. Its layout is very symbolic and follows the Chinese character "国" (guó), meaning "country" or "nation," with three main parts: a front courtyard, an inner courtyard, and a main hall.
 </p>
-<img src="45.jpg" alt="Teochew Assembly Hall"/>
+<img src="45.webp" alt="Teochew Assembly Hall"/>
 <ul>
     <li>Entry to the hall is through impressive <strong>Triple Gates</strong> with three roofs. Above the middle entrance hangs a plaque with four characters: "Teochew Chinese Congregation Assembly Hall." And the metal gates are adorned with images of carp, which, as you recall, symbolize good luck!</li>
     <li>On either side of the middle entrance, you'll be greeted by two stone figures of guardian lions, ready to protect this sacred place from evil spirits.</li>
@@ -4115,14 +4061,14 @@ export const museumLandmarks: Landmark[] = [
     <li>On the sides of the main hall are the East and West houses, which could be used for community events and perhaps even for Chinese language lessons for children.</li>
 </ul>
 <h6>The General Who Calms the Waves and Secrets Beneath the Earth</h6>
-<img src="46.jpg" alt="Teochew Assembly Hall"/>
+<img src="46.webp" alt="Teochew Assembly Hall"/>
 <p>
     The main deity worshipped in the central sanctuary is <strong>Ong Bon</strong>, or Ma Yuan – a Chinese warlord who lived before our era and was deified after death. His official title is "General who calms the waves." He was prayed to for safe passage and successful trade at sea, which was vital for Teochew merchants whose lives depended on sea voyages.
 </p>
 <p>
     In addition to religious purposes, the Teochew Assembly Hall has always been a crucial center for preserving and spreading the culture and spiritual values of the Teochew community in Hoi An. Festivals and cultural events are still regularly held here, attracting both the local Chinese community and tourists.
 </p>
-<img src="47.jpg" alt="Teochew Assembly Hall"/>
+<img src="47.webp" alt="Teochew Assembly Hall"/>
 <p>
     And finally, a little secret: in 1989, archaeologists discovered many ceramic items and ancient coins from the 15th-20th centuries, made in China, Japan, and Vietnam, beneath the Teochew Assembly Hall! These finds once again prove that Hoi An was an incredibly bustling trading port.
 </p>
@@ -4130,7 +4076,13 @@ export const museumLandmarks: Landmark[] = [
     The Teochew Assembly Hall is one of the most important and unique architectural and cultural sites in Hoi An. Be sure to stop by to delve into history and understand how different cultures shaped this ancient city.
 </p>
     `,
-      internalImageNames: ['43.jpg', '44.jpg', '45.jpg', '46.jpg', '47.jpg'],
+      internalImageNames: [
+        '43.webp',
+        '44.webp',
+        '45.webp',
+        '46.webp',
+        '47.webp',
+      ],
     },
 
     // =========================================================================
@@ -4144,17 +4096,17 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Среди множества великолепных сборных залов Хойана есть один, который сразу бросается в глаза своим особым стилем и богатой историей – это <strong>Сборный зал Теотёу</strong>. Его также называют Сборным залом Триеу Чау или, проще говоря, Пагодой Онг Бон. И это не случайно, ведь он был построен китайской общиной из региона Чаочжоу (Теотёу) в далеком 1845 году!
 </p>
-<img src="43.jpg" alt="Сборный зал Теотёу"/>
+<img src="43.webp" alt="Сборный зал Теотёу"/>
 <p>
     Этот зал изначально был центром общественной и религиозной жизни всех китайцев Теотёу, живших и торговавших в Хойане. Он служил местом для собраний, праздников и взаимопомощи. И хотя зал неоднократно реставрировался и перестраивался, особенно в 1887, 1970 и 1991 годах, он сохранил свой неповторимый облик и статус одной из немногих древних реликвий Вьетнама, признанных даже Французской школой Дальнего Востока!
 </p>
 
 <h6>Архитектурная магия и искусство деталей</h6>
-<img src="44.jpg" alt="Сборный зал Теотёу"/>
+<img src="44.webp" alt="Сборный зал Теотёу"/>
 <p>
     Сборный зал Теотёу – это настоящий архитектурный шедевр, где китайский стиль гармонично переплетается с местными вьетнамскими элементами. Его планировка очень символична и следует китайскому иероглифу «国» (guó), что означает «страна» или «нация», с тремя основными частями: передним двором, внутренним двором и главным залом.
 </p>
-<img src="45.jpg" alt="Сборный зал Теотёу"/>
+<img src="45.webp" alt="Сборный зал Теотёу"/>
 <ul>
     <li>Вход в зал осуществляется через впечатляющие <strong>Тройные Ворота</strong> с тремя крышами. Над средним входом висит табличка с четырьмя иероглифами: «Сборный зал китайской общины Теотёу». А металлические ворота украшены изображениями карпов, которые, как вы помните, символизируют удачу!</li>
     <li>По обе стороны от среднего входа вас встретят две каменные фигуры львов-хранителей, готовых защищать это священное место от злых духов.</li>
@@ -4166,14 +4118,14 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Генерал, усмиряющий волны, и секреты под землей</h6>
-<img src="46.jpg" alt="Сборный зал Теотёу"/>
+<img src="46.webp" alt="Сборный зал Теотёу"/>
 <p>
     Главным божеством, которому поклоняются в центральном святилище, является <strong>Онг Бон</strong>, или Ма Юань – китайский военачальник, живший до нашей эры и обожествленный после смерти. Его официальный титул – «Генерал, усмиряющий волны». Ему молились о безопасном путешествии и успешной торговле на море, что было жизненно важно для торговцев Теотёу, чья жизнь зависела от морских походов.
 </p>
 <p>
     Помимо религиозных целей, Сборный зал Теотёу всегда был важнейшим центром сохранения и распространения культуры и духовных ценностей общины Теотёу в Хойане. Здесь до сих пор регулярно проводятся фестивали и культурные мероприятия, привлекающие как местную китайскую общину, так и туристов.
 </p>
-<img src="47.jpg" alt="Сборный зал Теотёу"/>
+<img src="47.webp" alt="Сборный зал Теотёу"/>
 <p>
     И напоследок маленький секрет: в 1989 году археологи обнаружили под Сборным залом Теотёу множество керамических изделий и древних монет XV–XX веков, изготовленных в Китае, Японии и Вьетнаме! Эти находки еще раз доказывают, что Хойан был невероятно оживленным торговым портом.
 </p>
@@ -4181,7 +4133,13 @@ export const museumLandmarks: Landmark[] = [
     Сборный зал Теотёу – одно из самых важных и уникальных архитектурных и культурных мест в Хойане. Обязательно загляните сюда, чтобы погрузиться в историю и понять, как различные культуры формировали этот древний город.
 </p>
     `,
-      internalImageNames: ['43.jpg', '44.jpg', '45.jpg', '46.jpg', '47.jpg'],
+      internalImageNames: [
+        '43.webp',
+        '44.webp',
+        '45.webp',
+        '46.webp',
+        '47.webp',
+      ],
     },
 
     // =========================================================================
@@ -4195,17 +4153,17 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Entre las muchas magníficas salas de asamblea de Hoi An, hay una que inmediatamente llama la atención por su estilo especial y su rica historia: es la <strong>Sala de Asamblea Teochew</strong>. También se le llama Sala de Asamblea Trieu Chau o, simplemente, Pagoda Ong Bon. Y no es una coincidencia, ya que fue construida por la comunidad china de la región de Chaozhou (Teochew) en el lejano 1845.
 </p>
-<img src="43.jpg" alt="Sala de Asamblea Teochew"/>
+<img src="43.webp" alt="Sala de Asamblea Teochew"/>
 <p>
     Esta sala fue originalmente un centro para la vida social y religiosa de todos los chinos Teochew que vivían y comerciaban en Hoi An. Sirvió como lugar para reuniones, festivales y ayuda mutua. Y aunque la sala ha sido repetidamente renovada y reconstruida, especialmente en 1887, 1970 y 1991, ha conservado su apariencia única y su estatus como una de las pocas reliquias antiguas de Vietnam, reconocida incluso por la Escuela Francesa del Lejano Oriente.
 </p>
 
 <h6>Magia Arquitectónica y el Arte de los Detalles</h6>
-<img src="44.jpg" alt="Sala de Asamblea Teochew"/>
+<img src="44.webp" alt="Sala de Asamblea Teochew"/>
 <p>
     La Sala de Asamblea Teochew es una verdadera obra maestra arquitectónica, donde el estilo chino se entrelaza armoniosamente con elementos vietnamitas locales. Su diseño es muy simbólico y sigue el carácter chino "国" (guó), que significa "país" o "nación", con tres partes principales: un patio delantero, un patio interior y una sala principal.
 </p>
-<img src="45.jpg" alt="Sala de Asamblea Teochew"/>
+<img src="45.webp" alt="Sala de Asamblea Teochew"/>
 <ul>
     <li>La entrada a la sala es a través de impresionantes <strong>Puertas Triples</strong> con tres tejados. Sobre la entrada central cuelga una placa con cuatro caracteres: "Sala de Asamblea de la Congregación China Teochew". ¡Y las puertas de metal están adornadas con imágenes de carpas, que, como recordarán, simbolizan la buena suerte!</li>
     <li>A cada lado de la entrada central, serás recibido por dos figuras de piedra de leones guardianes, listos para proteger este lugar sagrado de los malos espíritus.</li>
@@ -4217,14 +4175,14 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>El General que Calma las Olas y Secretos Bajo la Tierra</h6>
-<img src="46.jpg" alt="Sala de Asamblea Teochew"/>
+<img src="46.webp" alt="Sala de Asamblea Teochew"/>
 <p>
     La deidad principal adorada en el santuario central es <strong>Ong Bon</strong>, o Ma Yuan, un caudillo chino que vivió antes de nuestra era y fue deificado después de su muerte. Su título oficial es "General que calma las olas". Se le oraba por un paso seguro y un comercio exitoso en el mar, lo cual era vital para los comerciantes Teochew cuyas vidas dependían de los viajes por mar.
 </p>
 <p>
     Además de sus propósitos religiosos, la Sala de Asamblea Teochew siempre ha sido un centro crucial para preservar y difundir la cultura y los valores espirituales de la comunidad Teochew en Hoi An. Los festivales y eventos culturales todavía se celebran regularmente aquí, atrayendo tanto a la comunidad china local como a los turistas.
 </p>
-<img src="47.jpg" alt="Sala de Asamblea Teochew"/>
+<img src="47.webp" alt="Sala de Asamblea Teochew"/>
 <p>
     Y finalmente, un pequeño secreto: en 1989, los arqueólogos descubrieron muchos objetos de cerámica y monedas antiguas de los siglos XV al XX, fabricados en China, Japón y Vietnam, ¡debajo de la Sala de Asamblea Teochew! Estos hallazgos demuestran una vez más que Hoi An fue un puerto comercial increíblemente bullicioso.
 </p>
@@ -4232,7 +4190,13 @@ export const museumLandmarks: Landmark[] = [
     La Sala de Asamblea Teochew es uno de los sitios arquitectónicos y culturales más importantes y únicos de Hoi An. Asegúrate de pasar para adentrarte en la historia y comprender cómo las diferentes culturas dieron forma a esta antigua ciudad.
 </p>
     `,
-      internalImageNames: ['43.jpg', '44.jpg', '45.jpg', '46.jpg', '47.jpg'],
+      internalImageNames: [
+        '43.webp',
+        '44.webp',
+        '45.webp',
+        '46.webp',
+        '47.webp',
+      ],
     },
 
     // =========================================================================
@@ -4246,17 +4210,17 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Parmi les nombreuses magnifiques salles d'assemblée de Hoi An, il en est une qui attire immédiatement le regard par son style particulier et sa riche histoire – c'est la <strong>Salle de l'Assemblée de Teochew</strong>. Elle est également appelée Salle de l'Assemblée de Trieu Chau ou, simplement, Pagode Ong Bon. Et ce n'est pas un hasard, car elle a été construite par la communauté chinoise de la région de Chaozhou (Teochew) en 1845 !
 </p>
-<img src="43.jpg" alt="Salle de l'Assemblée de Teochew"/>
+<img src="43.webp" alt="Salle de l'Assemblée de Teochew"/>
 <p>
     Cette salle était à l'origine un centre de la vie sociale et religieuse de tous les Chinois Teochew qui vivaient et commerçaient à Hoi An. Elle servait de lieu de réunion, de festivals et d'entraide. Et bien que la salle ait été à plusieurs reprises rénovée et reconstruite, notamment en 1887, 1970 et 1991, elle a conservé son apparence unique et son statut de l'une des rares reliques anciennes du Vietnam, reconnue même par l'École française d'Extrême-Orient !
 </p>
 
 <h6>Magie architecturale et l'art des détails</h6>
-<img src="44.jpg" alt="Salle de l'Assemblée de Teochew"/>
+<img src="44.webp" alt="Salle de l'Assemblée de Teochew"/>
 <p>
     La Salle de l'Assemblée de Teochew est un véritable chef-d'œuvre architectural, où le style chinois s'entremêle harmonieusement avec des éléments vietnamiens locaux. Sa disposition est très symbolique et suit le caractère chinois « 国 » (guó), signifiant « pays » ou « nation », avec trois parties principales : une cour avant, une cour intérieure et un hall principal.
 </p>
-<img src="45.jpg" alt="Salle de l'Assemblée de Teochew"/>
+<img src="45.webp" alt="Salle de l'Assemblée de Teochew"/>
 <ul>
     <li>L'entrée de la salle se fait par d'impressionnantes <strong>Portes Triples</strong> à trois toits. Au-dessus de l'entrée centrale est suspendue une plaque avec quatre caractères : « Salle de l'Assemblée de la Congrégation chinoise de Teochew ». Et les portes métalliques sont ornées d'images de carpes, qui, comme vous vous en souvenez, symbolisent la bonne fortune !</li>
     <li>De chaque côté de l'entrée centrale, vous serez accueillis par deux figures de pierre de lions gardiens, prêts à protéger ce lieu sacré des mauvais esprits.</li>
@@ -4268,14 +4232,14 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Le général qui calme les vagues et les secrets sous la terre</h6>
-<img src="46.jpg" alt="Salle de l'Assemblée de Teochew"/>
+<img src="46.webp" alt="Salle de l'Assemblée de Teochew"/>
 <p>
     La divinité principale adorée dans le sanctuaire central est <strong>Ong Bon</strong>, ou Ma Yuan – un chef de guerre chinois qui a vécu avant notre ère et a été déifié après sa mort. Son titre officiel est « Général qui calme les vagues ». On le priait pour un passage sûr et un commerce réussi en mer, ce qui était vital pour les marchands de Teochew dont la vie dépendait des voyages en mer.
 </p>
 <p>
     En plus de ses objectifs religieux, la Salle de l'Assemblée de Teochew a toujours été un centre crucial pour la préservation et la diffusion de la culture et des valeurs spirituelles de la communauté Teochew à Hoi An. Des festivals et des événements culturels y sont toujours régulièrement organisés, attirant à la fois la communauté chinoise locale et les touristes.
 </p>
-<img src="47.jpg" alt="Salle de l'Assemblée de Teochew"/>
+<img src="47.webp" alt="Salle de l'Assemblée de Teochew"/>
 <p>
     Et enfin, un petit secret : en 1989, des archéologues ont découvert de nombreux objets en céramique et des pièces de monnaie anciennes des XVe-XXe siècles, fabriqués en Chine, au Japon et au Vietnam, sous la Salle de l'Assemblée de Teochew ! Ces découvertes prouvent une fois de plus que Hoi An était un port commercial incroyablement animé.
 </p>
@@ -4283,7 +4247,13 @@ export const museumLandmarks: Landmark[] = [
     La Salle de l'Assemblée de Teochew est l'un des sites architecturaux et culturels les plus importants et les plus uniques de Hoi An. N'oubliez pas de vous arrêter pour vous plonger dans l'histoire et comprendre comment différentes cultures ont façonné cette ville ancienne.
 </p>
     `,
-      internalImageNames: ['43.jpg', '44.jpg', '45.jpg', '46.jpg', '47.jpg'],
+      internalImageNames: [
+        '43.webp',
+        '44.webp',
+        '45.webp',
+        '46.webp',
+        '47.webp',
+      ],
     },
 
     // =========================================================================
@@ -4297,17 +4267,17 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Trong số nhiều hội quán lộng lẫy ở Hội An, có một hội quán ngay lập tức thu hút ánh nhìn bởi phong cách đặc biệt và lịch sử phong phú của nó – đó là <strong>Hội Quán Triều Châu</strong>. Nó còn được gọi là Hội Quán Triều Châu hoặc đơn giản là Chùa Ông Bổn. Và điều này không phải ngẫu nhiên, vì nó được cộng đồng người Hoa từ vùng Triều Châu (Teochew) xây dựng vào năm 1845 xa xôi!
 </p>
-<img src="43.jpg" alt="Hội Quán Triều Châu"/>
+<img src="43.webp" alt="Hội Quán Triều Châu"/>
 <p>
     Hội quán này ban đầu là trung tâm sinh hoạt xã hội và tôn giáo của tất cả người Hoa Triều Châu sống và buôn bán tại Hội An. Nó phục vụ như một nơi để họp mặt, tổ chức lễ hội và tương trợ lẫn nhau. Và mặc dù hội quán đã nhiều lần được trùng tu và xây dựng lại, đặc biệt vào các năm 1887, 1970 và 1991, nó vẫn giữ được vẻ ngoài độc đáo và địa vị là một trong số ít di tích cổ kính của Việt Nam, được cả Trường Viễn Đông Bác Cổ của Pháp công nhận!
 </p>
 
 <h6>Kiến trúc huyền diệu và nghệ thuật chi tiết</h6>
-<img src="44.jpg" alt="Hội Quán Triều Châu"/>
+<img src="44.webp" alt="Hội Quán Triều Châu"/>
 <p>
     Hội Quán Triều Châu là một kiệt tác kiến trúc thực sự, nơi phong cách Trung Hoa hài hòa đan xen với các yếu tố Việt Nam địa phương. Bố cục của nó rất tượng trưng và theo chữ "国" (guó) trong tiếng Trung, có nghĩa là "quốc gia" hoặc "dân tộc", với ba phần chính: một sân trước, một sân trong và một sảnh chính.
 </p>
-<img src="45.jpg" alt="Hội Quán Triều Châu"/>
+<img src="45.webp" alt="Hội Quán Triều Châu"/>
 <ul>
     <li>Lối vào hội quán thông qua <strong>Tam Quan</strong> ấn tượng với ba mái. Phía trên lối vào chính giữa treo một tấm biển với bốn chữ: "Triều Châu Hoa Kiều Hội Quán". Và cổng kim loại được trang trí bằng hình ảnh cá chép, mà như bạn nhớ, tượng trưng cho sự may mắn!</li>
     <li>Ở hai bên lối vào chính giữa, bạn sẽ được chào đón bởi hai tượng đá sư tử canh gác, sẵn sàng bảo vệ nơi linh thiêng này khỏi tà khí.</li>
@@ -4319,14 +4289,14 @@ export const museumLandmarks: Landmark[] = [
 </ul>
 
 <h6>Vị tướng dẹp yên sóng gió và những bí mật dưới lòng đất</h6>
-<img src="46.jpg" alt="Hội Quán Triều Châu"/>
+<img src="46.webp" alt="Hội Quán Triều Châu"/>
 <p>
     Vị thần chính được thờ cúng tại gian thờ trung tâm là <strong>Ông Bổn</strong>, hay Mã Viện – một tướng lĩnh Trung Quốc sống trước Công nguyên và được thần thánh hóa sau khi qua đời. Chức danh chính thức của ông là "Phục Ba Tướng Quân". Người ta cầu nguyện ông phù hộ cho những chuyến đi biển an toàn và giao thương thành công trên biển, điều này rất quan trọng đối với các thương nhân Triều Châu mà cuộc sống của họ phụ thuộc vào những chuyến đi biển.
 </p>
 <p>
     Ngoài mục đích tôn giáo, Hội Quán Triều Châu luôn là một trung tâm quan trọng để bảo tồn và truyền bá văn hóa và giá trị tinh thần của cộng đồng người Triều Châu tại Hội An. Các lễ hội và sự kiện văn hóa vẫn được tổ chức thường xuyên tại đây, thu hút cả cộng đồng người Hoa địa phương và khách du lịch.
 </p>
-<img src="47.jpg" alt="Hội Quán Triều Châu"/>
+<img src="47.webp" alt="Hội Quán Triều Châu"/>
 <p>
     Và cuối cùng, một bí mật nhỏ: vào năm 1989, các nhà khảo cổ đã phát hiện nhiều đồ gốm sứ và tiền xu cổ từ thế kỷ 15-20, được sản xuất tại Trung Quốc, Nhật Bản và Việt Nam, bên dưới Hội Quán Triều Châu! Những phát hiện này một lần nữa chứng minh rằng Hội An là một thương cảng vô cùng sầm uất.
 </p>
@@ -4334,7 +4304,13 @@ export const museumLandmarks: Landmark[] = [
     Hội Quán Triều Châu là một trong những di tích kiến trúc và văn hóa quan trọng và độc đáo nhất ở Hội An. Hãy chắc chắn ghé qua để tìm hiểu sâu hơn về lịch sử và hiểu cách các nền văn hóa khác nhau đã định hình thành phố cổ này.
 </p>
     `,
-      internalImageNames: ['43.jpg', '44.jpg', '45.jpg', '46.jpg', '47.jpg'],
+      internalImageNames: [
+        '43.webp',
+        '44.webp',
+        '45.webp',
+        '46.webp',
+        '47.webp',
+      ],
     },
 
     slug: {
@@ -4350,7 +4326,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'precious-heritage-art-gallery-museum',
     coordinates: [15.877098800954702, 108.33427527794125],
     category: ['art-galleries', 'museum'],
-    imageUrl: '48.jpg',
+    imageUrl: '48.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)
@@ -4362,7 +4338,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     For a moment, forget about ancient temples and trading houses. In Hoi An, there's a truly special place where history is written not in stone, but in human faces and stories. We're talking about the <strong>Precious Heritage Art Gallery Museum</strong>, a project by French photographer <strong>Réhahn</strong>, a man called "the photographer who captures the souls of his models."
 </p>
-<img src="49.jpg" alt="Precious Heritage Art Gallery Museum"/>
+<img src="49.webp" alt="Precious Heritage Art Gallery Museum"/>
 <p>
     Réhahn is not just a man with a camera. He is a true explorer of humanity who traveled to over 35 countries before settling in his beloved Hoi An. For him, photography is a way to get closer to people, hear their stories, and understand their culture. "Good contact (and photography) starts with respect," says Réhahn, and his works reflect this in every frame.
 </p>
@@ -4371,7 +4347,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     In 2011, Réhahn met a woman who changed everything – a 72-year-old boat captain named <strong>Bui Thi Xong</strong>. When he asked to take her portrait, she shyly laughed and covered her mouth. This is how the legendary photograph <strong>"Hidden Smile"</strong> came to be – a photo that conquered the world, became the most expensive Asian photograph (sold for $150,000!), and was even presented by the President of Vietnam to Emmanuel Macron.
 </p>
-<img src="52.jpg" alt="Precious Heritage Art Gallery Museum"/>
+<img src="52.webp" alt="Precious Heritage Art Gallery Museum"/>
 <p>
     For Réhahn, this photograph is "the embodiment of true Vietnam," a mix of modesty, humor, wisdom, and happiness. And it was this encounter that inspired him to create the <strong>Giving Back Project</strong>, a project to return a portion of the profits to the subjects of his photographs.
 </p>
@@ -4383,7 +4359,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Réhahn's most ambitious project is <strong>Precious Heritage</strong>. It began with studying the 54 ethnic groups of Vietnam and evolved into a decade-long exploration of their cultural heritage, crafts, and stories. By 2020, Réhahn completed his mission, having met representatives of all groups.
 </p>
-<img src="51.jpg" alt="Precious Heritage Art Gallery Museum"/>
+<img src="51.webp" alt="Precious Heritage Art Gallery Museum"/>
 <p>
     And the result of this incredible work is the <strong>Precious Heritage Museum in Hoi An</strong>, opened in 2017. It is the only museum in the world that houses artifacts from all ethnic groups of Vietnam! Imagine: 100 stunning photographs, 62 authentic national costumes, five halls, and 500 square meters of space dedicated to cultural diversity.
 </p>
@@ -4393,10 +4369,16 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Visiting the Precious Heritage Art Gallery Museum is not just a tour; it's an emotional journey that will allow you to glimpse into the most hidden corners of Vietnam through the faces of its people. Prepare to leave inspired and with a smile on your face!
 </p>
-<img src="50.jpg" alt="Precious Heritage Art Gallery Museum"/>
+<img src="50.webp" alt="Precious Heritage Art Gallery Museum"/>
 
     `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+      internalImageNames: [
+        '48.webp',
+        '49.webp',
+        '50.webp',
+        '51.webp',
+        '52.webp',
+      ],
     },
 
     // =========================================================================
@@ -4409,7 +4391,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     На мгновение забудьте о древних храмах и торговых домах. В Хойане есть поистине особенное место, где история пишется не камнем, а человеческими лицами и рассказами. Речь идет о <strong>Музее-галерее искусства «Ценное наследие»</strong> — проекте французского фотографа <strong>Реана (Réhahn)</strong>, человека, которого называют «фотографом, улавливающим души своих моделей».
 </p>
-<img src="49.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
+<img src="49.webp" alt="Музей-галерея искусства «Ценное наследие»"/>
 <p>
     Реан — не просто человек с камерой. Он настоящий исследователь человечества, который путешествовал по более чем 35 странам, прежде чем поселиться в своем любимом Хойане. Для него фотография — это способ сблизиться с людьми, услышать их истории и понять их культуру. «Хороший контакт (и фотография) начинаются с уважения», — говорит Реан, и его работы отражают это в каждом кадре.
 </p>
@@ -4418,7 +4400,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     В 2011 году Реан встретил женщину, которая изменила все, — 72-летнюю капитаншу лодки по имени <strong>Буй Тхи Сонг</strong>. Когда он попросил ее разрешения сделать портрет, она застенчиво засмеялась и прикрыла рот. Так появилась легендарная фотография <strong>«Скрытая улыбка»</strong> — снимок, который покорил мир, стал самой дорогой азиатской фотографией (продан за 150 000 долларов!) и даже был подарен президентом Вьетнама Эммануэлю Макрону.
 </p>
-<img src="52.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
+<img src="52.webp" alt="Музей-галерея искусства «Ценное наследие»"/>
 <p>
     Для Реана эта фотография — «воплощение истинного Вьетнама», смесь скромности, юмора, мудрости и счастья. И именно эта встреча вдохновила его на создание <strong>проекта «Возвращая должное» (Giving Back Project)</strong> — проекта по возвращению части прибыли героям его фотографий.
 </p>
@@ -4430,7 +4412,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Самый амбициозный проект Реана — <strong>«Ценное наследие» (Precious Heritage)</strong>. Он начался с изучения 54 этнических групп Вьетнама и превратился в десятилетнее исследование их культурного наследия, ремесел и историй. К 2020 году Реан завершил свою миссию, встретившись с представителями всех групп.
 </p>
-<img src="51.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
+<img src="51.webp" alt="Музей-галерея искусства «Ценное наследие»"/>
 <p>
     И результатом этой невероятной работы стал <strong>Музей «Ценное наследие» в Хойане</strong>, открытый в 2017 году. Это единственный в мире музей, в котором хранятся артефакты всех этнических групп Вьетнама! Представьте себе: 100 потрясающих фотографий, 62 подлинных национальных костюма, пять залов и 500 квадратных метров площади, посвященной культурному разнообразию.
 </p>
@@ -4440,10 +4422,16 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Посещение Музея-галереи искусства «Ценное наследие» — это не просто экскурсия; это эмоциональное путешествие, которое позволит вам заглянуть в самые потаенные уголки Вьетнама через лица его людей. Приготовьтесь уйти вдохновленными и с улыбкой на лице!
 </p>
-<img src="50.jpg" alt="Музей-галерея искусства «Ценное наследие»"/>
+<img src="50.webp" alt="Музей-галерея искусства «Ценное наследие»"/>
 
     `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+      internalImageNames: [
+        '48.webp',
+        '49.webp',
+        '50.webp',
+        '51.webp',
+        '52.webp',
+      ],
     },
 
     // =========================================================================
@@ -4456,7 +4444,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Por un momento, olvídese de los templos antiguos y las casas comerciales. En Hoi An, hay un lugar verdaderamente especial donde la historia no está escrita en piedra, sino en rostros e historias humanas. Estamos hablando del <strong>Museo Galería de Arte Patrimonio Precioso</strong>, un proyecto del fotógrafo francés <strong>Réhahn</strong>, un hombre llamado "el fotógrafo que captura las almas de sus modelos".
 </p>
-<img src="49.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
+<img src="49.webp" alt="Museo Galería de Arte Patrimonio Precioso"/>
 <p>
     Réhahn no es solo un hombre con una cámara. Es un verdadero explorador de la humanidad que viajó por más de 35 países antes de establecerse en su amado Hoi An. Para él, la fotografía es una forma de acercarse a las personas, escuchar sus historias y comprender su cultura. "Un buen contacto (y fotografía) comienza con el respeto", dice Réhahn, y sus obras lo reflejan en cada encuadre.
 </p>
@@ -4465,7 +4453,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     En 2011, Réhahn conoció a una mujer que lo cambió todo: una capitana de barco de 72 años llamada <strong>Bui Thi Xong</strong>. Cuando le pidió tomar su retrato, ella se rió tímidamente y se cubrió la boca. Así nació la legendaria fotografía <strong>"Sonrisa Oculta"</strong>, una foto que conquistó el mundo, se convirtió en la fotografía asiática más cara (¡vendida por $150,000!), e incluso fue presentada por el Presidente de Vietnam a Emmanuel Macron.
 </p>
-<img src="52.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
+<img src="52.webp" alt="Museo Galería de Arte Patrimonio Precioso"/>
 <p>
     Para Réhahn, esta fotografía es "la encarnación del verdadero Vietnam", una mezcla de modestia, humor, sabiduría y felicidad. Y fue este encuentro lo que lo inspiró a crear el <strong>Proyecto de Devolución (Giving Back Project)</strong>, un proyecto para devolver una parte de las ganancias a los sujetos de sus fotografías.
 </p>
@@ -4477,7 +4465,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     El proyecto más ambicioso de Réhahn es <strong>Patrimonio Precioso (Precious Heritage)</strong>. Comenzó con el estudio de los 54 grupos étnicos de Vietnam y evolucionó hacia una exploración de una década de su patrimonio cultural, artesanías e historias. Para 2020, Réhahn completó su misión, habiendo conocido a representantes de todos los grupos.
 </p>
-<img src="51.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
+<img src="51.webp" alt="Museo Galería de Arte Patrimonio Precioso"/>
 <p>
     Y el resultado de este increíble trabajo es el <strong>Museo Patrimonio Precioso en Hoi An</strong>, inaugurado en 2017. ¡Es el único museo en el mundo que alberga artefactos de todos los grupos étnicos de Vietnam! Imagínese: 100 fotografías impresionantes, 62 trajes nacionales auténticos, cinco salas y 500 metros cuadrados de espacio dedicados a la diversidad cultural.
 </p>
@@ -4487,10 +4475,16 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Visitar el Museo Galería de Arte Patrimonio Precioso no es solo un recorrido; es un viaje emocional que le permitirá vislumbrar los rincones más ocultos de Vietnam a través de los rostros de su gente. ¡Prepárese para irse inspirado y con una sonrisa en su rostro!
 </p>
-<img src="50.jpg" alt="Museo Galería de Arte Patrimonio Precioso"/>
+<img src="50.webp" alt="Museo Galería de Arte Patrimonio Precioso"/>
 
     `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+      internalImageNames: [
+        '48.webp',
+        '49.webp',
+        '50.webp',
+        '51.webp',
+        '52.webp',
+      ],
     },
 
     // =========================================================================
@@ -4503,7 +4497,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Oubliez un instant les temples anciens et les maisons de commerce. À Hoi An, il existe un lieu vraiment spécial où l'histoire n'est pas écrite dans la pierre, mais dans les visages et les histoires humaines. Nous parlons du <strong>Musée-Galerie d'Art du Patrimoine Précieux</strong>, un projet du photographe français <strong>Réhahn</strong>, un homme surnommé "le photographe qui capture l'âme de ses modèles".
 </p>
-<img src="49.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
+<img src="49.webp" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
 <p>
     Réhahn n'est pas seulement un homme avec un appareil photo. C'est un véritable explorateur de l'humanité qui a voyagé dans plus de 35 pays avant de s'installer dans son cher Hoi An. Pour lui, la photographie est un moyen de se rapprocher des gens, d'écouter leurs histoires et de comprendre leur culture. "Un bon contact (et la photographie) commence par le respect", dit Réhahn, et ses œuvres le reflètent dans chaque image.
 </p>
@@ -4512,7 +4506,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     En 2011, Réhahn a rencontré une femme qui a tout changé – une capitaine de bateau de 72 ans nommée <strong>Bui Thi Xong</strong>. Quand il lui a demandé de prendre son portrait, elle a ri timidement et a couvert sa bouche. C'est ainsi qu'est née la légendaire photographie <strong>"Sourire Caché"</strong> – une photo qui a conquis le monde, est devenue la photographie asiatique la plus chère (vendue pour 150 000 $ !), et a même été présentée par le Président du Vietnam à Emmanuel Macron.
 </p>
-<img src="52.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
+<img src="52.webp" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
 <p>
     Pour Réhahn, cette photographie est "l'incarnation du vrai Vietnam", un mélange de modestie, d'humour, de sagesse et de bonheur. Et c'est cette rencontre qui l'a inspiré à créer le <strong>Projet de Redonner (Giving Back Project)</strong>, un projet visant à reverser une partie des bénéfices aux sujets de ses photographies.
 </p>
@@ -4524,7 +4518,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Le projet le plus ambitieux de Réhahn est le <strong>Patrimoine Précieux</strong>. Il a commencé par l'étude des 54 groupes ethniques du Vietnam et a évolué vers une exploration d'une décennie de leur patrimoine culturel, de leurs métiers et de leurs histoires. En 2020, Réhahn a achevé sa mission, après avoir rencontré des représentants de tous les groupes.
 </p>
-<img src="51.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
+<img src="51.webp" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
 <p>
     Et le résultat de ce travail incroyable est le <strong>Musée du Patrimoine Précieux à Hoi An</strong>, ouvert en 2017. C'est le seul musée au monde qui abrite des artefacts de toutes les ethnies du Vietnam ! Imaginez : 100 photographies époustouflantes, 62 costumes nationaux authentiques, cinq salles et 500 mètres carrés d'espace dédiés à la diversité culturelle.
 </p>
@@ -4534,10 +4528,16 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Visiter le Musée-Galerie d'Art du Patrimoine Précieux n'est pas seulement une visite ; c'est un voyage émotionnel qui vous permettra de jeter un coup d'œil dans les coins les plus cachés du Vietnam à travers les visages de ses habitants. Préparez-vous à repartir inspiré et avec le sourire aux lèvres !
 </p>
-<img src="50.jpg" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
+<img src="50.webp" alt="Musée-Galerie d'Art du Patrimoine Précieux"/>
 
     `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+      internalImageNames: [
+        '48.webp',
+        '49.webp',
+        '50.webp',
+        '51.webp',
+        '52.webp',
+      ],
     },
 
     // =========================================================================
@@ -4550,7 +4550,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Trong chốc lát, hãy quên đi những ngôi chùa cổ kính và những ngôi nhà buôn bán. Ở Hội An, có một nơi thực sự đặc biệt nơi lịch sử không được viết bằng đá, mà bằng những khuôn mặt và câu chuyện của con người. Chúng ta đang nói về <strong>Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá</strong>, một dự án của nhiếp ảnh gia người Pháp <strong>Réhahn</strong>, người được mệnh danh là "nhiếp ảnh gia nắm bắt tâm hồn của những người mẫu".
 </p>
-<img src="49.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
+<img src="49.webp" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
 <p>
     Réhahn không chỉ là một người đàn ông cầm máy ảnh. Anh ấy là một nhà thám hiểm nhân loại thực thụ, người đã đi hơn 35 quốc gia trước khi định cư tại Hội An yêu dấu của mình. Đối với anh, nhiếp ảnh là một cách để đến gần hơn với con người, lắng nghe câu chuyện của họ và hiểu văn hóa của họ. "Sự tiếp xúc tốt (và nhiếp ảnh) bắt đầu bằng sự tôn trọng," Réhahn nói, và các tác phẩm của anh ấy phản ánh điều này trong mỗi khung hình.
 </p>
@@ -4559,7 +4559,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Năm 2011, Réhahn gặp một người phụ nữ đã thay đổi mọi thứ – một thuyền trưởng 72 tuổi tên là <strong>Bùi Thị Xong</strong>. Khi anh ấy yêu cầu chụp chân dung của bà, bà cười bẽn lẽn và che miệng. Đây là cách bức ảnh huyền thoại <strong>"Nụ Cười Ẩn Giấu"</strong> ra đời – một bức ảnh đã chinh phục thế giới, trở thành bức ảnh châu Á đắt nhất (bán với giá 150.000 đô la!), và thậm chí còn được Chủ tịch Việt Nam tặng cho Emmanuel Macron.
 </p>
-<img src="52.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
+<img src="52.webp" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
 <p>
     Đối với Réhahn, bức ảnh này là "hiện thân của Việt Nam chân thực", một sự pha trộn giữa sự khiêm tốn, hài hước, trí tuệ và hạnh phúc. Và chính cuộc gặp gỡ này đã truyền cảm hứng cho anh tạo ra <strong>Dự Án Trao Lại (Giving Back Project)</strong>, một dự án nhằm trả lại một phần lợi nhuận cho những người được chụp ảnh.
 </p>
@@ -4571,7 +4571,7 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Dự án tham vọng nhất của Réhahn là <strong>Di Sản Quý Giá (Precious Heritage)</strong>. Nó bắt đầu bằng việc nghiên cứu 54 dân tộc thiểu số của Việt Nam và phát triển thành một cuộc khám phá kéo dài một thập kỷ về di sản văn hóa, nghề thủ công và câu chuyện của họ. Đến năm 2020, Réhahn đã hoàn thành sứ mệnh của mình, sau khi gặp gỡ đại diện của tất cả các nhóm.
 </p>
-<img src="51.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
+<img src="51.webp" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
 <p>
     Và kết quả của công việc đáng kinh ngạc này là <strong>Bảo Tàng Di Sản Quý Giá ở Hội An</strong>, khai trương vào năm 2017. Đây là bảo tàng duy nhất trên thế giới lưu giữ các hiện vật từ tất cả các dân tộc thiểu số của Việt Nam! Hãy tưởng tượng: 100 bức ảnh tuyệt đẹp, 62 bộ trang phục dân tộc đích thực, năm sảnh và 500 mét vuông không gian dành riêng cho sự đa dạng văn hóa.
 </p>
@@ -4581,10 +4581,16 @@ export const museumLandmarks: Landmark[] = [
 <p>
     Ghé thăm Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá không chỉ là một chuyến tham quan; đó là một hành trình cảm xúc sẽ cho phép bạn nhìn thoáng qua những góc khuất nhất của Việt Nam qua khuôn mặt của những người dân nơi đây. Hãy chuẩn bị để ra về với cảm hứng và nụ cười trên môi!
 </p>
-<img src="50.jpg" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
+<img src="50.webp" alt="Bảo Tàng Phòng Trưng Bày Nghệ Thuật Di Sản Quý Giá"/>
 
     `,
-      internalImageNames: ['48.jpg', '49.jpg', '50.jpg', '51.jpg', '52.jpg'],
+      internalImageNames: [
+        '48.webp',
+        '49.webp',
+        '50.webp',
+        '51.webp',
+        '52.webp',
+      ],
     },
 
     slug: {
@@ -4600,7 +4606,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'ba-my-temple-gate',
     coordinates: [15.878134915388056, 108.32715736781965],
     category: ['museum'],
-    imageUrl: '60.jpg',
+    imageUrl: '60.webp',
 
     en: {
       title: 'Ba Mu Temple Gate',
@@ -4618,7 +4624,7 @@ export const museumLandmarks: Landmark[] = [
 
 <p>Notice the pond before the gate. In Taoist tradition, water represents <em>Yin</em>—softness and depth—balancing the <em>Yang</em> of the stone and sun. The gate’s reflection creates an illusion of a perfect circle, echoing the Buddhist Wheel of Samsara and the eternal cycle of rebirth.</p>
 `,
-      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
+      internalImageNames: ['ba-mu-1.webp', 'ba-mu-2.webp'],
     },
 
     // =========================================================================
@@ -4640,7 +4646,7 @@ export const museumLandmarks: Landmark[] = [
 
 <p>Обратите внимание на пруд перед воротами. В даосской традиции вода символизирует <em>Инь</em> — мягкость и глубину, уравновешивая <em>Ян</em> — твердость камня и яркость солнца. Отражение ворот в воде создает иллюзию полного круга, напоминая о буддийском колесе Сансары и бесконечном цикле перерождений.</p>
 `,
-      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
+      internalImageNames: ['ba-mu-1.webp', 'ba-mu-2.webp'],
     },
 
     // =========================================================================
@@ -4662,7 +4668,7 @@ export const museumLandmarks: Landmark[] = [
 
 <p>Observe el estanque frente a la puerta. En la tradición taoísta, el agua representa el <em>Yin</em> —suavidad y profundidad— equilibrando el <em>Yang</em> de la piedra y el sol. El reflejo crea la ilusión de un círculo completo, evocando la Rueda del Samsara budista y el ciclo eterno del renacimiento.</p>
 `,
-      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
+      internalImageNames: ['ba-mu-1.webp', 'ba-mu-2.webp'],
     },
 
     // =========================================================================
@@ -4684,7 +4690,7 @@ export const museumLandmarks: Landmark[] = [
 
 <p>Remarquez l'étang devant la porte. Dans la tradition taoïste, l'eau représente le <em>Yin</em> — douceur et profondeur — équilibrant le <em>Yang</em> de la pierre et du soleil. Le reflet crée l'illusion d'un cercle parfait, rappelant la Roue du Samsara bouddhiste et le cycle éternel des renaissances.</p>
 `,
-      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
+      internalImageNames: ['ba-mu-1.webp', 'ba-mu-2.webp'],
     },
 
     // =========================================================================
@@ -4706,7 +4712,7 @@ export const museumLandmarks: Landmark[] = [
 
 <p>Hãy chú ý hồ nước trước cổng. Trong truyền thống Đạo giáo, nước tượng trưng cho <em>Âm</em> — sự mềm mại, sâu thẳm — cân bằng với <em>Dương</em> của đá và mặt trời. Bóng cổng soi xuống nước tạo nên ảo ảnh của một vòng tròn hoàn hảo, gợi nhắc về Bánh xe Luân hồi trong Phật giáo và sự tái sinh bất tận.</p>
 `,
-      internalImageNames: ['ba-mu-1.jpg', 'ba-mu-2.jpg'],
+      internalImageNames: ['ba-mu-1.webp', 'ba-mu-2.webp'],
     },
 
     slug: {
@@ -4722,7 +4728,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'hoi-an-museum',
     coordinates: [15.880312100426158, 108.32950950063537], // Координаты сохранены
     category: ['museum'],
-    imageUrl: '63.jpg',
+    imageUrl: '63.webp',
 
     // =========================================================================
     // ENGLISH CONTENT (en)

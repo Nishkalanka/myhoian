@@ -6,7 +6,7 @@ export const foodDrinksLandmarks: Landmark[] = [
     id: 'hill-station',
     coordinates: [15.877801450043398, 108.33391777335922],
     category: ['food-drinks'],
-    imageUrl: '53.jpg',
+    imageUrl: '53.webp',
     en: {
       title: 'The Hill Station Deli & Boutique',
       description:
@@ -2799,7 +2799,7 @@ export const foodDrinksLandmarks: Landmark[] = [
     id: 'sua-vegan-restaurant', // <-- ID теперь строковый
     coordinates: [15.883638636542983, 108.32000846236811], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['food-drinks'],
-    imageUrl: '58.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '58.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
       title: 'Sua Vegan Restaurant',
       description:
@@ -3024,61 +3024,1548 @@ export const foodDrinksLandmarks: Landmark[] = [
     // vn: { /* Вьетнамский контент здесь, если есть */ },
   },
   //fefe-Roastery
+
   {
-    id: 'fefe-roastery', // <-- ID теперь строковый
-    coordinates: [15.877930767963667, 108.32668616386269], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    id: 'fefe-roastery',
+    coordinates: [15.877930767963667, 108.32668616386269],
     category: ['food-drinks'],
-    imageUrl: '61.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '61.webp',
+
     en: {
-      title: 'Fefe Roastery ',
+      title: 'Fefe Roastery',
       description:
-        'FeFe Roastery is a serene haven for coffee enthusiasts and food lovers alike.',
+        'Serene coffee haven offering premium Vietnamese coffee, specialty espresso drinks, smoothies, fresh juices, and authentic coffee experiences in a charming atmosphere.',
       fullDescription: `
-<p>Nestled in front of the iconic Ba Mu Temple, FeFe Roastery is a serene haven for coffee enthusiasts and food lovers alike. The café boasts an inviting atmosphere with lanterns dancing overhead, making it an ideal spot for relaxation and people-watching. With both outdoor seating that overlooks the vibrant square and a charming indoor garden, guests can enjoy their drinks in various cozy settings. At FeFe Roastery, the coffee experience is elevated to new heights.
-</p>
-      `,
-      internalImageNames: [], // Добавьте имена файлов изображений, если они будут
+<p>FeFe Roastery is a serene haven for coffee lovers alike.</p>
+    `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Smoothies',
+          items: [
+            {
+              name: 'Mango',
+              description: 'Smooth and creamy mango bliss',
+              price: '85.000',
+            },
+            {
+              name: 'Strawberry',
+              description: 'Fresh strawberry smoothie',
+              price: '85.000',
+            },
+            {
+              name: 'Avocado',
+              description: 'Creamy avocado delight',
+              price: '90.000',
+            },
+            {
+              name: 'Sunrise',
+              description: 'Pineapple, mango, banana, chia seeds',
+              price: '90.000',
+            },
+            {
+              name: 'Midday',
+              description:
+                'Strawberry, banana, red dragon fruit, mango, chia seeds',
+              price: '90.000',
+            },
+            {
+              name: 'Gloaming',
+              description: 'Pineapple, banana, mango, avocado',
+              price: '90.000',
+            },
+            {
+              name: 'Twilight',
+              description: 'Avocado, banana, honey, natural yogurt',
+              price: '90.000',
+            },
+            {
+              name: 'Sunset',
+              description: 'Mango, pineapple, passion fruit, banana',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Vietnamese Coffee',
+          items: [
+            {
+              name: 'Black Coffee',
+              description: 'Traditional dark roast Vietnamese coffee',
+              price: '50.000',
+            },
+            {
+              name: 'Coffee with Condensed Milk',
+              description:
+                'Classic Vietnamese style with sweetened condensed milk',
+              price: '55.000',
+            },
+            {
+              name: 'Saigon Black',
+              description: 'Rich black coffee speciality',
+              price: '55.000',
+            },
+            {
+              name: 'Saigon Brown',
+              description: 'Light brown coffee with perfect balance',
+              price: '65.000',
+            },
+            {
+              name: 'White Coffee',
+              description: 'Light and smooth Vietnamese white coffee',
+              price: '65.000',
+            },
+            {
+              name: 'Egg Coffee',
+              description: 'Traditional Hoi An specialty with whipped egg yolk',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Espresso',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Pure shot of espresso',
+              price: '55.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso with hot water',
+              price: '55.000',
+            },
+            {
+              name: 'Macchiato',
+              description: 'Espresso with splash of milk',
+              price: '75.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Espresso with steamed milk and foam',
+              price: '70.000',
+            },
+            {
+              name: 'Latte',
+              description: 'Espresso with steamed milk',
+              price: '75.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Espresso with velvety steamed milk',
+              price: '75.000',
+            },
+            {
+              name: 'Babyccino',
+              description: 'Steamed milk with cocoa powder for kids',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Manual Coffee',
+          items: [
+            {
+              name: 'V60',
+              description: 'Hand-drip coffee perfection',
+              price: '105.000',
+            },
+            {
+              name: 'Kalita',
+              description: 'Smooth hand-drip brewing',
+              price: '105.000',
+            },
+            {
+              name: 'Chemex',
+              description: 'Classic glass brewing vessel',
+              price: '105.000',
+            },
+            {
+              name: 'Syphon',
+              description: 'Theatrical vacuum pot brewing',
+              price: '115.000',
+            },
+            {
+              name: 'Ice Drip',
+              description: 'Slow drip cold brew method (or with Fresh Milk)',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Matcha',
+          items: [
+            {
+              name: 'Matcha Latte',
+              description: 'Matcha + milk of choice + sugar (separate)',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Chocolate',
+          items: [
+            {
+              name: 'Chocolate',
+              description: 'Chocolate + milk of choice + condensed milk',
+              price: '70.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Signature Drinks',
+          items: [
+            {
+              name: 'Salted Coffee',
+              description: 'Coffee with condensed milk + Salty foam',
+              price: '65.000',
+            },
+            {
+              name: 'Ora-Americano',
+              description: 'Espresso + Orange + Sugar',
+              price: '65.000',
+            },
+            {
+              name: 'Hat De Mua He',
+              description: 'Cold brew + Fresh milk + Hazelnut syrup',
+              price: '75.000',
+            },
+            {
+              name: 'Huong',
+              description: 'Cold brew + Lemon juice + Sugar + Rosemary',
+              price: '75.000',
+            },
+            {
+              name: 'Coconut Latte',
+              description: 'Espresso + Coconut cream + Condensed milk',
+              price: '75.000',
+            },
+            {
+              name: 'Inesoy',
+              description:
+                'Espresso + Soya milk + Vanilla syrup + Pandan leaves',
+              price: '75.000',
+            },
+            {
+              name: 'Joyful',
+              description: 'Espresso + Citron tea',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Plain Juice',
+          items: [
+            {
+              name: 'Orange',
+              description: 'Freshly squeezed orange juice',
+              price: '75.000',
+            },
+            {
+              name: 'Pineapple',
+              description: 'Freshly squeezed pineapple juice',
+              price: '75.000',
+            },
+            {
+              name: 'Carrot',
+              description: 'Freshly squeezed carrot juice',
+              price: '75.000',
+            },
+            {
+              name: 'Water Melon',
+              description: 'Freshly squeezed watermelon juice',
+              price: '75.000',
+            },
+            {
+              name: 'Passion Fruit',
+              description: 'Freshly squeezed passion fruit juice',
+              price: '75.000',
+            },
+            {
+              name: 'Cinnamon Lemon',
+              description: 'Cinnamon and lemon juice blend',
+              price: '75.000',
+            },
+            {
+              name: 'Coconut',
+              description: 'Fresh coconut juice',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Mixed Juice',
+          items: [
+            {
+              name: 'Hey new day',
+              description: 'Carrot, apple, lime, beetroot, ginger',
+              price: '90.000',
+            },
+            {
+              name: 'Refresher',
+              description: 'Pineapple, watermelon, lime, mint leaves',
+              price: '85.000',
+            },
+            {
+              name: 'Body detox',
+              description: 'Cucumber, apple, ginger, pineapple, lime',
+              price: '90.000',
+            },
+            {
+              name: 'Flu fighter',
+              description: 'Carrot, orange, ginger',
+              price: '85.000',
+            },
+            {
+              name: 'Love your liver',
+              description: 'Apple, cucumber, carrot, ginger, pineapple',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Extras',
+          items: [
+            {
+              name: 'Any fruit',
+              description: 'Add any fruit to your drink',
+              price: '15.000',
+            },
+            { name: 'Ginger', description: 'Add ginger - free', price: '0' },
+          ],
+        },
+      ],
     },
+
+    ru: {
+      title: 'Fefe Roastery',
+      description:
+        'Уютное кофейное пространство с премиум вьетнамским кофе, специальными эспрессо-напитками, смузи и свежими соками в очаровательной атмосфере.',
+      fullDescription: `
+<p>FeFe Roastery – это уютное пространство для любителей кофе.</p>
+    `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Смузи',
+          items: [
+            {
+              name: 'Манго',
+              description: 'Гладкое и кремовое манговое блаженство',
+              price: '85.000',
+            },
+            {
+              name: 'Клубника',
+              description: 'Свежий клубничный смузи',
+              price: '85.000',
+            },
+            {
+              name: 'Авокадо',
+              description: 'Кремовое авокадо',
+              price: '90.000',
+            },
+            {
+              name: 'Восход',
+              description: 'Ананас, манго, банан, семена чиа',
+              price: '90.000',
+            },
+            {
+              name: 'Полдень',
+              description:
+                'Клубника, банан, красный драконий фрукт, манго, семена чиа',
+              price: '90.000',
+            },
+            {
+              name: 'Сумерки',
+              description: 'Ананас, банан, манго, авокадо',
+              price: '90.000',
+            },
+            {
+              name: 'Закат солнца',
+              description: 'Авокадо, банан, мёд, натуральный йогурт',
+              price: '90.000',
+            },
+            {
+              name: 'Закат',
+              description: 'Манго, ананас, маракуйя, банан',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Вьетнамский кофе',
+          items: [
+            {
+              name: 'Чёрный кофе',
+              description: 'Традиционный тёмный вьетнамский кофе',
+              price: '50.000',
+            },
+            {
+              name: 'Кофе со сгущённым молоком',
+              description:
+                'Классический вьетнамский стиль со сгущённым молоком',
+              price: '55.000',
+            },
+            {
+              name: 'Сайгон Чёрный',
+              description: 'Насыщенный чёрный кофе',
+              price: '55.000',
+            },
+            {
+              name: 'Сайгон Коричневый',
+              description: 'Светлый кофе с идеальным балансом',
+              price: '65.000',
+            },
+            {
+              name: 'Белый кофе',
+              description: 'Лёгкий и гладкий вьетнамский белый кофе',
+              price: '65.000',
+            },
+            {
+              name: 'Кофе с яйцом',
+              description:
+                'Традиционная хойанская специальность с взбитым желтком',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Эспрессо',
+          items: [
+            {
+              name: 'Эспрессо',
+              description: 'Чистый выстрел эспрессо',
+              price: '55.000',
+            },
+            {
+              name: 'Американо',
+              description: 'Эспрессо с горячей водой',
+              price: '55.000',
+            },
+            {
+              name: 'Макиато',
+              description: 'Эспрессо со всплеском молока',
+              price: '75.000',
+            },
+            {
+              name: 'Капучино',
+              description: 'Эспрессо с вспенённым молоком',
+              price: '70.000',
+            },
+            {
+              name: 'Латте',
+              description: 'Эспрессо с вспенённым молоком',
+              price: '75.000',
+            },
+            {
+              name: 'Флэт Уайт',
+              description: 'Эспрессо с нежным вспенённым молоком',
+              price: '75.000',
+            },
+            {
+              name: 'Бебиччино',
+              description: 'Вспенённое молоко с какао для детей',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Ручной кофе',
+          items: [
+            {
+              name: 'V60',
+              description: 'Ручное капание в совершенстве',
+              price: '105.000',
+            },
+            {
+              name: 'Калита',
+              description: 'Гладкое ручное заваривание',
+              price: '105.000',
+            },
+            {
+              name: 'Хемекс',
+              description: 'Классический стеклянный сосуд для заваривания',
+              price: '105.000',
+            },
+            {
+              name: 'Сифон',
+              description: 'Театральное вакуумное заваривание',
+              price: '115.000',
+            },
+            {
+              name: 'Ледяной капель',
+              description:
+                'Медленное холодное заваривание (или со свежим молоком)',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Матча',
+          items: [
+            {
+              name: 'Матча латте',
+              description: 'Матча + молоко на выбор + сахар (отдельно)',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Шоколад',
+          items: [
+            {
+              name: 'Шоколад',
+              description: 'Шоколад + молоко на выбор + сгущённое молоко',
+              price: '70.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Фирменные напитки',
+          items: [
+            {
+              name: 'Солёный кофе',
+              description: 'Кофе со сгущённым молоком + солёная пена',
+              price: '65.000',
+            },
+            {
+              name: 'Ора-Американо',
+              description: 'Эспрессо + апельсин + сахар',
+              price: '65.000',
+            },
+            {
+              name: 'Hat De Mua He',
+              description: 'Холодный кофе + свежее молоко + фундучный сироп',
+              price: '75.000',
+            },
+            {
+              name: 'Huong',
+              description: 'Холодный кофе + лимонный сок + сахар + розмарин',
+              price: '75.000',
+            },
+            {
+              name: 'Кокосовое латте',
+              description: 'Эспрессо + кокосовые сливки + сгущённое молоко',
+              price: '75.000',
+            },
+            {
+              name: 'Inesoy',
+              description:
+                'Эспрессо + соевое молоко + ванильный сироп + листья панданы',
+              price: '75.000',
+            },
+            {
+              name: 'Joyful',
+              description: 'Эспрессо + чай цитрон',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Простые соки',
+          items: [
+            {
+              name: 'Апельсин',
+              description: 'Свежевыжатый апельсиновый сок',
+              price: '75.000',
+            },
+            {
+              name: 'Ананас',
+              description: 'Свежевыжатый ананасовый сок',
+              price: '75.000',
+            },
+            {
+              name: 'Морковь',
+              description: 'Свежевыжатый морковный сок',
+              price: '75.000',
+            },
+            {
+              name: 'Арбуз',
+              description: 'Свежевыжатый арбузный сок',
+              price: '75.000',
+            },
+            {
+              name: 'Маракуйя',
+              description: 'Свежевыжатый сок маракуйи',
+              price: '75.000',
+            },
+            {
+              name: 'Корица и лимон',
+              description: 'Смесь корицы и лимонного сока',
+              price: '75.000',
+            },
+            {
+              name: 'Кокос',
+              description: 'Свежий кокосовый сок',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Смешанные соки',
+          items: [
+            {
+              name: 'Hey new day',
+              description: 'Морковь, яблоко, лайм, свёкла, имбирь',
+              price: '90.000',
+            },
+            {
+              name: 'Refresher',
+              description: 'Ананас, арбуз, лайм, листья мяты',
+              price: '85.000',
+            },
+            {
+              name: 'Body detox',
+              description: 'Огурец, яблоко, имбирь, ананас, лайм',
+              price: '90.000',
+            },
+            {
+              name: 'Flu fighter',
+              description: 'Морковь, апельсин, имбирь',
+              price: '85.000',
+            },
+            {
+              name: 'Love your liver',
+              description: 'Яблоко, огурец, морковь, имбирь, ананас',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Добавки',
+          items: [
+            {
+              name: 'Любой фрукт',
+              description: 'Добавить любой фрукт к напитку',
+              price: '15.000',
+            },
+            {
+              name: 'Имбирь',
+              description: 'Добавить имбирь - бесплатно',
+              price: '0',
+            },
+          ],
+        },
+      ],
+    },
+
     es: {
       title: 'Fefe Roastery',
       description:
-        'FeFe Roastery es un refugio sereno tanto para los entusiastas del café como para los amantes de la buena comida.﻿',
+        'Refugio sereno para amantes del café con café vietnamita premium, bebidas espresso especiales, batidos y jugos frescos en una atmósfera encantadora.',
       fullDescription: `
-<p>Ubicado frente al icónico templo Ba Mu, FeFe Roastery es un refugio sereno tanto para los entusiastas del café como para los amantes de la comida. La cafetería cuenta con una atmósfera acogedora con linternas que danzan en lo alto, lo que la convierte en un lugar ideal para relajarse y observar a la gente. Con asientos al aire libre con vistas a la vibrante plaza y un encantador jardín interior, los huéspedes pueden disfrutar de sus bebidas en varios entornos acogedores. En FeFe Roastery, la experiencia del café se eleva a nuevas alturas.</p>
-      `,
+<p>FeFe Roastery es un refugio sereno para los amantes del café.</p>
+    `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Batidos',
+          items: [
+            {
+              name: 'Mango',
+              description: 'Suave y cremoso deleite de mango',
+              price: '85.000',
+            },
+            {
+              name: 'Fresa',
+              description: 'Batido fresco de fresa',
+              price: '85.000',
+            },
+            {
+              name: 'Aguacate',
+              description: 'Delicia cremosa de aguacate',
+              price: '90.000',
+            },
+            {
+              name: 'Amanecer',
+              description: 'Piña, mango, plátano, semillas de chía',
+              price: '90.000',
+            },
+            {
+              name: 'Mediodía',
+              description:
+                'Fresa, plátano, pitaya roja, mango, semillas de chía',
+              price: '90.000',
+            },
+            {
+              name: 'Crepúsculo',
+              description: 'Piña, plátano, mango, aguacate',
+              price: '90.000',
+            },
+            {
+              name: 'Atardecer',
+              description: 'Aguacate, plátano, miel, yogur natural',
+              price: '90.000',
+            },
+            {
+              name: 'Puesta de sol',
+              description: 'Mango, piña, pasión, plátano',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Café Vietnamita',
+          items: [
+            {
+              name: 'Café Negro',
+              description: 'Café vietnamita tradicional de tueste oscuro',
+              price: '50.000',
+            },
+            {
+              name: 'Café con Leche Condensada',
+              description: 'Estilo vietnamita clásico con leche condensada',
+              price: '55.000',
+            },
+            {
+              name: 'Saigón Negro',
+              description: 'Café negro especialidad rico',
+              price: '55.000',
+            },
+            {
+              name: 'Saigón Marrón',
+              description: 'Café marrón claro con balance perfecto',
+              price: '65.000',
+            },
+            {
+              name: 'Café Blanco',
+              description: 'Café blanco vietnamita ligero y suave',
+              price: '65.000',
+            },
+            {
+              name: 'Café de Huevo',
+              description: 'Especialidad tradicional de Hoi An con yema batida',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Espresso',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Tiro puro de espresso',
+              price: '55.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso con agua caliente',
+              price: '55.000',
+            },
+            {
+              name: 'Macchiato',
+              description: 'Espresso con salpicadura de leche',
+              price: '75.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Espresso con leche vaporizada y espuma',
+              price: '70.000',
+            },
+            {
+              name: 'Latte',
+              description: 'Espresso con leche vaporizada',
+              price: '75.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Espresso con leche vaporizada aterciopelada',
+              price: '75.000',
+            },
+            {
+              name: 'Babyccino',
+              description: 'Leche vaporizada con cacao para niños',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Café Manual',
+          items: [
+            {
+              name: 'V60',
+              description: 'Café de goteo manual perfecto',
+              price: '105.000',
+            },
+            {
+              name: 'Kalita',
+              description: 'Preparación suave de goteo manual',
+              price: '105.000',
+            },
+            {
+              name: 'Chemex',
+              description: 'Vaso de vidrio clásico para preparación',
+              price: '105.000',
+            },
+            {
+              name: 'Sifón',
+              description: 'Preparación teatral de olla de vacío',
+              price: '115.000',
+            },
+            {
+              name: 'Goteo de Hielo',
+              description: 'Método de infusión fría lenta (o con Leche Fresca)',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Matcha',
+          items: [
+            {
+              name: 'Latte de Matcha',
+              description: 'Matcha + leche de tu elección + azúcar (aparte)',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Chocolate',
+          items: [
+            {
+              name: 'Chocolate',
+              description:
+                'Chocolate + leche de tu elección + leche condensada',
+              price: '70.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bebidas Especiales',
+          items: [
+            {
+              name: 'Café Salado',
+              description: 'Café con leche condensada + Espuma salada',
+              price: '65.000',
+            },
+            {
+              name: 'Ora-Americano',
+              description: 'Espresso + Naranja + Azúcar',
+              price: '65.000',
+            },
+            {
+              name: 'Hat De Mua He',
+              description: 'Café frío + Leche fresca + Jarabe de avellana',
+              price: '75.000',
+            },
+            {
+              name: 'Huong',
+              description: 'Café frío + Jugo de limón + Azúcar + Romero',
+              price: '75.000',
+            },
+            {
+              name: 'Latte de Coco',
+              description: 'Espresso + Crema de coco + Leche condensada',
+              price: '75.000',
+            },
+            {
+              name: 'Inesoy',
+              description:
+                'Espresso + Leche de soja + Jarabe de vainilla + Hojas de pandan',
+              price: '75.000',
+            },
+            {
+              name: 'Joyful',
+              description: 'Espresso + Té de cidra',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Jugo Puro',
+          items: [
+            {
+              name: 'Naranja',
+              description: 'Jugo de naranja recién exprimido',
+              price: '75.000',
+            },
+            {
+              name: 'Piña',
+              description: 'Jugo de piña recién exprimido',
+              price: '75.000',
+            },
+            {
+              name: 'Zanahoria',
+              description: 'Jugo de zanahoria recién exprimido',
+              price: '75.000',
+            },
+            {
+              name: 'Sandía',
+              description: 'Jugo de sandía recién exprimido',
+              price: '75.000',
+            },
+            {
+              name: 'Pasión',
+              description: 'Jugo de maracuyá recién exprimido',
+              price: '75.000',
+            },
+            {
+              name: 'Limón y Canela',
+              description: 'Mezcla de jugo de canela y limón',
+              price: '75.000',
+            },
+            {
+              name: 'Coco',
+              description: 'Jugo fresco de coco',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Jugo Mixto',
+          items: [
+            {
+              name: 'Hey new day',
+              description: 'Zanahoria, manzana, lima, remolacha, jengibre',
+              price: '90.000',
+            },
+            {
+              name: 'Refresher',
+              description: 'Piña, sandía, lima, hojas de menta',
+              price: '85.000',
+            },
+            {
+              name: 'Body detox',
+              description: 'Pepino, manzana, jengibre, piña, lima',
+              price: '90.000',
+            },
+            {
+              name: 'Flu fighter',
+              description: 'Zanahoria, naranja, jengibre',
+              price: '85.000',
+            },
+            {
+              name: 'Love your liver',
+              description: 'Manzana, pepino, zanahoria, jengibre, piña',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Extras',
+          items: [
+            {
+              name: 'Cualquier fruta',
+              description: 'Agregue cualquier fruta a su bebida',
+              price: '15.000',
+            },
+            {
+              name: 'Jengibre',
+              description: 'Agregue jengibre - gratis',
+              price: '0',
+            },
+          ],
+        },
+      ],
     },
+
     fr: {
-      title: 'FeFe Roastery',
+      title: 'Fefe Roastery',
       description:
-        'FeFe Roastery est un havre de paix pour les amateurs de café comme pour les gourmands.﻿',
+        'Havre serein pour les amateurs de café offrant du café vietnamien premium, des boissons espresso spécialisées, des smoothies et des jus frais dans une atmosphère charmante.',
       fullDescription: `
-        <p>Niché devant l'emblématique temple Ba Mu, FeFe Roastery est un havre de paix pour les amateurs de café et les gourmands. Le café offre une atmosphère accueillante avec des lanternes dansant au-dessus des têtes, ce qui en fait un lieu idéal pour se détendre et regarder les passants. Avec des places assises en plein air donnant sur la place animée et un charmant jardin intérieur, les clients peuvent savourer leurs boissons dans différents cadres confortables. Chez FeFe Roastery, l'expérience du café est élevée vers de nouveaux sommets.</p>
-      `,
+<p>FeFe Roastery est un havre serein pour les amateurs de café.</p>
+    `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Smoothies',
+          items: [
+            {
+              name: 'Mangue',
+              description: 'Délice de mangue lisse et crémeux',
+              price: '85.000',
+            },
+            {
+              name: 'Fraise',
+              description: 'Smoothie à la fraise frais',
+              price: '85.000',
+            },
+            {
+              name: 'Avocat',
+              description: "Délice crémeux d'avocat",
+              price: '90.000',
+            },
+            {
+              name: 'Levée du soleil',
+              description: 'Ananas, mangue, banane, graines de chia',
+              price: '90.000',
+            },
+            {
+              name: 'Midi',
+              description:
+                'Fraise, banane, fruit du dragon rouge, mangue, graines de chia',
+              price: '90.000',
+            },
+            {
+              name: 'Crépuscule',
+              description: 'Ananas, banane, mangue, avocat',
+              price: '90.000',
+            },
+            {
+              name: 'Crépuscule',
+              description: 'Avocat, banane, miel, yaourt nature',
+              price: '90.000',
+            },
+            {
+              name: 'Coucher de soleil',
+              description: 'Mangue, ananas, passion, banane',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Café Vietnamien',
+          items: [
+            {
+              name: 'Café Noir',
+              description: 'Café vietnamien traditionnel à rôti foncé',
+              price: '50.000',
+            },
+            {
+              name: 'Café au Lait Condensé',
+              description:
+                'Style vietnamien classique avec lait condensé sucré',
+              price: '55.000',
+            },
+            {
+              name: 'Saigon Noir',
+              description: 'Café noir riche spécialité',
+              price: '55.000',
+            },
+            {
+              name: 'Saigon Marron',
+              description: 'Café marron clair avec équilibre parfait',
+              price: '65.000',
+            },
+            {
+              name: 'Café Blanc',
+              description: 'Café blanc vietnamien léger et lisse',
+              price: '65.000',
+            },
+            {
+              name: 'Café aux Œufs',
+              description:
+                "Spécialité traditionnelle de Hoi An avec jaune d'œuf fouetté",
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Espresso',
+          items: [
+            {
+              name: 'Espresso',
+              description: "Coup pur d'espresso",
+              price: '55.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso avec eau chaude',
+              price: '55.000',
+            },
+            {
+              name: 'Macchiato',
+              description: 'Espresso avec trait de lait',
+              price: '75.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Espresso avec lait vaporisé et mousse',
+              price: '70.000',
+            },
+            {
+              name: 'Latte',
+              description: 'Espresso avec lait vaporisé',
+              price: '75.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Espresso avec lait vaporisé velouté',
+              price: '75.000',
+            },
+            {
+              name: 'Babyccino',
+              description: 'Lait vaporisé avec cacao pour enfants',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Café Manuel',
+          items: [
+            {
+              name: 'V60',
+              description: 'Café versé à la main parfait',
+              price: '105.000',
+            },
+            {
+              name: 'Kalita',
+              description: 'Brassage versé à la main lisse',
+              price: '105.000',
+            },
+            {
+              name: 'Chemex',
+              description: 'Verre classique pour le brassage',
+              price: '105.000',
+            },
+            {
+              name: 'Siphon',
+              description: 'Brassage théâtral en pot à vide',
+              price: '115.000',
+            },
+            {
+              name: 'Goutte de Glace',
+              description:
+                "Méthode d'infusion froide lente (ou avec Lait Frais)",
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Matcha',
+          items: [
+            {
+              name: 'Latte Matcha',
+              description: 'Matcha + lait de votre choix + sucre (séparé)',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Chocolat',
+          items: [
+            {
+              name: 'Chocolat',
+              description: 'Chocolat + lait de votre choix + lait condensé',
+              price: '70.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Boissons Signature',
+          items: [
+            {
+              name: 'Café Salé',
+              description: 'Café avec lait condensé + Mousse salée',
+              price: '65.000',
+            },
+            {
+              name: 'Ora-Americano',
+              description: 'Espresso + Orange + Sucre',
+              price: '65.000',
+            },
+            {
+              name: 'Hat De Mua He',
+              description: 'Infusion froide + Lait frais + Sirop de noisette',
+              price: '75.000',
+            },
+            {
+              name: 'Huong',
+              description: 'Infusion froide + Jus de citron + Sucre + Romarin',
+              price: '75.000',
+            },
+            {
+              name: 'Latte Coco',
+              description: 'Espresso + Crème de coco + Lait condensé',
+              price: '75.000',
+            },
+            {
+              name: 'Inesoy',
+              description:
+                'Espresso + Lait de soja + Sirop vanille + Feuilles de pandan',
+              price: '75.000',
+            },
+            {
+              name: 'Joyful',
+              description: 'Espresso + Thé citron',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Jus Pur',
+          items: [
+            {
+              name: 'Orange',
+              description: "Jus d'orange fraîchement pressé",
+              price: '75.000',
+            },
+            {
+              name: 'Ananas',
+              description: "Jus d'ananas fraîchement pressé",
+              price: '75.000',
+            },
+            {
+              name: 'Carotte',
+              description: 'Jus de carotte fraîchement pressé',
+              price: '75.000',
+            },
+            {
+              name: 'Pastèque',
+              description: 'Jus de pastèque fraîchement pressé',
+              price: '75.000',
+            },
+            {
+              name: 'Passion',
+              description: 'Jus de passion fraîchement pressé',
+              price: '75.000',
+            },
+            {
+              name: 'Citron Cannelle',
+              description: 'Mélange de jus de cannelle et citron',
+              price: '75.000',
+            },
+            { name: 'Coco', description: 'Jus de coco frais', price: '75.000' },
+          ],
+        },
+        {
+          categoryName: 'Jus Mixte',
+          items: [
+            {
+              name: 'Hey new day',
+              description: 'Carotte, pomme, citron vert, betterave, gingembre',
+              price: '90.000',
+            },
+            {
+              name: 'Refresher',
+              description: 'Ananas, pastèque, citron vert, feuilles de menthe',
+              price: '85.000',
+            },
+            {
+              name: 'Body detox',
+              description: 'Concombre, pomme, gingembre, ananas, citron vert',
+              price: '90.000',
+            },
+            {
+              name: 'Flu fighter',
+              description: 'Carotte, orange, gingembre',
+              price: '85.000',
+            },
+            {
+              name: 'Love your liver',
+              description: 'Pomme, concombre, carotte, gingembre, ananas',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Extras',
+          items: [
+            {
+              name: "N'importe quel fruit",
+              description: "Ajouter n'importe quel fruit à votre boisson",
+              price: '15.000',
+            },
+            {
+              name: 'Gingembre',
+              description: 'Ajouter du gingembre - gratuit',
+              price: '0',
+            },
+          ],
+        },
+      ],
     },
-    ru: {
-      title: 'FeFe Roastery',
-      description:
-        'FeFe Roastery — это тихая гавань как для ценителей кофе, так и для любителей вкусной еды.',
-      fullDescription: `
-        <p>Расположенный прямо перед знаменитым храмом Ба Му, FeFe Roastery — это тихая гавань как для ценителей кофе, так и для любителей вкусной еды. Кафе отличается гостеприимной атмосферой с танцующими над головой фонариками, что делает его идеальным местом для отдыха и наблюдения за прохожими. Благодаря столикам на улице с видом на оживленную площадь и очаровательному внутреннему саду, гости могут наслаждаться напитками в самых разных уютных уголках. В FeFe Roastery культура потребления кофе возведена на новую высоту.</p>
-      `,
-      internalImageNames: [],
-    },
+
     vn: {
-      title: 'Sua Vegan Restaurant',
+      title: 'Fefe Roastery',
       description:
-        'FeFe Roastery là chốn bình yên dành cho những tín đồ cà phê cũng như những người yêu ẩm thực.﻿',
+        'Không gian cà phê yên tĩnh với cà phê Việt cao cấp, đồ uống espresso đặc biệt, sinh tố và nước ép tươi trong bầu không khí quyến rũ.',
       fullDescription: `
-<p>Nằm ngay trước di tích Cổng chùa Bà Mụ mang tính biểu tượng, FeFe Roastery là một chốn bình yên dành cho những tín đồ cà phê và những người yêu ẩm thực. Quán mang đến bầu không khí lôi cuốn với những chiếc đèn lồng đung đưa trên cao, tạo nên một địa điểm lý tưởng để thư giãn và ngắm nhìn dòng người qua lại. Với chỗ ngồi ngoài trời nhìn ra quảng trường sôi động và khu vườn trong nhà đầy quyến rũ, thực khách có thể thưởng thức đồ uống trong nhiều không gian ấm cúng khác nhau. Tại FeFe Roastery, trải nghiệm cà phê được nâng tầm lên một đẳng cấp mới.</p>
-      `,
+<p>FeFe Roastery là không gian yên tĩnh cho những người yêu cà phê.</p>
+    `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Sinh Tố',
+          items: [
+            {
+              name: 'Xoài',
+              description: 'Sinh tố xoài mềm mại và kem',
+              price: '85.000',
+            },
+            {
+              name: 'Dâu Tây',
+              description: 'Sinh tố dâu tây tươi',
+              price: '85.000',
+            },
+            { name: 'Bơ', description: 'Sinh tố bơ kem', price: '90.000' },
+            {
+              name: 'Mặt Trời Mọc',
+              description: 'Dứa, xoài, chuối, hạt chia',
+              price: '90.000',
+            },
+            {
+              name: 'Buổi Trưa',
+              description: 'Dâu tây, chuối, thanh long đỏ, xoài, hạt chia',
+              price: '90.000',
+            },
+            {
+              name: 'Chạng Vạng',
+              description: 'Dứa, chuối, xoài, bơ',
+              price: '90.000',
+            },
+            {
+              name: 'Hoàng Hôn',
+              description: 'Bơ, chuối, mật ong, sữa chua tự nhiên',
+              price: '90.000',
+            },
+            {
+              name: 'Lặn Dương',
+              description: 'Xoài, dứa, chanh dây, chuối',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cà Phê Việt Nam',
+          items: [
+            {
+              name: 'Cà Phê Đen',
+              description: 'Cà phê Việt truyền thống rang tối',
+              price: '50.000',
+            },
+            {
+              name: 'Cà Phê Sữa Đặc',
+              description: 'Phong cách Việt cổ điển với sữa đặc ngọt',
+              price: '55.000',
+            },
+            {
+              name: 'Sài Gòn Đen',
+              description: 'Cà phê đen giàu đặc biệt',
+              price: '55.000',
+            },
+            {
+              name: 'Sài Gòn Nâu',
+              description: 'Cà phê nâu nhạt với cân bằng hoàn hảo',
+              price: '65.000',
+            },
+            {
+              name: 'Cà Phê Trắng',
+              description: 'Cà phê trắng Việt nhẹ và mịn',
+              price: '65.000',
+            },
+            {
+              name: 'Cà Phê Trứng',
+              description:
+                'Đặc sản truyền thống Hội An với lòng đỏ trứng đánh bông',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Espresso',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Một phát đơn espresso',
+              price: '55.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso với nước nóng',
+              price: '55.000',
+            },
+            {
+              name: 'Macchiato',
+              description: 'Espresso với một chút sữa',
+              price: '75.000',
+            },
+            {
+              name: 'Cappuccino',
+              description: 'Espresso với sữa nóng và bọt',
+              price: '70.000',
+            },
+            {
+              name: 'Latte',
+              description: 'Espresso với sữa nóng',
+              price: '75.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Espresso với sữa nóng nhung',
+              price: '75.000',
+            },
+            {
+              name: 'Babyccino',
+              description: 'Sữa nóng với ca cao cho trẻ em',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cà Phê Thủ Công',
+          items: [
+            {
+              name: 'V60',
+              description: 'Cà phê damit tay hoàn hảo',
+              price: '105.000',
+            },
+            {
+              name: 'Kalita',
+              description: 'Pha chế damit tay mịn',
+              price: '105.000',
+            },
+            {
+              name: 'Chemex',
+              description: 'Bình thủy tinh cổ điển để pha chế',
+              price: '105.000',
+            },
+            {
+              name: 'Syphon',
+              description: 'Pha chế bình chân không sân khấu',
+              price: '115.000',
+            },
+            {
+              name: 'Giọt Nước Đá',
+              description: 'Phương pháp pha chế lạnh chậm (hoặc với Sữa Tươi)',
+              price: '105.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Matcha',
+          items: [
+            {
+              name: 'Matcha Latte',
+              description: 'Matcha + sữa tùy chọn + đường (riêng)',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Sôcôla',
+          items: [
+            {
+              name: 'Sôcôla',
+              description: 'Sôcôla + sữa tùy chọn + sữa đặc',
+              price: '70.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Đồ Uống Đặc Biệt',
+          items: [
+            {
+              name: 'Cà Phê Mặn',
+              description: 'Cà phê với sữa đặc + Bọt mặn',
+              price: '65.000',
+            },
+            {
+              name: 'Ora-Americano',
+              description: 'Espresso + Cam + Đường',
+              price: '65.000',
+            },
+            {
+              name: 'Hat De Mua He',
+              description: 'Pha lạnh + Sữa tươi + Siro hạt dẻ',
+              price: '75.000',
+            },
+            {
+              name: 'Huong',
+              description: 'Pha lạnh + Nước chanh + Đường + Cây hương thảo',
+              price: '75.000',
+            },
+            {
+              name: 'Latte Dừa',
+              description: 'Espresso + Kem dừa + Sữa đặc',
+              price: '75.000',
+            },
+            {
+              name: 'Inesoy',
+              description: 'Espresso + Sữa đậu nành + Siro vani + Lá pandan',
+              price: '75.000',
+            },
+            {
+              name: 'Joyful',
+              description: 'Espresso + Trà citron',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Nước Ép Tinh Khiết',
+          items: [
+            {
+              name: 'Cam',
+              description: 'Nước ép cam vắt tươi',
+              price: '75.000',
+            },
+            {
+              name: 'Dứa',
+              description: 'Nước ép dứa vắt tươi',
+              price: '75.000',
+            },
+            {
+              name: 'Cà Rốt',
+              description: 'Nước ép cà rốt vắt tươi',
+              price: '75.000',
+            },
+            {
+              name: 'Dưa Hấu',
+              description: 'Nước ép dưa hấu vắt tươi',
+              price: '75.000',
+            },
+            {
+              name: 'Chanh Dây',
+              description: 'Nước ép chanh dây vắt tươi',
+              price: '75.000',
+            },
+            {
+              name: 'Quế & Chanh',
+              description: 'Hỗn hợp nước ép quế và chanh',
+              price: '75.000',
+            },
+            { name: 'Dừa', description: 'Nước dừa tươi', price: '75.000' },
+          ],
+        },
+        {
+          categoryName: 'Nước Ép Trộn',
+          items: [
+            {
+              name: 'Hey new day',
+              description: 'Cà rốt, táo, chanh, cà chua đỏ, gừng',
+              price: '90.000',
+            },
+            {
+              name: 'Refresher',
+              description: 'Dứa, dưa hấu, chanh, lá bạc hà',
+              price: '85.000',
+            },
+            {
+              name: 'Body detox',
+              description: 'Dưa chuột, táo, gừng, dứa, chanh',
+              price: '90.000',
+            },
+            {
+              name: 'Flu fighter',
+              description: 'Cà rốt, cam, gừng',
+              price: '85.000',
+            },
+            {
+              name: 'Love your liver',
+              description: 'Táo, dưa chuột, cà rốt, gừng, dứa',
+              price: '90.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bổ Sung',
+          items: [
+            {
+              name: 'Bất Kỳ Trái Cây',
+              description: 'Thêm bất kỳ trái cây nào vào đồ uống của bạn',
+              price: '15.000',
+            },
+            { name: 'Gừng', description: 'Thêm gừng - miễn phí', price: '0' },
+          ],
+        },
+      ],
     },
+
     slug: {
-      // <-- Добавлен объект slug для локализованных URL
       en: 'fefe-roastery',
-      ru: 'fefe-roastery', // <-- Замените на реальный slug para el ruso
+      ru: 'fefe-roastery-kofeynya',
       es: 'fefe-roastery',
       fr: 'fefe-roastery',
       vn: 'fefe-roastery',

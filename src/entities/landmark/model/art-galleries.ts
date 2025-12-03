@@ -6,7 +6,7 @@ export const artGalleriesLandmarks: Landmark[] = [
     id: 'Rainbow-Coffee-Restaurant-Hoi-An', // <-- ID теперь строковый
     coordinates: [15.906708185789533, 108.31573872344867], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['food-drinks', 'art-galleries'], // <-- Категория "museum"
-    imageUrl: '57.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '57.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
       title: 'Rainbow Coffee & Restaurant',
       description:
@@ -235,7 +235,7 @@ export const artGalleriesLandmarks: Landmark[] = [
     id: 'Not-From-Here-Gallery', // <-- ID теперь строковый
     coordinates: [15.886900514248364, 108.36724746339776], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['art-galleries'], // <-- Категория "museum"
-    imageUrl: '59.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '59.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
       title: 'Not From Here Art Gallery',
       description:

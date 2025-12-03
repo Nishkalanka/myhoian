@@ -43,7 +43,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         sx={{
           width: '100%',
           paddingBottom: `${(height / width) * 100}%`,
-          bgcolor: 'gray.300',
+          bgcolor: '#666',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -67,7 +67,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         paddingBottom: `${aspectRatio * 100}%`,
         overflow: 'hidden',
         borderRadius: 1,
-        bgcolor: 'gray.200',
+        bgcolor: '#666',
         ...sx,
       }}
     >
@@ -128,7 +128,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            bgcolor: 'gray.300',
+            bgcolor: '#666',
             fontSize: 'small',
             color: 'text.secondary',
           }}

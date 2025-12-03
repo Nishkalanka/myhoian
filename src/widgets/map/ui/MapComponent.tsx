@@ -1,7 +1,6 @@
 // src/components/MapComponent.tsx
 import React, { useEffect, useState, useRef, memo, useCallback } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import type { Map, Marker, MapMouseEvent, GeoJSONSource } from 'mapbox-gl';
 
 import type { Feature, Point, GeoJsonProperties, LineString } from 'geojson';
 
@@ -41,59 +40,7 @@ export const MapComponent = memo(function MapComponent({
   onShowSnackbar,
   getLocalizedContentRef, // <-- Изменено название пропса
 }: MapComponentProps) {
-  // ... (оставьте логирование prevPropsRef, если оно вам нужно для отладки, но оно не влияет на проблему)
-  // УДАЛИТЕ ИЛИ ЗАКОММЕНТИРУЙТЕ этот блок, он больше не нужен для отладки мигания
-  /*
-  const prevPropsRef = useRef<MapComponentProps | null>(null);
-  useEffect(() => {
-    if (prevPropsRef.current) {
-      const changedProps: string[] = [];
-      const currentProps = {
-        landmarks,
-        activeIndex,
-        onMapMarkerClick: onMapMarkerClickProp,
-        onMapClick: onMapClickProp,
-        routeCoordinates,
-        hasUserInteracted: hasUserInteracted,
-        isRouteVisible,
-        onShowSnackbar,
-        getLocalizedContent: getLocalizedContentRef, // Важно: сравнивать рефы, а не их текущее значение
-      };
-      for (const key in currentProps) {
-        // @ts-expect-error Property access type compatibility
-        if (currentProps[key] !== prevPropsRef.current[key]) {
-          changedProps.push(key);
-        }
-      }
-      if (changedProps.length > 0) {
-        console.log('MapComponent: Props changed:', changedProps);
-      }
-    }
-    prevPropsRef.current = {
-      landmarks,
-      activeIndex,
-      onMapMarkerClick: onMapMarkerClickProp,
-      onMapClick: onMapClickProp,
-      routeCoordinates,
-      hasUserInteracted,
-      isRouteVisible,
-      onShowSnackbar,
-      getLocalizedContentRef,
-    };
-  }, [
-    landmarks,
-    activeIndex,
-    onMapMarkerClickProp,
-    onMapClickProp,
-    routeCoordinates,
-    hasUserInteracted,
-    isRouteVisible,
-    onShowSnackbar,
-    getLocalizedContentRef, // <-- Важно: теперь это реф
-  ]);
-  */
-
-  const { map, mapContainerRef } = useMapContext();
+  const { map, mapContainerRef, mapboxglModule } = useMapContext();
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
   const onMapClickPropRef = useRef(onMapClickProp);
@@ -108,13 +55,14 @@ export const MapComponent = memo(function MapComponent({
     [onMapMarkerClickProp]
   );
 
-  const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
+  const userMarkerRef = useRef<Marker | null>(null);
   const circleSourceId = 'user-location-circle';
   const circleLayerId = 'user-location-circle-layer';
 
   useEffect(() => {
     const currentMapInstance = map;
-    if (!currentMapInstance) {
+    // We need both the map instance AND the module to be loaded
+    if (!currentMapInstance || !mapboxglModule) {
       setIsMapLoaded(false);
       return;
     }
@@ -128,10 +76,6 @@ export const MapComponent = memo(function MapComponent({
     } else {
       currentMapInstance.on('load', handleMapLoad);
     }
-
-    // ... (весь ваш существующий код для инициализации слоев, источников, контролов, геолокации)
-    // Этот большой useEffect остается почти без изменений.
-    // Только убедитесь, что везде используется currentMapInstance.
 
     if (!currentMapInstance.getSource('landmarks-data')) {
       currentMapInstance.addSource('landmarks-data', {
@@ -184,35 +128,26 @@ export const MapComponent = memo(function MapComponent({
         },
       });
 
-      currentMapInstance.on(
-        'click',
-        'clusters' as any,
-        (e: mapboxgl.MapMouseEvent) => {
-          const features = currentMapInstance.queryRenderedFeatures(e.point, {
-            layers: ['clusters'],
-          });
-          const clusterId = features[0].properties?.cluster_id;
-          (
-            currentMapInstance.getSource(
-              'landmarks-data'
-            ) as mapboxgl.GeoJSONSource
-          ).getClusterExpansionZoom(
-            clusterId,
-            (
-              _err: Error | null | undefined,
-              zoom: number | null | undefined
-            ) => {
-              if (_err) return;
-              if (features[0].geometry.type === 'Point' && zoom != null) {
-                currentMapInstance.easeTo({
-                  center: features[0].geometry.coordinates as [number, number],
-                  zoom: zoom,
-                });
-              }
+      currentMapInstance.on('click', 'clusters' as any, (e: MapMouseEvent) => {
+        const features = currentMapInstance.queryRenderedFeatures(e.point, {
+          layers: ['clusters'],
+        });
+        const clusterId = features[0].properties?.cluster_id;
+        (
+          currentMapInstance.getSource('landmarks-data') as GeoJSONSource
+        ).getClusterExpansionZoom(
+          clusterId,
+          (_err: Error | null | undefined, zoom: number | null | undefined) => {
+            if (_err) return;
+            if (features[0].geometry.type === 'Point' && zoom != null) {
+              currentMapInstance.easeTo({
+                center: features[0].geometry.coordinates as [number, number],
+                zoom: zoom,
+              });
             }
-          );
-        }
-      );
+          }
+        );
+      });
 
       currentMapInstance.on('mouseenter', 'clusters' as any, () => {
         currentMapInstance.getCanvas().style.cursor = 'pointer';
@@ -253,11 +188,11 @@ export const MapComponent = memo(function MapComponent({
 
     if (
       !currentMapInstance._controls.some(
-        (c) => c instanceof mapboxgl.NavigationControl
+        (c) => c instanceof mapboxglModule.NavigationControl
       )
     ) {
       currentMapInstance.addControl(
-        new mapboxgl.NavigationControl(),
+        new mapboxglModule.NavigationControl(),
         'top-right'
       );
     }
@@ -309,7 +244,7 @@ export const MapComponent = memo(function MapComponent({
           arrow.style.transform = `rotate(${heading}deg)`;
         }
 
-        userMarkerRef.current = new mapboxgl.Marker({
+        userMarkerRef.current = new mapboxglModule.Marker({
           element: el,
           anchor: 'center',
         })
@@ -318,23 +253,23 @@ export const MapComponent = memo(function MapComponent({
       }
 
       if (currentMapInstance.getSource(circleSourceId)) {
-        (
-          currentMapInstance.getSource(circleSourceId) as mapboxgl.GeoJSONSource
-        ).setData({
-          type: 'FeatureCollection',
-          features: [
-            {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: newPosition,
+        (currentMapInstance.getSource(circleSourceId) as GeoJSONSource).setData(
+          {
+            type: 'FeatureCollection',
+            features: [
+              {
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: newPosition,
+                },
+                properties: {
+                  radius: accuracy,
+                },
               },
-              properties: {
-                radius: accuracy,
-              },
-            },
-          ],
-        });
+            ],
+          }
+        );
       } else {
         currentMapInstance.addSource(circleSourceId, {
           type: 'geojson',
@@ -445,12 +380,12 @@ export const MapComponent = memo(function MapComponent({
 
       setIsMapLoaded(false);
     };
-  }, [map]); // Зависимости только от `map`
+  }, [map, mapboxglModule]); // Зависимости от `map` и `mapboxglModule`
 
   useEffect(() => {
     if (!isMapLoaded || !map) return;
 
-    const source = map.getSource('landmarks-data') as mapboxgl.GeoJSONSource;
+    const source = map.getSource('landmarks-data') as GeoJSONSource;
     if (source) {
       const geojsonFeatures: Feature<Point, GeoJsonProperties>[] =
         landmarks.map((landmark, index) => ({
@@ -484,7 +419,7 @@ export const MapComponent = memo(function MapComponent({
     }
 
     const sourceId = 'static-route';
-    const source = map.getSource(sourceId) as mapboxgl.GeoJSONSource;
+    const source = map.getSource(sourceId) as GeoJSONSource;
     if (source) {
       const geojson: Feature<LineString> = {
         type: 'Feature',
@@ -526,7 +461,7 @@ export const MapComponent = memo(function MapComponent({
   return (
     <>
       <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />
-      {isMapLoaded && map && (
+      {isMapLoaded && map && mapboxglModule && (
         <MapMarkersLayer
           map={map}
           landmarks={landmarks}
@@ -535,6 +470,7 @@ export const MapComponent = memo(function MapComponent({
           hasUserInteracted={hasUserInteracted}
           // Передаем текущее значение функции через .current
           getLocalizedContent={getLocalizedContentRef.current} // <-- Изменено
+          mapboxglModule={mapboxglModule}
         />
       )}
       {isMapLoaded && map && (

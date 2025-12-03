@@ -6,7 +6,7 @@ export const clubsLandmarks: Landmark[] = [
     id: 'cham-chi-club',
     coordinates: [15.89547060100983, 108.36343088284198],
     category: ['clubs'],
-    imageUrl: '54.jpg',
+    imageUrl: '54.webp',
     en: {
       title: 'Cham Chi Club',
       description:
@@ -265,7 +265,7 @@ export const clubsLandmarks: Landmark[] = [
     id: 'roots-bar', // <-- ID теперь строковый
     coordinates: [15.912238405333042, 108.34211628537149], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['clubs'], // <-- Категория "museum"
-    imageUrl: '55.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '55.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
       title: 'Roots Bar',
       description:
@@ -494,7 +494,7 @@ export const clubsLandmarks: Landmark[] = [
     id: 'saranai', // <-- ID теперь строковый
     coordinates: [15.93523065687307, 108.31362357169075], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['clubs'], // <-- Категория "museum"
-    imageUrl: '56.jpg', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: '56.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
     en: {
       title: 'Saranai Beach House',
       description:

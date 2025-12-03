@@ -2,13 +2,16 @@
 
 import React, { useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom/client';
-import mapboxgl from 'mapbox-gl';
+import type { Map as MapboxMap, Marker } from 'mapbox-gl';
 
 import { IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 import { getCategoryColor } from '../../../shared/lib/categoryColors';
 import type { Landmark, CategorySlug, LandmarkContent } from '../../../data';
+
+// Define the type for the mapbox-gl module
+type MapboxGLModule = typeof import('mapbox-gl');
 
 interface CustomMarkerProps {
   isActive: boolean;
@@ -53,12 +56,13 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
 );
 
 interface MapMarkersLayerProps {
-  map: mapboxgl.Map | null;
+  map: MapboxMap | null;
   landmarks: Landmark[];
   activeIndex: number | null;
   onMapMarkerClick: (index: number, event: React.MouseEvent) => void;
   hasUserInteracted: boolean;
   getLocalizedContent: (landmark: Landmark) => LandmarkContent;
+  mapboxglModule: MapboxGLModule; // Receive the module as a prop
 }
 
 export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
@@ -68,9 +72,10 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
   onMapMarkerClick,
   hasUserInteracted,
   getLocalizedContent,
+  mapboxglModule,
 }) => {
   const individualMarkers = useRef<
-    Map<number, { marker: mapboxgl.Marker; root: ReactDOM.Root }>
+    Map<number, { marker: Marker; root: ReactDOM.Root }>
   >(new Map());
 
   const landmarksRef = useRef(landmarks);
@@ -143,7 +148,8 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
 
           root.render(<CustomMarker {...markerProps} />);
 
-          const marker = new mapboxgl.Marker({
+          // Use mapboxglModule to create the marker
+          const marker = new mapboxglModule.Marker({
             element: markerContainer,
             anchor: 'bottom',
           })
@@ -220,7 +226,7 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
       markersMap.clear();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map]); // Убрали landmarks из зависимостей
+  }, [map, mapboxglModule]); // Added mapboxglModule dependency
 
   // Эффект 2: Отвечает за обновление пропсов CustomMarker.
   // Зависит от `activeIndex`, `hasUserInteracted` и других пропсов, которые могут часто меняться.
