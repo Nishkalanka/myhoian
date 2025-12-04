@@ -26,7 +26,7 @@ interface MapComponentProps {
   >;
 }
 
-// 🛡️ ОПТИМИЗАЦИЯ: Изолированный контейнер для карты.
+// 🛡️ ОПТИМИЗАЦИЯ: Изолированный контейнер для карты
 const MapContainerDiv = memo(
   React.forwardRef<HTMLDivElement>((_props, ref) => {
     return <div ref={ref} style={{ height: '100%', width: '100%' }} />;
@@ -292,11 +292,8 @@ export const MapComponent = memo(function MapComponent({
     return () => {
       // CLEANUP
       currentMapInstance.off('click', handleMapClickListener);
-
       currentMapInstance.off('click', 'clusters' as any);
-
       currentMapInstance.off('mouseenter', 'clusters' as any);
-
       currentMapInstance.off('mouseleave', 'clusters' as any);
 
       if (watchId !== undefined) navigator.geolocation.clearWatch(watchId);

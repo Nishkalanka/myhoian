@@ -9,12 +9,7 @@ import React, {
 } from 'react';
 import type { Map } from 'mapbox-gl';
 
-// 🛠 FIX: Используем any для модуля, чтобы TS не ругался на несовпадение типов при импорте
-
 type MapboxGLModule = any;
-
-// 🌍 SINGLETON: Глобальная переменная живет вне жизненного цикла React
-// Это гарантирует, что new mapboxgl.Map() вызовется ровно 1 раз за сессию вкладки.
 let globalMapInstance: Map | null = null;
 
 interface MapContextType {
@@ -29,22 +24,59 @@ const MapContext = createContext<MapContextType | undefined>(undefined);
 
 interface MapProviderProps {
   children: React.ReactNode;
+  lazyLoad?: boolean;
 }
 
-export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
+export const MapProvider: React.FC<MapProviderProps> = ({
+  children,
+  lazyLoad = true,
+}) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const [map, setMap] = useState<Map | null>(null);
   const [mapboxglModule, setMapboxglModule] = useState<MapboxGLModule | null>(
     null
   );
   const [isMapLoaded, setIsMapLoaded] = useState(false);
-
-  // Реф для хранения модуля, чтобы восстановить его при ре-маунте
+  const [isContainerVisible, setIsContainerVisible] = useState(!lazyLoad);
   const mapboxglModuleRef = useRef<MapboxGLModule | null>(null);
 
+  // 🆕 Эффект для Intersection Observer (ленивая загрузка)
   useEffect(() => {
+    if (!lazyLoad) return;
+    if (!mapContainerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log(
+              '📍 [MapContext] Контейнер вошел в viewport, инициализируем карту'
+            );
+            setIsContainerVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: '100px',
+        threshold: 0.01,
+      }
+    );
+
+    observer.observe(mapContainerRef.current);
+
+    return () => {
+      if (mapContainerRef.current) {
+        observer.unobserve(mapContainerRef.current);
+      }
+    };
+  }, [lazyLoad]);
+
+  // Основной эффект инициализации
+  useEffect(() => {
+    if (!isContainerVisible) return;
+
     // 1. СЦЕНАРИЙ ВОССТАНОВЛЕНИЯ
-    // Если карта уже была создана ранее (при смене языка или роута)
     if (globalMapInstance) {
       console.log('♻️ [MapContext] Восстановление существующей карты');
       setMap(globalMapInstance);
@@ -52,14 +84,12 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
       if (mapboxglModuleRef.current) {
         setMapboxglModule(mapboxglModuleRef.current);
       } else {
-        // Если реф пуст (страница перезагрузилась), пробуем подгрузить модуль снова, но карту не трогаем
         import('mapbox-gl').then((mod) => {
           setMapboxglModule(mod.default || mod);
           mapboxglModuleRef.current = mod.default || mod;
         });
       }
 
-      // Небольшая задержка для плавности UI
       setTimeout(() => setIsMapLoaded(true), 100);
       return;
     }
@@ -71,19 +101,18 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
 
     const initializeMap = async () => {
       try {
-        // Double-check: если пока мы ждали, карту уже кто-то создал
         if (globalMapInstance) return;
 
         console.log('🚀 [MapContext] Загрузка Mapbox GL JS...');
 
-        // Ленивая загрузка
         const mapboxglImport = await import('mapbox-gl');
         const mapboxgl = mapboxglImport.default || mapboxglImport;
+
+        // 🆕 Загружаем CSS асинхронно
         await import('mapbox-gl/dist/mapbox-gl.css');
 
         if (!isMounted) return;
 
-        // Сохраняем модуль
         mapboxglModuleRef.current = mapboxgl;
         setMapboxglModule(mapboxgl);
 
@@ -124,13 +153,8 @@ export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
 
     return () => {
       isMounted = false;
-      // 🛑 ВАЖНО: Мы НЕ вызываем globalMapInstance.remove() здесь.
-      // Мы хотим, чтобы карта жила в памяти даже при размонтировании компонента.
-
-      // Сбрасываем локальный стейт, но не глобальный инстанс
-      setIsMapLoaded(false);
     };
-  }, []);
+  }, [isContainerVisible]);
 
   const centerMap = useCallback(
     (center: [number, number], zoom?: number) => {

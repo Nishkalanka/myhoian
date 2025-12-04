@@ -16,6 +16,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 // Синхронные импорты (Критичные для отрисовки)
 import Header from './widgets/header/ui/Header';
 import { MapComponent } from './widgets/map/ui/MapComponent';
+import { MapProvider } from './entities/map/model/MapContext';
 import { AppSnackbar } from './shared/ui/AppSnackbar';
 import { useSnackbar } from './shared/lib/useSnackbar';
 
@@ -33,7 +34,7 @@ import type { ShowSnackbarFn } from './features/user-location/ui/UserLocationBut
 // Это ускоряет Initial Paint
 const HeroSection = lazy(() => import('./widgets/hero/ui/HeroSection'));
 
-function App() {
+function AppContent() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { slug: urlSlug, lang: urlLang } = useParams<{
@@ -213,29 +214,32 @@ function App() {
           isRouteVisible={isRouteVisible}
         />
 
-        <Box
-          sx={{
-            flexGrow: 1,
-            minHeight: 0,
-            position: 'absolute',
-            height: '100%',
-            width: '100%',
-            overflow: 'hidden',
-          }}
-        >
-          {/* Карта грузится синхронно. Прелоадер перекрывает её инициализацию. */}
-          <MapComponent
-            landmarks={localizedFilteredLandmarks}
-            activeIndex={activeIndex}
-            onMapMarkerClick={handleMapMarkerClick}
-            onMapClick={handleMapClick}
-            routeCoordinates={routeCoordinates}
-            hasUserInteracted={hasInteractedWithMarkers}
-            isRouteVisible={isRouteVisible}
-            onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
-            getLocalizedContentRef={getLocalizedContentForLandmarkRef}
-          />
-        </Box>
+        {/* 🆕 MapProvider ОБЕРТКА для ленивой загрузки карты */}
+        <MapProvider lazyLoad={true}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              minHeight: 0,
+              position: 'absolute',
+              height: '100%',
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Карта грузится лениво: ждёт видимости + 100px */}
+            <MapComponent
+              landmarks={localizedFilteredLandmarks}
+              activeIndex={activeIndex}
+              onMapMarkerClick={handleMapMarkerClick}
+              onMapClick={handleMapClick}
+              routeCoordinates={routeCoordinates}
+              hasUserInteracted={hasInteractedWithMarkers}
+              isRouteVisible={isRouteVisible}
+              onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
+              getLocalizedContentRef={getLocalizedContentForLandmarkRef}
+            />
+          </Box>
+        </MapProvider>
 
         {/* Ленивая секция (грузится в фоне) */}
         <Suspense fallback={null}>
@@ -261,6 +265,11 @@ function App() {
       </Box>
     </>
   );
+}
+
+// 🆕 Главный App компонент (оборачиваем в MapProvider на уровне приложения)
+function App() {
+  return <AppContent />;
 }
 
 export default App;
