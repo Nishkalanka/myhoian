@@ -50,7 +50,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
             sm: titleSize.sm,
             md: titleSize.md,
           },
-          fontWeight: 900,
+          fontWeight: 700,
           textTransform: 'uppercase',
           letterSpacing: 1,
           margin: 0,
@@ -61,10 +61,11 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
       </Typography>
 
       <Typography
-        variant="body1"
+        variant="body2"
         sx={{
           fontSize: 'lg',
           color: 'gray.500',
+          textTransform: 'uppercase',
           mb: 2,
           width: '100%',
         }}

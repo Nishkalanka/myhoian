@@ -16,7 +16,7 @@ interface SectionHighlightsProps {
 
 const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
   <Box>
-    <Box sx={{ maxWidth: 'lg', mx: 'auto', pt: 6, pb: 2 }}>
+    <Box sx={{ maxWidth: 'lg', mx: 'auto', pt: 4, pb: 2 }}>
       <Box
         sx={{
           display: 'flex',
@@ -41,7 +41,7 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
               letterSpacing: 0.5,
             }}
           >
-            Ключевые события в фокусе
+            Главные темы лекции
           </Box>
         </Box>
       </Box>

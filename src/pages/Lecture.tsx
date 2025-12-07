@@ -5,7 +5,7 @@ import { Box, Container } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 
 // Импорты секций
-import ModalContact from './sections/ModalContact';
+import ModalContact from './sections/ModalContactLecture';
 import SectionHero from './sections/SectionHeroLecture';
 import SectionHighlights from './sections/SectionHighlightsLecture';
 import SectionGuide from './sections/SectionGuideLecture';
@@ -35,11 +35,11 @@ interface HeroContent {
 // ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
 
 const heroContent: HeroContent = {
-  label: 'живая лекция',
+  label: 'лекция в дананге',
   title: 'Вьетнам',
-  description: 'История. Традиция. Культура!',
+  description: 'История | Традиция | Культура',
   buttonText: 'Записаться',
-  titleSize: { xs: '4.3rem', sm: '2rem', md: '2rem' },
+  titleSize: { xs: '4rem', sm: '2rem', md: '2rem' },
 };
 
 // ✅ ИСПОЛЬЗУЙ STRING ПУТИ ВМЕСТО ИМПОРТОВ
@@ -72,7 +72,7 @@ const products: Product[] = [
     id: 4,
     name: 'Религия и культы',
     color:
-      'Вьетнам: как буддизм, даосизм, конфуцианство и культ предков мирно сосуществуют.',
+      'Как буддизм, даосизм, конфуцианство и культ предков мирно сосуществуют.',
     imageSrc: 'pictures/15.jpg',
     imageAlt: 'Храм Куанг Конга',
   },
@@ -171,7 +171,7 @@ const Lecture: React.FC = () => {
           pb: 8,
           // ✅ WebP с fallback через @supports
           backgroundImage: `url(/img/tours/bg4.webp), linear-gradient(180deg, #DD752E 0%, #DD752E 100%)`,
-          backgroundPosition: 'center 00px, center',
+          backgroundPosition: 'center 0px, center',
           backgroundSize: 'contain, cover',
           backgroundRepeat: 'no-repeat, no-repeat',
 
@@ -182,7 +182,7 @@ const Lecture: React.FC = () => {
         }}
       >
         <Box sx={{ textAlign: 'center', pt: 2 }}>
-          <img src={logoSvg} width={32} alt="Логотип" className="logo" />
+          <img src={logoSvg} width={40} alt="Логотип" className="logo" />
         </Box>
 
         <SectionHero content={heroContent} handleOpen={handleOpen} />
