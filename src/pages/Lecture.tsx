@@ -49,7 +49,7 @@ const products: Product[] = [
     name: 'История Вьетнама',
     color:
       'От древних времен, через тысячелетнее китайское влияние до французской колонии и войн XX века.',
-    imageSrc: 'pictures/2.jpg',
+    imageSrc: 'pictures/l_1.webp',
     imageAlt: 'Японский мост в Хойане',
   },
   {
@@ -57,7 +57,7 @@ const products: Product[] = [
     name: 'Семейные традиции ',
     color:
       'Что для вьетнамцев значит семья, уважение к старшим и почитание традиций предков.',
-    imageSrc: 'pictures/14.jpg',
+    imageSrc: 'pictures/l_2.webp',
     imageAlt: 'Фуцзянский зал собраний',
   },
   {
@@ -65,7 +65,7 @@ const products: Product[] = [
     name: 'Язык и жесты',
     color:
       'Вьетнамский язык: почему тональные звуки имеют огромное значение в общении.',
-    imageSrc: 'pictures/9.jpg',
+    imageSrc: 'pictures/l_3.webp',
     imageAlt: 'Дом Тан Ки',
   },
   {
@@ -73,7 +73,7 @@ const products: Product[] = [
     name: 'Религия и культы',
     color:
       'Как буддизм, даосизм, конфуцианство и культ предков мирно сосуществуют.',
-    imageSrc: 'pictures/15.jpg',
+    imageSrc: 'pictures/l_4.webp',
     imageAlt: 'Храм Куанг Конга',
   },
 ];

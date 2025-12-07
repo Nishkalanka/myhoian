@@ -27,7 +27,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
         flexDirection: 'column',
         gap: 0,
         mt: 1,
-        height: '60vh',
+        height: '400px',
         textAlign: 'center',
       }}
     >

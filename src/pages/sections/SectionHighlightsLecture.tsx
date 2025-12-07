@@ -50,7 +50,12 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
         {products.map((product) => (
           <Grid item key={product.id} xs={6} sm={6} md={6}>
             <Box
-              sx={{ mb: 1, backgroundColor: '#A76126', borderRadius: '8px' }}
+              sx={{
+                mb: 1,
+                backgroundColor: '#A76126',
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              }}
             >
               <OptimizedImage
                 src={product.imageSrc}
