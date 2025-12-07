@@ -6,27 +6,16 @@ import { Helmet } from 'react-helmet-async';
 
 // Импорты секций
 import ModalContact from './sections/ModalContact';
-import SectionHero from './sections/SectionHero';
-import SectionFeatures from './sections/SectionFeatures';
-import SectionHighlights from './sections/SectionHighlights';
-import SectionGuide from './sections/SectionGuide';
-import SectionFAQ from './sections/SectionFAQ';
+import SectionHero from './sections/SectionHeroLecture';
+import SectionHighlights from './sections/SectionHighlightsLecture';
+import SectionGuide from './sections/SectionGuideLecture';
 import SectionContact from './sections/SectionContact';
 
 // ✅ ИМПОРТЫ ТОЛЬКО ДЛЯ SVG И METADATA
 import logoSvg from '../assets/img/logo.svg';
 import ogImage from '../assets/img/og-image.png';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import GroupsIcon from '@mui/icons-material/Groups';
-import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 
 // ===== ТИПЫ =====
-interface Feature {
-  name: string;
-  description: string;
-  icon: React.ElementType; // ✅ React компонент
-}
-
 interface Product {
   id: number;
   name: string;
@@ -46,81 +35,52 @@ interface HeroContent {
 // ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
 
 const heroContent: HeroContent = {
-  label: 'Квест-экскурсия',
-  title: 'Хойан в коробке',
-  description:
-    'Подарите родным не просто сувенир, а частичку настоящего Вьетнама!',
-  buttonText: 'Напишите нам',
-  titleSize: { xs: '2rem', sm: '2rem', md: '2rem' },
+  label: 'живая лекция',
+  title: 'Вьетнам',
+  description: 'История. Традиция. Культура!',
+  buttonText: 'Записаться',
+  titleSize: { xs: '4.3rem', sm: '2rem', md: '2rem' },
 };
-
-const features: Feature[] = [
-  {
-    name: '4 - 5 ч.',
-    description: 'Время экскурсии',
-    icon: AccessTimeIcon, // ⏱️ Часы
-  },
-  {
-    name: '5 - 7 чел.',
-    description: 'Размер группы',
-    icon: GroupsIcon, // 👥 Люди
-  },
-  {
-    name: 'Пеший',
-    description: 'Формат экскурсии',
-    icon: DirectionsWalkIcon, // 🚶 Ходьба
-  },
-];
 
 // ✅ ИСПОЛЬЗУЙ STRING ПУТИ ВМЕСТО ИМПОРТОВ
 const products: Product[] = [
   {
     id: 1,
-    name: 'Японский мост',
-    color: 'Главный символ Хойана. Построен в 1593 году.',
-    imageSrc: 'pictures/2.jpg', // ✅ STRING
+    name: 'История Вьетнама',
+    color:
+      'От древних времен, через тысячелетнее китайское влияние до французской колонии и войн XX века.',
+    imageSrc: 'pictures/2.jpg',
     imageAlt: 'Японский мост в Хойане',
   },
   {
     id: 2,
-    name: 'Фуцзянский зал собраний',
-    color: 'Китайское наследство',
-    imageSrc: 'pictures/14.jpg', // ✅ STRING
+    name: 'Семейные традиции ',
+    color:
+      'Что для вьетнамцев значит семья, уважение к старшим и почитание традиций предков.',
+    imageSrc: 'pictures/14.jpg',
     imageAlt: 'Фуцзянский зал собраний',
   },
   {
     id: 3,
-    name: 'Дом Тан Ки',
-    color: 'Один из самых ярких образцов традиционной архитектуры в Хойане',
-    imageSrc: 'pictures/9.jpg', // ✅ STRING
+    name: 'Язык и жесты',
+    color:
+      'Вьетнамский язык: почему тональные звуки имеют огромное значение в общении.',
+    imageSrc: 'pictures/9.jpg',
     imageAlt: 'Дом Тан Ки',
   },
   {
     id: 4,
-    name: 'Храм Куанг Конга',
-    color: 'Наиболее значимое святилище построенное в 1653 году',
-    imageSrc: 'pictures/15.jpg', // ✅ STRING
+    name: 'Религия и культы',
+    color:
+      'Вьетнам: как буддизм, даосизм, конфуцианство и культ предков мирно сосуществуют.',
+    imageSrc: 'pictures/15.jpg',
     imageAlt: 'Храм Куанг Конга',
-  },
-  {
-    id: 5,
-    name: 'Музеи',
-    color: 'Посещение нескольких музеев Хойана',
-    imageSrc: 'pictures/16.jpg', // ✅ STRING
-    imageAlt: 'Музеи',
-  },
-  {
-    id: 6,
-    name: 'Театр',
-    color: 'Традиционное выступление вьетнамских артистов.',
-    imageSrc: 'pictures/62.jpg', // ✅ STRING
-    imageAlt: 'Театр',
   },
 ];
 
 // ===== КОМПОНЕНТ =====
 
-const Kvest: React.FC = () => {
+const Lecture: React.FC = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -208,18 +168,16 @@ const Kvest: React.FC = () => {
         maxWidth="xs"
         sx={{
           position: 'relative',
-          backgroundColor: '#19202A',
           pb: 8,
-
           // ✅ WebP с fallback через @supports
-          backgroundImage: `url(/img/tours/bg3.webp)`,
-          backgroundPosition: 'center 180px',
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: `url(/img/tours/bg4.webp), linear-gradient(180deg, #DD752E 0%, #DD752E 100%)`,
+          backgroundPosition: 'center 00px, center',
+          backgroundSize: 'contain, cover',
+          backgroundRepeat: 'no-repeat, no-repeat',
 
           // ✅ Fallback для старых браузеров
-          '@supports not (background-image: url(/img/tours/bg3.webp))': {
-            backgroundImage: `url(/img/tours/bg3.png)`,
+          '@supports not (background-image: url(/img/tours/bg4.webp))': {
+            backgroundImage: `url(/img/tours/bg4.webp)`,
           },
         }}
       >
@@ -228,14 +186,11 @@ const Kvest: React.FC = () => {
         </Box>
 
         <SectionHero content={heroContent} handleOpen={handleOpen} />
-        <SectionFeatures features={features} />
+        {/*<SectionFeatures features={features} />*/}
         <SectionHighlights products={products} />
         {/* ✅ STRING путь для profilePicture */}
-        <SectionGuide
-          profilePicture="tours/profile.png"
-          handleOpen={handleOpen}
-        />
-        <SectionFAQ />
+        <SectionGuide handleOpen={handleOpen} />
+
         <SectionContact />
       </Container>
 
@@ -244,4 +199,4 @@ const Kvest: React.FC = () => {
   );
 };
 
-export default Kvest;
+export default Lecture;

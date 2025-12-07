@@ -12,7 +12,9 @@ import { MapProvider } from './entities/map/model/MapContext.tsx';
 
 // Ленивая загрузка страниц
 const Hoian = React.lazy(() => import('./pages/Hoian.tsx'));
-const LandingPage2 = React.lazy(() => import('./pages/Kvest.tsx'));
+const Kvest = React.lazy(() => import('./pages/Kvest.tsx'));
+const Lecture = React.lazy(() => import('./pages/Lecture.tsx'));
+const Slider = React.lazy(() => import('./pages/SliderPage.tsx'));
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
@@ -31,8 +33,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 />
                 <Route
                   path="/kvest-ekskursiya-hoian-v-korobke"
-                  element={<LandingPage2 />}
+                  element={<Kvest />}
                 />
+                <Route path="/lecture" element={<Lecture />} />
+                <Route path="/slider" element={<Slider />} />
                 <Route path="/:lang/:slug" element={<App />} />
                 <Route path="/" element={<App />} />
               </Routes>
