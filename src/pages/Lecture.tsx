@@ -129,66 +129,88 @@ const Lecture: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Авторские экскурсии по Хойану 2025 | Туры на русском по Вьетнаму
+          Лекция о Вьетнаме в Дананге 13 декабря | История, традиции, культура
         </title>
+
         <meta
           name="keywords"
-          content="экскурсии по Хойану, туры Хойан на русском, авторская экскурсия Хойан, древние храмы Хойана, фэн-шуй архитектура, достопримечательности Хойана, гид Павел Хойан, бронирование туров"
+          content="лекция о Вьетнаме Дананг, история Вьетнама, культура Вьетнама, традиции Вьетнама, открытая лекция Дананг, мероприятия Дананг декабрь, гид Павел Вьетнам, лекция Хойан Дананг"
         />
         <meta
           name="description"
-          content="Откройте настоящий Хойан: старинный храмы, конфуцианская философия, скрытые святыни, архитектура фэн-шуй. Авторские экскурсии на русском языке с историком Павлом. Индивидуальные и групповые туры. Забронируйте прямо сейчас!"
+          content="Открытая лекция о Вьетнаме в Дананге 13 декабря в 19:00: история, традиции, религия и язык. 1 час живого рассказа от гида-историка Павла. Небольшая группа, уютное кафе NU Arrows, стоимость 100 000 VND. Записаться онлайн."
         />
+
         <link
           rel="canonical"
-          href="https://myhoian.app/hoian-avtorskaya-ekskursiya"
+          href="https://myhoian.app/vietnam-lecture-in-danang"
         />
+
         <meta
           property="og:title"
-          content="Авторские экскурсии по Хойану 2025 | Туры на русском с гидом-историком"
+          content="Лекция о Вьетнаме в Дананге 13 декабря | История, традиции, культура"
         />
         <meta
           property="og:description"
-          content="Глубокие экскурсии по Хойану: Пешие туры, лодки-корзины, кулинарные курсы, философия и история. Индивидуальные группы на русском языке. Забронируйте сейчас!"
+          content="Открытая встреча-лекция о Вьетнаме: от древней истории и китайского влияния до современной культуры, религии и языка. Дананг, NU Arrows Cafe, начало в 19:00. Забронируйте место со скидкой 50% при ранней записи."
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://myhoian.app/hoian-avtorskaya-ekskursiya"
+          content="https://myhoian.app/vietnam-lecture-in-danang"
         />
         <meta property="og:image" content={`https://myhoian.app${ogImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Авторские экскурсии по Хойану с гидом Павлом"
+          content="Открытая лекция о Вьетнаме в Дананге с гидом Павлом"
         />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Авторские экскурсии по Хойану 2025 на русском"
+          content="Открытая лекция о Вьетнаме в Дананге 13 декабря"
         />
         <meta
           name="twitter:description"
-          content="Откройте философию, историю и архитектуру Хойана с гидом-историком Павлом"
+          content="История, традиции, религия и язык Вьетнама простым языком. Лекция в NU Arrows Cafe, Дананг. Запись и скидка 50% при бронировании до 12 декабря."
         />
         <meta name="twitter:image" content={`https://myhoian.app${ogImage}`} />
-        <meta name="author" content="Павел, автор лекций по Вьетнаму и гид" />
+
+        <meta name="author" content="Павел, гид по Вьетнаму и автор лекций" />
         <meta name="contact" content="https://t.me/pashanishka" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
+
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: 'Авторские экскурсии по Хойану с Павлом',
+            '@type': 'Event',
+            name: 'Открытая лекция о Вьетнаме в Дананге',
             description:
-              'Авторские экскурсии по Хойану на русском языке: история, философия, архитектура',
-            url: 'https://myhoian.app/hoian-avtorskaya-ekskursiya',
-            telephone: '+84357923401',
-            priceRange: '$$',
-            areaServed: 'VN',
+              'Открытая встреча-лекция о Вьетнаме: история, традиции, религия и язык. 13 декабря, 19:00, NU Arrows Cafe, Дананг.',
+            startDate: '2025-12-13T19:00:00+07:00',
+            eventAttendanceMode:
+              'https://schema.org/OfflineEventAttendanceMode',
+            eventStatus: 'https://schema.org/EventScheduled',
+            location: {
+              '@type': 'Place',
+              name: 'NU Arrows Cafe',
+              address: 'Danang, Vietnam',
+            },
             image: `https://myhoian.app${ogImage}`,
-            author: { '@type': 'Person', name: 'Павел' },
+            organizer: {
+              '@type': 'Person',
+              name: 'Павел',
+            },
+            offers: {
+              '@type': 'Offer',
+              price: '100000',
+              priceCurrency: 'VND',
+              availability: 'https://schema.org/InStock',
+            },
+            url: 'https://myhoian.app/vietnam-lecture-in-danang',
+            telephone: '+84357923401',
           })}
         </script>
       </Helmet>
