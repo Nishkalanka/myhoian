@@ -14,7 +14,6 @@ import { MapProvider } from './entities/map/model/MapContext.tsx';
 const Hoian = React.lazy(() => import('./pages/Hoian.tsx'));
 const Kvest = React.lazy(() => import('./pages/Kvest.tsx'));
 const Lecture = React.lazy(() => import('./pages/Lecture.tsx'));
-const Slider = React.lazy(() => import('./pages/SliderPage.tsx'));
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
@@ -39,7 +38,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   path="/vietnam-lecture-in-danang"
                   element={<Lecture />}
                 />
-                <Route path="/slider" element={<Slider />} />
+
                 <Route path="/:lang/:slug" element={<App />} />
                 <Route path="/" element={<App />} />
               </Routes>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button, Divider, Chip } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 
 interface HeroContent {
   time: string;
