@@ -27,7 +27,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
         alignItems: 'center',
         flexDirection: 'column',
         gap: 0,
-        mt: 1,
+        mt: 0.5,
         height: '410px',
         textAlign: 'center',
       }}
@@ -60,7 +60,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
             sm: titleSize.sm,
             md: titleSize.md,
           },
-          fontWeight: 700,
+          fontWeight: 600,
 
           textTransform: 'uppercase',
           letterSpacing: 1,
@@ -77,7 +77,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
           fontSize: 'lg',
           color: 'gray.500',
           textTransform: 'uppercase',
-          mb: 2,
+          mb: 1,
           width: '100%',
         }}
       >

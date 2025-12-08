@@ -35,7 +35,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   path="/kvest-ekskursiya-hoian-v-korobke"
                   element={<Kvest />}
                 />
-                <Route path="/lecture" element={<Lecture />} />
+                <Route
+                  path="/vietnam-lecture-in-danang"
+                  element={<Lecture />}
+                />
                 <Route path="/slider" element={<Slider />} />
                 <Route path="/:lang/:slug" element={<App />} />
                 <Route path="/" element={<App />} />

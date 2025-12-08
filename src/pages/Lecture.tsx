@@ -201,7 +201,7 @@ const Lecture: React.FC = () => {
           pb: 8,
           // ✅ WebP с fallback через @supports
           backgroundImage: `url(/img/tours/bg4.webp), linear-gradient(180deg, #DD752E 0%, #DD752E 100%)`,
-          backgroundPosition: 'center -70px, center',
+          backgroundPosition: 'center -90px, center',
           backgroundSize: 'contain, cover',
           backgroundRepeat: 'no-repeat, no-repeat',
 
