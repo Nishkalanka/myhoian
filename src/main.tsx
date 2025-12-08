@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './i18n.ts';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -15,6 +15,12 @@ const Hoian = React.lazy(() => import('./pages/Hoian.tsx'));
 const Kvest = React.lazy(() => import('./pages/Kvest.tsx'));
 const Lecture = React.lazy(() => import('./pages/Lecture.tsx'));
 
+const MapLayout = () => (
+  <MapProvider>
+    <Outlet />
+  </MapProvider>
+);
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <HelmetProvider>
     <BrowserRouter
@@ -23,9 +29,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <ThemeContextProvider>
         <CssBaseline />
         <LanguageProvider>
-          <MapProvider>
-            <Suspense fallback={null}>
-              <Routes>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/vietnam-lecture-in-danang" element={<Lecture />} />
+
+              <Route element={<MapLayout />}>
                 <Route
                   path="/hoian-avtorskaya-ekskursiya"
                   element={<Hoian />}
@@ -34,16 +42,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   path="/kvest-ekskursiya-hoian-v-korobke"
                   element={<Kvest />}
                 />
-                <Route
-                  path="/vietnam-lecture-in-danang"
-                  element={<Lecture />}
-                />
 
                 <Route path="/:lang/:slug" element={<App />} />
                 <Route path="/" element={<App />} />
-              </Routes>
-            </Suspense>
-          </MapProvider>
+              </Route>
+            </Routes>
+          </Suspense>
         </LanguageProvider>
       </ThemeContextProvider>
     </BrowserRouter>

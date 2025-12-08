@@ -1,5 +1,3 @@
-@import "mapbox-gl/dist/mapbox-gl.css";
-
 /* Prevent FOUC and ensure smooth loading */
 html,
 body,

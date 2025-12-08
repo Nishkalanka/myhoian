@@ -1,4 +1,4 @@
-// src/pages/LandingPage2/LandingPage2.tsx
+// src/pages/Lecture.tsx
 
 import React, { useState } from 'react';
 import { Box, Container } from '@mui/material';
