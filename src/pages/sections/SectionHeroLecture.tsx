@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, Divider, Chip } from '@mui/material';
 
 interface HeroContent {
+  time: string;
   label: string;
   title: string;
   description: string;
@@ -27,20 +28,29 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
         flexDirection: 'column',
         gap: 0,
         mt: 1,
-        height: '400px',
+        height: '410px',
         textAlign: 'center',
       }}
     >
-      <Box
+      <Typography
+        variant="body1"
+        sx={{ mb: 0, textTransform: 'uppercase', fontWeight: 600 }}
+      >
+        {content.time}
+      </Typography>
+
+      <Typography
+        variant="body2"
         sx={{
-          fontWeight: 600,
-          fontSize: 'sm',
+          fontSize: 'lg',
+          color: 'gray.500',
           textTransform: 'uppercase',
-          letterSpacing: 0.5,
+          mb: 0,
+          width: '100%',
         }}
       >
         {content.label}
-      </Box>
+      </Typography>
 
       <Typography
         component="h1"
@@ -51,6 +61,7 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
             md: titleSize.md,
           },
           fontWeight: 700,
+
           textTransform: 'uppercase',
           letterSpacing: 1,
           margin: 0,
@@ -75,8 +86,12 @@ const SectionHero: React.FC<SectionHeroProps> = ({ content, handleOpen }) => {
 
       <Button
         onClick={handleOpen}
-        sx={{ borderColor: '#180000', backgroundColor: '#180000' }}
-        size="small"
+        sx={{
+          borderColor: '#252525',
+          backgroundColor: '#252525',
+          color: '#fff',
+        }}
+        size="medium"
         variant="outlined"
       >
         {content.buttonText}

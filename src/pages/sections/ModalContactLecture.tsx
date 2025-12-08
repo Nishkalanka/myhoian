@@ -75,6 +75,13 @@ const ModalContact: React.FC<ModalContactProps> = ({ open, handleClose }) => {
         >
           Instagram
         </Button>
+        <Typography
+          id="modal-modal-description"
+          variant="caption"
+          sx={{ mt: 2, display: 'block' }}
+        >
+          Просто напишите личное сообщение
+        </Typography>
       </Box>
     </Modal>
   );

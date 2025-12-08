@@ -10,10 +10,14 @@ import SectionHero from './sections/SectionHeroLecture';
 import SectionHighlights from './sections/SectionHighlightsLecture';
 import SectionGuide from './sections/SectionGuideLecture';
 import SectionContact from './sections/SectionContact';
+import SectionFeatures from './sections/SectionFeaturesLecture';
 
 // ✅ ИМПОРТЫ ТОЛЬКО ДЛЯ SVG И METADATA
 import logoSvg from '../assets/img/logo.svg';
 import ogImage from '../assets/img/og-image.png';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LocationOn from '@mui/icons-material/LocationOn';
+import Paid from '@mui/icons-material/Paid';
 
 // ===== ТИПЫ =====
 interface Product {
@@ -24,7 +28,14 @@ interface Product {
   imageAlt: string;
 }
 
+interface Feature {
+  name: string;
+  description: string;
+  icon: React.ElementType; // ✅ React компонент
+}
+
 interface HeroContent {
+  time: string;
   label: string;
   title: string;
   description: string;
@@ -35,18 +46,37 @@ interface HeroContent {
 // ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
 
 const heroContent: HeroContent = {
-  label: 'лекция в дананге',
+  time: '13 декабря 19:00',
+  label: 'Открытая встреча‑лекция',
   title: 'Вьетнам',
   description: 'История | Традиция | Культура',
   buttonText: 'Записаться',
   titleSize: { xs: '4rem', sm: '2rem', md: '2rem' },
 };
 
+const features: Feature[] = [
+  {
+    name: '1ч.',
+    description: 'Время лекции',
+    icon: AccessTimeIcon, // ⏱️ Часы
+  },
+  {
+    name: 'Дананг',
+    description: 'Место проведения',
+    icon: LocationOn, // 👥 Люди
+  },
+  {
+    name: '100kvnd',
+    description: 'Стоимость посещения',
+    icon: Paid, // 🚶 Ходьба
+  },
+];
+
 // ✅ ИСПОЛЬЗУЙ STRING ПУТИ ВМЕСТО ИМПОРТОВ
 const products: Product[] = [
   {
     id: 1,
-    name: 'История Вьетнама',
+    name: 'История',
     color:
       'От древних времен, через тысячелетнее китайское влияние до французской колонии и войн XX века.',
     imageSrc: 'pictures/l_1.webp',
@@ -54,7 +84,7 @@ const products: Product[] = [
   },
   {
     id: 2,
-    name: 'Семейные традиции ',
+    name: 'Традиции ',
     color:
       'Что для вьетнамцев значит семья, уважение к старшим и почитание традиций предков.',
     imageSrc: 'pictures/l_2.webp',
@@ -62,15 +92,15 @@ const products: Product[] = [
   },
   {
     id: 3,
-    name: 'Язык и жесты',
+    name: 'Язык',
     color:
-      'Вьетнамский язык: почему тональные звуки имеют огромное значение в общении.',
+      'Особенности языка: почему тональные звуки имеют такое значение в общении.',
     imageSrc: 'pictures/l_3.webp',
     imageAlt: 'Дом Тан Ки',
   },
   {
     id: 4,
-    name: 'Религия и культы',
+    name: 'Религия',
     color:
       'Как буддизм, даосизм, конфуцианство и культ предков мирно сосуществуют.',
     imageSrc: 'pictures/l_4.webp',
@@ -171,7 +201,7 @@ const Lecture: React.FC = () => {
           pb: 8,
           // ✅ WebP с fallback через @supports
           backgroundImage: `url(/img/tours/bg4.webp), linear-gradient(180deg, #DD752E 0%, #DD752E 100%)`,
-          backgroundPosition: 'center 0px, center',
+          backgroundPosition: 'center -70px, center',
           backgroundSize: 'contain, cover',
           backgroundRepeat: 'no-repeat, no-repeat',
 
@@ -182,11 +212,13 @@ const Lecture: React.FC = () => {
         }}
       >
         <Box sx={{ textAlign: 'center', pt: 2 }}>
-          <img src={logoSvg} width={40} alt="Логотип" className="logo" />
+          <a href="https://myhoian.app/">
+            <img src={logoSvg} width={40} alt="Логотип" className="logo" />
+          </a>
         </Box>
 
         <SectionHero content={heroContent} handleOpen={handleOpen} />
-        {/*<SectionFeatures features={features} />*/}
+        <SectionFeatures features={features} />
         <SectionHighlights products={products} />
         {/* ✅ STRING путь для profilePicture */}
         <SectionGuide handleOpen={handleOpen} />

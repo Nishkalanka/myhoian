@@ -16,7 +16,7 @@ interface SectionHighlightsProps {
 
 const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
   <Box>
-    <Box sx={{ maxWidth: 'lg', mx: 'auto', pt: 4, pb: 2 }}>
+    <Box sx={{ maxWidth: 'lg', mx: 'auto', pt: 6, pb: 2 }}>
       <Box
         sx={{
           display: 'flex',
@@ -52,9 +52,10 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
             <Box
               sx={{
                 mb: 1,
-                backgroundColor: '#A76126',
+                backgroundColor: '#E7782B',
                 borderRadius: '8px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
               }}
             >
               <OptimizedImage
@@ -64,18 +65,23 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
                 height={280}
                 loading="lazy"
                 sx={{
-                  height: { xs: 140, lg: 180, xl: 200 },
+                  height: {
+                    xs: 140,
+                    lg: 180,
+                    xl: 200,
+                    borderRadius: '8px 8px 0 0',
+                  },
                 }}
               />
 
               <Typography
                 variant="body2"
-                sx={{ mt: 2, mb: 1, pl: 2, fontWeight: 600 }}
+                sx={{ mt: 2, mb: 1, pl: 1.5, fontWeight: 600 }}
               >
                 {product.name}
               </Typography>
               <Typography
-                sx={{ pl: 2, pr: 2, pb: 2, display: 'block' }}
+                sx={{ pl: 1.5, pr: 1, pb: 2, display: 'block' }}
                 variant="caption"
               >
                 {product.color}
@@ -89,7 +95,7 @@ const SectionHighlights: React.FC<SectionHighlightsProps> = ({ products }) => (
     <Box>
       <Divider sx={{ mt: 2, mb: 8 }}>
         <Chip
-          sx={{ backgroundColor: '#A76126', color: '#fff' }}
+          sx={{ backgroundColor: '#252525', color: '#fff' }}
           label="и это еще далеко не все"
           size="medium"
         />

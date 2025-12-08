@@ -26,7 +26,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
       elevation={0}
       sx={{
         border: 'none',
-        backgroundColor: 'gray.50',
+        backgroundColor: '#252525',
         p: 4,
         mb: 2,
         borderRadius: 2,
@@ -81,7 +81,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
       <Button onClick={handleOpen} size="medium" variant="contained">
         Записаться
       </Button>
-      <Typography variant="caption">
+      <Typography variant="caption" sx={{ mt: 1 }}>
         Скидка 50% при бронировании до 12 декабря
       </Typography>
     </Paper>
@@ -89,14 +89,17 @@ const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
     <Box>
       <Divider sx={{ mt: 8 }}>
         <Chip
-          sx={{ backgroundColor: '#A76126', color: '#fff' }}
+          sx={{ backgroundColor: '#252525', color: '#fff' }}
           label="Локация"
           size="medium"
         />
       </Divider>
 
-      <Typography variant="h6" sx={{ mb: 2, mt: 2, textAlign: 'center' }}>
-        NU Arrows Cafe | Danang
+      <Typography
+        variant="h6"
+        sx={{ mb: 2, mt: 2, textAlign: 'center', color: '#fff' }}
+      >
+        Danang | NU Arrows Cafe | 19:00
       </Typography>
       <Box sx={{ borderRadius: 2, overflow: 'hidden', boxShadow: 3 }}>
         <iframe
@@ -107,7 +110,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Google Maps Location"
+          title=""
         />
       </Box>
     </Box>
