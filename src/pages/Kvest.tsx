@@ -8,10 +8,10 @@ import { Helmet } from 'react-helmet-async';
 import ModalContact from './sections/ModalContact';
 import SectionHero from './sections/SectionHero';
 import SectionFeatures from './sections/SectionFeatures';
-import SectionHighlights from './sections/SectionHighlights';
+import SectionHighlights from './sections/SectionHighlightsKvest';
 import SectionGuide from './sections/SectionGuide';
-import SectionFAQ from './sections/SectionFAQ';
-import SectionContact from './sections/SectionContact';
+import SectionGuideKvest from './sections/SectionGuideKvest';
+import SectionFAQ from './sections/SectionFAQKvest';
 
 // ✅ ИМПОРТЫ ТОЛЬКО ДЛЯ SVG И METADATA
 import logoSvg from '../assets/img/logo.svg';
@@ -76,45 +76,35 @@ const features: Feature[] = [
 const products: Product[] = [
   {
     id: 1,
-    name: 'Японский мост',
-    color: 'Главный символ Хойана. Построен в 1593 году.',
-    imageSrc: 'pictures/2.jpg', // ✅ STRING
+    name: 'Рынок и скрытые смыслы вещей',
+    color:
+      'Историческая экскурсия на рынке Хойана. Показываем, что за вещь перед вами и какую историю и смысл она имеет во вьетнамской культуре. ',
+    imageSrc: 'pictures/2.jpg',
     imageAlt: 'Японский мост в Хойане',
   },
   {
     id: 2,
-    name: 'Фуцзянский зал собраний',
-    color: 'Китайское наследство',
-    imageSrc: 'pictures/14.jpg', // ✅ STRING
+    name: 'Советы по ценам и ведению торгов',
+    color:
+      'Проводим в проверенные места и помогаем не потеряться в выборе. Показываем, где цены завышены и как покупать без переплаты на вьетнамском рынке.',
+    imageSrc: 'pictures/14.jpg',
     imageAlt: 'Фуцзянский зал собраний',
   },
   {
     id: 3,
-    name: 'Дом Тан Ки',
-    color: 'Один из самых ярких образцов традиционной архитектуры в Хойане',
-    imageSrc: 'pictures/9.jpg', // ✅ STRING
+    name: 'Персональные рекомендации',
+    color:
+      'Строим маршрут покупок строго под ваши личные требования. Советуем и находим именно то, что нужно вам, учитывая ваши вкусы и пожелания.',
+    imageSrc: 'pictures/9.jpg',
     imageAlt: 'Дом Тан Ки',
   },
   {
     id: 4,
-    name: 'Храм Куанг Конга',
-    color: 'Наиболее значимое святилище построенное в 1653 году',
-    imageSrc: 'pictures/15.jpg', // ✅ STRING
+    name: 'Упаковка и доставка ваших подарков',
+    color:
+      'Собираем покупки в аккуратную и красивую упаковку, готовую к поездке. Доставка посылки в любую точку мира.',
+    imageSrc: 'pictures/15.jpg',
     imageAlt: 'Храм Куанг Конга',
-  },
-  {
-    id: 5,
-    name: 'Музеи',
-    color: 'Посещение нескольких музеев Хойана',
-    imageSrc: 'pictures/16.jpg', // ✅ STRING
-    imageAlt: 'Музеи',
-  },
-  {
-    id: 6,
-    name: 'Театр',
-    color: 'Традиционное выступление вьетнамских артистов.',
-    imageSrc: 'pictures/62.jpg', // ✅ STRING
-    imageAlt: 'Театр',
   },
 ];
 
@@ -231,12 +221,17 @@ const Kvest: React.FC = () => {
         <SectionFeatures features={features} />
         <SectionHighlights products={products} />
         {/* ✅ STRING путь для profilePicture */}
+
         <SectionGuide
           profilePicture="tours/profile.png"
           handleOpen={handleOpen}
         />
+
         <SectionFAQ />
-        <SectionContact />
+        <SectionGuideKvest
+          profilePicture="tours/bg.webp"
+          handleOpen={handleOpen}
+        />
       </Container>
 
       <ModalContact open={open} handleClose={handleClose} />

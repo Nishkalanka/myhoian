@@ -42,6 +42,8 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
         textAlign: 'center',
         justifyContent: 'center',
         overflow: 'break-word',
+        backgroundImage:
+          'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))',
         gap: 1,
       }}
     >
