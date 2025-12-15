@@ -9,7 +9,7 @@ import ModalContact from './sections/ModalContact';
 import SectionHero from './sections/SectionHero';
 import SectionFeatures from './sections/SectionFeatures';
 import SectionHighlights from './sections/SectionHighlightsKvest';
-import SectionGuide from './sections/SectionGuide';
+import SectionGuide from './sections/SectionGuides';
 import SectionGuideKvest from './sections/SectionGuideKvest';
 import SectionFAQ from './sections/SectionFAQKvest';
 
@@ -56,7 +56,7 @@ const heroContent: HeroContent = {
 
 const features: Feature[] = [
   {
-    name: '4 - 5 ч.',
+    name: '3 - 4 ч.',
     description: 'Время экскурсии',
     icon: AccessTimeIcon, // ⏱️ Часы
   },
@@ -79,7 +79,7 @@ const products: Product[] = [
     name: 'Рынок и скрытые смыслы вещей',
     color:
       'Историческая экскурсия на рынке Хойана. Показываем, что за вещь перед вами и какую историю и смысл она имеет во вьетнамской культуре. ',
-    imageSrc: 'pictures/2.jpg',
+    imageSrc: 'pictures/frame_hoi.webp',
     imageAlt: 'Японский мост в Хойане',
   },
   {
@@ -87,7 +87,7 @@ const products: Product[] = [
     name: 'Советы по ценам и ведению торгов',
     color:
       'Проводим в проверенные места и помогаем не потеряться в выборе. Показываем, где цены завышены и как покупать без переплаты на вьетнамском рынке.',
-    imageSrc: 'pictures/14.jpg',
+    imageSrc: 'pictures/dengi.webp',
     imageAlt: 'Фуцзянский зал собраний',
   },
   {
@@ -95,15 +95,15 @@ const products: Product[] = [
     name: 'Персональные рекомендации',
     color:
       'Строим маршрут покупок строго под ваши личные требования. Советуем и находим именно то, что нужно вам, учитывая ваши вкусы и пожелания.',
-    imageSrc: 'pictures/9.jpg',
+    imageSrc: 'pictures/frame_45.webp',
     imageAlt: 'Дом Тан Ки',
   },
   {
     id: 4,
-    name: 'Упаковка и доставка ваших подарков',
+    name: 'Доставка ваших подарков',
     color:
       'Собираем покупки в аккуратную и красивую упаковку, готовую к поездке. Доставка посылки в любую точку мира.',
-    imageSrc: 'pictures/15.jpg',
+    imageSrc: 'pictures/present.webp',
     imageAlt: 'Храм Куанг Конга',
   },
 ];

@@ -10,7 +10,7 @@ import {
   Chip,
   Stack,
 } from '@mui/material';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import IconButton from '@mui/material/IconButton';
@@ -96,7 +96,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
         </IconButton>
         <IconButton
           component="a"
-          href="https://t.me/pashanishka"
+          href="https://t.me/myhoian"
           target="_blank"
           rel="noopener noreferrer"
           sx={{ color: 'inherit' }}
