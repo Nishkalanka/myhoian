@@ -27,11 +27,6 @@ interface MapComponentProps {
 }
 
 // 🛡️ ОПТИМИЗАЦИЯ: Изолированный контейнер для карты
-const MapContainerDiv = memo(
-  React.forwardRef<HTMLDivElement>((_props, ref) => {
-    return <div ref={ref} style={{ height: '100%', width: '100%' }} />;
-  })
-);
 
 export const MapComponent = memo(function MapComponent({
   landmarks,
@@ -45,7 +40,7 @@ export const MapComponent = memo(function MapComponent({
   getLocalizedContentRef,
 }: MapComponentProps) {
   // Достаем isMapLoaded из контекста
-  const { map, mapContainerRef, mapboxglModule, isMapLoaded } = useMapContext();
+  const { map, mapboxglModule, isMapLoaded } = useMapContext();
 
   const onMapClickPropRef = useRef(onMapClickProp);
   useEffect(() => {
@@ -377,7 +372,7 @@ export const MapComponent = memo(function MapComponent({
 
   return (
     <>
-      <MapContainerDiv ref={mapContainerRef} />
+      {/* Container is now rendered in App.tsx via MapContainer component */}
 
       {isMapLoaded && map && mapboxglModule && (
         <MapMarkersLayer

@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import {
   type LandmarkContent,
   type CategorySlug,
-} from '../../../data/index.js';
+} from '../model/landmarkTypes.js';
 import { getCategoryColor } from '../../../shared/lib/categoryColors.js';
 import type { LocalizedLandmark } from '../model/landmarkTypes.js';
 import { type Landmark } from '../model/landmarkTypes.js';
@@ -110,6 +110,7 @@ const OptimizedImage = memo<OptimizedImageProps>(
           setIsLoaded(true);
           onLoad?.();
         }}
+        loading="lazy"
       />
     );
   }

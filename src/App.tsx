@@ -15,24 +15,33 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 // Синхронные импорты (Критичные для отрисовки)
 import Header from './widgets/header/ui/Header';
-import { MapComponent } from './widgets/map/ui/MapComponent';
+// import { MapComponent } from './widgets/map/ui/MapComponent'; // <-- REMOVED
+import { MapContainer } from './widgets/map/ui/MapContainer';
 import { MapProvider } from './entities/map/model/MapContext';
 import { AppSnackbar } from './shared/ui/AppSnackbar';
 import { useSnackbar } from './shared/lib/useSnackbar';
 
 // Данные и типы
+import { fetchAllLandmarks } from './data/asyncData';
 import {
-  hoiAnLandmarks,
   type Landmark,
   type CategorySlug,
   type LandmarkContent,
-} from './data';
+} from './entities/landmark/model/landmarkTypes';
 import type { LocalizedLandmark } from './entities/landmark/model/landmarkTypes.js';
 import type { ShowSnackbarFn } from './features/user-location/ui/UserLocationButton.js';
 
 // 🚀 ОПТИМИЗАЦИЯ: Ленивая загрузка HeroSection
 // Это ускоряет Initial Paint
 const HeroSection = lazy(() => import('./widgets/hero/ui/HeroSection'));
+
+// 🚀 ОПТИМИЗАЦИЯ: Ленивая загрузка MapComponent
+// Загружаем код карты только когда она действительно нужна (или в фоне)
+const MapComponent = lazy(() =>
+  import('./widgets/map/ui/MapComponent').then((module) => ({
+    default: module.MapComponent,
+  }))
+);
 
 function AppContent() {
   const { t, i18n } = useTranslation();
@@ -41,6 +50,15 @@ function AppContent() {
     slug: string;
     lang: string;
   }>();
+
+  // 🚀 ОПТИМИЗАЦИЯ: Асинхронная загрузка данных
+  const [landmarks, setLandmarks] = useState<Landmark[]>([]);
+
+  useEffect(() => {
+    fetchAllLandmarks().then((data) => {
+      setLandmarks(data);
+    });
+  }, []);
 
   const {
     openSnackbar,
@@ -106,7 +124,7 @@ function AppContent() {
   }, [getLocalizedContentForLandmark]);
 
   const localizedFilteredLandmarks: LocalizedLandmark[] = useMemo(() => {
-    const baseFilteredLandmarks = hoiAnLandmarks.filter((landmark) =>
+    const baseFilteredLandmarks = landmarks.filter((landmark) =>
       (landmark.category as CategorySlug[]).some((category) =>
         selectedCategorySlugs.includes(category)
       )
@@ -115,7 +133,7 @@ function AppContent() {
       ...landmark,
       localizedContent: getLocalizedContentForLandmark(landmark),
     }));
-  }, [selectedCategorySlugs, getLocalizedContentForLandmark]);
+  }, [selectedCategorySlugs, getLocalizedContentForLandmark, landmarks]);
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [hasInteractedWithMarkers, setHasUserInteracted] = useState(false);
@@ -226,18 +244,23 @@ function AppContent() {
               overflow: 'hidden',
             }}
           >
-            {/* Карта грузится лениво: ждёт видимости + 100px */}
-            <MapComponent
-              landmarks={localizedFilteredLandmarks}
-              activeIndex={activeIndex}
-              onMapMarkerClick={handleMapMarkerClick}
-              onMapClick={handleMapClick}
-              routeCoordinates={routeCoordinates}
-              hasUserInteracted={hasInteractedWithMarkers}
-              isRouteVisible={isRouteVisible}
-              onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
-              getLocalizedContentRef={getLocalizedContentForLandmarkRef}
-            />
+            {/* Синхронный контейнер для инициализации карты */}
+            <MapContainer />
+
+            {/* Логика карты грузится лениво*/}
+            <Suspense fallback={null}>
+              <MapComponent
+                landmarks={localizedFilteredLandmarks}
+                activeIndex={activeIndex}
+                onMapMarkerClick={handleMapMarkerClick}
+                onMapClick={handleMapClick}
+                routeCoordinates={routeCoordinates}
+                hasUserInteracted={hasInteractedWithMarkers}
+                isRouteVisible={isRouteVisible}
+                onShowSnackbar={handleOpenSnackbar as ShowSnackbarFn}
+                getLocalizedContentRef={getLocalizedContentForLandmarkRef}
+              />
+            </Suspense>
           </Box>
         </MapProvider>
 

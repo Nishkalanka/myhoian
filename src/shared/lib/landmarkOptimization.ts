@@ -1,6 +1,9 @@
 // src/shared/lib/landmarkOptimization.ts
 
-import type { Landmark, LandmarkContent } from '../../data/index';
+import type {
+  Landmark,
+  LandmarkContent,
+} from '../../entities/landmark/model/landmarkTypes';
 
 /**
  * Обрабатывает fullDescription с оптимизацией:

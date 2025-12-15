@@ -123,6 +123,8 @@ export const MapProvider: React.FC<MapProviderProps> = ({
 
         console.log('🗺️ [MapContext] Создание новой карты...');
 
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
         globalMapInstance = new mapboxgl.Map({
           container: mapContainerRef.current,
           style: 'mapbox://styles/mapbox/streets-v11',

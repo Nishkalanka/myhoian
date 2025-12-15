@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect, useCallback, memo } from 'react';
 import LandmarkSwiper from '../../../entities/landmark/ui/LandmarkSwiper.js';
 import { LandmarkDetailsDialog } from '../../../entities/landmark/ui/LandmarkDetailsDialog.js';
 
-import { type LandmarkContent } from '../../../data/index.js';
+import { type LandmarkContent } from '../../../entities/landmark/model/landmarkTypes';
 import type {
   LocalizedLandmark,
   Landmark,
