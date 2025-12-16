@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 
 // Импорты секций
 import ModalContact from './sections/ModalContact';
-import SectionHero from './sections/SectionHero';
+import SectionHero from './sections/SectionHeroKvest';
 import SectionFeatures from './sections/SectionFeatures';
 import SectionHighlights from './sections/SectionHighlightsKvest';
 import SectionGuide from './sections/SectionGuides';
