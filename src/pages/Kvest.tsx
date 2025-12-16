@@ -129,48 +129,48 @@ const Kvest: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Авторские экскурсии по Хойану 2025 | Туры на русском по Вьетнаму
+          Квест-экскурсия "Хойан в коробке" 2025 - 2026 | Шопинг-тур с гидом
         </title>
         <meta
           name="keywords"
-          content="экскурсии по Хойану, туры Хойан на русском, авторская экскурсия Хойан, древние храмы Хойана, фэн-шуй архитектура, достопримечательности Хойана, гид Павел Хойан, бронирование туров"
+          content="квест хойан, шопинг хойан, сувениры вьетнам, гид по рынку хойан, подарки из вьетнама, хойан в коробке, экскурсия рынок хойан, как торговаться во вьетнаме"
         />
         <meta
           name="description"
-          content="Откройте настоящий Хойан: старинный храмы, конфуцианская философия, скрытые святыни, архитектура фэн-шуй. Авторские экскурсии на русском языке с историком Павлом. Индивидуальные и групповые туры. Забронируйте прямо сейчас!"
+          content="Увлекательный квест-тур по рынкам Хойана. Узнайте историю вещей, научитесь торговаться и соберите идеальный подарок из Вьетнама. Персональные рекомендации и упаковка."
         />
         <link
           rel="canonical"
-          href="https://myhoian.app/hoian-avtorskaya-ekskursiya"
+          href="https://myhoian.app/kvest-ekskursiya-hoian-v-korobke"
         />
         <meta
           property="og:title"
-          content="Авторские экскурсии по Хойану 2025 | Туры на русском с гидом-историком"
+          content="Квест-экскурсия 'Хойан в коробке' 2025 | Шопинг-тур с гидом"
         />
         <meta
           property="og:description"
-          content="Глубокие экскурсии по Хойану: Пешие туры, лодки-корзины, кулинарные курсы, философия и история. Индивидуальные группы на русском языке. Забронируйте сейчас!"
+          content="Увлекательный квест-тур по рынкам Хойана. Узнайте историю вещей, научитесь торговаться и соберите идеальный подарок из Вьетнама."
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://myhoian.app/hoian-avtorskaya-ekskursiya"
+          content="https://myhoian.app/kvest-ekskursiya-hoian-v-korobke"
         />
         <meta property="og:image" content={`https://myhoian.app${ogImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Авторские экскурсии по Хойану с гидом Павлом"
+          content="Квест-экскурсия Хойан в коробке"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Авторские экскурсии по Хойану 2025 на русском"
+          content="Квест-экскурсия 'Хойан в коробке' 2025"
         />
         <meta
           name="twitter:description"
-          content="Откройте философию, историю и архитектуру Хойана с гидом-историком Павлом"
+          content="Увлекательный квест-тур по рынкам Хойана. Соберите идеальный подарок из Вьетнама!"
         />
         <meta name="twitter:image" content={`https://myhoian.app${ogImage}`} />
         <meta name="author" content="Павел, автор лекций по Вьетнаму и гид" />
@@ -180,10 +180,10 @@ const Kvest: React.FC = () => {
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'Авторские экскурсии по Хойану с Павлом',
+            name: 'Квест-экскурсия "Хойан в коробке"',
             description:
-              'Авторские экскурсии по Хойану на русском языке: история, философия, архитектура',
-            url: 'https://myhoian.app/hoian-avtorskaya-ekskursiya',
+              'Увлекательный квест-тур по рынкам Хойана. Узнайте историю вещей, научитесь торговаться и соберите идеальный подарок из Вьетнама.',
+            url: 'https://myhoian.app/kvest-ekskursiya-hoian-v-korobke',
             telephone: '+84357923401',
             priceRange: '$$',
             areaServed: 'VN',
@@ -228,10 +228,7 @@ const Kvest: React.FC = () => {
         />
 
         <SectionFAQ />
-        <SectionGuideKvest
-          profilePicture="tours/bg.webp"
-          handleOpen={handleOpen}
-        />
+        <SectionGuideKvest />
       </Container>
 
       <ModalContact open={open} handleClose={handleClose} />

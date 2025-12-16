@@ -16,12 +16,10 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import IconButton from '@mui/material/IconButton';
 
 // Интерфейс для пропсов
-interface SectionGuideProps {
-  profilePicture: string;
-  handleOpen: () => void;
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface SectionGuideProps {}
 
-const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
+const SectionGuide: React.FC<SectionGuideProps> = () => (
   <>
     <Box>
       <Divider sx={{ mt: 8, mb: 2 }}>
@@ -73,7 +71,12 @@ const SectionGuide: React.FC<SectionGuideProps> = ({ handleOpen }) => (
         Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий
         наследие веков.
       </Typography>
-      <Button onClick={handleOpen} size="small" variant="contained">
+      <Button
+        component="a"
+        href="/hoian-avtorskaya-ekskursiya"
+        size="small"
+        variant="contained"
+      >
         Подробнее
       </Button>
     </Paper>

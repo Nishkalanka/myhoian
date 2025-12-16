@@ -111,7 +111,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
       </Typography>
       <Typography variant="caption" sx={{ mb: 2 }}>
         В выборе подарков и сувениров не может быть компромисов!<br></br> Одна
-        голова хорошо а две лучше!
+        голова хорошо, а две лучше!
       </Typography>
 
       <Button onClick={handleOpen} size="small" variant="contained">

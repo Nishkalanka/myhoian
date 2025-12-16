@@ -6,6 +6,7 @@ import {
   Chip,
   TextField,
   MenuItem,
+  Button,
 } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -39,7 +40,7 @@ const CURRENCY_RATES = {
 
 // Цены в VND
 const PRICES = {
-  dayTour: 1000000,
+  dayTour: 500000,
   eveningTour: 1500000,
   personalGuide: 500000,
   transfer: 400000,
@@ -92,12 +93,46 @@ const SectionFAQ: React.FC = () => {
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          <Typography component="span">Программа и стоимость</Typography>
+          <Typography component="span">Стоимость</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Box>
-            <Divider sx={{ mt: 0, mb: 4 }}>
-              <Chip label="Рынок Хойана ( утро или вечер )" size="medium" />
+            <Divider sx={{ mt: 0, mb: 2 }}>
+              <Chip label="До 25 декабря" size="medium" />
+            </Divider>
+          </Box>
+          <Typography
+            variant="h4"
+            sx={{ textAlign: 'center', mb: 1, textTransform: 'uppercase' }}
+          >
+            Бесплатно!
+          </Typography>
+          <Typography variant="body1" sx={{ textAlign: 'center', mb: 2 }}>
+            Присоединяйтесь к группе и после розыгрыша первым 5ти участникам
+            квест-экскурсия в подарок!
+          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+            <Button
+              size="medium"
+              variant="contained"
+              component="a"
+              href="https://t.me/hoianbox"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Присоединиться
+            </Button>
+          </Box>
+          <Typography
+            variant="caption"
+            sx={{ textAlign: 'center', display: 'block', mb: 4 }}
+          >
+            Никакого спама и рекламы!
+          </Typography>
+
+          <Box>
+            <Divider sx={{ mt: 0, mb: 3 }}>
+              <Chip label="После" size="medium" />
             </Divider>
           </Box>
           {/* Селектор валюты */}
@@ -122,115 +157,9 @@ const SectionFAQ: React.FC = () => {
           </Typography>
           <Typography
             variant="caption"
-            sx={{ textAlign: 'center', display: 'block' }}
+            sx={{ textAlign: 'center', display: 'block', mb: 4 }}
           >
-            Билеты в музеи и питание входят в стоимость
-          </Typography>
-
-          <Timeline position="alternate">
-            <TimelineItem>
-              <TimelineOppositeContent
-                sx={{ m: 'auto 0' }}
-                align="right"
-                variant="body2"
-                color="text.secondary"
-              >
-                8:00 - 9:00
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot sx={{ backgroundColor: '#FFBF00' }}>
-                  <CoffeeMakerIcon />
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="body1" component="div">
-                  Кофе / Чай
-                </Typography>
-                <Typography variant="caption">Старинная кофейня.</Typography>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent
-                sx={{ m: 'auto 0' }}
-                variant="body2"
-                color="text.secondary"
-              >
-                10:15 - 11:00
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot sx={{ backgroundColor: '#FFBF00' }}>
-                  <TheaterComedyIcon />
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="body1" component="div">
-                  Театр
-                </Typography>
-                <Typography variant="caption">
-                  Живое выступление вьетнамских артистов.
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent
-                sx={{ m: 'auto 0' }}
-                variant="body2"
-                color="text.secondary"
-              >
-                11:00 - 13:00
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot sx={{ backgroundColor: '#FFBF00' }}>
-                  <FavoriteIcon />
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="body1" component="div">
-                  Хойан
-                </Typography>
-                <Typography variant="caption">
-                  Посещаем все основные места в городе
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineOppositeContent
-                sx={{ m: 'auto 0' }}
-                variant="body2"
-                color="text.secondary"
-              >
-                13:00
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot sx={{ backgroundColor: '#FFBF00' }}>
-                  <RamenDiningIcon />
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="body1" component="div">
-                  Обед
-                </Typography>
-                <Typography variant="caption">
-                  Едим в правильном месте
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-          </Timeline>
-
-          <Typography
-            variant="body1"
-            sx={{ textAlign: 'center', mt: 2, mb: 4 }}
-          >
-            Каждому гостю в конце экскурсии подарок. Закажете дневную и вечернюю
-            экскурсию - получите общую скидку 10%
+            Цена указана за одного человека<br></br> ( детям бесплатно )
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -263,8 +192,7 @@ const SectionFAQ: React.FC = () => {
           </Typography>
           <Typography variant="body2" sx={{ mb: 1, textAlign: 'left' }}>
             Передвижение на скутере в любую локацию! Комбинированные виды
-            экскурсии. Индивидуальный подход. Экспертная помощь в выборе
-            сувениров (поверьте это имеет смысл)
+            экскурсии. Индивидуальный подход.
           </Typography>
         </AccordionDetails>
       </Accordion>
