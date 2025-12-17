@@ -15,7 +15,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
 import type { Landmark, LandmarkContent } from '../model/landmarkTypes';
-import { fullDescriptionImageMap } from '../../../shared/lib/imagePaths';
+
 import { usePictureUrl } from '../../../shared/lib/usePictureUrl';
 import { getOptimizedFullDescription } from '../../../shared/lib/landmarkOptimization';
 import { useMenuDisplay } from '../lib/useMenuDisplay';
@@ -288,8 +288,7 @@ export const LandmarkDetailsDialog: React.FC<LandmarkDetailsDialogProps> = ({
                 dangerouslySetInnerHTML={{
                   __html: getOptimizedFullDescription(
                     selectedLandmark,
-                    getLocalizedContent(selectedLandmark),
-                    fullDescriptionImageMap
+                    getLocalizedContent(selectedLandmark)
                   ),
                 }}
               />

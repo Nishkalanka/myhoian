@@ -12,30 +12,14 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-
-import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
-import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
-import RamenDiningIcon from '@mui/icons-material/RamenDining';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import SailingIcon from '@mui/icons-material/Sailing';
 
 // Курсы валют относительно VND
 const CURRENCY_RATES = {
   VND: { symbol: 'đ', rate: 1 },
   RUB: { symbol: '₽', rate: 0.0037 },
+  KZT: { symbol: '₸', rate: 49.5 },
   USD: { symbol: '$', rate: 0.000039 },
   EUR: { symbol: '€', rate: 0.000038 },
-  GBP: { symbol: '£', rate: 0.000031 },
-  JPY: { symbol: '¥', rate: 0.0065 },
-  CNY: { symbol: '¥', rate: 0.00028 },
 };
 
 // Цены в VND

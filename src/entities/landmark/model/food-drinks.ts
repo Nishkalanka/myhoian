@@ -2794,237 +2794,7 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'the-hill-station-deli-and-boutique',
     },
   },
-  //Sua
-  {
-    id: 'sua-vegan-restaurant', // <-- ID теперь строковый
-    coordinates: [15.883638636542983, 108.32000846236811], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
-    category: ['food-drinks'],
-    imageUrl: '58.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
-    en: {
-      title: 'Sua Vegan Restaurant',
-      description:
-        'A special and heartwarming vegan restaurant in Hoi An, renowned for its delicious plant-based cuisine and its unique mission of employing deaf and mute staff.',
-      fullDescription: `
-<p><strong>Sua Vegan Restaurant</strong> in Hoi An is more than just a place to eat; it's a truly special establishment known for its delicious vegan food and its incredibly inspiring social mission. What sets Sua apart is its commitment to employing and empowering <strong>deaf and mute individuals</strong>, offering them meaningful opportunities and fostering a unique, heartwarming dining experience.</p>
-
-<h6>A Special Place with a Heartfelt Mission:</h6>
-<ul>
-  <li><strong>Empowering Employment:</strong> Sua Vegan Restaurant provides invaluable employment opportunities for deaf and mute people, giving them a platform to showcase their skills and contribute to the community. This initiative highlights inclusivity and creates a supportive environment.</li>
-  <li><strong>Unique Communication:</strong> Don't be surprised by a slightly different but charming way of ordering. The staff are adept at communicating through a combination of written notes, gestures, and a warm, welcoming attitude. It's an opportunity for guests to engage in a unique and respectful interaction.</li>
-  <li><strong>Inspiring Atmosphere:</strong> The presence of the dedicated and hardworking staff contributes to an incredibly positive and humble atmosphere. Many visitors find their experience here deeply moving and memorable.</li>
-</ul>
-
-<h6>Vegan Delights:</h6>
-<ul>
-  <li><strong>Pure Plant-Based Cuisine:</strong> As the name suggests, Sua is entirely vegan, offering a diverse menu of plant-based dishes that are both healthy and incredibly flavorful.</li>
-  <li><strong>Vietnamese & Fusion:</strong> The menu typically features a blend of traditional Vietnamese vegan dishes (like fresh spring rolls, various noodle soups, rice dishes) alongside some creative fusion options.</li>
-  <li><strong>Fresh Ingredients:</strong> Emphasis is placed on fresh, local vegetables, herbs, and plant-based proteins, ensuring vibrant and wholesome meals.</li>
-  <li><strong>Dietary Friendly:</strong> A great choice for vegans, vegetarians, and anyone looking for healthy, light, and flavorful meals.</li>
-</ul>
-
-<h6>Atmosphere & Ambiance:</h6>
-<ul>
-  <li><strong>Calm and Serene:</strong> Despite being popular, the atmosphere often remains calm and peaceful, allowing guests to relax and savor their meals.</li>
-  <li><strong>Authentic Charm:</strong> The decor is usually simple yet charming, reflecting traditional Vietnamese aesthetics with a modern, clean twist.</li>
-</ul>
-
-<h6>Location:</h6>
-<p>Sua Vegan Restaurant is typically located within or near the central Ancient Town area of Hoi An, making it convenient for tourists exploring the historical sites. Its exact address might be found on a quieter street, offering a peaceful escape from the main crowds.</p>
-<p><strong>Always verify the exact address locally or on recent online maps, as businesses can sometimes change locations.</strong></p>
-
-<h6>Visitor Tips:</h6>
-<ul>
-  <li><strong>Be Patient and Respectful:</strong> Embrace the unique communication style. A smile and a clear written note often go a long way.</li>
-  <li><strong>Support the Mission:</strong> By dining here, you are directly supporting a wonderful social enterprise.</li>
-  <li><strong>Try the Local Specialties:</strong> Explore their vegan versions of classic Vietnamese dishes.</li>
-  <li><strong>Consider Lunch:</strong> It's a great spot for a healthy and satisfying lunch during your exploration of Hoi An.</li>
-</ul>
-      `,
-      internalImageNames: [], // Добавьте имена файлов изображений, если они будут
-    },
-    es: {
-      title: 'Sua Vegan Restaurant',
-      description:
-        'Un restaurante vegano especial y conmovedor en Hoi An, famoso por su deliciosa cocina a base de plantas y su misión única de emplear personal sordo y mudo.',
-      fullDescription: `
-<p><strong>Sua Vegan Restaurant</strong> en Hoi An es más que un simple lugar para comer; es un establecimiento verdaderamente especial conocido por su deliciosa comida vegana y su increíble misión social inspiradora. Lo que distingue a Sua es su compromiso de emplear y empoderar a <strong>personas sordas y mudas</strong>, ofreciéndoles oportunidades significativas y fomentando una experiencia gastronómica única y conmovedora.</p>
-
-<h6>Un Lugar Especial con una Misión Sincera:</h6>
-<ul>
-  <li><strong>Empleo Empoderador:</strong> Sua Vegan Restaurant brinda oportunidades de empleo invaluables para personas sordas y mudas, dándoles una plataforma para mostrar sus habilidades y contribuir a la comunidad. Esta iniciativa destaca la inclusión y crea un ambiente de apoyo.</li>
-  <li><strong>Comunicación Única:</strong> No se sorprenda por una forma de pedir un poco diferente pero encantadora. El personal es experto en comunicarse a través de una combinación de notas escritas, gestos y una actitud cálida y acogedora. Es una oportunidad para que los huéspedes se involucren en una interacción única y respetuosa.</li>
-  <li><strong>Ambiente Inspirador:</strong> La presencia del personal dedicado y trabajador contribuye a una atmósfera increíblemente positiva y humilde. Muchos visitantes encuentran su experiencia aquí profundamente conmovedora y memorable.</li>
-</ul>
-
-<h6>Delicias Veganas:</h6>
-<ul>
-  <li><strong>Cocina Pura a Base de Plantas:</strong> Como su nombre lo indica, Sua es completamente vegano, ofreciendo un menú diverso de platos a base de plantas que son saludables y increíblemente sabrosos.</li>
-  <li><strong>Vietnamita y Fusión:</strong> El menú generalmente presenta una mezcla de platos veganos vietnamitas tradicionales (como rollitos de primavera frescos, varias sopas de fideos, platos de arroz) junto con algunas opciones de fusión creativas.</li>
-  <li><strong>Ingredientes Frescos:</strong> Se hace hincapié en verduras, hierbas y proteínas vegetales frescas y locales, lo que garantiza comidas vibrantes y saludables.</li>
-  <li><strong>Apto para Dietas:</strong> Una excelente opción para veganos, vegetarianos y cualquiera que busque comidas saludables, ligeras y sabrosas.</li>
-</ul>
-
-<h6>Atmósfera y Ambiente:</h6>
-<ul>
-  <li><strong>Tranquilo y Sereno:</strong> A pesar de ser popular, el ambiente a menudo se mantiene tranquilo y pacífico, lo que permite a los huéspedes relajarse y saborear sus comidas.</li>
-  <li><strong>Encanto Auténtico:</strong> La decoración suele ser sencilla pero encantadora, lo que refleja la estética tradicional vietnamita con un toque moderno y limpio.</li>
-</ul>
-
-<h6>Ubicación:</h6>
-<p>Sua Vegan Restaurant suele estar ubicado dentro o cerca del área central del Casco Antiguo de Hoi An, lo que lo hace conveniente para los turistas que exploran los sitios históricos. Su dirección exacta podría encontrarse en una calle más tranquila, ofreciendo un escape pacífico de las principales multitudes.</p>
-<p><strong>Siempre verifique la dirección exacta a nivel local o en mapas en línea recientes, ya que los negocios a veces pueden cambiar de ubicación.</strong></p>
-
-<h6>Consejos para Visitantes:</h6>
-<ul>
-  <li><strong>Sea Paciente y Respetuoso:</strong> Adopte el estilo de comunicación único. Una sonrisa y una nota escrita clara suelen ser muy útiles.</li>
-  <li><strong>Apoye la Misión:</strong> Al cenar aquí, está apoyando directamente una maravillosa empresa social.</li>
-  <li><strong>Pruebe las Especialidades Locales:</strong> Explore sus versiones veganas de platos vietnamitas clásicos.</li>
-  <li><strong>Considere Almorzar:</strong> Es un gran lugar para un almuerzo saludable y satisfactorio durante su exploración de Hoi An.</li>
-</ul>
-      `,
-      internalImageNames: [],
-    },
-    fr: {
-      title: 'Sua Vegan Restaurant',
-      description:
-        "Un restaurant végétalien spécial et chaleureux à Hoi An, réputé pour sa délicieuse cuisine à base de plantes et sa mission unique d'employer du personnel sourd et muet.",
-      fullDescription: `
-<p><strong>Sua Vegan Restaurant</strong> à Hoi An est bien plus qu'un simple endroit pour manger ; c'est un établissement véritablement spécial, connu pour sa délicieuse cuisine végétalienne et sa mission sociale incroyablement inspirante. Ce qui distingue Sua est son engagement à employer et à autonomiser les <strong>personnes sourdes et muettes</strong>, en leur offrant des opportunités significatives et en favorisant une expérience culinaire unique et émouvante.</p>
-
-<h6>Un Lieu Spécial avec une Mission Sincère :</h6>
-<ul>
-  <li><strong>Emploi Autonomisant :</strong> Le Sua Vegan Restaurant offre des opportunités d'emploi inestimables aux personnes sourdes et muettes, leur donnant une plateforme pour montrer leurs compétences et contribuer à la communauté. Cette initiative met en lumière l'inclusion et crée un environnement de soutien.</li>
-  <li><strong>Communication Unique :</strong> Ne soyez pas surpris par une façon de commander légèrement différente mais charmante. Le personnel est habile à communiquer par une combinaison de notes écrites, de gestes et d'une attitude chaleureuse et accueillante. C'est une opportunité pour les clients de s'engager dans une interaction unique et respectueuse.</li>
-  <li><strong>Atmosphère Inspirante :</strong> La présence du personnel dévoué et travailleur contribue à une atmosphère incroyablement positive et humble. De nombreux visiteurs trouvent leur expérience ici profondément émouvante et mémorable.</li>
-</ul>
-
-<h6>Délices Végétaliens :</h6>
-<ul>
-  <li><strong>Cuisine Purement Végétale :</strong> Comme son nom l'indique, Sua est entièrement végétalien, offrant un menu diversifié de plats à base de plantes qui sont à la fois sains et incroyablement savoureux.</li>
-  <li><strong>Vietnamien & Fusion :</strong> Le menu propose généralement un mélange de plats végétaliens vietnamiens traditionnels (comme les rouleaux de printemps frais, diverses soupes de nouilles, plats de riz) ainsi que des options de fusion créatives.</li>
-  <li><strong>Ingrédients Frais :</strong> L'accent est mis sur les légumes, les herbes et les protéines végétales frais et locaux, garantissant des repas vibrants et sains.</li>
-  <li><strong>Adapté aux Régimes :</strong> Un excellent choix pour les végétaliens, les végétariens et toute personne à la recherche de repas sains, légers et savoureux.</li>
-</ul>
-
-<h6>Atmosphère & Ambiance :</h6>
-<ul>
-  <li><strong>Calme et Serein :</strong> Bien qu'étant populaire, l'atmosphère reste souvent calme et paisible, permettant aux clients de se détendre et de savourer leurs repas.</li>
-  <li><strong>Charme Authentique :</strong> Le décor est généralement simple mais charmant, reflétant l'esthétique traditionnelle vietnamienne avec une touche moderne et épurée.</li>
-</ul>
-
-<h6>Localisation :</h6>
-<p>Le Sua Vegan Restaurant est généralement situé dans ou à proximité de la zone centrale de la Vieille Ville de Hoi An, ce qui le rend pratique pour les touristes explorant les sites historiques. Son adresse exacte pourrait se trouver dans une rue plus calme, offrant une évasion paisible des principales foules.</p>
-<p><strong>Veuillez toujours vérifier l'adresse exacte localement ou sur des cartes en ligne récentes, car les entreprises peuvent parfois changer d'emplacement.</strong></p>
-
-<h6>Conseils pour les Visiteurs :</h6>
-<ul>
-  <li><strong>Soyez Patient et Respectueux :</strong> Adoptez le style de communication unique. Un sourire et une note écrite claire sont souvent très utiles.</li>
-  <li><strong>Soutenez la Mission :</strong> En dînant ici, vous soutenez directement une merveilleuse entreprise sociale.</li>
-  <li><strong>Goûtez les Spécialités Locales :</strong> Explorez leurs versions végétaliennes des plats vietnamiens classiques.</li>
-  <li><strong>Considérez le Déjeuner :</strong> C'est un excellent endroit pour un déjeuner sain et satisfaisant lors de votre exploration de Hoi An.</li>
-</ul>
-      `,
-      internalImageNames: [],
-    },
-    ru: {
-      title: 'Sua Vegan Restaurant',
-      description:
-        'Особый и душевный веганский ресторан в Хойане, известный своей вкусной растительной кухней и уникальной миссией по трудоустройству глухонемых сотрудников.',
-      fullDescription: `
-<p><strong>Sua Vegan Restaurant</strong> в Хойане — это не просто место, где можно поесть; это поистине особенное заведение, известное своей вкусной веганской едой и невероятно вдохновляющей социальной миссией. Что отличает Sua, так это его приверженность трудоустройству и расширению прав и возможностей <strong>глухонемых людей</strong>, предлагая им значимые возможности и создавая уникальный, трогательный опыт обеда.</p>
-
-<h6>Особенное место с искренней миссией:</h6>
-<ul>
-  <li><strong>Расширение прав и возможностей через трудоустройство:</strong> Sua Vegan Restaurant предоставляет бесценные возможности трудоустройства для глухонемых людей, давая им платформу для демонстрации своих навыков и внесения вклада в сообщество. Эта инициатива подчеркивает инклюзивность и создает благоприятную среду.</li>
-  <li><strong>Уникальное общение:</strong> Не удивляйтесь немного иному, но очаровательному способу заказа. Персонал искусен в общении с помощью письменных заметок, жестов и теплого, гостеприимного отношения. Это возможность для гостей вступить в уникальное и уважительное взаимодействие.</li>
-  <li><strong>Вдохновляющая атмосфера:</strong> Присутствие преданного своему делу и трудолюбивого персонала способствует невероятно позитивной и скромной атмосфере. Многие посетители находят свой опыт здесь глубоко трогательным и запоминающимся.</li>
-</ul>
-
-<h6>Веганские изыски:</h6>
-<ul>
-  <li><strong>Чистая растительная кухня:</strong> Как следует из названия, Sua полностью веганский, предлагая разнообразное меню из растительных блюд, которые являются одновременно полезными и невероятно ароматными.</li>
-  <li><strong>Вьетнамская и фьюжн:</strong> Меню обычно включает в себя сочетание традиционных вьетнамских веганских блюд (например, свежие спринг-роллы, различные супы с лапшой, рисовые блюда) наряду с некоторыми креативными фьюжн-вариантами.</li>
-  <li><strong>Свежие ингредиенты:</strong> Особое внимание уделяется свежим местным овощам, травам и растительным белкам, что обеспечивает яркие и полезные блюда.</li>
-  <li><strong>Подходит для диетического питания:</strong> Отличный выбор для веганов, вегетарианцев и всех, кто ищет здоровые, легкие и ароматные блюда.</li>
-</ul>
-
-<h6>Атмосфера и обстановка:</h6>
-<ul>
-  <li><strong>Спокойный и безмятежный:</strong> Несмотря на популярность, атмосфера часто остается спокойной и мирной, позволяя гостям расслабиться и насладиться едой.</li>
-  <li><strong>Подлинный шарм:</strong> Декор обычно простой, но очаровательный, отражающий традиционную вьетнамскую эстетику с современным, чистым оттенком.</li>
-</ul>
-
-<h6>Расположение:</h6>
-<p>Sua Vegan Restaurant обычно расположен в центральной части Старого города Хойана или очень близко к нему, что делает его удобным для туристов, исследующих исторические места. Его точный адрес может быть найден на более тихой улице, предлагая спокойное убежище от основной толпы.</p>
-<p><strong>Всегда уточняйте точный адрес на месте или на свежих онлайн-картах, так как предприятия иногда могут менять свое местоположение.</strong></p>
-
-<h6>Советы для посетителей:</h6>
-<ul>
-  <li><strong>Будьте терпеливы и уважительны:</strong> Примите уникальный стиль общения. Улыбка и четкая письменная заметка часто очень помогают.</li>
-  <li><strong>Поддержите миссию:</strong> Обедая здесь, вы напрямую поддерживаете замечательное социальное предприятие.</li>
-  <li><strong>Попробуйте местные деликатесы:</strong> Изучите их веганские версии классических вьетнамских блюд.</li>
-  <li><strong>Рассмотрите обед:</strong> Это отличное место для здорового и сытного обеда во время вашего знакомства с Хойаном.</li>
-</ul>
-      `,
-      internalImageNames: [],
-    },
-    vn: {
-      title: 'Sua Vegan Restaurant',
-      description:
-        'Một nhà hàng thuần chay đặc biệt và ấm áp ở Hội An, nổi tiếng với ẩm thực thực vật ngon miệng và sứ mệnh độc đáo là tuyển dụng nhân viên khiếm thính và khiếm ngôn.',
-      fullDescription: `
-<p><strong>Sua Vegan Restaurant</strong> ở Hội An không chỉ là một nơi để ăn uống; đây là một cơ sở thực sự đặc biệt, nổi tiếng với các món ăn chay thơm ngon và sứ mệnh xã hội đầy cảm hứng. Điều làm nên sự khác biệt của Sua là cam kết tuyển dụng và trao quyền cho <strong>những người khiếm thính và khiếm ngôn</strong>, mang đến cho họ những cơ hội có ý nghĩa và tạo ra trải nghiệm ăn uống độc đáo, ấm lòng.</p>
-
-<h6>Một Địa điểm Đặc biệt với Sứ mệnh Từ tâm:</h6>
-<ul>
-  <li><strong>Trao quyền Thông qua Việc làm:</strong> Sua Vegan Restaurant cung cấp các cơ hội việc làm vô giá cho người khiếm thính và khiếm ngôn, tạo cho họ một nền tảng để thể hiện kỹ năng và đóng góp cho cộng đồng. Sáng kiến này đề cao sự hòa nhập và tạo ra một môi trường hỗ trợ.</li>
-  <li><strong>Giao tiếp Độc đáo:</strong> Đừng ngạc nhiên bởi một cách gọi món hơi khác nhưng duyên dáng. Nhân viên thông thạo giao tiếp thông qua sự kết hợp của ghi chú viết tay, cử chỉ và thái độ nồng nhiệt, hiếu khách. Đây là cơ hội để khách hàng tham gia vào một tương tác độc đáo và tôn trọng.</li>
-  <li><strong>Không gian Truyền cảm hứng:</strong> Sự hiện diện của đội ngũ nhân viên tận tâm và chăm chỉ góp phần tạo nên một không khí vô cùng tích cực và khiêm tốn. Nhiều du khách nhận thấy trải nghiệm của họ ở đây vô cùng cảm động và đáng nhớ.</li>
-</ul>
-
-<h6>Đồ ăn chay ngon miệng:</h6>
-<ul>
-  <li><strong>Ẩm thực Thuần thực vật:</strong> Đúng như tên gọi, Sua hoàn toàn thuần chay, cung cấp thực đơn đa dạng các món ăn từ thực vật, vừa tốt cho sức khỏe vừa vô cùng đậm đà hương vị.</li>
-  <li><strong>Món Việt & Fusion:</strong> Thực đơn thường có sự pha trộn giữa các món ăn chay truyền thống Việt Nam (như nem tươi, các loại bún, cơm) cùng với một số lựa chọn fusion sáng tạo.</li>
-  <li><strong>Nguyên liệu Tươi sống:</strong> Sự nhấn mạnh được đặt vào các loại rau, thảo mộc và protein thực vật tươi, địa phương, đảm bảo các bữa ăn sống động và bổ dưỡng.</li>
-  <li><strong>Phù hợp với Chế độ ăn kiêng:</strong> Một lựa chọn tuyệt vời cho người ăn chay, người ăn chay trường và bất kỳ ai đang tìm kiếm những bữa ăn lành mạnh, nhẹ nhàng và đầy hương vị.</li>
-</ul>
-
-<h6>Bầu không khí & Không gian:</h6>
-<ul>
-  <li><strong>Bình yên và Thanh tịnh:</strong> Mặc dù nổi tiếng, không gian thường vẫn bình tĩnh và yên bình, cho phép khách thư giãn và thưởng thức bữa ăn của họ.</li>
-  <li><strong>Nét duyên dáng Authenticity:</strong> Trang trí thường đơn giản nhưng quyến rũ, phản ánh nét thẩm mỹ truyền thống Việt Nam với một chút hiện đại, sạch sẽ.</li>
-</ul>
-
-<h6>Vị trí:</h6>
-<p>Sua Vegan Restaurant thường nằm trong hoặc rất gần khu vực Phố cổ Hội An, giúp khách du lịch dễ dàng tiếp cận để khám phá các di tích lịch sử. Địa chỉ chính xác của nó có thể nằm trên một con phố yên tĩnh hơn, mang đến một lối thoát bình yên khỏi đám đông chính.</p>
-<p><strong>Luôn xác minh địa chỉ chính xác tại địa phương hoặc trên các bản đồ trực tuyến gần đây, vì các doanh nghiệp đôi khi có thể thay đổi vị trí.</strong></p>
-
-<h6>Mẹo dành cho Du khách:</h6>
-<ul>
-  <li><strong>Hãy Kiên nhẫn và Tôn trọng:</strong> Chấp nhận phong cách giao tiếp độc đáo. Một nụ cười và một ghi chú viết rõ ràng thường rất hữu ích.</li>
-  <li><strong>Ủng hộ Sứ mệnh:</strong> Bằng cách dùng bữa tại đây, bạn đang trực tiếp ủng hộ một doanh nghiệp xã hội tuyệt vời.</li>
-  <li><strong>Thử các Món Đặc sản Địa phương:</strong> Khám phá các phiên bản chay của các món ăn Việt Nam cổ điển của họ.</li>
-  <li><strong>Cân nhắc dùng Bữa trưa:</strong> Đây là một địa điểm tuyệt vời cho một bữa trưa lành mạnh và no bụng trong chuyến khám phá Hội An của bạn.</li>
-</ul>
-      `,
-      internalImageNames: [],
-    },
-    slug: {
-      // <-- Добавлен объект slug для локализованных URL
-      en: 'sua-vegan-restaurant',
-      ru: 'sua-veganskii-restoran',
-      es: 'restaurante-vegano-sua',
-      fr: 'restaurant-vegane-sua',
-      vn: 'nha-hang-thuan-chay-sua',
-    },
-    // ru: { /* Русский контент здесь, если есть */ },
-    // es: { /* Испанский контент здесь, si hay */ }, // Обновлено
-    // fr: { /* Французский контент здесь, если есть */ },
-    // vn: { /* Вьетнамский контент здесь, если есть */ },
-  },
   //fefe-Roastery
-
   {
     id: 'fefe-roastery',
     coordinates: [15.877930767963667, 108.32668616386269],
@@ -4571,125 +4341,1527 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'fefe-roastery',
     },
   },
-  //Secret-Garden
+  //Sinh To Tam
   {
-    id: 'secret-garden', // <-- ID теперь строковый
-    coordinates: [15.877724249099783, 108.32800995382493], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    id: 'sinh-to-tam', // <-- ID теперь строковый
+    coordinates: [15.88333331732692, 108.3501025836399], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['food-drinks'],
-    imageUrl: 'secret-garden.webp', // <-- ПРИМЕР: Укажите имя файла главного изображения для карточки
+    imageUrl: 'sinh_to_tam.webp',
     en: {
-      title: 'Secret Garden',
-      description: 'Secret Garden in Hoi An is a true oasis of calm and green.',
+      title: 'Sinh To Tam',
+      description: 'Vibrant local cafe located in Hoi An',
       fullDescription: `
-<p>Wow, what a surprise!” – That’s what we often hear from guests who discover us. Tucked away like a hidden gem in the middle of Hoi An Old Town, Secret Garden in Hoi An is a true oasis of calm and green. You’ll find us at the end of the alley next to No.132 Trần Phú Street. Step behind the old walls and into a peaceful garden where traditional Vietnamese dishes and carefully crafted Western flavors come together. Here, time slows, flavors bloom, and every moment feels like home.
-</p>
-      `,
-      internalImageNames: [], // Добавьте имена файлов изображений, если они будут
-    },
-    es: {
-      title: 'Secret Garden',
-      description:
-        'Secret Garden en Hoi An es un verdadero oasis de calma y verdor.',
-      fullDescription: `
-<p>¡Wow, qué sorpresa!" – Eso es lo que frecuentemente escuchamos de los huéspedes que nos descubren. Escondido como una joya oculta en medio de la Ciudad Antigua de Hoi An, Secret Garden en Hoi An es un verdadero oasis de calma y verdor. Nos encontrarás al final del callejón junto al No.132 de la calle Trần Phú. Entra detrás de los muros antiguos en un jardín tranquilo donde los platos vietnamitas tradicionales y los sabores occidentales cuidadosamente elaborados se unen. Aquí, el tiempo se ralentiza, los sabores florecen, y cada momento se siente como en casa.
-</p>
-      `,
-      internalImageNames: [],
-    },
-    fr: {
-      title: 'Secret Garden',
-      description:
-        'Secret Garden à Hoi An est un véritable oasis de calme et de verdure.',
-      fullDescription: `
-<p>"Wow, quel surprise !" – C'est ce que nous entendons souvent de la part des clients qui nous découvrent. Caché comme un joyau secret au cœur de la Vieille Ville de Hoi An, Secret Garden à Hoi An est un véritable oasis de calme et de verdure. Vous nous trouverez au bout de la ruelle à côté du No.132 rue Trần Phú. Franchez les vieux murs et entrez dans un jardin paisible où les plats traditionnels vietnamiens et les saveurs occidentales soigneusement élaborées se rencontrent. Ici, le temps ralentit, les saveurs s'épanouissent, et chaque moment se sent comme à la maison.
-</p>
-      `,
-      internalImageNames: [],
-    },
-    ru: {
-      title: 'Secret Garden',
-      description:
-        'Secret Garden в Хойане — это настоящий оазис спокойствия и зелени.',
-      fullDescription: `
-<p>"Вау, какой сюрприз!" – Вот что мы часто слышим от гостей, которые нас обнаруживают. Спрятанный как скрытая драгоценность в центре Древнего города Хойан, Secret Garden в Хойане — это настоящий оазис спокойствия и зелени. Вы найдете нас в конце переулка рядом с домом № 132 на улице Чан Фу. Шагните за древние стены в мирный сад, где встречаются традиционные вьетнамские блюда и тщательно созданные западные вкусы. Здесь время замедляется, вкусы расцветают, и каждый момент кажется домом.
-</p>
-      `,
-      internalImageNames: [],
-    },
-    vn: {
-      title: 'Secret Garden',
-      description:
-        'Secret Garden ở Hội An là một ốc đảo thực sự của sự yên tĩnh và xanh mát.',
-      fullDescription: `
-<p>"Wow, thật là bất ngờ!" – Đó là những gì chúng tôi thường nghe từ những vị khách phát hiện ra chúng tôi. Ẩn giấu như một viên ngọc quý giá giữa Phố Cổ Hội An, Secret Garden ở Hội An là một ốc đảo thực sự của sự yên tĩnh và xanh mát. Bạn sẽ tìm thấy chúng tôi ở cuối con hẻm bên cạnh Số 132 đường Trần Phú. Bước qua những bức tường cũ vào một khu vườn yên bình nơi các món ăn Việt Nam truyền thống và những hương vị phương Tây được chế tác cẩn thận gặp nhau. Ở đây, thời gian chậm lại, hương vị nở hoa, và mỗi khoảnh khắc đều cảm thấy như ở nhà.
-</p>
-      `,
-      internalImageNames: [],
-    },
-    slug: {
-      en: 'secret-garden-restaurant',
-      ru: 'secret-garden-restoran',
-      es: 'secret-garden-restaurante',
-      fr: 'secret-garden-restaurant',
-      vn: 'nha-hang-secret-garden',
-    },
-  },
-  //Cơm Linh - Vietnamese Restaurant
-  {
-    id: 'Com-linh-vietnamese-restaurant', // <-- ID теперь строковый
-    coordinates: [15.878499471297859, 108.32951629728882], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
-    category: ['food-drinks'],
-    imageUrl: 'com-linh.webp',
-    en: {
-      title: 'Cơm Linh - Vietnamese Restaurant',
-      description: 'We are the traditional Vietnamese cuisine and fast food',
-      fullDescription: `
-<p>We are the traditional Vietnamese cuisine and fast food.</p>
+<p>Sinh To Tam is a vibrant local cafe located in Hoi An, known for its fresh juices and delicious vegetarian Bahn Mi options. With a friendly atmosphere and attentive staff, it has become a favorite spot for both locals and tourists seeking healthy, flavorful drinks and meals.</p>
   `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Coffee',
+          items: [
+            {
+              name: 'Black Coffee',
+              description: 'Traditional Vietnamese black coffee',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Milk Coffee',
+              description: 'Vietnamese coffee with condensed milk',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Salt Coffee',
+              description: 'Coffee with salted cream',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Coconut Coffee',
+              description: 'Coffee with coconut flavour',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'White Coffee',
+              description: 'Light and creamy white coffee',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Salt White Coffee',
+              description: 'White coffee with salted cream',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Salt Cacao',
+              description: 'Cacao drink with salted cream',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Coffee with Almond & Fresh Milk',
+              description: 'Coffee with almond and fresh milk',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Hot Ginger Tea',
+              description: 'Warm ginger tea with honey',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Avocado Cream Coffee',
+              description: 'Coffee with avocado cream',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Durian Avocado Cream Coffee',
+              description: 'Coffee with durian and avocado cream',
+              price: '35.000 / 40.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Fresh Drinks',
+          items: [
+            {
+              name: 'Lime Juice',
+              description: 'Fresh lime juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Passion Fruit Juice',
+              description: 'Fresh passion fruit juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Salt Lime Juice',
+              description: 'Lime juice with salt',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Coconut Water',
+              description: 'Fresh coconut water',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Pennywort Juice',
+              description: 'Fresh pennywort juice',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Ambarella Juice',
+              description: 'Fresh ambarella juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Carrot Juice',
+              description: 'Fresh carrot juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Tomato Juice',
+              description: 'Fresh tomato juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Apple Juice',
+              description: 'Fresh apple juice',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Pomegranate Juice',
+              description: 'Fresh pomegranate juice',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Watermelon Juice',
+              description: 'Fresh watermelon juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Guava Juice',
+              description: 'Fresh guava juice',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Corn Milk Juice',
+              description: 'Sweet corn milk drink',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Carrot & Ginger Juice',
+              description: 'Carrot juice with ginger',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Pineapple Juice',
+              description: 'Fresh pineapple juice',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Fresh Passion Fruit Juice',
+              description: 'Passion fruit with pineapple',
+              price: '25.000 / 30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Smoothies',
+          items: [
+            {
+              name: 'Blended Mixed Fruits',
+              description: 'Mixed fruit smoothie',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Mixed Fruit Beans',
+              description: 'Mixed fruit smoothie with beans',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Avocado Beams',
+              description: 'Avocado smoothie with beans',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Avocado Smoothie',
+              description: 'Creamy avocado smoothie',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Avocado Durian',
+              description: 'Avocado smoothie with durian',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Young Coconut Smoothie',
+              description: 'Smoothie with young coconut',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sapodilla Beams',
+              description: 'Sapodilla smoothie with beans',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Sapodilla Smoothie',
+              description: 'Smooth sapodilla smoothie',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Avocado Mango Smoothie',
+              description: 'Avocado and mango mix',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Coconut Milk Smoothie',
+              description: 'Smoothie with coconut milk',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Potato and Coconut Milk',
+              description: 'Purple potato with coconut milk',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Coconut Durian Smoothie',
+              description: 'Coconut and durian smoothie',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Strawberry Yogurt',
+              description: 'Yogurt with strawberry',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Banana Yogurt',
+              description: 'Yogurt with banana',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Avocado Yogurt',
+              description: 'Yogurt with avocado',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Mango Yogurt',
+              description: 'Yogurt with mango',
+              price: '30.000 / 35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Milk Tea',
+          items: [
+            {
+              name: 'Apple Milk Tea',
+              description: 'Apple-flavoured milk tea',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Chocolate Milk Tea',
+              description: 'Chocolate-flavoured milk tea',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Kiwi Milk Tea',
+              description: 'Kiwi-flavoured milk tea',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Mint Milk Tea',
+              description: 'Mint-flavoured milk tea',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Pandan Milk Tea',
+              description: 'Pandan-flavoured milk tea',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Peach Tea',
+              description: 'Refreshing peach tea',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Lemongrass Peach Tea',
+              description: 'Peach tea with lemongrass',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Lemon Tea',
+              description: 'Iced lemon tea',
+              price: '20.000 / 25.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Specials',
+          items: [
+            {
+              name: 'Ginger Shot 100ml',
+              description: 'Concentrated ginger shot',
+              price: '25.000',
+            },
+            {
+              name: 'Yogurt with Mixed Fruits',
+              description: 'Fruit and seed yogurt cup',
+              price: '40.000',
+            },
+          ],
+        },
+      ],
     },
 
     ru: {
-      title: 'Cơm Linh — вьетнамский ресторан',
-      description: 'Традиционная вьетнамская кухня и фастфуд',
+      title: 'Sinh To Tam',
+      description:
+        'Яркое местное кафе, известное свежими соками и вегетарианскими бань ми',
       fullDescription: `
-<p>Мы предлагаем традиционную вьетнамскую кухню и блюда быстрого приготовления.</p>
+<p>Sinh To Tam — это яркое местное кафе в Хойане, известное своими свежевыжатыми соками и вкусными вегетарианскими бань ми. Дружелюбная атмосфера и внимательный персонал сделали его любимым местом отдыха как для местных жителей, так и для туристов, ищущих полезные и вкусные блюда и напитки.</p>
   `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Кофе',
+          items: [
+            {
+              name: 'Черный кофе',
+              description: 'Традиционный вьетнамский черный кофе',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Кофе с сгущенным молоком',
+              description: 'Вьетнамский кофе со сладким сгущенным молоком',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Соленый кофе',
+              description: 'Кофе с соленой сливочной пенкой',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Кокосовый кофе',
+              description: 'Кофе с кокосовым вкусом',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Белый кофе',
+              description: 'Мягкий и сливочный белый кофе',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Белый кофе с солью',
+              description: 'Белый кофе с соленой пенкой',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Какао с солью',
+              description: 'Напиток какао с соленой сливочной пенкой',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Кофе с миндалем и свежим молоком',
+              description: 'Кофе с миндалем и свежим молоком',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Горячий имбирный чай',
+              description: 'Горячий имбирный чай с медом',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Кофе с авокадо-кремом',
+              description: 'Кофе с кремом из авокадо',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Кофе с дурианом и авокадо',
+              description: 'Кофе с кремом из дуриана и авокадо',
+              price: '35.000 / 40.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Прохладительные напитки',
+          items: [
+            {
+              name: 'Лимонад',
+              description: 'Свежевыжатый сок лайма',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Маракуйя',
+              description: 'Свежевыжатый сок маракуйи',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Лайм с солью',
+              description: 'Свежий лайм с солью',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Кокосовая вода',
+              description: 'Свежая кокосовая вода',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Сок центеллы',
+              description: 'Свежий сок из центеллы азиатской',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Сок амбареллы',
+              description: 'Свежий сок из амбареллы',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Морковь',
+              description: 'Свежевыжатый морковный сок',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Томатный сок',
+              description: 'Свежий томатный сок',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Яблочный сок',
+              description: 'Свежевыжатый яблочный сок',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Гранатовый сок',
+              description: 'Свежий гранатовый сок',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Арбузный сок',
+              description: 'Свежевыжатый сок арбуза',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Сок гуавы',
+              description: 'Свежий сок гуавы',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Кукурузный напиток',
+              description: 'Сладкий напиток из кукурузного молока',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Морковь с имбирем',
+              description: 'Свежий морковный сок с имбирем',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Ананасовый сок',
+              description: 'Свежевыжатый сок ананаса',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Маракуйя с ананасом',
+              description: 'Маракуйя в сочетании с ананасом',
+              price: '25.000 / 30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Смузи',
+          items: [
+            {
+              name: 'Смузи из микса фруктов',
+              description: 'Смузи из различных фруктов',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Смузи фрукты с бобами',
+              description: 'Фруктовый смузи с бобами',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Смузи авокадо с бобами',
+              description: 'Кремовый смузи из авокадо с бобами',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Смузи авокадо',
+              description: 'Кремовый смузи из авокадо',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Смузи авокадо с дурианом',
+              description: 'Смузи из авокадо с дурианом',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Смузи из молодого кокоса',
+              description: 'Смузи из молодого кокоса',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Саподилла с бобами',
+              description: 'Смузи из саподиллы с бобами',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Смузи саподилла',
+              description: 'Нежный смузи из саподиллы',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Смузи авокадо с манго',
+              description: 'Микс авокадо и манго',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Смузи на кокосовом молоке',
+              description: 'Смузи с кокосовым молоком',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Фиолетовый батат с кокосом',
+              description: 'Фиолетовый батат с кокосовым молоком',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Смузи кокос с дурианом',
+              description: 'Смузи из кокоса и дуриана',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Йогурт с клубникой',
+              description: 'Йогурт с кусочками клубники',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Йогурт с бананом',
+              description: 'Йогурт с бананом',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Йогурт с авокадо',
+              description: 'Йогурт с кремовым авокадо',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Йогурт с манго',
+              description: 'Йогурт со свежим манго',
+              price: '30.000 / 35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Молочный чай',
+          items: [
+            {
+              name: 'Молочный чай с яблоком',
+              description: 'Молочный чай со вкусом яблока',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Молочный чай с шоколадом',
+              description: 'Молочный чай со вкусом шоколада',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Молочный чай с киви',
+              description: 'Молочный чай со вкусом киви',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Молочный чай с мятой',
+              description: 'Молочный чай со вкусом мяты',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Молочный чай с панданом',
+              description: 'Молочный чай со вкусом листа пандана',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Персиковый чай',
+              description: 'Освежающий персиковый чай',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Персиковый чай с лемонграссом',
+              description: 'Персиковый чай с лемонграссом',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Лимонный чай',
+              description: 'Холодный чай с лимоном',
+              price: '20.000 / 25.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Специальные предложения',
+          items: [
+            {
+              name: 'Имбирный шот 100 мл',
+              description: 'Концентрированный шот из имбиря',
+              price: '25.000',
+            },
+            {
+              name: 'Йогурт с фруктами и семенами',
+              description: 'Стаканчик йогурта с миксом фруктов и семян',
+              price: '40.000',
+            },
+          ],
+        },
+      ],
     },
 
     es: {
-      title: 'Cơm Linh - Restaurante vietnamita',
-      description: 'Cocina tradicional vietnamita y comida rápida',
+      title: 'Sinh To Tam',
+      description:
+        'Café local vibrante conocido por sus jugos frescos y Banh Mi vegetarianos',
       fullDescription: `
-<p>Ofrecemos cocina tradicional vietnamita y comida rápida.</p>
+<p>Sinh To Tam es un café local muy animado en Hoi An, conocido por sus jugos frescos y deliciosas opciones de Banh Mi vegetarianos. Con un ambiente amigable y un personal atento, se ha convertido en un lugar favorito tanto para los locales como para los turistas que buscan comidas y bebidas saludables y sabrosas.</p>
   `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Café',
+          items: [
+            {
+              name: 'Café negro',
+              description: 'Café vietnamita negro tradicional',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Café con leche condensada',
+              description: 'Café vietnamita con leche condensada dulce',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café con sal',
+              description: 'Café con crema salada',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Café de coco',
+              description: 'Café con sabor a coco',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Café blanco',
+              description: 'Café blanco suave y cremoso',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café blanco con sal',
+              description: 'Café blanco con crema salada',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Cacao con sal',
+              description: 'Bebida de cacao con crema salada',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café con almendra y leche fresca',
+              description: 'Café con almendra y leche fresca',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té caliente de jengibre',
+              description: 'Té de jengibre caliente con miel',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café con crema de aguacate',
+              description: 'Café con crema de aguacate',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Café con durián y aguacate',
+              description: 'Café con crema de durián y aguacate',
+              price: '35.000 / 40.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bebidas frescas',
+          items: [
+            {
+              name: 'Zumo de lima',
+              description: 'Zumo de lima fresco',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de fruta de la pasión',
+              description: 'Zumo de maracuyá fresco',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de lima con sal',
+              description: 'Lima fresca con sal',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Agua de coco',
+              description: 'Agua de coco fresca',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de centella asiática',
+              description: 'Zumo fresco de centella asiática',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Zumo de ciruela ambarella',
+              description: 'Zumo fresco de ambarella',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de zanahoria',
+              description: 'Zumo de zanahoria recién exprimido',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de tomate',
+              description: 'Zumo de tomate fresco',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de manzana',
+              description: 'Zumo de manzana fresco',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Zumo de granada',
+              description: 'Zumo de granada fresco',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Zumo de sandía',
+              description: 'Zumo de sandía fresco',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de guayaba',
+              description: 'Zumo de guayaba fresco',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Bebida de leche de maíz',
+              description: 'Bebida dulce de leche de maíz',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Zumo de zanahoria y jengibre',
+              description: 'Zanahoria fresca con jengibre',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Zumo de piña',
+              description: 'Zumo de piña recién exprimido',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Zumo de maracuyá y piña',
+              description: 'Maracuyá combinado con piña',
+              price: '25.000 / 30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Batidos',
+          items: [
+            {
+              name: 'Batido de frutas mixtas',
+              description: 'Batido de frutas variadas',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Batido de frutas y frijoles',
+              description: 'Batido de frutas mixtas con frijoles',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Batido de aguacate con frijoles',
+              description: 'Batido cremoso de aguacate con frijoles',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Batido de aguacate',
+              description: 'Batido de aguacate cremoso',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Batido de aguacate y durián',
+              description: 'Batido de aguacate con durián',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Batido de coco tierno',
+              description: 'Batido de coco joven',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Batido de sapodilla con frijoles',
+              description: 'Batido de zapote con frijoles',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Batido de sapodilla',
+              description: 'Batido suave de zapote',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Batido de aguacate y mango',
+              description: 'Mezcla de aguacate y mango',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Batido de leche de coco',
+              description: 'Batido con leche de coco',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Batido de boniato morado y coco',
+              description: 'Boniato morado con leche de coco',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Batido de coco y durián',
+              description: 'Batido de coco con durián',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Yogur con fresa',
+              description: 'Yogur con trozos de fresa',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Yogur con plátano',
+              description: 'Yogur con plátano',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Yogur con aguacate',
+              description: 'Yogur con aguacate cremoso',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Yogur con mango',
+              description: 'Yogur con mango fresco',
+              price: '30.000 / 35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Té con leche',
+          items: [
+            {
+              name: 'Té con leche de manzana',
+              description: 'Té con leche sabor manzana',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té con leche de chocolate',
+              description: 'Té con leche sabor chocolate',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té con leche de kiwi',
+              description: 'Té con leche sabor kiwi',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té con leche de menta',
+              description: 'Té con leche sabor menta',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té con leche de pandan',
+              description: 'Té con leche sabor hoja de pandan',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té de durazno',
+              description: 'Refrescante té de durazno',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té de durazno con hierba de limón',
+              description: 'Té de durazno con citronela',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Té de limón',
+              description: 'Té helado de limón',
+              price: '20.000 / 25.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Especiales',
+          items: [
+            {
+              name: 'Ginger Shot 100 ml',
+              description: 'Chupito concentrado de jengibre',
+              price: '25.000',
+            },
+            {
+              name: 'Yogur con frutas mixtas',
+              description: 'Vasito de yogur con frutas y semillas',
+              price: '40.000',
+            },
+          ],
+        },
+      ],
     },
 
     fr: {
-      title: 'Cơm Linh - Restaurant vietnamien',
-      description: 'Cuisine vietnamienne traditionnelle et restauration rapide',
+      title: 'Sinh To Tam',
+      description:
+        'Café local animé, connu pour ses jus frais et ses Banh Mi végétariens',
       fullDescription: `
-<p>Nous proposons une cuisine vietnamienne traditionnelle ainsi que de la restauration rapide.</p>
+<p>Sinh To Tam est un café local animé situé à Hoi An, réputé pour ses jus frais et ses délicieux Banh Mi végétariens. Grâce à son atmosphère conviviale et à son personnel attentionné, il est devenu un lieu apprécié des habitants comme des visiteurs à la recherche de repas et de boissons sains et savoureux.</p>
   `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Café',
+          items: [
+            {
+              name: 'Café noir',
+              description: 'Café vietnamien noir traditionnel',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Café au lait concentré',
+              description: 'Café vietnamien avec lait concentré sucré',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café salé',
+              description: 'Café avec crème salée',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Café à la noix de coco',
+              description: 'Café parfumé à la noix de coco',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Café blanc',
+              description: 'Café blanc doux et crémeux',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café blanc salé',
+              description: 'Café blanc avec crème salée',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Cacao salé',
+              description: 'Boisson au cacao avec crème salée',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café aux amandes et lait frais',
+              description: 'Café avec amandes et lait frais',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé chaud au gingembre',
+              description: 'Thé chaud au gingembre avec miel',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Café crème à l’avocat',
+              description: 'Café avec crème d’avocat',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Café durian-avocat',
+              description: 'Café avec crème de durian et d’avocat',
+              price: '35.000 / 40.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Boissons fraîches',
+          items: [
+            {
+              name: 'Jus de citron vert',
+              description: 'Jus de citron vert frais',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus de fruit de la passion',
+              description: 'Jus de maracudja frais',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Citron vert salé',
+              description: 'Jus de citron vert avec sel',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Eau de coco',
+              description: 'Eau de coco fraîche',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus de centella',
+              description: 'Jus frais de centella asiatica',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Jus d’ambarella',
+              description: 'Jus frais d’ambarella',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus de carotte',
+              description: 'Jus de carotte fraîchement pressé',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus de tomate',
+              description: 'Jus de tomate frais',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus de pomme',
+              description: 'Jus de pomme fraîchement pressé',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Jus de grenade',
+              description: 'Jus de grenade frais',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Jus de pastèque',
+              description: 'Jus de pastèque frais',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus de goyave',
+              description: 'Jus de goyave frais',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Boisson au lait de maïs',
+              description: 'Boisson sucrée au lait de maïs',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Jus carotte-gingembre',
+              description: 'Jus de carotte fraîche avec gingembre',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Jus d’ananas',
+              description: 'Jus d’ananas fraîchement pressé',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Maracudja et ananas',
+              description: 'Jus de fruit de la passion mélangé à l’ananas',
+              price: '25.000 / 30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Smoothies',
+          items: [
+            {
+              name: 'Smoothie aux fruits mixtes',
+              description: 'Smoothie de fruits variés',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Smoothie fruits et haricots',
+              description: 'Smoothie de fruits mixtes avec haricots',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Smoothie avocat-haricots',
+              description: 'Smoothie crémeux à l’avocat et aux haricots',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Smoothie à l’avocat',
+              description: 'Smoothie crémeux à l’avocat',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Smoothie avocat-durian',
+              description: 'Smoothie à l’avocat et au durian',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Smoothie coco jeune',
+              description: 'Smoothie au jeune coco',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Smoothie sapotille-haricots',
+              description: 'Smoothie de sapotille avec haricots',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Smoothie à la sapotille',
+              description: 'Smoothie doux à la sapotille',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Smoothie avocat-mangue',
+              description: 'Mélange d’avocat et de mangue',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Smoothie au lait de coco',
+              description: 'Smoothie au lait de coco',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Patate douce violette et coco',
+              description: 'Patate douce violette avec lait de coco',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Smoothie coco-durian',
+              description: 'Smoothie à la noix de coco et au durian',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Yaourt à la fraise',
+              description: 'Yaourt avec morceaux de fraise',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Yaourt à la banane',
+              description: 'Yaourt à la banane',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Yaourt à l’avocat',
+              description: 'Yaourt avec avocat crémeux',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Yaourt à la mangue',
+              description: 'Yaourt à la mangue fraîche',
+              price: '30.000 / 35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Thé au lait',
+          items: [
+            {
+              name: 'Thé au lait pomme',
+              description: 'Thé au lait aromatisé à la pomme',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé au lait chocolat',
+              description: 'Thé au lait goût chocolat',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé au lait kiwi',
+              description: 'Thé au lait goût kiwi',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé au lait menthe',
+              description: 'Thé au lait goût menthe',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé au lait pandan',
+              description: 'Thé au lait parfumé à la feuille de pandan',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé à la pêche',
+              description: 'Thé à la pêche rafraîchissant',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé pêche-citronnelle',
+              description: 'Thé à la pêche avec citronnelle',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Thé au citron',
+              description: 'Thé glacé au citron',
+              price: '20.000 / 25.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Spécialités',
+          items: [
+            {
+              name: 'Ginger Shot 100 ml',
+              description: 'Shot concentré de gingembre',
+              price: '25.000',
+            },
+            {
+              name: 'Yaourt aux fruits et graines',
+              description: 'Verrine de yaourt avec fruits mixtes et graines',
+              price: '40.000',
+            },
+          ],
+        },
+      ],
     },
 
     vn: {
-      title: 'Cơm Linh - Nhà hàng Việt Nam',
-      description: 'Ẩm thực truyền thống Việt Nam và đồ ăn nhanh',
+      title: 'Sinh To Tam',
+      description:
+        'Quán cà phê sôi động nổi tiếng với nước ép tươi và bánh mì chay',
       fullDescription: `
-<p>Chúng tôi phục vụ ẩm thực truyền thống Việt Nam và các món ăn nhanh.</p>
+<p>Sinh To Tam là một quán cà phê địa phương sôi động tại Hội An, nổi tiếng với các loại nước ép tươi và bánh mì chay thơm ngon. Với không khí thân thiện và đội ngũ nhân viên chu đáo, nơi đây đã trở thành điểm yêu thích của cả người dân địa phương và du khách tìm kiếm những món ăn và thức uống lành mạnh, đậm đà hương vị.</p>
   `,
       internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Cà phê',
+          items: [
+            {
+              name: 'Cà phê đen',
+              description: 'Cà phê đen Việt Nam truyền thống',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Cà phê sữa',
+              description: 'Cà phê Việt Nam với sữa đặc ngọt',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Cà phê muối',
+              description: 'Cà phê với lớp kem mặn béo',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Cà phê dừa',
+              description: 'Cà phê hương dừa béo thơm',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Cà phê trắng',
+              description: 'Cà phê trắng mềm và béo nhẹ',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Bạc xỉu muối',
+              description: 'Bạc xỉu với lớp kem mặn',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Ca cao muối',
+              description: 'Ca cao nóng với lớp kem mặn',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Cà phê hạnh nhân sữa tươi',
+              description: 'Cà phê với hạnh nhân và sữa tươi',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà gừng nóng',
+              description: 'Trà gừng nóng pha cùng mật ong',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Cà phê kem bơ',
+              description: 'Cà phê với kem bơ béo mịn',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Cà phê kem bơ sầu riêng',
+              description: 'Cà phê với kem bơ và sầu riêng',
+              price: '35.000 / 40.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Giải khát',
+          items: [
+            {
+              name: 'Nước chanh tươi',
+              description: 'Nước chanh tươi mát',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước chanh dây',
+              description: 'Nước chanh dây nguyên chất',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước chanh muối',
+              description: 'Chanh muối truyền thống',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước dừa tươi',
+              description: 'Nước dừa tươi mát lạnh',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước rau má',
+              description: 'Nước rau má thanh mát',
+              price: '15.000 / 20.000',
+            },
+            {
+              name: 'Nước ép cóc',
+              description: 'Nước ép cóc chua ngọt',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước ép cà rốt',
+              description: 'Nước ép cà rốt tươi',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước ép cà chua',
+              description: 'Nước ép cà chua tươi',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước ép táo',
+              description: 'Nước ép táo nguyên chất',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Nước ép lựu',
+              description: 'Nước ép lựu tươi',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Nước ép dưa hấu',
+              description: 'Nước ép dưa hấu mát lạnh',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước ép ổi',
+              description: 'Nước ép ổi chua dịu',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước bắp sữa',
+              description: 'Nước bắp ngọt với sữa',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Nước ép cà rốt gừng',
+              description: 'Cà rốt ép cùng gừng tươi',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Nước ép thơm',
+              description: 'Nước ép dứa tươi',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Nước ép chanh dây thơm',
+              description: 'Chanh dây phối với dứa',
+              price: '25.000 / 30.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Sinh tố',
+          items: [
+            {
+              name: 'Sinh tố trái cây thập cẩm',
+              description: 'Sinh tố tổng hợp nhiều loại trái cây',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Sinh tố trái cây đậu',
+              description: 'Sinh tố trái cây mix đậu',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Sinh tố bơ đậu',
+              description: 'Sinh tố bơ béo với đậu',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sinh tố bơ',
+              description: 'Sinh tố bơ béo mịn',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sinh tố bơ sầu riêng',
+              description: 'Sinh tố bơ kết hợp sầu riêng',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Sinh tố dừa non',
+              description: 'Sinh tố dừa non mát lạnh',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sinh tố sapôchê đậu',
+              description: 'Sinh tố sapôchê mix đậu',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Sinh tố sapôchê',
+              description: 'Sinh tố sapôchê ngọt béo',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Sinh tố bơ xoài',
+              description: 'Sinh tố bơ và xoài',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sinh tố sữa dừa',
+              description: 'Sinh tố với sữa dừa béo',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Khoai môn sữa dừa',
+              description: 'Khoai môn xay với sữa dừa',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sinh tố dừa sầu riêng',
+              description: 'Sinh tố dừa kết hợp sầu riêng',
+              price: '35.000 / 40.000',
+            },
+            {
+              name: 'Sữa chua dâu tây',
+              description: 'Sữa chua ăn cùng dâu tây',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sữa chua chuối',
+              description: 'Sữa chua ăn cùng chuối',
+              price: '25.000 / 30.000',
+            },
+            {
+              name: 'Sữa chua bơ',
+              description: 'Sữa chua ăn cùng bơ béo',
+              price: '30.000 / 35.000',
+            },
+            {
+              name: 'Sữa chua xoài',
+              description: 'Sữa chua ăn cùng xoài tươi',
+              price: '30.000 / 35.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Trà sữa',
+          items: [
+            {
+              name: 'Trà sữa táo',
+              description: 'Trà sữa hương táo',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà sữa socola',
+              description: 'Trà sữa vị socola',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà sữa kiwi',
+              description: 'Trà sữa vị kiwi',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà sữa bạc hà',
+              description: 'Trà sữa vị bạc hà mát',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà sữa lá dứa',
+              description: 'Trà sữa thơm mùi lá dứa',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà đào',
+              description: 'Trà đào tươi mát',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà đào cam sả',
+              description: 'Trà đào kết hợp cam và sả',
+              price: '20.000 / 25.000',
+            },
+            {
+              name: 'Trà chanh',
+              description: 'Trà chanh đá giải khát',
+              price: '20.000 / 25.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Món đặc biệt',
+          items: [
+            {
+              name: 'Ginger Shot 100ml',
+              description: 'Ly gừng cô đặc tốt cho sức khỏe',
+              price: '25.000',
+            },
+            {
+              name: 'Sữa chua trái cây hạt',
+              description: 'Sữa chua trộn trái cây tươi và các loại hạt',
+              price: '40.000',
+            },
+          ],
+        },
+      ],
     },
+
     slug: {
-      en: 'com-linh-vietnamese-restaurant',
-      ru: 'com-linh-vietnamese-restaurant',
-      es: 'com-linh-vietnamese-restaurant',
-      fr: 'com-linh-vietnamese-restaurant',
-      vn: 'com-linh-vietnamese-restaurant',
+      en: 'sinh-to-tam',
+      ru: 'sinh-to-tam',
+      es: 'sinh-to-tam',
+      fr: 'sinh-to-tam',
+      vn: 'sinh-to-tam',
     },
   },
 ];

@@ -46,7 +46,7 @@ interface HeroContent {
 // ===== КОНСТАНSTЫ С КОНТЕНТОМ =====
 
 const heroContent: HeroContent = {
-  time: '13 декабря 19:00',
+  time: '',
   label: 'Открытая встреча‑лекция',
   title: 'Вьетнам',
   description: 'История | Традиция | Культура',

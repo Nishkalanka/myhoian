@@ -12,24 +12,22 @@ import type {
  */
 export const getOptimizedFullDescription = (
   _landmark: Landmark,
-  content: LandmarkContent,
-  imageMap: Record<string, string>
+  content: LandmarkContent
 ): string => {
   let processedHtml = content.fullDescription || '';
 
   // ✅ Заменяем пути картинок и добавляем lazy loading
   if (content.internalImageNames && content.internalImageNames.length > 0) {
     content.internalImageNames.forEach((imageName: string) => {
-      const realImageUrl = imageMap[imageName];
-      if (realImageUrl) {
-        // Заменяем src на data-src для lazy loading
-        const placeholder =
-          'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3C/svg%3E';
-        processedHtml = processedHtml.replace(
-          new RegExp(`src="${imageName}"`, 'g'),
-          `loading="lazy" data-src="${realImageUrl}" src="${placeholder}"`
-        );
-      }
+      // ✅ Используем прямой путь к public/img/pictures/
+      const realImageUrl = `/img/pictures/${imageName}`;
+
+      const placeholder =
+        'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3C/svg%3E';
+      processedHtml = processedHtml.replace(
+        new RegExp(`src="${imageName}"`, 'g'),
+        `loading="lazy" data-src="${realImageUrl}" src="${placeholder}"`
+      );
     });
   }
 
