@@ -310,13 +310,13 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                       <Box
                         sx={{
                           flexShrink: 0,
-                          width: { xs: '124px', md: '124px' },
+                          width: { xs: '112px', md: '112px' },
                           height: '100%',
                           borderRadius: '8px',
                           overflow: 'hidden',
                           display: 'flex',
                           alignItems: 'center',
-                          aspectRatio: '4/5',
+                          aspectRatio: '4/4',
                           justifyContent: 'center',
                           backgroundColor: '#f5f5f5',
                         }}
@@ -372,7 +372,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                       )}
 
                       <Typography
-                        variant="body1"
+                        variant="caption"
                         component="h3"
                         sx={{
                           mb: 0.5,
@@ -397,11 +397,12 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                           WebkitBoxOrient: 'vertical',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
+                          lineHeight: '1.4',
                         }}
                       >
                         {displayDescription}
                       </Typography>
-
+                      {/* More details button 
                       <Button
                         size="small"
                         onClick={(e) => {
@@ -411,9 +412,9 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                         sx={{ mt: 0, p: 0 }}
                       >
                         <Typography variant="caption">
-                          {t('moreDetails')}
+                          {t("moreDetails")}
                         </Typography>
-                      </Button>
+                      </Button>*/}
                     </Box>
                   </Box>
                 </SwiperSlide>
