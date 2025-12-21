@@ -10,6 +10,8 @@ import {
   ListItemText,
   Slide,
   Box,
+  ListItemIcon,
+  Avatar,
 } from '@mui/material';
 import MapIcon from '@mui/icons-material/Map';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -20,6 +22,7 @@ interface SubMenuItem {
   primary: string;
   secondary: string;
   href?: string;
+  image?: string; // Добавлено поле для картинки
 }
 
 const Footer: React.FC = () => {
@@ -27,20 +30,22 @@ const Footer: React.FC = () => {
   const theme = useTheme();
   const [value, setValue] = useState(0);
   const [showExploreMenu, setShowExploreMenu] = useState(false);
-  const [showSocialMenu, setShowSocialMenu] = useState(false); // Новое состояние
+  const [showSocialMenu, setShowSocialMenu] = useState(false);
 
   const exploreItems: SubMenuItem[] = [
     {
-      primary: 'Авторская экскурсия-лекция по Хойану',
+      primary: 'Авторская экскурсия-лекция',
       secondary:
         'Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий наследие веков.',
       href: '/hoian-avtorskaya-ekskursiya',
+      image: '../../public/img/pictures/japanese_covered_bridge.webp', // Тестовая картинка
     },
     {
       primary: 'Квест-экскурсия по Хойану',
       secondary:
         'Подарите родным не просто сувенир, а частичку настоящего Вьетнама!',
       href: '/kvest-ekskursiya-hoian-v-korobke',
+      image: '../../public/img/pictures/hoian_in_box.webp', // Тестовая картинка
     },
   ];
 
@@ -64,13 +69,13 @@ const Footer: React.FC = () => {
 
   const handleExploreClick = () => {
     setShowExploreMenu(!showExploreMenu);
-    setShowSocialMenu(false); // Закрываем другое меню
+    setShowSocialMenu(false);
     setValue(showExploreMenu ? 0 : 1);
   };
 
   const handleSocialClick = () => {
     setShowSocialMenu(!showSocialMenu);
-    setShowExploreMenu(false); // Закрываем другое меню
+    setShowExploreMenu(false);
     setValue(showSocialMenu ? 0 : 2);
   };
 
@@ -78,7 +83,6 @@ const Footer: React.FC = () => {
     _event: React.SyntheticEvent,
     newValue: number
   ) => {
-    // Закрываем оба меню при выборе других пунктов
     if (newValue !== 1 && newValue !== 2) {
       setShowExploreMenu(false);
       setShowSocialMenu(false);
@@ -112,7 +116,7 @@ const Footer: React.FC = () => {
           zIndex: 1100,
           borderRadius: '0',
           overflow: 'hidden',
-          boxShadow: `0 4px 20px ${alpha(theme.palette.common.black, 0.1)}`,
+          boxShadow: `0px -4px 24px ${alpha(theme.palette.common.black, 0.2)}`,
           backdropFilter: 'blur(8px)',
           background: '#2e2e39',
         }}
@@ -160,7 +164,7 @@ const Footer: React.FC = () => {
         </BottomNavigation>
       </Paper>
 
-      {/* Подменю Explore */}
+      {/* Подменю Explore с картинками */}
       <Slide
         direction="up"
         in={showExploreMenu}
@@ -185,11 +189,12 @@ const Footer: React.FC = () => {
               borderRadius: '8px 8px 0 0',
               maxHeight: '60vh',
               overflow: 'auto',
-              pt: 1,
+              pt: 0,
+              pb: 1,
               boxShadow: `0 -8px 32px ${alpha(theme.palette.common.black, 0.2)}`,
             }}
           >
-            <List sx={{ py: 0, px: 2 }}>
+            <List sx={{ py: 0, px: 1 }}>
               {exploreItems.map((item, index) => (
                 <ListItemButton
                   key={index}
@@ -211,18 +216,35 @@ const Footer: React.FC = () => {
                     },
                   }}
                 >
+                  <ListItemIcon sx={{ minWidth: '80px', mr: 2 }}>
+                    {item.image && (
+                      <Avatar
+                        src={item.image}
+                        variant="square"
+                        sx={{
+                          width: 80,
+                          height: 80,
+                          borderRadius: '8px',
+                          objectFit: 'cover',
+                          boxShadow: `0 4px 12px ${alpha(theme.palette.common.black, 0.3)}`,
+                        }}
+                      />
+                    )}
+                  </ListItemIcon>
                   <ListItemText
                     primary={item.primary}
                     secondary={item.secondary}
                     primaryTypographyProps={{
                       fontSize: '1.05rem',
-                      fontWeight: 400,
+                      fontWeight: 500,
                       color: 'text.primary',
+                      lineHeight: 1.3,
                     }}
                     secondaryTypographyProps={{
                       fontSize: '0.875rem',
                       color: 'text.secondary',
-                      mt: 0.5,
+                      mt: 0.25,
+                      lineHeight: 1.4,
                     }}
                   />
                 </ListItemButton>
@@ -232,7 +254,7 @@ const Footer: React.FC = () => {
         </Box>
       </Slide>
 
-      {/* Подменю Social (Quest) */}
+      {/* Подменю Social */}
       <Slide
         direction="up"
         in={showSocialMenu}
@@ -257,11 +279,12 @@ const Footer: React.FC = () => {
               borderRadius: '8px 8px 0 0',
               maxHeight: '60vh',
               overflow: 'auto',
-              pt: 1,
+              pt: 0,
+              pb: 1,
               boxShadow: `0 -8px 32px ${alpha(theme.palette.common.black, 0.2)}`,
             }}
           >
-            <List sx={{ py: 0, px: 2 }}>
+            <List sx={{ py: 0, px: 1 }}>
               {socialItems.map((item, index) => (
                 <ListItemButton
                   key={index}
