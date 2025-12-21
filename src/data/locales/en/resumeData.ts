@@ -44,6 +44,8 @@ const translationEN: TranslationContent = {
 
   menu: {
     title: 'Menu',
+    tour: 'Tour-lecture in Hoi An',
+    quest: 'Quest tour',
   },
   categories: {
     museum: 'Museums',

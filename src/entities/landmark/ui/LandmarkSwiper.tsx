@@ -29,6 +29,7 @@ interface LandmarkSwiperProps {
   getLocalizedContent: (landmark: Landmark) => LandmarkContent;
   onSlideChange: (swiper: any) => void;
   onSlideOrButtonDetailClick: (index: number, event: React.MouseEvent) => void;
+  onInitialSelect: () => void;
   swiperRef: React.MutableRefObject<any>;
 }
 
@@ -129,6 +130,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
     getLocalizedContent,
     onSlideChange,
     onSlideOrButtonDetailClick,
+    onInitialSelect,
     swiperRef,
   }) {
     const { t } = useTranslation();
@@ -214,6 +216,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                 transition:
                   'opacity 1s ease-out, transform 1s cubic-bezier(0.25, 1, 0.5, 1)',
               }}
+              onClick={onInitialSelect}
             >
               <Box
                 sx={{

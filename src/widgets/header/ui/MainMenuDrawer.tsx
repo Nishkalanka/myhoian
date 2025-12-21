@@ -15,11 +15,8 @@ import { useTranslation } from 'react-i18next';
 interface MainMenuDrawerProps {
   open: boolean;
   onClose: () => void;
-  onHomeClick: () => void;
-  onAboutClick: () => void;
-  onServicesClick: () => void;
-  onContactClick: () => void;
-  // Новые пропсы для Home (маршрут)
+  navigateToTour: () => void; // ← НОВЫЕ ПРОПСЫ
+  navigateToQuest: () => void;
   onToggleRouteVisibility: () => void;
   isRouteVisible: boolean;
 }
@@ -27,10 +24,8 @@ interface MainMenuDrawerProps {
 const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
   open,
   onClose,
-  onHomeClick,
-  onAboutClick,
-  onServicesClick,
-  onContactClick,
+  navigateToTour, // ← НОВЫЕ ПРОПСЫ
+  navigateToQuest,
   onToggleRouteVisibility,
   isRouteVisible,
 }) => {
@@ -38,12 +33,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
 
   return (
     <Drawer anchor="left" open={open} onClose={onClose}>
-      <Box
-        sx={{ width: 250 }}
-        role="presentation"
-        // onClick={onClose} // Это может быть излишним, если вы хотите закрывать только по крестику или при клике вне Drawer'а
-        onKeyDown={onClose}
-      >
+      <Box sx={{ width: 250 }} role="presentation" onKeyDown={onClose}>
         <Box
           sx={{
             display: 'flex',
@@ -58,44 +48,30 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
           </IconButton>
         </Box>
         <Divider />
-        {/*
+
         <List>
+          {/* Главная (карта) + маршрут */}
+
+          {/* Авторская экскурсия */}
           <MenuItem
             onClick={() => {
-              onHomeClick(); // Вызов оригинальной функции Home (если нужна)
-              onToggleRouteVisibility(); // Переключение видимости маршрута
-              onClose(); // Закрываем Drawer после выбора пункта меню
-            }}
-          >
-            {t('menu.home')} (
-            {isRouteVisible ? t('menu.hideRoute') : t('menu.showRoute')})
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              onAboutClick();
+              navigateToTour(); // ← НОВЫЙ navigate
               onClose();
             }}
           >
-            {t('menu.about')}
+            {t('menu.tour')} {/* Авторская экскурсия */}
           </MenuItem>
+
+          {/* Квест */}
           <MenuItem
             onClick={() => {
-              onServicesClick();
+              navigateToQuest(); // ← НОВЫЙ navigate
               onClose();
             }}
           >
-            {t('menu.services')}
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              onContactClick();
-              onClose();
-            }}
-          >
-            {t('menu.contact')}
+            {t('menu.quest')} {/* Квест */}
           </MenuItem>
         </List>
-*/}
       </Box>
     </Drawer>
   );

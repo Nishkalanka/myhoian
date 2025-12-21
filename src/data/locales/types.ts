@@ -40,6 +40,8 @@ export interface TranslationContent {
 
   menu: {
     title: string;
+    tour: string;
+    quest: string;
   };
 
   categories: {

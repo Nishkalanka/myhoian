@@ -43,6 +43,8 @@ const translationES: TranslationContent = {
   },
   menu: {
     title: 'Menú',
+    tour: 'Visita-conferencia histórica',
+    quest: 'Visita-juego o tour de aventuras',
   },
   categories: {
     museum: 'Museos',

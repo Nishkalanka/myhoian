@@ -44,6 +44,8 @@ const translationRU: TranslationContent = {
   },
   menu: {
     title: 'Меню',
+    tour: 'Экскурсия-лекция',
+    quest: 'Экскурсия-квест',
   },
   categories: {
     museum: 'Музеи',

@@ -98,6 +98,11 @@ function HeroSection({
     [handleOpenModal, filteredLandmarks, setActiveIndex, setHasUserInteracted]
   );
 
+  const handleInitialSelect = useCallback(() => {
+    setActiveIndex(0);
+    setHasUserInteracted(true);
+  }, [setActiveIndex, setHasUserInteracted]);
+
   return (
     <Box
       component="section"
@@ -165,6 +170,7 @@ function HeroSection({
                 }
               }}
               onSlideOrButtonDetailClick={handleSlideOrButtonDetailClick}
+              onInitialSelect={handleInitialSelect}
               swiperRef={swiperRef}
             />
           </Grid>

@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { AppBar } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 // Импортируем наш хук
 import { useToggle as useDrawerToggle } from '../../../shared/lib/hooks/useToggle';
@@ -16,7 +17,7 @@ import {
 
 // Импортируем компоненты
 import MainAppBar from './MainAppBar';
-//import MainMenuDrawer from './MainMenuDrawer';
+import MainMenuDrawer from './MainMenuDrawer';
 import FilterDrawer from '../../../features/filter-landmarks/ui/FilterDrawer';
 import WelcomeDialog from './WelcomeDialog';
 import CategoryFilter from '../../../features/filter-landmarks/ui/CategoryFilter';
@@ -32,16 +33,18 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({
   onSelectCategories,
   selectedCategorySlugs,
-  //toggleRouteVisibility,
-  //isRouteVisible,
+  toggleRouteVisibility,
+  isRouteVisible,
 }) => {
   // Инициализируем хук для картинок
   const getImageUrl = usePictureUrl();
   // Получаем картинку дракона (fallback на пустую строку, если не найдена)
   const dialogImage = getImageUrl('dragon.png') || '';
 
+  // 🔥 ДОБАВИЛИ useNavigate для переходов по меню
+  const navigate = useNavigate();
+
   // Хук для приветственного диалога
-  // (Деструктурируем: isOpen -> isWelcomeDialogOpen, open -> openWelcomeDialog, close -> closeWelcomeDialog)
   const {
     isOpen: isWelcomeDialogOpen,
     open: openWelcomeDialog,
@@ -56,18 +59,25 @@ const Header: React.FC<HeaderProps> = ({
   } = useDrawerToggle(false);
 
   // Хук для главного меню
-  /*
   const {
     isOpen: isMainMenuDrawerOpen,
     open: openMainMenuDrawer,
     close: closeMainMenuDrawer,
   } = useDrawerToggle(false);
-  */
 
   // Обработчик клика по логотипу
   const handleLogoClick = useCallback(() => {
     openWelcomeDialog();
   }, [openWelcomeDialog]);
+
+  // 🔥 ФУНКЦИИ НАВИГАЦИИ ДЛЯ МЕНЮ
+  const navigateToTour = useCallback(() => {
+    navigate('/hoian-avtorskaya-ekskursiya');
+  }, [navigate]);
+
+  const navigateToQuest = useCallback(() => {
+    navigate('/kvest-ekskursiya-hoian-v-korobke');
+  }, [navigate]);
 
   return (
     <AppBar
@@ -95,22 +105,20 @@ const Header: React.FC<HeaderProps> = ({
       <MainAppBar
         logoSrc={logoSvg}
         onLogoClick={handleLogoClick}
-        // onOpenMainMenu={openMainMenuDrawer}
+        onOpenMainMenu={openMainMenuDrawer}
         onOpenFilterDrawer={openFilterDrawer}
         selectedCategorySlugs={selectedCategorySlugs}
       />
 
-      {/* Выдвижное меню (левое) 
+      {/* Выдвижное меню (левое) */}
       <MainMenuDrawer
         open={isMainMenuDrawerOpen}
         onClose={closeMainMenuDrawer}
+        navigateToTour={navigateToTour}
+        navigateToQuest={navigateToQuest}
         onToggleRouteVisibility={toggleRouteVisibility}
         isRouteVisible={isRouteVisible}
-        onHomeClick={() => console.log('Home clicked')}
-        onAboutClick={() => console.log('About clicked')}
-        onServicesClick={() => console.log('Services clicked')}
-        onContactClick={() => console.log('Contact clicked')}
-      />*/}
+      />
 
       {/* Выдвижное меню (правое) для фильтров */}
       <FilterDrawer
