@@ -65,7 +65,7 @@ export const UserLocationButton: React.FC<UserLocationButtonProps> = ({
       sx={{
         position: 'absolute',
         opacity: 0.5,
-        bottom: 184,
+        bottom: 242,
         right: 8,
         zIndex: 1000,
         backgroundColor: theme.palette.background.paper,

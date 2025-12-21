@@ -47,8 +47,8 @@ const translationRU: TranslationContent = {
     map: 'Карта',
     explore: 'Экскурсии',
     contacts: 'Контакты',
-    tour: 'Экскурсия-лекция по Хойану',
-    quest: 'Квест-экскурсия по Хойану',
+    tour: 'Экскурсия-лекция',
+    quest: 'Квест-экскурсия',
   },
 
   categories: {
