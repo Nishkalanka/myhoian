@@ -157,7 +157,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
           alignItems: 'center',
           justifyContent: 'center',
           position: 'fixed',
-          bottom: 0,
+          bottom: '56px',
           zIndex: 1000,
           overscrollBehaviorY: 'contain',
           overscrollBehaviorX: 'contain',

@@ -46,8 +46,11 @@ const translationFR: TranslationContent = {
   },
   menu: {
     title: 'Menu',
-    tour: 'Visite-conférence historique',
-    quest: 'Visite-enquête',
+    map: 'Carte',
+    explore: 'Excursions',
+    contacts: 'Contacts',
+    tour: 'Excursion-Conférence Hoi An',
+    quest: 'Excursion Quête Hoi An',
   },
   categories: {
     museum: 'Musées',

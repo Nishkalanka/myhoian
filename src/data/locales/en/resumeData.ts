@@ -44,8 +44,11 @@ const translationEN: TranslationContent = {
 
   menu: {
     title: 'Menu',
-    tour: 'Tour-lecture in Hoi An',
-    quest: 'Quest tour',
+    map: 'Map',
+    explore: 'Tours',
+    contacts: 'Contacts',
+    tour: 'Hoi An Lecture Tour',
+    quest: 'Hoi An Quest Tour',
   },
   categories: {
     museum: 'Museums',

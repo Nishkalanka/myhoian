@@ -44,9 +44,13 @@ const translationRU: TranslationContent = {
   },
   menu: {
     title: 'Меню',
-    tour: 'Экскурсия-лекция',
-    quest: 'Экскурсия-квест',
+    map: 'Карта',
+    explore: 'Экскурсии',
+    contacts: 'Контакты',
+    tour: 'Экскурсия-лекция по Хойану',
+    quest: 'Квест-экскурсия по Хойану',
   },
+
   categories: {
     museum: 'Музеи',
     'food-drinks': 'Еда и напитки',

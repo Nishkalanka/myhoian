@@ -20,6 +20,7 @@ import { MapContainer } from './widgets/map/ui/MapContainer';
 import { MapProvider } from './entities/map/model/MapContext';
 import { AppSnackbar } from './shared/ui/AppSnackbar';
 import { useSnackbar } from './shared/lib/useSnackbar';
+import Footer from './widgets/footer/ui/Footer';
 
 // Данные и типы
 import { fetchAllLandmarks } from './data/asyncData';
@@ -285,6 +286,7 @@ function AppContent() {
           type={snackbarType}
           onClose={handleCloseSnackbar}
         />
+        <Footer />
       </Box>
     </>
   );

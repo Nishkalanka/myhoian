@@ -43,8 +43,11 @@ const translationVN: TranslationContent = {
   },
   menu: {
     title: 'Menu',
-    tour: 'Chuyến tham quan - bài giảng lịch sử ở Hội An',
-    quest: 'Tour khám phá',
+    map: 'Bản đồ',
+    explore: 'Chuyến tham quan',
+    contacts: 'Liên hệ',
+    tour: 'Tour Giảng bài Hoi An',
+    quest: 'Tour Trò chơi Hoi An',
   },
   categories: {
     museum: 'Bảo tàng',

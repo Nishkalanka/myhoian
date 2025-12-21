@@ -41,6 +41,9 @@ export interface TranslationContent {
   menu: {
     title: string;
     tour: string;
+    contacts: string;
+    map: string;
+    explore: string;
     quest: string;
   };
 
