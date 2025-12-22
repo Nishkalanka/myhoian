@@ -16,13 +16,18 @@ import {
 import MapIcon from '@mui/icons-material/Map';
 import ExploreIcon from '@mui/icons-material/Explore';
 import ChatIcon from '@mui/icons-material/Chat';
+// Добавляем иконки соцсетей
+import TelegramIcon from '@mui/icons-material/Telegram';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { useTranslation } from 'react-i18next';
 
 interface SubMenuItem {
   primary: string;
   secondary: string;
   href?: string;
-  image?: string; // Добавлено поле для картинки
+  image?: string;
+  icon?: React.ReactNode; // Добавлено поле для иконки
 }
 
 const Footer: React.FC = () => {
@@ -52,18 +57,21 @@ const Footer: React.FC = () => {
   const socialItems: SubMenuItem[] = [
     {
       primary: 'Telegram',
-      secondary: 'Подписывайтесь на наш канал',
+      secondary: 'Подписывайтесь на наш канал!',
       href: 'https://t.me/myhoian',
+      icon: <TelegramIcon sx={{ fontSize: 32 }} />, // Иконка вместо фото
     },
     {
       primary: 'Instagram',
-      secondary: 'Фото и сторис',
+      secondary: 'Следите за нами в инстаграмме :)',
       href: 'https://instagram.com/myhoian.app',
+      icon: <InstagramIcon sx={{ fontSize: 32 }} />,
     },
     {
       primary: 'WhatsApp',
       secondary: 'Быстрые вопросы',
       href: 'https://wa.me/84357923401',
+      icon: <WhatsAppIcon sx={{ fontSize: 32 }} />,
     },
   ];
 
@@ -226,7 +234,7 @@ const Footer: React.FC = () => {
                         sx={{
                           width: 80,
                           height: 80,
-                          borderRadius: '8px',
+                          borderRadius: '4px',
                           objectFit: 'cover',
                           boxShadow: `0 4px 12px ${alpha(theme.palette.common.black, 0.3)}`,
                         }}
@@ -237,15 +245,15 @@ const Footer: React.FC = () => {
                     primary={item.primary}
                     secondary={item.secondary}
                     primaryTypographyProps={{
-                      fontSize: '0.75rem',
+                      fontSize: '0.875rem',
                       fontWeight: 900,
                       color: 'text.primary',
-                      lineHeight: 1.3,
+                      lineHeight: 1.4,
                     }}
                     secondaryTypographyProps={{
                       fontSize: '0.75rem',
                       color: 'text.secondary',
-                      mt: 0.35,
+                      mt: 0.5,
                       lineHeight: 1.4,
                     }}
                   />
@@ -256,7 +264,7 @@ const Footer: React.FC = () => {
         </Box>
       </Slide>
 
-      {/* Подменю Social */}
+      {/* Подменю Social с иконками */}
       <Slide
         direction="up"
         in={showSocialMenu}
@@ -282,7 +290,7 @@ const Footer: React.FC = () => {
               maxHeight: '60vh',
               overflow: 'auto',
               pt: 0,
-              pb: 1,
+              pb: 0,
               boxShadow: `0 -8px 32px ${alpha(theme.palette.common.black, 0.2)}`,
             }}
           >
@@ -296,30 +304,50 @@ const Footer: React.FC = () => {
                   })}
                   onClick={() => handleItemClick(item.href)}
                   sx={{
-                    py: 1,
+                    py: 2, // Увеличиваем паддинг как в Explore
                     mx: -1,
-                    borderRadius: '8px',
-                    mb: 1,
+                    borderRadius: '0px',
+                    mb: 0,
+                    borderBottom: `1px solid ${alpha(theme.palette.divider, 0.1)}`,
                     '&:hover': {
                       backgroundColor: alpha(theme.palette.primary.main, 0.12),
                     },
                     '&:last-child': {
                       mb: 0,
+                      borderBottom: 'none',
                     },
                   }}
                 >
+                  {/* Добавляем иконку в ListItemIcon */}
+                  <ListItemIcon
+                    sx={{ minWidth: '36px', mr: 2, justifyContent: 'center' }}
+                  >
+                    {item.icon && (
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        {item.icon}
+                      </Box>
+                    )}
+                  </ListItemIcon>
                   <ListItemText
                     primary={item.primary}
                     secondary={item.secondary}
                     primaryTypographyProps={{
-                      fontSize: '1.05rem',
-                      fontWeight: 400,
+                      fontSize: '0.875rem',
+                      fontWeight: 900,
                       color: 'text.primary',
+                      lineHeight: 1.4,
                     }}
                     secondaryTypographyProps={{
-                      fontSize: '0.875rem',
+                      fontSize: '0.75rem',
                       color: 'text.secondary',
                       mt: 0.5,
+                      lineHeight: 1.4,
                     }}
                   />
                 </ListItemButton>
