@@ -34,18 +34,18 @@ const Footer: React.FC = () => {
 
   const exploreItems: SubMenuItem[] = [
     {
-      primary: 'Авторская экскурсия-лекция',
+      primary: 'Историческая экскурсия-лекция',
       secondary:
         'Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий наследие веков.',
       href: '/hoian-avtorskaya-ekskursiya',
-      image: '../../public/img/pictures/japanese_covered_bridge.webp', // Тестовая картинка
+      image: '/img/pictures/japanese_covered_bridge.webp',
     },
     {
       primary: 'Квест-экскурсия по Хойану',
       secondary:
         'Подарите родным не просто сувенир, а частичку настоящего Вьетнама!',
       href: '/kvest-ekskursiya-hoian-v-korobke',
-      image: '../../public/img/pictures/hoian_in_box.webp', // Тестовая картинка
+      image: '/img/pictures/hoian_in_box.webp',
     },
   ];
 
@@ -190,7 +190,7 @@ const Footer: React.FC = () => {
               maxHeight: '60vh',
               overflow: 'auto',
               pt: 0,
-              pb: 1,
+              pb: 0,
               boxShadow: `0 -8px 32px ${alpha(theme.palette.common.black, 0.2)}`,
             }}
           >
@@ -204,15 +204,17 @@ const Footer: React.FC = () => {
                   })}
                   onClick={() => handleItemClick(item.href)}
                   sx={{
-                    py: 1,
+                    py: 2,
                     mx: -1,
-                    borderRadius: '8px',
-                    mb: 1,
+                    borderRadius: '0px',
+                    mb: 0,
+                    borderBottom: `1px solid ${alpha(theme.palette.divider, 0.1)}`,
                     '&:hover': {
                       backgroundColor: alpha(theme.palette.primary.main, 0.12),
                     },
                     '&:last-child': {
                       mb: 0,
+                      borderBottom: 'none',
                     },
                   }}
                 >
@@ -235,15 +237,15 @@ const Footer: React.FC = () => {
                     primary={item.primary}
                     secondary={item.secondary}
                     primaryTypographyProps={{
-                      fontSize: '1.05rem',
-                      fontWeight: 500,
+                      fontSize: '0.75rem',
+                      fontWeight: 900,
                       color: 'text.primary',
                       lineHeight: 1.3,
                     }}
                     secondaryTypographyProps={{
-                      fontSize: '0.875rem',
+                      fontSize: '0.75rem',
                       color: 'text.secondary',
-                      mt: 0.25,
+                      mt: 0.35,
                       lineHeight: 1.4,
                     }}
                   />
