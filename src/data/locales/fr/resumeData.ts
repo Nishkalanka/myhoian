@@ -16,6 +16,7 @@ const translationFR: TranslationContent = {
   noMarkers: 'Sélectionnez un marqueur existant ',
   swiperWelcomeTitle: 'Bonjour!',
   swiperWelcomeSubtitle: 'Veuillez sélectionner un marqueur sur la carte.',
+  startButton: 'Commencer',
   welcomeDialogTitle: 'Voyageur !', // Из нашей последней беседы
   welcomeDialogMessage: "Merci d'être avec nous !", // Из нашей последней беседы
   thankYouMessage:

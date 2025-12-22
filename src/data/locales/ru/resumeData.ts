@@ -15,7 +15,8 @@ const translationRU: TranslationContent = {
   welcomeMessage: 'Добро пожаловать в Хойан!',
   noMarkers: 'Выберите существующий маркер на карте',
   swiperWelcomeTitle: 'Привет!',
-  swiperWelcomeSubtitle: 'Пожалуйста, выберите маркер на карте.',
+  swiperWelcomeSubtitle: 'Пожалуйста, выберите маркер на карте!',
+  startButton: 'Начать',
   welcomeDialogTitle: 'Путешественник!',
   welcomeDialogMessage: 'Спасибо, что ты с нами!',
   thankYouMessage:

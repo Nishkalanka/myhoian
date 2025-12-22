@@ -208,7 +208,7 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                 backgroundColor: theme.palette.background.paper,
                 borderRadius: '8px',
                 textAlign: 'center',
-                height: '172px',
+                height: 'auto',
                 opacity: isContentLoaded ? 1 : 0,
                 transform: isContentLoaded
                   ? 'translateY(0)'
@@ -239,16 +239,30 @@ const LandmarkSwiper: React.FC<LandmarkSwiperProps> = memo(
                     marginTop: 8,
                   }}
                 />
-                <Typography variant="h6" component="h3" sx={{ mb: 0 }}>
+                <Typography variant="body1" component="h3" sx={{ mb: 0 }}>
                   {t('swiperWelcomeTitle')}
                 </Typography>
                 <Typography
-                  variant="body2"
+                  variant="caption"
                   color="text.secondary"
-                  sx={{ mb: 1 }}
+                  sx={{ mb: 0 }}
                 >
                   {t('swiperWelcomeSubtitle')}
                 </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="small"
+                  sx={{
+                    mt: 1,
+                    mb: 1,
+                    textTransform: 'none',
+                    fontWeight: 600,
+                    px: 3,
+                  }}
+                >
+                  {t('startButton')}
+                </Button>
               </Box>
             </SwiperSlide>
           )}

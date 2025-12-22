@@ -15,7 +15,8 @@ const translationES: TranslationContent = {
   welcomeMessage: '¡Hola! ¡Bienvenido a Hoi An!',
   noMarkers: 'Selecciona un marcador existente en el mapa',
   swiperWelcomeTitle: '¡Hola!',
-  swiperWelcomeSubtitle: 'Por favor, selecciona un marcador en el mapa',
+  swiperWelcomeSubtitle: 'Por favor, selecciona un marcador en el mapa.',
+  startButton: 'Comenzar',
   welcomeDialogTitle: '¡Viajero!',
   welcomeDialogMessage: '¡Gracias por estar con nosotros!',
   thankYouMessage:

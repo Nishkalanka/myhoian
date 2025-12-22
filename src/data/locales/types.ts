@@ -13,6 +13,7 @@ export interface TranslationContent {
   noDetailsAvailable: string;
   swiperWelcomeTitle: string;
   swiperWelcomeSubtitle: string;
+  startButton: string;
   welcomeDialogTitle: string;
   welcomeDialogMessage: string;
   thankYouMessage: string;

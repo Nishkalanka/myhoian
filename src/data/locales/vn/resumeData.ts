@@ -16,6 +16,7 @@ const translationVN: TranslationContent = {
   noMarkers: 'Chọn một điểm đánh dấu hiện có trên bản đồ',
   swiperWelcomeTitle: 'Xin chào!',
   swiperWelcomeSubtitle: 'Vui lòng chọn một điểm đánh dấu trên bản đồ.',
+  startButton: 'Bắt đầu',
   welcomeDialogTitle: 'Du khách!',
   welcomeDialogMessage: 'Cảm ơn bạn đã đồng hành cùng chúng tôi!',
   thankYouMessage:
