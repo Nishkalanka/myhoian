@@ -82,7 +82,16 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
             size="small"
           />
         </Divider>
-
+        <Typography
+          variant="caption"
+          sx={{ mt: 2, display: 'block' }}
+          textAlign="center"
+        >
+          Супер цена!
+        </Typography>
+        <Typography variant="h6" sx={{ mt: 0 }} textAlign="center">
+          100 000 VND
+        </Typography>
         <Box sx={{ mx: 2, position: 'relative' }}>
           <Paper
             elevation={0}
@@ -104,7 +113,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
               overflow: 'break-word',
               gap: 1,
               mb: 0,
-              mt: 2,
+              mt: 1,
             }}
           >
             <Typography

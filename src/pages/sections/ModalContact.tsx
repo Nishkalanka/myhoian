@@ -54,7 +54,7 @@ const ModalContact: React.FC<ModalContactProps> = ({ open, handleClose }) => {
         <Button
           variant="contained"
           sx={{ mt: 2, width: '100%' }}
-          href="https://t.me/pashanishka" // ⬅️ Замени на реальный юзернейм
+          href="https://t.me/natalya_olegovna" // ⬅️ Замени на реальный юзернейм
           target="_blank"
         >
           Telegram

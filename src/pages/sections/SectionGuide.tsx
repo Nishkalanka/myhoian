@@ -25,7 +25,7 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
         mb: 2,
       }}
     >
-      Указующий направление
+      Гид-экскурсовод
     </Box>
     <Paper
       elevation={0}
@@ -81,7 +81,8 @@ const SectionGuide: React.FC<SectionGuideProps> = ({
         Гид и автор лекций по Вьетнаму
       </Typography>
       <Typography variant="caption" sx={{ mb: 2 }}>
-        15 лет живу Азией и в Азии. Мне есть что рассказать вам про Вьетнам.
+        Более 15 лет проживаю в Азии. <br></br>Мне есть что рассказать вам про
+        Вьетнам!
       </Typography>
 
       <Button onClick={handleOpen} size="small" variant="contained">

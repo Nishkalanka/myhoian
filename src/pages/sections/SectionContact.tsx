@@ -27,7 +27,7 @@ const SectionContact: React.FC = () => {
         </IconButton>
         <IconButton
           component="a"
-          href="https://t.me/pashanishka"
+          href="https://t.me/natalya_olegovna"
           target="_blank"
           rel="noopener noreferrer"
           sx={{ color: 'inherit' }}

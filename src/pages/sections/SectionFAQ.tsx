@@ -6,6 +6,7 @@ import {
   Chip,
   TextField,
   MenuItem,
+  Button,
 } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -95,6 +96,48 @@ const SectionFAQ: React.FC = () => {
           <Typography component="span">Программа и стоимость</Typography>
         </AccordionSummary>
         <AccordionDetails>
+          <Box
+            sx={{ border: '1px solid #FFBF00', borderRadius: 2, p: 3, mb: 4 }}
+          >
+            <Divider sx={{ mt: 0, mb: 2 }}>
+              <Chip
+                sx={{ backgroundColor: '#FFBF00', color: '#040c19' }}
+                label="НОВОГОДНЕЕ ПРЕДЛОЖЕНИЕ"
+                size="medium"
+              />
+            </Divider>
+
+            <Typography
+              variant="h4"
+              sx={{ textAlign: 'center', mb: 1, textTransform: 'uppercase' }}
+            >
+              100.000 VND
+            </Typography>
+            <Typography variant="body1" sx={{ textAlign: 'center', mb: 2 }}>
+              <b>27 декабря в 8:30</b>
+              <br></br> Мы проводим открытую предновогоднюю прогулку по Хойану в
+              камерном формате без спешки и туристической суеты.
+            </Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+              <Button
+                size="medium"
+                variant="contained"
+                component="a"
+                href="https://t.me/natalya_olegovna"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Присоединиться
+              </Button>
+            </Box>
+            <Typography
+              variant="caption"
+              sx={{ textAlign: 'center', display: 'block', mb: 0 }}
+            >
+              В стоимость не входит обед и вход в музеи!
+            </Typography>
+          </Box>
+
           <Box>
             <Divider sx={{ mt: 0, mb: 4 }}>
               <Chip label="Дневной Хойан ( 8:00 - 13:00 )" size="medium" />
