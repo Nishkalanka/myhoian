@@ -1,6 +1,6 @@
 // src/components/header/MainAppBar.tsx
 import React from 'react';
-import { Toolbar, IconButton, Stack } from '@mui/material';
+import { Toolbar, IconButton, Stack, Badge } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import LanguageSwitcher from '../../../features/language-switcher/ui/LanguageSwitcher';
@@ -25,6 +25,7 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
   return (
     <Toolbar disableGutters sx={{ minHeight: 'unset !important' }}>
       {/* Кнопка открытия главного меню */}
+
       <IconButton
         edge="start"
         color="inherit"
@@ -32,7 +33,19 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
         onClick={onOpenMainMenu}
         sx={{ ml: 0, mr: 0, pl: 0 }}
       >
-        <MenuIcon />
+        <MenuIcon
+          sx={{
+            '@keyframes fadeInOut': {
+              '0%, 100%': {
+                opacity: 1,
+              },
+              '50%': {
+                opacity: 0.2,
+              },
+            },
+            animation: 'fadeInOut 2s ease-in-out 25',
+          }}
+        />
       </IconButton>
 
       {/* Логотип и заголовок - теперь это отдельный компонент */}

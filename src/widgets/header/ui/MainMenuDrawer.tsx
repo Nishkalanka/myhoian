@@ -7,7 +7,10 @@ import {
   IconButton,
   Divider,
   List,
+  Chip,
   MenuItem,
+  Paper,
+  Button,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
@@ -72,6 +75,69 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
             {t('menu.quest')} {/* Квест */}
           </MenuItem>
         </List>
+        <Divider sx={{ mt: 2 }} textAlign="center">
+          <Chip
+            label="Новогоднее предложение!"
+            sx={{ backgroundColor: '#FFBF00', color: '#040c19' }}
+            size="small"
+          />
+        </Divider>
+
+        <Box sx={{ mx: 2, position: 'relative' }}>
+          <Paper
+            elevation={0}
+            sx={{
+              border: 'none',
+              backgroundImage: `url(/img/tours/bg.webp)`,
+              backgroundPosition: 'center 70px',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: '#040c19',
+              pt: 4,
+              borderRadius: 2,
+              height: '340px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+              justifyContent: 'flex-start',
+              overflow: 'break-word',
+              gap: 1,
+              mb: 0,
+              mt: 2,
+            }}
+          >
+            <Typography
+              variant="body2"
+              sx={{
+                textTransform: 'uppercase',
+              }}
+            >
+              27 декабря 8:30
+            </Typography>
+
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: 900,
+                textTransform: 'uppercase',
+              }}
+            >
+              Хойан
+            </Typography>
+            <Typography variant="caption" sx={{ width: '70%', mb: 1 }}>
+              Историческая <br></br>экскурсия-лекция
+            </Typography>
+            <Button
+              component="a"
+              href="/hoian-avtorskaya-ekskursiya"
+              size="small"
+              variant="contained"
+            >
+              Подробнее
+            </Button>
+          </Paper>
+        </Box>
       </Box>
     </Drawer>
   );

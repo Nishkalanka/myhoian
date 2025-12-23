@@ -12,6 +12,7 @@ const translationRU: TranslationContent = {
   youAreHere: 'Вы здесь',
   close: 'Закрыть',
   noDetailsAvailable: 'Подробности по данному объекту отсутствуют.',
+  /*welcomeMessage: 'Добро пожаловать в Хойан!',*/
   welcomeMessage: 'Добро пожаловать в Хойан!',
   noMarkers: 'Выберите существующий маркер на карте',
   swiperWelcomeTitle: 'Привет!',
