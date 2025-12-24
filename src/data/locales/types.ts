@@ -46,6 +46,7 @@ export interface TranslationContent {
     map: string;
     explore: string;
     quest: string;
+    services: string;
   };
 
   categories: {

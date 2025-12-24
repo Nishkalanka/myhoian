@@ -61,7 +61,7 @@ export const AppSnackbar: React.FC<AppSnackbarProps> = ({
         top: 72,
       }}
       open={open}
-      autoHideDuration={1500}
+      autoHideDuration={2500}
       onClose={onClose}
       message={message}
       action={snackbarAction}

@@ -11,23 +11,26 @@ import {
   Slide,
   Box,
   ListItemIcon,
-  Avatar,
 } from '@mui/material';
 import MapIcon from '@mui/icons-material/Map';
 import ExploreIcon from '@mui/icons-material/Explore';
 import ChatIcon from '@mui/icons-material/Chat';
-// Добавляем иконки соцсетей
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import StarIcon from '@mui/icons-material/Star';
 import { useTranslation } from 'react-i18next';
+import MopedIcon from '@mui/icons-material/Moped';
+import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
+import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
+import BedroomParentIcon from '@mui/icons-material/BedroomParent';
 
 interface SubMenuItem {
   primary: string;
   secondary: string;
   href?: string;
   image?: string;
-  icon?: React.ReactNode; // Добавлено поле для иконки
+  icon?: React.ReactNode;
 }
 
 const Footer: React.FC = () => {
@@ -35,22 +38,48 @@ const Footer: React.FC = () => {
   const theme = useTheme();
   const [value, setValue] = useState(0);
   const [showExploreMenu, setShowExploreMenu] = useState(false);
+  const [showServicesMenu, setShowServicesMenu] = useState(false);
   const [showSocialMenu, setShowSocialMenu] = useState(false);
 
   const exploreItems: SubMenuItem[] = [
     {
       primary: 'Историческая экскурсия-лекция',
-      secondary:
-        'Жемчужина Юго-Восточной Азии. Старинный торговый порт, бережно хранящий наследие веков.',
+      secondary: 'Жемчужина Юго-Восточной Азии. Старинный торговый порт.',
       href: '/hoian-avtorskaya-ekskursiya',
       image: '/img/pictures/japanese_covered_bridge.webp',
     },
     {
       primary: 'Квест-экскурсия по Хойану',
-      secondary:
-        'Подарите родным не просто сувенир, а частичку настоящего Вьетнама!',
+      secondary: 'Подарите родным частичку настоящего Вьетнама!',
       href: '/kvest-ekskursiya-hoian-v-korobke',
       image: '/img/pictures/hoian_in_box.webp',
+    },
+  ];
+
+  const servicesItems: SubMenuItem[] = [
+    {
+      primary: 'Виза во Вьетнам',
+      secondary: 'Оформелние электронной визы',
+      href: '#',
+      icon: <DocumentScannerIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      primary: 'Аренда скутеров',
+      secondary: 'Поможем арендовать скутер в Хойане',
+      href: '#',
+      icon: <MopedIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      primary: 'Трансфер и встреча в аэропорту',
+      secondary: 'Любые виды трансфера',
+      href: '#',
+      icon: <LocalTaxiIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      primary: 'Аренда жилья',
+      secondary: 'Выбор отеля и бронирование',
+      href: '#',
+      icon: <BedroomParentIcon sx={{ fontSize: 32 }} />,
     },
   ];
 
@@ -59,7 +88,7 @@ const Footer: React.FC = () => {
       primary: 'Telegram',
       secondary: 'Подписывайтесь на наш канал!',
       href: 'https://t.me/myhoian',
-      icon: <TelegramIcon sx={{ fontSize: 32 }} />, // Иконка вместо фото
+      icon: <TelegramIcon sx={{ fontSize: 32 }} />,
     },
     {
       primary: 'Instagram',
@@ -69,7 +98,7 @@ const Footer: React.FC = () => {
     },
     {
       primary: 'WhatsApp',
-      secondary: 'Быстрые вопросы',
+      secondary: 'Бесплатная консультация',
       href: 'https://wa.me/84357923401',
       icon: <WhatsAppIcon sx={{ fontSize: 32 }} />,
     },
@@ -77,44 +106,55 @@ const Footer: React.FC = () => {
 
   const handleExploreClick = () => {
     setShowExploreMenu(!showExploreMenu);
+    setShowServicesMenu(false);
     setShowSocialMenu(false);
     setValue(showExploreMenu ? 0 : 1);
+  };
+
+  const handleServicesClick = () => {
+    setShowServicesMenu(!showServicesMenu);
+    setShowExploreMenu(false);
+    setShowSocialMenu(false);
+    setValue(showServicesMenu ? 0 : 2);
   };
 
   const handleSocialClick = () => {
     setShowSocialMenu(!showSocialMenu);
     setShowExploreMenu(false);
-    setValue(showSocialMenu ? 0 : 2);
+    setShowServicesMenu(false);
+    setValue(showSocialMenu ? 0 : 3);
   };
 
   const handleNavigationChange = (
     _event: React.SyntheticEvent,
     newValue: number
   ) => {
-    if (newValue !== 1 && newValue !== 2) {
+    if (newValue !== 1 && newValue !== 2 && newValue !== 3) {
       setShowExploreMenu(false);
+      setShowServicesMenu(false);
       setShowSocialMenu(false);
     }
     setValue(newValue);
   };
 
   const handleItemClick = (href?: string) => {
-    if (href?.startsWith('http')) {
-      setShowExploreMenu(false);
-      setShowSocialMenu(false);
+    // не закрываем меню и не переходим, если href нет или это "#"
+    if (!href || href === '#') return;
+
+    setShowExploreMenu(false);
+    setShowServicesMenu(false);
+    setShowSocialMenu(false);
+
+    if (href.startsWith('http')) {
       window.open(href, '_blank', 'noopener,noreferrer');
     } else {
-      setShowExploreMenu(false);
-      setShowSocialMenu(false);
-      if (href) {
-        window.location.href = href;
-      }
+      window.location.href = href;
     }
   };
 
   return (
     <>
-      {/* Футер */}
+      {/* Футер с 4 кнопками */}
       <Paper
         sx={{
           position: 'fixed',
@@ -165,6 +205,11 @@ const Footer: React.FC = () => {
             onClick={handleExploreClick}
           />
           <BottomNavigationAction
+            label={t('menu.services') || 'Services'}
+            icon={<StarIcon />}
+            onClick={handleServicesClick}
+          />
+          <BottomNavigationAction
             label={t('menu.contacts') || 'Contacts'}
             icon={<ChatIcon />}
             onClick={handleSocialClick}
@@ -210,6 +255,125 @@ const Footer: React.FC = () => {
                     component: 'a' as const,
                     href: item.href,
                   })}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleItemClick(item.href);
+                  }}
+                  sx={{
+                    py: 2,
+                    mx: -1,
+                    borderRadius: '0px',
+                    mb: 0,
+                    borderBottom: `1px solid ${alpha(theme.palette.divider, 0.1)}`,
+                    '&:hover': {
+                      backgroundColor: alpha(theme.palette.primary.main, 0.12),
+                    },
+                    '&:last-child': { mb: 0, borderBottom: 'none' },
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: '80px', mr: 2 }}>
+                    {item.image && (
+                      <Box
+                        sx={{
+                          width: 80,
+                          height: 80,
+                          borderRadius: '4px',
+                          overflow: 'hidden',
+                          boxShadow: `0 4px 12px ${alpha(theme.palette.common.black, 0.3)}`,
+                          backgroundColor: theme.palette.grey[200],
+                        }}
+                        role="img"
+                        aria-label={item.primary}
+                      >
+                        <picture
+                          style={{
+                            display: 'block',
+                            width: '100%',
+                            height: '100%',
+                          }}
+                        >
+                          <source srcSet={item.image} type="image/webp" />
+                          <img
+                            src={item.image.replace('.webp', '.jpg')}
+                            alt={item.primary}
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                            decoding="async"
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              display: 'block',
+                              borderRadius: '4px',
+                            }}
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src =
+                                '/img/fallback-tour.jpg';
+                            }}
+                          />
+                        </picture>
+                      </Box>
+                    )}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.primary}
+                    secondary={item.secondary}
+                    primaryTypographyProps={{
+                      fontSize: '0.875rem',
+                      fontWeight: 900,
+                      color: 'text.primary',
+                      lineHeight: 1.4,
+                    }}
+                    secondaryTypographyProps={{
+                      fontSize: '0.75rem',
+                      color: 'text.secondary',
+                      mt: 0.5,
+                      lineHeight: 1.4,
+                    }}
+                  />
+                </ListItemButton>
+              ))}
+            </List>
+          </Paper>
+        </Box>
+      </Slide>
+
+      {/* Подменю УСЛУГИ с иконками */}
+      <Slide
+        direction="up"
+        in={showServicesMenu}
+        mountOnEnter
+        unmountOnExit
+        timeout={{ enter: 300, exit: 200 }}
+      >
+        <Box
+          sx={{
+            position: 'fixed',
+            bottom: '56px',
+            left: 0,
+            right: 0,
+            zIndex: 1099,
+          }}
+        >
+          <Paper
+            sx={{
+              background: alpha('#2e2e39', 0.98),
+              backdropFilter: 'blur(16px)',
+              borderTop: `1px solid ${alpha(theme.palette.divider, 0.3)}`,
+              borderRadius: '8px 8px 0 0',
+              maxHeight: '60vh',
+              overflow: 'auto',
+              pt: 0,
+              pb: 0,
+              boxShadow: `0 -8px 32px ${alpha(theme.palette.common.black, 0.2)}`,
+            }}
+          >
+            <List sx={{ py: 0, px: 1 }}>
+              {servicesItems.map((item, index) => (
+                <ListItemButton
+                  key={index}
+                  // href здесь не нужен, чтобы не было лишней навигации
                   onClick={() => handleItemClick(item.href)}
                   sx={{
                     py: 2,
@@ -220,25 +384,22 @@ const Footer: React.FC = () => {
                     '&:hover': {
                       backgroundColor: alpha(theme.palette.primary.main, 0.12),
                     },
-                    '&:last-child': {
-                      mb: 0,
-                      borderBottom: 'none',
-                    },
+                    '&:last-child': { mb: 0, borderBottom: 'none' },
                   }}
                 >
-                  <ListItemIcon sx={{ minWidth: '80px', mr: 2 }}>
-                    {item.image && (
-                      <Avatar
-                        src={item.image}
-                        variant="square"
+                  <ListItemIcon
+                    sx={{ minWidth: '48px', mr: 2, justifyContent: 'center' }}
+                  >
+                    {item.icon && (
+                      <Box
                         sx={{
-                          width: 80,
-                          height: 80,
-                          borderRadius: '4px',
-                          objectFit: 'cover',
-                          boxShadow: `0 4px 12px ${alpha(theme.palette.common.black, 0.3)}`,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
                         }}
-                      />
+                      >
+                        {item.icon}
+                      </Box>
                     )}
                   </ListItemIcon>
                   <ListItemText
@@ -302,9 +463,12 @@ const Footer: React.FC = () => {
                     component: 'a' as const,
                     href: item.href,
                   })}
-                  onClick={() => handleItemClick(item.href)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleItemClick(item.href);
+                  }}
                   sx={{
-                    py: 2, // Увеличиваем паддинг как в Explore
+                    py: 2,
                     mx: -1,
                     borderRadius: '0px',
                     mb: 0,
@@ -312,13 +476,9 @@ const Footer: React.FC = () => {
                     '&:hover': {
                       backgroundColor: alpha(theme.palette.primary.main, 0.12),
                     },
-                    '&:last-child': {
-                      mb: 0,
-                      borderBottom: 'none',
-                    },
+                    '&:last-child': { mb: 0, borderBottom: 'none' },
                   }}
                 >
-                  {/* Добавляем иконку в ListItemIcon */}
                   <ListItemIcon
                     sx={{ minWidth: '36px', mr: 2, justifyContent: 'center' }}
                   >

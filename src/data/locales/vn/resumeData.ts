@@ -45,10 +45,11 @@ const translationVN: TranslationContent = {
   menu: {
     title: 'Menu',
     map: 'Bản đồ',
-    explore: 'Chuyến tham quan',
+    explore: 'Chuyến tour',
     contacts: 'Liên hệ',
     tour: 'Tour Giảng bài Hoi An',
     quest: 'Tour Trò chơi Hoi An',
+    services: 'Dịch vụ',
   },
   categories: {
     museum: 'Bảo tàng',

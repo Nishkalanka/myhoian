@@ -49,6 +49,7 @@ const translationRU: TranslationContent = {
     map: 'Карта',
     explore: 'Экскурсии',
     contacts: 'Контакты',
+    services: 'Услуги',
     tour: 'Экскурсия-лекция',
     quest: 'Квест-экскурсия',
   },

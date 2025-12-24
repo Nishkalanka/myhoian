@@ -50,6 +50,7 @@ const translationEN: TranslationContent = {
     contacts: 'Contacts',
     tour: 'Hoi An Lecture Tour',
     quest: 'Hoi An Quest Tour',
+    services: 'Services',
   },
   categories: {
     museum: 'Museums',
