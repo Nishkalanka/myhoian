@@ -26,6 +26,7 @@ import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import BedroomParentIcon from '@mui/icons-material/BedroomParent';
 
 interface SubMenuItem {
+  tag?: string;
   primary: string;
   secondary: string;
   href?: string;
@@ -53,6 +54,14 @@ const Footer: React.FC = () => {
       secondary: 'Подарите родным частичку настоящего Вьетнама!',
       href: '/kvest-ekskursiya-hoian-v-korobke',
       image: '/img/pictures/hoian_in_box.webp',
+    },
+    {
+      tag: 'Новогоднее предложение ',
+      primary: 'Исторический Хойан (скидка 90%) ',
+      secondary:
+        'Уникальное предложение только для подписчиков телеграм-канала!',
+      href: '/hoian-avtorskaya-ekskursiya',
+      image: '/img/pictures/2.webp',
     },
   ];
 
@@ -317,14 +326,48 @@ const Footer: React.FC = () => {
                     )}
                   </ListItemIcon>
                   <ListItemText
-                    primary={item.primary}
+                    primary={
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 0.5,
+                        }}
+                      >
+                        {item.tag && (
+                          <Box
+                            sx={{
+                              alignSelf: 'flex-start',
+                              px: 1,
+                              py: 0.25,
+                              borderRadius: '999px',
+                              backgroundColor: alpha(
+                                theme.palette.primary.main,
+                                0.15
+                              ),
+                              color: theme.palette.primary.main,
+                              fontSize: '0.75rem',
+                              ml: -1,
+                            }}
+                          >
+                            {item.tag}
+                          </Box>
+                        )}
+
+                        <Box
+                          component="span"
+                          sx={{
+                            fontSize: '0.875rem',
+                            fontWeight: 900,
+                            color: 'text.primary',
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {item.primary}
+                        </Box>
+                      </Box>
+                    }
                     secondary={item.secondary}
-                    primaryTypographyProps={{
-                      fontSize: '0.875rem',
-                      fontWeight: 900,
-                      color: 'text.primary',
-                      lineHeight: 1.4,
-                    }}
                     secondaryTypographyProps={{
                       fontSize: '0.75rem',
                       color: 'text.secondary',

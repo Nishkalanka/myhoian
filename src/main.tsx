@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <LanguageProvider>
           <Suspense fallback={null}>
             <Routes>
-              <Route path="/vietnam-lecture-in-danang" element={<Lecture />} />
+              {/* <Route path="/vietnam-lecture-in-danang" element={<Lecture />} /> */}
 
               <Route element={<MapLayout />}>
                 <Route
