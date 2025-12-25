@@ -24,6 +24,7 @@ import MopedIcon from '@mui/icons-material/Moped';
 import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
 import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import BedroomParentIcon from '@mui/icons-material/BedroomParent';
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
 interface SubMenuItem {
   tag?: string;
@@ -89,6 +90,12 @@ const Footer: React.FC = () => {
       secondary: 'Выбор отеля и бронирование',
       href: '#',
       icon: <BedroomParentIcon sx={{ fontSize: 32 }} />,
+    },
+    {
+      primary: 'Персональная фотосессия',
+      secondary: 'Только профессиональные фотографы',
+      href: '#',
+      icon: <PhotoCameraIcon sx={{ fontSize: 32 }} />,
     },
   ];
 
@@ -249,7 +256,7 @@ const Footer: React.FC = () => {
               backdropFilter: 'blur(16px)',
               borderTop: `1px solid ${alpha(theme.palette.divider, 0.3)}`,
               borderRadius: '8px 8px 0 0',
-              maxHeight: '60vh',
+              maxHeight: '65vh',
               overflow: 'auto',
               pt: 0,
               pb: 0,
