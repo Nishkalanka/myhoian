@@ -33,19 +33,7 @@ const MainAppBar: React.FC<MainAppBarProps> = ({
         onClick={onOpenMainMenu}
         sx={{ ml: 0, mr: 0, pl: 0 }}
       >
-        <MenuIcon
-          sx={{
-            '@keyframes fadeInOut': {
-              '0%, 100%': {
-                opacity: 1,
-              },
-              '50%': {
-                opacity: 0.2,
-              },
-            },
-            animation: 'fadeInOut 2s ease-in-out 25',
-          }}
-        />
+        <MenuIcon />
       </IconButton>
 
       {/* Логотип и заголовок - теперь это отдельный компонент */}

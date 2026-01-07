@@ -96,6 +96,7 @@ const SectionFAQ: React.FC = () => {
           <Typography component="span">Программа и стоимость</Typography>
         </AccordionSummary>
         <AccordionDetails>
+          {/*
           <Box
             sx={{ border: '1px solid #FFBF00', borderRadius: 2, p: 3, mb: 4 }}
           >
@@ -137,7 +138,7 @@ const SectionFAQ: React.FC = () => {
               В стоимость не входит обед и вход в музеи!
             </Typography>
           </Box>
-
+          */}
           <Box>
             <Divider sx={{ mt: 0, mb: 4 }}>
               <Chip label="Дневной Хойан ( 8:00 - 13:00 )" size="medium" />

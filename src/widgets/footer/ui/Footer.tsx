@@ -56,15 +56,18 @@ const Footer: React.FC = () => {
       href: '/kvest-ekskursiya-hoian-v-korobke',
       image: '/img/pictures/hoian_in_box.webp',
     },
-    {
-      tag: 'Новогоднее предложение ',
-      primary: 'Исторический Хойан (скидка 90%) ',
-      secondary:
-        'Уникальное предложение только для подписчиков телеграм-канала!',
-      href: '/hoian-avtorskaya-ekskursiya',
-      image: '/img/pictures/2.webp',
-    },
   ];
+
+  {
+    /*{
+      tag: "Новогоднее предложение ",
+      primary: "Исторический Хойан (скидка 90%) ",
+      secondary:
+        "Уникальное предложение только для подписчиков телеграм-канала!",
+      href: "/hoian-avtorskaya-ekskursiya",
+      image: "/img/pictures/2.webp",
+    }, */
+  }
 
   const servicesItems: SubMenuItem[] = [
     {
@@ -91,6 +94,7 @@ const Footer: React.FC = () => {
       href: '#',
       icon: <BedroomParentIcon sx={{ fontSize: 32 }} />,
     },
+
     {
       primary: 'Персональная фотосессия',
       secondary: 'Только профессиональные фотографы',
@@ -256,7 +260,7 @@ const Footer: React.FC = () => {
               backdropFilter: 'blur(16px)',
               borderTop: `1px solid ${alpha(theme.palette.divider, 0.3)}`,
               borderRadius: '8px 8px 0 0',
-              maxHeight: '65vh',
+              maxHeight: '70vh',
               overflow: 'auto',
               pt: 0,
               pb: 0,

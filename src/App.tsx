@@ -217,7 +217,7 @@ function AppContent() {
         />
         <meta
           property="og:title"
-          content="Интерактивная Карта Хойана 2025 | Достопримечательности и Маршруты"
+          content="Интерактивная Карта Хойана 2026 | Достопримечательности и Маршруты"
         />
         <meta property="og:description" content="Путеводитель по Хойану..." />
         <meta property="og:image" content="https://myhoian.app/og-image.png" />

@@ -129,7 +129,7 @@ const Kvest: React.FC = () => {
     <>
       <Helmet>
         <title>
-          Квест-экскурсия "Хойан в коробке" 2025 - 2026 | Шопинг-тур с гидом
+          Квест-экскурсия "Хойан в коробке" 2026 | Шопинг-тур с гидом
         </title>
         <meta
           name="keywords"
@@ -145,7 +145,7 @@ const Kvest: React.FC = () => {
         />
         <meta
           property="og:title"
-          content="Квест-экскурсия 'Хойан в коробке' 2025 | Шопинг-тур с гидом"
+          content="Квест-экскурсия 'Хойан в коробке' 2026 | Шопинг-тур с гидом"
         />
         <meta
           property="og:description"
@@ -166,7 +166,7 @@ const Kvest: React.FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Квест-экскурсия 'Хойан в коробке' 2025"
+          content="Квест-экскурсия 'Хойан в коробке' 2026"
         />
         <meta
           name="twitter:description"

@@ -75,6 +75,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
             {t('menu.quest')} {/* Квест */}
           </MenuItem>
         </List>
+        {/* предложение 
         <Divider sx={{ mt: 2 }} textAlign="center">
           <Chip
             label="Новогоднее предложение!"
@@ -146,7 +147,7 @@ const MainMenuDrawer: React.FC<MainMenuDrawerProps> = ({
               Подробнее
             </Button>
           </Paper>
-        </Box>
+        </Box>*/}
       </Box>
     </Drawer>
   );

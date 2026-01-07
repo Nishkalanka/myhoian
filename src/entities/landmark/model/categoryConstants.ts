@@ -44,7 +44,7 @@ export const ALL_CATEGORIES: Category[] = [
     id: 4,
     name: {
       en: 'Clubs',
-      ru: 'Клубы', // <-- Не забудь перевести на русский!
+      ru: 'Клубы',
       es: 'Clubs',
       fr: 'Clubs',
       vn: 'Câu lạc bộ',

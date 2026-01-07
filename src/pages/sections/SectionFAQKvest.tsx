@@ -80,6 +80,7 @@ const SectionFAQ: React.FC = () => {
           <Typography component="span">Стоимость</Typography>
         </AccordionSummary>
         <AccordionDetails>
+          {/* 
           <Box>
             <Divider sx={{ mt: 0, mb: 2 }}>
               <Chip label="До 25 декабря" size="medium" />
@@ -118,7 +119,7 @@ const SectionFAQ: React.FC = () => {
             <Divider sx={{ mt: 0, mb: 3 }}>
               <Chip label="После" size="medium" />
             </Divider>
-          </Box>
+          </Box>*/}
           {/* Селектор валюты */}
           <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
             <TextField
