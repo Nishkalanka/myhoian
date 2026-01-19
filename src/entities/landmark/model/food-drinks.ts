@@ -8175,4 +8175,1106 @@ export const foodDrinksLandmarks: Landmark[] = [
     },
   },
   //Rio Garden Coffee
+  {
+    id: 'rio-garden-coffee-hoi-an', // <-- ID теперь строковый
+    coordinates: [15.885630712940545, 108.3345290124869], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'rio-garden-coffee.webp',
+    en: {
+      title: 'Rio Garden Coffee - Coffee Shop',
+      description:
+        'Coffee and drinks with rice field views, lots of ferns, greenery, and a koi pond',
+      fullDescription: `
+<p>Coffee and drinks with rice field views, lots of ferns, greenery, and a koi pond</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Drinks (Cold)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Fermented sparkling tea. Flavors: Classic, Ginger, Passion Fruit, or Mixed Berries (check availability).',
+              price: '45.000',
+            },
+            {
+              name: 'Homemade Lemonade',
+              description:
+                'Fresh lemon/lime juice, mint, a drop of syrup, and soda water.',
+              price: '40.000',
+            },
+            {
+              name: 'Fresh Coconut',
+              description: 'Whole young coconut.',
+              price: '35.000',
+            },
+            {
+              name: 'Iced Coffee',
+              description:
+                'Black coffee or with your choice of plant-based milk over ice.',
+              price: '40.000 / 50.000',
+            },
+            {
+              name: 'Freshly Squeezed Juices',
+              description: 'Orange, carrot, apple, or watermelon.',
+              price: '55.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Hot Drinks',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Classic strong coffee shot.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso shot with hot water.',
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latte',
+              description: 'Made with oat or coconut milk.',
+              price: '55.000',
+            },
+            {
+              name: 'Herbal Tea (Pot)',
+              description: 'Chamomile, Mint, Ginger, or local Vietnamese tea.',
+              price: '45.000',
+            },
+            {
+              name: 'Hot Cocoa with Marshmallows',
+              description:
+                'Hot chocolate drink with plant-based milk and vegan marshmallows.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Smoothie Bowl Add-ons',
+          items: [
+            {
+              name: 'Extra Topping',
+              description: 'Granola, chia seeds, nuts, or coconut flakes.',
+              price: '15.000',
+            },
+            {
+              name: 'Protein Powder',
+              description:
+                'A scoop of plant-based protein for your smoothie bowl.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    ru: {
+      title: 'Rio Garden Coffee - Кофейня',
+      description:
+        'Кофе, напитки с видом на рисовые поля, много папоротников, зелени и пруд с карпами',
+      fullDescription: `
+<p>Кофе, напитки с видом на рисовые поля, много папоротников, зелени и пруд с карпами</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Напитки (Холодные)',
+          items: [
+            {
+              name: 'Комбуча',
+              description:
+                'Ферментированный чайный гриб. Вкусы: классическая, имбирь, маракуйя или ягоды (наличие уточняйте).',
+              price: '45.000',
+            },
+            {
+              name: 'Домашний Лимонад',
+              description:
+                'Свежевыжатый сок лимона/лайма, мята, капля сиропа и содовая.',
+              price: '40.000',
+            },
+            {
+              name: 'Свежий кокос',
+              description: 'Цельный молодой кокос.',
+              price: '35.000',
+            },
+            {
+              name: 'Холодный Кофе / Кофе со льдом',
+              description:
+                'Черный кофе или с добавлением растительного молока на ваш выбор.',
+              price: '40.000 / 50.000',
+            },
+            {
+              name: 'Свежевыжатые соки',
+              description: 'Апельсин, морковь, яблоко или арбуз.',
+              price: '55.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Горячие напитки',
+          items: [
+            {
+              name: 'Эспрессо',
+              description: 'Классический крепкий кофе.',
+              price: '30.000',
+            },
+            {
+              name: 'Американо',
+              description: 'Порция эспрессо с горячей водой.',
+              price: '35.000',
+            },
+            {
+              name: 'Капучино / Латте',
+              description: 'На овсяном или кокосовом молоке.',
+              price: '55.000',
+            },
+            {
+              name: 'Травяной чай (в чайнике)',
+              description:
+                'Ромашка, мята, имбирный или местный вьетнамский чай.',
+              price: '45.000',
+            },
+            {
+              name: 'Какао с маршмэллоу',
+              description:
+                'Горячий шоколадный напиток на растительном молоке с веганскими зефирками.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Дополнения к Смузи-боулам',
+          items: [
+            {
+              name: 'Дополнительный топпинг',
+              description: 'Гранола, семена чиа, орехи или кокосовые хлопья.',
+              price: '15.000',
+            },
+            {
+              name: 'Протеиновый порошок',
+              description: 'Порция растительного протеина в ваш смузи-боул.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    es: {
+      title: 'Rio Garden Coffee',
+      description:
+        'Café, bebidas con vistas a los arrozales, helechos, vegetación y estanque de carpas',
+      fullDescription: `
+<p>Café, bebidas con vistas a los arrozales, helechos, vegetación y estanque de carpas</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Bebidas (Frías)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Té fermentado. Sabores: Clásico, Jengibre, Maracuyá o Bayas (consultar disponibilidad).',
+              price: '45.000',
+            },
+            {
+              name: 'Limonada Casera',
+              description:
+                'Zumo de limón/lima fresco, menta, una gota de sirope y soda.',
+              price: '40.000',
+            },
+            {
+              name: 'Coco Fresco',
+              description: 'Coco joven entero.',
+              price: '35.000',
+            },
+            {
+              name: 'Café con Hielo',
+              description:
+                'Café solo o con la leche vegetal de su elección sobre hielo.',
+              price: '40.000 / 50.000',
+            },
+            {
+              name: 'Zumos Naturales',
+              description: 'Naranja, zanahoria, manzana o sandía.',
+              price: '55.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bebidas Calientes',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Café fuerte clásico.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso con agua caliente.',
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latte',
+              description: 'Con leche de avena o de coco.',
+              price: '55.000',
+            },
+            {
+              name: 'Té de Hierbas (Tetera)',
+              description: 'Manzanilla, Menta, Jengibre o té local vietnamita.',
+              price: '45.000',
+            },
+            {
+              name: 'Cacao con Malvaviscos',
+              description:
+                'Bebida de chocolate caliente con leche vegetal y malvaviscos veganos.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Extras para Smoothie Bowls',
+          items: [
+            {
+              name: 'Topping Adicional',
+              description:
+                'Granola, semillas de chía, frutos secos o coco rallado.',
+              price: '15.000',
+            },
+            {
+              name: 'Proteína en Polvo',
+              description: 'Una porción de proteína vegetal para su bowl.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    fr: {
+      title: 'Rio Garden Coffee',
+      description:
+        'Café, boissons avec vue sur les rizières, fougères, verdure et étang à carpes koï',
+      fullDescription: `
+<p>Café, boissons avec vue sur les rizières, fougères, verdure et étang à carpes koï'</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Boissons (Froides)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Thé fermenté pétillant. Saveurs : Classique, Gingembre, Fruit de la passion ou Baies (selon disponibilité).',
+              price: '45.000',
+            },
+            {
+              name: 'Limonade Maison',
+              description:
+                'Jus de citron/citron vert frais, menthe, un soupçon de sirop et eau gazeuse.',
+              price: '40.000',
+            },
+            {
+              name: 'Coco Frais',
+              description: 'Noix de coco jeune entière.',
+              price: '35.000',
+            },
+            {
+              name: 'Café Glacé',
+              description:
+                'Café noir ou avec le lait végétal de votre choix sur glace.',
+              price: '40.000 / 50.000',
+            },
+            {
+              name: 'Jus Frais Pressés',
+              description: 'Orange, carotte, pomme ou pastèque.',
+              price: '55.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Boissons Chaudes',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Café serré classique.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: "Espresso avec de l'eau chaude.",
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latté',
+              description: "Au lait d'avoine ou de coco.",
+              price: '55.000',
+            },
+            {
+              name: 'Infusion (Théière)',
+              description:
+                'Camomille, Menthe, Gingembre ou thé local vietnamien.',
+              price: '45.000',
+            },
+            {
+              name: 'Cacao et Guimauves',
+              description:
+                'Chocolat chaud au lait végétal avec guimauves végétaliennes.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Suppléments Smoothie Bowls',
+          items: [
+            {
+              name: 'Garniture Supplémentaire',
+              description:
+                'Granola, graines de chia, noix ou noix de coco râpée.',
+              price: '15.000',
+            },
+            {
+              name: 'Protéine en Poudre',
+              description:
+                'Une dose de protéine végétale pour votre smoothie bowl.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    vn: {
+      title: 'Rio Garden Coffee',
+      description:
+        'Cà phê, đồ uống ngắm ruộng lúa, nhiều dương xỉ, cây xanh và ao cá chép',
+      fullDescription: `
+<p>Cà phê, đồ uống ngắm ruộng lúa, nhiều dương xỉ, cây xanh và ao cá chép</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Đồ uống (Lạnh)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Trà lên men. Các vị: Truyền thống, Gừng, Chanh leo hoặc Dâu rừng (vui lòng kiểm tra tình trạng sẵn có).',
+              price: '45.000',
+            },
+            {
+              name: 'Nước chanh tươi tự làm',
+              description:
+                'Nước cốt chanh tươi, bạc hà, một chút siro và soda.',
+              price: '40.000',
+            },
+            {
+              name: 'Dừa tươi',
+              description: 'Dừa xiêm nguyên quả.',
+              price: '35.000',
+            },
+            {
+              name: 'Cà phê đá',
+              description:
+                'Cà phê đen hoặc dùng kèm với loại sữa hạt tùy chọn của bạn.',
+              price: '40.000 / 50.000',
+            },
+            {
+              name: 'Nước ép trái cây tươi',
+              description: 'Cam, cà rốt, táo hoặc dưa hấu.',
+              price: '55.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Đồ uống nóng',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Cà phê đen đậm đà kiểu Ý.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Cà phê Espresso pha loãng với nước nóng.',
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latte',
+              description: 'Pha với sữa yến mạch hoặc sữa dừa.',
+              price: '55.000',
+            },
+            {
+              name: 'Trà thảo mộc (Ấm)',
+              description:
+                'Hoa cúc, Bạc hà, Gừng hoặc trà địa phương Việt Nam.',
+              price: '45.000',
+            },
+            {
+              name: 'Ca cao với kẹo dẻo Marshmallow',
+              description:
+                'Thức uống ca cao nóng với sữa hạt và kẹo dẻo thuần chay.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Món thêm cho Smoothie Bowl',
+          items: [
+            {
+              name: 'Topping thêm',
+              description: 'Granola, hạt chia, các loại hạt hoặc dừa nạo.',
+              price: '15.000',
+            },
+            {
+              name: 'Bột Protein',
+              description:
+                'Một phần protein thực vật cho bát smoothie của bạn.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    slug: {
+      en: 'rio-garden-coffee-hoi-an',
+      ru: 'rio-garden-coffee-hoi-an',
+      es: 'rio-garden-coffee-hoi-an',
+      fr: 'rio-garden-coffee-hoi-an',
+      vn: 'rio-garden-coffee-hoi-an',
+    },
+  },
+  //me-hoi-an
+  {
+    id: 'mu-hoi-an-rooftop-coffee-kitchen', // <-- ID теперь строковый
+    coordinates: [15.8771274969711, 108.32690509099474], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'me-hoi-an.webp',
+    en: {
+      title: 'Mê Hội An - Coffee Shop & Rooftop Restaurant',
+      description:
+        'Enjoy the best view of the Old Town from our cozy rooftop coffee shop',
+      fullDescription: `
+<p>Enjoy the best view of the Old Town from our cozy rooftop coffee shop</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Drinks (Cold)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Fermented sparkling tea. Flavors: Classic, Ginger, Passion Fruit, or Mixed Berries (check availability).',
+              price: '45.000',
+            },
+            {
+              name: 'Homemade Lemonade',
+              description:
+                'Fresh lemon/lime juice, mint, a drop of syrup, and soda water.',
+              price: '40.000',
+            },
+            {
+              name: 'Fresh Young Coconut',
+              description: 'Whole local fresh coconut.',
+              price: '40.000',
+            },
+            {
+              name: 'Iced Coffee',
+              description: 'Black coffee over ice. Add plant-based milk +15k.',
+              price: '40.000',
+            },
+            {
+              name: 'Iced Matcha',
+              description:
+                'Chilled Japanese matcha tea with your choice of plant-based milk.',
+              price: '55.000',
+            },
+            {
+              name: 'Freshly Squeezed Juices',
+              description: 'Orange, carrot, apple, pineapple, or watermelon.',
+              price: '45.000',
+            },
+            {
+              name: 'Detox Juice',
+              description:
+                'A blend of fresh vegetables and fruits to cleanse your body.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Hot Drinks',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Classic strong coffee shot.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso shot with hot water.',
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latte',
+              description: 'Made with oat or coconut milk.',
+              price: '55.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Double espresso with smooth, velvety steamed milk.',
+              price: '55.000',
+            },
+            {
+              name: 'Herbal Tea (Pot)',
+              description:
+                'Options: Ginger with lemon, Chamomile, Mint, or Green tea.',
+              price: '45.000',
+            },
+            {
+              name: 'Hot Cocoa with Marshmallows',
+              description:
+                'Hot chocolate drink with plant-based milk and vegan marshmallows.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Smoothie Bowl Add-ons',
+          items: [
+            {
+              name: 'Extra Topping',
+              description: 'Granola, chia seeds, nuts, or coconut flakes.',
+              price: '15.000',
+            },
+            {
+              name: 'Protein Powder',
+              description:
+                'A scoop of plant-based protein (isolate) for your smoothie bowl.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    ru: {
+      title: 'Mê Hội An - Кофейня и ресторан на крыше',
+      description: 'С крыши этой кофейни приятно наблюдать за старым городом',
+      fullDescription: `
+<p>С крыши этой кофейни приятно наблюдать за старым городом</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Напитки (Холодные)',
+          items: [
+            {
+              name: 'Комбуча',
+              description:
+                'Ферментированный чайный гриб. Вкусы: классическая, имбирь, маракуйя или ягоды (наличие уточняйте).',
+              price: '45.000',
+            },
+            {
+              name: 'Домашний Лимонад',
+              description:
+                'Свежевыжатый сок лимона/лайма, мята, капля сиропа и содовая.',
+              price: '40.000',
+            },
+            {
+              name: 'Свежий молодой кокос',
+              description: 'Цельный местный кокос.',
+              price: '40.000',
+            },
+            {
+              name: 'Холодный Кофе / Кофе со льдом',
+              description:
+                'Черный кофе со льдом. Добавление растительного молока +15к.',
+              price: '40.000',
+            },
+            {
+              name: 'Холодная Матча',
+              description:
+                'Охлажденный японский чай матча с растительным молоком на ваш выбор.',
+              price: '55.000',
+            },
+            {
+              name: 'Свежевыжатые соки',
+              description: 'Апельсин, морковь, яблоко, ананас или арбуз.',
+              price: '45.000',
+            },
+            {
+              name: 'Детокс-сок',
+              description:
+                'Смесь свежих овощей и фруктов для очищения организма.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Горячие напитки',
+          items: [
+            {
+              name: 'Эспрессо',
+              description: 'Классический крепкий кофе.',
+              price: '30.000',
+            },
+            {
+              name: 'Американо',
+              description: 'Порция эспрессо с горячей водой.',
+              price: '35.000',
+            },
+            {
+              name: 'Капучино / Латте',
+              description: 'На овсяном или кокосовом молоке.',
+              price: '55.000',
+            },
+            {
+              name: 'Плоский белый (Flat White)',
+              description: 'Двойной эспрессо с нежной молочной пенкой.',
+              price: '55.000',
+            },
+            {
+              name: 'Травяной чай (в чайнике)',
+              description:
+                'Варианты: имбирь с лимоном, ромашка, мята или зеленый чай.',
+              price: '45.000',
+            },
+            {
+              name: 'Какао с маршмэллоу',
+              description:
+                'Горячий шоколадный напиток на растительном молоке с веганскими зефирками.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Дополнения к Смузи-боулам',
+          items: [
+            {
+              name: 'Дополнительный топпинг',
+              description: 'Гранола, семена чиа, орехи или кокосовые хлопья.',
+              price: '15.000',
+            },
+            {
+              name: 'Протеиновый порошок',
+              description:
+                'Порция растительного протеина (изолят) в ваш смузи-боул.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    es: {
+      title: 'Mê Hội An - Cafetería y restaurante en la azotea',
+      description:
+        'Disfruta de la mejor vista del casco antiguo desde nuestra acogedora terraza',
+      fullDescription: `
+<p>Disfruta de la mejor vista del casco antiguo desde nuestra acogedora terraza</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Bebidas (Frías)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Té fermentado. Sabores: Clásico, Jengibre, Maracuyá o Bayas (consultar disponibilidad).',
+              price: '45.000',
+            },
+            {
+              name: 'Limonada Casera',
+              description:
+                'Zumo de limón/lima fresco, menta, una gota de sirope y soda.',
+              price: '40.000',
+            },
+            {
+              name: 'Coco Joven Fresco',
+              description: 'Coco fresco local entero.',
+              price: '40.000',
+            },
+            {
+              name: 'Café con Hielo',
+              description: 'Café solo con hielo. Con leche vegetal +15k.',
+              price: '40.000',
+            },
+            {
+              name: 'Matcha Frío',
+              description:
+                'Té matcha japonés frío con la leche vegetal de su elección.',
+              price: '55.000',
+            },
+            {
+              name: 'Zumos Naturales',
+              description: 'Naranja, zanahoria, manzana, piña o sandía.',
+              price: '45.000',
+            },
+            {
+              name: 'Zumo Detox',
+              description:
+                'Mezcla de frutas y verduras frescas para depurar el organismo.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bebidas Calientes',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Café fuerte clásico.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Espresso con agua caliente.',
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latte',
+              description: 'Preparado con leche de avena или de coco.',
+              price: '55.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Doble espresso con una capa fina de leche cremosa.',
+              price: '55.000',
+            },
+            {
+              name: 'Té de Hierbas (Tetera)',
+              description:
+                'Opciones: jengibre con limón, manzanilla, menta o té verde.',
+              price: '45.000',
+            },
+            {
+              name: 'Cacao con Malvaviscos',
+              description:
+                'Chocolate caliente con leche vegetal y malvaviscos veganos.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Extras para Smoothie Bowls',
+          items: [
+            {
+              name: 'Topping Adicional',
+              description:
+                'Granola, semillas de chía, frutos secos o coco rallado.',
+              price: '15.000',
+            },
+            {
+              name: 'Proteína en Polvo',
+              description:
+                'Una porción de proteína vegetal (aislado) para su bowl.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    fr: {
+      title: 'Mê Hội An - Café & Restaurant en Rooftop',
+      description:
+        'Profitez de la meilleure vue sur la vieille ville depuis notre terrasse sur le toit',
+      fullDescription: `
+<p>Profitez de la meilleure vue sur la vieille ville depuis notre terrasse sur le toit</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Boissons (Froides)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Thé fermenté pétillant. Saveurs : Classique, Gingembre, Fruit de la passion ou Baies (selon disponibilité).',
+              price: '45.000',
+            },
+            {
+              name: 'Limonade Maison',
+              description:
+                'Jus de citron/citron vert frais, menthe, un soupçon de sirop et eau gazeuse.',
+              price: '40.000',
+            },
+            {
+              name: 'Coco Frais',
+              description: 'Noix de coco jeune entière locale.',
+              price: '40.000',
+            },
+            {
+              name: 'Café Glacé',
+              description: 'Café noir sur glace. Supplément lait végétal +15k.',
+              price: '40.000',
+            },
+            {
+              name: 'Matcha Glacé',
+              description:
+                'Thé matcha japonais frappé avec le lait végétal de votre choix.',
+              price: '55.000',
+            },
+            {
+              name: 'Jus Frais Pressés',
+              description: 'Orange, carotte, pomme, ananas ou pastèque.',
+              price: '45.000',
+            },
+            {
+              name: 'Jus Détox',
+              description:
+                "Mélange de fruits et légumes frais pour purifier l'organisme.",
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Boissons Chaudes',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Café serré classique.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: "Espresso allongé à l'eau chaude.",
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latté',
+              description: "Préparé au lait d'avoine ou de coco.",
+              price: '55.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Double espresso avec une mousse de lait veloutée.',
+              price: '55.000',
+            },
+            {
+              name: 'Infusion (Théière)',
+              description:
+                'Au choix : gingembre-citron, camomille, menthe ou thé vert.',
+              price: '45.000',
+            },
+            {
+              name: 'Cacao et Guimauves',
+              description:
+                'Chocolat chaud au lait végétal avec guimauves végétaliennes.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Suppléments Smoothie Bowls',
+          items: [
+            {
+              name: 'Garniture Supplémentaire',
+              description:
+                'Granola, graines de chia, noix ou noix de coco râpée.',
+              price: '15.000',
+            },
+            {
+              name: 'Protéine en Poudre',
+              description:
+                'Une dose de protéine végétale (isolat) pour votre bowl.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    vn: {
+      title: 'Mê Hội An - Tiệm cà phê & Nhà hàng sân thượng',
+      description:
+        'Ngắm nhìn toàn cảnh phố cổ tuyệt đẹp từ không gian sân thượng của chúng tôi',
+      fullDescription: `
+<p>Ngắm nhìn toàn cảnh phố cổ tuyệt đẹp từ không gian sân thượng của chúng tôi</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Đồ uống (Lạnh)',
+          items: [
+            {
+              name: 'Kombucha',
+              description:
+                'Trà lên men. Các vị: Truyền thống, Gừng, Chanh leo hoặc Dâu rừng (vui lòng kiểm tra tình trạng sẵn có).',
+              price: '45.000',
+            },
+            {
+              name: 'Nước chanh tươi tự làm',
+              description:
+                'Nước cốt chanh tươi, bạc hà, một chút siro và soda.',
+              price: '40.000',
+            },
+            {
+              name: 'Dừa xiêm tươi',
+              description: 'Dừa tươi nguyên quả tại địa phương.',
+              price: '40.000',
+            },
+            {
+              name: 'Cà phê đá',
+              description:
+                'Cà phê đen nguyên chất dùng với đá. Thêm sữa hạt +15k.',
+              price: '40.000',
+            },
+            {
+              name: 'Matcha đá',
+              description:
+                'Trà matcha Nhật Bản dùng kèm với loại sữa hạt tùy chọn của bạn.',
+              price: '55.000',
+            },
+            {
+              name: 'Nước ép trái cây tươi',
+              description: 'Cam, cà rốt, táo, dứa hoặc dưa hấu.',
+              price: '45.000',
+            },
+            {
+              name: 'Nước ép Detox',
+              description:
+                'Sự kết hợp giữa rau củ và trái cây tươi giúp thanh lọc cơ thể.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Đồ uống nóng',
+          items: [
+            {
+              name: 'Espresso',
+              description: 'Cà phê đen đậm đà kiểu Ý.',
+              price: '30.000',
+            },
+            {
+              name: 'Americano',
+              description: 'Cà phê Espresso pha loãng với nước nóng.',
+              price: '35.000',
+            },
+            {
+              name: 'Cappuccino / Latte',
+              description: 'Pha với sữa yến mạch hoặc sữa dừa.',
+              price: '55.000',
+            },
+            {
+              name: 'Flat White',
+              description: 'Gấp đôi Espresso cùng lớp bọt sữa mịn màng.',
+              price: '55.000',
+            },
+            {
+              name: 'Trà thảo mộc (Ấm)',
+              description:
+                'Các loại: gừng chanh, hoa cúc, bạc hà hoặc trà xanh.',
+              price: '45.000',
+            },
+            {
+              name: 'Ca cao với kẹo dẻo Marshmallow',
+              description:
+                'Ca cao nóng pha sữa hạt dùng kèm kẹo dẻo thuần chay.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Món thêm cho Smoothie Bowl',
+          items: [
+            {
+              name: 'Topping thêm',
+              description: 'Granola, hạt chia, các loại hạt hoặc dừa nạo.',
+              price: '15.000',
+            },
+            {
+              name: 'Bột Protein',
+              description:
+                'Một phần protein thực vật (isolate) cho bát smoothie của bạn.',
+              price: '25.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    slug: {
+      en: 'mu-hoi-an-rooftop-coffee-kitchen',
+      ru: 'mu-hoi-an-rooftop-coffee-kitchen',
+      es: 'mu-hoi-an-rooftop-coffee-kitchen',
+      fr: 'mu-hoi-an-rooftop-coffee-kitchen',
+      vn: 'mu-hoi-an-rooftop-coffee-kitchen',
+    },
+  },
+  //The Hoianian - wine bar & restaurant
+  {
+    id: 'hoianian', // <-- ID теперь строковый
+    coordinates: [15.876204803588317, 108.32872070337405], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'hoianian.webp',
+    en: {
+      title: 'The Hoianian — wine bar & restaurant',
+      description:
+        'Wine bar with happy hour on excellent wines and a magnificent view of the river',
+      fullDescription: `
+<p>Wine bar with happy hour on excellent wines and a magnificent view of the river</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'The Hoianian — винный бар и ресторан',
+      description:
+        'Винный бар, счастливые часы на отличное вино, великолепный вид на реку',
+      fullDescription: `
+<p>Винный бар, счастливые часы на отличное вино, великолепный вид на реку</p>
+  `,
+      internalImageNames: [],
+    },
+
+    es: {
+      title: 'The Hoianian — wine bar y restaurante',
+      description:
+        'Bar de vinos, happy hour en vinos excelentes y una magnífica vista al río',
+      fullDescription: `
+<p>Bar de vinos, happy hour en vinos excelentes y una magnífica vista al río</p>
+  `,
+      internalImageNames: [],
+    },
+
+    fr: {
+      title: 'The Hoianian — bar à vin & restaurant',
+      description:
+        'Bar à vin, happy hour sur d’excellents vins et une vue magnifique sur la rivière',
+      fullDescription: `
+<p>Bar à vin, happy hour sur d’excellents vins et une vue magnifique sur la rivière</p>
+  `,
+      internalImageNames: [],
+    },
+
+    vn: {
+      title: 'The Hoianian — nhà hàng & quầy bar rượu vang',
+      description:
+        'Quầy bar rượu vang, giờ hạnh phúc với các loại vang hảo hạng và tầm nhìn hướng sông tuyệt đẹp',
+      fullDescription: `
+<p>Quầy bar rượu vang, giờ hạnh phúc với các loại vang hảo hạng và tầm nhìn hướng sông tuyệt đẹp</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'hoianian',
+      ru: 'hoianian',
+      es: 'hoianian',
+      fr: 'hoianian',
+      vn: 'hoianian',
+    },
+  },
 ];
