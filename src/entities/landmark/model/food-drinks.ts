@@ -5864,4 +5864,2315 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'sinh-to-tam',
     },
   },
+  //KURUMI
+  {
+    id: 'kurumi', // <-- ID теперь строковый
+    coordinates: [15.883556858075686, 108.32699190044264], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'kurumi.webp',
+    en: {
+      title: 'Kurumi - Vegan Restaurant',
+      description:
+        'The plant-based menu features homemade Italian and Slavic dishes, Asian specials, hearty Buddha bowls, vibrant raw food, and exquisite vegan desserts.',
+      fullDescription: `
+<p>The plant-based menu features homemade Italian and Slavic dishes, Asian specials, hearty Buddha bowls, vibrant raw food, and exquisite vegan desserts.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Breakfast/Brunch/Lunch',
+          items: [
+            {
+              name: 'Oatmeal Coconut Pancakes',
+              description:
+                'Oats, coconut milk, banana, vanilla extract. Topping: chia pudding, chia jam, peanut butter, mix of nuts and seeds, banana, mango.',
+              price: '105.000',
+            },
+            {
+              name: 'Oatmeal with Chia Pudding and Dragonfruit Jam',
+              description:
+                'Oatmeal, chia pudding, chia jam, coconut milk, banana, pineapple, mix of seeds and nuts, mint, cashew butter.',
+              price: '90.000',
+            },
+            {
+              name: 'Chickpea Protein Omelet',
+              description:
+                'Chickpea flour, spices, dill, Himalayan salt, mashed avocado, fresh red pepper, microgreens, roasted tomatoes, fried oyster mushrooms, spicy homemade mayo. Gluten-free.',
+              price: '99.000',
+            },
+            {
+              name: 'Tofu "Benedict"',
+              description:
+                'Whole grain buns, salad, tomato, avocado, fried tofu, vegan hollandaise sauce, soy tempeh "bacon".',
+              price: '120.000',
+            },
+            {
+              name: 'Bean Quesadilla',
+              description:
+                'Homemade whole grain tortillas, activated adzuki beans in a special sauce, mashed avocado, cashew cream, roasted vegetables, salsa.',
+              price: '110.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Nutritious Toasts / Sandwiches',
+          items: [
+            {
+              name: 'Smoked Tofu and Caramelized Onion Sandwich',
+              description:
+                'Sourdough whole grain baguette, caramelized onions, firm tofu, pickled cucumbers, smoked carrots, smoked cashew cheese.',
+              price: '110.000',
+            },
+            {
+              name: 'Italian Baguette with Brie Cheese',
+              description:
+                'Sourdough whole grain baguette, homemade Brie cheese, cashew cream, homemade pesto sauce, tomatoes, sun-dried tomatoes, microgreens, red onion, green olives, oregano.',
+              price: '115.000',
+            },
+            {
+              name: 'Avocado and Sun-dried Tomato Toast',
+              description:
+                'Sourdough toast, mashed avocado, sun-dried tomatoes, microgreens, salad.',
+              price: '79.000',
+            },
+            {
+              name: 'Avocado Heart Toast',
+              description:
+                'Sourdough whole grain toast, Himalayan salt, mashed avocado, cherry tomatoes, seed mix, salad.',
+              price: '65.000',
+            },
+            {
+              name: 'Cheesy Mushroom Toast',
+              description:
+                'Sourdough whole grain toast, fermented cashew cheese, avocado, smoked paprika, straw mushrooms, dill.',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Superfood Smoothie Bowls (350ml)',
+          items: [
+            {
+              name: 'Choco Sense',
+              description:
+                'Banana, cocoa powder, coconut milk. Topping: banana, mix of nuts and seeds, chocolate bliss ball, dark chocolate, coconut flakes.',
+              price: '99.000',
+            },
+            {
+              name: 'My Favorite',
+              description:
+                'Mango, banana, pineapple, coconut milk. Topping: pineapple, mix of nuts and seeds, dark chocolate, peanut bliss ball, coconut flakes.',
+              price: '85.000',
+            },
+            {
+              name: 'Happy Stomach',
+              description:
+                'Papaya, strawberry, banana, coconut milk. Topping: strawberry, peanut bliss ball, mix of nuts and seeds, coconut flakes, dark chocolate.',
+              price: '95.000',
+            },
+            {
+              name: 'Purple Boom',
+              description:
+                'Blackberry, red dragonfruit, banana, coconut milk. Topping: mango, chocolate bliss ball, mix of nuts and seeds, coconut flakes, dark chocolate.',
+              price: '99.000',
+            },
+            {
+              name: 'Kurumi Smoothie Bowl',
+              description:
+                'Mango, banana, spirulina powder, coconut milk. Topping: strawberry, passion fruit, peanut bliss ball, mix of nuts and seeds, coconut flakes, dark chocolate.',
+              price: '99.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Dream Bowls',
+          items: [
+            {
+              name: 'Burrito Bowl',
+              description:
+                'Brown rice, activated adzuki beans in tomato sauce, mashed avocado, tortilla, roasted sweet potato, fried eggplant and zucchini, red pepper, fermented cashew cheese, salsa, seeds.',
+              price: '120.000',
+            },
+            {
+              name: 'Poke Bowl',
+              description:
+                'Brown rice, soy tempeh in sauce, smoked carrots, avocado, pineapple, cucumber, edamame, pickled pink ginger, nori, spicy homemade mayo, mezun nuts, pickled onion.',
+              price: '120.000',
+            },
+            {
+              name: 'Mushroom Stroganoff with Brown Rice',
+              description:
+                'Brown rice, sourdough whole grain bread, lightly salted cucumber, pickled red onion, mushrooms, coconut milk, fermented cashew cheese, soy sauce, dill, chili flakes, garlic.',
+              price: '110.000',
+            },
+            {
+              name: 'Mushroom Stroganoff with Buckwheat',
+              description:
+                'Buckwheat, sourdough whole grain bread, lightly salted cucumber, pickled red onion, mushrooms, coconut milk, fermented cashew cheese, soy sauce, dill, chili flakes, garlic.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Asian Delights',
+          items: [
+            {
+              name: 'Rice with Tofu Cubes and Mango Salad',
+              description:
+                'Brown rice, fried tofu cubes in sauce, mango, onion, avocado, salad, spicy mayo, soy sauce.',
+              price: '89.000',
+            },
+            {
+              name: 'Vegetable Noodles',
+              description:
+                'Linguine noodles, shiitake, zucchini, carrots, ginger, garlic, soy sauce, coconut sugar, salt, sesame, cilantro, soy tempeh.',
+              price: '110.000',
+            },
+            {
+              name: 'Yellow Thai Curry with Brown Rice and Tofu',
+              description:
+                'Brown rice, organic coconut milk, pumpkin, sweet potato, tomato, red pepper, eggplant, zucchini, mushrooms, cilantro, green onion, yellow curry, cashews.',
+              price: '99.000',
+            },
+            {
+              name: 'Local Buddha Bowl',
+              description:
+                'Brown rice noodles, tofu skin marinated in garlic sauce, seaweed in sauce, banana blossoms, soy sprouts, salad, mint, basil, leaf mustard, red cabbage, peanuts, peanut sauce, sesame.',
+              price: '89.000',
+            },
+            {
+              name: 'Momo Dumplings',
+              description:
+                'Whole grain flour, spinach, tofu, onion, mayo-soy sauce.',
+              price: '125.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Plant-Based "Meat"',
+          items: [
+            {
+              name: '"NOT BEEF" Burger',
+              description:
+                "Whole grain bun, Let's Plant plant-based patty, mustard, salad, tomato, spicy mayo, cashew cheese, pickled cucumber, onion, BBQ sauce.",
+              price: '175.000',
+            },
+            {
+              name: '"Meaty" Quesadilla',
+              description:
+                "Whole grain tortillas, Let's Plant plant-based patty, red pepper, eggplant, zucchini, salsa, mashed avocado, cashew cheese.",
+              price: '185.000',
+            },
+            {
+              name: 'Pasta with Vegan Patty',
+              description:
+                "Pasta, Let's Plant plant-based patty, cashew cheese, tomato, microgreens, pepper, BBQ sauce.",
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Salads',
+          items: [
+            {
+              name: 'Quinoa Salad with Marinated Artichokes',
+              description:
+                'Quinoa, marinated artichokes, tofu, cucumber, red onion, mango, tomatoes, red pepper, avocado, lime, olive oil, oregano, Himalayan salt, mustard dressing.',
+              price: '85.000',
+            },
+            {
+              name: 'Tempeh Caesar Salad',
+              description:
+                'Lettuce, dill, basil, cilantro, soy tempeh in sauce, croutons, cherry tomatoes, dill-cashew sauce.',
+              price: '79.000',
+            },
+            {
+              name: 'Probiotic Salad',
+              description:
+                'Natural fermented cabbage, beets, carrots, red onion, olive oil. Gluten-free.',
+              price: '65.000',
+            },
+            {
+              name: 'Korean Salad',
+              description:
+                'Tofu skin (fuchzh), carrots, garlic, ginger, sesame oil, soy sauce, salt, chili, sriracha.',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Raw Desserts (Sugar & Gluten Free)',
+          items: [
+            {
+              name: 'Snickers Cake',
+              description:
+                'Raw cake with peanuts, date-based caramel, and chocolate glaze. Sugar and gluten free.',
+              price: '85.000',
+            },
+            {
+              name: 'Carrot Cake',
+              description:
+                'Raw carrot cake with spices, walnuts, and delicate cashew cream.',
+              price: '79.000',
+            },
+            {
+              name: 'Bounty Cake',
+              description: 'Raw coconut cake with a chocolate layer.',
+              price: '75.000',
+            },
+            {
+              name: 'Berry / Strawberry Cake',
+              description:
+                'Light raw cake with wild berries or strawberries and cashew cream.',
+              price: '85.000',
+            },
+            {
+              name: 'Chocolate Brownie',
+              description: 'Rich chocolate dessert based on cocoa and nuts.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Matcha Tea and Latte',
+          items: [
+            {
+              name: 'Matcha Latte',
+              description:
+                'Japanese green matcha tea with coconut or fresh milk.',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Pink Matcha Latte',
+              description:
+                'Matcha with added rose water or dragonfruit powder.',
+              price: '50.000 / 55.000',
+            },
+            {
+              name: 'Blue Latte (Butterfly Pea)',
+              description:
+                'Butterfly pea flower drink with milk (caffeine-free).',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Golden Milk (Turmeric Latte)',
+              description:
+                'Warming drink with turmeric, spices, and coconut milk.',
+              price: '45.000 / 50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Add-ons to the Main Menu',
+          items: [
+            {
+              name: 'Cashew Cheese (Extra Portion)',
+              description:
+                'Signature fermented cheese made from activated cashews.',
+              price: '20.000',
+            },
+            {
+              name: 'Sourdough Bread (2 pieces)',
+              description: 'Whole grain yeast-free bread.',
+              price: '15.000',
+            },
+            {
+              name: 'Avocado (Portion)',
+              description: 'Fresh sliced avocado.',
+              price: '25.000',
+            },
+            {
+              name: 'Sauerkraut with Beets',
+              description: 'Homemade fermented cabbage (probiotic).',
+              price: '20.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'For Pasta Lovers',
+          items: [
+            {
+              name: 'Pasta Pesto',
+              description:
+                'Linguine noodles, homemade vegan pesto, yellow roasted cherry tomatoes, microgreens, olive oil, oregano, nutmesan (vegan parmesan).',
+              price: '115.000',
+            },
+            {
+              name: 'Pasta Stroganoff',
+              description:
+                'Spaghetti, mushrooms, organic coconut milk, fermented cashew cheese, soy sauce, dill, red onion, chili flakes, garlic, olive oil.',
+              price: '120.000',
+            },
+            {
+              name: 'Vegan Pasta Alfredo with Mushrooms',
+              description:
+                'Linguine noodles, red onion, garlic, cashew cream cheese, lime juice, microgreens, nutmesan, mushrooms.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Warming Soups',
+          items: [
+            {
+              name: 'Pumpkin Cream Soup + Quinoa',
+              description:
+                'Pumpkin, coconut milk, turmeric, tomato, fermented cashew cheese, garlic, quinoa, pumpkin seeds. Gluten-free.',
+              price: '85.000',
+            },
+            {
+              name: 'Tomato Cream Soup + Adzuki Beans + Garlic Croutons',
+              description:
+                'Tomato, red pepper, garlic, pesto, adzuki beans, seeds, garlic croutons, coconut milk.',
+              price: '85.000',
+            },
+            {
+              name: 'Simple Soup (No Toppings)',
+              description: 'Options: Pumpkin or Tomato.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Slavic Cuisine',
+          items: [
+            {
+              name: 'Tofuniki (Tofu Syrniki)',
+              description:
+                'Tofu, coconut flakes, whole grain flour, mango, strawberry, passion fruit caramel, cane sugar, palm syrup, mint, seeds.',
+              price: '95.000',
+            },
+            {
+              name: 'Cherry Vareniki',
+              description:
+                'Wheat flour, cherries, tofu, cane sugar, coconut milk, dragonfruit jam.',
+              price: '115.000',
+            },
+            {
+              name: 'Potato Vareniki',
+              description:
+                'Whole grain flour, potatoes, onions, cashew-dill sauce, sauerkraut (cabbage, beets, carrots).',
+              price: '125.000',
+            },
+            {
+              name: 'Solyanka Soup',
+              description:
+                'Potatoes, firm tofu, black olives, lemon, pickled cucumbers, dill, khmeli-suneli, onion, garlic, tomato paste, sourdough bread, cashew cheese.',
+              price: '130.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Desserts and Snacks',
+          items: [
+            {
+              name: 'Bliss Balls',
+              description:
+                'Healthy candies made from dried fruits and nuts. Variants: Peanut or Chocolate.',
+              price: '20.000',
+            },
+            {
+              name: 'Chocolate Chip Cookie',
+              description: 'Homemade vegan cookie with chocolate chunks.',
+              price: '25.000',
+            },
+            {
+              name: 'Chia Pudding',
+              description: 'Chia seeds, coconut milk, syrup, fresh fruit.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Sides and Add-ons',
+          items: [
+            {
+              name: 'Brown Rice',
+              description: 'A portion of boiled brown rice.',
+              price: '15.000',
+            },
+            {
+              name: 'Buckwheat',
+              description: 'A portion of boiled buckwheat.',
+              price: '30.000',
+            },
+            {
+              name: 'Sourdough Bread (2 pieces)',
+              description: 'Homemade whole grain bread.',
+              price: '15.000',
+            },
+            {
+              name: 'Avocado (Half)',
+              description: 'Fresh sliced avocado.',
+              price: '20.000',
+            },
+            {
+              name: 'Sauerkraut',
+              description: 'Homemade fermented cabbage with beets.',
+              price: '20.000',
+            },
+            {
+              name: 'Cashew Cheese / Cashew Mayo',
+              description: 'An extra portion of homemade vegan sauce.',
+              price: '20.000',
+            },
+            {
+              name: 'Plant-Based Patty (Extra)',
+              description: "Extra Let's Plant patty for any dish.",
+              price: '85.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    ru: {
+      title: 'Kurumi - Веганский ресторан',
+      description:
+        'Растительное меню включает итальянские и славянские блюда домашней кухни, азиатские специальные предложения, сытные миски Будды, яркую сыроедческую еду и роскошные веганские десерты.',
+      fullDescription: `
+<p>Растительное меню включает итальянские и славянские блюда домашней кухни, азиатские специальные предложения, сытные миски Будды, яркую сыроедческую еду и роскошные веганские десерты.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Завтрак/Бранч/Ланч',
+          items: [
+            {
+              name: 'Овсяно-кокосовые блинчики',
+              description:
+                'Овес, кокосовое молоко, банан, экстракт ванили. Топпинг: чиа-пудинг, джем чиа, арахисовое масло, микс орехов и семян, банан, манго.',
+              price: '105.000',
+            },
+            {
+              name: 'Овсяная каша с чиа-пудингом и джемом из драгонфрута',
+              description:
+                'Овсянка, чиа-пудинг, джем чиа, кокосовое молоко, банан, ананас, микс семян и орехов, мята, кешью-масло.',
+              price: '90.000',
+            },
+            {
+              name: 'Протеиновый омлет из нута',
+              description:
+                'Нутовая мука, специи, укроп, гималайская соль, размятый авокадо, свежий красный перец, микрозелень, запеченные томаты, жареные вешенки, острый домашний майонез. Без глютена.',
+              price: '99.000',
+            },
+            {
+              name: 'Тофу "Бенедикт"',
+              description:
+                'Цельнозерновые булочки, салат, томат, авокадо, жареный тофу, веганский голландский соус, соевый темпе "бекон".',
+              price: '120.000',
+            },
+            {
+              name: 'Бобовая кесадилья',
+              description:
+                'Домашние цельнозерновые тортильи, активированная фасоль адзуки в специальном соусе, размятый авокадо, кешью-крем, запеченные овощи, сальса.',
+              price: '110.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Питательные тосты / Сэндвичи',
+          items: [
+            {
+              name: 'Сэндвич с копченым тофу и карамелизированным луком',
+              description:
+                'Цельнозерновой багет на закваске, карамелизированный лук, твердый тофу, маринованные огурцы, копченая морковь, копченый сыр из кешью.',
+              price: '110.000',
+            },
+            {
+              name: 'Итальянский багет с сыром бри',
+              description:
+                'Цельнозерновой багет на закваске, домашний сыр Бри, кешью-крем, домашний соус песто, томаты, вяленые томаты, микрозелень, красный лук, зеленые оливки, орегано.',
+              price: '115.000',
+            },
+            {
+              name: 'Тост с авокадо и вялеными томатами',
+              description:
+                'Тост на закваске, размятый авокадо, вяленые томаты, микрозелень, салат.',
+              price: '79.000',
+            },
+            {
+              name: 'Тост "Сердце авокадо"',
+              description:
+                'Цельнозерновой тост на закваске, гималайская соль, размятый авокадо, томаты черри, микс семян, салат.',
+              price: '65.000',
+            },
+            {
+              name: 'Сырный тост с грибами',
+              description:
+                'Цельнозерновой тост на закваске, ферментированный кешью-сыр, авокадо, копченая паприка, соломенные грибы, укроп.',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Суперфуд Смузи Боулы (350мл)',
+          items: [
+            {
+              name: 'Choco Sense',
+              description:
+                'Банан, какао-порошок, кокосовое молоко. Топпинг: банан, микс орехов и семян, шоколадный блаженство-шарик, темный шоколад, кокосовые хлопья.',
+              price: '99.000',
+            },
+            {
+              name: 'My Favorite',
+              description:
+                'Манго, банан, ананас, кокосовое молоко. Топпинг: ананас, микс орехов и семян, темный шоколад, арахисовый блаженство-шарик, кокосовые хлопья.',
+              price: '85.000',
+            },
+            {
+              name: 'Happy Stomach',
+              description:
+                'Папайя, клубника, банан, кокосовое молоко. Топпинг: клубника, арахисовый блаженство-шарик, микс орехов и семян, кокосовые хлопья, темный шоколад.',
+              price: '95.000',
+            },
+            {
+              name: 'Purple Boom',
+              description:
+                'Ежевика, красный драгонфрут, банан, кокосовое молоко. Топпинг: манго, шоколадный блаженство-шарик, микс орехов и семян, кокосовые хлопья, темный шоколад.',
+              price: '99.000',
+            },
+            {
+              name: 'Kurumi smoothie bowl',
+              description:
+                'Манго, банан, порошок спирулины, кокосовое молоко. Топпинг: клубника, маракуйя, арахисовый блаженство-шарик, микс орехов и семян, кокосовые хлопья, темный шоколад.',
+              price: '99.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Dream Bowls',
+          items: [
+            {
+              name: 'Буррито боул',
+              description:
+                'Бурый рис, активированная фасоль адзуки в томатном соусе, размятый авокадо, тортилья, запеченный сладкий картофель, жареный баклажан и цукини, красный перец, ферментированный кешью-сыр, сальса, семена.',
+              price: '120.000',
+            },
+            {
+              name: 'Поке боул',
+              description:
+                'Бурый рис, соевый темпе в соусе, копченая морковь, авокадо, ананас, огурец, эдамаме, маринованный розовый имбирь, нори, домашний острый майонез, орехи мезун, маринованный лук.',
+              price: '120.000',
+            },
+            {
+              name: 'Грибной Строганов с бурым рисом',
+              description:
+                'Бурый рис, цельнозерновой хлеб на закваске, малосольный огурец, маринованный красный лук, грибы, кокосовое молоко, ферментированный кешью-сыр, соевый соус, укроп, хлопья чили, чеснок.',
+              price: '110.000',
+            },
+            {
+              name: 'Грибной Строганов с гречкой',
+              description:
+                'Гречка, цельнозерновой хлеб на закваске, малосольный огурец, маринованный красный лук, грибы, кокосовое молоко, ферментированный кешью-сыр, соевый соус, укроп, хлопья чили, чеснок.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Азиатские угощения',
+          items: [
+            {
+              name: 'Рис с кубиками тофу и салатом из манго',
+              description:
+                'Бурый рис, жареные кубики тофу в соусе, манго, лук, авокадо, салат, острый майонез, соевый соус.',
+              price: '89.000',
+            },
+            {
+              name: 'Овощная лапша',
+              description:
+                'Лапша лингвини, шиитаке, цукини, морковь, имбирь, чеснок, соевый соус, кокосовый сахар, соль, кунжут, кинза, соевый темпе.',
+              price: '110.000',
+            },
+            {
+              name: 'Желтый Тайский карри с бурым рисом и тофу',
+              description:
+                'Бурый рис, органическое кокосовое молоко, тыква, сладкий картофель, томат, красный перец, баклажан, цукини, грибы, кинза, зеленый лук, желтый карри, кешью.',
+              price: '99.000',
+            },
+            {
+              name: 'Local Buddha bowl',
+              description:
+                'Лапша из бурого риса, кожа тофу маринованная в соусе с чесноком, морские водоросли в соусе, цветы банана, ростки сои, салат, мята, базилик, листовая горчица, красная капуста, арахис, арахисовый соус, кунжут.',
+              price: '89.000',
+            },
+            {
+              name: 'Дамплинги Момо',
+              description:
+                'Цельнозерновая мука, шпинат, тофу, лук, майонезно-соевый соус.',
+              price: '125.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Растительное "Мясо"',
+          items: [
+            {
+              name: 'Бургер "НЕ ГОВЯДИНА"',
+              description:
+                "Цельнозерновая булочка, растительная котлета Let's Plant, горчица, салат, томат, острый майонез, кешью-сыр, маринованный огурец, лук, соус BBQ.",
+              price: '175.000',
+            },
+            {
+              name: '"Мясная" Кесадилья',
+              description:
+                "Цельнозерновые тортильи, растительная котлета Let's Plant, красный перец, баклажан, цукини, сальса, размятый авокадо, кешью-сыр.",
+              price: '185.000',
+            },
+            {
+              name: 'Паста с веганской котлетой',
+              description:
+                "Паста, растительная котлета Let's Plant, кешью-сыр, томат, микрозелень, перец, соус BBQ.",
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Салаты',
+          items: [
+            {
+              name: 'Салат из киноа с маринованными артишоками',
+              description:
+                'Киноа, маринованные артишоки, тофу, огурец, красный лук, манго, томаты, красный перец, авокадо, лайм, оливковое масло, орегано, гималайская соль, горчичная заправка.',
+              price: '85.000',
+            },
+            {
+              name: 'Салат Цезарь с темпе',
+              description:
+                'Салат латук, укроп, базилик, кинза, соевый темпе в соусе, гренки, томаты черри, укропно-кешью соус.',
+              price: '79.000',
+            },
+            {
+              name: 'Пробиотический салат',
+              description:
+                'Натуральная ферментированная капуста, свекла, морковь, красный лук, оливковое масло. Без глютена.',
+              price: '65.000',
+            },
+            {
+              name: 'Корейский салат',
+              description:
+                'Кожа тофу (фучжу), морковь, чеснок, имбирь, кунжутное масло, соевый соус, соль, чили, шрирача.',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Raw Десерты (Без сахара и глютена)',
+          items: [
+            {
+              name: 'Торт Сникерс',
+              description:
+                'Сыроедческий торт с арахисом, карамелью на основе фиников и шоколадной глазурью. Без сахара и глютена.',
+              price: '85.000',
+            },
+            {
+              name: 'Торт Морковный',
+              description:
+                'Сыроедческий морковный торт с пряностями, грецким орехом и нежным кешью-кремом.',
+              price: '79.000',
+            },
+            {
+              name: 'Торт Баунти',
+              description: 'Сыроедческий кокосовый торт с шоколадным слоем.',
+              price: '75.000',
+            },
+            {
+              name: 'Торт Ягодный / Клубничный',
+              description:
+                'Легкий raw-торт с лесными ягодами или клубникой и кремом из кешью.',
+              price: '85.000',
+            },
+            {
+              name: 'Шоколадный Брауни',
+              description:
+                'Насыщенный шоколадный десерт на основе какао и орехов.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Чай Матча и Лате',
+          items: [
+            {
+              name: 'Матча Лате',
+              description:
+                'Японский зеленый чай матча с кокосовым или свежим молоком.',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Розовый Матча Лате',
+              description:
+                'Матча с добавлением розовой воды или порошка питахайи.',
+              price: '50.000 / 55.000',
+            },
+            {
+              name: 'Синий Лате (Анчан)',
+              description:
+                'Напиток из цветков клитории с молоком (без кофеина).',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Золотое молоко (Куркума Лате)',
+              description:
+                'Согревающий напиток с куркумой, специями и кокосовым молоком.',
+              price: '45.000 / 50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Добавки к основному меню',
+          items: [
+            {
+              name: 'Кешью-сыр (дополнительная порция)',
+              description:
+                'Фирменный ферментированный сыр из активированного кешью.',
+              price: '20.000',
+            },
+            {
+              name: 'Хлеб на закваске (2 кусочка)',
+              description: 'Цельнозерновой бездрожжевой хлеб.',
+              price: '15.000',
+            },
+            {
+              name: 'Авокадо (порция)',
+              description: 'Нарезанный свежий авокадо.',
+              price: '25.000',
+            },
+            {
+              name: 'Квашеная капуста со свеклой',
+              description: 'Домашняя ферментированная капуста (пробиотик).',
+              price: '20.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Любителям пасты',
+          items: [
+            {
+              name: 'Паста песто',
+              description:
+                'Лапша лингвини, домашний веганский песто, желтые запеченные томаты черри, микрозелень, оливковое масло, орегано, нутмезан (веганский пармезан).',
+              price: '115.000',
+            },
+            {
+              name: 'Паста Строганов',
+              description:
+                'Спагетти, грибы, органическое кокосовое молоко, ферментированный кешью-сыр, соевый соус, укроп, красный лук, хлопья чили, чеснок, оливковое масло.',
+              price: '120.000',
+            },
+            {
+              name: 'Веганская паста Альфредо с грибами',
+              description:
+                'Лапша лингвини, красный лук, чеснок, кешью-крем-сыр, сок лайма, микрозелень, нутмезан, грибы.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Согревающие супы',
+          items: [
+            {
+              name: 'Тыквенный крем-суп + киноа',
+              description:
+                'Тыква, кокосовое молоко, куркума, томат, ферментированный кешью-сыр, чеснок, киноа, тыквенные семечки. Без глютена.',
+              price: '85.000',
+            },
+            {
+              name: 'Томатный крем-суп + фасоль адзуки + чесночные гренки',
+              description:
+                'Томат, красный перец, чеснок, песто, фасоль адзуки, семена, чесночные гренки, кокосовое молоко.',
+              price: '85.000',
+            },
+            {
+              name: 'Простой суп (без топпингов)',
+              description: 'Варианты: тыквенный или томатный.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Славянская кухня',
+          items: [
+            {
+              name: 'Тофники (Сырники из тофу)',
+              description:
+                'Тофу, кокосовая стружка, цельнозерновая мука, манго, клубника, маракуйевая карамель, тростниковый сахар, пальмовый сироп, мята, семена.',
+              price: '95.000',
+            },
+            {
+              name: 'Вареники с вишней',
+              description:
+                'Пшеничная мука, вишня, тофу, тростниковый сахар, кокосовое молоко, джем из драгонфрута.',
+              price: '115.000',
+            },
+            {
+              name: 'Вареники с картофелем',
+              description:
+                'Цельнозерновая мука, картофель, лук, кешью-укропный соус, квашеная капуста (капуста, свекла, морковь).',
+              price: '125.000',
+            },
+            {
+              name: 'Суп Солянка',
+              description:
+                'Картофель, твердый тофу, черные оливки, лимон, маринованные огурцы, укроп, хмели-сунели, лук, чеснок, томатная паста, хлеб на закваске, кешью-сыр.',
+              price: '130.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Десерты и Снеки',
+          items: [
+            {
+              name: 'Блаженство-шарики (Bliss Balls)',
+              description:
+                'Полезные конфеты из сухофруктов и орехов. Варианты: Арахисовый или Шоколадный.',
+              price: '20.000',
+            },
+            {
+              name: 'Шоколадное печенье',
+              description: 'Домашнее веганское печенье с кусочками шоколада.',
+              price: '25.000',
+            },
+            {
+              name: 'Чиа-пудинг',
+              description:
+                'Семена чиа, кокосовое молоко, сироп, свежие фрукты.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Гарниры и Добавки',
+          items: [
+            {
+              name: 'Бурый рис',
+              description: 'Порция отварного бурого риса.',
+              price: '15.000',
+            },
+            {
+              name: 'Гречка',
+              description: 'Порция отварной гречневой крупы.',
+              price: '30.000',
+            },
+            {
+              name: 'Хлеб на закваске (2 кусочка)',
+              description: 'Домашний цельнозерновой хлеб.',
+              price: '15.000',
+            },
+            {
+              name: 'Авокадо (половинка)',
+              description: 'Свежий нарезанный авокадо.',
+              price: '20.000',
+            },
+            {
+              name: 'Квашеная капуста',
+              description: 'Домашняя ферментированная капуста со свеклой.',
+              price: '20.000',
+            },
+            {
+              name: 'Кешью-сыр / Кешью-майонез',
+              description: 'Дополнительная порция домашнего веганского соуса.',
+              price: '20.000',
+            },
+            {
+              name: 'Растительная котлета (дополнительно)',
+              description: "Дополнительная котлета Let's Plant к любому блюду.",
+              price: '85.000',
+            },
+            {
+              name: 'Бурый рис',
+              description: 'Порция отварного бурого риса.',
+              price: '15.000',
+            },
+            {
+              name: 'Гречка',
+              description: 'Порция отварной гречневой крупы.',
+              price: '30.000',
+            },
+            {
+              name: 'Хлеб на закваске (2 кусочка)',
+              description: 'Домашний цельнозерновой хлеб.',
+              price: '15.000',
+            },
+            {
+              name: 'Авокадо (половинка)',
+              description: 'Свежий нарезанный авокадо.',
+              price: '20.000',
+            },
+            {
+              name: 'Квашеная капуста',
+              description: 'Домашняя ферментированная капуста со свеклой.',
+              price: '20.000',
+            },
+            {
+              name: 'Кешью-сыр / Кешью-майонез',
+              description: 'Дополнительная порция домашнего веганского соуса.',
+              price: '20.000',
+            },
+            {
+              name: 'Растительная котлета (дополнительно)',
+              description: "Дополнительная котлета Let's Plant к любому блюду.",
+              price: '85.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    es: {
+      title: 'Kurumi - Restaurante Vegano',
+      description:
+        'El menú a base de plantas incluye platos caseros italianos y eslavos, especialidades asiáticas, nutritivos bowls de Buda, vibrante comida crudivegana y lujosos postres veganos.',
+      fullDescription: `
+<p>El menú a base de plantas incluye platos caseros italianos y eslavos, especialidades asiáticas, nutritivos bowls de Buda, vibrante comida crudivegana y lujosos postres veganos.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Desayuno/Brunch/Almuerzo',
+          items: [
+            {
+              name: 'Panqueques de Avena y Coco',
+              description:
+                'Avena, leche de coco, plátano, extracto de vainilla. Cobertura: pudín de chía, mermelada de chía, mantequilla de maní, mezcla de frutos secos y semillas, plátano, mango.',
+              price: '105.000',
+            },
+            {
+              name: 'Gachas de Avena con Pudín de Chía и Mermelada de Pitaya',
+              description:
+                'Avena, pudín de chía, mermelada de chía, leche de coco, plátano, piña, mezcla de semillas y frutos secos, menta, mantequilla de anacardos.',
+              price: '90.000',
+            },
+            {
+              name: 'Tortilla de Proteína de Garbanzo',
+              description:
+                'Harina de garbanzo, especias, eneldo, sal del Himalaya, puré de aguacate, pimiento rojo fresco, microverdes, tomates asados, setas gírgolas salteadas, mayonesa casera picante. Sin gluten.',
+              price: '99.000',
+            },
+            {
+              name: 'Tofu "Benedict"',
+              description:
+                'Bollos integrales, ensalada, tomate, aguacate, tofu frito, salsa holandesa vegana, "beicon" de tempeh de soja.',
+              price: '120.000',
+            },
+            {
+              name: 'Quesadilla de Frijoles',
+              description:
+                'Tortillas integrales caseras, frijoles adzuki activados en salsa especial, puré de aguacate, crema de anacardos, verduras asadas, salsa.',
+              price: '110.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Tostadas Nutritivas / Sándwiches',
+          items: [
+            {
+              name: 'Sándwich de Tofu Ahumado y Cebolla Caramelizada',
+              description:
+                'Baguette integral de masa madre, cebolla caramelizada, tofu firme, pepinillos, zanahoria ahumada, queso de anacardo ahumado.',
+              price: '110.000',
+            },
+            {
+              name: 'Baguette Italiana con Queso Brie',
+              description:
+                'Baguette integral de masa madre, queso Brie casero, crema de anacardos, salsa pesto casera, tomates, tomates secos, microverdes, cebolla roja, aceitunas verdes, orégano.',
+              price: '115.000',
+            },
+            {
+              name: 'Tostada con Aguacate y Tomates Secos',
+              description:
+                'Tostada de masa madre, puré de aguacate, tomates secos, microverdes, ensalada.',
+              price: '79.000',
+            },
+            {
+              name: 'Tostada "Corazón de Aguacate"',
+              description:
+                'Tostada integral de masa madre, sal del Himalaya, puré de aguacate, tomates cherry, mezcla de semillas, ensalada.',
+              price: '65.000',
+            },
+            {
+              name: 'Tostada de Queso con Champiñones',
+              description:
+                'Tostada integral de masa madre, queso de anacardo fermentado, aguacate, pimentón ahumado, champiñones de paja, eneldo.',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Smoothie Bowls Superalimentos (350ml)',
+          items: [
+            {
+              name: 'Choco Sense',
+              description:
+                'Plátano, cacao en polvo, leche de coco. Cobertura: plátano, mezcla de frutos secos y semillas, bola de felicidad de chocolate, chocolate negro, coco rallado.',
+              price: '99.000',
+            },
+            {
+              name: 'My Favorite',
+              description:
+                'Mango, plátano, piña, leche de coco. Cobertura: piña, mezcla de frutos secos y semillas, chocolate negro, bola de felicidad de maní, coco rallado.',
+              price: '85.000',
+            },
+            {
+              name: 'Happy Stomach',
+              description:
+                'Papaya, fresa, plátano, leche de coco. Cobertura: fresa, bola de felicidad de maní, mezcla de frutos secos y semillas, coco rallado, chocolate negro.',
+              price: '95.000',
+            },
+            {
+              name: 'Purple Boom',
+              description:
+                'Mora, pitaya roja, plátano, leche de coco. Cobertura: mango, bola de felicidad de chocolate, mezcla de frutos secos y semillas, coco rallado, chocolate negro.',
+              price: '99.000',
+            },
+            {
+              name: 'Kurumi Smoothie Bowl',
+              description:
+                'Mango, plátano, espirulina en polvo, leche de coco. Cobertura: fresa, maracuyá, bola de felicidad de maní, mezcla de frutos secos y semillas, coco rallado, chocolate negro.',
+              price: '99.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Dream Bowls',
+          items: [
+            {
+              name: 'Burrito Bowl',
+              description:
+                'Arroz integral, frijoles adzuki activados en salsa de tomate, puré de aguacate, tortilla, camote asado, berenjena y calabacín fritos, pimiento rojo, queso de anacardo fermentado, salsa, semillas.',
+              price: '120.000',
+            },
+            {
+              name: 'Poke Bowl',
+              description:
+                'Arroz integral, tempeh de soja en salsa, zanahoria ahumada, aguacate, piña, pepino, edamame, jengibre rosa encurtido, nori, mayonesa casera picante, nueces mezun, cebolla encurtida.',
+              price: '120.000',
+            },
+            {
+              name: 'Stroganoff de Champiñones con Arroz Integral',
+              description:
+                'Arroz integral, pan integral de masa madre, pepino poco salado, cebolla roja encurtida, champiñones, leche de coco, queso de anacardo fermentado, salsa de soja, eneldo, hojuelas de chile, ajo.',
+              price: '110.000',
+            },
+            {
+              name: 'Stroganoff de Champiñones con Trigo Sarraceno',
+              description:
+                'Trigo sarraceno, pan integral de masa madre, pepino poco salado, cebolla roja encurtida, champiñones, leche de coco, queso de anacardo fermentado, salsa de soja, eneldo, hojuelas de chile, ajo.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Delicias Asiáticas',
+          items: [
+            {
+              name: 'Arroz con Dados de Tofu y Ensalada de Mango',
+              description:
+                'Arroz integral, dados de tofu fritos en salsa, mango, cebolla, aguacate, ensalada, mayonesa picante, salsa de soja.',
+              price: '89.000',
+            },
+            {
+              name: 'Fideos de Verduras',
+              description:
+                'Fideos linguine, shiitake, calabacín, zanahoria, jengibre, ajo, salsa de soja, azúcar de coco, sal, sésamo, cilantro, tempeh de soja.',
+              price: '110.000',
+            },
+            {
+              name: 'Curry Amarillo Tailandés con Arroz y Tofu',
+              description:
+                'Arroz integral, leche de coco orgánica, calabaza, camote, tomate, pimiento rojo, berenjena, calabacín, champiñones, cilantro, cebolla verde, curry amarillo, anacardos.',
+              price: '99.000',
+            },
+            {
+              name: 'Local Buddha Bowl',
+              description:
+                'Fideos de arroz integral, piel de tofu marinada en salsa de ajo, algas en salsa, flor de banano, brotes de soja, ensalada, menta, albahaca, mostaza de hoja, col lombarda, cacahuetes, salsa de cacahuete, sésamo.',
+              price: '89.000',
+            },
+            {
+              name: 'Dumplings Momo',
+              description:
+                'Harina integral, espinacas, tofu, cebolla, salsa de soja y mayonesa.',
+              price: '125.000',
+            },
+          ],
+        },
+        {
+          categoryName: '"Carne" de Origen Vegetal',
+          items: [
+            {
+              name: 'Hamburguesa "NO TERNERA"',
+              description:
+                "Bollo integral, medallón vegetal Let's Plant, mostaza, ensalada, tomate, mayonesa picante, queso de anacardo, pepinillo, cebolla, salsa BBQ.",
+              price: '175.000',
+            },
+            {
+              name: 'Quesadilla "Carnosa"',
+              description:
+                "Tortillas integrales, medallón vegetal Let's Plant, pimiento rojo, berenjena, calabacín, salsa, puré de aguacate, queso de anacardo.",
+              price: '185.000',
+            },
+            {
+              name: 'Pasta con Medallón Vegano',
+              description:
+                "Pasta, medallón vegetal Let's Plant, queso de anacardo, tomate, microverdes, pimiento, salsa BBQ.",
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Ensaladas',
+          items: [
+            {
+              name: 'Ensalada de Quinoa con Alcachofas Marinadas',
+              description:
+                'Quinoa, alcachofas marinadas, tofu, pepino, cebolla roja, mango, tomates, pimiento rojo, aguacate, lima, aceite de oliva, orégano, sal del Himalaya, aderezo de mostaza.',
+              price: '85.000',
+            },
+            {
+              name: 'Ensalada César con Tempeh',
+              description:
+                'Lechuga, eneldo, albahaca, cilantro, tempeh de soja en salsa, crotones, tomates cherry, salsa de eneldo y anacardo.',
+              price: '79.000',
+            },
+            {
+              name: 'Ensalada Probiótica',
+              description:
+                'Col fermentada natural, remolacha, zanahoria, cebolla roja, aceite de oliva. Sin gluten.',
+              price: '65.000',
+            },
+            {
+              name: 'Ensalada Coreana',
+              description:
+                'Piel de tofu (fuchzh), zanahoria, ajo, jengibre, aceite de sésamo, salsa de soja, sal, chile, sriracha.',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Postres Raw (Sin azúcar ni gluten)',
+          items: [
+            {
+              name: 'Tarta Snickers',
+              description:
+                'Tarta crudivegana con cacahuetes, caramelo de dátiles y cobertura de chocolate. Sin azúcar ni gluten.',
+              price: '85.000',
+            },
+            {
+              name: 'Tarta de Zanahoria',
+              description:
+                'Tarta de zanahoria crudivegana con especias, nueces y delicada crema de anacardos.',
+              price: '79.000',
+            },
+            {
+              name: 'Tarta Bounty',
+              description:
+                'Tarta de coco crudivegana con una capa de chocolate.',
+              price: '75.000',
+            },
+            {
+              name: 'Tarta de Frutos Rojos / Fresa',
+              description:
+                'Tarta crudivegana ligera con bayas silvestres o fresas y crema de anacardos.',
+              price: '85.000',
+            },
+            {
+              name: 'Brownie de Chocolate',
+              description:
+                'Postre de chocolate intenso a base de cacao y nueces.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Té Matcha y Lattes',
+          items: [
+            {
+              name: 'Matcha Latte',
+              description:
+                'Té verde matcha japonés con leche de coco или fresca.',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Matcha Latte Rosa',
+              description: 'Matcha con agua de rosas o polvo de pitaya.',
+              price: '50.000 / 55.000',
+            },
+            {
+              name: 'Latte Azul (Butterfly Pea)',
+              description:
+                'Bebida de flores de clitoria con leche (sin cafeína).',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Leche Dorada (Cúrcuma Latte)',
+              description:
+                'Bebida reconfortante con cúrcuma, especias y leche de coco.',
+              price: '45.000 / 50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Complementos del Menú Principal',
+          items: [
+            {
+              name: 'Queso de Anacardo (Porción extra)',
+              description:
+                'Nuestro queso fermentado artesanal de anacardos activados.',
+              price: '20.000',
+            },
+            {
+              name: 'Pan de Masa Madre (2 trozos)',
+              description: 'Pan integral sin levadura.',
+              price: '15.000',
+            },
+            {
+              name: 'Aguacate (Porción)',
+              description: 'Aguacate fresco troceado.',
+              price: '25.000',
+            },
+            {
+              name: 'Chucrut con Remolacha',
+              description: 'Col fermentada casera (probiótica).',
+              price: '20.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Para Amantes de la Pasta',
+          items: [
+            {
+              name: 'Pasta Pesto',
+              description:
+                'Fideos linguine, pesto vegano casero, tomates cherry amarillos asados, microverdes, aceite de oliva, orégano, nutmesan (parmesano vegano).',
+              price: '115.000',
+            },
+            {
+              name: 'Pasta Stroganoff',
+              description:
+                'Espaguetis, champiñones, leche de coco orgánica, queso de anacardo fermentado, salsa de soja, eneldo, cebolla roja, hojuelas de chile, ajo, aceite de oliva.',
+              price: '120.000',
+            },
+            {
+              name: 'Pasta Alfredo Vegana con Champiñones',
+              description:
+                'Fideos linguine, cebolla roja, ajo, crema de queso de anacardo, jugo de lima, microverdes, nutmesan, champiñones.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Sopas Reconfortantes',
+          items: [
+            {
+              name: 'Crema de Calabaza + Quinoa',
+              description:
+                'Calabaza, leche de coco, cúrcuma, tomate, queso de anacardo fermentado, ajo, quinoa, semillas de calabaza. Sin gluten.',
+              price: '85.000',
+            },
+            {
+              name: 'Crema de Tomate + Frijoles Adzuki + Crotones de Ajo',
+              description:
+                'Tomate, pimiento rojo, ajo, pesto, frijoles adzuki, semillas, crotones de ajo, leche de coco.',
+              price: '85.000',
+            },
+            {
+              name: 'Sopa Simple (Sin cobertura)',
+              description: 'Opciones: Calabaza o Tomate.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cocina Eslava',
+          items: [
+            {
+              name: 'Tofuniki (Syrniki de Tofu)',
+              description:
+                'Tofu, coco rallado, harina integral, mango, fresa, caramelo de maracuyá, azúcar de caña, sirope de palma, menta, semillas.',
+              price: '95.000',
+            },
+            {
+              name: 'Vareniki de Cereza',
+              description:
+                'Harina de trigo, cerezas, tofu, azúcar de caña, leche de coco, mermelada de pitaya.',
+              price: '115.000',
+            },
+            {
+              name: 'Vareniki de Patata',
+              description:
+                'Harina integral, patatas, cebollas, salsa de anacardo y eneldo, chucrut (col, remolacha, zanahoria).',
+              price: '125.000',
+            },
+            {
+              name: 'Sopa Solyanka',
+              description:
+                'Patatas, tofu firme, aceitunas negras, limón, pepinillos, eneldo, khmeli-suneli, cebolla, ajo, pasta de tomate, pan de masa madre, queso de anacardo.',
+              price: '130.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Postres y Snacks',
+          items: [
+            {
+              name: 'Bolas de Felicidad (Bliss Balls)',
+              description:
+                'Dulces saludables de frutos secos y nueces. Variantes: Maní o Chocolate.',
+              price: '20.000',
+            },
+            {
+              name: 'Galleta con Pepitas de Chocolate',
+              description: 'Galleta vegana casera con trozos de chocolate.',
+              price: '25.000',
+            },
+            {
+              name: 'Pudín de Chía',
+              description:
+                'Semillas de chía, leche de coco, sirope, fruta fresca.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Guarniciones y Extras',
+          items: [
+            {
+              name: 'Arroz Integral',
+              description: 'Porción de arroz integral cocido.',
+              price: '15.000',
+            },
+            {
+              name: 'Trigo Sarraceno',
+              description: 'Porción de trigo sarraceno cocido.',
+              price: '30.000',
+            },
+            {
+              name: 'Pan de Masa Madre (2 trozos)',
+              description: 'Pan integral casero.',
+              price: '15.000',
+            },
+            {
+              name: 'Aguacate (Mitad)',
+              description: 'Aguacate fresco rebanado.',
+              price: '20.000',
+            },
+            {
+              name: 'Chucrut',
+              description: 'Col fermentada casera con remolacha.',
+              price: '20.000',
+            },
+            {
+              name: 'Queso de Anacardo / Mayonesa de Anacardo',
+              description: 'Porción extra de salsa vegana casera.',
+              price: '20.000',
+            },
+            {
+              name: 'Medallón Vegetal (Extra)',
+              description: "Medallón Let's Plant extra para cualquier plato.",
+              price: '85.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    fr: {
+      title: 'Kurumi - Restaurant Végétalien',
+      description:
+        'Le menu à base de plantes comprend des plats italiens et slaves faits maison, des spécialités asiatiques, des bols de Bouddha copieux, une cuisine crue éclatante et de somptueux desserts végétaliens.',
+      fullDescription: `
+<p>Le menu à base de plantes comprend des plats italiens et slaves faits maison, des spécialités asiatiques, des bols de Bouddha copieux, une cuisine crue éclatante et de somptueux desserts végétaliens.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Petit-déjeuner/Brunch/Déjeuner',
+          items: [
+            {
+              name: 'Pancakes Avoine et Coco',
+              description:
+                'Avoine, lait de coco, banane, extrait de vanille. Garniture : pudding de chia, confiture de chia, beurre de cacahuète, mélange de noix et graines, banane, mangue.',
+              price: '105.000',
+            },
+            {
+              name: "Porridge d'Avoine au Pudding de Chia et Confiture de Pitaya",
+              description:
+                "Flocons d'avoine, pudding de chia, confiture de chia, lait de coco, banane, ananas, mélange de graines et noix, menthe, beurre de cajou.",
+              price: '90.000',
+            },
+            {
+              name: 'Omelette Protéinée aux Pois Chiches',
+              description:
+                "Farine de pois chiches, épices, aneth, sel de l'Himalaya, purée d'avocat, poivron rouge frais, micropousses, tomates rôties, pleurotes sautées, mayonnaise maison pimentée. Sans gluten.",
+              price: '99.000',
+            },
+            {
+              name: 'Tofu "Bénédictine"',
+              description:
+                'Pains complets, salade, tomate, avocat, tofu frit, sauce hollandaise végétalienne, "bacon" de tempeh de soja.',
+              price: '120.000',
+            },
+            {
+              name: 'Quesadilla aux Haricots',
+              description:
+                "Tortillas complètes maison, haricots adzuki activés en sauce spéciale, purée d'avocat, crème de cajou, légumes rôtis, salsa.",
+              price: '110.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Toasts Nutritifs / Sandwiches',
+          items: [
+            {
+              name: 'Sandwich au Tofu Fumé et Oignons Caramélisés',
+              description:
+                'Baguette complète au levain, oignons caramélisés, tofu ferme, cornichons, carottes fumées, fromage de cajou fumé.',
+              price: '110.000',
+            },
+            {
+              name: 'Baguette Italienne au Fromage Brie',
+              description:
+                'Baguette complète au levain, fromage Brie maison, crème de cajou, sauce pesto maison, tomates, tomates séchées, micropousses, oignon rouge, olives vertes, origan.',
+              price: '115.000',
+            },
+            {
+              name: "Toast à l'Avocat et Tomates Séchées",
+              description:
+                "Toast au levain, purée d'avocat, tomates séchées, micropousses, salade.",
+              price: '79.000',
+            },
+            {
+              name: 'Toast "Cœur d\'Avocat"',
+              description:
+                "Toast complet au levain, sel de l'Himalaya, purée d'avocat, tomates cerises, mélange de graines, salade.",
+              price: '65.000',
+            },
+            {
+              name: 'Toast au Fromage et Champignons',
+              description:
+                'Toast complet au levain, fromage de cajou fermenté, avocat, paprika fumé, champignons de paille, aneth.',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Smoothie Bowls Superfood (350ml)',
+          items: [
+            {
+              name: 'Choco Sense',
+              description:
+                'Banane, cacao en poudre, lait de coco. Garniture : banane, mélange de noix et graines, bliss ball au chocolat, chocolat noir, noix de coco râpée.',
+              price: '99.000',
+            },
+            {
+              name: 'My Favorite',
+              description:
+                'Mangue, banane, ananas, lait de coco. Garniture : ananas, mélange de noix et graines, chocolat noir, bliss ball à la cacahuète, noix de coco râpée.',
+              price: '85.000',
+            },
+            {
+              name: 'Happy Stomach',
+              description:
+                'Papaye, fraise, banane, lait de coco. Garniture : fraise, bliss ball à la cacahuète, mélange de noix et graines, noix de coco râpée, chocolat noir.',
+              price: '95.000',
+            },
+            {
+              name: 'Purple Boom',
+              description:
+                'Mûre, pitaya rouge, banane, lait de coco. Garniture : mangue, bliss ball au chocolat, mélange de noix et graines, noix de coco râpée, chocolat noir.',
+              price: '99.000',
+            },
+            {
+              name: 'Kurumi Smoothie Bowl',
+              description:
+                'Mangue, banane, spiruline en poudre, lait de coco. Garniture : fraise, fruit de la passion, bliss ball à la cacahuète, mélange de noix et graines, noix de coco râpée, chocolat noir.',
+              price: '99.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Dream Bowls',
+          items: [
+            {
+              name: 'Burrito Bowl',
+              description:
+                "Riz complet, haricots adzuki activés en sauce tomate, purée d'avocat, tortilla, patate douce rôtie, aubergines et courgettes frites, poivron rouge, fromage de cajou fermenté, salsa, graines.",
+              price: '120.000',
+            },
+            {
+              name: 'Poke Bowl',
+              description:
+                'Riz complet, tempeh de soja en sauce, carottes fumées, avocat, ananas, concombre, edamame, gingembre rose mariné, nori, mayonnaise maison pimentée, noix mezun, oignon mariné.',
+              price: '120.000',
+            },
+            {
+              name: 'Stroganoff aux Champignons avec Riz Complet',
+              description:
+                'Riz complet, pain complet au levain, concombre malossol, oignon rouge mariné, champignons, lait de coco, fromage de cajou fermenté, sauce soja, aneth, flocons de piment, ail.',
+              price: '110.000',
+            },
+            {
+              name: 'Stroganoff aux Champignons avec Sarrasin',
+              description:
+                'Sarrasin, pain complet au levain, concombre malossol, oignon rouge mariné, champignons, lait de coco, fromage de cajou fermenté, sauce soja, aneth, flocons de piment, ail.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Délices Asiatiques',
+          items: [
+            {
+              name: 'Riz aux Dés de Tofu et Salade de Mangue',
+              description:
+                'Riz complet, dés de tofu frits en sauce, mangue, oignon, avocat, salade, mayonnaise pimentée, sauce soja.',
+              price: '89.000',
+            },
+            {
+              name: 'Nouilles aux Légumes',
+              description:
+                'Nouilles linguine, shiitake, courgette, carotte, gingembre, ail, sauce soja, sucre de coco, sel, sésame, cynorrhodon, tempeh de soja.',
+              price: '110.000',
+            },
+            {
+              name: 'Curry Jaune Thaï au Riz Complet et Tofu',
+              description:
+                'Riz complet, lait de coco bio, citrouille, patate douce, tomate, poivron rouge, aubergine, courgette, champignons, coriandre, oignon vert, curry jaune, noix de cajou.',
+              price: '99.000',
+            },
+            {
+              name: 'Local Buddha Bowl',
+              description:
+                "Nouilles de riz complet, peau de tofu marinée à l'ail, algues en sauce, fleurs de bananier, pousses de soja, salade, menthe, basilic, moutarde en feuille, chou rouge, cacahuètes, sauce cacahuète, sésame.",
+              price: '89.000',
+            },
+            {
+              name: 'Momo Dumplings',
+              description:
+                'Farine complète, épinards, tofu, oignon, sauce soja-mayonnaise.',
+              price: '125.000',
+            },
+          ],
+        },
+        {
+          categoryName: '"Viande" Végétale',
+          items: [
+            {
+              name: 'Burger "PAS DE BŒUF"',
+              description:
+                "Pain complet, steak végétal Let's Plant, moutarde, salade, tomate, mayonnaise pimentée, fromage de cajou, cornichon, oignon, sauce BBQ.",
+              price: '175.000',
+            },
+            {
+              name: 'Quesadilla "Carnée"',
+              description:
+                "Tortillas complètes, steak végétal Let's Plant, poivron rouge, aubergine, courgette, salsa, purée d'avocat, fromage de cajou.",
+              price: '185.000',
+            },
+            {
+              name: 'Pâtes au Steak Végétalien',
+              description:
+                "Pâtes, steak végétal Let's Plant, fromage de cajou, tomate, micropousses, poivron, sauce BBQ.",
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Salades',
+          items: [
+            {
+              name: 'Salade de Quinoa aux Artichauts Marinés',
+              description:
+                "Quinoa, artichauts marinés, tofu, concombre, oignon rouge, mangue, tomates, poivron rouge, avocat, citron vert, huile d'olive, origan, sel de l'Himalaya, sauce moutarde.",
+              price: '85.000',
+            },
+            {
+              name: 'Salade César au Tempeh',
+              description:
+                'Laitue, aneth, basilic, coriandre, tempeh de soja en sauce, croûtons, tomates cerises, sauce aneth-cajou.',
+              price: '79.000',
+            },
+            {
+              name: 'Salade Probiotique',
+              description:
+                "Chou fermenté naturel, betterave, carotte, oignon rouge, huile d'olive. Sans gluten.",
+              price: '65.000',
+            },
+            {
+              name: 'Salade Coréenne',
+              description:
+                'Peau de tofu (fuchzh), carotte, ail, gingembre, huile de sésame, sauce soja, sel, piment, sriracha.',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Desserts Raw (Sans sucre ni gluten)',
+          items: [
+            {
+              name: 'Gâteau Snickers',
+              description:
+                'Gâteau cru aux cacahuètes, caramel de dattes et glaçage au chocolat. Sans sucre ni gluten.',
+              price: '85.000',
+            },
+            {
+              name: 'Gâteau aux Carottes',
+              description:
+                'Gâteau cru à la carotte avec épices, noix et crème de cajou onctueuse.',
+              price: '79.000',
+            },
+            {
+              name: 'Gâteau Bounty',
+              description:
+                'Gâteau cru à la noix de coco avec une couche de chocolat.',
+              price: '75.000',
+            },
+            {
+              name: 'Gâteau aux Fruits Rouges / Fraise',
+              description:
+                'Gâteau cru léger aux baies sauvages ou fraises et crème de cajou.',
+              price: '85.000',
+            },
+            {
+              name: 'Brownie au Chocolat',
+              description:
+                'Dessert chocolaté intense à base de cacao et de noix.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Thé Matcha et Latté',
+          items: [
+            {
+              name: 'Matcha Latté',
+              description:
+                'Thé vert matcha japonais au lait de coco ou lait frais.',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Matcha Latté Rose',
+              description: 'Matcha avec eau de rose ou poudre de pitaya.',
+              price: '50.000 / 55.000',
+            },
+            {
+              name: 'Latté Bleu (Butterfly Pea)',
+              description:
+                'Boisson aux fleurs de clitoria avec lait (sans caféine).',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: "Lait d'Or (Curcuma Latté)",
+              description:
+                'Boisson réconfortante au curcuma, épices et lait de coco.',
+              price: '45.000 / 50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Suppléments au Menu Principal',
+          items: [
+            {
+              name: 'Fromage de Cajou (Portion extra)',
+              description:
+                'Notre fromage fermenté signature à base de noix de cajou activées.',
+              price: '20.000',
+            },
+            {
+              name: 'Pain au Levain (2 tranches)',
+              description: 'Pain complet sans levure.',
+              price: '15.000',
+            },
+            {
+              name: 'Avocat (Portion)',
+              description: 'Avocat frais tranché.',
+              price: '25.000',
+            },
+            {
+              name: 'Choucroute à la Betterave',
+              description: 'Chou fermenté maison (probiotique).',
+              price: '20.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Pour les Amoureux des Pâtes',
+          items: [
+            {
+              name: 'Pâtes au Pesto',
+              description:
+                "Nouilles linguine, pesto végétalien maison, tomates cerises jaunes rôties, micropousses, huile d'olive, origan, nutmesan (parmesan végétalien).",
+              price: '115.000',
+            },
+            {
+              name: 'Pâtes Stroganoff',
+              description:
+                "Spaghettis, champignons, lait de coco bio, fromage de cajou fermenté, sauce soja, aneth, oignon rouge, flocons de piment, ail, huile d'olive.",
+              price: '120.000',
+            },
+            {
+              name: 'Pâtes Alfredo Végétaliennes aux Champignons',
+              description:
+                'Nouilles linguine, oignon rouge, ail, fromage à la crème de cajou, jus de citron vert, micropousses, nutmesan, champignons.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Soupes Réconfortantes',
+          items: [
+            {
+              name: 'Velouté de Citrouille + Quinoa',
+              description:
+                'Citrouille, lait de coco, curcuma, tomate, fromage de cajou fermenté, ail, quinoa, graines de courge. Sans gluten.',
+              price: '85.000',
+            },
+            {
+              name: "Velouté de Tomate + Haricots Adzuki + Croûtons à l'Ail",
+              description:
+                "Tomate, poivron rouge, ail, pesto, haricots adzuki, graines, croûtons à l'ail, lait de coco.",
+              price: '85.000',
+            },
+            {
+              name: 'Soupe Simple (Sans garniture)',
+              description: 'Options : Citrouille ou Tomate.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Cuisine Slave',
+          items: [
+            {
+              name: 'Tofuniki (Syrniki de Tofu)',
+              description:
+                'Tofu, noix de coco râpée, farine complète, mangue, fraise, caramel au fruit de la passion, sucre de canne, sirop de palme, menthe, graines.',
+              price: '95.000',
+            },
+            {
+              name: 'Vareniki à la Cerise',
+              description:
+                'Farine de blé, cerises, tofu, sucre de canne, lait de coco, confiture de pitaya.',
+              price: '115.000',
+            },
+            {
+              name: 'Vareniki à la Pomme de Terre',
+              description:
+                'Farine complète, pommes de terre, oignons, sauce cajou-aneth, choucroute (chou, betterave, carotte).',
+              price: '125.000',
+            },
+            {
+              name: 'Soupe Solyanka',
+              description:
+                'Pommes de terre, tofu ferme, olives noires, citron, cornichons, aneth, khmeli-suneli, oignon, ail, concentré de tomate, pain au levain, fromage de cajou.',
+              price: '130.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Desserts et Snacks',
+          items: [
+            {
+              name: 'Bliss Balls',
+              description:
+                'Douceurs saines à base de fruits secs et de noix. Variantes : Cacahuète ou Chocolat.',
+              price: '20.000',
+            },
+            {
+              name: 'Cookie aux Pépites de Chocolat',
+              description:
+                'Cookie végétalien maison avec morceaux de chocolat.',
+              price: '25.000',
+            },
+            {
+              name: 'Chia Pudding',
+              description:
+                'Graines de chia, lait de coco, sirop, fruits frais.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Accompagnements et Extras',
+          items: [
+            {
+              name: 'Riz Complet',
+              description: 'Portion de riz complet bouilli.',
+              price: '15.000',
+            },
+            {
+              name: 'Sarrasin',
+              description: 'Portion de sarrasin bouilli.',
+              price: '30.000',
+            },
+            {
+              name: 'Pain au Levain (2 tranches)',
+              description: 'Pain complet maison.',
+              price: '15.000',
+            },
+            {
+              name: 'Avocat (Moitié)',
+              description: 'Avocat frais tranché.',
+              price: '20.000',
+            },
+            {
+              name: 'Choucroute',
+              description: 'Chou fermenté maison à la betterave.',
+              price: '20.000',
+            },
+            {
+              name: 'Fromage de Cajou / Mayo de Cajou',
+              description:
+                'Portion supplémentaire de sauce végétalienne maison.',
+              price: '20.000',
+            },
+            {
+              name: 'Steak Végétal (Extra)',
+              description:
+                "Steak Let's Plant supplémentaire pour n'importe quel plat.",
+              price: '85.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    vn: {
+      title: 'Kurumi - Nhà hàng Thuần chay',
+      description:
+        'Thực đơn thuần chay bao gồm các món ăn Ý và Slavic truyền thống, các món đặc biệt châu Á, bát Buddha bổ dưỡng, thực phẩm thô (raw food) tươi mới và các món tráng miệng thuần chay cao cấp.',
+      fullDescription: `
+<p>Thực đơn thuần chay bao gồm các món ăn Ý và Slavic truyền thống, các món đặc biệt châu Á, bát Buddha bổ dưỡng, thực phẩm thô (raw food) tươi mới và các món tráng miệng thuần chay cao cấp.</p>
+  `,
+      internalImageNames: [],
+      menu: [
+        {
+          categoryName: 'Bữa sáng / Bữa trưa muộn',
+          items: [
+            {
+              name: 'Bánh kếp Yến mạch Dừa',
+              description:
+                'Yến mạch, sữa dừa, chuối, chiết xuất vani. Topping: pudding hạt chia, mứt chia, bơ đậu phộng, hạt và hạt hỗn hợp, chuối, xoài.',
+              price: '105.000',
+            },
+            {
+              name: 'Cháo Yến mạch với Pudding Chia và Mứt Thanh long',
+              description:
+                'Yến mạch, pudding hạt chia, mứt chia, sữa dừa, chuối, dứa, hỗn hợp hạt, bạc hà, bơ hạt điều.',
+              price: '90.000',
+            },
+            {
+              name: 'Trứng cuộn Protein từ Đậu gà',
+              description:
+                'Bột đậu gà, gia vị, thì là, muối hồng Himalaya, bơ nghiền, ớt chuông tươi, vi chất dinh dưỡng (microgreens), cà chua nướng, nấm bào ngư chiên, sốt mayonnaise cay tự làm. Không chứa gluten.',
+              price: '99.000',
+            },
+            {
+              name: 'Tofu "Benedict"',
+              description:
+                'Bánh mì ngũ cốc nguyên cám, salad, cà chua, bơ, đậu phụ chiên, sốt hollandaise thuần chay, "thịt xông khói" tempeh đậu nành.',
+              price: '120.000',
+            },
+            {
+              name: 'Bánh Quesadilla Đậu',
+              description:
+                'Bánh tortilla ngũ cốc nguyên cám tự làm, đậu adzuki kích hoạt trong sốt đặc biệt, bơ nghiền, kem hạt điều, rau củ nướng, sốt salsa.',
+              price: '110.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Bánh mì nướng Dinh dưỡng / Sandwich',
+          items: [
+            {
+              name: 'Sandwich Đậu phụ xông khói và Hành tây caramel',
+              description:
+                'Bánh mì baguette ngũ cốc nguyên cám men tự nhiên, hành tây caramel, đậu phụ cứng, dưa chuột muối, cà rốt xông khói, phô mai hạt điều xông khói.',
+              price: '110.000',
+            },
+            {
+              name: 'Bánh mì Baguette Ý với Phô mai Brie',
+              description:
+                'Bánh mì baguette ngũ cốc nguyên cám men tự nhiên, phô mai Brie tự làm, kem hạt điều, sốt pesto tự làm, cà chua, cà chua sấy khô, vi chất dinh dưỡng, hành tây tím, ô liu xanh, kinh giới cay.',
+              price: '115.000',
+            },
+            {
+              name: 'Bánh mì nướng Bơ và Cà chua sấy khô',
+              description:
+                'Bánh mì nướng men tự nhiên, bơ nghiền, cà chua sấy khô, vi chất dinh dưỡng, salad.',
+              price: '79.000',
+            },
+            {
+              name: 'Bánh mì nướng "Trái tim Bơ"',
+              description:
+                'Bánh mì nướng ngũ cốc nguyên cám men tự nhiên, muối Himalaya, bơ nghiền, cà chua bi, hỗn hợp hạt, salad.',
+              price: '65.000',
+            },
+            {
+              name: 'Bánh mì nướng Phô mai Nấm',
+              description:
+                'Bánh mì nướng ngũ cốc nguyên cám men tự nhiên, phô mai hạt điều lên men, bơ, ớt bột xông khói, nấm rơm, thì là.',
+              price: '75.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Superfood Smoothie Bowls (350ml)',
+          items: [
+            {
+              name: 'Choco Sense',
+              description:
+                'Chuối, bột ca cao, sữa dừa. Topping: chuối, hỗn hợp hạt, viên bliss ball socola, socola đen, dừa nạo.',
+              price: '99.000',
+            },
+            {
+              name: 'My Favorite',
+              description:
+                'Xoài, chuối, dứa, sữa dừa. Topping: dứa, hỗn hợp hạt, socola đen, viên bliss ball đậu phộng, dừa nạo.',
+              price: '85.000',
+            },
+            {
+              name: 'Happy Stomach',
+              description:
+                'Đu đủ, dâu tây, chuối, sữa dừa. Topping: dâu tây, viên bliss ball đậu phộng, hỗn hợp hạt, dừa nạo, socola đen.',
+              price: '95.000',
+            },
+            {
+              name: 'Purple Boom',
+              description:
+                'Dâu tằm, thanh long đỏ, chuối, sữa dừa. Topping: xoài, viên bliss ball socola, hỗn hợp hạt, dừa nạo, socola đen.',
+              price: '99.000',
+            },
+            {
+              name: 'Kurumi Smoothie Bowl',
+              description:
+                'Xoài, chuối, bột tảo xoắn spirulina, sữa dừa. Topping: dâu tây, chanh leo, viên bliss ball đậu phộng, hỗn hợp hạt, dừa nạo, socola đen.',
+              price: '99.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Dream Bowls',
+          items: [
+            {
+              name: 'Burrito Bowl',
+              description:
+                'Gạo lứt, đậu adzuki kích hoạt trong sốt cà chua, bơ nghiền, bánh tortilla, khoai lang nướng, cà tím và bí ngòi chiên, ớt chuông đỏ, phô mai hạt điều lên men, sốt salsa, các loại hạt.',
+              price: '120.000',
+            },
+            {
+              name: 'Poke Bowl',
+              description:
+                'Gạo lứt, tempeh đậu nành trong sốt, cà rốt xông khói, bơ, dứa, dưa chuột, đậu nành edamame, gừng hồng muối, rong biển nori, sốt mayonnaise cay tự làm, hạt mezun, hành tây muối.',
+              price: '120.000',
+            },
+            {
+              name: 'Nấm Stroganoff với Gạo lứt',
+              description:
+                'Gạo lứt, bánh mì ngũ cốc nguyên cám men tự nhiên, dưa chuột muối nhẹ, hành tím muối, nấm, sữa dừa, phô mai hạt điều lên men, nước tương, thì là, ớt bột, tỏi.',
+              price: '110.000',
+            },
+            {
+              name: 'Nấm Stroganoff với Kiều mạch',
+              description:
+                'Kiều mạch, bánh mì ngũ cốc nguyên cám men tự nhiên, dưa chuột muối nhẹ, hành tím muối, nấm, sữa dừa, phô mai hạt điều lên men, nước tương, thì là, ớt bột, tỏi.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Món ngon Châu Á',
+          items: [
+            {
+              name: 'Cơm Đậu phụ viên và Salad Xoài',
+              description:
+                'Gạo lứt, đậu phụ chiên viên trong sốt, xoài, hành tây, bơ, salad, mayonnaise cay, nước tương.',
+              price: '89.000',
+            },
+            {
+              name: 'Mì rau củ',
+              description:
+                'Mì linguine, nấm hương, bí ngòi, cà rốt, gừng, tỏi, nước tương, đường dừa, muối, mè, rau mùi, tempeh đậu nành.',
+              price: '110.000',
+            },
+            {
+              name: 'Cà ri Thái vàng với Gạo lứt và Đậu phụ',
+              description:
+                'Gạo lứt, sữa dừa hữu cơ, bí đỏ, khoai lang, cà chua, ớt chuông đỏ, cà tím, bí ngòi, nấm, rau mùi, hành lá, cà ri vàng, hạt điều.',
+              price: '99.000',
+            },
+            {
+              name: 'Local Buddha bowl',
+              description:
+                'Bún gạo lứt, phù trúc (váng đậu) tẩm sốt tỏi, rong biển trong sốt, hoa chuối, giá đỗ, salad, bạc hà, húng quế, cải bẹ xanh, bắp cải tím, đậu phộng, sốt đậu phộng, mè.',
+              price: '89.000',
+            },
+            {
+              name: 'Bánh xếp Momo',
+              description:
+                'Bột nguyên cám, rau bina, đậu phụ, hành tây, sốt mayonnaise-tương.',
+              price: '125.000',
+            },
+          ],
+        },
+        {
+          categoryName: '"Thịt" Thực vật',
+          items: [
+            {
+              name: 'Burger "KHÔNG PHẢI THỊT BÒ"',
+              description:
+                "Bánh mì ngũ cốc nguyên cám, nhân thịt thực vật Let's Plant, mù tạt, salad, cà chua, mayonnaise cay, phô mai hạt điều, dưa chuột muối, hành tây, sốt BBQ.",
+              price: '175.000',
+            },
+            {
+              name: 'Quesadilla "Thịt"',
+              description:
+                "Bánh tortilla ngũ cốc nguyên cám, nhân thịt thực vật Let's Plant, ớt chuông đỏ, cà tím, bí ngòi, sốt salsa, bơ nghiền, phô mai hạt điều.",
+              price: '185.000',
+            },
+            {
+              name: 'Mì Ý với thịt viên thuần chay',
+              description:
+                "Mì Ý, nhân thịt thực vật Let's Plant, phô mai hạt điều, cà chua, vi chất dinh dưỡng, tiêu, sốt BBQ.",
+              price: '185.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Salad',
+          items: [
+            {
+              name: 'Salad Diêm mạch với Atisô ngâm',
+              description:
+                'Diêm mạch (quinoa), atisô ngâm, đậu phụ, dưa chuột, hành tím, xoài, cà chua, ớt chuông đỏ, bơ, chanh, dầu ô liu, kinh giới, muối Himalaya, sốt mù tạt.',
+              price: '85.000',
+            },
+            {
+              name: 'Salad Caesar với Tempeh',
+              description:
+                'Xà lách lúa, thì là, húng quế, rau mùi, tempeh đậu nành trong sốt, bánh mì vụn, cà chua bi, sốt hạt điều-thì là.',
+              price: '79.000',
+            },
+            {
+              name: 'Salad Probiotic',
+              description:
+                'Bắp cải lên men tự nhiên, củ cải đường, cà rốt, hành tím, dầu ô liu. Không chứa gluten.',
+              price: '65.000',
+            },
+            {
+              name: 'Salad kiểu Hàn Quốc',
+              description:
+                'Phù trúc (fuchzh), cà rốt, tỏi, gừng, dầu mè, nước tương, muối, ớt, sriracha.',
+              price: '50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Tráng miệng Raw (Không đường & gluten)',
+          items: [
+            {
+              name: 'Bánh Snickers',
+              description:
+                'Bánh sống (raw) với đậu phộng, caramel từ chà là và lớp phủ socola. Không đường và gluten.',
+              price: '85.000',
+            },
+            {
+              name: 'Bánh Cà rốt',
+              description:
+                'Bánh cà rốt sống với gia vị, quả óc chó và kem hạt điều mềm mịn.',
+              price: '79.000',
+            },
+            {
+              name: 'Bánh Bounty',
+              description: 'Bánh dừa sống với lớp socola.',
+              price: '75.000',
+            },
+            {
+              name: 'Bánh Dâu tây / Quả mọng',
+              description:
+                'Bánh sống nhẹ với quả mọng dại hoặc dâu tây và kem hạt điều.',
+              price: '85.000',
+            },
+            {
+              name: 'Chocolate Brownie',
+              description:
+                'Món tráng miệng socola đậm đà từ ca cao và các loại hạt.',
+              price: '65.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Trà Matcha và Latte',
+          items: [
+            {
+              name: 'Matcha Latte',
+              description:
+                'Trà xanh matcha Nhật Bản với sữa dừa hoặc sữa tươi.',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Pink Matcha Latte',
+              description: 'Matcha thêm nước hoa hồng hoặc bột thanh long.',
+              price: '50.000 / 55.000',
+            },
+            {
+              name: 'Blue Latte (Hoa Đậu Biếc)',
+              description: 'Thức uống hoa đậu biếc với sữa (không caffeine).',
+              price: '45.000 / 50.000',
+            },
+            {
+              name: 'Sữa Nghệ (Turmeric Latte)',
+              description: 'Thức uống ấm áp với nghệ, gia vị và sữa dừa.',
+              price: '45.000 / 50.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Món ăn kèm & Thêm',
+          items: [
+            {
+              name: 'Gạo lứt',
+              description: 'Một phần gạo lứt luộc.',
+              price: '15.000',
+            },
+            {
+              name: 'Kiều mạch',
+              description: 'Một phần kiều mạch luộc.',
+              price: '30.000',
+            },
+            {
+              name: 'Bánh mì men tự nhiên (2 lát)',
+              description: 'Bánh mì ngũ cốc nguyên cám tự làm.',
+              price: '15.000',
+            },
+            {
+              name: 'Quả bơ (Nửa quả)',
+              description: 'Bơ tươi cắt lát.',
+              price: '20.000',
+            },
+            {
+              name: 'Bắp cải muối',
+              description: 'Bắp cải lên men tự làm với củ cải đường.',
+              price: '20.000',
+            },
+            {
+              name: 'Phô mai hạt điều / Mayo hạt điều',
+              description: 'Thêm một phần sốt thuần chay tự làm.',
+              price: '20.000',
+            },
+            {
+              name: 'Nhân thịt thực vật (Thêm)',
+              description: "Thêm nhân thịt Let's Plant cho bất kỳ món nào.",
+              price: '85.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Dành cho người yêu Mì Ý',
+          items: [
+            {
+              name: 'Mì Ý Pesto',
+              description:
+                'Mì linguine, sốt pesto thuần chay tự làm, cà chua bi vàng nướng, vi chất dinh dưỡng, dầu ô liu, kinh giới, nutmesan (parmesan thuần chay).',
+              price: '115.000',
+            },
+            {
+              name: 'Mì Ý Stroganoff',
+              description:
+                'Mì Ý, nấm, sữa dừa hữu cơ, phô mai hạt điều lên men, nước tương, thì là, hành tím, ớt bột, tỏi, dầu ô liu.',
+              price: '120.000',
+            },
+            {
+              name: 'Mì Ý Alfredo thuần chay với Nấm',
+              description:
+                'Mì linguine, hành tím, tỏi, phô mai kem hạt điều, nước chanh, vi chất dinh dưỡng, nutmesan, nấm.',
+              price: '115.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Súp ấm nóng',
+          items: [
+            {
+              name: 'Súp kem Bí đỏ + Diêm mạch',
+              description:
+                'Bí đỏ, sữa dừa, nghệ, cà chua, phô mai hạt điều lên men, tỏi, diêm mạch, hạt bí. Không chứa gluten.',
+              price: '85.000',
+            },
+            {
+              name: 'Súp kem Cà chua + Đậu adzuki + Bánh mì tỏi',
+              description:
+                'Cà chua, ớt chuông đỏ, tỏi, sốt pesto, đậu adzuki, các loại hạt, bánh mì tỏi, sữa dừa.',
+              price: '85.000',
+            },
+            {
+              name: 'Súp đơn giản (Không topping)',
+              description: 'Tùy chọn: Bí đỏ hoặc Cà chua.',
+              price: '60.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Ẩm thực Slavic',
+          items: [
+            {
+              name: 'Tofuniki (Bánh rán đậu phụ)',
+              description:
+                'Đậu phụ, dừa nạo, bột nguyên cám, xoài, dâu tây, caramel chanh leo, đường mía, siro thốt nốt, bạc hà, hạt.',
+              price: '95.000',
+            },
+            {
+              name: 'Bánh Vareniki nhân Anh đào',
+              description:
+                'Bột mì, anh đào, đậu phụ, đường mía, sữa dừa, mứt thanh long.',
+              price: '115.000',
+            },
+            {
+              name: 'Bánh Vareniki nhân Khoai tây',
+              description:
+                'Bột nguyên cám, khoai tây, hành tây, sốt hạt điều-thì là, bắp cải muối (bắp cải, củ cải đường, cà rốt).',
+              price: '125.000',
+            },
+            {
+              name: 'Súp Solyanka',
+              description:
+                'Khoai tây, đậu phụ cứng, ô liu đen, chanh, dưa chuột muối, thì là, gia vị khmeli-suneli, hành tây, tỏi, sốt cà chua, bánh mì men tự nhiên, phô mai hạt điều.',
+              price: '130.000',
+            },
+          ],
+        },
+        {
+          categoryName: 'Tráng miệng và Đồ ăn nhẹ',
+          items: [
+            {
+              name: 'Bliss Balls',
+              description:
+                'Kẹo bổ dưỡng từ trái cây khô và hạt. Tùy chọn: Đậu phộng hoặc Socola.',
+              price: '20.000',
+            },
+            {
+              name: 'Bánh quy Socola chip',
+              description: 'Bánh quy thuần chay tự làm với socola miếng.',
+              price: '25.000',
+            },
+            {
+              name: 'Chia Pudding',
+              description: 'Hạt chia, sữa dừa, siro, trái cây tươi.',
+              price: '65.000',
+            },
+          ],
+        },
+      ],
+    },
+
+    slug: {
+      en: 'kurumi',
+      ru: 'kurumi',
+      es: 'kurumi',
+      fr: 'kurumi',
+      vn: 'kurumi',
+    },
+  },
+  //Rio Garden Coffee
 ];
