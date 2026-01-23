@@ -9277,4 +9277,72 @@ export const foodDrinksLandmarks: Landmark[] = [
       vn: 'hoianian',
     },
   },
+  //Lan Thai & Mr. Hai Noodles
+  {
+    id: 'lan-thai-hai-noodles', // <-- ID теперь строковый
+    coordinates: [15.877352231878573, 108.33430533374465], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'lan-thai-hai-noodles.webp',
+    en: {
+      title: 'Lan Thai & Mr. Hai Noodles',
+      description: 'These two cafes are expats favorite spot in Hoi An.',
+      fullDescription: `
+<p>Amazing prices! Great taste!
+Pad Thai with shrimp is a favorite among expats living here. And at Hai Noodles, probably the best Mì Quảng and Cao lầu for the price in Hoi An.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Lan Thai и Mr. Hai Noodles',
+      description: 'Эти два кафе являются любимым местом для экспатов.',
+      fullDescription: `
+<p>Прекрасные цены! Отличный вкус!
+Пад-тай с креветками обожают экспаты, живущие здесь. А в Hai Noodles — наверное, лучший Mì Quảng и Cao lầu за такие деньги в Хойане.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    es: {
+      title: 'Lan Thai и Mr. Hai Noodles',
+      description:
+        'Estos dos cafés son el lugar favorito de los expatriados en Hoi An.',
+      fullDescription: `
+<p>¡Precios increíbles! ¡Sabor excelente!
+El pad thai con gambas lo adoran los expatriados que viven aquí. Y en Hai Noodles, probablemente el mejor Mì Quảng y Cao lầu por ese precio en Hoi An.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    fr: {
+      title: 'Lan Thai и Mr. Hai Noodles',
+      description:
+        'Ces deux cafés sont le endroit préféré des expatriés à Hoi An',
+      fullDescription: `
+<p>Prix imbattables ! Goût excellent !
+Le pad thaï aux crevettes est adoré des expatriés qui vivent ici. Et chez Hai Noodles, vous trouverez probablement le meilleur Mì Quảng et Cao lầu pour ce prix à Hoi An.
+
+</p>
+  `,
+      internalImageNames: [],
+    },
+
+    vn: {
+      title: 'Lan Thai и Mr. Hai Noodles',
+      description: 'Hai quán cà phê này là nơi yêu thích của expat ở Hội An.',
+      fullDescription: `
+<p>Giá siêu hời! Vị ngon tuyệt!
+Pad Thai tôm được expat sống ở đây mê mẩn. Còn ở Hai Noodles chắc chắn là quán có Mì Quảng và Cao Lầu ngon nhất với giá rẻ nhất Hội An.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'lan-thai',
+      ru: 'lan-thai',
+      es: 'lan-thai',
+      fr: 'lan-thai',
+      vn: 'lan-thai',
+    },
+  },
 ];
