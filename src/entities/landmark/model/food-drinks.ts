@@ -6,6 +6,7 @@ export const foodDrinksLandmarks: Landmark[] = [
     id: 'hill-station',
     coordinates: [15.877801450043398, 108.33391777335922],
     category: ['food-drinks'],
+    isMustVisit: true,
     imageUrl: '53.webp',
     en: {
       title: 'The Hill Station Deli & Boutique',
@@ -2799,6 +2800,7 @@ export const foodDrinksLandmarks: Landmark[] = [
     id: 'fefe-roastery',
     coordinates: [15.877930767963667, 108.32668616386269],
     category: ['food-drinks'],
+    isMustVisit: true,
     imageUrl: '61.webp',
 
     en: {

@@ -8,6 +8,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'japanese-covered-bridge',
     coordinates: [15.877122578067937, 108.32601152345488],
     category: ['museum'],
+    isMustVisit: true,
     imageUrl: 'japanese_covered_bridge.webp',
 
     en: {
@@ -2549,6 +2550,7 @@ export const museumLandmarks: Landmark[] = [
   {
     id: 'traditional-art-performance-house',
     coordinates: [15.876024598644353, 108.32974391847458],
+    isMustVisit: true,
     category: ['museum'], // Строго "museum"
     imageUrl: 'traditional_art_performance_house.webp',
 
@@ -3089,6 +3091,7 @@ export const museumLandmarks: Landmark[] = [
   {
     id: 'fujian-assembly-hall',
     coordinates: [15.877479589047237, 108.33062773730362],
+    isMustVisit: true,
     category: ['museum'], // Строго "museum"
     imageUrl: '14.webp',
 
@@ -4326,6 +4329,7 @@ export const museumLandmarks: Landmark[] = [
     id: 'precious-heritage-art-gallery-museum',
     coordinates: [15.877098800954702, 108.33427527794125],
     category: ['art-galleries', 'museum'],
+    isMustVisit: true,
     imageUrl: '48.webp',
 
     // =========================================================================

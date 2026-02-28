@@ -44,6 +44,7 @@ interface BaseLandmark {
   // Явно указываем, что английский контент обязателен
   en: LandmarkContent;
   color?: string; // <--- ДОБАВЛЕНО: Добавляем необязательное свойство color
+  isMustVisit?: boolean; // Флаг для важных мест к посещению
 }
 
 // Определяем языковые свойства как Record, где ключами являются LangCode,

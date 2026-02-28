@@ -2,8 +2,9 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom/client';
 import type { Map as MapboxMap, Marker } from 'mapbox-gl';
 
-import { IconButton } from '@mui/material';
+import { IconButton, Box } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import StarIcon from '@mui/icons-material/Star';
 
 import { getCategoryColor } from '../../../shared/lib/categoryColors';
 import type { Landmark, CategorySlug, LandmarkContent } from '../../../data';
@@ -17,10 +18,11 @@ interface CustomMarkerProps {
   onClick: (event: React.MouseEvent) => void;
   isBouncing: boolean;
   markerColor: string;
+  isMustVisit?: boolean | undefined;
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
-  ({ isActive, onClick, isBouncing, markerColor }) => {
+  ({ isActive, onClick, isBouncing, markerColor, isMustVisit }) => {
     const handleClick = useCallback(
       (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -32,24 +34,65 @@ const CustomMarker: React.FC<CustomMarkerProps> = React.memo(
     const markerClassName = isBouncing ? 'marker-bounce' : '';
 
     return (
-      <IconButton
-        onClick={handleClick}
-        className={markerClassName}
+      <Box
         sx={{
-          p: 0,
-          lineHeight: 1,
-          color: isActive ? 'error.main' : markerColor,
-          '&:hover': {
-            color: isActive ? 'error.dark' : markerColor,
-          },
-          transition: 'transform 0.3s ease-in-out',
-          transform: isActive ? 'scale(1.5)' : 'scale(1)',
-          cursor: 'pointer',
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
-        aria-label="landmark-marker"
       >
-        <LocationOnIcon sx={{ fontSize: 30 }} />
-      </IconButton>
+        {isMustVisit && (
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '-24px',
+              backgroundColor: '#ffbf00',
+              color: 'white',
+              borderRadius: '4px',
+              padding: '2px 6px',
+              fontSize: '10px',
+              fontWeight: 'bold',
+              whiteSpace: 'nowrap',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '2px',
+              zIndex: 10,
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: '-4px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                borderWidth: '4px 4px 0',
+                borderStyle: 'solid',
+                borderColor: '#ffbf00 transparent transparent transparent',
+              },
+            }}
+          >
+            <StarIcon sx={{ fontSize: '18px' }} />
+          </Box>
+        )}
+        <IconButton
+          onClick={handleClick}
+          className={markerClassName}
+          sx={{
+            p: 0,
+            lineHeight: 1,
+            color: isActive ? 'error.main' : markerColor,
+            '&:hover': {
+              color: isActive ? 'error.dark' : markerColor,
+            },
+            transition: 'transform 0.3s ease-in-out',
+            transform: isActive ? 'scale(1.5)' : 'scale(1)',
+            cursor: 'pointer',
+          }}
+          aria-label="landmark-marker"
+        >
+          <LocationOnIcon sx={{ fontSize: 30 }} />
+        </IconButton>
+      </Box>
     );
   }
 );
@@ -127,6 +170,7 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
             onMapMarkerClick(originalIndex, event),
           isBouncing: !hasUserInteracted,
           markerColor: categoryColor,
+          isMustVisit: landmark.isMustVisit,
         };
 
         if (!individualMarkers.current.has(originalIndex)) {
@@ -222,6 +266,7 @@ export const MapMarkersLayer: React.FC<MapMarkersLayerProps> = ({
           onClick={(event) => onMapMarkerClick(originalIndex, event)}
           isBouncing={!hasUserInteracted}
           markerColor={categoryColor}
+          isMustVisit={landmark.isMustVisit}
         />
       );
     });

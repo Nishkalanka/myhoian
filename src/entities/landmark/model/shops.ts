@@ -6,6 +6,7 @@ export const shopsLandmarks: Landmark[] = [
     id: 'hart-hoi-an', // <-- ID теперь строковый
     coordinates: [15.876945564905732, 108.33431323927019], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
     category: ['shops'],
+    isMustVisit: true,
     imageUrl: 'hart-hoi-an.webp',
     en: {
       title: 'Hart Upcycled',
