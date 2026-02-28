@@ -14,6 +14,7 @@ import { museumLandmarks } from '../entities/landmark/model/museums.js';
 import { foodDrinksLandmarks } from '../entities/landmark/model/food-drinks.js';
 import { artGalleriesLandmarks } from '../entities/landmark/model/art-galleries.js';
 import { clubsLandmarks } from '../entities/landmark/model/clubs.js';
+import { shopsLandmarks } from '../entities/landmark/model/shops.js';
 // import { otherLandmarks } from "./landmarks/other.js"; // Закомментировано, если не используется
 
 // =========================================================================
@@ -25,6 +26,7 @@ export const hoiAnLandmarks: Landmark[] = [
   ...foodDrinksLandmarks,
   ...artGalleriesLandmarks,
   ...clubsLandmarks,
+  ...shopsLandmarks,
   // ...otherLandmarks, // Закомментировано, если не используется
 ];
 
@@ -55,6 +57,9 @@ export const getLandmarksByCategoryAndLanguage = (
       break;
     case 'clubs':
       categorySpecificLandmarks = clubsLandmarks; // <-- ИСПРАВЛЕНО ЗДЕСЬ
+      break;
+    case 'shops':
+      categorySpecificLandmarks = shopsLandmarks;
       break;
     // case "other": // Закомментировано, если не используется
     //   categorySpecificLandmarks = otherLandmarks;

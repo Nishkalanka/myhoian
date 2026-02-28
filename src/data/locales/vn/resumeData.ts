@@ -56,6 +56,7 @@ const translationVN: TranslationContent = {
     'food-drinks': 'Đồ ăn & Thức uống',
     'art-galleries': 'Nghệ thuật',
     clubs: 'Câu lạc bộ',
+    shops: 'Cửa hàng',
   },
 };
 

@@ -1,14 +1,14 @@
 // src/utils/categoryColors.ts
 
-// ИЗМЕНИТЕ ЭТУ СТРОКУ:
-import { type CategorySlug } from '../../data'; // <--- Добавьте 'type' перед CategorySlug
+import { type CategorySlug } from '../../data';
 
 // Определите здесь ваши цвета.
 export const categoryColors: Record<CategorySlug | 'default', string> = {
   museum: '#1976d2',
   'food-drinks': '#ed6c02',
   'art-galleries': '#9c27b0',
-  clubs: '#000',
+  clubs: '#283593',
+  shops: '#00897b',
   default: '#ff980',
 };
 

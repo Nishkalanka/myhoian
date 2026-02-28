@@ -190,4 +190,66 @@ export const artGalleriesLandmarks: Landmark[] = [
       vn: 'not-from-here-art-gallery',
     },
   },
+
+  //Củi Lũ Art Space - Coco Casa Art Gallery
+  {
+    id: 'coco-casa-art-gallery', // <-- ID теперь строковый
+    coordinates: [15.903869405266962, 108.34756880393441], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['art-galleries'],
+    imageUrl: 'coco-casa.webp',
+    en: {
+      title: 'Coco Casa Art Gallery',
+      description:
+        'Coco Casa Art Gallery was founded with a mission to honor Vietnamese craftsmanship and serve as a bridge between traditional art and the contemporary world. More than just a gallery, it is a creative space where art intertwines with nature and local culture.',
+      fullDescription: `
+<p>Coco Casa Art Gallery was founded with a mission to honor Vietnamese craftsmanship and serve as a bridge between traditional art and the contemporary world. More than just a gallery, it is a creative space where art intertwines with nature and local culture.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Арт-галерея Coco Casa',
+      description:
+        'Галерея Coco Casa была основана с миссией почтить вьетнамское мастерство и стать мостом между традиционным искусством и современным миром. Это не просто галерея, а творческое пространство, где искусство переплетается с природой и местной культурой.',
+      fullDescription: `
+<p>Арт-галерея Coco Casa была основана с миссией почтить вьетнамское мастерство и стать мостом между традиционным искусством и современным миром. Это не просто галерея, а творческое пространство, где искусство переплетается с природой и местной культурой.</p>
+  `,
+      internalImageNames: [],
+    },
+    fr: {
+      title: 'Galerie d’art Coco Casa',
+      description:
+        'La galerie d’art Coco Casa a été fondée avec la mission d’honorer l’artisanat vietnamien et de servir de pont entre l’art traditionnel et le monde contemporain. Plus qu’une simple galerie, c’est un espace créatif où l’art s’entrelace avec la nature et la culture locale.',
+      fullDescription: `
+<p>La galerie d’art Coco Casa a été fondée avec la mission d’honorer l’artisanat vietnamien et de servir de pont entre l’art traditionnel et le monde contemporain. Plus qu’une simple galerie, c’est un espace créatif où l’art s’entrelace avec la nature et la culture locale.</p>
+  `,
+      internalImageNames: [],
+    },
+    es: {
+      title: 'Galería de Arte Coco Casa',
+      description:
+        'La Galería de Arte Coco Casa fue fundada con la misión de honrar la artesanía vietnamita и servir de puente entre el arte tradicional y el mundo contemporáneo. Más que una simple galería, es un espacio creativo donde el arte se entrelaza con la naturaleza y la cultura local.',
+      fullDescription: `
+<p>La Galería de Arte Coco Casa fue fundada con la misión de honrar la artesanía vietnamita и servir de puente entre el arte tradicional y el mundo contemporáneo. Más que una simple galería, es un espacio creativo donde el arte se entrelaza con la naturaleza y la cultura local.</p>
+  `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Không gian Nghệ thuật Coco Casa',
+      description:
+        'Coco Casa Art Gallery được thành lập với sứ mệnh tôn vinh nghề thủ công Việt Nam và là cầu nối giữa nghệ thuật truyền thống và thế giới đương đại. Không chỉ là một phòng triển lãm, đây còn là không gian sáng tạo nơi nghệ thuật hòa quyện cùng thiên nhiên và văn hóa địa phương.',
+      fullDescription: `
+<p>Coco Casa Art Gallery được thành lập với sứ mệnh tôn vinh nghề thủ công Việt Nam và là cầu nối giữa nghệ thuật truyền thống và thế giới đương đại. Không chỉ là một phòng triển lãm, đây còn là không gian sáng tạo nơi nghệ thuật hòa quyện cùng thiên nhiên và văn hóa địa phương.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'coco-casa-art-gallery',
+      ru: 'coco-casa-art-gallery',
+      es: 'coco-casa-art-gallery',
+      fr: 'coco-casa-art-gallery',
+      vn: 'coco-casa-art-gallery',
+    },
+  },
 ];

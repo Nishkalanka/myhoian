@@ -9345,4 +9345,332 @@ Pad Thai tôm được expat sống ở đây mê mẩn. Còn ở Hai Noodles ch
       vn: 'lan-thai',
     },
   },
+  //Secret House Hoi An
+  {
+    id: 'secret-house-hoi-an', // <-- ID теперь строковый
+    coordinates: [15.893291273762264, 108.34549779143872], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks', 'art-galleries'],
+    imageUrl: 'secret-house.webp',
+    en: {
+      title: 'Secret House Hoi An Gallery',
+      description:
+        'Delicious quality coffee, aesthetics, rice fields, silence, birds, artist host, apartments',
+      fullDescription: `
+<p>Delicious quality coffee, aesthetics, rice fields, silence, birds, artist host, apartments</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Галерея Secret House Hoi An',
+      description:
+        'Вкусный качественный кофе, эстетика, рисовые поля, тишина, птицы, хозяин художник и артист, апартаменты',
+      fullDescription: `
+<p>Вкусный качественный кофе, эстетика, рисовые поля, тишина, птицы, хозяин художник и артист, апартаменты</p>
+  `,
+      internalImageNames: [],
+    },
+
+    es: {
+      title: 'Galería Secret House Hoi An',
+      description:
+        'Café de calidad delicioso, estética, campos de arroz, silencio, pájaros, anfitrión artista, apartamentos',
+      fullDescription: `
+<p>Café de calidad delicioso, estética, campos de arroz, silencio, pájaros, anfitrión artista, apartamentos</p>
+  `,
+      internalImageNames: [],
+    },
+
+    fr: {
+      title: 'Galerie Secret House Hoi An',
+      description:
+        'Café délicieux et de qualité, esthétique, rizières, calme, oiseaux, hôte artiste, appartements',
+      fullDescription: `
+<p>Café délicieux et de qualité, esthétique, rizières, calme, oiseaux, hôte artiste, appartements</p>
+  `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Phòng trưng bày Secret House Hội An',
+      description:
+        'Cà phê ngon chất lượng, thẩm mỹ, cánh đồng lúa, yên tĩnh, tiếng chim hót, chủ nhà là nghệ sĩ, căn hộ dịch vụ',
+      fullDescription: `
+<p>Cà phê ngon chất lượng, thẩm mỹ, cánh đồng lúa, yên tĩnh, tiếng chim hót, chủ nhà là nghệ sĩ, căn hộ dịch vụ</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'secret-house-hoi-an',
+      ru: 'secret-house-hoi-an',
+      es: 'secret-house-hoi-an',
+      fr: 'secret-house-hoi-an',
+      vn: 'secret-house-hoi-an',
+    },
+  },
+  //miss-hoi-an-cafe
+  {
+    id: 'miss-hoi-an-cafe', // <-- ID теперь строковый
+    coordinates: [15.897336804950315, 108.33965546445937], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'miss-hoi-an.webp',
+    en: {
+      title: 'Miss Hoi An',
+      description:
+        'Drinks, Rice fields, sunset spot, unique interior. Be sure to go up to the third floor!',
+      fullDescription: `
+<p>Drinks, Rice fields, sunset spot, unique interior. Be sure to go up to the third floor!</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Miss Hoi An',
+      description:
+        'Напитки, Рисовые поля, место для заката, уникальный интерьер. Обязательно поднимитесь на третий этаж!',
+      fullDescription: `
+<p>Напитки, Рисовые поля, место для заката, уникальный интерьер. Обязательно поднимитесь на третий этаж!</p>
+  `,
+      internalImageNames: [],
+    },
+    fr: {
+      title: 'Miss Hoi An',
+      description:
+        'Boissons, rizières, spot de coucher de soleil, intérieur unique. N’oubliez pas de monter au troisième étage !',
+      fullDescription: `
+<p>Boissons, rizières, spot de coucher de soleil, intérieur unique. N’oubliez pas de monter au troisième étage !</p>
+  `,
+      internalImageNames: [],
+    },
+    es: {
+      title: 'Miss Hoi An',
+      description:
+        'Bebidas, campos de arroz, lugar para el atardecer, interior único. ¡No olvides subir al tercer piso!',
+      fullDescription: `
+<p>Bebidas, campos de arroz, lugar para el atardecer, interior único. ¡No olvides subir al tercer piso!</p>
+  `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Miss Hoi An',
+      description:
+        'Đồ uống, cánh đồng lúa, địa điểm ngắm hoàng hôn, nội thất độc đáo. Đừng quên lên tầng 3 nhé!',
+      fullDescription: `
+<p>Đồ uống, cánh đồng lúa, địa điểm ngắm hoàng hôn, nội thất độc đáo. Đừng quên lên tầng 3 nhé!</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'miss-hoi-an-cafe',
+      ru: 'miss-hoi-an-cafe',
+      es: 'miss-hoi-an-cafe',
+      fr: 'miss-hoi-an-cafe',
+      vn: 'miss-hoi-an-cafe',
+    },
+  },
+  //La Quinn Bakery
+  {
+    id: 'la-quinn-bakery', // <-- ID теперь строковый
+    coordinates: [15.885403645969976, 108.35077071131843], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'la-quinn-bakery.webp',
+    en: {
+      title: 'La Quinn Bakery',
+      description: 'La Quinn Bakery is a delightful gem located in Hoi An',
+      fullDescription: `
+<p>La Quinn Bakery is a delightful gem located in Hoi An, known for its artisanal pastries and warm hospitality. The owner, trained at Le Cordon Bleu Thailand, creates a peaceful atmosphere where customers can enjoy freshly baked goods and high-quality coffee. Visitors rave about the delicious cheesecake, croissants, and various treats while appreciating the cozy setting that encourages relaxation and productivity.
+Atmosphere: Customers frequently mention the tranquil environment of La Quinn Bakery, highlighting its peaceful setting amidst nature that makes it an ideal spot to relax or work with good WiFi available.
+Service attitude and speed: Many reviews commend the owner’s friendly and welcoming demeanor; however, some customers noted that service can be slow during busy times as she often works alone.
+Location: The bakery is situated on a quiet road in Hoi An, surrounded by rice fields which enhances its charming appeal, making it easily accessible for visitors seeking a serene café experience.
+Price: Reviewers generally find the prices to be reasonable given the quality of food offered. They appreciate good value for money without compromising on taste or presentation.
+Menu variety: La Quinn Bakery offers a diverse menu featuring various pastries such as cheesecakes, cookies, croissants, and specialty coffees. Customers express delight over trying multiple items from the extensive selection available.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Пекарня La Quinn',
+      description: 'La Quinn Bakery — это очаровательная жемчужина в Хойане',
+      fullDescription: `
+<p>La Quinn Bakery — это очаровательная жемчужина в Хойане, известная своей ремесленной выпечкой и теплым гостеприимством. Владелица, прошедшая обучение в Le Cordon Bleu Thailand, создает спокойную атмосферу, где гости могут насладиться свежеиспеченными изделиями и высококачественным кофе. Посетители в восторге от вкуснейших чизкейков, круассанов и различных лакомств, отмечая уютную обстановку, которая располагает к отдыху и продуктивности.
+Атмосфера: Клиенты часто упоминают спокойную обстановку La Quinn Bakery, подчеркивая ее умиротворенное расположение среди природы, что делает ее идеальным местом для отдыха или работы с хорошим Wi-Fi.
+Обслуживание и скорость: Во многих отзывах отмечается дружелюбие и приветливость владелицы, однако некоторые гости заметили, что обслуживание может быть медленным в периоды высокой загрузки, так как она часто работает одна.
+Расположение: Пекарня расположена на тихой дороге в Хойане в окружении рисовых полей, что придает ей особое очарование и делает ее легкодоступной для тех, кто ищет уединения в кафе.
+Цена: Рецензенты в целом считают цены разумными, учитывая качество предлагаемой еды. Они ценят хорошее соотношение цены и качества без ущерба для вкуса и подачи.
+Разнообразие меню: La Quinn Bakery предлагает разнообразное меню, включающее чизкейки, печенье, круассаны и фирменный кофе. Покупатели с удовольствием пробуют различные позиции из широкого ассортимента.</p>
+  `,
+      internalImageNames: [],
+    },
+    fr: {
+      title: 'La Quinn Bakery',
+      description: 'La Quinn Bakery est un charmant petit bijou situé à Hoi An',
+      fullDescription: `
+<p>La Quinn Bakery est un charmant petit bijou situé à Hoi An, réputé pour ses pâtisseries artisanales et son accueil chaleureux. La propriétaire, formée au Le Cordon Bleu Thaïlande, crée une atmosphère paisible où les clients peuvent savourer des produits fraîchement sortis du four et un café de haute qualité. Les visiteurs ne tarissent pas d'éloges sur les délicieux cheesecakes, croissants et diverses gourmandises, tout en appréciant le cadre douillet qui favorise la détente et la productivité.
+Atmosphère : Les clients mentionnent fréquemment l'environnement tranquille de La Quinn Bakery, soulignant son cadre paisible en pleine nature qui en fait un lieu idéal pour se détendre ou travailler avec un bon Wi-Fi.
+Service et rapidité : De nombreux avis louent le comportement amical et accueillant de la propriétaire ; cependant, certains clients ont noté que le service peut être lent en période d'affluence car elle travaille souvent seule.
+Emplacement : La boulangerie est située sur une route calme de Hoi An, entourée de rizières, ce qui renforce son attrait charmant et la rend facilement accessible pour les visiteurs en quête d'une expérience de café sereine.
+Prix : Les critiques trouvent généralement les prix raisonnables compte tenu de la qualité des produits. Ils apprécient le bon rapport qualité-prix sans compromis sur le goût ou la présentation.
+Variété du menu : La Quinn Bakery propose une carte diversifiée comprenant divers cheesecakes, cookies, croissants et cafés de spécialité. Les clients expriment leur plaisir à goûter plusieurs articles de la vaste sélection disponible.</p>
+  `,
+      internalImageNames: [],
+    },
+    es: {
+      title: 'La Quinn Bakery',
+      description: 'La Quinn Bakery es una joya encantadora ubicada en Hoi An',
+      fullDescription: `
+<p>La Quinn Bakery es una joya encantadora ubicada en Hoi An, conocida por su repostería artesanal y su cálida hospitalidad. La propietaria, formada en Le Cordon Bleu Tailandia, crea un ambiente tranquilo donde los clientes pueden disfrutar de productos recién horneados y café de alta calidad. Los visitantes elogian las deliciosas tartas de queso, los cruasanes y diversos dulces, apreciando el ambiente acogedor que invita a la relajación y a la productividad.
+Ambiente: Los clientes mencionan con frecuencia el entorno tranquilo de La Quinn Bakery, destacando su ubicación apacible rodeada de naturaleza que la convierte en un lugar ideal para relajarse o trabajar con buen Wi-Fi disponible.
+Actitud y rapidez del servicio: Muchas reseñas elogian el trato amable y acogedor de la dueña; sin embargo, algunos clientes señalaron que el servicio puede ser lento en momentos de mucha actividad, ya que a menudo trabaja sola.
+Ubicación: La panadería está situada en una calle tranquila de Hoi An, rodeada de campos de arroz, lo que realza su encanto y la hace fácilmente accesible para los visitantes que buscan una experiencia de café serena.
+Precio: Los críticos generalmente consideran que los precios son razonables dada la calidad de la comida. Valoran la buena relación calidad-precio sin comprometer el sabor ni la presentación.
+Variedad del menú: La Quinn Bakery ofrece un menú variado con diversas tartas de queso, galletas, cruasanes y cafés de especialidad. Los clientes disfrutan probando múltiples artículos de la extensa selección disponible.</p>
+  `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Tiệm bánh La Quinn',
+      description: 'La Quinn Bakery là một viên ngọc thú vị tọa lạc tại Hội An',
+      fullDescription: `
+<p>La Quinn Bakery là một viên ngọc thú vị tọa lạc tại Hội An, nổi tiếng với các loại bánh ngọt thủ công và sự hiếu khách nồng hậu. Chủ tiệm, từng theo học tại Le Cordon Bleu Thái Lan, đã tạo nên một không gian yên bình, nơi thực khách có thể thưởng thức bánh mới ra lò và cà phê chất lượng cao. Du khách rất yêu thích món bánh phô mai, bánh sừng bò và nhiều món ngọt khác, đồng thời đánh giá cao không gian ấm cúng giúp thư giãn và làm việc hiệu quả.
+Không gian: Khách hàng thường xuyên nhắc đến môi trường tĩnh lặng của La Quinn Bakery, nhấn mạnh khung cảnh yên bình giữa thiên nhiên, biến nơi đây thành địa điểm lý tưởng để nghỉ ngơi hoặc làm việc với Wi-Fi ổn định.
+Thái độ phục vụ và tốc độ: Nhiều đánh giá khen ngợi thái độ thân thiện và niềm nở của chủ tiệm; tuy nhiên, một số khách hàng lưu ý rằng phục vụ có thể hơi chậm vào giờ cao điểm vì cô ấy thường làm việc một mình.
+Vị trí: Tiệm bánh nằm trên một con đường yên tĩnh ở Hội An, bao quanh bởi những cánh đồng lúa làm tăng thêm sức hút duyên dáng, giúp du khách dễ dàng tìm đến để tận hưởng trải nghiệm cà phê thanh bình.
+Giá cả: Thực khách nhìn chung thấy mức giá hợp lý so với chất lượng món ăn. Họ đánh giá cao giá trị nhận được mà không làm giảm đi hương vị hay cách trình bày.
+Sự đa dạng của thực đơn: La Quinn Bakery cung cấp thực đơn phong phú với nhiều loại bánh phô mai, bánh quy, bánh sừng bò và cà phê đặc sản. Khách hàng rất thích thú khi được trải nghiệm nhiều món khác nhau từ danh sách lựa chọn đa dạng này.</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'la-quinn-bakery',
+      ru: 'la-quinn-bakery',
+      es: 'la-quinn-bakery',
+      fr: 'la-quinn-bakery',
+      vn: 'la-quinn-bakery',
+    },
+  },
+  //Hội An Salaisons/Les Artisans d’Indochine
+  {
+    id: 'hoi-an-salaisons', // <-- ID теперь строковый
+    coordinates: [15.891022048651838, 108.35951050571823], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'salaisons.webp',
+    en: {
+      title: 'Hoi An Salaisons / Les Artisans d’Indochine',
+      description:
+        'Wine, cheeses, sometimes even "doktorskaya" sausage. French owner, speaks a bit of Russian',
+      fullDescription: `
+<p>Wine, cheeses, sometimes even "doktorskaya" sausage. French owner, speaks a bit of Russian</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Hoi An Salaisons/Les Artisans d’Indochine',
+      description:
+        'Вино, сыры, бывает докторская колбаса, Хозяин француз, немного говорит по русски',
+      fullDescription: `
+<p>Вино, сыры, бывает докторская колбаса,
+Хозяин француз, немного говорит по русски</p>
+  `,
+      internalImageNames: [],
+    },
+    fr: {
+      title: 'Hoi An Salaisons / Les Artisans d’Indochine',
+      description:
+        'Vin, fromages, parfois du saucisson "doktorskaya". Propriétaire français, parle un peu le russe',
+      fullDescription: `
+<p>Vin, fromages, parfois du saucisson "doktorskaya". Propriétaire français, parle un peu le russe</p>
+  `,
+      internalImageNames: [],
+    },
+    es: {
+      title: 'Hoi An Salaisons / Les Artisans d’Indochine',
+      description:
+        'Vino, quesos, a veces salchicha "doktorskaya". Dueño francés, habla un poco de ruso',
+      fullDescription: `
+<p>Vino, quesos, a veces salchicha "doktorskaya". Dueño francés, habla un poco de ruso</p>
+  `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Hoi An Salaisons / Les Artisans d’Indochine',
+      description:
+        'Rượu vang, phô mai, đôi khi có cả xúc xích Nga "doktorskaya". Chủ quán là người Pháp, biết nói một chút tiếng Nga',
+      fullDescription: `
+<p>Rượu vang, phô mai, đôi khi có cả xúc xích Nga "doktorskaya". Chủ quán là người Pháp, biết nói một chút tiếng Nga</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'hoi-an-salaisons',
+      ru: 'hoi-an-salaisons',
+      es: 'hoi-an-salaisons',
+      fr: 'hoi-an-salaisons',
+      vn: 'hoi-an-salaisons',
+    },
+  },
+  //Bon Restaurant
+  {
+    id: 'bon-restaurant', // <-- ID теперь строковый
+    coordinates: [15.880606759243511, 108.34155626138296], // <-- ПРИМЕР: Замените на реальные координаты моста [долгота, широта]
+    category: ['food-drinks'],
+    imageUrl: 'bon-restaurant.webp',
+    en: {
+      title: 'Bon Restaurant',
+      description:
+        'Delicious local Vietnamese café. The clay pot eggplant is simply divine',
+      fullDescription: `
+<p>Delicious local Vietnamese café. The clay pot eggplant is simply divine</p>
+  `,
+      internalImageNames: [],
+    },
+
+    ru: {
+      title: 'Bon Restaurant',
+      description:
+        'Местное вкусное вьетнамское кафе. Баклажаны в горшочке просто объедение',
+      fullDescription: `
+<p>Местное вкусное вьетнамское кафе. Баклажаны в горшочке просто объедение</p>
+  `,
+      internalImageNames: [],
+    },
+    fr: {
+      title: 'Bon Restaurant',
+      description:
+        'Délicieux café vietnamien local. L’aubergine en marmite est un pur délice',
+      fullDescription: `
+<p>Délicieux café vietnamien local. L’aubergine en marmite est un pur délice</p>
+  `,
+      internalImageNames: [],
+    },
+    es: {
+      title: 'Bon Restaurant',
+      description:
+        'Delicioso café local vietnamita. Las berenjenas en cazuela de barro son una delicia',
+      fullDescription: `
+<p>Delicioso café local vietnamita. Las berenjenas en cazuela de barro son una delicia</p>
+  `,
+      internalImageNames: [],
+    },
+    vn: {
+      title: 'Nhà hàng Bon',
+      description:
+        'Quán ăn địa phương ngon miệng. Món cà tím tay cầm (nồi đất) thực sự rất tuyệt vời',
+      fullDescription: `
+<p>Quán ăn địa phương ngon miệng. Món cà tím tay cầm (nồi đất) thực sự rất tuyệt vời</p>
+  `,
+      internalImageNames: [],
+    },
+
+    slug: {
+      en: 'bon-restaurant',
+      ru: 'bon-restaurant',
+      es: 'bon-restaurant',
+      fr: 'bon-restaurant',
+      vn: 'bon-restaurant',
+    },
+  },
 ];

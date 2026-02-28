@@ -74,6 +74,7 @@ function AppContent() {
     'food-drinks',
     'art-galleries',
     'clubs',
+    'shops',
   ]);
 
   const handleCategorySelection = useCallback(

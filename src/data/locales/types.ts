@@ -54,5 +54,6 @@ export interface TranslationContent {
     'food-drinks': string;
     'art-galleries': string;
     clubs: string;
+    shops: string;
   };
 }

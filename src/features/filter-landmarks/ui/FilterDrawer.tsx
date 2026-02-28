@@ -11,7 +11,6 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
 
-// Типизация для CategoryFilter (если она не экспортируется из самого CategoryFilter)
 interface CategoryFilterProps {
   onSelectCategories: (selectedSlugs: string[]) => void;
   selectedCategorySlugs: string[];

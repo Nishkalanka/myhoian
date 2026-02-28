@@ -1,7 +1,7 @@
 import type { Landmark } from '../entities/landmark/model/landmarkTypes';
 
 export const fetchAllLandmarks = async (): Promise<Landmark[]> => {
-  const [museums, foodDrinks, artGalleries, clubs] = await Promise.all([
+  const [museums, foodDrinks, artGalleries, clubs, shops] = await Promise.all([
     import('../entities/landmark/model/museums').then((m) => m.museumLandmarks),
     import('../entities/landmark/model/food-drinks').then(
       (m) => m.foodDrinksLandmarks
@@ -10,7 +10,8 @@ export const fetchAllLandmarks = async (): Promise<Landmark[]> => {
       (m) => m.artGalleriesLandmarks
     ),
     import('../entities/landmark/model/clubs').then((m) => m.clubsLandmarks),
+    import('../entities/landmark/model/shops').then((m) => m.shopsLandmarks),
   ]);
 
-  return [...museums, ...foodDrinks, ...artGalleries, ...clubs];
+  return [...museums, ...foodDrinks, ...artGalleries, ...clubs, ...shops];
 };

@@ -51,6 +51,17 @@ export const ALL_CATEGORIES: Category[] = [
     },
     slug: 'clubs',
   },
+  {
+    id: 5,
+    name: {
+      en: 'Shops',
+      ru: 'Магазины',
+      es: 'Tiendas',
+      fr: 'Magasins',
+      vn: 'Cửa hàng',
+    },
+    slug: 'shops',
+  },
 ];
 
 export const ALL_CATEGORY_SLUGS = ALL_CATEGORIES.map((cat) => cat.slug);

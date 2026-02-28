@@ -57,6 +57,7 @@ const translationEN: TranslationContent = {
     'food-drinks': 'Food & Drinks',
     'art-galleries': 'Art Galleries',
     clubs: 'Clubs',
+    shops: 'Shops',
   },
 };
 
