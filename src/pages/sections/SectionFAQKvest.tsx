@@ -24,10 +24,10 @@ const CURRENCY_RATES = {
 
 // Цены в VND
 const PRICES = {
-  dayTour: 500000,
-  eveningTour: 1500000,
-  personalGuide: 500000,
-  transfer: 400000,
+  dayTour: 2500000,
+  eveningTour: 2500000,
+  personalGuide: 1500000,
+  transfer: 700000,
 };
 
 const SectionFAQ: React.FC = () => {
